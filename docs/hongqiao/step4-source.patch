@@ -1,0 +1,536 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -1,2 +1,3 @@
+ import './style.css';
++import { createHongqiaoProgress } from './hongqiao/runtime.js';
+ import { loadSurfaces } from './surfaces.js';
+@@ -36,2 +37,3 @@
+ const focus=new THREE.Vector3(0,2,0),temp=new THREE.Vector3(),camGoal=new THREE.Vector3();
++let hongqiaoProgress, progressPauseBefore=false;
+ let lastMode='walk',moving=false,fpsFrames=0,fpsAt=0,fps=0,lastShadowUpdate=-1,lifeAccumulator=0;
+@@ -62,5 +64,6 @@
+  storefronts=createStorefronts(scene,world,{onOpen:()=>{paused=true;clearInput();},onClose:()=>{paused=false;clearInput();canvas.focus();}});
++ hongqiaoProgress=createHongqiaoProgress({scene,loader,world,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>{progressPauseBefore=paused;paused=true;clearInput();},onClose:()=>{paused=progressPauseBefore;clearInput();canvas.focus();},toast});
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('hongqiao')){
+   const {createHongqiaoDebug}=await import('./hongqiao/debug.js');
+-  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor})});
++  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false});
+  }
+@@ -91,3 +94,3 @@
+  else if(Math.hypot(actor.x-boat.x,actor.z-boat.z)<5 && actor.height<2){boatMode=true;boat.speed=0;actor.layer='ground';toast('已登舟：W / S 划行，A / D 转向，E 下船。');}
+- else toast('小舟停在虹桥东侧码头，走近或游近后按 E 登船。');
++ else if(!hongqiaoProgress?.interact())toast('小舟停在虹桥东侧码头，走近或游近后按 E 登船。');
+  canvas.focus();
+@@ -174,2 +177,3 @@
+  $('interaction').hidden=!(boatMode||nearby);$('interact-label').textContent=boatMode?(world.docks.some(d=>Math.hypot(d.x-boat.x,d.z-boat.z)<d.d/2+4.3)?'靠岸下船':'离船入水'):'登上小舟';
++ if(!boatMode&&!nearby&&!paused){const prompt=hongqiaoProgress?.prompt();if(prompt){$('interaction').hidden=false;$('interact-label').textContent=prompt;}}
+  $('shift-hint').style.opacity=boatMode?'.35':'1';drawMap();
+--- a/src/hongqiao/debug.js
++++ b/src/hongqiao/debug.js
+@@ -4,3 +4,3 @@
+ // Explicit development survey only: no interaction, save, player or camera writes.
+-export async function createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor}) {
++export async function createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor,renderItems=true}) {
+  const result=validateHongqiao(config,world);if(!result.ok)throw Error(result.errors.join('\n'));
+@@ -8,3 +8,3 @@
+  const anchor=id=>config.anchors.find(a=>a.id===id),asset=id=>config.assets.find(a=>a.id===id);
+- function label(text,p,color){const c=document.createElement('canvas');c.width=512;c.height=96;const x=c.getContext('2d');x.fillStyle='#152726e8';x.fillRect(0,0,512,96);x.fillStyle=color;x.font='bold 36px sans-serif';x.textAlign='center';x.fillText(text,256,62);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:true}));s.position.set(p[0],p[1]+2.8,p[2]);s.scale.set(3.8,.72,1);root.add(s)}
++ function label(text,p,color){const c=document.createElement('canvas');c.width=512;c.height=96;const x=c.getContext('2d');x.fillStyle='#152726e8';x.fillRect(0,0,512,96);x.fillStyle=color;x.font='bold 36px sans-serif';x.textAlign='center';x.fillText(text,256,62);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:true}));s.position.set(p[0],p[1]+2.8,p[2]);s.scale.set(2.6,.49,1);root.add(s)}
+  for(const n of config.npcs){const a=anchor(n.anchorId),model=npcPrototype.clone(true);model.position.set(...a.position);root.add(model);label(n.name,a.position,n.color)}
+@@ -12,4 +12,5 @@
+  for(const route of config.routes){const g=new THREE.BufferGeometry().setFromPoints(route.points.map(([x,z])=>new THREE.Vector3(x,1.01,z)));root.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:0x63c7b4,transparent:true,opacity:.65})))}
++ for(const i of config.instances){const item=config.items.find(x=>x.id===i.itemId);if(!renderItems)label(item.name,anchor(i.anchorId).position,'#f3dbab')}
+  const assetErrors=[];
+- await Promise.all(config.instances.map(async i=>{try{const item=config.items.find(x=>x.id===i.itemId),g=await loader.loadAsync(import.meta.env.BASE_URL+asset(item.assetId).path),m=g.scene,b=new THREE.Box3().setFromObject(m),size=b.getSize(new THREE.Vector3()),scale=i.maxDimension/Math.max(size.x,size.y,size.z);m.scale.setScalar(scale);const center=b.getCenter(new THREE.Vector3()),a=anchor(i.anchorId);m.position.set(a.position[0]-center.x*scale,a.position[1]-b.min.y*scale+.04,a.position[2]-center.z*scale);root.add(m);label(item.name,[a.position[0],a.position[1]-.7,a.position[2]],'#f3dbab')}catch(e){assetErrors.push({id:i.id,error:String(e)})}}));
++ await Promise.all((renderItems?config.instances:[]).map(async i=>{try{const item=config.items.find(x=>x.id===i.itemId),g=await loader.loadAsync(import.meta.env.BASE_URL+asset(item.assetId).path),m=g.scene,b=new THREE.Box3().setFromObject(m),size=b.getSize(new THREE.Vector3()),scale=i.maxDimension/Math.max(size.x,size.y,size.z);m.scale.setScalar(scale);const center=b.getCenter(new THREE.Vector3()),a=anchor(i.anchorId);m.position.set(a.position[0]-center.x*scale,a.position[1]-b.min.y*scale+.04,a.position[2]-center.z*scale);root.add(m);label(item.name,[a.position[0],a.position[1]-.7,a.position[2]],'#f3dbab')}catch(e){assetErrors.push({id:i.id,error:String(e)})}}));
+  const panel=document.createElement('aside');panel.id='hongqiao-survey';Object.assign(panel.style,{position:'fixed',top:'100px',right:'16px',width:'245px',background:'#162b2beF',color:'#fff',padding:'12px',zIndex:40,font:'13px sans-serif',border:'1px solid #7f9e91'});const title=document.createElement('strong');title.textContent='虹桥锚点 · 开发测量';const toggle=document.createElement('button');toggle.textContent='隐藏标记';toggle.onclick=()=>{root.visible=!root.visible;toggle.textContent=root.visible?'隐藏标记':'显示标记'};const status=document.createElement('pre');status.style.whiteSpace='pre-wrap';panel.append(title,toggle,status);document.body.append(panel);
+--- /dev/null
++++ b/src/hongqiao/state.js
+@@ -0,0 +1,90 @@
++// Pure state rules. No DOM, renderer or browser storage dependencies.
++export const SCHEMA_VERSION = 2;
++const copy = value => structuredClone(value);
++const unique = values => [...new Set(values)];
++const object = v => v && typeof v === 'object' && !Array.isArray(v);
++const list = (v, name) => {
++  if (v === undefined) return [];
++  if (!Array.isArray(v) || !v.every(x => typeof x === 'string')) throw Error(`Invalid ${name}`);
++  return unique(v);
++};
++export function defaultState() {
++  return {schemaVersion: SCHEMA_VERSION, revision: 0, inventory: {}, unlockedCodexIds: [], permissions: [],
++    worldState: {collectedInstanceIds: []}, quests: {}, unlockedStoryIds: [], readStoryIds: [],
++    storyReadingProgress: {}, readContentVersions: {}};
++}
++export function normalizeState(input, config) {
++  if (!object(input)) throw Error('Invalid snapshot');
++  const version = input.schemaVersion ?? 1;
++  if (!Number.isInteger(version) || version < 1 || version > SCHEMA_VERSION) throw Error('Unsupported schemaVersion');
++  const s = {...defaultState(), ...copy(input), schemaVersion: SCHEMA_VERSION};
++  if (!Number.isSafeInteger(s.revision) || s.revision < 0) throw Error('Invalid revision');
++  if (version === 1 && Array.isArray(s.inventory)) s.inventory = Object.fromEntries(unique(s.inventory).map(id => [id, 1]));
++  for (const name of ['inventory','quests','worldState','storyReadingProgress','readContentVersions']) {
++    if (!object(s[name])) throw Error(`Invalid ${name}`);
++  }
++  for (const n of Object.values(s.inventory)) if (!Number.isSafeInteger(n) || n < 0) throw Error('Invalid item quantity');
++  for (const name of ['permissions','unlockedCodexIds','unlockedStoryIds','readStoryIds']) s[name] = list(s[name], name);
++  s.worldState.collectedInstanceIds = list(s.worldState.collectedInstanceIds ?? (version === 1 ? input.collectedInstanceIds : undefined), 'collectedInstanceIds');
++  if (version === 1 && input.questStatus && !s.quests[config.quest.id]) s.quests[config.quest.id] = {status: input.questStatus};
++  const q = s.quests[config.quest.id];
++  if (q !== undefined && (!object(q) || !['available','active','ready','completed'].includes(q.status))) throw Error('Invalid quest');
++  // Ready is derived from quantities; never persist an independent collection counter.
++  if (q?.status === 'ready') q.status = 'active';
++  for (const i of config.instances) {
++    if (s.worldState.collectedInstanceIds.includes(i.id)) {
++      const npcId = config.permissions.find(p => p.id === i.permissionId).grantedBy;
++      s.permissions = unique([...s.permissions, i.permissionId]);
++      s.unlockedCodexIds = unique([...s.unlockedCodexIds, i.itemId, npcId]);
++    }
++  }
++  const storyIds = config.stories.map(x => x.storyId);
++  s.unlockedStoryIds = s.unlockedStoryIds.filter(id => !storyIds.includes(id));
++  if (q?.status === 'completed') s.unlockedStoryIds = unique([...s.unlockedStoryIds, ...storyIds]);
++  for (const story of config.stories) {
++    const p = s.storyReadingProgress[story.storyId];
++    const section = story.sections.find(x => x.id === p?.sectionId);
++    if (p && (p.contentVersion !== story.contentVersion || !section || !Number.isInteger(p.paragraphIndex) || p.paragraphIndex < 0 || p.paragraphIndex >= section.paragraphs.length)) {
++      delete s.storyReadingProgress[story.storyId];
++    }
++  }
++  delete s.collectedInstanceIds;
++  delete s.questStatus;
++  return s;
++}
++export function questStage(s, config) {
++  const status = s.quests[config.quest.id]?.status ?? 'available';
++  return status === 'active' && config.quest.requiredItems.every(i => (s.inventory[i.itemId] ?? 0) >= i.quantity) ? 'ready' : status;
++}
++export function reduceState(state, action, config) {
++  const s = copy(state);
++  if (action.type === 'grantPermission') {
++    if (!config.permissions.some(p => p.id === action.permissionId)) return {ok: false, reason: 'unknown-permission'};
++    if (s.permissions.includes(action.permissionId)) return {ok: true, changed: false, state};
++    s.permissions.push(action.permissionId);
++  } else if (action.type === 'collect') {
++    const i = config.instances.find(x => x.id === action.instanceId);
++    if (!i) return {ok: false, reason: 'unknown-instance'};
++    if (s.worldState.collectedInstanceIds.includes(i.id)) return {ok: true, changed: false, state};
++    if (!s.permissions.includes(i.permissionId)) return {ok: false, reason: 'permission-required'};
++    s.worldState.collectedInstanceIds.push(i.id);
++    s.inventory[i.itemId] = (s.inventory[i.itemId] ?? 0) + i.quantity;
++    const npc = config.permissions.find(p => p.id === i.permissionId).grantedBy;
++    s.unlockedCodexIds = unique([...s.unlockedCodexIds, i.itemId, npc]);
++  } else if (action.type === 'readParagraph') {
++    const story = config.stories.find(x => x.storyId === action.storyId);
++    if (!story || !s.unlockedStoryIds.includes(story.storyId) || s.quests[story.unlockQuestId]?.status !== 'completed') return {ok: false, reason: 'story-locked'};
++    const section = story.sections.find(x => x.id === action.sectionId);
++    const index = action.paragraphIndex;
++    if (!section || !Number.isInteger(index) || index < 0 || index >= section.paragraphs.length) return {ok: false, reason: 'invalid-position'};
++    const position = {contentVersion: story.contentVersion, sectionId: section.id, paragraphIndex: index};
++    if (JSON.stringify(s.storyReadingProgress[story.storyId]) === JSON.stringify(position)) return {ok: true, changed: false, state};
++    s.storyReadingProgress[story.storyId] = position;
++    if (section === story.sections.at(-1) && index === section.paragraphs.length - 1) {
++      s.readStoryIds = unique([...s.readStoryIds, story.storyId]);
++      s.readContentVersions[story.storyId] = story.contentVersion;
++    }
++  } else return {ok: false, reason: 'unknown-action'};
++  s.revision++;
++  return {ok: true, changed: true, state: s};
++}
+--- /dev/null
++++ b/src/hongqiao/persistence.js
+@@ -0,0 +1,88 @@
++import {defaultState, normalizeState, reduceState} from './state.js';
++export const SAVE_KEY = 'qingming:hongqiao:save';
++export const BACKUP_KEY = SAVE_KEY + ':backup';
++export const CORRUPT_KEY = SAVE_KEY + ':corrupt';
++export const SAVE_KEYS = [SAVE_KEY, BACKUP_KEY, CORRUPT_KEY];
++export function createProgressStore({config, storage, onError = e => console.error('[Hongqiao save]', e)}) {
++  let state = defaultState(), status = {saved: false, kind: 'new', message: '尚无存档'}, verified = null;
++  const listeners = new Set(), worldListeners = new Set(), errors = [];
++  const report = e => { errors.push(String(e)); onError(e); };
++  const decode = raw => normalizeState(JSON.parse(raw), config);
++  function persist() {
++    try {
++      // Back up the last verified WHOLE snapshot, never a fragment of the new transaction.
++      if (verified !== null) {
++        storage.setItem(BACKUP_KEY, verified);
++        if (storage.getItem(BACKUP_KEY) !== verified) throw Error('Backup readback mismatch');
++      }
++      const raw = JSON.stringify(state);
++      storage.setItem(SAVE_KEY, raw);
++      if (storage.getItem(SAVE_KEY) !== raw) throw Error('Save readback mismatch');
++      decode(raw);
++      verified = raw;
++      status = {saved: true, kind: 'saved', message: '进度已保存'};
++    } catch (e) {
++      report(e);
++      status = {saved: false, kind: 'save-failed', message: '保存失败：进度仍在本页内存中，请勿刷新；可重试保存。'};
++    }
++    return status.saved;
++  }
++  function load() {
++    let damaged = false;
++    for (const key of [SAVE_KEY, BACKUP_KEY]) {
++      let raw;
++      try {
++        raw = storage.getItem(key);
++        if (raw === null) continue;
++        state = decode(raw);
++        verified = JSON.stringify(state);
++        const recovered = key === BACKUP_KEY;
++        const migrated = JSON.parse(raw).schemaVersion !== state.schemaVersion || JSON.stringify(state) !== raw;
++        if (recovered || migrated) {
++          if (persist()) status = {saved: true, kind: recovered ? 'recovered' : 'migrated', message: recovered ? '主存档异常，已恢复上一份完整备份。' : '存档已迁移，原有进度已保留。'};
++        } else status = {saved: true, kind: 'loaded', message: '已恢复存档'};
++        return;
++      } catch (e) {
++        damaged = true;
++        report(e);
++        if (raw !== undefined && raw !== null) {
++          try {storage.setItem(CORRUPT_KEY, JSON.stringify({key, raw, at: new Date().toISOString()}));} catch (backupError) {report(backupError);}
++        }
++      }
++    }
++    if (damaged) status = {saved: false, kind: 'unrecoverable', message: '存档无法读取，且无可用备份。本页使用默认状态，损坏记录已尝试保留。'};
++  }
++  load();
++  const notify = event => {for (const fn of listeners) fn({state: structuredClone(state), status: {...status}, ...event});};
++  function commit(next, action) {
++    state = next;
++    // Make collected instances disappear before persistence and UI notification.
++    for (const fn of worldListeners) fn(structuredClone(state));
++    persist();
++    notify({action});
++    return {ok: true, changed: true, saved: status.saved};
++  }
++  return {
++    getState: () => structuredClone(state), getStatus: () => ({...status}), getErrors: () => [...errors],
++    subscribe(fn) {listeners.add(fn); return () => listeners.delete(fn);},
++    subscribeWorld(fn) {worldListeners.add(fn); return () => worldListeners.delete(fn);},
++    dispatch(action) {
++      const result = reduceState(state, action, config);
++      if (!result.ok || !result.changed) return {...result, state: undefined, saved: status.saved};
++      return commit(result.state, action);
++    },
++    retrySave() {persist(); notify({action: {type: 'retrySave'}}); return status.saved;},
++    // Used only by explicit development fixtures; not an NPC/quest settlement route.
++    restoreFixture(snapshot) {return commit(normalizeState(snapshot, config), {type: 'developmentFixture'});},
++  };
++}
++export function consumeResetURL({url, history, storage, development}) {
++  const parsed = new URL(url);
++  if (!parsed.searchParams.has('hqReset')) return {requested: false};
++  parsed.searchParams.delete('hqReset');
++  // Remove first, even if storage access fails: refreshing cannot repeat a reset.
++  history.replaceState(history.state, '', parsed.pathname + parsed.search + parsed.hash);
++  if (!development) return {requested: true, cleared: false};
++  try {for (const key of SAVE_KEYS) storage.removeItem(key); return {requested: true, cleared: true};}
++  catch (e) {return {requested: true, cleared: false, error: String(e)};}
++}
+--- /dev/null
++++ b/src/hongqiao/collectibles.js
+@@ -0,0 +1,42 @@
++import * as THREE from 'three';
++import {moveActor} from '../world.js';
++
++export function createCollectibles({scene, loader, config, store, world, baseURL}) {
++  const root = new THREE.Group(); root.name = 'Hongqiao task instances'; scene.add(root);
++  const entries = new Map(), assetErrors = [];
++  const collected = id => store.getState().worldState.collectedInstanceIds.includes(id);
++  function dispose(model) {model.traverse(o => {if (o.isMesh) {o.geometry.dispose(); for (const m of Array.isArray(o.material) ? o.material : [o.material]) {for (const value of Object.values(m)) if (value?.isTexture) value.dispose(); m.dispose();}}});}
++  function sync() {for (const [id, entry] of entries) entry.group.visible = !collected(id);}
++  for (const instance of config.instances) {
++    const anchor = config.anchors.find(a => a.id === instance.anchorId);
++    const item = config.items.find(i => i.id === instance.itemId);
++    const group = new THREE.Group(); group.name = instance.id; group.position.set(...anchor.position); root.add(group);
++    const placeholder = new THREE.Mesh(new THREE.BoxGeometry(.48, instance.visualHeight, .48), new THREE.MeshStandardMaterial({color: '#c8ac74', roughness: .9}));
++    placeholder.position.y = instance.visualHeight / 2 + .04; group.add(placeholder);
++    const entry = {group, anchor, instance, item, loadState: 'pending'}; entries.set(instance.id, entry);
++    group.visible = !collected(instance.id);
++    const asset = config.assets.find(a => a.id === item.assetId);
++    // The placeholder is available immediately. This promise never blocks game boot.
++    loader.loadAsync(baseURL + asset.path).then(gltf => {
++      if (collected(instance.id)) {dispose(gltf.scene); entry.loadState = 'discarded-collected'; sync(); return;}
++      const model = gltf.scene, bounds = new THREE.Box3().setFromObject(model), size = bounds.getSize(new THREE.Vector3());
++      const scale = instance.maxDimension / Math.max(size.x, size.y, size.z);
++      const center = bounds.getCenter(new THREE.Vector3());
++      model.scale.setScalar(scale); model.position.set(-center.x * scale, .04 - bounds.min.y * scale, -center.z * scale);
++      group.remove(placeholder); dispose(placeholder); group.add(model); entry.loadState = 'loaded'; sync();
++    }).catch(error => {entry.loadState = 'placeholder'; assetErrors.push({instanceId: instance.id, error: String(error)}); console.warn('[Hongqiao asset; using placeholder]', instance.id, error); sync();});
++  }
++  store.subscribeWorld(sync);
++  function focus(actor) {
++    if (actor.mode !== 'walk') return null;
++    const state = store.getState();
++    return [...entries.values()].filter(e => {
++      const [x,y,z] = e.anchor.position;
++      if (!e.group.visible || !state.permissions.includes(e.instance.permissionId) || actor.layer !== e.anchor.layer || Math.abs(actor.height - y) > .7 || Math.hypot(x - actor.x, z - actor.z) > 2) return false;
++      // Reuse the accepted world's movement constraint for a short reachability probe.
++      const reached = moveActor({...actor}, x - actor.x, z - actor.z, world);
++      return reached.mode === 'walk' && Math.hypot(reached.x - x, reached.z - z) < .1;
++    }).sort((a,b) => Math.hypot(a.anchor.position[0]-actor.x,a.anchor.position[2]-actor.z) - Math.hypot(b.anchor.position[0]-actor.x,b.anchor.position[2]-actor.z))[0] ?? null;
++  }
++  return {focus, getState: () => ({instances: [...entries].map(([id,e]) => ({id, visible: e.group.visible, loadState: e.loadState})), assetErrors: [...assetErrors]})};
++}
+--- /dev/null
++++ b/src/hongqiao/progress-ui.js
+@@ -0,0 +1,104 @@
++import './progress-ui.css';
++import {questStage} from './state.js';
++
++export function createProgressUI({config, store, development, canOpen, onOpen, onClose, toast}) {
++  const el = (tag, text, parent) => {const node = document.createElement(tag); if (text !== undefined) node.textContent = text; parent?.append(node); return node;};
++  const button = (text, parent, action) => {const b = el('button', text, parent); b.type = 'button'; b.onclick = action; return b;};
++  const dialog = el('dialog', undefined, document.body); dialog.id = 'hq-book'; dialog.setAttribute('aria-label', '汴京见闻与行囊');
++  const notice = el('div', undefined, document.body); notice.id = 'hq-save'; notice.setAttribute('role','status');
++  const openButton = button('见闻 / 行囊 I', document.querySelector('.top-actions'), () => open()); openButton.id = 'hq-open';
++  let page = 'inventory', currentStory = null, reader = null, saveTimer, opened = false, pendingPermit = null;
++  function renderStatus() {
++    const status = store.getStatus(); notice.replaceChildren();
++    notice.hidden = status.saved && !['recovered','migrated'].includes(status.kind) || status.kind === 'new';
++    el('span',status.message,notice);
++    if (!status.saved && status.kind !== 'new') button('重试保存',notice,() => store.retrySave());
++    else button('知道了',notice,() => {notice.hidden = true;});
++  }
++  function recordPosition() {
++    clearTimeout(saveTimer);
++    if (!reader || !currentStory || !dialog.open) return;
++    const rect = reader.getBoundingClientRect();
++    const paragraphs = [...reader.querySelectorAll('[data-section]')];
++    const visible = paragraphs.filter(p => {const r=p.getBoundingClientRect(); return r.top < rect.bottom && r.bottom > rect.top;});
++    const last = paragraphs.at(-1), lastRect = last?.getBoundingClientRect();
++    const target = lastRect && lastRect.bottom <= rect.bottom + 1 && lastRect.top >= rect.top ? last : visible[0];
++    if (target) store.dispatch({type:'readParagraph', storyId:currentStory, sectionId:target.dataset.section, paragraphIndex:Number(target.dataset.index)});
++  }
++  function close() {recordPosition(); if (!opened) return; opened=false; dialog.close(); reader=null; currentStory=null; pendingPermit=null; onClose();}
++  function open() {if (!canOpen()) return; if (opened) {close(); return;} onOpen(); opened=true; page='inventory'; render(); dialog.showModal();}
++  function showPage(next) {recordPosition(); reader=null; currentStory=null; pendingPermit=null; page=next; render();}
++  function render() {
++    const state = store.getState(); dialog.replaceChildren();
++    const nav = el('nav',undefined,dialog);
++    button('行囊',nav,() => showPage('inventory')); button('见闻图鉴',nav,() => showPage('codex')); button('人物故事',nav,() => showPage('stories')); button('关闭 Esc',nav,close);
++    if (page === 'permit') {
++      const permission = config.permissions.find(p => p.id === pendingPermit), npc = config.npcs.find(n => n.id === permission.grantedBy);
++      el('h2','开发测试 · 模拟取用许可',dialog); el('p',`${npc.name}答应借出物品。确认仅授予取用许可，物品仍需走近后拾取。`,dialog);
++      button('确认取用许可',dialog,() => {store.dispatch({type:'grantPermission',permissionId:permission.id});close();});
++      button('取消，不授权',dialog,close); return;
++    }
++    if (page === 'inventory') {
++      el('h2','行囊',dialog);el('small','当前持有数量；交出物品后，见闻仍会保留。',dialog);
++      for (const item of config.items) {const row=el('article',undefined,dialog);el('h3',`${item.name} × ${state.inventory[item.id] ?? 0}`,row);el('p',item.description,row);}
++    } else if (page === 'codex') {
++      el('h2','汴京见闻',dialog);
++      if (!state.unlockedCodexIds.length) el('p','尚无记录。取得物品后，会记下物品用途与借物人的简介。',dialog);
++      for (const item of config.items.filter(i => state.unlockedCodexIds.includes(i.id))) {const row=el('article',undefined,dialog);el('h3',item.name,row);el('p',item.description,row);el('small','剧情道具 · 游戏创作',row);}
++      for (const npc of config.npcs.filter(n => state.unlockedCodexIds.includes(n.id))) {const row=el('article',undefined,dialog),story=config.stories.find(s=>s.storyId===npc.storyId);el('h3',npc.name,row);el('p',story.summary,row);el('small','人物简介 · 人物及经历为艺术创作',row);}
++      for (const culture of config.codex.filter(k => state.unlockedCodexIds.includes(k.id))) {const row=el('article',undefined,dialog);el('h3',culture.title,row);el('small',culture.contentType,row);el('p',culture.text,row);el('small',culture.sourceNotes,row);for(const source of culture.sources){const a=el('a',source.title,row);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';}}
++    } else if (page === 'stories') {
++      el('h2','虹桥人物',dialog);
++      for (const story of config.stories) {
++        const row=el('article',undefined,dialog),unlocked=state.unlockedStoryIds.includes(story.storyId);
++        el('h3',`${config.npcs.find(n=>n.id===story.npcId).name} · ${story.title}`,row);
++        if (state.unlockedCodexIds.includes(story.npcId) || unlocked) el('p',story.summary,row);
++        if (unlocked) {
++          const read=state.readStoryIds.includes(story.storyId),version=state.readContentVersions[story.storyId];
++          el('small',read ? version===story.contentVersion?'已读':'故事已更新 · 保留旧版已读记录' : '未读',row);
++          button('阅读 '+story.title,row,()=>readStory(story.storyId));
++        } else {row.dataset.locked='true';el('small','完成「虹桥急情」后开放全文',row);}
++      }
++    }
++    el('small',store.getStatus().message,dialog);
++  }
++  function readStory(id) {
++    recordPosition(); const state=store.getState(),story=config.stories.find(s=>s.storyId===id);
++    if (!story || !state.unlockedStoryIds.includes(id)) return;
++    currentStory=id; reader=null; page='reading'; dialog.replaceChildren();
++    const nav=el('nav',undefined,dialog);button('返回人物故事',nav,()=>showPage('stories'));button('关闭 Esc',nav,close);
++    el('h2',story.title,dialog);el('small',story.creationLabel,dialog);
++    reader=el('div',undefined,dialog);reader.id='hq-reader';reader.tabIndex=0;reader.setAttribute('aria-label',story.title+'正文');
++    for(const section of story.sections){el('h3',section.title,reader);section.paragraphs.forEach((text,index)=>{const p=el('p',text,reader);p.dataset.section=section.id;p.dataset.index=index;});}
++    const notes=el('details',undefined,dialog);el('summary','取材与创作说明',notes);for(const text of story.sourceNotes)el('p',text,notes);
++    const position=state.storyReadingProgress[id];
++    if(position){const p=[...reader.querySelectorAll('[data-section]')].find(p=>p.dataset.section===position.sectionId&&Number(p.dataset.index)===position.paragraphIndex);if(p)reader.scrollTop=p.offsetTop-reader.offsetTop;}
++    reader.addEventListener('scroll',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(recordPosition,160);});
++    // Merely opening the story does not mark it read.
++  }
++  dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
++  const capturedKeys=new Set();
++  addEventListener('keydown',event=>{
++    const toggle=event.code==='KeyI'&&!event.ctrlKey&&!event.metaKey&&!event.altKey;
++    if (opened || toggle && canOpen()) {
++      if (opened && !['Escape','KeyI','KeyE','KeyF','KeyV','KeyW','KeyA','KeyS','KeyD','Equal','Minus'].includes(event.code)) {event.stopPropagation();return;}
++      event.preventDefault();event.stopImmediatePropagation();
++      if(event.repeat || capturedKeys.has(event.code))return;capturedKeys.add(event.code);
++      if(event.code==='Escape')close();else if(toggle)open();
++    }
++  },true);
++  addEventListener('keyup',event=>{if(capturedKeys.delete(event.code))event.stopImmediatePropagation();},true);
++  addEventListener('blur',()=>{recordPosition();capturedKeys.clear();});
++  addEventListener('pagehide',recordPosition);
++  document.addEventListener('visibilitychange',recordPosition);
++  store.subscribe(event=>{renderStatus();if(event.action.type==='collect'&&event.status.saved)toast('已获得：'+config.items.find(i=>config.instances.find(x=>x.id===event.action.instanceId)?.itemId===i.id).name);if(opened&&page!=='reading'&&page!=='permit')render();});
++  renderStatus();
++  if(development){
++    const panel=el('details',undefined,document.body);panel.id='hq-dev';el('summary','Step 4 开发测试',panel);
++    el('small','只模拟许可；正式 NPC 对话留待 Step 5。',panel);
++    for(const permit of config.permissions){const npc=config.npcs.find(n=>n.id===permit.grantedBy);button('模拟'+npc.name+'授权',panel,()=>{if(!canOpen())return;if(!opened){onOpen();opened=true;dialog.showModal();}pendingPermit=permit.id;page='permit';render();});}
++    button('模拟已接任务（样本）',panel,()=>{const s=store.getState();if(s.quests[config.quest.id]?.status!=='completed'){s.quests[config.quest.id]={status:'active'};store.restoreFixture(s);}});
++    const status=el('small',undefined,panel);const update=()=>{const s=store.getState();status.textContent=`阶段 ${questStage(s,config)} · 许可 ${s.permissions.length}/3 · 已收集 ${s.worldState.collectedInstanceIds.length}/3`;};store.subscribe(update);update();
++  }
++  return {open,close,isOpen:()=>opened,readStory};
++}
+--- /dev/null
++++ b/src/hongqiao/progress-ui.css
+@@ -0,0 +1,17 @@
++#hq-book {width:min(740px,92vw);max-height:85vh;background:#f2ebda;color:#293d39;border:1px solid #8e7954;border-radius:12px;padding:24px;box-shadow:0 20px 80px #0008}
++#hq-book::backdrop {background:#11201c99}
++#hq-book button {color:#293d39;background:#e0d4b9;border:1px solid #a09277;padding:9px 14px;border-radius:7px;cursor:pointer}
++#hq-book h2 {margin:0 0 12px;font-size:27px;color:#293d39}
++#hq-book h3 {margin:20px 0 8px;font-size:20px}
++#hq-book p {color:inherit;line-height:1.85;font-size:17px}
++#hq-book small {display:block;color:#646b60;line-height:1.7}
++#hq-book nav {display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
++#hq-book article {border-top:1px solid #b8af9c;padding:12px 0}
++#hq-book a {color:#235c79}
++#hq-book [data-locked] {opacity:.7}
++#hq-reader {height:min(52vh,530px);overflow:auto;overscroll-behavior:contain;padding:0 18px 40px 0}
++#hq-save {position:fixed;bottom:64px;left:50%;transform:translateX(-50%);z-index:60;max-width:90vw;background:#743c26;color:#fff5e6;padding:10px 18px;border-radius:6px;font:14px/1.6 sans-serif}
++#hq-save button {color:inherit;background:transparent;border:1px solid currentColor;margin-left:12px;cursor:pointer}
++#hq-dev {position:fixed;left:14px;top:106px;z-index:45;background:#182d2de8;padding:10px;color:#faf1dc;font:13px/1.6 sans-serif;width:210px;border:1px solid #a28e62}
++#hq-dev button {display:block;margin-top:7px;width:100%;padding:6px;color:#f8eddb;background:#34504b;border:1px solid #759088;cursor:pointer}
++#hq-open {white-space:nowrap}
+--- /dev/null
++++ b/src/hongqiao/runtime.js
+@@ -0,0 +1,24 @@
++import config from './config.json';
++import {createProgressStore, consumeResetURL} from './persistence.js';
++import {createCollectibles} from './collectibles.js';
++import {createProgressUI} from './progress-ui.js';
++
++export function createHongqiaoProgress({scene, loader, world, getActor, canOpen, onOpen, onClose, toast}) {
++  const development = import.meta.env.DEV && new URLSearchParams(location.search).has('test');
++  // Access can throw even before getItem (privacy/security settings).
++  const storage = {getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value),removeItem:key=>localStorage.removeItem(key)};
++  const reset = consumeResetURL({url:location.href,history,storage,development});
++  const store = createProgressStore({config,storage});
++  if(reset.error)console.error('[Hongqiao reset]',reset.error);
++  const collectibles = createCollectibles({scene,loader,config,store,world,baseURL:import.meta.env.BASE_URL});
++  const ui = createProgressUI({config,store,development,canOpen,onOpen,onClose,toast});
++  if(development)window.__hqProgress={
++    getState:store.getState,getStatus:store.getStatus,getErrors:store.getErrors,getWorld:collectibles.getState,
++    dispatch:store.dispatch,restoreFixture:store.restoreFixture,retrySave:store.retrySave,config,reset,
++  };
++  return {
++    store, ui,
++    prompt() {const focused=collectibles.focus(getActor());return focused ? '取'+focused.item.name : null;},
++    interact() {const focused=collectibles.focus(getActor());if(!focused)return false;const result=store.dispatch({type:'collect',instanceId:focused.instance.id});if(result.changed&&!result.saved)toast('已取得物品，保存失败；请查看提示并重试。');return result.ok;},
++  };
++}
+--- /dev/null
++++ b/src/hongqiao/state.test.js
+@@ -0,0 +1,104 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFileSync} from 'node:fs';
++import * as THREE from 'three';
++import {defaultState,normalizeState,reduceState,questStage} from './state.js';
++import {createProgressStore,SAVE_KEY,BACKUP_KEY,CORRUPT_KEY,consumeResetURL} from './persistence.js';
++import {createCollectibles} from './collectibles.js';
++const config=JSON.parse(readFileSync(new URL('./config.json',import.meta.url)));
++const world=JSON.parse(readFileSync(new URL('../../public/assets/world.json',import.meta.url)));
++function memory(initial={}) {const data=new Map(Object.entries(initial));return {data,getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};}
++const make=storage=>createProgressStore({config,storage,onError:()=>{}});
++const grant=(s,i)=>s.dispatch({type:'grantPermission',permissionId:i.permissionId});
++const collect=(s,i)=>s.dispatch({type:'collect',instanceId:i.id});
++function completedFixture() {const s=make(memory());for(const i of config.instances){grant(s,i);collect(s,i);}const state=s.getState();for(const i of config.items)state.inventory[i.id]=0;state.quests[config.quest.id]={status:'completed'};return state;}
++
++test('default snapshot: independent state domains and locked stories',()=>{
++  const s=normalizeState({},config);assert.deepEqual(s,defaultState());assert.equal(questStage(s,config),'available');
++});
++test('permission required; authorization is not collection, repeated commands are safe',()=>{
++  const s=make(memory()),i=config.instances[0];assert.equal(collect(s,i).reason,'permission-required');grant(s,i);
++  assert.equal(s.getState().inventory[i.itemId],undefined);assert.deepEqual(s.getState().unlockedCodexIds,[]);
++  assert.equal(grant(s,i).changed,false);collect(s,i);assert.equal(collect(s,i).changed,false);
++  assert.equal(s.getState().inventory[i.itemId],1);assert.deepEqual(s.getState().unlockedStoryIds,[]);
++});
++test('all six orders and fresh store reads after each stage',()=>{
++  const [a,b,c]=config.instances;
++  for(const order of [[a,b,c],[a,c,b],[b,a,c],[b,c,a],[c,a,b],[c,b,a]]){
++    const disk=memory();let s=make(disk);
++    for(const i of order){grant(s,i);s=make(disk);assert.ok(s.getState().permissions.includes(i.permissionId));assert.ok(!s.getState().worldState.collectedInstanceIds.includes(i.id));collect(s,i);s=make(disk);assert.equal(s.getState().inventory[i.itemId],1);assert.equal(collect(s,i).changed,false);}
++    assert.equal(s.getState().unlockedCodexIds.length,6);assert.deepEqual(s.getState().unlockedStoryIds,[]);
++    assert.equal(questStage(s.getState(),config),'available');const active=s.getState();active.quests[config.quest.id]={status:'active'};s.restoreFixture(active);assert.equal(questStage(make(disk).getState(),config),'ready');
++  }
++});
++test('transaction ordering: world then complete snapshot save then UI',()=>{
++  const disk=memory(),s=make(disk),i=config.instances[0],events=[];grant(s,i);
++  const set=disk.setItem;disk.setItem=(key,raw)=>{if(key===SAVE_KEY){const v=JSON.parse(raw);assert.equal(v.inventory[i.itemId],1);assert.ok(v.worldState.collectedInstanceIds.includes(i.id));events.push('save');}set(key,raw);};
++  s.subscribeWorld(state=>{assert.equal(state.inventory[i.itemId],1);events.push('world');});s.subscribe(()=>events.push('ui'));collect(s,i);assert.deepEqual(events,['world','save','ui']);
++});
++test('delivered sample retains codex, all four stories unlock together, no replay quantities',()=>{
++  const s=normalizeState(completedFixture(),config);assert.equal(s.unlockedCodexIds.length,6);assert.equal(s.unlockedStoryIds.length,4);
++  for(const i of config.instances){assert.equal(s.inventory[i.itemId],0);assert.equal(reduceState(s,{type:'collect',instanceId:i.id},config).changed,false);}
++});
++test('locked story cannot write reading state; final paragraph alone marks read',()=>{
++  const story=config.stories[0],section=story.sections[0];const action={type:'readParagraph',storyId:story.storyId,sectionId:section.id,paragraphIndex:0};
++  assert.equal(reduceState(defaultState(),action,config).reason,'story-locked');
++  let s=normalizeState(completedFixture(),config);s=reduceState(s,action,config).state;assert.deepEqual(s.readStoryIds,[]);
++  const last=story.sections.at(-1);s=reduceState(s,{...action,sectionId:last.id,paragraphIndex:last.paragraphs.length-1},config).state;
++  assert.deepEqual(s.readStoryIds,[story.storyId]);assert.equal(s.readContentVersions[story.storyId],2);
++});
++test('all four stories persist separate positions and read status',()=>{
++  const disk=memory();let s=make(disk);s.restoreFixture(completedFixture());
++  for(const story of config.stories){s.dispatch({type:'readParagraph',storyId:story.storyId,sectionId:story.sections[1].id,paragraphIndex:2});s=make(disk);assert.equal(s.getState().storyReadingProgress[story.storyId].paragraphIndex,2);}
++  assert.deepEqual(s.getState().readStoryIds,[]);assert.equal(Object.keys(s.getState().storyReadingProgress).length,4);
++});
++test('v1 migration: quantities, collected IDs, completion, old read history retained and offsets reset',()=>{
++  const story=config.stories[0],legacy={schemaVersion:1,inventory:[],questStatus:'completed',collectedInstanceIds:[config.instances[0].id],readStoryIds:[story.storyId],storyReadingProgress:{[story.storyId]:{contentVersion:1,sectionId:story.sections[0].id,paragraphIndex:9}}};
++  const s=make(memory({[SAVE_KEY]:JSON.stringify(legacy)}));assert.equal(s.getState().schemaVersion,2);assert.equal(s.getState().unlockedStoryIds.length,4);assert.deepEqual(s.getState().readStoryIds,[story.storyId]);assert.equal(s.getState().storyReadingProgress[story.storyId],undefined);assert.equal(s.getStatus().kind,'migrated');
++});
++test('unfinished legacy pickup cannot leak full story access',()=>{
++  const s=normalizeState({schemaVersion:1,inventory:[config.items[0].id],unlockedStoryIds:config.stories.map(s=>s.storyId)},config);
++  assert.equal(s.inventory[config.items[0].id],1);assert.deepEqual(s.unlockedStoryIds,[]);
++});
++test('corrupt primary recovers the last whole snapshot and repairs primary',()=>{
++  const disk=memory(),s=make(disk),i=config.instances[0];grant(s,i);collect(s,i);s.retrySave();const expected=s.getState();disk.setItem(SAVE_KEY,'{bad');const recovered=make(disk);
++  assert.deepEqual(recovered.getState(),expected);assert.equal(recovered.getStatus().kind,'recovered');assert.ok(disk.getItem(CORRUPT_KEY));assert.deepEqual(make(disk).getState(),expected);
++});
++test('invalid shape, unsupported version, negative quantities trigger recovery; missing fields use defaults',()=>{
++  for(const invalid of ['null','[]','{"schemaVersion":999}','{"inventory":{"a":-1}}','{"permissions":42}']){const s=make(memory({[SAVE_KEY]:invalid,[BACKUP_KEY]:JSON.stringify(defaultState())}));assert.equal(s.getStatus().kind,'recovered');}
++  assert.throws(()=>normalizeState({worldState:null},config));
++});
++test('both snapshots corrupt: preserve evidence and report default memory, never saved',()=>{
++  const disk=memory({[SAVE_KEY]:'{bad',[BACKUP_KEY]:'bad'}),s=make(disk);assert.equal(s.getStatus().kind,'unrecoverable');assert.equal(s.getStatus().saved,false);assert.ok(disk.getItem(CORRUPT_KEY));assert.equal(disk.getItem(SAVE_KEY),'{bad');
++});
++test('quota/security failure keeps memory progress, UI receives unsaved result, retry survives reload',()=>{
++  const disk=memory(),s=make(disk),i=config.instances[0];grant(s,i);const set=disk.setItem;disk.setItem=()=>{throw Error('QuotaExceededError');};let notified;s.subscribe(e=>notified=e);
++  assert.equal(collect(s,i).saved,false);assert.equal(s.getState().inventory[i.itemId],1);assert.equal(notified.status.saved,false);assert.ok(s.getErrors().length);assert.equal(collect(s,i).changed,false);
++  disk.setItem=set;assert.equal(s.retrySave(),true);assert.equal(make(disk).getState().inventory[i.itemId],1);
++});
++test('silent dropped writes are detected by readback, not treated as saved',()=>{
++  const disk=memory(),s=make(disk);disk.setItem=()=>{};assert.equal(grant(s,config.instances[0]).saved,false);assert.equal(s.getStatus().kind,'save-failed');
++});
++test('storage completely unavailable still allows in-memory play with failure indicator',()=>{
++  const disk={getItem(){throw Error('SecurityError');},setItem(){throw Error('SecurityError');}},s=make(disk);grant(s,config.instances[0]);collect(s,config.instances[0]);assert.equal(s.getState().inventory[config.items[0].id],1);assert.equal(s.getStatus().saved,false);
++});
++test('URL reset is scoped, dev-only and consumed before writes including failure',()=>{
++  const disk=memory({[SAVE_KEY]:'a',[BACKUP_KEY]:'b',[CORRUPT_KEY]:'c',unrelated:'keep'}),history={state:null,replaceState(a,b,url){this.url=url;}};
++  consumeResetURL({url:'http://localhost/?test&hqReset=1#hello',history,storage:disk,development:true});assert.equal(history.url,'/?test=#hello');assert.deepEqual([...disk.data],[['unrelated','keep']]);
++  disk.setItem(SAVE_KEY,'keep');consumeResetURL({url:'http://localhost/?hqReset',history,storage:disk,development:false});assert.equal(disk.getItem(SAVE_KEY),'keep');
++  const result=consumeResetURL({url:'http://localhost/?hqReset',history,storage:{removeItem(){throw Error('blocked');}},development:true});assert.equal(history.url,'/');assert.ok(result.error);
++});
++test('late model success after pickup is discarded; failed resources retain collectible placeholders',async()=>{
++  const disk=memory(),store=make(disk),pending=[];
++  const loader={loadAsync:()=>new Promise((resolve,reject)=>pending.push({resolve,reject}))};
++  const system=createCollectibles({scene:new THREE.Scene(),loader,config,store,world,baseURL:'/'});
++  grant(store,config.instances[0]);collect(store,config.instances[0]);pending[0].resolve({scene:new THREE.Group()});
++  pending[1].resolve({scene:new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshBasicMaterial())});
++  const warn=console.warn;console.warn=()=>{};pending[2].reject(Error('404 fixture'));await new Promise(resolve=>setImmediate(resolve));console.warn=warn;
++  assert.equal(system.getState().instances[0].visible,false);assert.equal(system.getState().instances[0].loadState,'discarded-collected');assert.equal(system.getState().instances[2].loadState,'placeholder');
++  grant(store,config.instances[2]);collect(store,config.instances[2]);assert.equal(system.getState().instances[2].visible,false);
++});
++test('pickup focus requires permission, matching layer and reachable distance',()=>{
++  const store=make(memory()),system=createCollectibles({scene:new THREE.Scene(),loader:{loadAsync:()=>new Promise(()=>{})},config,store,world,baseURL:'/'});
++  const actor={x:13,z:19,height:.94,layer:'ground',mode:'walk'};assert.equal(system.focus(actor),null);grant(store,config.instances[0]);assert.equal(system.focus(actor).instance.id,config.instances[0].id);assert.equal(system.focus({...actor,layer:'bridge'}),null);assert.equal(system.focus({...actor,height:5}),null);assert.equal(system.focus({...actor,x:40}),null);
++});

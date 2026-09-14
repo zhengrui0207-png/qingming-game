@@ -1,0 +1,35 @@
+{
+  "before": {
+    "src/main.js": "5eb1e825ca4f102710563dec8c3d7998d7551408075350c77d22f18cfa8afff9",
+    "src/world.js": "ee59239df95c28db7ea3fc1da5817c163187b71d4cee806b2d4fee01099c24a8",
+    "src/scholar.js": "1a9e14e0dd5da8da9a5960e9789bf2a4346c13ff07f6036395aeb40fef8de837",
+    "src/storefronts.js": "35146e3c0358aef47560c44f80033846bb45c8d1e076d848249ca086438edd05",
+    "src/hongqiao/config.json": "7f77f34dba181e8b604e12aa466346acf1c6692bbe190812988694fec2e50f08",
+    "src/hongqiao/debug.js": "5d797cc653fa1ebe6006071a26b1ec033f99e5f93c12349cdd16c497c2ca0529",
+    "package.json": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de",
+    "index.html": "51067ed398adefbeb71761e6851ddd1aa4f02a334bef6b551663a33513a26ad0"
+  },
+  "after": {
+    "src/main.js": "086ddf6f97bb9bc272df43787fc74e822832647544b3be78bbf453c444b27d80",
+    "src/world.js": "ee59239df95c28db7ea3fc1da5817c163187b71d4cee806b2d4fee01099c24a8",
+    "src/scholar.js": "1a9e14e0dd5da8da9a5960e9789bf2a4346c13ff07f6036395aeb40fef8de837",
+    "src/storefronts.js": "35146e3c0358aef47560c44f80033846bb45c8d1e076d848249ca086438edd05",
+    "src/hongqiao/config.json": "124599da9d54681b0b7bc6a644425679d2c706a1af685d37fe010f959ca0cf39",
+    "src/hongqiao/debug.js": "84d39ef14f4ec39221427faf3afd8ed89d2aa07ccec454dabfd2f7bf62cbe03a",
+    "package.json": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de",
+    "index.html": "51067ed398adefbeb71761e6851ddd1aa4f02a334bef6b551663a33513a26ad0",
+    "src/hongqiao/state.js": "8e9f0e0bb57af1e6930b4574cf0a25dc61ccaa3d4a1560388d558622a40f32a3",
+    "src/hongqiao/persistence.js": "6b2a20a12fc9f79f52129b4921052387809092bdbc8b5fd6322698379497ed70",
+    "src/hongqiao/collectibles.js": "b266d153a4dcf48de2a5c6fcc031ab8117c30aa8d05bd512552dc6beb3d32d1e",
+    "src/hongqiao/progress-ui.js": "9b06ccd15af56828b670348fa12fa986765c03f66529883109f77b9e2b72d44d",
+    "src/hongqiao/progress-ui.css": "0dae76b59e864ccc03ee45d30a476dba8987af72703f5c10cac57e34d6d4911f",
+    "src/hongqiao/runtime.js": "ae745cdcf3078fff0396f9461708e2d5c60675dded2a311122823e4f02948126",
+    "src/hongqiao/state.test.js": "5113c701602377d7fd2bfeacc136f87b8117ea9c0a83fb7694f5075bdbf9e1ee"
+  },
+  "sourceGitRepository": false,
+  "sourcePatchAppliesToBackup": true,
+  "acceptedFunctionsUnchanged": [
+    "updateActor",
+    "updateCamera"
+  ]
+}
