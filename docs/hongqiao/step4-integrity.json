@@ -31,5 +31,11 @@
   "acceptedFunctionsUnchanged": [
     "updateActor",
     "updateCamera"
-  ]
+  ],
+  "externalChangeAfterSnapshot": {
+    "file": "src/hongqiao/debug.js",
+    "observedSHA256": "e25587eea701d2829339ad615b0e755fc86566878089a8fc2ae430345f4b2f3c",
+    "detail": "另一个工作缩小测量标签并在 renderItems=false 时补测量标签；保留本步 renderItems 参数及跳过重复 GLB 的逻辑。本补丁仅包含本步原始改动，不覆盖随后外部改动。",
+    "runtimeImpact": "只在 ?hongqiao 开发测量模式显示；本轮普通页面/Step4 验证路径不加载该模块。"
+  }
 }

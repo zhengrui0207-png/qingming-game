@@ -77,3 +77,5 @@ Step 5 可通过 runtime.store.dispatch({type:'grantPermission', permissionId}) 
 ## 未覆盖范围
 
 正式 NPC 对话、正式交付结算、动画/过桥、完整 Step 3 焦点与输入锁体系、四篇全文逐篇视觉校对、移动端/Safari、跨标签并发存档、真人首次 20 分钟体验及全场景美术验收。本步未发布、未铺全图、未推进 Step 5。书生、NPC 与开场资产验收沿用其他任务，不在本步重做。
+
+最终检查发现另一个工作在 01:08:35 修改了 `src/hongqiao/debug.js` 的测量标签尺寸并补充物品标签；本步跳过重复 GLB 的接口仍被保留。未覆盖该改动，已在 step4-integrity.json 单列快照后变化。本轮浏览器验证使用普通页面及 test 模式，不包含此后的 hongqiao 测量标签视觉验证。
