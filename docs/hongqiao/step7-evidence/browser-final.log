@@ -1,0 +1,22 @@
+PASS full 30-second intro with nine real-time shots and no progress awards
+PASS intro shot 1 skip and held-key release barrier
+PASS intro shot 2 skip and held-key release barrier
+PASS intro shot 3 skip and held-key release barrier
+PASS intro shot 4 skip and held-key release barrier
+PASS intro shot 5 skip and held-key release barrier
+PASS intro shot 6 skip and held-key release barrier
+PASS intro shot 7 skip and held-key release barrier
+PASS intro shot 8 skip and held-key release barrier
+PASS intro shot 9 skip and held-key release barrier
+PASS intro blur pauses camera, actions and audio then resumes
+PASS reload during intro settles waiting without replay or rewards
+PASS legacy active save bypasses intro on reload
+PASS legacy permitted save bypasses intro on reload
+PASS legacy collected save bypasses intro on reload
+PASS legacy completed save bypasses intro on reload
+PASS HQ41 explicit delivery saves all rewards before full 20-second passage
+PASS four-story completion card, reader scroll lock and continue
+PASS completed intro/ending reviews preserve exact snapshot and restore passed scene
+PASS optional ending view restores camera on blur and skip without duplicate settlement
+PASS refresh during passing restores passed and preserves once-only rewards
+DONE failures 0

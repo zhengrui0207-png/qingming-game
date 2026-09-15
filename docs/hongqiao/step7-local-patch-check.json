@@ -1,0 +1,42 @@
+{
+  "scope": "脚店局部变更与最后三秒群演显示接口；完整 Step7 renderer 在源码快照中",
+  "files": [
+    {
+      "path": "src/main.js",
+      "baseSHA256": "e5cde4ea8b55420590c8eaf03cc51718e735c7df75627071157448a390d7909d",
+      "sha256": "261f7c50b2d42fe62e3aed8e0d14a64cdd46a917b48b98a9e4842bf043c5be85",
+      "matchesCurrentIntegratedFile": false
+    },
+    {
+      "path": "src/history.js",
+      "baseSHA256": "e93167c55b6e75bfc14fca4689a4826ecc92c50d021c566514f80b8ae1f296a0",
+      "sha256": "28be9b2e918bd7566ab986eac77c2b1c764514082ad4f6cd72c012c4a4557ddd",
+      "matchesCurrentIntegratedFile": false
+    },
+    {
+      "path": "src/npc-assets.js",
+      "baseSHA256": "53fd6b079f73b6b7dfc215eb4d940305769b5c3637a5ecd58ae79ee1274e235d",
+      "sha256": "699082048b85fb248a6044351f21ac4de617940b073248eb7504f333cbf41c87",
+      "matchesCurrentIntegratedFile": true
+    },
+    {
+      "path": "src/street-life.js",
+      "baseSHA256": "d156be56855cd886edad604e0f1ef3875f0219177bf311db92710a33219f58e8",
+      "sha256": "ae7d63dd40fb60ebcfb9827b56d01cc985ccecf0fdc98457a1827793d71df7c3",
+      "matchesCurrentIntegratedFile": false
+    },
+    {
+      "path": "src/landmarks/jiaodian.js",
+      "baseSHA256": null,
+      "sha256": "65e2e8c671cecf3010e613ed8cd2480936b7b54934b45bfd47f2d9ed73eb807e",
+      "matchesCurrentIntegratedFile": true
+    },
+    {
+      "path": "src/landmarks/jiaodian.json",
+      "baseSHA256": null,
+      "sha256": "2cdd4bcd60871a0fe86edbc8ec74b995785a80b20a9671aa2a9f3a706407b256",
+      "matchesCurrentIntegratedFile": true
+    }
+  ],
+  "gitApplyAndSHA256": true
+}

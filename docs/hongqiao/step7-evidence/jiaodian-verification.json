@@ -1,0 +1,1428 @@
+{
+  "evidence": {
+    "visual": {
+      "id": "landmark_jiaodian_frontage",
+      "shopId": 1,
+      "name": "桥头脚店",
+      "waiter": "npc_jiaodian_waiter",
+      "assetId": "QMSH-16",
+      "position": [
+        -7.05,
+        0.94,
+        35.55
+      ],
+      "bowl": [
+        -6.682784130490493,
+        2.1102185268767686,
+        35.431668879448914
+      ],
+      "hands": [
+        [
+          -6.682784130490493,
+          2.0852185268767687,
+          35.431668879448914
+        ],
+        [
+          -6.904355232493828,
+          2.2128758411658245,
+          35.884404643321076
+        ]
+      ],
+      "chopstickCount": 2,
+      "removedTriangles": 3705,
+      "taskEffects": [],
+      "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+    },
+    "before": {
+      "game": {
+        "loaded": true,
+        "playing": true,
+        "paused": false,
+        "mode": "walk",
+        "actor": {
+          "x": -6.3,
+          "z": 35.5,
+          "layer": "ground",
+          "height": 0.94,
+          "mode": "walk"
+        },
+        "boat": {
+          "x": 32,
+          "z": 7,
+          "angle": 1.5707963267948966,
+          "speed": 0
+        },
+        "camera": {
+          "yaw": 1.6,
+          "pitch": 0.4,
+          "distance": 7.797315856468886,
+          "overview": false
+        },
+        "fps": 16,
+        "drawCalls": 648,
+        "triangles": 6628681,
+        "limbs": [
+          "armL",
+          "elbowL",
+          "armR",
+          "elbowR",
+          "legL",
+          "kneeL",
+          "legR",
+          "kneeR",
+          "head",
+          "spine"
+        ],
+        "source": "Blender; V1 MCP / V3 isolated local Blender",
+        "visualVersion": 4.2,
+        "scenery": {
+          "wine": 168,
+          "steamers": 55,
+          "cargo": 2,
+          "removedTriangles": 209532,
+          "source": "Tripo",
+          "manifest": "assets/scenery/placements.json"
+        },
+        "scholar": {
+          "asset": "song-scholar-v2-animated.glb",
+          "version": 2,
+          "height": 2,
+          "triangles": 59582,
+          "bones": 40,
+          "skinnedMeshes": 1,
+          "animations": [
+            "idle",
+            "walk",
+            "swim",
+            "row"
+          ],
+          "animationSource": "procedural-skeleton",
+          "locomotion": {
+            "ready": false,
+            "missing": [
+              "idle",
+              "walk"
+            ],
+            "clipNames": {
+              "idle": null,
+              "walk": null
+            },
+            "mixerTime": 8.142199999999988,
+            "activeClip": null,
+            "weights": {}
+          },
+          "active": "idle",
+          "mode": "walk",
+          "animationTime": 8.142199999999988,
+          "joints": {
+            "armL": [
+              -0.5000069807003854,
+              0.002158244230964219,
+              -0.029472414397824834,
+              0.86551704622866
+            ],
+            "elbowL": [
+              -0.04946759823872632,
+              0.04327141020688775,
+              -0.12211944003534872,
+              0.9903370260928825
+            ],
+            "armR": [
+              0.011951502571572877,
+              0.024347551315024994,
+              -0.514883696475146,
+              0.8568308772272109
+            ],
+            "elbowR": [
+              -0.05932619506430325,
+              0.7834442931950538,
+              -0.10096492730793645,
+              0.6103290172398191
+            ],
+            "legL": [
+              -0.5320538956669547,
+              0.5149651245493019,
+              0.4472002154776116,
+              0.5017384960513009
+            ],
+            "kneeL": [
+              -0.0004004754009656608,
+              -0.10543609410524368,
+              0.11570414900779724,
+              0.9876718521118164
+            ],
+            "legR": [
+              -0.5695533752441406,
+              0.4785682260990143,
+              0.4805424213409424,
+              0.46439263224601746
+            ],
+            "kneeR": [
+              -0.03084975853562355,
+              -0.12555162608623505,
+              0.11697748303413391,
+              0.9846833944320679
+            ],
+            "head": [
+              -0.10986553892012238,
+              0.00010064453080384205,
+              0.0035186628720093663,
+              0.9939402429586839
+            ],
+            "spine": [
+              -0.0037372506306587536,
+              -6.0813202690130445e-9,
+              1.1679166074442021e-8,
+              0.9999930164544769
+            ]
+          }
+        },
+        "rendering": {
+          "ambientOcclusion": true
+        },
+        "surfaces": [
+          "song-roof",
+          "song-timber",
+          "song-earth",
+          "song-linen",
+          "plaster"
+        ],
+        "landscape": {
+          "version": "4.1",
+          "trees": 14,
+          "completeTrunks": 14,
+          "branches": 1064,
+          "leafCards": 1680,
+          "wind": true,
+          "windTime": 21.79080000000015,
+          "matchingWindShadows": true,
+          "texture": "willow-spray",
+          "riparianTufts": 1797
+        },
+        "river": {
+          "time": 21.79080000000015,
+          "currentDirection": "+X",
+          "currentSpeed": 0.92,
+          "wakeCount": 160,
+          "displacedVertices": 30861,
+          "version": 4,
+          "reflection": "planar",
+          "microRipples": true
+        },
+        "life": {
+          "horses": [
+            {
+              "id": "horse_tripo_0",
+              "position": [
+                3.4,
+                0.94,
+                49.96073238588269
+              ],
+              "clip": "idle",
+              "mixerTime": 8.142199999999988,
+              "saddle": [
+                3.4,
+                2.37,
+                49.990732385882694
+              ],
+              "height": 2.18
+            },
+            {
+              "id": "horse_tripo_1",
+              "position": [
+                3,
+                0.94,
+                -24.685779061695417
+              ],
+              "clip": "idle",
+              "mixerTime": 8.142199999999988,
+              "saddle": [
+                3,
+                2.37,
+                -24.715779061695418
+              ],
+              "height": 2.18
+            }
+          ],
+          "activeWalkers": 92,
+          "movingWalkers": 55,
+          "time": 21.79080000000015,
+          "people": 214,
+          "visiblePeople": 21,
+          "npcAssets": {
+            "total": 214,
+            "replaced": 214,
+            "visible": 21,
+            "fullDetail": 18,
+            "uniqueAssets": 42,
+            "staticInstances": 3
+          },
+          "roles": {
+            "挑担": 22,
+            "行人": 135,
+            "携书行人": 9,
+            "点茶": 3,
+            "饮茶": 2,
+            "斟酒": 1,
+            "蒸食": 3,
+            "看货": 7,
+            "理布": 3,
+            "量米": 3,
+            "配药": 2,
+            "看书": 2,
+            "交谈": 8,
+            "赶牛人": 2,
+            "骑马人": 2,
+            "车夫": 2,
+            "船夫": 4,
+            "乘客": 4
+          },
+          "vehicles": [
+            {
+              "kind": "牛车",
+              "x": -3.6,
+              "z": 43.015004182526766
+            },
+            {
+              "kind": "牛车",
+              "x": -1.612835968659527,
+              "z": -48.60719098031926
+            },
+            {
+              "kind": "骑马",
+              "x": 3.4,
+              "z": 49.96073238588269
+            },
+            {
+              "kind": "骑马",
+              "x": 3,
+              "z": -24.685779061695417
+            },
+            {
+              "kind": "人力车",
+              "x": -3.6,
+              "z": 37.21148603650593
+            },
+            {
+              "kind": "人力车",
+              "x": -3.1426567178642903,
+              "z": -45.130325641217524
+            }
+          ],
+          "ferries": [
+            {
+              "x": -62.45069000000001,
+              "z": 5.4,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": -8.453640474957155,
+              "z": 8.04557930390062,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": -36.5478347625214,
+              "z": -1.6,
+              "angle": -1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": 44.54930999999999,
+              "z": 1.5000000000000004,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            }
+          ],
+          "samplePeople": [
+            {
+              "x": 1.585001341147814,
+              "z": -26.191518042864065,
+              "angle": -0.01190419955830983,
+              "role": "挑担"
+            },
+            {
+              "x": -1.2465528418671263,
+              "z": -60.25965778686759,
+              "angle": 3.0221637275714546,
+              "role": "行人"
+            },
+            {
+              "x": -1.6766644897261027,
+              "z": -4.069480873624315,
+              "angle": 3.141592653589793,
+              "role": "行人"
+            },
+            {
+              "x": -2.0128357129985446,
+              "z": -27.17955344968026,
+              "angle": -3.1258796611727178,
+              "role": "行人"
+            },
+            {
+              "x": 2.4470584644476636,
+              "z": 41.11101111902355,
+              "angle": 0.015383401780595147,
+              "role": "行人"
+            }
+          ],
+          "instanced": false,
+          "renderMode": "skinned-near/instanced-far"
+        },
+        "npcAssets": {
+          "requested": 45,
+          "loaded": 45,
+          "failures": [],
+          "bytes": 54838872
+        },
+        "shops": {
+          "signs": 84,
+          "nearby": "桥头脚店",
+          "historyKey": "shop-1",
+          "historySites": 88,
+          "people": [
+            {
+              "id": "street-002",
+              "assetId": "QMSH-20",
+              "x": -1.6766644897261027,
+              "y": 7.8668736900006255,
+              "z": -4.069480873624315,
+              "layer": "bridge"
+            },
+            {
+              "id": "street-105",
+              "assetId": "QMSH-12",
+              "x": 2.7683525606838004,
+              "y": 8.126561789154465,
+              "z": 2.243834179218519,
+              "layer": "bridge"
+            },
+            {
+              "id": "street-195",
+              "assetId": "QMSH-31",
+              "x": 5.35,
+              "y": 0.94,
+              "z": 38.35,
+              "layer": "ground"
+            },
+            {
+              "id": "npc_hq_zhou",
+              "assetId": "QMSH-22",
+              "x": 6,
+              "y": 0.94,
+              "z": 19,
+              "layer": "ground"
+            },
+            {
+              "id": "npc_hq_he",
+              "assetId": "QMSH-24",
+              "x": 12,
+              "y": 0.94,
+              "z": 19,
+              "layer": "ground"
+            }
+          ],
+          "reading": false,
+          "openedKey": null,
+          "sourceCount": 1,
+          "steamSources": 6
+        },
+        "jiaodian": {
+          "id": "landmark_jiaodian_frontage",
+          "shopId": 1,
+          "name": "桥头脚店",
+          "waiter": "npc_jiaodian_waiter",
+          "assetId": "QMSH-16",
+          "position": [
+            -7.05,
+            0.94,
+            35.55
+          ],
+          "bowl": [
+            -6.682784130490493,
+            2.1102185268767686,
+            35.431668879448914
+          ],
+          "hands": [
+            [
+              -6.682784130490493,
+              2.0852185268767687,
+              35.431668879448914
+            ],
+            [
+              -6.904355232493828,
+              2.2128758411658245,
+              35.884404643321076
+            ]
+          ],
+          "chopstickCount": 2,
+          "removedTriangles": 3705,
+          "taskEffects": [],
+          "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+        }
+      },
+      "save": {
+        "schemaVersion": 2,
+        "revision": 2,
+        "inventory": {},
+        "unlockedCodexIds": [],
+        "permissions": [],
+        "worldState": {
+          "collectedInstanceIds": [],
+          "shipState": "waiting"
+        },
+        "quests": {},
+        "unlockedStoryIds": [],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": false,
+        "endingSeen": false
+      }
+    },
+    "movement": [
+      {
+        "x": -6.3,
+        "z": 35.5,
+        "layer": "ground",
+        "height": 0.94,
+        "mode": "walk"
+      },
+      {
+        "x": -6.3,
+        "z": 35.5,
+        "layer": "ground",
+        "height": 0.94,
+        "mode": "walk"
+      },
+      {
+        "x": -6.327593548574715,
+        "z": 34.55540294512577,
+        "layer": "ground",
+        "height": 0.94,
+        "mode": "walk"
+      },
+      {
+        "x": -7.268951984975091,
+        "z": 34.582901887248234,
+        "layer": "ground",
+        "height": 0.94,
+        "mode": "walk"
+      }
+    ],
+    "after": {
+      "game": {
+        "loaded": true,
+        "playing": true,
+        "paused": false,
+        "mode": "walk",
+        "actor": {
+          "x": -7.268951984975091,
+          "z": 34.582901887248234,
+          "layer": "ground",
+          "height": 0.94,
+          "mode": "walk"
+        },
+        "boat": {
+          "x": 32,
+          "z": 7,
+          "angle": 1.5707963267948966,
+          "speed": 0
+        },
+        "camera": {
+          "yaw": 1.6,
+          "pitch": 0.4,
+          "distance": 6.000000000009743,
+          "overview": false
+        },
+        "fps": 15,
+        "drawCalls": 357,
+        "triangles": 7168821,
+        "limbs": [
+          "armL",
+          "elbowL",
+          "armR",
+          "elbowR",
+          "legL",
+          "kneeL",
+          "legR",
+          "kneeR",
+          "head",
+          "spine"
+        ],
+        "source": "Blender; V1 MCP / V3 isolated local Blender",
+        "visualVersion": 4.2,
+        "scenery": {
+          "wine": 168,
+          "steamers": 55,
+          "cargo": 2,
+          "removedTriangles": 209532,
+          "source": "Tripo",
+          "manifest": "assets/scenery/placements.json"
+        },
+        "scholar": {
+          "asset": "song-scholar-v2-animated.glb",
+          "version": 2,
+          "height": 2,
+          "triangles": 59582,
+          "bones": 40,
+          "skinnedMeshes": 1,
+          "animations": [
+            "idle",
+            "walk",
+            "swim",
+            "row"
+          ],
+          "animationSource": "procedural-skeleton",
+          "locomotion": {
+            "ready": false,
+            "missing": [
+              "idle",
+              "walk"
+            ],
+            "clipNames": {
+              "idle": null,
+              "walk": null
+            },
+            "mixerTime": 9.774300000000016,
+            "activeClip": null,
+            "weights": {}
+          },
+          "active": "idle",
+          "mode": "walk",
+          "animationTime": 9.774300000000016,
+          "joints": {
+            "armL": [
+              -0.4999245224838464,
+              0.01097428906297991,
+              -0.02274033775773659,
+              0.8657008335056358
+            ],
+            "elbowL": [
+              -0.04946759823872632,
+              0.04327141020688775,
+              -0.12211944003534872,
+              0.9903370260928825
+            ],
+            "armR": [
+              0.004848662008808881,
+              0.03329579145878417,
+              -0.5146367693393228,
+              0.8567478573825587
+            ],
+            "elbowR": [
+              -0.05932619506429977,
+              0.7834442931950081,
+              -0.10096492730793055,
+              0.6103290172397835
+            ],
+            "legL": [
+              -0.5374960573860588,
+              0.5080952888836021,
+              0.4410162406610451,
+              0.5083717337843849
+            ],
+            "kneeL": [
+              -0.0003726501629115437,
+              -0.10537439498948746,
+              0.1163318189756169,
+              0.9876046954837865
+            ],
+            "legR": [
+              -0.5635924259178787,
+              0.4849264242156398,
+              0.48716408277643886,
+              0.4581278771468077
+            ],
+            "kneeR": [
+              -0.030305607498183246,
+              -0.12641034888036798,
+              0.12827954041700027,
+              0.9831817579018933
+            ],
+            "head": [
+              -0.11844808339477761,
+              0.00007024290051908696,
+              0.0035193997842740657,
+              0.9929540244966786
+            ],
+            "spine": [
+              0.0029936897147772694,
+              -5.976674818308372e-9,
+              1.1601555571975228e-8,
+              0.9999955189009058
+            ]
+          }
+        },
+        "rendering": {
+          "ambientOcclusion": true
+        },
+        "surfaces": [
+          "song-roof",
+          "song-timber",
+          "song-earth",
+          "song-linen",
+          "plaster"
+        ],
+        "landscape": {
+          "version": "4.1",
+          "trees": 14,
+          "completeTrunks": 14,
+          "branches": 1064,
+          "leafCards": 1680,
+          "wind": true,
+          "windTime": 23.42290000000018,
+          "matchingWindShadows": true,
+          "texture": "willow-spray",
+          "riparianTufts": 1797
+        },
+        "river": {
+          "time": 23.42290000000018,
+          "currentDirection": "+X",
+          "currentSpeed": 0.92,
+          "wakeCount": 180,
+          "displacedVertices": 30861,
+          "version": 4,
+          "reflection": "planar",
+          "microRipples": true
+        },
+        "life": {
+          "horses": [
+            {
+              "id": "horse_tripo_0",
+              "position": [
+                3.4,
+                0.94,
+                49.96073238588269
+              ],
+              "clip": "idle",
+              "mixerTime": 9.774300000000016,
+              "saddle": [
+                3.4,
+                2.37,
+                49.990732385882694
+              ],
+              "height": 2.18
+            },
+            {
+              "id": "horse_tripo_1",
+              "position": [
+                3,
+                0.94,
+                -24.685779061695417
+              ],
+              "clip": "idle",
+              "mixerTime": 9.774300000000016,
+              "saddle": [
+                3,
+                2.37,
+                -24.715779061695418
+              ],
+              "height": 2.18
+            }
+          ],
+          "activeWalkers": 92,
+          "movingWalkers": 58,
+          "time": 23.42290000000018,
+          "people": 214,
+          "visiblePeople": 2,
+          "npcAssets": {
+            "total": 214,
+            "replaced": 214,
+            "visible": 2,
+            "fullDetail": 1,
+            "uniqueAssets": 42,
+            "staticInstances": 3
+          },
+          "roles": {
+            "挑担": 22,
+            "行人": 135,
+            "携书行人": 9,
+            "点茶": 3,
+            "饮茶": 2,
+            "斟酒": 1,
+            "蒸食": 3,
+            "看货": 7,
+            "理布": 3,
+            "量米": 3,
+            "配药": 2,
+            "看书": 2,
+            "交谈": 8,
+            "赶牛人": 2,
+            "骑马人": 2,
+            "车夫": 2,
+            "船夫": 4,
+            "乘客": 4
+          },
+          "vehicles": [
+            {
+              "kind": "牛车",
+              "x": -3.6,
+              "z": 43.86369618252675
+            },
+            {
+              "kind": "牛车",
+              "x": -1.2710349286408726,
+              "z": -49.3840115258162
+            },
+            {
+              "kind": "骑马",
+              "x": 3.4,
+              "z": 49.96073238588269
+            },
+            {
+              "kind": "骑马",
+              "x": 3,
+              "z": -24.685779061695417
+            },
+            {
+              "kind": "人力车",
+              "x": -3.6,
+              "z": 38.235084623012256
+            },
+            {
+              "kind": "人力车",
+              "x": -3.1413911064132374,
+              "z": -45.133202030879005
+            }
+          ],
+          "ferries": [
+            {
+              "x": -60.736984999999976,
+              "z": 5.4,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": -6.739935474957122,
+              "z": 8.49354060612697,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": -38.26153976252146,
+              "z": -1.6,
+              "angle": -1.5707963267948966,
+              "speed": 1.05
+            },
+            {
+              "x": 46.26301500000001,
+              "z": 1.5000000000000004,
+              "angle": 1.5707963267948966,
+              "speed": 1.05
+            }
+          ],
+          "samplePeople": [
+            {
+              "x": 1.8211062066003718,
+              "z": -26.11508059000742,
+              "angle": -0.01190419955830983,
+              "role": "挑担"
+            },
+            {
+              "x": -1.1413138771158984,
+              "z": -61.485270049492115,
+              "angle": 3.0221637275714546,
+              "role": "行人"
+            },
+            {
+              "x": -1.675695272791565,
+              "z": -4.264199766424525,
+              "angle": 3.141592653589793,
+              "role": "行人"
+            },
+            {
+              "x": -1.9988052036526949,
+              "z": -27.94295982157819,
+              "angle": -3.1258796611727178,
+              "role": "行人"
+            },
+            {
+              "x": 2.4470584644476636,
+              "z": 41.11101111902355,
+              "angle": 0.015383401780595147,
+              "role": "行人"
+            }
+          ],
+          "instanced": false,
+          "renderMode": "skinned-near/instanced-far"
+        },
+        "npcAssets": {
+          "requested": 45,
+          "loaded": 45,
+          "failures": [],
+          "bytes": 54838872
+        },
+        "shops": {
+          "signs": 84,
+          "nearby": "桥头脚店",
+          "historyKey": "shop-1",
+          "historySites": 88,
+          "people": [
+            {
+              "id": "street-002",
+              "assetId": "QMSH-20",
+              "x": -1.675695272791565,
+              "y": 7.830312291882045,
+              "z": -4.264199766424525,
+              "layer": "bridge"
+            },
+            {
+              "id": "street-105",
+              "assetId": "QMSH-12",
+              "x": 2.781277298954816,
+              "y": 8.016223073076693,
+              "z": 3.1515102777190274,
+              "layer": "bridge"
+            },
+            {
+              "id": "street-195",
+              "assetId": "QMSH-31",
+              "x": 5.35,
+              "y": 0.94,
+              "z": 38.35,
+              "layer": "ground"
+            },
+            {
+              "id": "npc_hq_zhou",
+              "assetId": "QMSH-22",
+              "x": 6,
+              "y": 0.94,
+              "z": 19,
+              "layer": "ground"
+            },
+            {
+              "id": "npc_hq_he",
+              "assetId": "QMSH-24",
+              "x": 12,
+              "y": 0.94,
+              "z": 19,
+              "layer": "ground"
+            }
+          ],
+          "reading": false,
+          "openedKey": null,
+          "sourceCount": 1,
+          "steamSources": 6
+        },
+        "jiaodian": {
+          "id": "landmark_jiaodian_frontage",
+          "shopId": 1,
+          "name": "桥头脚店",
+          "waiter": "npc_jiaodian_waiter",
+          "assetId": "QMSH-16",
+          "position": [
+            -7.05,
+            0.94,
+            35.55
+          ],
+          "bowl": [
+            -6.682784130490493,
+            2.1102185268767686,
+            35.431668879448914
+          ],
+          "hands": [
+            [
+              -6.682784130490493,
+              2.0852185268767687,
+              35.431668879448914
+            ],
+            [
+              -6.904355232493828,
+              2.2128758411658245,
+              35.884404643321076
+            ]
+          ],
+          "chopstickCount": 2,
+          "removedTriangles": 3705,
+          "taskEffects": [],
+          "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+        }
+      },
+      "save": {
+        "schemaVersion": 2,
+        "revision": 2,
+        "inventory": {},
+        "unlockedCodexIds": [],
+        "permissions": [],
+        "worldState": {
+          "collectedInstanceIds": [],
+          "shipState": "waiting"
+        },
+        "quests": {},
+        "unlockedStoryIds": [],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": false,
+        "endingSeen": false
+      }
+    },
+    "reload": {
+      "id": "landmark_jiaodian_frontage",
+      "shopId": 1,
+      "name": "桥头脚店",
+      "waiter": "npc_jiaodian_waiter",
+      "assetId": "QMSH-16",
+      "position": [
+        -7.05,
+        0.94,
+        35.55
+      ],
+      "bowl": [
+        -6.682784130490493,
+        2.1102185268767686,
+        35.431668879448914
+      ],
+      "hands": [
+        [
+          -6.682784130490493,
+          2.0852185268767687,
+          35.431668879448914
+        ],
+        [
+          -6.904355232493828,
+          2.2128758411658245,
+          35.884404643321076
+        ]
+      ],
+      "chopstickCount": 2,
+      "removedTriangles": 3705,
+      "taskEffects": [],
+      "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+    },
+    "normal": {
+      "loaded": true,
+      "playing": true,
+      "paused": false,
+      "mode": "walk",
+      "actor": {
+        "x": 0,
+        "z": 35,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "boat": {
+        "x": 32,
+        "z": 7,
+        "angle": 1.5707963267948966,
+        "speed": 0
+      },
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      },
+      "fps": 12,
+      "drawCalls": 1388,
+      "triangles": 10522630,
+      "limbs": [
+        "armL",
+        "elbowL",
+        "armR",
+        "elbowR",
+        "legL",
+        "kneeL",
+        "legR",
+        "kneeR",
+        "head",
+        "spine"
+      ],
+      "source": "Blender; V1 MCP / V3 isolated local Blender",
+      "visualVersion": 4.2,
+      "scenery": {
+        "wine": 168,
+        "steamers": 55,
+        "cargo": 2,
+        "removedTriangles": 209532,
+        "source": "Tripo",
+        "manifest": "assets/scenery/placements.json"
+      },
+      "scholar": {
+        "asset": "song-scholar-v2-animated.glb",
+        "version": 2,
+        "height": 2,
+        "triangles": 59582,
+        "bones": 40,
+        "skinnedMeshes": 1,
+        "animations": [
+          "idle",
+          "walk",
+          "swim",
+          "row"
+        ],
+        "animationSource": "procedural-skeleton",
+        "locomotion": {
+          "ready": false,
+          "missing": [
+            "idle",
+            "walk"
+          ],
+          "clipNames": {
+            "idle": null,
+            "walk": null
+          },
+          "mixerTime": 0.9321000000000025,
+          "activeClip": null,
+          "weights": {}
+        },
+        "active": "idle",
+        "mode": "walk",
+        "animationTime": 0.9321000000000025,
+        "joints": {
+          "armL": [
+            -0.5000501666331268,
+            0.0021011415343822125,
+            -0.02951608984376769,
+            0.8654907480561018
+          ],
+          "elbowL": [
+            -0.049473567296121734,
+            0.043294434459742306,
+            -0.12205534761572676,
+            0.9903436219691062
+          ],
+          "armR": [
+            0.011905439745307448,
+            0.024405844544652264,
+            -0.5149234890656061,
+            0.856805946394962
+          ],
+          "elbowR": [
+            -0.05932619380917844,
+            0.7834442929473326,
+            -0.10096492583399133,
+            0.6103290179235411
+          ],
+          "legL": [
+            -0.5320538956669132,
+            0.5149651245492617,
+            0.44720021547757666,
+            0.5017384960512619
+          ],
+          "kneeL": [
+            -0.0004004754009656608,
+            -0.10543609410524368,
+            0.11570414900779724,
+            0.9876718521118164
+          ],
+          "legR": [
+            -0.5695533752441406,
+            0.4785682260990143,
+            0.4805424213409424,
+            0.46439263224601746
+          ],
+          "kneeR": [
+            -0.03084975853562355,
+            -0.12555162608623505,
+            0.11697748303413391,
+            0.9846833944320679
+          ],
+          "head": [
+            -0.11906893878285138,
+            0.00006804224867695188,
+            0.0035194429276789877,
+            0.9928797666594944
+          ],
+          "spine": [
+            -0.0039795353829803716,
+            -6.0850819646223e-9,
+            1.1681949887255417e-8,
+            0.9999920816177174
+          ]
+        }
+      },
+      "rendering": {
+        "ambientOcclusion": true
+      },
+      "surfaces": [
+        "song-roof",
+        "song-timber",
+        "song-earth",
+        "song-linen",
+        "plaster"
+      ],
+      "landscape": {
+        "version": "4.1",
+        "trees": 14,
+        "completeTrunks": 14,
+        "branches": 1064,
+        "leafCards": 1680,
+        "wind": true,
+        "windTime": 11.94270000000006,
+        "matchingWindShadows": true,
+        "texture": "willow-spray",
+        "riparianTufts": 1797
+      },
+      "river": {
+        "time": 11.94270000000006,
+        "currentDirection": "+X",
+        "currentSpeed": 0.92,
+        "wakeCount": 16,
+        "displacedVertices": 30861,
+        "version": 4,
+        "reflection": "planar",
+        "microRipples": true
+      },
+      "life": {
+        "horses": [
+          {
+            "id": "horse_tripo_0",
+            "position": [
+              3.4,
+              0.94,
+              56.922679691921815
+            ],
+            "clip": "walk",
+            "mixerTime": 0.9321000000000025,
+            "saddle": [
+              3.399582378944374,
+              2.37,
+              56.95267678499187
+            ],
+            "height": 2.18
+          },
+          {
+            "id": "horse_tripo_1",
+            "position": [
+              3,
+              0.94,
+              -27.47627374588912
+            ],
+            "clip": "walk",
+            "mixerTime": 0.9321000000000025,
+            "saddle": [
+              3,
+              2.37,
+              -27.50627374588912
+            ],
+            "height": 2.18
+          }
+        ],
+        "activeWalkers": 92,
+        "movingWalkers": 70,
+        "time": 11.94270000000006,
+        "people": 214,
+        "visiblePeople": 105,
+        "npcAssets": {
+          "total": 214,
+          "replaced": 214,
+          "visible": 105,
+          "fullDetail": 34,
+          "uniqueAssets": 42,
+          "staticInstances": 3
+        },
+        "roles": {
+          "挑担": 22,
+          "行人": 135,
+          "携书行人": 9,
+          "点茶": 3,
+          "饮茶": 2,
+          "斟酒": 1,
+          "蒸食": 3,
+          "看货": 7,
+          "理布": 3,
+          "量米": 3,
+          "配药": 2,
+          "看书": 2,
+          "交谈": 8,
+          "赶牛人": 2,
+          "骑马人": 2,
+          "车夫": 2,
+          "船夫": 4,
+          "乘客": 4
+        },
+        "vehicles": [
+          {
+            "kind": "牛车",
+            "x": -3.6,
+            "z": 39.26575218252678
+          },
+          {
+            "kind": "牛车",
+            "x": -3.122804523673607,
+            "z": -45.175444264378164
+          },
+          {
+            "kind": "骑马",
+            "x": 3.4,
+            "z": 56.922679691921815
+          },
+          {
+            "kind": "骑马",
+            "x": 3,
+            "z": -27.47627374588912
+          },
+          {
+            "kind": "人力车",
+            "x": -3.6,
+            "z": 32.380719036505425
+          },
+          {
+            "kind": "人力车",
+            "x": -3.2,
+            "z": -40.31161637250083
+          }
+        ],
+        "ferries": [
+          {
+            "x": -70.02129500000001,
+            "z": 5.4,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -16.024245474957155,
+            "z": 5.628808931552486,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -28.977229762521453,
+            "z": -1.6,
+            "angle": -1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": 36.978705000000005,
+            "z": 2.5059934741632466,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          }
+        ],
+        "samplePeople": [
+          {
+            "x": 1.692112434362755,
+            "z": -34.6034164551874,
+            "angle": -0.01190419955830983,
+            "role": "挑担"
+          },
+          {
+            "x": -1.9321403939743225,
+            "z": -53.42033936330575,
+            "angle": 3.0221637275714546,
+            "role": "行人"
+          },
+          {
+            "x": -1.6401526845037357,
+            "z": 0.08387310980415918,
+            "angle": 3.141592653589793,
+            "role": "行人"
+          },
+          {
+            "x": -2.0616347753531046,
+            "z": -23.807273462694454,
+            "angle": -3.1258796611727178,
+            "role": "行人"
+          },
+          {
+            "x": 1.800238278069723,
+            "z": 34.32719929891709,
+            "angle": 0.015383401780595147,
+            "role": "行人"
+          }
+        ],
+        "instanced": false,
+        "renderMode": "skinned-near/instanced-far"
+      },
+      "npcAssets": {
+        "requested": 45,
+        "loaded": 45,
+        "failures": [],
+        "bytes": 54838872
+      },
+      "shops": {
+        "signs": 84,
+        "historySites": 88,
+        "people": [
+          {
+            "id": "street-002",
+            "assetId": "QMSH-20",
+            "x": -1.6401526845037357,
+            "y": 8.23984150216234,
+            "z": 0.08387310980415918,
+            "layer": "bridge"
+          },
+          {
+            "id": "street-105",
+            "assetId": "QMSH-12",
+            "x": 2.614527913445337,
+            "y": 8.22820615263088,
+            "z": -0.7235004849516726,
+            "layer": "bridge"
+          },
+          {
+            "id": "street-195",
+            "assetId": "QMSH-31",
+            "x": 5.35,
+            "y": 0.94,
+            "z": 38.35,
+            "layer": "ground"
+          },
+          {
+            "id": "npc_hq_zhou",
+            "assetId": "QMSH-22",
+            "x": 6,
+            "y": 0.94,
+            "z": 19,
+            "layer": "ground"
+          },
+          {
+            "id": "npc_hq_he",
+            "assetId": "QMSH-24",
+            "x": 12,
+            "y": 0.94,
+            "z": 19,
+            "layer": "ground"
+          }
+        ],
+        "reading": false,
+        "openedKey": null,
+        "sourceCount": 0,
+        "steamSources": 6
+      },
+      "jiaodian": {
+        "id": "landmark_jiaodian_frontage",
+        "shopId": 1,
+        "name": "桥头脚店",
+        "waiter": "npc_jiaodian_waiter",
+        "assetId": "QMSH-16",
+        "position": [
+          -7.05,
+          0.94,
+          35.55
+        ],
+        "bowl": [
+          -6.682784130490493,
+          2.1102185268767686,
+          35.431668879448914
+        ],
+        "hands": [
+          [
+            -6.682784130490493,
+            2.0852185268767687,
+            35.431668879448914
+          ],
+          [
+            -6.904355232493828,
+            2.2128758411658245,
+            35.884404643321076
+          ]
+        ],
+        "chopstickCount": 2,
+        "removedTriangles": 3705,
+        "taskEffects": [],
+        "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+      }
+    }
+  },
+  "errors": [],
+  "network": []
+}

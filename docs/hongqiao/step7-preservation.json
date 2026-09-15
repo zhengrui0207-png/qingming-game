@@ -1,0 +1,9 @@
+{
+  "baseline": "revisions/jiaodian-before (本次追加脚店前，已含协作任务的马匹、人群、景物等更新)",
+  "checks": {
+    "updateActor": true,
+    "updateCamera": true,
+    "storefrontsEditedByThisTask": false,
+    "concurrentStorefrontsChangesDetected": true
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "type": "integrated source snapshot; existing base assets required",
+  "sourceRoot": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game",
+  "files": [
+    {
+      "path": "blender/hq7_actions.py",
+      "bytes": 2344,
+      "sha256": "a770aa2f91413a3fb7cbb7fbc189e748f388552832c3952d733b34bcc83ab9b5"
+    },
+    {
+      "path": "blender/hq7_audit.py",
+      "bytes": 634,
+      "sha256": "80b76bea2272cf6d474cfe558978b0a64aef294ee6065891d62fdbda289f2954"
+    },
+    {
+      "path": "blender/hq7_clearance.py",
+      "bytes": 3348,
+      "sha256": "a3cd8a00fa207e0c0121718f9fee9cd4461b9eaa82a1ed6de4c92e866a6b36ed"
+    },
+    {
+      "path": "blender/hq7_extract.py",
+      "bytes": 4661,
+      "sha256": "e038e8b70562b789430602c04ca4f10574d1de78dbe411346986f645db91001a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4423,
+      "sha256": "b71345f4eb53d4dc2c3df710a832d3b3228353d2c45e47ffc3f85959d58e3b72"
+    },
+    {
+      "path": "output/playwright/jiaodian/verify.cjs",
+      "bytes": 3769,
+      "sha256": "fd3098bc78fda208823e9f15d10d35e298174524856d69f810829b74a23694af"
+    },
+    {
+      "path": "output/playwright/step7/browser-regression.cjs",
+      "bytes": 14180,
+      "sha256": "5e554bf1dedc45f7de5fdf00ff2d8ad064f65d11bebecce3f2d8e60d821830dd"
+    },
+    {
+      "path": "output/playwright/step7/final-visual.cjs",
+      "bytes": 2706,
+      "sha256": "3e469d11971405c0a50599344b400e34bb870beda1d4a8e087e40b677f3ebe4d"
+    },
+    {
+      "path": "output/playwright/step7/merged-step3.mjs",
+      "bytes": 7652,
+      "sha256": "708d3741067a38dc20f199c4503d3526cdec67e73bd476946d98e2abed203997"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 33887,
+      "sha256": "c5f689f59a490131f80459445091379bcdad8a4ddf8b25f08644ef4b4468e9e4"
+    },
+    {
+      "path": "package.json",
+      "bytes": 302,
+      "sha256": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/ending_01.wav",
+      "bytes": 107492,
+      "sha256": "3fd537eb5b5fb793bd58215a71ed5d3d3d13d60188f718f1b32562533a39e99b"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/ending_02.wav",
+      "bytes": 77856,
+      "sha256": "1e7e087dea467fa210c0da4d8255d1b541b4a43c3bedee7b67077f790defa2a3"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/ending_03.wav",
+      "bytes": 78120,
+      "sha256": "d20ca9373bb21c8dd7b58fab25db2ef45022b2e4498b0b5d7e07bd1da3c4d82a"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_01.wav",
+      "bytes": 102562,
+      "sha256": "8ab1f7f8d3af3e695ea9bff913076987c2d7dd87307a3ee4534524cdd17e0936"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_03.wav",
+      "bytes": 47064,
+      "sha256": "f0d417e7080c18f75b87218a7e36ab0e8245c2c5c75d0110b3cf2ca68c94e9bc"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_04.wav",
+      "bytes": 52004,
+      "sha256": "04b05ca139ed2ed6080db1ca2611b56a1b25172f727a1a05480a9fa4562496d0"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_05.wav",
+      "bytes": 126538,
+      "sha256": "1e26c727f714cee8a46b18e87e80d367c11ae7c5cb547fd38e12c3990be0581c"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_06.wav",
+      "bytes": 106082,
+      "sha256": "257ca0c52102621a417f0126c72fdc4c2f0ee07c854a5332e59eacc9ef209c00"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_07.wav",
+      "bytes": 48928,
+      "sha256": "a4e6ecff874001507a1ea3cebc79a9a3c86b35d53f44fb1680bcab4ee88b95f2"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_08a.wav",
+      "bytes": 47064,
+      "sha256": "dde4208fb84368c355df6eedfdbe3bc4c9bd85fb7b166a25127a42b5cb035db6"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_08b.wav",
+      "bytes": 55540,
+      "sha256": "cac8f66e6faccc796cf199662ed5100e0ebbf1478e4fae5c3bb6e6a249749dce"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_08c.wav",
+      "bytes": 40712,
+      "sha256": "b98ca139fbd2140b4dd3ae1a2388314ca5c47951569f862653877b38674be61b"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/audio/intro_09.wav",
+      "bytes": 90110,
+      "sha256": "d4b47a609d08d0945cbb68198f35b1a95dae9ae019dce13b3d3f5747d18c6558"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/bridge-triangles.json",
+      "bytes": 3390425,
+      "sha256": "0dd40dcbdf3de77966b5a1101d995473624787fc91c504b9b274ea3ecb1b1638"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/native-triangles.json",
+      "bytes": 7293988,
+      "sha256": "116bb411e6498bc538ae8f4c9cee9828995eb55abf0aa93f2eaab4432e7a9406"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/ship-hq.glb",
+      "bytes": 4298508,
+      "sha256": "8c5666eb692d357b8742f223d163532eb80b1005233246e534341c467d65fc38"
+    },
+    {
+      "path": "public/assets/hongqiao/cinema/world-mask.json",
+      "bytes": 120859,
+      "sha256": "f99ca80da7fd63479c6ff539edd86122247cbe516bb82735b5d3e011a27c5e10"
+    },
+    {
+      "path": "scripts/hq7-local-voice.py",
+      "bytes": 1338,
+      "sha256": "46b3e6952a33ce76f82f0bbc9cebd399f13587a45a180a5571d71ef2f1c64641"
+    },
+    {
+      "path": "scripts/hq7-world-mask.py",
+      "bytes": 2301,
+      "sha256": "7d377d82b8739a183ae0267835a50d21305d3eecbcc84afa08f87331a648ff59"
+    },
+    {
+      "path": "src/atmosphere.js",
+      "bytes": 1773,
+      "sha256": "9a667a3434ef7624ca01e086faa5ff683d8179a00f238956a760db00dbf0407e"
+    },
+    {
+      "path": "src/crowd-motion.js",
+      "bytes": 4852,
+      "sha256": "9b5fa8c4106f28a775ac0235098e6e0905c277d40970eb45147e30782aad214c"
+    },
+    {
+      "path": "src/crowd-motion.test.js",
+      "bytes": 1983,
+      "sha256": "375d0b0e39b27fd57d893eff2a00d30429bc7104dbb63f442b15b11e4fab18dd"
+    },
+    {
+      "path": "src/history.js",
+      "bytes": 15528,
+      "sha256": "4a554c869b31a751cb52148358146d76f5f064e8d7745d3de473010f8b1132d4"
+    },
+    {
+      "path": "src/hongqiao/cinema/actions.json",
+      "bytes": 2417,
+      "sha256": "36f18e2f595eaa5a3db4569fdcbdafd5480131c834c7891804d70343d6e6e025"
+    },
+    {
+      "path": "src/hongqiao/cinema/actors.js",
+      "bytes": 2936,
+      "sha256": "417792522258a57613e82a45768b8723fff07ea4b7608fd1eedc5ad52604d134"
+    },
+    {
+      "path": "src/hongqiao/cinema/audio.js",
+      "bytes": 2184,
+      "sha256": "e008262b1090e66178e387ccba9c41bf1492af41260ceeb98b9c43d6dda18ec0"
+    },
+    {
+      "path": "src/hongqiao/cinema/renderer.js",
+      "bytes": 8256,
+      "sha256": "1d13689e0fed2f68a556018bfe790f8e8b962896b6f666fae5c043c780adaba1"
+    },
+    {
+      "path": "src/hongqiao/cinema/scene.js",
+      "bytes": 11727,
+      "sha256": "ae917befb9aaeb4acd0107c3196ab02cfba550487f9ec5cb8473ca457a5976ad"
+    },
+    {
+      "path": "src/hongqiao/cinema/style.css",
+      "bytes": 1312,
+      "sha256": "6061fb21a91189eb8a536d61e84575cbeb3ea7e1a63581c9a0e39d70ed809df8"
+    },
+    {
+      "path": "src/hongqiao/cinema/timeline.js",
+      "bytes": 1650,
+      "sha256": "c8f124af62defd71fb802ee5b0efec9ec6c6aec35c7f0fc5ea465c1945958fb7"
+    },
+    {
+      "path": "src/hongqiao/cinema/timeline.test.js",
+      "bytes": 2136,
+      "sha256": "22a635f2bbe0d06b908d7df2ea923f144e014beb85ff9cc8e9628fed0e79fd44"
+    },
+    {
+      "path": "src/hongqiao/cinema/traffic.js",
+      "bytes": 562,
+      "sha256": "9b3672788b104cd4cab56fd99e2112027110e8eb3637df8c60fc5f589620a98c"
+    },
+    {
+      "path": "src/hongqiao/cinema/traffic.test.js",
+      "bytes": 1164,
+      "sha256": "5261338286ca94e4201d96e5bf2603d0801e8734b6e687a26ebc5692f2f13f27"
+    },
+    {
+      "path": "src/hongqiao/collectibles.js",
+      "bytes": 3562,
+      "sha256": "7b72f4c2076447cdd69e4d938ad2e2fd0b7782fd45b73af2afcd5560ad421234"
+    },
+    {
+      "path": "src/hongqiao/config.js",
+      "bytes": 178,
+      "sha256": "a202c55fc4329d1157d7fc5af7116000623fc6337faed526ab7e5d3381f427d8"
+    },
+    {
+      "path": "src/hongqiao/config.json",
+      "bytes": 47310,
+      "sha256": "dcdb2f18f1d085f6749df5d502f598f0caebd17cbad9947f9c343a0e043b7304"
+    },
+    {
+      "path": "src/hongqiao/debug.js",
+      "bytes": 3996,
+      "sha256": "de7d5fea9b347603f6475a477aaf23e4718f174bc72ad989bf9934e7b8a8ce68"
+    },
+    {
+      "path": "src/hongqiao/dialogue-ui.js",
+      "bytes": 6424,
+      "sha256": "ee64ac2ac0612664fbbdbc25f2a79d962f519a9b6fff8350569373a0edcc2120"
+    },
+    {
+      "path": "src/hongqiao/narrative.json",
+      "bytes": 11296,
+      "sha256": "8dfea99e038ba393c2f4af79628e26ff3c0efdb9fcd052b0aaf11b7b63b84157"
+    },
+    {
+      "path": "src/hongqiao/npcs.js",
+      "bytes": 2431,
+      "sha256": "6a7a1b7d395de9d9a581499b80e91503a2c08e010110ff76e3a52d86991fe4dd"
+    },
+    {
+      "path": "src/hongqiao/persistence.js",
+      "bytes": 4665,
+      "sha256": "cd2f8c8117a957d5ea3bb4744f4a36aba3ee656d52cca8f14d4d62db6cfe8f44"
+    },
+    {
+      "path": "src/hongqiao/portraits.js",
+      "bytes": 597,
+      "sha256": "921a77f4010510b197852fe44e44c2aa9592787a5c767f4692aac5d6be30bf3c"
+    },
+    {
+      "path": "src/hongqiao/presentation.js",
+      "bytes": 3125,
+      "sha256": "1adf28534ee01258cc46362612ab1a43bcb8651e4f7bab3387088d178e2694f5"
+    },
+    {
+      "path": "src/hongqiao/presentation.test.js",
+      "bytes": 3925,
+      "sha256": "237e7d3fa9a3a908235893241f97089ba6cc8bf451e7834cdc18b25a3819f92a"
+    },
+    {
+      "path": "src/hongqiao/progress-ui.css",
+      "bytes": 3461,
+      "sha256": "67fdfd29034187ab4de7007f8980ef7b2d6f69fdd8d1b7f3cdc7d85e51e8bd40"
+    },
+    {
+      "path": "src/hongqiao/progress-ui.js",
+      "bytes": 11067,
+      "sha256": "c731dd47185e08f6659b0569584656a669b7cfa43baa2e41951e761b1b8d1289"
+    },
+    {
+      "path": "src/hongqiao/quest-config.js",
+      "bytes": 3003,
+      "sha256": "9bce89945aa1fbca763f80820874c96266c80e6b8bf07b65b67936fb7c20dde9"
+    },
+    {
+      "path": "src/hongqiao/quest-logic.js",
+      "bytes": 1723,
+      "sha256": "94283c8a94877b2002128b8bd522fbf11217ae055f202e030792d9ee7f918d9a"
+    },
+    {
+      "path": "src/hongqiao/quest-ui.css",
+      "bytes": 3510,
+      "sha256": "85b3756e6f9536a076f582e3c681c2603121fc7bb580acf81456f414be1191e1"
+    },
+    {
+      "path": "src/hongqiao/quest.test.js",
+      "bytes": 10927,
+      "sha256": "ad0faa77120f7f91d92ec59b5ce3029340c671bdf32f2c2cdbdf005be4d77ed7"
+    },
+    {
+      "path": "src/hongqiao/runtime.js",
+      "bytes": 5909,
+      "sha256": "83f38d21249a405fcbd56f4a7acc872db9bc447d16be4a987f76464dd4a05f61"
+    },
+    {
+      "path": "src/hongqiao/state.js",
+      "bytes": 9019,
+      "sha256": "75fc6850083f47d0b08b47e262c2ef943513207952668ad5e17c2aa56f18b7c8"
+    },
+    {
+      "path": "src/hongqiao/state.test.js",
+      "bytes": 11798,
+      "sha256": "f2505d996b00dd9fc34a168dc388de46aacfb83ccf24c50acadf24196f463406"
+    },
+    {
+      "path": "src/hongqiao/tracker.js",
+      "bytes": 2251,
+      "sha256": "8ee8c8d20d50b6eabbe453563eb4336d4fed6d72e3c62fbba2ef7b0b99c25ea4"
+    },
+    {
+      "path": "src/hongqiao/validate.js",
+      "bytes": 3471,
+      "sha256": "de9bedcb57dab0b6d1d9f7d8ed970718784717b879064a77e8fa06d67d09853e"
+    },
+    {
+      "path": "src/horse.js",
+      "bytes": 2585,
+      "sha256": "0a5a32e190e7c3a39166757532f10c385eaec2b5e7fd5f14e410209fa7c5b839"
+    },
+    {
+      "path": "src/interaction/core.js",
+      "bytes": 4585,
+      "sha256": "50280bb9ba20d05f1671922f2903a53ef1cfc9bad43f8cdb44060269693d181f"
+    },
+    {
+      "path": "src/interaction/core.test.js",
+      "bytes": 2914,
+      "sha256": "c28d215f63771b08d93673801b9b7a79f119ebc9de29ca1fed77441674c8829a"
+    },
+    {
+      "path": "src/interaction/dialogue.css",
+      "bytes": 713,
+      "sha256": "bc230e6c3e54bb09e9c329b2dc5edfcbb2b0760fb9ef56afa41c0af6b7f064d6"
+    },
+    {
+      "path": "src/interaction/dialogue.js",
+      "bytes": 2539,
+      "sha256": "e9a448782a5359b6385ab01c79c617c2e15387b33dce40ba64df93dac71f69c0"
+    },
+    {
+      "path": "src/interaction/fixtures.js",
+      "bytes": 1343,
+      "sha256": "c7937d5094d729650475fbcd1ba6ef57c62f0a484eb454b6a451581a7aa93f4a"
+    },
+    {
+      "path": "src/interaction/progress-adapter.js",
+      "bytes": 144,
+      "sha256": "922ccfe5b17fb6d54e3ea915278f2f36086bc831cc17ade32a167e013f47970a"
+    },
+    {
+      "path": "src/interaction/progress-book.js",
+      "bytes": 110,
+      "sha256": "22f924413ff99e9c3c14852fec94b72ec620ead7a1fb348e54cfe3ab0247fb48"
+    },
+    {
+      "path": "src/landmarks/jiaodian.js",
+      "bytes": 7470,
+      "sha256": "65e2e8c671cecf3010e613ed8cd2480936b7b54934b45bfd47f2d9ed73eb807e"
+    },
+    {
+      "path": "src/landmarks/jiaodian.json",
+      "bytes": 728,
+      "sha256": "2cdd4bcd60871a0fe86edbc8ec74b995785a80b20a9671aa2a9f3a706407b256"
+    },
+    {
+      "path": "src/landscape.js",
+      "bytes": 6583,
+      "sha256": "3f8e841ffe48ced6ccc024202dbacc8b767b4c6376a12c819f83b7edf8d4ac94"
+    },
+    {
+      "path": "src/life-paths.js",
+      "bytes": 1635,
+      "sha256": "eb0d57c886f010041e5fa578361d9f8d216c230657e52621c4e12da8eaf86eee"
+    },
+    {
+      "path": "src/main.js",
+      "bytes": 28986,
+      "sha256": "db4ca83b21a038f9cea56bb27619073d8eb25385ac3cc80a7df1ec624b813edc"
+    },
+    {
+      "path": "src/motion/animation.js",
+      "bytes": 1269,
+      "sha256": "7db279e520e783653dd773c36fba406fd107496925183632bfa88a9e53d2012c"
+    },
+    {
+      "path": "src/motion/config.js",
+      "bytes": 653,
+      "sha256": "ce6f355f9aab07e5ee599c5b1e631bc83ef148280ed5ea5f2bd7d4c675451ec2"
+    },
+    {
+      "path": "src/motion/debug.js",
+      "bytes": 2940,
+      "sha256": "db9a6b79fb1e7d390e20c81c60a0b6fb03f54823f1dd73bf5381888ed5e58dd1"
+    },
+    {
+      "path": "src/motion/motion.test.js",
+      "bytes": 2881,
+      "sha256": "6c4c6418b31e3212b05a9131a8a0652d0796fbab833fb9f98025becd1facda4c"
+    },
+    {
+      "path": "src/npc-assets.js",
+      "bytes": 10477,
+      "sha256": "699082048b85fb248a6044351f21ac4de617940b073248eb7504f333cbf41c87"
+    },
+    {
+      "path": "src/people-history.js",
+      "bytes": 7444,
+      "sha256": "c0c7f1aeed66305eb0a2ede5824a7681bdae2744ba5e85ca886a3edd49d7c2e3"
+    },
+    {
+      "path": "src/people-history.test.js",
+      "bytes": 1601,
+      "sha256": "b45375eeddaf3f83ed0d2a5f2f95e7f1e3917f4d4bb03c50987ae891f6ee8f9a"
+    },
+    {
+      "path": "src/river.js",
+      "bytes": 9307,
+      "sha256": "e3a45a115158b1d2f3f3b2f056b21743f7901da349db9beb17dab8ee13c03967"
+    },
+    {
+      "path": "src/scenery-assets.js",
+      "bytes": 4153,
+      "sha256": "ce04a0646fd1949f6b166cfc50b428222fe4d501b915f63c8375063f04c36824"
+    },
+    {
+      "path": "src/scholar.js",
+      "bytes": 6029,
+      "sha256": "bfc8e9fb53144ac7cc3761f4aa453d6ed59dad67ebee63e51cc90046207e9a47"
+    },
+    {
+      "path": "src/song-font.css",
+      "bytes": 10083,
+      "sha256": "807b818287f34b076055727dcf0782a43656d89d83f9c4d2980754ae88863e65"
+    },
+    {
+      "path": "src/storefronts.js",
+      "bytes": 8931,
+      "sha256": "bb2dfae8d3db8dce6be52ba7222445cf5656478f71e3b7ce715fd28968fbb3f2"
+    },
+    {
+      "path": "src/street-life.js",
+      "bytes": 15706,
+      "sha256": "8fc1ab5e95568cc3a3dafbcc57d1c1da581ac25df747f411bca712b46a9c0a47"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 11306,
+      "sha256": "f583bbda3c11e6c5d647254eb2381ca4c45b034306adc2d9fb05d5ccd46440f2"
+    },
+    {
+      "path": "src/surfaces.js",
+      "bytes": 3443,
+      "sha256": "538f03c3bc5fcbc1016be8c5c3a122f2f5a0436981ac210462db968d7845269a"
+    },
+    {
+      "path": "src/world.js",
+      "bytes": 5867,
+      "sha256": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b"
+    },
+    {
+      "path": "src/world.test.js",
+      "bytes": 4002,
+      "sha256": "972df098365427983f4353840c69901c89355e2b84c7cd26f3573668d56eb175"
+    }
+  ],
+  "nativeFilesOutsideArchive": [
+    {
+      "path": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/blender/hongqiao-cinema-ship.blend",
+      "bytes": 53715752,
+      "sha256": "5efc56d529dfb57e1f42e4c647065c3e8980ba031edb0c3db8bce9b5d0cf5058"
+    },
+    {
+      "path": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/blender/hongqiao-cinema-actions.blend",
+      "bytes": 1797227,
+      "sha256": "47910959bf740e7c171ae6d449e7b7a3d91f4b9ce38fa671507b94d24ede9697"
+    }
+  ],
+  "requiredExistingAssets": [
+    {
+      "path": "public/assets/qingming-world.glb",
+      "bytes": 91595996,
+      "sha256": "f0d362ea2151575746c4a702f5e95a23aa3dc487e5b56d701e1d0f716aa8c508"
+    },
+    {
+      "path": "public/assets/world.json",
+      "bytes": 89890,
+      "sha256": "ea4a3868d83f66339ccf5ea542fca05b323c58309bde3793aa65e80de28c3f9d"
+    },
+    {
+      "path": "public/assets/characters/QMSH-16.glb",
+      "bytes": 779408,
+      "sha256": "5f1b7c9685bb16d04465b5da26238011648289ffd62a4fc5b53a5c6e91acc0f7"
+    },
+    {
+      "path": "public/assets/characters/QMSH-22.glb",
+      "bytes": 1158576,
+      "sha256": "79d222562a69a2ad5e0e761865d3f3c2e8b3558cef1950d322441ce8caf40127"
+    },
+    {
+      "path": "public/assets/characters/catalog.json",
+      "bytes": 34585,
+      "sha256": "f956c0616e45329b9535239a3188c6cef5f891aadf79791df655c5ac33c9d601"
+    },
+    {
+      "path": "public/assets/characters/npc-map.json",
+      "bytes": 32952,
+      "sha256": "7c8b15e86a1054b95ed074252a15f683e00ab5fa9a632dfa3a290a6b7b039fb7"
+    },
+    {
+      "path": "public/assets/song-scholar-v2-animated.glb",
+      "bytes": 5176236,
+      "sha256": "63383074fa90932f6527493657759d6602c5475193e74936e02e84f23772d3f0"
+    }
+  ],
+  "archive": {
+    "path": "step7-source-snapshot.zip",
+    "bytes": 5056037,
+    "sha256": "9bfce8777548e5eabc19e89adcca3838d5d0daf2223c93be4610ae46daefc213"
+  },
+  "archiveRoundTrip": {
+    "files": 96,
+    "passed": true
+  }
+}

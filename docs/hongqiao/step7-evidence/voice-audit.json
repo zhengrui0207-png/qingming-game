@@ -1,0 +1,106 @@
+[
+  {
+    "id": "intro_01",
+    "text": "船到桥下，怎么停了？",
+    "duration": 2.2327891156462587,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_03",
+    "text": "莫牵了！",
+    "duration": 0.9743310657596372,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_04",
+    "text": "桅杆未落。",
+    "duration": 1.0863492063492064,
+    "budget": 2,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_05",
+    "text": "纤夫走神，忘了松绳降桅。",
+    "duration": 2.7764625850340137,
+    "budget": 4,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_06",
+    "text": "快降桅！当心脚下！",
+    "duration": 2.312607709750567,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_07",
+    "text": "接住绳！",
+    "duration": 1.0165986394557822,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_08a",
+    "text": "松绳！",
+    "duration": 0.9743310657596372,
+    "budget": 1,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_08b",
+    "text": "缓缓放！",
+    "duration": 1.166530612244898,
+    "budget": 4,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_08c",
+    "text": "稳住！",
+    "duration": 0.8302947845804989,
+    "budget": 2,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "intro_09",
+    "text": "郎君，劳你搭把手。",
+    "duration": 1.9504308390022675,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "ending_01",
+    "text": "都备齐了，看准了再走！",
+    "duration": 2.3445804988662133,
+    "budget": 3,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "ending_02",
+    "text": "过了！过桥了！",
+    "duration": 1.672562358276644,
+    "budget": 4,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  },
+  {
+    "id": "ending_03",
+    "text": "好，慢慢靠岸！",
+    "duration": 1.6785487528344671,
+    "budget": 4,
+    "voice": "macOS Eddy zh_CN, native rate 200, no time-stretch",
+    "usable": true
+  }
+]

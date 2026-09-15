@@ -1,0 +1,159 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -1,3 +1,4 @@
++import {createJiaodian} from './landmarks/jiaodian.js';
+ import './song-font.css';
+ import {loadHorses} from './horse.js';
+ import {createSceneryAssets} from './scenery-assets.js';
+@@ -39,7 +40,7 @@
+ const river=createRiver(scene,sun);
+ const atmosphere=createAtmosphere(renderer,scene,camera,river);
+ const keys=new Set(),pointers=new Map();let pinchDistance=0,dragging=false;
+-let npcAssets;
++let npcAssets,jiaodian;
+ let sceneryAssets,world,city,player,scholar,npcPrototype,scholarGLTF,skiff,surfaces,lifeAssets,streetLife,storefronts,landscape,loaded=false,playing=false,paused=false,overview=false,boatMode=false;
+ let actor={x:0,z:35,height:.94,layer:'ground',mode:'walk'},boat={x:32,z:7,angle:Math.PI/2,speed:0};
+ let yaw=.22,pitch=.49,distance=10,targetDistance=10,actorAngle=Math.PI,phase=0,last=0,elapsed=0,mapTime=0,toastTimer;
+@@ -76,14 +77,16 @@
+  scene.add(city,player,skiff);
+  npcAssets=await loadNpcAssets(import.meta.env.BASE_URL,(n,total)=>{$('load-caption').textContent=`汴京人物载入中 · ${n} / ${total}`;});
+  const horses=await loadHorses(scene,import.meta.env.BASE_URL);
++ jiaodian=createJiaodian(scene,world,npcAssets);
+  streetLife=createStreetLife(scene,npcPrototype,lifeAssets,world,camera,npcAssets,horses);
+  interactions=createInteractionRegistry({unobstructed:(a,p)=>!segmentBlocked({x:a.x,y:a.height,z:a.z},p,world.colliders),reachable:(a,p)=>{const r=moveActor({...a},p.x-a.x,p.z-a.z,world);return r.mode==='walk'&&r.layer===a.layer&&Math.hypot(r.x-p.x,r.z-p.z)<.1;}});
+  let testEffects=0;
+  dialogue=createDialogueUI({locks,gate,condition:id=>id==='canRecord',effect:id=>{if(id==='recordTest')testEffects++;}});
+  storefronts=createStorefronts(scene,world,{registry:interactions,onOpen:()=>lockPanel('history',()=>storefronts.closeDetails()),onClose:()=>unlockPanel('history')});
+  hongqiaoProgress=createHongqiaoProgress({scene,loader,world,registry:interactions,npcPrototype,npcAssets,locks,gate,canOperate:()=>playing&&!paused&&!boatMode,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>lockPanel('book',()=>hongqiaoProgress.ui.close()),onClose:()=>unlockPanel('book'),toast});
+- streetLife.setExternalBodies(()=>[...(boatMode||actor.mode!=='walk'?[]:[{...actor,id:'player_scholar',y:actor.height,radius:.32}]),...interactions.entries().filter(e=>e.type==='npc').map(e=>({...e.getPosition(),id:e.id,layer:e.layer,radius:.48}))]);
++ streetLife.setExternalBodies(()=>[jiaodian.body(),...(boatMode||actor.mode!=='walk'?[]:[{...actor,id:'player_scholar',y:actor.height,radius:.32}]),...interactions.entries().filter(e=>e.type==='npc').map(e=>({...e.getPosition(),id:e.id,layer:e.layer,radius:.48}))]);
+  cinema=await createCinemaRenderer({scene,city,loader,npcAssets,world,baseURL:import.meta.env.BASE_URL,gameCamera:camera,player,controls:{
++  setCinematicFocus:next=>streetLife.setCinematicFocus(next),
+   capture:()=>({camera:camera.clone(),yaw,pitch,distance,targetDistance,overview,focus:focus.clone()}),
+   restore:s=>{camera.copy(s.camera);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();yaw=s.yaw;pitch=s.pitch;distance=s.distance;targetDistance=s.targetDistance;overview=s.overview;focus.copy(s.focus);clearInput();},
+   waitForRelease:()=>{const held=new Set(gate.keys());clearInput();if(!held.size)return;const release=locks.acquire('presentationRelease');const done=()=>{release();removeEventListener('keyup',up,true);removeEventListener('blur',done);};const up=e=>{held.delete(e.code);if(!held.size)done();};addEventListener('keyup',up,true);addEventListener('blur',done);},
+@@ -105,7 +108,7 @@
+   window.__motionDebug=createMotionDebug(scene,world,()=>({...actor}));
+  }
+  loaded=true;$('start').disabled=false;$('start-label').textContent='入画游览';$('load-caption').textContent='画卷已展开 · 点击开始';
+- window.__qingming={hongqiao:hongqiaoProgress.presentation,getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scenery:sceneryAssets?.getState(),scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),npcAssets:npcAssets.getState(),shops:storefronts.getState()}),world};
++ window.__qingming={hongqiao:hongqiaoProgress.presentation,getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scenery:sceneryAssets?.getState(),scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),npcAssets:npcAssets.getState(),shops:storefronts.getState(),jiaodian:jiaodian.getState()}),world};
+  // Explicit test mode keeps debug positioning unavailable during ordinary play.
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('test'))Object.assign(window.__qingming,{cinema:{getState:cinema.getState,seek:cinema.seek,pause:cinema.adapter.setPaused},snapshotScene:()=>streetLife.snapshot(),setAO:v=>atmosphere.setEnabled(v),setHero:(position,target,fov)=>{heroPosition=position;heroTarget=target;if(fov){heroFov=fov;camera.fov=fov;camera.updateProjectionMatrix();}},setActor:(x,z,layer='ground')=>{boatMode=false;actor={x,z,layer,...surfaceAt(x,z,world,layer)};focus.set(x,actor.height+1,z);},setBoat:(x,z,angle)=>{boat={x,z,angle,speed:0};},setView:(a,p,d)=>{yaw=a;pitch=p;targetDistance=d;},step:(dx,dz)=>{actor=moveActor(actor,dx,dz,world);}});
+  }catch(e){console.error(e);showError('三维场景加载失败。请确认本地服务仍在运行，然后重新载入。');}
+--- a/src/history.js
++++ b/src/history.js
+@@ -56,7 +56,7 @@
+  const peers=shop.historyIndex??Math.floor(shop.id/7);
+  const culture=cultureFacts[shop.type]?.[peers%2]||cultureFacts.tea[0];
+  const architecture=shop.type==='wine'?architectureFacts.courtyard:shop.type==='cloth'?architectureFacts.textile:shop.id%3===0?architectureFacts.eaves:shop.id%3===1?architectureFacts.frontage:architectureFacts.roofs;
+- return {key:'shop-'+shop.id,name:shop.name,category:'宋代街市 · 建筑与风俗',architecture,culture,note:shopNote,look:shop.wares};
++ return {key:'shop-'+shop.id,name:shop.name,category:'宋代街市 · 建筑与风俗',architecture,culture,note:shop.historyNote||shopNote,look:shop.wares};
+ }
+ export const landmarks=[
+  {key:'bridge',name:'汴水虹桥',category:'水陆交会 · 木构桥梁',x:0,z:0,w:8,d:36,architecture:fact('无水中桥柱的木构拱桥','《东京梦华录·河道》记虹桥用巨木架起、桥下无柱；画中高起的木拱，也让船只与桥上行人分层通过。',['river','painting'],'文献对虹桥的记述是理解这类桥梁的重要参照。画中桥梁的具体名称与位置涉及考证，本游戏沿用“虹桥”的通称，不将它与文献中某一座桥的里程位置直接等同。'),culture:fact('船过桥前，要先放倒桅杆','故宫的画卷介绍特别提到：桥下一艘漕船正在放倒桅杆，艄工忙碌，引来围观。桥头热闹与航运操作紧密相连。',['painting'],'看桥时不妨同时观察桥面、桥孔与船桅。画家把通航中的忙碌和岸上的围观组织在一起。游戏以斜放船桅与索具表现桥前的货船轮廓，船只穿桥仍是简化模拟。'),note:'桥形依据画卷重建；具体接头、尺寸与交通过程有简化。',look:'桥面木板 · 拱下巨木 · 放倒的船桅'},
+--- a/src/npc-assets.js
++++ b/src/npc-assets.js
+@@ -92,15 +92,17 @@
+   const capacity=records.filter(r=>r?.asset.id===rec.asset.id).length,meshes=parts.map(part=>{const mesh=new THREE.InstancedMesh(part.geometry,part.material,capacity);mesh.name='Distant '+rec.asset.id;mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);mesh.count=0;mesh.frustumCulled=false;mesh.castShadow=false;mesh.receiveShadow=true;root.add(mesh);return mesh});
+   farPools.set(rec.asset.id,{meshes,cursor:0});
+  }
+- let visible=0;
++ let visible=0,cinematicFocus=null;
+  return {
+   hide:i=>{if(records[i]){records[i].root.visible=false;records[i].screenVisible=false;}},
+   setCamera:next=>{camera=next;},
++  setCinematicFocus:next=>{cinematicFocus=next;},
+   put(i,pose,walking,time,dt){
+    const rec=records[i];if(!rec)return false;
+    rec.root.position.set(pose.x,pose.y,pose.z);rec.root.rotation.y=pose.angle;rec.root.scale.setScalar(pose.scale||1);
+    const distance=rec.root.position.distanceTo(camera.position);v.copy(rec.root.position);v.y+=1;v.project(camera);
+    rec.screenVisible=distance<190&&v.z>-1&&v.z<1&&Math.abs(v.x)<1.3&&Math.abs(v.y)<1.4;
++   if(cinematicFocus){const {from,to}=cinematicFocus,dx=to.x-from.x,dz=to.z-from.z,l=dx*dx+dz*dz,u=clamp(((pose.x-from.x)*dx+(pose.z-from.z)*dz)/l,0,1),near=Math.hypot(pose.x-from.x,pose.z-from.z)<7,corridor=Math.hypot(pose.x-from.x-dx*u,pose.z-from.z-dz*u)<1.65; if(near||corridor)rec.screenVisible=false;}
+    const pool=farPools.get(rec.asset.id),far=distance>28&&!['骑马人','乘客'].includes(people[i].role)&&pool;
+    rec.root.visible=rec.screenVisible&&!far;rec.lod=far?'distant':'full';
+    if(rec.screenVisible){visible++;if(far){rotation.setFromAxisAngle(THREE.Object3D.DEFAULT_UP,pose.angle);size.setScalar(pose.scale||1);matrix.compose(rec.root.position,rotation,size);for(const mesh of pool.meshes)mesh.setMatrixAt(pool.cursor,matrix);pool.cursor++;}else rec.update(time,dt,{walking,role:people[i].role,phase:people[i].phase,far:distance>35,travelSpeed:people[i].travelSpeed})}
+--- a/src/street-life.js
++++ b/src/street-life.js
+@@ -64,6 +64,7 @@
+  // Keep stable street IDs; thin the mechanically repeated bridge population.
+  const map=new Map(npcAssets?.mapping.map(a=>[a.id,a.assetId])??[]);
+  people.forEach((p,i)=>{p.assetId=map.get(`street-${String(i).padStart(3,'0')}`);if(p.route)p.active=i<30||(i>=43&&i<65)||(i>=68&&i<82)||(i>=84&&i<110);});
++ people.forEach(p=>{if(p.shop?.authoredMerchant)p.active=false;});
+  let getExternal=()=>[];
+  initializeCrowd(people,world,rand,traffic.map(v=>({...sampleRoute(v.route,v.distance),y:.94,radius:1.1})));
+  const crowd=pool(scene,humanSource,people.length,{people:true});
+@@ -144,5 +145,5 @@
+   [crowd,ox,horse,carts,ferry,...extraPools].forEach(p=>p.done());
+   matchedCrowd?.done();
+  }
+- return {setExternalBodies:fn=>{getExternal=fn;},resolvePlayer:(from,to)=>stopAtPeople(from,to,[...people.filter(p=>p.active!==false&&!['乘客','船夫','骑马人'].includes(p.role)),...getExternal().filter(p=>p.id!=='player_scholar'),...traffic.map(v=>({...v,y:.94,radius:1.1}))]),setViewCamera:next=>{viewCamera=next;matchedCrowd?.setCamera(next);},update,ferries,snapshot:()=>({time:lastTime,people,traffic,ferries,replacements:matchedCrowd?.snapshot()}),getState:()=>({horses:horses?.getState(),activeWalkers:people.filter(p=>p.route&&p.active!==false).length,movingWalkers:people.filter(p=>p.route&&p.walking&&p.active!==false).length,time:lastTime,people:people.length,visiblePeople:crowd.count+(matchedCrowd?.getState().visible??0),npcAssets:matchedCrowd?.getState(),roles:people.reduce((a,p)=>(a[p.role]=(a[p.role]||0)+1,a),{}),vehicles:traffic.map(v=>({kind:v.kind,x:v.x,z:v.z})),ferries:ferries.map(f=>({x:f.x,z:f.z,angle:f.angle,speed:f.speed})),samplePeople:people.slice(0,5).map(p=>({x:p.x,z:p.z,angle:p.angle,role:p.role})),instanced:!matchedCrowd,renderMode:matchedCrowd?"skinned-near/instanced-far":"instanced"})};
++ return {setCinematicFocus:next=>matchedCrowd?.setCinematicFocus(next),setExternalBodies:fn=>{getExternal=fn;},resolvePlayer:(from,to)=>stopAtPeople(from,to,[...people.filter(p=>p.active!==false&&!['乘客','船夫','骑马人'].includes(p.role)),...getExternal().filter(p=>p.id!=='player_scholar'),...traffic.map(v=>({...v,y:.94,radius:1.1}))]),setViewCamera:next=>{viewCamera=next;matchedCrowd?.setCamera(next);},update,ferries,snapshot:()=>({time:lastTime,people,traffic,ferries,replacements:matchedCrowd?.snapshot()}),getState:()=>({horses:horses?.getState(),activeWalkers:people.filter(p=>p.route&&p.active!==false).length,movingWalkers:people.filter(p=>p.route&&p.walking&&p.active!==false).length,time:lastTime,people:people.length,visiblePeople:crowd.count+(matchedCrowd?.getState().visible??0),npcAssets:matchedCrowd?.getState(),roles:people.reduce((a,p)=>(a[p.role]=(a[p.role]||0)+1,a),{}),vehicles:traffic.map(v=>({kind:v.kind,x:v.x,z:v.z})),ferries:ferries.map(f=>({x:f.x,z:f.z,angle:f.angle,speed:f.speed})),samplePeople:people.slice(0,5).map(p=>({x:p.x,z:p.z,angle:p.angle,role:p.role})),instanced:!matchedCrowd,renderMode:matchedCrowd?"skinned-near/instanced-far":"instanced"})};
+ }
+--- /dev/null
++++ b/src/landmarks/jiaodian.js
+@@ -0,0 +1,49 @@
++import * as THREE from 'three';
++import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
++import config from './jiaodian.json';
++const V=a=>new THREE.Vector3(...a);
++// A local addition to the existing south-street wine-shop footprint. No task effects.
++export function createJiaodian(scene,world,library){
++ const shop=world.shops.find(s=>s.id===config.shopId);if(!shop)throw Error('脚店地块缺失');
++ const root=new THREE.Group();root.name=config.id;root.position.fromArray(config.frontage);root.rotation.y=config.yaw;scene.add(root);
++ for(const dz of [-3,3])world.colliders.push({id:config.id+'_post_'+dz,x:config.frontage[0],z:config.frontage[2]+dz,w:.18,d:.18,h:7.6,kind:'decoration'});
++ const materials={wood:new THREE.MeshStandardMaterial({color:'#574534',roughness:.95}),bamboo:new THREE.MeshStandardMaterial({color:'#8c7b52',roughness:1}),dark:new THREE.MeshStandardMaterial({color:'#292d27',roughness:1}),cloth:new THREE.MeshStandardMaterial({color:'#ad9271',roughness:1,side:THREE.DoubleSide}),red:new THREE.MeshStandardMaterial({color:'#825c4a',roughness:1})};
++ const batches=new Map();
++ function geometry(g,key,p=[0,0,0],q=new THREE.Quaternion()) {g.applyMatrix4(new THREE.Matrix4().compose(V(p),q,new THREE.Vector3(1,1,1)));if(!batches.has(key))batches.set(key,[]);batches.get(key).push(g);}
++ function bar(a,b,r=.045,key='bamboo'){const d=V(b).sub(V(a));geometry(new THREE.CylinderGeometry(r*.86,r,d.length(),7),key,V(a).add(V(b)).multiplyScalar(.5).toArray(),new THREE.Quaternion().setFromUnitVectors(V([0,1,0]),d.normalize()));}
++ function box(p,size,key='wood'){geometry(new THREE.BoxGeometry(...size),key,p);}
++ // Decorative bamboo frontage: two tiers, curved slats, cross-bracing and slender finials.
++ for(const x of [-3,3]){bar([x,0,0],[x,7.6,0],.09);bar([x,0,-.8],[x,7.2,-.8],.07);for(const y of [2.9,4.8,6.5])bar([x,y,-.8],[x,y,0],.045);}
++ for(const y of [3.7,5.8]){
++  for(let i=0;i<12;i++){const x=-3+i*.5,n=x+.5;const h=u=>y+.46*Math.pow(Math.abs(u)/3,2);bar([x,h(x),0],[n,h(n),0],.065,'wood');bar([x,h(x)+.28,0],[n,h(n)+.28,0],.045);}
++  for(let i=0;i<=12;i++){const x=-3+i*.5,h=y+.46*Math.pow(Math.abs(x)/3,2);bar([x,h,0],[x,h+.75,0],.026);bar([x,h,0],[x+.28,h+.5,0],.024);}
++ }
++ for(let i=0;i<11;i++){const x=-2.5+i*.5;bar([x,6.3,0],[x*1.08,7.5+.7*(1-Math.abs(x)/3),0],.025);}
++ for(const x of [-2.5,-1.5,-.5,.5,1.5,2.5]){bar([x,4.2,0],[x+.7,5.8,0],.025);bar([x,5.8,0],[x+.5,7.1,0],.025);}
++ // A small woven awning and open doorway sit within the original frontage.
++ box([-2.12,1.38,-.74],[1.42,2.76,.06],'dark');for(const x of [-2.85,-1.38])box([x,1.44,-.55],[.12,2.88,.14]);box([-2.12,2.85,-.55],[1.65,.15,.18]);
++ for(let i=0;i<10;i++)box([-2.8+i*.145,3.0,-.15],[.13,.06,1.55],'bamboo');
++ for(const y of [3.55,5.6])for(let i=0;i<24;i++)box([-2.88+i*.25,y,.055],[.18,.22+(i%3)*.055,.055],i%4===0?'red':'cloth');
++ for(const [key,parts]of batches){const g=mergeGeometries(parts,false),m=new THREE.Mesh(g,materials[key]);m.name=config.id+'_'+key;m.castShadow=true;m.receiveShadow=true;root.add(m);parts.forEach(g=>g.dispose());}
++ const canvas=document.createElement('canvas');canvas.width=256;canvas.height=768;const c=canvas.getContext('2d');c.fillStyle='#d9c8a1';c.fillRect(0,0,256,768);c.strokeStyle='#695337';c.lineWidth=14;c.strokeRect(10,10,236,748);c.fillStyle='#2e3029';c.textAlign='center';c.textBaseline='middle';c.font='bold 170px "Songti SC",serif';c.fillText('脚',128,235);c.fillText('店',128,480);
++ const tex=new THREE.CanvasTexture(canvas);tex.colorSpace=THREE.SRGBColorSpace;
++ const sign=new THREE.Mesh(new THREE.BoxGeometry(.65,1.95,.07),new THREE.MeshStandardMaterial({map:tex,roughness:1}));sign.name='prop_jiaodian_vertical_sign';sign.position.set(-2.6,2.08,.29);root.add(sign);
++ const visual=library.spawn(config.waiter.sourceNpcId);if(!visual||visual.asset.id!==config.waiter.assetId)throw Error('脚店需要既有 QMSH-16 酒保资产');
++ const waiter=visual.root;waiter.name=config.waiter.id;waiter.userData.npcId=config.waiter.id;waiter.position.fromArray(config.waiter.position);waiter.rotation.y=config.waiter.yaw;scene.add(waiter);
++ // Reuse the reviewed rig-proxy mask on this clone only: remove its old tray and jug.
++ // Coordinates are the inverse of the original QMSH-16 normalization, not a skin-weight heuristic.
++ let removedTriangles=0;const bones=new Map();waiter.traverse(o=>{if(o.isBone)bones.set(o.name,o);if(!o.isSkinnedMesh)return;const g=o.geometry.clone(),p=g.attributes.position,idx=g.index,keep=[];for(let i=0;i<idx.count;i+=3){const v=new THREE.Vector3();for(let j=0;j<3;j++)v.add(new THREE.Vector3().fromBufferAttribute(p,idx.getX(i+j)));v.multiplyScalar((.998046875)/3).sub(V([.0202607581184443,.4990234375,.004867565356832443]));if(v.x>.01&&v.y>.079&&v.y<.3&&v.z<.02){removedTriangles++;continue;}keep.push(idx.getX(i),idx.getX(i+1),idx.getX(i+2));}g.setIndex(keep);o.geometry=g;});
++ const bone=n=>bones.get(THREE.PropertyBinding.sanitizeNodeName(n));
++ const chains=['Right','Left'].map(side=>[0,1,2].map(i=>bone(`tripo::0_${side}_Limb_${i}`)));if(chains.some(c=>c.some(b=>!b)))throw Error('脚店伙计双手骨骼缺失');
++ const base=new Map([...bones.values()].map(b=>[b,b.quaternion.clone()]));
++ const ceramic=new THREE.MeshStandardMaterial({color:'#9aa190',roughness:.48});
++ const bowl=new THREE.Mesh(new THREE.LatheGeometry([[.07,0],[.09,.015],[.115,.045],[.17,.13],[.175,.145],[.155,.145],[.145,.125],[.092,.035],[.07,.028]].map(p=>new THREE.Vector2(...p)),32),ceramic);bowl.name=config.props.bowlId;scene.add(bowl);
++ const chopsticks=config.props.chopstickIds.map(id=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(.008,.013,.32,8),materials.bamboo);m.name=id;scene.add(m);return m;});
++ function aim(chain,target){for(let r=0;r<8;r++)for(const joint of [chain[1],chain[0]]){waiter.updateMatrixWorld(true);const origin=joint.getWorldPosition(new THREE.Vector3()),end=chain[2].getWorldPosition(new THREE.Vector3()).sub(origin).normalize(),to=target.clone().sub(origin).normalize(),parent=joint.parent.getWorldQuaternion(new THREE.Quaternion());joint.quaternion.premultiply(parent.clone().invert().multiply(new THREE.Quaternion().setFromUnitVectors(end,to)).multiply(parent));}}
++ function update(){for(const [b,q]of base)b.quaternion.copy(q);waiter.updateMatrixWorld(true);aim(chains[0],waiter.localToWorld(V([.26,1.13,.31])));aim(chains[1],waiter.localToWorld(V([-.25,1.26,.30])));
++  const left=chains[0][2].getWorldPosition(new THREE.Vector3()),right=chains[1][2].getWorldPosition(new THREE.Vector3());bowl.position.copy(left).add(V([0,.025,0]));
++  const forward=V([0,-.55,1]).applyQuaternion(waiter.quaternion).normalize();for(let i=0;i<2;i++){const lateral=V([(i-.5)*.038,0,0]).applyQuaternion(waiter.quaternion);chopsticks[i].position.copy(right).addScaledVector(forward,.06).add(lateral);chopsticks[i].quaternion.setFromUnitVectors(V([0,1,0]),forward);}
++ }
++ update(0);shop.name=config.name;shop.wares=config.look;shop.historyNote=config.interpretation;shop.authoredMerchant=config.waiter.id;
++ return {update,body:()=>({id:config.waiter.id,x:waiter.position.x,z:waiter.position.z,y:.94,layer:'ground',radius:.4}),getState:()=>({id:config.id,shopId:shop.id,name:shop.name,waiter:config.waiter.id,assetId:visual.asset.id,position:waiter.position.toArray(),bowl:bowl.position.toArray(),hands:chains.map(c=>c[2].getWorldPosition(new THREE.Vector3()).toArray()),chopstickCount:chopsticks.length,removedTriangles,taskEffects:[],interpretation:config.interpretation})};
++}
+--- /dev/null
++++ b/src/landmarks/jiaodian.json
+@@ -0,0 +1,12 @@
++{
++  "id": "landmark_jiaodian_frontage",
++  "shopId": 1,
++  "name": "桥头脚店",
++  "frontage": [-8.1, 0.94, 33.9],
++  "yaw": 1.5707963267948966,
++  "waiter": {"id": "npc_jiaodian_waiter", "sourceNpcId": "street-168", "assetId": "QMSH-16", "position": [-7.05, 0.94, 35.55], "yaw": 1.15},
++  "props": {"bowlId": "prop_jiaodian_waiter_bowl", "chopstickIds": ["prop_jiaodian_chopstick_a", "prop_jiaodian_chopstick_b"]},
++  "look": "竹木门架 · 竖写脚店招牌 · 门前端碗持筷的伙计",
++  "reference": "用户提供的《清明上河图》脚店局部截图",
++  "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
++}
