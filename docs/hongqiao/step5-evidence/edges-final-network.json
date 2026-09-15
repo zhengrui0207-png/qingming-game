@@ -1,0 +1,704 @@
+[
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/?test",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/@vite/client",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/main.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/vite/dist/client/env.mjs",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/interaction/core.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.js?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/style.css",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/street-life.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/motion/config.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_loaders_GLTFLoader__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/storefronts.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/river.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/scholar.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/interaction/progress-adapter.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/atmosphere.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/landscape.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/world.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.css?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_environments_RoomEnvironment__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/surfaces.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/life-paths.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-KF3ZM4MI.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_objects_Water__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/history.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/runtime.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_EffectComposer__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_RenderPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_GTAOPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_OutputPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/motion/animation.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_utils_BufferGeometryUtils__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/persistence.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/collectibles.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/dialogue-ui.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-logic.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/tracker.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/presentation.js?t=1789449316240",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/npcs.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-NY4Z4LNU.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IEZS3O2Z.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/narrative.json?import",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.json?import",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/state.js",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/textures/song-material-atlas.png",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/a-qing.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/skiff.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/qingming-world.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/world.json",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/song-scholar-v2-animated.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/street-life.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Color.jpg",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_NormalGL.jpg",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Roughness.jpg",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/ea908409-bb9e-4934-ba4e-93a8a34b1e97",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/49b670af-2baa-4317-bb0b-7a476f580318",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/92656b9f-0360-4814-b851-a843e5dd26b1",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/textures/willow-spray.png",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_pole.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_rope.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_cloth.glb",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/a897d196-9f7c-4aba-8f55-fdc8c140f82a",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/03d6ac0b-8f9c-47dc-98c3-27c11783a63a",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/1d541b34-5738-4a72-b9f1-aea3e9639b9c",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/39fde356-6a13-40cd-a8a1-9deb4faedcbf",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/a5390ec2-23fc-4d0f-8639-3d6517e49376",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/727c14ed-11b1-4eea-9d18-22a4bb1af04e",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/80a99fe4-5b52-4494-b134-2410b275828e",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/45e9c92e-4b43-4973-9a3f-a1832cd0db69",
+    "status": 200
+  },
+  {
+    "phase": "prepare.js",
+    "url": "blob:http://127.0.0.1:5181/5042b8fb-d624-4922-a659-983ab131e7df",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/?test",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/@vite/client",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/main.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/vite/dist/client/env.mjs",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/interaction/core.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.js?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/style.css",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/motion/config.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_loaders_GLTFLoader__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/interaction/progress-adapter.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/street-life.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/river.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/scholar.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/storefronts.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/surfaces.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/landscape.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/world.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_environments_RoomEnvironment__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/atmosphere.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-KF3ZM4MI.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/runtime.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/life-paths.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.css?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/motion/animation.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_utils_BufferGeometryUtils__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/history.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_EffectComposer__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_objects_Water__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_RenderPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_GTAOPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_OutputPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/persistence.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/collectibles.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/npcs.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-logic.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/dialogue-ui.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/tracker.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/presentation.js?t=1789449316240",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-NY4Z4LNU.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IEZS3O2Z.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.json?import",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/narrative.json?import",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/state.js",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/textures/song-material-atlas.png",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/qingming-world.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/a-qing.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/skiff.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/street-life.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/song-scholar-v2-animated.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/world.json",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Color.jpg",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_NormalGL.jpg",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Roughness.jpg",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/textures/willow-spray.png",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_pole.glb",
+    "failure": {
+      "errorText": "net::ERR_FAILED"
+    }
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_cloth.glb",
+    "status": 200
+  },
+  {
+    "phase": "late-assets.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_rope.glb",
+    "status": 200
+  }
+]

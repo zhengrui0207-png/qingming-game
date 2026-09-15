@@ -1,0 +1,10 @@
+[
+  {
+    "type": "error",
+    "text": "[Hongqiao save] SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at decode (http://127.0.0.1:5181/src/hongqiao/persistence.js:10:45)\n    at load (http://127.0.0.1:5181/src/hongqiao/persistence.js:37:17)\n    at createProgressStore (http://127.0.0.1:5181/src/hongqiao/persistence.js:55:3)\n    at createHongqiaoProgress (http://127.0.0.1:5181/src/hongqiao/runtime.js?t=1789449316245:17:15)\n    at boot (http://127.0.0.1:5181/src/main.js?t=1789449316245:76:19)"
+  },
+  {
+    "type": "error",
+    "text": "[Hongqiao save] QuotaExceededError: Step5 test quota"
+  }
+]

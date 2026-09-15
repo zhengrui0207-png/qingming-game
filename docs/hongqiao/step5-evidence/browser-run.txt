@@ -1,0 +1,39 @@
+START routes.js
+ROUTE 0
+COLLECTED 0 npc_hq_he
+COLLECTED 0 npc_hq_cheng
+COLLECTED 0 npc_hq_fang
+ROUTE PASS 0
+ROUTE 1
+COLLECTED 1 npc_hq_he
+COLLECTED 1 npc_hq_fang
+COLLECTED 1 npc_hq_cheng
+ROUTE PASS 1
+ROUTE 2
+COLLECTED 2 npc_hq_cheng
+COLLECTED 2 npc_hq_he
+COLLECTED 2 npc_hq_fang
+ROUTE PASS 2
+ROUTE 3
+COLLECTED 3 npc_hq_cheng
+COLLECTED 3 npc_hq_fang
+COLLECTED 3 npc_hq_he
+ROUTE PASS 3
+ROUTE 4
+COLLECTED 4 npc_hq_fang
+COLLECTED 4 npc_hq_he
+COLLECTED 4 npc_hq_cheng
+ROUTE PASS 4
+ROUTE 5
+COLLECTED 5 npc_hq_fang
+COLLECTED 5 npc_hq_cheng
+COLLECTED 5 npc_hq_he
+ROUTE PASS 5
+PASS routes.js
+START stories-and-faults.js
+PASS stories-and-faults.js
+START guidance-and-interface.js
+Error: unfocused clock advanced
+    at check (eval at <anonymous> (/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/playwright/step5/run-browser.cjs:6:82), <anonymous>:2:34)
+    at eval (eval at <anonymous> (/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/playwright/step5/run-browser.cjs:6:82), <anonymous>:8:247)
+    at async /Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/playwright/step5/run-browser.cjs:6:153

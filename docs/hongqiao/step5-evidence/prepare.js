@@ -1,0 +1,1 @@
+async(page)=>{await page.goto('http://127.0.0.1:5181/?test',{waitUntil:'domcontentloaded',timeout:120000});await page.waitForFunction(()=>window.__qingming?.getState().loaded,null,{timeout:120000});await page.locator('#start').click();return {loaded:true};}

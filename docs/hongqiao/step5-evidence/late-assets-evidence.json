@@ -1,0 +1,88 @@
+{
+  "initial": {
+    "instances": [
+      {
+        "id": "instance_hq_rope_01",
+        "visible": true,
+        "loadState": "pending"
+      },
+      {
+        "id": "instance_hq_pole_01",
+        "visible": true,
+        "loadState": "placeholder"
+      },
+      {
+        "id": "instance_hq_cloth_01",
+        "visible": true,
+        "loadState": "loaded"
+      }
+    ],
+    "assetErrors": [
+      {
+        "instanceId": "instance_hq_pole_01",
+        "error": "TypeError: Failed to fetch"
+      }
+    ]
+  },
+  "after": {
+    "world": {
+      "instances": [
+        {
+          "id": "instance_hq_rope_01",
+          "visible": false,
+          "loadState": "discarded-collected"
+        },
+        {
+          "id": "instance_hq_pole_01",
+          "visible": false,
+          "loadState": "placeholder"
+        },
+        {
+          "id": "instance_hq_cloth_01",
+          "visible": true,
+          "loadState": "loaded"
+        }
+      ],
+      "assetErrors": [
+        {
+          "instanceId": "instance_hq_pole_01",
+          "error": "TypeError: Failed to fetch"
+        }
+      ]
+    },
+    "state": {
+      "schemaVersion": 2,
+      "revision": 4,
+      "inventory": {
+        "item_hq_rope": 1,
+        "item_hq_pole": 1
+      },
+      "unlockedCodexIds": [
+        "item_hq_rope",
+        "npc_hq_he",
+        "item_hq_pole",
+        "npc_hq_cheng"
+      ],
+      "permissions": [
+        "permit_hq_rope",
+        "permit_hq_pole"
+      ],
+      "worldState": {
+        "collectedInstanceIds": [
+          "instance_hq_rope_01",
+          "instance_hq_pole_01"
+        ],
+        "shipState": "waiting"
+      },
+      "quests": {},
+      "unlockedStoryIds": [],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "seen",
+      "introSeen": true,
+      "endingPending": false,
+      "endingSeen": false
+    }
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "passed": 6,
+  "rows": [
+    {
+      "order": [
+        "npc_hq_he",
+        "npc_hq_cheng",
+        "npc_hq_fang"
+      ],
+      "beforeAccept": false,
+      "stages": [
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_rope_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_rope_01",
+            "instance_hq_pole_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_pole": 1,
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_rope_01",
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_rope": 0,
+          "item_hq_pole": 0,
+          "item_hq_cloth": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_rope",
+          "npc_hq_he",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_rope",
+          "permit_hq_pole",
+          "permit_hq_cloth"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_rope_01",
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      },
+      "reloaded": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_rope": 0,
+          "item_hq_pole": 0,
+          "item_hq_cloth": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_rope",
+          "npc_hq_he",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_rope",
+          "permit_hq_pole",
+          "permit_hq_cloth"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_rope_01",
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01"
+          ],
+          "shipState": "passed"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      }
+    },
+    {
+      "order": [
+        "npc_hq_he",
+        "npc_hq_fang",
+        "npc_hq_cheng"
+      ],
+      "beforeAccept": false,
+      "stages": [
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_rope_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_rope_01",
+            "instance_hq_cloth_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1,
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth",
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_rope_01",
+            "instance_hq_cloth_01",
+            "instance_hq_pole_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_rope": 0,
+          "item_hq_cloth": 0,
+          "item_hq_pole": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_rope",
+          "npc_hq_he",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_rope",
+          "permit_hq_cloth",
+          "permit_hq_pole"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_rope_01",
+            "instance_hq_cloth_01",
+            "instance_hq_pole_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      }
+    },
+    {
+      "order": [
+        "npc_hq_cheng",
+        "npc_hq_he",
+        "npc_hq_fang"
+      ],
+      "beforeAccept": false,
+      "stages": [
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_pole_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1,
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_pole",
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_pole_01",
+            "instance_hq_rope_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1,
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_pole",
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_pole_01",
+            "instance_hq_rope_01",
+            "instance_hq_cloth_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_pole": 0,
+          "item_hq_rope": 0,
+          "item_hq_cloth": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "item_hq_rope",
+          "npc_hq_he",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_pole",
+          "permit_hq_rope",
+          "permit_hq_cloth"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_pole_01",
+            "instance_hq_rope_01",
+            "instance_hq_cloth_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      }
+    },
+    {
+      "order": [
+        "npc_hq_cheng",
+        "npc_hq_fang",
+        "npc_hq_he"
+      ],
+      "beforeAccept": false,
+      "stages": [
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_pole_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1,
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_pole": 1,
+            "item_hq_cloth": 1,
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_pole",
+            "permit_hq_cloth",
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01",
+            "instance_hq_rope_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_pole": 0,
+          "item_hq_cloth": 0,
+          "item_hq_rope": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "item_hq_rope",
+          "npc_hq_he",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_pole",
+          "permit_hq_cloth",
+          "permit_hq_rope"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_pole_01",
+            "instance_hq_cloth_01",
+            "instance_hq_rope_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      }
+    },
+    {
+      "order": [
+        "npc_hq_fang",
+        "npc_hq_he",
+        "npc_hq_cheng"
+      ],
+      "beforeAccept": false,
+      "stages": [
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_cloth_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_cloth": 1,
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_cloth",
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_cloth_01",
+            "instance_hq_rope_01"
+          ]
+        },
+        {
+          "entry": "accepted",
+          "inventory": {
+            "item_hq_cloth": 1,
+            "item_hq_rope": 1,
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_cloth",
+            "permit_hq_rope",
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_cloth_01",
+            "instance_hq_rope_01",
+            "instance_hq_pole_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_cloth": 0,
+          "item_hq_rope": 0,
+          "item_hq_pole": 0
+        },
+        "unlockedCodexIds": [
+          "npc_hq_zhou",
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "item_hq_rope",
+          "npc_hq_he",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_cloth",
+          "permit_hq_rope",
+          "permit_hq_pole"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_cloth_01",
+            "instance_hq_rope_01",
+            "instance_hq_pole_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      }
+    },
+    {
+      "order": [
+        "npc_hq_fang",
+        "npc_hq_cheng",
+        "npc_hq_he"
+      ],
+      "beforeAccept": true,
+      "stages": [
+        {
+          "entry": "first",
+          "inventory": {
+            "item_hq_cloth": 1
+          },
+          "permissions": [
+            "permit_hq_cloth"
+          ],
+          "collected": [
+            "instance_hq_cloth_01"
+          ]
+        },
+        {
+          "entry": "first",
+          "inventory": {
+            "item_hq_cloth": 1,
+            "item_hq_pole": 1
+          },
+          "permissions": [
+            "permit_hq_cloth",
+            "permit_hq_pole"
+          ],
+          "collected": [
+            "instance_hq_cloth_01",
+            "instance_hq_pole_01"
+          ]
+        },
+        {
+          "entry": "first",
+          "inventory": {
+            "item_hq_cloth": 1,
+            "item_hq_pole": 1,
+            "item_hq_rope": 1
+          },
+          "permissions": [
+            "permit_hq_cloth",
+            "permit_hq_pole",
+            "permit_hq_rope"
+          ],
+          "collected": [
+            "instance_hq_cloth_01",
+            "instance_hq_pole_01",
+            "instance_hq_rope_01"
+          ]
+        }
+      ],
+      "completed": {
+        "schemaVersion": 2,
+        "revision": 8,
+        "inventory": {
+          "item_hq_cloth": 0,
+          "item_hq_pole": 0,
+          "item_hq_rope": 0
+        },
+        "unlockedCodexIds": [
+          "item_hq_cloth",
+          "npc_hq_fang",
+          "item_hq_pole",
+          "npc_hq_cheng",
+          "item_hq_rope",
+          "npc_hq_he",
+          "npc_hq_zhou",
+          "K01",
+          "K03",
+          "journal_hq"
+        ],
+        "permissions": [
+          "permit_hq_cloth",
+          "permit_hq_pole",
+          "permit_hq_rope"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_cloth_01",
+            "instance_hq_pole_01",
+            "instance_hq_rope_01"
+          ],
+          "shipState": "passing"
+        },
+        "quests": {
+          "hongqiao_01": {
+            "status": "completed"
+          }
+        },
+        "unlockedStoryIds": [
+          "story_hq_zhou",
+          "story_hq_he",
+          "story_hq_cheng",
+          "story_hq_fang"
+        ],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {},
+        "introStatus": "seen",
+        "introSeen": true,
+        "endingPending": true,
+        "endingSeen": false
+      },
+      "replay": {
+        "unchanged": true,
+        "result": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}

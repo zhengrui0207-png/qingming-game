@@ -1,0 +1,72 @@
+{
+  "status": "implementation-and-development-verification-complete; user acceptance pending",
+  "unitTests": {
+    "passed": 59,
+    "failed": 0
+  },
+  "build": "passed; existing >500kB chunk warning",
+  "browserOrders": {
+    "passed": 6,
+    "orders": [
+      [
+        "npc_hq_he",
+        "npc_hq_cheng",
+        "npc_hq_fang"
+      ],
+      [
+        "npc_hq_he",
+        "npc_hq_fang",
+        "npc_hq_cheng"
+      ],
+      [
+        "npc_hq_cheng",
+        "npc_hq_he",
+        "npc_hq_fang"
+      ],
+      [
+        "npc_hq_cheng",
+        "npc_hq_fang",
+        "npc_hq_he"
+      ],
+      [
+        "npc_hq_fang",
+        "npc_hq_he",
+        "npc_hq_cheng"
+      ],
+      [
+        "npc_hq_fang",
+        "npc_hq_cheng",
+        "npc_hq_he"
+      ]
+    ],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "mergedExistingInteractions": {
+    "passed": 28,
+    "errors": [],
+    "network": []
+  },
+  "normalEntry": {
+    "url": "http://127.0.0.1:5181/",
+    "devPanel": 0,
+    "debugGlobal": "undefined",
+    "tracker": "虹桥急情 · 备齐物品 0/3\n\n去岸边问问发生了什么。\n\n○ 何伯 · 备用缆绳\n○ 阿成 · 长竹篙\n○ 方娘子 · 护货布\n找老周"
+  },
+  "normalConsole": [],
+  "normalNetworkErrorCount": 0,
+  "guidance": {
+    "idleSeconds": 90.95320000004769,
+    "hintVisible": true,
+    "targetId": "npc_hq_he"
+  },
+  "presentationIsMockOnly": true,
+  "sourcePatchVerified": true,
+  "notCovered": [
+    "human first-play timing",
+    "continuous real 90-second idle",
+    "mobile and Safari",
+    "real intro/ship/characters/audio/camera cinematic",
+    "all decorative geometry occlusion"
+  ]
+}

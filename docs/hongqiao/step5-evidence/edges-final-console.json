@@ -1,0 +1,12 @@
+[
+  {
+    "phase": "late-assets.js",
+    "type": "error",
+    "text": "Failed to load resource: net::ERR_FAILED"
+  },
+  {
+    "phase": "late-assets.js",
+    "type": "warning",
+    "text": "[Hongqiao asset; using placeholder] instance_hq_pole_01 TypeError: Failed to fetch\n    at FileLoader.load (http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088:23464:5)\n    at GLTFLoader.load (http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_loaders_GLTFLoader__js.js?v=c54bf088:172:12)\n    at http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088:23324:13\n    at new Promise (<anonymous>)\n    at GLTFLoader.loadAsync (http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088:23323:12)\n    at createCollectibles (http://127.0.0.1:5181/src/hongqiao/collectibles.js:21:12)\n    at createHongqiaoProgress (http://127.0.0.1:5181/src/hongqiao/runtime.js?t=1789449316245:22:22)\n    at boot (http://127.0.0.1:5181/src/main.js?t=1789449316245:76:19)"
+  }
+]

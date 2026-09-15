@@ -1,0 +1,114 @@
+{
+  "active": {
+    "idleSeconds": 1.144100000023842,
+    "hintVisible": false,
+    "targetId": null
+  },
+  "hint": {
+    "idleSeconds": 90.95320000004769,
+    "hintVisible": true,
+    "targetId": "npc_hq_he"
+  },
+  "presentation": {
+    "evidence": {
+      "intro": 1,
+      "ending": 1,
+      "cancel": 2,
+      "states": [
+        {
+          "shipState": "waiting",
+          "introSeen": false,
+          "endingPending": false
+        },
+        {
+          "shipState": "waiting",
+          "introSeen": true,
+          "endingPending": false
+        },
+        {
+          "shipState": "passed",
+          "introSeen": true,
+          "endingPending": true
+        }
+      ],
+      "shots": 9
+    },
+    "state": {
+      "schemaVersion": 2,
+      "revision": 11,
+      "inventory": {
+        "item_hq_rope": 0,
+        "item_hq_pole": 0,
+        "item_hq_cloth": 0
+      },
+      "unlockedCodexIds": [
+        "npc_hq_zhou",
+        "item_hq_rope",
+        "npc_hq_he",
+        "item_hq_pole",
+        "npc_hq_cheng",
+        "item_hq_cloth",
+        "npc_hq_fang",
+        "K01",
+        "K03",
+        "journal_hq"
+      ],
+      "permissions": [
+        "permit_hq_rope",
+        "permit_hq_pole",
+        "permit_hq_cloth"
+      ],
+      "worldState": {
+        "collectedInstanceIds": [
+          "instance_hq_rope_01",
+          "instance_hq_pole_01",
+          "instance_hq_cloth_01"
+        ],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "seen",
+      "introSeen": true,
+      "endingPending": true,
+      "endingSeen": false
+    },
+    "locks": [
+      "hqDialogue"
+    ]
+  },
+  "regression": {
+    "movedFrom": {
+      "x": 0,
+      "z": 35,
+      "layer": "ground",
+      "height": 0.94,
+      "mode": "walk"
+    },
+    "movedTo": {
+      "x": -0.32389422428039377,
+      "z": 33.55158276467801,
+      "layer": "ground",
+      "height": 0.94,
+      "mode": "walk"
+    },
+    "camera": {
+      "yaw": -0.26,
+      "pitch": 0.61,
+      "distance": 10,
+      "overview": false
+    }
+  }
+}

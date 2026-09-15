@@ -1,0 +1,1718 @@
+{
+  "checks": [
+    {
+      "name": "NPC and items and automatic landmarks registered",
+      "pass": true
+    },
+    {
+      "name": "initial live NPC focus",
+      "pass": true
+    },
+    {
+      "name": "opening E does not advance first node",
+      "pass": true
+    },
+    {
+      "name": "held E no repeat advance",
+      "pass": true
+    },
+    {
+      "name": "E reveals full text",
+      "pass": true
+    },
+    {
+      "name": "second sentence reached",
+      "pass": true
+    },
+    {
+      "name": "E cannot confirm choice",
+      "pass": true
+    },
+    {
+      "name": "nested dialogue and book locks",
+      "pass": true
+    },
+    {
+      "name": "closing book leaves dialogue locked",
+      "pass": true
+    },
+    {
+      "name": "Esc cancelled without effects and restores input",
+      "pass": true
+    },
+    {
+      "name": "explicit option completes once",
+      "pass": true
+    },
+    {
+      "name": "closing lower dialogue preserves book lock",
+      "pass": true
+    },
+    {
+      "name": "near equal initial focus",
+      "pass": true
+    },
+    {
+      "name": "focus hysteresis suppresses flicker",
+      "pass": true
+    },
+    {
+      "name": "live NPC motion changes focus",
+      "pass": true
+    },
+    {
+      "name": "wrong layer and height rejected",
+      "pass": true
+    },
+    {
+      "name": "bridge does not reach NPC below",
+      "pass": true
+    },
+    {
+      "name": "old bridge automatic landmark retained",
+      "pass": true
+    },
+    {
+      "name": "F opens old landmark",
+      "pass": true
+    },
+    {
+      "name": "book nests over historical reading",
+      "pass": true
+    },
+    {
+      "name": "history lock retained after book closes",
+      "pass": true
+    },
+    {
+      "name": "F closes history and restores",
+      "pass": true
+    },
+    {
+      "name": "movement restored",
+      "pass": true
+    },
+    {
+      "name": "camera drag restored",
+      "pass": true
+    },
+    {
+      "name": "blur clears trigger key state",
+      "pass": true
+    },
+    {
+      "name": "blur recovery cancels without task effect",
+      "pass": true
+    },
+    {
+      "name": "single operation bar",
+      "pass": true
+    },
+    {
+      "name": "Console and Network clear",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "device": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+    "width": 1280,
+    "height": 800,
+    "dpr": 1,
+    "platform": "MacIntel"
+  },
+  "initial": {
+    "game": {
+      "loaded": true,
+      "playing": true,
+      "paused": false,
+      "mode": "walk",
+      "actor": {
+        "x": 0,
+        "z": 35,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "boat": {
+        "x": 32,
+        "z": 7,
+        "angle": 1.5707963267948966,
+        "speed": 0
+      },
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      },
+      "fps": 14,
+      "drawCalls": 517,
+      "triangles": 5095781,
+      "limbs": [
+        "armL",
+        "elbowL",
+        "armR",
+        "elbowR",
+        "legL",
+        "kneeL",
+        "legR",
+        "kneeR",
+        "head",
+        "spine"
+      ],
+      "source": "Blender; V1 MCP / V3 isolated local Blender",
+      "visualVersion": 4.2,
+      "scholar": {
+        "asset": "song-scholar-v2-animated.glb",
+        "version": 2,
+        "height": 2,
+        "triangles": 59582,
+        "bones": 40,
+        "skinnedMeshes": 1,
+        "animations": [
+          "idle",
+          "walk",
+          "swim",
+          "row"
+        ],
+        "animationSource": "procedural-skeleton",
+        "locomotion": {
+          "ready": false,
+          "missing": [
+            "idle",
+            "walk"
+          ],
+          "clipNames": {
+            "idle": null,
+            "walk": null
+          },
+          "mixerTime": 2.1500000000000017,
+          "activeClip": null,
+          "weights": {}
+        },
+        "active": "idle",
+        "mode": "walk",
+        "animationTime": 2.1500000000000017,
+        "joints": {
+          "armL": [
+            -0.5000073332942643,
+            0.0021577766601991325,
+            -0.029472771959524247,
+            0.8655168291297255
+          ],
+          "elbowL": [
+            -0.0494675417775895,
+            0.043271192533482446,
+            -0.12212004578631312,
+            0.9903369629903656
+          ],
+          "armR": [
+            0.011951125382981764,
+            0.02434802859191052,
+            -0.514884021505217,
+            0.8568306717610163
+          ],
+          "elbowR": [
+            -0.05932619520267818,
+            0.7834442950223927,
+            -0.10096492754343134,
+            0.6103290186633765
+          ],
+          "legL": [
+            -0.532053897310096,
+            0.5149651261396679,
+            0.44720021685869926,
+            0.5017384976008192
+          ],
+          "kneeL": [
+            -0.0004004754009656608,
+            -0.10543609410524368,
+            0.11570414900779724,
+            0.9876718521118164
+          ],
+          "legR": [
+            -0.5695533752441406,
+            0.4785682260990143,
+            0.4805424213409424,
+            0.46439263224601746
+          ],
+          "kneeR": [
+            -0.03084975853562355,
+            -0.12555162608623505,
+            0.11697748303413391,
+            0.9846833944320679
+          ],
+          "head": [
+            -0.12204432641283858,
+            0.0000574931813567648,
+            0.0035196306131597454,
+            0.9925184220205028
+          ],
+          "spine": [
+            0.001721232631993318,
+            -5.996478535925554e-9,
+            1.16162679345784e-8,
+            0.999998518678016
+          ]
+        }
+      },
+      "rendering": {
+        "ambientOcclusion": true
+      },
+      "surfaces": [
+        "song-roof",
+        "song-timber",
+        "song-earth",
+        "song-linen",
+        "plaster"
+      ],
+      "landscape": {
+        "version": "4.1",
+        "trees": 14,
+        "completeTrunks": 14,
+        "branches": 1064,
+        "leafCards": 1680,
+        "wind": true,
+        "windTime": 5.166499999999996,
+        "matchingWindShadows": true,
+        "texture": "willow-spray",
+        "riparianTufts": 1797
+      },
+      "river": {
+        "time": 5.166499999999996,
+        "currentDirection": "+X",
+        "currentSpeed": 0.92,
+        "wakeCount": 40,
+        "displacedVertices": 30861,
+        "version": 4,
+        "reflection": "planar",
+        "microRipples": true
+      },
+      "life": {
+        "time": 5.133199999999994,
+        "people": 214,
+        "visiblePeople": 176,
+        "roles": {
+          "挑担": 22,
+          "行人": 135,
+          "携书行人": 9,
+          "点茶": 3,
+          "饮茶": 2,
+          "斟酒": 1,
+          "蒸食": 3,
+          "看货": 7,
+          "理布": 3,
+          "量米": 3,
+          "配药": 2,
+          "看书": 2,
+          "交谈": 8,
+          "赶牛人": 2,
+          "骑马人": 2,
+          "车夫": 2,
+          "船夫": 4,
+          "乘客": 4
+        },
+        "vehicles": [
+          {
+            "kind": "牛车",
+            "x": -3.6,
+            "z": 39.88174418252679
+          },
+          {
+            "kind": "牛车",
+            "x": -2.874720759194658,
+            "z": -45.739271001830325
+          },
+          {
+            "kind": "骑马",
+            "x": 3.4,
+            "z": 55.56038969192184
+          },
+          {
+            "kind": "骑马",
+            "x": 3,
+            "z": -26.11398374588916
+          },
+          {
+            "kind": "人力车",
+            "x": -3.6,
+            "z": 33.1744010365055
+          },
+          {
+            "kind": "人力车",
+            "x": -3.2,
+            "z": -41.105298372500904
+          }
+        ],
+        "ferries": [
+          {
+            "x": -68.777465,
+            "z": 5.4,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -14.780415474957152,
+            "z": 5.4,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -30.221059762521456,
+            "z": -1.6,
+            "angle": -1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": 38.22253500000001,
+            "z": 1.5000000000000004,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          }
+        ],
+        "samplePeople": [
+          {
+            "x": -1.710602587925287,
+            "z": 63.444953770957895,
+            "angle": -3.1347580980203276,
+            "role": "挑担"
+          },
+          {
+            "x": 1.7533052924245118,
+            "z": -29.877644563658997,
+            "angle": -0.011904136978342774,
+            "role": "行人"
+          },
+          {
+            "x": -1.65,
+            "z": 1.4409997062230389,
+            "angle": 3.1415761383454206,
+            "role": "行人"
+          },
+          {
+            "x": 1.9371503228425604,
+            "z": 32.414770984766434,
+            "angle": 0.015383320910581845,
+            "role": "行人"
+          },
+          {
+            "x": -1.1519726255840126,
+            "z": -60.733561453466564,
+            "angle": 3.022147840160833,
+            "role": "行人"
+          }
+        ],
+        "instanced": true
+      },
+      "shops": {
+        "signs": 84,
+        "historySites": 88,
+        "reading": false,
+        "openedKey": null,
+        "sourceCount": 0,
+        "steamSources": 6
+      }
+    },
+    "interaction": {
+      "focus": "test_npc_0",
+      "locks": [],
+      "dialogue": {
+        "open": false,
+        "result": null,
+        "awaitingRelease": false
+      },
+      "testEffects": 0,
+      "registered": [
+        {
+          "id": "landmark_shop-0",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-1",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-2",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-3",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-4",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-5",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-6",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-7",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-8",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-9",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-10",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-11",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-12",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-13",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-14",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-15",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-16",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-17",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-18",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-19",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-20",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-21",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-22",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-23",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-24",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-25",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-26",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-27",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-28",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-29",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-30",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-31",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-32",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-33",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-34",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-35",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-36",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-37",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-38",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-39",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-40",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-41",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-42",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-43",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-44",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-45",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-46",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-47",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-48",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-49",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-50",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-51",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-52",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-53",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-54",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-55",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-56",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-57",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-58",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-59",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-60",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-61",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-62",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-63",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-64",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-65",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-66",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-67",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-68",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-69",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-70",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-71",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-72",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-73",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-74",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-75",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-76",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-77",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-78",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-79",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-80",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-81",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-82",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-83",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_bridge",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_quay-east",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_gateway",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_quay-west",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "instance_hq_rope_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "instance_hq_pole_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "instance_hq_cloth_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_zhou",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_he",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_cheng",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_fang",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "explore_hq_bridge",
+          "type": "codex",
+          "trigger": "E"
+        },
+        {
+          "id": "test_npc_0",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "test_npc_1",
+          "type": "npc",
+          "trigger": "E"
+        }
+      ]
+    }
+  },
+  "focusLost": false,
+  "final": {
+    "game": {
+      "loaded": true,
+      "playing": true,
+      "paused": false,
+      "mode": "walk",
+      "actor": {
+        "x": 0,
+        "z": 35,
+        "layer": "ground",
+        "height": 0.94,
+        "mode": "walk"
+      },
+      "boat": {
+        "x": 32,
+        "z": 7,
+        "angle": 1.5707963267948966,
+        "speed": 0
+      },
+      "camera": {
+        "yaw": -0.38,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      },
+      "fps": 32,
+      "drawCalls": 827,
+      "triangles": 7647336,
+      "limbs": [
+        "armL",
+        "elbowL",
+        "armR",
+        "elbowR",
+        "legL",
+        "kneeL",
+        "legR",
+        "kneeR",
+        "head",
+        "spine"
+      ],
+      "source": "Blender; V1 MCP / V3 isolated local Blender",
+      "visualVersion": 4.2,
+      "scholar": {
+        "asset": "song-scholar-v2-animated.glb",
+        "version": 2,
+        "height": 2,
+        "triangles": 59582,
+        "bones": 40,
+        "skinnedMeshes": 1,
+        "animations": [
+          "idle",
+          "walk",
+          "swim",
+          "row"
+        ],
+        "animationSource": "procedural-skeleton",
+        "locomotion": {
+          "ready": false,
+          "missing": [
+            "idle",
+            "walk"
+          ],
+          "clipNames": {
+            "idle": null,
+            "walk": null
+          },
+          "mixerTime": 14.965599999999966,
+          "activeClip": null,
+          "weights": {}
+        },
+        "active": "idle",
+        "mode": "walk",
+        "animationTime": 14.965599999999966,
+        "joints": {
+          "armL": [
+            -0.500107608224539,
+            0.0018938677682584695,
+            -0.02967443008702795,
+            0.8654526186630691
+          ],
+          "elbowL": [
+            -0.0494675417775895,
+            0.043271192533482446,
+            -0.12212004578631312,
+            0.9903369629903656
+          ],
+          "armR": [
+            0.011951554798603277,
+            0.02434805464310099,
+            -0.5149789299118991,
+            0.856773625075353
+          ],
+          "elbowR": [
+            -0.0593261952195253,
+            0.7834442952448706,
+            -0.10096492757210276,
+            0.6103290188366942
+          ],
+          "legL": [
+            -0.5320538975101481,
+            0.5149651263332946,
+            0.4472002170268464,
+            0.5017384977894727
+          ],
+          "kneeL": [
+            -0.00038748754717844974,
+            -0.10540729883042188,
+            0.11599712797529851,
+            0.9876405409116134
+          ],
+          "legR": [
+            -0.5697152781336694,
+            0.47839305390321596,
+            0.4803600313418508,
+            0.46456309306620536
+          ],
+          "kneeR": [
+            -0.030840017113002584,
+            -0.12556719848196918,
+            0.11718068066960775,
+            0.9846575419945426
+          ],
+          "head": [
+            -0.10778660547773894,
+            0.00010800316084645889,
+            0.0035184449735696103,
+            0.9941678322338816
+          ],
+          "spine": [
+            -0.000942522603837181,
+            -6.037903961127901e-9,
+            1.1647005716924726e-8,
+            0.999999555825472
+          ]
+        }
+      },
+      "rendering": {
+        "ambientOcclusion": true
+      },
+      "surfaces": [
+        "song-roof",
+        "song-timber",
+        "song-earth",
+        "song-linen",
+        "plaster"
+      ],
+      "landscape": {
+        "version": "4.1",
+        "trees": 14,
+        "completeTrunks": 14,
+        "branches": 1064,
+        "leafCards": 1680,
+        "wind": true,
+        "windTime": 17.982099999999996,
+        "matchingWindShadows": true,
+        "texture": "willow-spray",
+        "riparianTufts": 1797
+      },
+      "river": {
+        "time": 17.982099999999996,
+        "currentDirection": "+X",
+        "currentSpeed": 0.92,
+        "wakeCount": 180,
+        "displacedVertices": 30861,
+        "version": 4,
+        "reflection": "planar",
+        "microRipples": true
+      },
+      "life": {
+        "time": 17.982099999999996,
+        "people": 214,
+        "visiblePeople": 176,
+        "roles": {
+          "挑担": 22,
+          "行人": 135,
+          "携书行人": 9,
+          "点茶": 3,
+          "饮茶": 2,
+          "斟酒": 1,
+          "蒸食": 3,
+          "看货": 7,
+          "理布": 3,
+          "量米": 3,
+          "配药": 2,
+          "看书": 2,
+          "交谈": 8,
+          "赶牛人": 2,
+          "骑马人": 2,
+          "车夫": 2,
+          "船夫": 4,
+          "乘客": 4
+        },
+        "vehicles": [
+          {
+            "kind": "牛车",
+            "x": -3.6,
+            "z": 46.563172182526756
+          },
+          {
+            "kind": "牛车",
+            "x": 0.4329492462236939,
+            "z": -48.56705075377631
+          },
+          {
+            "kind": "骑马",
+            "x": 3.4,
+            "z": 40.78415469192208
+          },
+          {
+            "kind": "骑马",
+            "x": -3.2,
+            "z": -28.033268127099085
+          },
+          {
+            "kind": "人力车",
+            "x": -3.6,
+            "z": 41.78316403650625
+          },
+          {
+            "kind": "人力车",
+            "x": -1.3014654552737266,
+            "z": -49.314851238014256
+          }
+        ],
+        "ferries": [
+          {
+            "x": -55.286119999999954,
+            "z": 5.4,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -1.2890704749571285,
+            "z": 5.4,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": -43.71240476252148,
+            "z": -1.6,
+            "angle": -1.5707963267948966,
+            "speed": 1.05
+          },
+          {
+            "x": 51.71388000000003,
+            "z": 1.5000000000000004,
+            "angle": 1.5707963267948966,
+            "speed": 1.05
+          }
+        ],
+        "samplePeople": [
+          {
+            "x": -1.7623567613847517,
+            "z": 55.85434166356973,
+            "angle": -3.134774577422308,
+            "role": "挑担"
+          },
+          {
+            "x": 1.6679217354828884,
+            "z": -22.70542578056262,
+            "angle": -0.011904199558309828,
+            "role": "行人"
+          },
+          {
+            "x": -1.65,
+            "z": -5.252687422058074,
+            "angle": 3.1415926535897927,
+            "role": "行人"
+          },
+          {
+            "x": 2.0827552987678972,
+            "z": 41.879094419913315,
+            "angle": 0.015383401780595145,
+            "role": "行人"
+          },
+          {
+            "x": 1.962456192218468,
+            "z": -59.85964879863457,
+            "angle": 0.15865526218640166,
+            "role": "行人"
+          }
+        ],
+        "instanced": true
+      },
+      "shops": {
+        "signs": 84,
+        "historySites": 88,
+        "reading": false,
+        "openedKey": null,
+        "sourceCount": 0,
+        "steamSources": 6
+      }
+    },
+    "interaction": {
+      "focus": "test_npc_0",
+      "locks": [],
+      "dialogue": {
+        "open": false,
+        "result": "cancelled",
+        "awaitingRelease": false
+      },
+      "testEffects": 1,
+      "registered": [
+        {
+          "id": "landmark_shop-0",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-1",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-2",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-3",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-4",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-5",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-6",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-7",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-8",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-9",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-10",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-11",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-12",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-13",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-14",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-15",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-16",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-17",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-18",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-19",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-20",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-21",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-22",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-23",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-24",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-25",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-26",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-27",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-28",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-29",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-30",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-31",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-32",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-33",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-34",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-35",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-36",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-37",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-38",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-39",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-40",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-41",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-42",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-43",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-44",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-45",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-46",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-47",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-48",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-49",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-50",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-51",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-52",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-53",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-54",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-55",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-56",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-57",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-58",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-59",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-60",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-61",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-62",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-63",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-64",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-65",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-66",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-67",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-68",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-69",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-70",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-71",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-72",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-73",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-74",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-75",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-76",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-77",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-78",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-79",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-80",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-81",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-82",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_shop-83",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_bridge",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_quay-east",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_gateway",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "landmark_quay-west",
+          "type": "landmark",
+          "trigger": "automatic"
+        },
+        {
+          "id": "instance_hq_rope_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "instance_hq_pole_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "instance_hq_cloth_01",
+          "type": "item",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_zhou",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_he",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_cheng",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "npc_hq_fang",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "explore_hq_bridge",
+          "type": "codex",
+          "trigger": "E"
+        },
+        {
+          "id": "test_npc_0",
+          "type": "npc",
+          "trigger": "E"
+        },
+        {
+          "id": "test_npc_1",
+          "type": "npc",
+          "trigger": "E"
+        }
+      ]
+    }
+  }
+}

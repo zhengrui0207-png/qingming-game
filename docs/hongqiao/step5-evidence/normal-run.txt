@@ -1,0 +1,2 @@
+START normal-entry.js
+PASS normal-entry.js

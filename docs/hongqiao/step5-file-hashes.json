@@ -1,0 +1,99 @@
+{
+  "baseNote": "Step 5 开始时先保存源码。并行 Step 3 写入新 registry/router 后，main 基线更新为该交互版本，并剔除 Step 5 的 start/update/presentation/debug NPC 钩子；交付 diff 只覆盖本步挂接。interaction 的两份基线来自改为转发前的实际文件。其余 before 文件为开工时副本。不要整目录覆盖其他任务。\n",
+  "files": {
+    "src/main.js": {
+      "before": "146eef032e684f12e63eed7eaa4f3a157edb56360bb3592be1659e806078a88c",
+      "after": "5d01a2033a6bb067143b501291ecb23599f958221f20440a00df5496b3d6a02d"
+    },
+    "src/interaction/progress-adapter.js": {
+      "before": "847ba422b49c36f170e76bf7d902c24df5b22dc6fab9a6426fdad6ed060158e1",
+      "after": "922ccfe5b17fb6d54e3ea915278f2f36086bc831cc17ade32a167e013f47970a"
+    },
+    "src/interaction/progress-book.js": {
+      "before": "2a566ececdb0ad4773a29fbee403eebe757d37d84ba5b20f128dcb350562f89d",
+      "after": "22f924413ff99e9c3c14852fec94b72ec620ead7a1fb348e54cfe3ab0247fb48"
+    },
+    "src/hongqiao/config.js": {
+      "before": null,
+      "after": "a202c55fc4329d1157d7fc5af7116000623fc6337faed526ab7e5d3381f427d8"
+    },
+    "src/hongqiao/quest-config.js": {
+      "before": null,
+      "after": "9bce89945aa1fbca763f80820874c96266c80e6b8bf07b65b67936fb7c20dde9"
+    },
+    "src/hongqiao/narrative.json": {
+      "before": null,
+      "after": "8dfea99e038ba393c2f4af79628e26ff3c0efdb9fcd052b0aaf11b7b63b84157"
+    },
+    "src/hongqiao/quest-logic.js": {
+      "before": null,
+      "after": "94283c8a94877b2002128b8bd522fbf11217ae055f202e030792d9ee7f918d9a"
+    },
+    "src/hongqiao/state.js": {
+      "before": "8e9f0e0bb57af1e6930b4574cf0a25dc61ccaa3d4a1560388d558622a40f32a3",
+      "after": "8f7dd73918f046f7fafdf62f26c94bb9a4db1b70e0ceb266f0a6cd7c6f9b8b99"
+    },
+    "src/hongqiao/persistence.js": {
+      "before": "6b2a20a12fc9f79f52129b4921052387809092bdbc8b5fd6322698379497ed70",
+      "after": "cd2f8c8117a957d5ea3bb4744f4a36aba3ee656d52cca8f14d4d62db6cfe8f44"
+    },
+    "src/hongqiao/runtime.js": {
+      "before": "ae745cdcf3078fff0396f9461708e2d5c60675dded2a311122823e4f02948126",
+      "after": "26146df2e5deb719cb402a9f6233bcb0e9693739b6b56abba1b4d06616ce61c6"
+    },
+    "src/hongqiao/npcs.js": {
+      "before": null,
+      "after": "ec5b434e070e02f19dece289d82402ebc09a150c671686119687bc792283b8f0"
+    },
+    "src/hongqiao/dialogue-ui.js": {
+      "before": null,
+      "after": "feac9d9a9cb516c5209a00412f807daf1fc8f0d542185ab833e6d124a91a12cf"
+    },
+    "src/hongqiao/tracker.js": {
+      "before": null,
+      "after": "8ee8c8d20d50b6eabbe453563eb4336d4fed6d72e3c62fbba2ef7b0b99c25ea4"
+    },
+    "src/hongqiao/presentation.js": {
+      "before": null,
+      "after": "3520ae2b3cd0902853b34dcc5adc03db8fa00c2899edf87343c37c88cfb79732"
+    },
+    "src/hongqiao/quest-ui.css": {
+      "before": null,
+      "after": "b426aa6f24688c1a32b3f37ed7865420108b04d07a99da585dc9f103ca8d84e8"
+    },
+    "src/hongqiao/progress-ui.js": {
+      "before": "9b06ccd15af56828b670348fa12fa986765c03f66529883109f77b9e2b72d44d",
+      "after": "f53922e88aa241ad7e460b1e3dc49dcdcdfe4766fc1b610b6db86f320140f623"
+    },
+    "src/hongqiao/debug.js": {
+      "before": "e25587eea701d2829339ad615b0e755fc86566878089a8fc2ae430345f4b2f3c",
+      "after": "de7d5fea9b347603f6475a477aaf23e4718f174bc72ad989bf9934e7b8a8ce68"
+    },
+    "src/hongqiao/quest.test.js": {
+      "before": null,
+      "after": "ad0faa77120f7f91d92ec59b5ce3029340c671bdf32f2c2cdbdf005be4d77ed7"
+    },
+    "src/hongqiao/presentation.test.js": {
+      "before": null,
+      "after": "fb5c39886a2ad86af9bd9e957c98db5b872070fe0eae92a54a580aa78ccf0a70"
+    },
+    "scripts/build-hongqiao-narrative.py": {
+      "before": null,
+      "after": "d7789e1bdf4a4d1658e8150cc49d4b97f6163d8acdcc7852bab43b5f7da4fd2e"
+    }
+  },
+  "patchAppliesAndReproducesAllAfterHashes": true,
+  "protectedFunctions": {
+    "updateActor": true,
+    "updateCamera": true
+  },
+  "dependenciesUnmodifiedByStep5": {
+    "src/hongqiao/config.json": "124599da9d54681b0b7bc6a644425679d2c706a1af685d37fe010f959ca0cf39",
+    "src/hongqiao/collectibles.js": "7b72f4c2076447cdd69e4d938ad2e2fd0b7782fd45b73af2afcd5560ad421234",
+    "src/interaction/core.js": "3763ae4235c4dc25ae28c20214170377cc996b67a5ad8f0d6012010a3246c165",
+    "src/interaction/dialogue.js": "e9a448782a5359b6385ab01c79c617c2e15387b33dce40ba64df93dac71f69c0",
+    "src/world.js": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b",
+    "src/scholar.js": "bfc8e9fb53144ac7cc3761f4aa453d6ed59dad67ebee63e51cc90046207e9a47",
+    "src/storefronts.js": "439e46eef4fd9a9278f87b301845d0a53383ecd4138c6e09a27bd2ad6a53ae9d"
+  }
+}

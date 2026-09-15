@@ -1,0 +1,1071 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -75,3 +75,3 @@
+  storefronts=createStorefronts(scene,world,{registry:interactions,onOpen:()=>lockPanel('history',()=>storefronts.closeDetails()),onClose:()=>unlockPanel('history')});
+- hongqiaoProgress=createHongqiaoProgress({scene,loader,world,registry:interactions,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>lockPanel('book',()=>hongqiaoProgress.ui.close()),onClose:()=>unlockPanel('book'),toast});
++ hongqiaoProgress=createHongqiaoProgress({scene,loader,world,registry:interactions,npcPrototype,locks,gate,canOperate:()=>playing&&!paused&&!boatMode,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>lockPanel('book',()=>hongqiaoProgress.ui.close()),onClose:()=>unlockPanel('book'),toast});
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('interactionTest')){
+@@ -82,3 +82,3 @@
+   const {createHongqiaoDebug}=await import('./hongqiao/debug.js');
+-  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false});
++  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false,renderNpcs:false});
+  }
+@@ -89,3 +89,3 @@
+  loaded=true;$('start').disabled=false;$('start-label').textContent='入画游览';$('load-caption').textContent='画卷已展开 · 点击开始';
+- window.__qingming={getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),shops:storefronts.getState()}),world};
++ window.__qingming={hongqiao:hongqiaoProgress.presentation,getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),shops:storefronts.getState()}),world};
+  // Explicit test mode keeps debug positioning unavailable during ordinary play.
+@@ -96,3 +96,3 @@
+ function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),3600);}
+-function start(){if(!loaded)return;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');}
++function start(){if(!loaded)return;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');hongqiaoProgress?.start?.();}
+ $('start').addEventListener('click',start);
+@@ -125,3 +125,3 @@
+   if(e.code==='Escape'){if(locks.locked)locks.top.cancel();else showGuide();return;}
+-  if(e.code==='KeyE'){if(locks.top?.owner==='dialogue')dialogue.advance();else if(!locks.locked)interact();return;}
++  if(e.code==='KeyE'){if(locks.top?.owner==='hqDialogue')hongqiaoProgress.dialogue.advance();else if(locks.top?.owner==='dialogue')dialogue.advance();else if(!locks.locked)interact();return;}
+   if(e.code==='KeyF'){if(locks.top?.owner==='history')storefronts.closeDetails();else if(!locks.locked)storefronts.openDetails();return;}
+@@ -236,2 +236,3 @@
+   }
++  hongqiaoProgress?.update?.(dt);
+   window.__hongqiao?.update();
+--- a/src/interaction/progress-adapter.js
++++ b/src/interaction/progress-adapter.js
+@@ -1,27 +1,2 @@
+-import {Vector3} from 'three';
+-import config from '../hongqiao/config.json';
+-import {createProgressStore, consumeResetURL} from '../hongqiao/persistence.js';
+-import {createCollectibles} from '../hongqiao/collectibles.js';
+-import {createProgressUI} from './progress-book.js';
+-
+-export function createHongqiaoProgress({scene, loader, world, registry, getActor, canOpen, onOpen, onClose, toast}) {
+-  const development = import.meta.env.DEV && new URLSearchParams(location.search).has('test');
+-  // Access can throw even before getItem (privacy/security settings).
+-  const storage = {getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value),removeItem:key=>localStorage.removeItem(key)};
+-  const reset = consumeResetURL({url:location.href,history,storage,development});
+-  const store = createProgressStore({config,storage});
+-  if(reset.error)console.error('[Hongqiao reset]',reset.error);
+-  const collectibles = createCollectibles({scene,loader,config,store,world,baseURL:import.meta.env.BASE_URL});
+-  const ui = createProgressUI({config,store,development,canOpen,onOpen,onClose,toast});
+-  if(development)window.__hqProgress={
+-    getState:store.getState,getStatus:store.getStatus,getErrors:store.getErrors,getWorld:collectibles.getState,
+-    dispatch:store.dispatch,restoreFixture:store.restoreFixture,retrySave:store.retrySave,config,reset,
+-  };
+-  for(const e of collectibles.entries()){
+-    const position=new Vector3();
+-    registry.register({id:e.instance.id,type:'item',entity:e.group,anchor:e.anchor,layer:e.anchor.layer,radius:2,maxHeightDifference:.7,
+-      enabled:()=>e.group.visible&&store.getState().permissions.includes(e.instance.permissionId),getPosition:()=>e.group.getWorldPosition(position),label:'取'+e.item.name,
+-      action:()=>{const result=store.dispatch({type:'collect',instanceId:e.instance.id});if(result.changed&&!result.saved)toast('已取得物品，保存失败；请查看提示并重试。');}});
+-  }
+-  return {store,ui};
+-}
++// Step 5 connects formal content through the existing registry and input locks.
++export {createHongqiaoProgress} from '../hongqiao/runtime.js';
+--- a/src/interaction/progress-book.js
++++ b/src/interaction/progress-book.js
+@@ -1,93 +1,2 @@
+-import '../hongqiao/progress-ui.css';
+-import {questStage} from '../hongqiao/state.js';
+-
+-export function createProgressUI({config, store, development, canOpen, onOpen, onClose, toast}) {
+-  const el = (tag, text, parent) => {const node = document.createElement(tag); if (text !== undefined) node.textContent = text; parent?.append(node); return node;};
+-  const button = (text, parent, action) => {const b = el('button', text, parent); b.type = 'button'; b.onclick = action; return b;};
+-  const dialog = el('dialog', undefined, document.body); dialog.id = 'hq-book'; dialog.setAttribute('aria-label', '汴京见闻与行囊');
+-  const notice = el('div', undefined, document.body); notice.id = 'hq-save'; notice.setAttribute('role','status');
+-  const openButton = button('见闻 / 行囊 I', document.querySelector('.top-actions'), () => open()); openButton.id = 'hq-open';
+-  let page = 'inventory', currentStory = null, reader = null, saveTimer, opened = false, pendingPermit = null;
+-  function renderStatus() {
+-    const status = store.getStatus(); notice.replaceChildren();
+-    notice.hidden = status.saved && !['recovered','migrated'].includes(status.kind) || status.kind === 'new';
+-    el('span',status.message,notice);
+-    if (!status.saved && status.kind !== 'new') button('重试保存',notice,() => store.retrySave());
+-    else button('知道了',notice,() => {notice.hidden = true;});
+-  }
+-  function recordPosition() {
+-    clearTimeout(saveTimer);
+-    if (!reader || !currentStory || !dialog.open) return;
+-    const rect = reader.getBoundingClientRect();
+-    const paragraphs = [...reader.querySelectorAll('[data-section]')];
+-    const visible = paragraphs.filter(p => {const r=p.getBoundingClientRect(); return r.top < rect.bottom && r.bottom > rect.top;});
+-    const last = paragraphs.at(-1), lastRect = last?.getBoundingClientRect();
+-    const target = lastRect && lastRect.bottom <= rect.bottom + 1 && lastRect.top >= rect.top ? last : visible[0];
+-    if (target) store.dispatch({type:'readParagraph', storyId:currentStory, sectionId:target.dataset.section, paragraphIndex:Number(target.dataset.index)});
+-  }
+-  function close() {recordPosition(); if (!opened) return; opened=false; dialog.close(); reader=null; currentStory=null; pendingPermit=null; onClose();}
+-  function open() {if (!canOpen()) return; if (opened) {close(); return;} onOpen(); opened=true; page='inventory'; render(); dialog.showModal();}
+-  function showPage(next) {recordPosition(); reader=null; currentStory=null; pendingPermit=null; page=next; render();}
+-  function render() {
+-    const state = store.getState(); dialog.replaceChildren();
+-    const nav = el('nav',undefined,dialog);
+-    button('行囊',nav,() => showPage('inventory')); button('见闻图鉴',nav,() => showPage('codex')); button('人物故事',nav,() => showPage('stories')); button('关闭 Esc',nav,close);
+-    if (page === 'permit') {
+-      const permission = config.permissions.find(p => p.id === pendingPermit), npc = config.npcs.find(n => n.id === permission.grantedBy);
+-      el('h2','开发测试 · 模拟取用许可',dialog); el('p',`${npc.name}答应借出物品。确认仅授予取用许可，物品仍需走近后拾取。`,dialog);
+-      button('确认取用许可',dialog,() => {store.dispatch({type:'grantPermission',permissionId:permission.id});close();});
+-      button('取消，不授权',dialog,close); return;
+-    }
+-    if (page === 'inventory') {
+-      el('h2','行囊',dialog);el('small','当前持有数量；交出物品后，见闻仍会保留。',dialog);
+-      for (const item of config.items) {const row=el('article',undefined,dialog);el('h3',`${item.name} × ${state.inventory[item.id] ?? 0}`,row);el('p',item.description,row);}
+-    } else if (page === 'codex') {
+-      el('h2','汴京见闻',dialog);
+-      if (!state.unlockedCodexIds.length) el('p','尚无记录。取得物品后，会记下物品用途与借物人的简介。',dialog);
+-      for (const item of config.items.filter(i => state.unlockedCodexIds.includes(i.id))) {const row=el('article',undefined,dialog);el('h3',item.name,row);el('p',item.description,row);el('small','剧情道具 · 游戏创作',row);}
+-      for (const npc of config.npcs.filter(n => state.unlockedCodexIds.includes(n.id))) {const row=el('article',undefined,dialog),story=config.stories.find(s=>s.storyId===npc.storyId);el('h3',npc.name,row);el('p',story.summary,row);el('small','人物简介 · 人物及经历为艺术创作',row);}
+-      for (const culture of config.codex.filter(k => state.unlockedCodexIds.includes(k.id))) {const row=el('article',undefined,dialog);el('h3',culture.title,row);el('small',culture.contentType,row);el('p',culture.text,row);el('small',culture.sourceNotes,row);for(const source of culture.sources){const a=el('a',source.title,row);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';}}
+-    } else if (page === 'stories') {
+-      el('h2','虹桥人物',dialog);
+-      for (const story of config.stories) {
+-        const row=el('article',undefined,dialog),unlocked=state.unlockedStoryIds.includes(story.storyId);
+-        el('h3',`${config.npcs.find(n=>n.id===story.npcId).name} · ${story.title}`,row);
+-        if (state.unlockedCodexIds.includes(story.npcId) || unlocked) el('p',story.summary,row);
+-        if (unlocked) {
+-          const read=state.readStoryIds.includes(story.storyId),version=state.readContentVersions[story.storyId];
+-          el('small',read ? version===story.contentVersion?'已读':'故事已更新 · 保留旧版已读记录' : '未读',row);
+-          button('阅读 '+story.title,row,()=>readStory(story.storyId));
+-        } else {row.dataset.locked='true';el('small','完成「虹桥急情」后开放全文',row);}
+-      }
+-    }
+-    el('small',store.getStatus().message,dialog);
+-  }
+-  function readStory(id) {
+-    recordPosition(); const state=store.getState(),story=config.stories.find(s=>s.storyId===id);
+-    if (!story || !state.unlockedStoryIds.includes(id)) return;
+-    currentStory=id; reader=null; page='reading'; dialog.replaceChildren();
+-    const nav=el('nav',undefined,dialog);button('返回人物故事',nav,()=>showPage('stories'));button('关闭 Esc',nav,close);
+-    el('h2',story.title,dialog);el('small',story.creationLabel,dialog);
+-    reader=el('div',undefined,dialog);reader.id='hq-reader';reader.tabIndex=0;reader.setAttribute('aria-label',story.title+'正文');
+-    for(const section of story.sections){el('h3',section.title,reader);section.paragraphs.forEach((text,index)=>{const p=el('p',text,reader);p.dataset.section=section.id;p.dataset.index=index;});}
+-    const notes=el('details',undefined,dialog);el('summary','取材与创作说明',notes);for(const text of story.sourceNotes)el('p',text,notes);
+-    const position=state.storyReadingProgress[id];
+-    if(position){const p=[...reader.querySelectorAll('[data-section]')].find(p=>p.dataset.section===position.sectionId&&Number(p.dataset.index)===position.paragraphIndex);if(p)reader.scrollTop=p.offsetTop-reader.offsetTop;}
+-    reader.addEventListener('scroll',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(recordPosition,160);});
+-    // Merely opening the story does not mark it read.
+-  }
+-  dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+-  addEventListener('blur',recordPosition);
+-  addEventListener('pagehide',recordPosition);
+-  document.addEventListener('visibilitychange',recordPosition);
+-  store.subscribe(event=>{renderStatus();if(event.action.type==='collect'&&event.status.saved)toast('已获得：'+config.items.find(i=>config.instances.find(x=>x.id===event.action.instanceId)?.itemId===i.id).name);if(opened&&page!=='reading'&&page!=='permit')render();});
+-  renderStatus();
+-  if(development){
+-    const panel=el('details',undefined,document.body);panel.id='hq-dev';el('summary','Step 4 开发测试',panel);
+-    el('small','只模拟许可；正式 NPC 对话留待 Step 5。',panel);
+-    for(const permit of config.permissions){const npc=config.npcs.find(n=>n.id===permit.grantedBy);button('模拟'+npc.name+'授权',panel,()=>{if(!canOpen())return;if(!opened){onOpen();opened=true;dialog.showModal();}pendingPermit=permit.id;page='permit';render();});}
+-    button('模拟已接任务（样本）',panel,()=>{const s=store.getState();if(s.quests[config.quest.id]?.status!=='completed'){s.quests[config.quest.id]={status:'active'};store.restoreFixture(s);}});
+-    const status=el('small',undefined,panel);const update=()=>{const s=store.getState();status.textContent=`阶段 ${questStage(s,config)} · 许可 ${s.permissions.length}/3 · 已收集 ${s.worldState.collectedInstanceIds.length}/3`;};store.subscribe(update);update();
+-  }
+-  return {open,close,isOpen:()=>opened,readStory};
+-}
++// Keep one shared inventory/codex/story reader.
++export {createProgressUI} from '../hongqiao/progress-ui.js';
+--- /dev/null
++++ b/src/hongqiao/config.js
+@@ -0,0 +1,4 @@
++import base from './config.json';
++import narrative from './narrative.json';
++import {buildQuestConfig} from './quest-config.js';
++export default buildQuestConfig(base, narrative);
+--- /dev/null
++++ b/src/hongqiao/quest-config.js
+@@ -0,0 +1,37 @@
++// Compose executable choices over the surveyed anchors and approved text. No copy of story bodies.
++export function buildQuestConfig(base, narrative) {
++  const c = structuredClone(base);
++  c.narrative = narrative;
++  for(const story of c.stories)story.contentType='narrative_fiction';
++  c.quest.rewardCodexIds = narrative.rewardCodexIds;
++  c.codex.push({...narrative.journal, sources: [], sourceNotes: '书生、四位街坊及本次取物经历为游戏创作，不作为史料。'});
++  for (const d of c.dialogues) {
++    const close = {id: d.id + '_close', label: '暂时离开', effect: {type: 'close'}};
++    const story = {id: d.id + '_story', label: '听听你的故事', goto: 'storyIntro'};
++    const storyId = c.npcs.find(n => n.id === d.npcId).storyId;
++    d.nodes.storyIntro = {lines: [c.npcs.find(n => n.id === d.npcId).name + '：' + narrative.storyIntroductions[d.npcId]], choices: [{id: d.id + '_read', label: '阅读人物故事', effect: {type: 'openStory', storyId}}, close]};
++    if (d.npcId !== c.quest.giverId) {
++      const labels = narrative.choiceLabels[d.npcId];
++      const choices = [{id: d.id + '_permit', label: labels.confirm, effect: d.confirmEffect}, {id: d.id + '_ask', label: labels.followup, goto: 'followup'}, close];
++      d.nodes.first.lines.push(...d.nodes.accepted.lines.slice(2));
++      d.nodes.first.choices = choices; d.nodes.accepted.choices = choices;
++      d.nodes.followup = {lines: d.optionalFollowup.lines, choices: [{id: d.id + '_return', label: '继续', goto: '$entry', choicesOnly: true}]};
++      d.nodes.permitted.choices = [close]; d.nodes.collected.choices = [close]; d.nodes.completed.choices = [story, close];
++    } else {
++      const lines = d.nodes.HQ_01.lines;
++      d.nodes.afterAccept = {lines: [lines.at(-1)], choices: [{...close, label: '这就动身'}]};
++      d.nodes.HQ_01.lines = lines.slice(0,4).map((line,i) => (i===1?'书生':'老周') + '：' + line);
++      d.nodes.HQ_01.choices = [
++        {id:'hq_accept',label:'我这就去。',effect:{type:'acceptQuest',questId:c.quest.id},goto:'afterAccept'},
++        {id:'hq_wait',label:'我先看看周围。',effect:{type:'close'}},
++        {id:'hq_zhou_ask',label:'聊聊龙船',goto:'foreshadow'},
++      ];
++      d.nodes.foreshadow = {lines:['老周：年轻时见过龙船底下。上头再好看，底下也得看清。'],choices:[{id:'hq_zhou_back',label:'继续',goto:'$entry',choicesOnly:true}]};
++      d.nodes.HQ_40.choices = [{id:'hq_keep_searching',label:'我再去找找',effect:{type:'close'}},{id:'hq_guide',label:'帮我指路',effect:{type:'chooseGuide'}}];
++      d.nodes.HQ_41.choices = [{id:'hq_deliver',label:'交给您。',effect:{type:'completeQuest',questId:c.quest.id}},{id:'hq_no_delivery',label:'我再看看周围。',effect:{type:'close'}}];
++      d.nodes.HQ_44.choices = [story,{id:'hq_revisit_ending',label:'回顾收尾',effect:{type:'showClosing'}},close];
++    }
++    delete d.choices; // Legacy survey-only choices were not bound to a node.
++  }
++  return c;
++}
+--- /dev/null
++++ b/src/hongqiao/narrative.json
+@@ -0,0 +1,254 @@
++{
++  "contentVersion": 2,
++  "intro": {
++    "id": "HQ_00",
++    "title": "桥下惊呼",
++    "duration": 30,
++    "shots": [
++      {
++        "id": "HQ_00_shot_01",
++        "start": 0,
++        "end": 3,
++        "timing": "01 / 00:00–00:03 / 3秒",
++        "framing": "**全景**：完整虹桥拱形、大船主体、桥上人群与岸边牵引方向",
++        "camera": "桥口来船侧斜上方，轻俯拍；缓慢向船推进，始终保留完整桥拱",
++        "action": "船首临近桥洞，桥上人转头望下；船的前进方向统一为画面左→右。第一眼建立“船将碰桥”的空间关系",
++        "audio": "旁白：“船到桥下，怎么停了？”水声、远处惊呼；角落叠“北宋·汴京”",
++        "cut": "03秒，桥上人看向船顶，顺视线硬切杆端"
++      },
++      {
++        "id": "HQ_00_shot_02",
++        "start": 3,
++        "end": 5,
++        "timing": "02 / 00:03–00:05 / 2秒",
++        "framing": "**特写**：长杆顶端、桥身接触处及周围少量木构，接触点居画面中央",
++        "camera": "桥身侧下方斜拍，固定机位；杆斜入画，不绕到桥的另一侧",
++        "action": "杆端抵上桥身，有短促受力颤动；接触点始终可见，不穿桥、不顶坏木构。这一镜专门回答“拿什么顶住”",
++        "audio": "木杆受力声；不加旁白",
++        "cut": "05秒，受力声延续，按长杆相同斜线方向切到持杆人"
++      },
++      {
++        "id": "HQ_00_shot_03",
++        "start": 5,
++        "end": 8,
++        "timing": "03 / 00:05–00:08 / 3秒",
++        "framing": "**中景**：持杆船工腰部以上、双手及长杆；画面侧下方保留船头调向船工",
++        "camera": "船侧略仰拍，固定；保持杆的朝向与上镜一致",
++        "action": "持杆者肩背绷紧、双手撑住，船相对桥停止前进；船头另一人同步调向，给出明确身体动作。主焦点始终是顶杆的人",
++        "audio": "船工：“莫牵了！”配衣料和船木声；无旁白",
++        "cut": "08秒，持杆人抬眼看向桅杆，切危险位置"
++      },
++      {
++        "id": "HQ_00_shot_04",
++        "start": 8,
++        "end": 10,
++        "timing": "04 / 00:08–00:10 / 2秒",
++        "framing": "**特写**：竖立桅杆与桥梁将相碰的局部，保留两者间窄小空隙",
++        "camera": "船侧斜仰拍，固定；画面同时装下桅杆局部和桥梁下缘",
++        "action": "未降的桅杆挡住通行空间；不拍无参照的单根桅杆，也不表现已经撞穿桥梁",
++        "audio": "旁白：“桅杆未落。”",
++        "cut": "10秒，硬切回叙；画面显“片刻前”"
++      },
++      {
++        "id": "HQ_00_shot_05",
++        "start": 10,
++        "end": 14,
++        "timing": "05 / 00:10–00:14 / 4秒",
++        "framing": "**中景**：前景纤夫腰部以上、回头的脸与手中绷紧的纤绳；后景同伴保持牵行",
++        "camera": "岸边侧面，沿纤夫行进方向短距离平移；保留牵引方向，不反打",
++        "action": "**回叙**：前2秒纤夫望向桥上热闹，身体仍前行；后2秒听见喊声转回，停步准备松绳。绳的绷紧状态必须看清",
++        "audio": "旁白：“纤夫走神，忘了松绳降桅。”回叙市声稍远",
++        "cut": "14秒，去掉“片刻前”；当下桥上喊声先入，硬切回桥上"
++      },
++      {
++        "id": "HQ_00_shot_06",
++        "start": 14,
++        "end": 17,
++        "timing": "06 / 00:14–00:17 / 3秒",
++        "framing": "**近景**：桥上一人胸部以上、焦急面孔、指向下方的手；旁边第二人手持盘绳入画",
++        "camera": "桥栏内侧斜拍人脸，略俯向其视线；固定，不摇来摇去",
++        "action": "第一人探身指向桅杆，第二人拿起绳准备抛；视线均指向同一条船。近景用于看清急切神情",
++        "audio": "桥上人：“快降桅！当心脚下！”无旁白",
++        "cut": "17秒，抛绳者手臂扬起，在动作中切全景"
++      },
++      {
++        "id": "HQ_00_shot_07",
++        "start": 17,
++        "end": 20,
++        "timing": "07 / 00:17–00:20 / 3秒",
++        "framing": "**全景**：桥栏、两位抛绳人、船顶接应人及两根绳的完整下落路径",
++        "camera": "桥口侧面略高位置，斜俯拍，固定；与第01镜同侧",
++        "action": "两根绳分别约在17.3秒、18.1秒抛出，握持端留在桥上；两条弧线并排且错开，不重叠成一根。船顶人重心不稳时伸手接应，20秒前绳已递到接应范围",
++        "audio": "“接住绳！”绳掠桥栏、水声；不用旁白重复解释抛绳",
++        "cut": "20秒，接绳动作落实，切整船侧面"
++      },
++      {
++        "id": "HQ_00_shot_08",
++        "start": 20,
++        "end": 27,
++        "timing": "08 / 00:20–00:27 / 7秒",
++        "framing": "**全景**：完整船体、完整桅杆摆动范围、顶杆者；画面边缘保留岸边纤夫和桥上收绳人",
++        "camera": "船侧斜拍，固定为主；只为桅杆运动略微调整构图，不切碎动作",
++        "action": "20–21秒停步松纤绳；21–25秒船工配合缓缓降桅到低位支承，船头保持调整后的方向；25–27秒顶杆者收杆、桥上两根接应绳同步收回，船稳在桥口来船侧。船尚未完整过桥",
++        "audio": "依动作喊：“松绳！”“缓缓放——”“稳住！”呼声渐止，水声浮起；无旁白",
++        "cut": "27秒，桅杆落稳、两根接应绳收妥后，循岸上招呼切书生"
++      },
++      {
++        "id": "HQ_00_shot_09",
++        "start": 27,
++        "end": 30,
++        "timing": "09 / 00:27–00:30 / 3秒",
++        "framing": "**中景→游戏默认景别**：从书生腰部以上背影起，前方老周招手，桥船为背景；最后回到已验收玩家镜头范围",
++        "camera": "岸边书生身后，与游戏镜头同向；沿短路径平缓拉回保存的游戏相机位置，朝向同步过渡",
++        "action": "书生转头看向老周。30秒时构图与游戏相机一致，显示“去岸边问问发生了什么”，开放操作。若默认镜头不属中景，末段以实际已验收景别为准",
++        "audio": "老周：“郎君，劳你搭把手。”市井声恢复；无旁白",
++        "cut": "30秒无黑场交还操作，不再追加镜头或过渡时长"
++      }
++    ],
++    "autoStartWhenAdapterReady": true,
++    "startAnchorId": "anchor_hq_ship_approach",
++    "endAnchorId": "anchor_hq_ship_wait"
++  },
++  "ending": {
++    "id": "HQ_42",
++    "duration": 20,
++    "phases": [
++      {
++        "id": "HQ_42_phase_1",
++        "start": 0,
++        "end": 3,
++        "action": "护货布从背包转成船上补盖的可见陈设；岸上接应人物面向船",
++        "audio": "老周：“都备齐了，看准了再走！”"
++      },
++      {
++        "id": "HQ_42_phase_2",
++        "start": 3,
++        "end": 12,
++        "action": "载货船沿已验证的路径缓慢通过桥下，已放低的桅杆与桥体有净空；船上人物随船移动",
++        "audio": "水声、短促应答；不用循环警报"
++      },
++      {
++        "id": "HQ_42_phase_3",
++        "start": 12,
++        "end": 16,
++        "action": "船抵达结束锚点停稳，桥边驻足人物开始恢复日常",
++        "audio": "阿成：“过了！过桥了！”"
++      },
++      {
++        "id": "HQ_42_phase_4",
++        "start": 16,
++        "end": 20,
++        "action": "桥、水面与船形成完整构图；老周转回书生方向",
++        "audio": "老周：“好，慢慢靠岸！”"
++      }
++    ],
++    "startAnchorId": "anchor_hq_ship_wait",
++    "endAnchorId": "anchor_hq_ship_end"
++  },
++  "closing": {
++    "id": "HQ_43",
++    "lines": [
++      "老周：郎君，今日多亏你跑这一趟。头一回来汴京？",
++      "书生：是。原想先看城里的楼阁，没想到先认了几位街坊。",
++      "老周：楼阁不难找。往后在这岸边走，有不认得的路，问我们。",
++      "书生：记下了。方才只顾跑腿，几位的旧事还没顾上细问。",
++      "老周：眼下得闲了。愿意听，慢慢问。"
++    ]
++  },
++  "completionCard": {
++    "id": "hq_completion_card",
++    "lines": [
++      "虹桥急情 · 已完成",
++      "你帮助船工备齐物品，见证载货船平安通过虹桥。",
++      "已解锁四位人物的故事",
++      "老周《龙船肚底下》",
++      "何伯《哑铃》",
++      "阿成《一碗冷羹》",
++      "方娘子《七十五钱》",
++      "[阅读人物故事]　[继续游历]",
++      "《汴京见闻·虹桥》短记录也已保存，可稍后在见闻中查看。"
++    ]
++  },
++  "journal": {
++    "id": "journal_hq",
++    "title": "汴京见闻·虹桥",
++    "text": "初到虹桥，先闻人声，后见舟行。今日替四位街坊跑了一趟，才知眼前的热闹，各有各的忙处。何伯耳随车铃，阿成过耳不忘，方娘子说价，字字分明。老周临水看船，却先向低处寻。且将姓名记下，异日再问旧事。",
++    "contentType": "书生见闻 · 游戏创作"
++  },
++  "choiceLabels": {
++    "npc_hq_he": {
++      "confirm": "我会交到老周手里。",
++      "followup": "您一直在这儿做工？"
++    },
++    "npc_hq_cheng": {
++      "confirm": "这根我送去。",
++      "followup": "从前做过什么？"
++    },
++    "npc_hq_fang": {
++      "confirm": "我替您送过去。",
++      "followup": "您在此做了多久买卖？"
++    }
++  },
++  "storyIntroductions": {
++    "npc_hq_zhou": "你问我为何总往船底下看？我年轻时修过一条船，光看上头，真能把人看瞎了眼。",
++    "npc_hq_he": "他们叫我‘何哑铃’，你也听见了？不是耳背。是我年轻时干过一件混账事。",
++    "npc_hq_cheng": "我从前送过一碗冷羹，送得半点不差，倒把饭碗送没了。你听不听？",
++    "npc_hq_fang": "我初来时，连一百钱有多少都不知道。先别笑——后来补那笔货账，我可是拿剪刀补的。"
++  },
++  "guide": {
++    "idleSeconds": 90,
++    "idleHint": "可在任务栏选择一位街坊，请他指路",
++    "initialHint": "去岸边问问发生了什么。",
++    "missing": {
++      "item_hq_rope": "缆绳在何伯的货堆边。",
++      "item_hq_pole": "竹篙在阿成守着的工具架上。",
++      "item_hq_cloth": "护货布在方娘子摊侧。"
++    },
++    "culture": {
++      "id": "explore_hq_bridge",
++      "codexId": "K02",
++      "anchorId": "anchor_hq_tools",
++      "offset": [
++        0,
++        0,
++        1.6
++      ]
++    }
++  },
++  "rewardCodexIds": [
++    "npc_hq_zhou",
++    "K01",
++    "K03",
++    "journal_hq"
++  ],
++  "audit": [
++    {
++      "storyId": "story_hq_zhou",
++      "sections": 3,
++      "paragraphs": 41,
++      "exactMatch": true,
++      "sourceNotesMatch": true
++    },
++    {
++      "storyId": "story_hq_he",
++      "sections": 3,
++      "paragraphs": 47,
++      "exactMatch": true,
++      "sourceNotesMatch": true
++    },
++    {
++      "storyId": "story_hq_cheng",
++      "sections": 3,
++      "paragraphs": 43,
++      "exactMatch": true,
++      "sourceNotesMatch": true
++    },
++    {
++      "storyId": "story_hq_fang",
++      "sections": 3,
++      "paragraphs": 35,
++      "exactMatch": true,
++      "sourceNotesMatch": true
++    }
++  ]
++}
+--- /dev/null
++++ b/src/hongqiao/quest-logic.js
+@@ -0,0 +1,36 @@
++import {questStage} from './state.js';
++
++export function conditionMatches(condition, state, config) {
++  const stage = questStage(state,config);
++  switch(condition.type) {
++    case 'always': return true;
++    case 'questCompleted': return stage === 'completed';
++    case 'questReady': return stage === 'ready';
++    case 'questAccepted': return ['active','ready','completed'].includes(stage);
++    case 'instanceCollected': return state.worldState.collectedInstanceIds.includes(condition.instanceId);
++    case 'hasPermission': return state.permissions.includes(condition.permissionId);
++    default: throw Error('Unknown dialogue condition: '+condition.type);
++  }
++}
++export function selectDialogue(config,state,npcId) {
++  const dialogue = config.dialogues.find(d=>d.npcId===npcId);
++  if (!dialogue) return null;
++  const branch = dialogue.branches.find(b=>conditionMatches(b.when,state,config));
++  return branch ? {dialogue,nodeId:branch.node} : null;
++}
++export function missingItems(config,state) {
++  return config.quest.requiredItems.filter(i=>(state.inventory[i.itemId]??0)<i.quantity);
++}
++export function createGuidance(config) {
++  let idleSeconds=0,hintVisible=false,targetId=null;
++  return {
++    update(dt,operative,state) {
++      if (questStage(state,config)==='completed') {hintVisible=false;targetId=null;return;}
++      if (operative && ['active','ready'].includes(questStage(state,config))) idleSeconds += Math.max(0,dt);
++      if (idleSeconds >= config.narrative.guide.idleSeconds) hintVisible=true;
++    },
++    progress() {idleSeconds=0;hintVisible=false;},
++    choose(id) {if(config.npcs.some(n=>n.id===id)||config.instances.some(i=>i.id===id))targetId=id;},
++    getState:()=>({idleSeconds,hintVisible,targetId}),
++  };
++}
+--- a/src/hongqiao/state.js
++++ b/src/hongqiao/state.js
+@@ -13,3 +13,4 @@
+     worldState: {collectedInstanceIds: []}, quests: {}, unlockedStoryIds: [], readStoryIds: [],
+-    storyReadingProgress: {}, readContentVersions: {}};
++    storyReadingProgress: {}, readContentVersions: {}, introStatus: 'unseen', introSeen: false,
++    endingPending: false, endingSeen: false};
+ }
+@@ -43,2 +44,8 @@
+   if (q?.status === 'completed') s.unlockedStoryIds = unique([...s.unlockedStoryIds, ...storyIds]);
++  if (q?.status === 'completed') {
++    s.unlockedCodexIds = unique([...s.unlockedCodexIds, ...(config.quest.rewardCodexIds ?? [])]);
++    s.worldState.shipState = 'passed';
++  } else if (q?.status === 'active' || s.permissions.length || s.worldState.collectedInstanceIds.length || s.introStatus === 'playing') {
++    s.worldState.shipState = 'waiting'; s.introStatus = 'seen'; s.introSeen = true;
++  }
+   for (const story of config.stories) {
+@@ -60,3 +67,33 @@
+   const s = copy(state);
+-  if (action.type === 'grantPermission') {
++  if (action.type === 'acceptQuest') {
++    if (action.questId !== config.quest.id) return {ok:false,reason:'unknown-quest'};
++    if (['active','completed'].includes(s.quests[action.questId]?.status)) return {ok:true,changed:false,state};
++    s.quests[action.questId] = {...s.quests[action.questId],status:'active'};
++    s.unlockedCodexIds = unique([...s.unlockedCodexIds,config.quest.giverId]);
++  } else if (action.type === 'completeQuest') {
++    if (action.questId !== config.quest.id) return {ok:false,reason:'unknown-quest'};
++    if (s.quests[action.questId]?.status === 'completed') return {ok:true,changed:false,state};
++    if (questStage(s,config) !== 'ready') return {ok:false,reason:'quest-not-ready'};
++    for (const item of config.quest.requiredItems) s.inventory[item.itemId] -= item.quantity;
++    s.quests[action.questId] = {...s.quests[action.questId],status:'completed'};
++    s.unlockedCodexIds = unique([...s.unlockedCodexIds,...(config.quest.rewardCodexIds ?? [])]);
++    s.unlockedStoryIds = unique([...s.unlockedStoryIds,...config.quest.rewardStoryIds]);
++    s.endingPending = true; s.endingSeen = false; s.worldState.shipState = 'passing';
++  } else if (action.type === 'beginIntro') {
++    if (s.introSeen || s.introStatus === 'playing' || questStage(s,config) !== 'available' || s.permissions.length || s.worldState.collectedInstanceIds.length) return {ok:true,changed:false,state};
++    s.introStatus = 'playing';
++  } else if (action.type === 'finishIntro') {
++    if (s.introSeen) return {ok:true,changed:false,state};
++    s.introStatus = 'seen'; s.introSeen = true;
++    s.worldState.shipState = questStage(s,config) === 'completed' ? 'passed' : 'waiting';
++  } else if (action.type === 'finishEnding' || action.type === 'acknowledgeEnding') {
++    if (questStage(s,config) !== 'completed') return {ok:false,reason:'quest-not-completed'};
++    if (action.type === 'finishEnding' && s.worldState.shipState === 'passed' || action.type === 'acknowledgeEnding' && s.endingSeen && !s.endingPending) return {ok:true,changed:false,state};
++    s.worldState.shipState = 'passed';
++    if (action.type === 'acknowledgeEnding') {s.endingSeen = true; s.endingPending = false;}
++  } else if (action.type === 'unlockCodex') {
++    if (action.codexId !== config.narrative?.guide.culture.codexId) return {ok:false,reason:'unknown-exploration'};
++    if (s.unlockedCodexIds.includes(action.codexId)) return {ok:true,changed:false,state};
++    s.unlockedCodexIds.push(action.codexId);
++  } else if (action.type === 'grantPermission') {
+     if (!config.permissions.some(p => p.id === action.permissionId)) return {ok: false, reason: 'unknown-permission'};
+@@ -87,2 +124,6 @@
+   } else return {ok: false, reason: 'unknown-action'};
++  if (['acceptQuest','grantPermission','collect'].includes(action.type)) {
++    s.introStatus = 'seen'; s.introSeen = true;
++    s.worldState.shipState = questStage(s,config) === 'completed' ? 'passed' : 'waiting';
++  }
+   s.revision++;
+--- a/src/hongqiao/persistence.js
++++ b/src/hongqiao/persistence.js
+@@ -74,2 +74,3 @@
+     retrySave() {persist(); notify({action: {type: 'retrySave'}}); return status.saved;},
++    refreshUI() {notify({action: {type: 'refreshSnapshot'}});},
+     // Used only by explicit development fixtures; not an NPC/quest settlement route.
+--- a/src/hongqiao/runtime.js
++++ b/src/hongqiao/runtime.js
+@@ -1,2 +1,3 @@
+-import config from './config.json';
++import * as THREE from 'three';
++import config from './config.js';
+ import {createProgressStore, consumeResetURL} from './persistence.js';
+@@ -4,21 +5,59 @@
+ import {createProgressUI} from './progress-ui.js';
++import {createQuestNPCs} from './npcs.js';
++import {createQuestDialogue} from './dialogue-ui.js';
++import {createGuidance} from './quest-logic.js';
++import {createQuestTracker} from './tracker.js';
++import {createPresentation} from './presentation.js';
++import './quest-ui.css';
+
+-export function createHongqiaoProgress({scene, loader, world, getActor, canOpen, onOpen, onClose, toast}) {
+-  const development = import.meta.env.DEV && new URLSearchParams(location.search).has('test');
+-  // Access can throw even before getItem (privacy/security settings).
+-  const storage = {getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value),removeItem:key=>localStorage.removeItem(key)};
+-  const reset = consumeResetURL({url:location.href,history,storage,development});
+-  const store = createProgressStore({config,storage});
+-  if(reset.error)console.error('[Hongqiao reset]',reset.error);
+-  const collectibles = createCollectibles({scene,loader,config,store,world,baseURL:import.meta.env.BASE_URL});
+-  const ui = createProgressUI({config,store,development,canOpen,onOpen,onClose,toast});
+-  if(development)window.__hqProgress={
+-    getState:store.getState,getStatus:store.getStatus,getErrors:store.getErrors,getWorld:collectibles.getState,
+-    dispatch:store.dispatch,restoreFixture:store.restoreFixture,retrySave:store.retrySave,config,reset,
+-  };
+-  return {
+-    store, ui,
+-    prompt() {const focused=collectibles.focus(getActor());return focused ? '取'+focused.item.name : null;},
+-    interact() {const focused=collectibles.focus(getActor());if(!focused)return false;const result=store.dispatch({type:'collect',instanceId:focused.instance.id});if(result.changed&&!result.saved)toast('已取得物品，保存失败；请查看提示并重试。');return result.ok;},
+-  };
++export function createHongqiaoProgress({scene,loader,world,npcPrototype,registry,locks,gate,getActor,canOpen,canOperate,toast}) {
++  const development=import.meta.env.DEV&&new URLSearchParams(location.search).has('test');
++  const storage={getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value),removeItem:key=>localStorage.removeItem(key)};
++  const reset=consumeResetURL({url:location.href,history,storage,development});
++  const store=createProgressStore({config,storage});if(reset.error)console.error('[Hongqiao reset]',reset.error);
++  const acquire=(owner,cancel)=>locks.acquire(owner==='dialogue'?'hqDialogue':owner,cancel);
++  let releaseBook,presentation,dialogue,tracker;
++  const ui=createProgressUI({config,store,development,canOpen:()=>canOpen()&&!presentation?.getState().running,
++    onOpen:()=>{releaseBook=acquire('book',()=>ui.close());},onClose:()=>{releaseBook?.();releaseBook=null;},toast});
++  const collectibles=createCollectibles({scene,loader,config,store,world,baseURL:import.meta.env.BASE_URL});
++  const npcs=createQuestNPCs({scene,npcPrototype,config,world}),guidance=createGuidance(config);
++  const chooseGuide=id=>{guidance.choose(id);toast('已为你标出方向。');};
++  dialogue=createQuestDialogue({config,store,acquire,gate,book:ui,chooseGuide,onFinishPresentation:()=>presentation.finishEnding()});
++  presentation=createPresentation({config,store,acquire,onEndingPlaceholder:()=>dialogue.showEnding(),onClosing:()=>dialogue.showClosing()});
++  tracker=createQuestTracker({config,store,guidance,onChoose:chooseGuide,onStories:()=>ui.openStories(),onClosing:()=>{presentation.finishEnding();dialogue.showClosing();}});
++  const culture=config.narrative.guide.culture,cultureAnchor=config.anchors.find(a=>a.id===culture.anchorId);
++  const culturePosition=new THREE.Vector3(...cultureAnchor.position).add(new THREE.Vector3(...culture.offset));
++  for(const e of collectibles.entries())registry.register({id:e.instance.id,type:'item',entity:e.group,anchor:e.anchor,layer:e.anchor.layer,radius:2,maxHeightDifference:.7,
++    enabled:()=>e.group.visible&&store.getState().permissions.includes(e.instance.permissionId),getPosition:()=>e.group.getWorldPosition(new THREE.Vector3()),label:'取'+e.item.name,
++    action:()=>{const result=store.dispatch({type:'collect',instanceId:e.instance.id});if(result.changed&&!result.saved)toast('已取得物品，保存失败；请查看提示并重试。');}});
++  for(const npc of config.npcs){const anchor=config.anchors.find(a=>a.id===npc.anchorId);registry.register({id:npc.id,type:'npc',anchor,layer:anchor.layer,getPosition:()=>npcs.position(npc.id),label:'与'+npc.name+'交谈',action:()=>dialogue.showNPC(npc.id)});}
++  registry.register({id:culture.id,type:'codex',anchor:cultureAnchor,layer:cultureAnchor.layer,getPosition:()=>culturePosition,label:'看桥下',action:()=>{store.dispatch({type:'unlockCodex',codexId:culture.codexId});ui.openCodex();}});
++  let lastTick=performance.now();
++  const resetClock=()=>{lastTick=performance.now();};
++  addEventListener('blur',resetClock);addEventListener('focus',resetClock);document.addEventListener('visibilitychange',resetClock);
++  function update() {
++    const now=performance.now(),dt=Math.max(0,(now-lastTick)/1000);lastTick=now;
++    const state=store.getState(),actor=getActor();
++    guidance.update(dt,canOperate()&&!locks.locked&&!document.hidden&&document.hasFocus(),state);
++    tracker.render(canOpen());
++    let selected=guidance.getState().targetId,target=selected?npcs.position(selected):null;
++    const instance=config.instances.find(i=>config.permissions.find(p=>p.id===i.permissionId)?.grantedBy===selected);
++    if(instance&&state.permissions.includes(instance.permissionId)&&!state.worldState.collectedInstanceIds.includes(instance.id)){
++      target=new THREE.Vector3(...config.anchors.find(a=>a.id===instance.anchorId).position);selected=instance.id;
++    }
++    npcs.update(actor,selected);
++    let direction='';
++    if(target){const dx=target.x-actor.x,dz=target.z-actor.z,d=Math.hypot(dx,dz);const name=config.npcs.find(n=>n.id===selected)?.name??config.items.find(i=>i.id===instance?.itemId)?.name;
++      direction=d<1.5?`已到${name}附近，留意 E 提示`:`${name} · 向${Math.abs(dx)>Math.abs(dz)?dx>0?'东':'西':dz>0?'南':'北'}约 ${Math.ceil(d)} 步`;}
++    tracker.setDirection(direction);
++  }
++  store.subscribe(event=>{
++    if(['acceptQuest','grantPermission','collect','completeQuest'].includes(event.action.type))guidance.progress();
++    if(event.action.type==='completeQuest')queueMicrotask(()=>presentation.playEnding());
++  });
++  if(development)window.__hqProgress={getState:store.getState,getStatus:store.getStatus,getErrors:store.getErrors,getWorld:collectibles.getState,
++    dispatch:store.dispatch,restoreFixture:store.restoreFixture,retrySave:store.retrySave,refreshUI:store.refreshUI,config,reset,
++    getDialogue:dialogue.getState,getNPCs:npcs.getState,getGuidance:guidance.getState,getPresentation:presentation.getState,
++    advanceGuidance:(seconds,operative)=>guidance.update(seconds,operative,store.getState())};
++  return {store,ui,dialogue,presentation,update,start:()=>presentation.start()};
+ }
+--- /dev/null
++++ b/src/hongqiao/npcs.js
+@@ -0,0 +1,29 @@
++import * as THREE from 'three';
++import {moveActor} from '../world.js';
++
++export function createQuestNPCs({scene,npcPrototype,config,world}) {
++  const root=new THREE.Group();root.name='Hongqiao quest NPCs';scene.add(root);
++  const entries=config.npcs.map(npc=>{
++    const anchor=config.anchors.find(a=>a.id===npc.anchorId),group=new THREE.Group();group.name=npc.id;group.position.set(...anchor.position);root.add(group);
++    const model=npcPrototype.clone(true);group.add(model);
++    const canvas=document.createElement('canvas');canvas.width=256;canvas.height=80;
++    const ctx=canvas.getContext('2d');ctx.fillStyle='#173330dc';ctx.fillRect(0,0,256,80);ctx.fillStyle='#f5e5bd';ctx.textAlign='center';ctx.font='bold 40px serif';ctx.fillText(npc.name,128,53);
++    const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;
++    const label=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthTest:true}));label.position.y=2.75;label.scale.set(1.5,.47,1);group.add(label);label.visible=false;
++    return {id:npc.id,npc,anchor,group,label};
++  });
++  function reachable(actor,position,layer) {
++    const {radius,maxHeightDifference}=config.interactionContract;
++    if(actor.mode!=='walk'||actor.layer!==layer||Math.abs(actor.height-position.y)>maxHeightDifference||Math.hypot(actor.x-position.x,actor.z-position.z)>radius)return false;
++    const reached=moveActor({...actor},position.x-actor.x,position.z-actor.z,world);
++    return reached.mode==='walk'&&Math.hypot(reached.x-position.x,reached.z-position.z)<.1;
++  }
++  const position=e=>e.group.getWorldPosition(new THREE.Vector3());
++  return {
++    focus(actor) {return entries.filter(e=>reachable(actor,position(e),e.anchor.layer)).sort((a,b)=>position(a).distanceTo(new THREE.Vector3(actor.x,actor.height,actor.z))-position(b).distanceTo(new THREE.Vector3(actor.x,actor.height,actor.z)))[0]??null;},
++    update(actor,selected) {for(const e of entries){const p=position(e);e.label.visible=Math.hypot(actor.x-p.x,actor.z-p.z)<5||selected===e.id;}},
++    position(id) {const e=entries.find(e=>e.id===id);return e?position(e):null;},
++    reachable,
++    getState:()=>entries.map(e=>({id:e.id,position:position(e).toArray()})),
++  };
++}
+--- /dev/null
++++ b/src/hongqiao/dialogue-ui.js
+@@ -0,0 +1,76 @@
++import {selectDialogue,missingItems} from './quest-logic.js';
++
++export function createQuestDialogue({config,store,acquire,gate,book,chooseGuide,onFinishPresentation}) {
++  const dialog=document.createElement('dialog');dialog.id='hq-dialogue';dialog.setAttribute('aria-label','虹桥人物对白');document.body.append(dialog);
++  const el=(tag,text,parent=dialog)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;parent.append(e);return e;};
++  let release=null,definition=null,nodeId=null,entryNode=null,lineIndex=0,choicesOnly=false,mode='npc',armed=true,lastResult=null;
++  function close(result='cancelled') {if(!dialog.open)return;lastResult=result;dialog.close();release?.();release=null;definition=null;}
++  function begin() {if(!dialog.open){release=acquire('dialogue',()=>close());dialog.showModal();}armed=!gate.held('KeyE');}
++  function showNPC(npcId) {
++    const selected=selectDialogue(config,store.getState(),npcId);if(!selected)return false;
++    definition=selected.dialogue;entryNode=selected.nodeId;nodeId=entryNode;lineIndex=0;choicesOnly=false;mode='npc';begin();render();return true;
++  }
++  function button(text,action,parent=dialog,id) {const b=el('button',text,parent);b.type='button';if(id)b.dataset.choice=id;b.disabled=!armed;b.onclick=()=>{if(armed)action();};return b;}
++  function showNode(id,onlyChoices=false) {nodeId=id==='$entry'?entryNode:id;lineIndex=0;choicesOnly=onlyChoices;render();}
++  function node() {
++    if(mode==='closing')return {lines:config.narrative.closing.lines,choices:[{id:'hq_closing_done',label:'继续',effect:{type:'completionCard'}}]};
++    const value=definition.nodes[nodeId];
++    if(nodeId==='HQ_40')return {...value,lines:[...value.lines,...missingItems(config,store.getState()).map(i=>config.narrative.guide.missing[i.itemId])]};
++    return value;
++  }
++  function choose(choice) {
++    const effect=choice.effect;
++    if(effect?.type==='close'){close('cancelled');return;}
++    if(effect?.type==='openStory'){const id=effect.storyId;close('completed');book.openStories(id);return;}
++    if(effect?.type==='showClosing'){showClosing();return;}
++    if(effect?.type==='chooseGuide'){mode='guide';render();return;}
++    if(effect?.type==='completionCard'){store.dispatch({type:'acknowledgeEnding'});showCompletion();return;}
++    if(effect){
++      const result=store.dispatch(effect);
++      if(!result.ok){el('p',result.reason==='quest-not-ready'?'物品尚未齐备，请先备齐再交付。':'当前状态已变化，请重新交谈。');return;}
++      if(!choice.goto){close('completed');return;}
++    }
++    if(choice.goto)showNode(choice.goto,choice.choicesOnly);
++  }
++  function next(){if(!armed||mode==='ending'||mode==='card'||mode==='guide')return;const n=node();if(!choicesOnly&&lineIndex<n.lines.length-1){lineIndex++;render();}}
++  function render() {
++    dialog.replaceChildren();dialog.dataset.mode=mode;dialog.dataset.node=nodeId??'';
++    button('关闭 Esc',()=>close(),dialog,'hq_dialogue_close');
++    if(mode==='ending') {
++      el('h2','虹桥急情 · 物品已交齐');
++      el('p','当前为剧情体验版，过桥动画暂未接入。物品交付与故事解锁已经生效。');
++      el('small',store.getStatus().message);
++      button('继续收尾对白',()=>{onFinishPresentation();showClosing();},dialog,'hq_continue_closing');
++      button('阅读人物故事',()=>{close('completed');book.openStories();});return;
++    }
++    if(mode==='card') {
++      for(const [i,line] of config.narrative.completionCard.lines.entries()) {
++        if(line.startsWith('['))continue;
++        el(i===0?'h2':'p',line.includes('也已保存')&&!store.getStatus().saved?'《汴京见闻·虹桥》短记录暂存于本页内存，请先重试保存。':line);
++      }
++      el('small','剧情文本体验版 · 过桥视觉演出另行验收');el('small',store.getStatus().message);
++      button('阅读人物故事',()=>{close('completed');book.openStories();});button('继续游历',()=>close('completed'));return;
++    }
++    if(mode==='guide') {
++      el('h2','想去找哪位街坊？');
++      for(const item of missingItems(config,store.getState())){
++        const instance=config.instances.find(i=>i.itemId===item.itemId),permit=config.permissions.find(p=>p.id===instance.permissionId),npc=config.npcs.find(n=>n.id===permit.grantedBy);
++        button(npc.name+' · '+config.items.find(i=>i.id===item.itemId).name,()=>{chooseGuide(npc.id);close('completed');});
++      }
++      button('找老周交付',()=>{chooseGuide(config.quest.giverId);close('completed');});return;
++    }
++    const n=node(),line=n.lines[lineIndex]??'',colon=line.indexOf('：');
++    el('small',mode==='closing'?'虹桥急情 · 收尾':'虹桥急情');
++    el('h2',colon>0?line.slice(0,colon):'');el('p',colon>0?line.slice(colon+1):line).id='hq-line';
++    el('small',`${lineIndex+1} / ${n.lines.length}`);
++    if(!choicesOnly&&lineIndex<n.lines.length-1)button('继续 E',next,dialog,'hq_next');
++    else {const choices=el('nav');for(const choice of n.choices??[])button(choice.label,()=>choose(choice),choices,choice.id);}
++  }
++  function showEnding(){mode='ending';nodeId='HQ_42';begin();render();}
++  function showClosing(){mode='closing';nodeId='HQ_43';lineIndex=0;choicesOnly=false;begin();render();}
++  function showCompletion(){mode='card';nodeId='hq_completion_card';begin();render();}
++  dialog.addEventListener('cancel',event=>{event.preventDefault();close('cancelled');});
++  addEventListener('keyup',event=>{if(event.code==='KeyE'&&dialog.open){armed=true;for(const b of dialog.querySelectorAll('button'))b.disabled=false;}},true);
++  addEventListener('blur',()=>{if(dialog.open){armed=true;for(const b of dialog.querySelectorAll('button'))b.disabled=false;}});
++  return {advance:next,showNPC,showEnding,showClosing,showCompletion,close,isOpen:()=>dialog.open,getState:()=>({mode,nodeId,lineIndex,armed,lastResult,npcId:definition?.npcId})};
++}
+--- /dev/null
++++ b/src/hongqiao/tracker.js
+@@ -0,0 +1,29 @@
++import {questStage} from './state.js';
++export function createQuestTracker({config,store,guidance,onChoose,onStories,onClosing}) {
++  const root=document.createElement('aside');root.id='hq-tracker';root.hidden=true;root.setAttribute('aria-label','虹桥任务追踪');document.body.append(root);
++  const el=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;root.append(e);return e;};
++  let lastSignature='',direction;
++  function render(playing) {
++    root.hidden=!playing;if(!playing)return;
++    const state=store.getState(),guide=guidance.getState(),stage=questStage(state,config);
++    const signature=JSON.stringify([stage,state.inventory,state.permissions,state.endingPending,guide.hintVisible]);
++    if(signature===lastSignature)return;lastSignature=signature;root.replaceChildren();
++    const count=config.quest.requiredItems.filter(i=>(state.inventory[i.itemId]??0)>=i.quantity).length;
++    el('strong',config.quest.title+(stage==='completed'?' · 已完成':` · 备齐物品 ${count}/3`));
++    if(stage==='available')el('p',config.narrative.guide.initialHint);
++    if(stage==='completed') {
++      const b=el('button','阅读人物故事');b.onclick=onStories;
++      const ending=el('button',state.endingPending?'继续收尾对白':'回顾收尾');ending.onclick=onClosing;
++    } else {
++      for(const item of config.quest.requiredItems){
++        const instance=config.instances.find(i=>i.itemId===item.itemId),npc=config.npcs.find(n=>n.id===config.permissions.find(p=>p.id===instance.permissionId).grantedBy),name=config.items.find(i=>i.id===item.itemId).name;
++        const b=el('button',`${(state.inventory[item.itemId]??0)>=item.quantity?'已得':'○'} ${npc.name} · ${name}`);b.dataset.target=npc.id;b.onclick=()=>onChoose(npc.id);
++      }
++      const b=el('button',stage==='ready'?'三件已齐，找老周交付':'找老周');b.dataset.target=config.quest.giverId;b.onclick=()=>onChoose(config.quest.giverId);
++    }
++    if(guide.hintVisible)el('small',config.narrative.guide.idleHint).id='hq-idle-hint';
++    direction=el('div','');direction.id='hq-direction';direction.hidden=true;
++  }
++  function setDirection(text){if(direction){direction.hidden=!text;direction.textContent=text;}}
++  return {render,setDirection};
++}
+--- /dev/null
++++ b/src/hongqiao/presentation.js
+@@ -0,0 +1,44 @@
++import {questStage} from './state.js';
++
++// Step 7 attaches its actual renderer here. This module never moves the existing cargo ship/camera.
++export function createPresentation({config,store,acquire,onEndingPlaceholder,onClosing}) {
++  let adapter=null,running=null,release=null,sequence=0,endingEligible=false;
++  store.subscribe(event=>{if(event.action.type==='completeQuest')endingEligible=true;});
++  const sceneState=()=>({shipState:store.getState().worldState.shipState??'waiting',introSeen:store.getState().introSeen,endingPending:store.getState().endingPending});
++  function finish(kind,token) {
++    if(token!==sequence||running!==kind)return;
++    running=null;release?.();release=null;
++    store.dispatch({type:kind==='intro'?'finishIntro':'finishEnding'});
++    adapter?.applyState?.(sceneState());
++    if(kind==='ending')onClosing();
++  }
++  function play(kind) {
++    if(running)return false;
++    if(kind==='intro'){
++      if(!adapter?.playIntro)return false;
++      const result=store.dispatch({type:'beginIntro'});if(!result.changed)return false;
++    } else {
++      if(!endingEligible || questStage(store.getState(),config)!=='completed')return false;
++      endingEligible=false;
++      if(!adapter?.playEnding){onEndingPlaceholder();return false;}
++    }
++    running=kind;const token=++sequence;release=acquire('presentation',()=>skip());
++    try {
++      const result=adapter[kind==='intro'?'playIntro':'playEnding']({config:config.narrative[kind],state:sceneState(),finish:()=>finish(kind,token),isCurrent:()=>token===sequence&&running===kind});
++      Promise.resolve(result).catch(error=>{console.error('[Hongqiao presentation]',error);finish(kind,token);});
++    } catch(error){console.error('[Hongqiao presentation]',error);finish(kind,token);}
++    return true;
++  }
++  const skip=()=>{const kind=running,token=sequence;if(!kind)return;try{adapter?.cancel?.();}finally{finish(kind,token);}};
++  const pause=()=>adapter?.setPaused?.(document.hidden||!document.hasFocus());
++  document.addEventListener('visibilitychange',pause);addEventListener('blur',pause);addEventListener('focus',pause);
++  addEventListener('keydown',event=>{if(!running)return;event.stopImmediatePropagation();event.preventDefault();if(event.code==='Escape'&&!event.repeat)skip();},true);
++  return {
++    attach(next){if(running)skip();adapter=next;adapter?.applyState?.(sceneState());},
++    start(){if(questStage(store.getState(),config)!=='completed')play('intro');},
++    playEnding:()=>play('ending'),
++    finishEnding(){store.dispatch({type:'finishEnding'});adapter?.applyState?.(sceneState());},
++    getState:()=>({...sceneState(),running,adapterAttached:!!adapter}),
++    skip,
++  };
++}
+--- /dev/null
++++ b/src/hongqiao/quest-ui.css
+@@ -0,0 +1,14 @@
++#hq-dialogue{width:min(650px,90vw);max-height:80vh;padding:28px;background:#f2ebda;color:#293d39;border:1px solid #ad9a74;border-radius:12px;overflow:auto}
++#hq-dialogue::backdrop{background:#14262280}
++#hq-dialogue h2{font-size:27px;color:inherit;margin:18px 0}
++#hq-dialogue p{font-size:20px;line-height:1.85;color:inherit;margin:15px 0}
++#hq-dialogue small{display:block;line-height:1.6;color:#596659}
++#hq-dialogue nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
++#hq-dialogue button{padding:10px 14px;margin:5px 8px 5px 0;background:#ded2b6;color:#293d39;border:1px solid #9d906f;border-radius:6px;cursor:pointer;font:inherit}
++#hq-dialogue button:disabled{opacity:.5;cursor:default}
++#hq-tracker{position:fixed;right:18px;top:160px;width:240px;padding:13px;background:#18312bea;color:#f3e9cc;border:1px solid #b9a07166;border-radius:7px;z-index:35;font:14px/1.6 sans-serif}
++#hq-tracker strong{font-size:17px;display:block}
++#hq-tracker button{display:block;text-align:left;width:100%;background:transparent;border:0;border-top:1px solid #c9b99833;color:inherit;padding:7px 0;cursor:pointer;font:inherit}
++#hq-tracker small{display:block;color:#f2d78f;margin:5px 0}
++#hq-direction{padding-top:8px;border-top:1px solid #a6bba9;color:#e5d8a4}
++@media(max-width:700px){#hq-tracker{top:145px;width:170px;right:8px;font-size:12px;padding:8px}#hq-tracker strong{font-size:14px}#hq-dialogue p{font-size:18px}}
+--- a/src/hongqiao/progress-ui.js
++++ b/src/hongqiao/progress-ui.js
+@@ -79,14 +79,3 @@
+   dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+-  const capturedKeys=new Set();
+-  addEventListener('keydown',event=>{
+-    const toggle=event.code==='KeyI'&&!event.ctrlKey&&!event.metaKey&&!event.altKey;
+-    if (opened || toggle && canOpen()) {
+-      if (opened && !['Escape','KeyI','KeyE','KeyF','KeyV','KeyW','KeyA','KeyS','KeyD','Equal','Minus'].includes(event.code)) {event.stopPropagation();return;}
+-      event.preventDefault();event.stopImmediatePropagation();
+-      if(event.repeat || capturedKeys.has(event.code))return;capturedKeys.add(event.code);
+-      if(event.code==='Escape')close();else if(toggle)open();
+-    }
+-  },true);
+-  addEventListener('keyup',event=>{if(capturedKeys.delete(event.code))event.stopImmediatePropagation();},true);
+-  addEventListener('blur',()=>{recordPosition();capturedKeys.clear();});
++  addEventListener('blur',recordPosition);
+   addEventListener('pagehide',recordPosition);
+@@ -96,4 +85,4 @@
+   if(development){
+-    const panel=el('details',undefined,document.body);panel.id='hq-dev';el('summary','Step 4 开发测试',panel);
+-    el('small','只模拟许可；正式 NPC 对话留待 Step 5。',panel);
++    const panel=el('details',undefined,document.body);panel.id='hq-dev';el('summary','虹桥开发测试',panel);
++    el('small','正式流程请与附近人物交谈；以下仅用于状态测试。',panel);
+     for(const permit of config.permissions){const npc=config.npcs.find(n=>n.id===permit.grantedBy);button('模拟'+npc.name+'授权',panel,()=>{if(!canOpen())return;if(!opened){onOpen();opened=true;dialog.showModal();}pendingPermit=permit.id;page='permit';render();});}
+@@ -102,3 +91,5 @@
+   }
+-  return {open,close,isOpen:()=>opened,readStory};
++  function openStories(id) {if(!opened)open();if(!opened)return;showPage('stories');if(id)readStory(id);}
++  function openCodex() {if(!opened)open();if(opened)showPage('codex');}
++  return {open,close,isOpen:()=>opened,readStory,openStories,openCodex};
+ }
+--- a/src/hongqiao/debug.js
++++ b/src/hongqiao/debug.js
+@@ -4,3 +4,3 @@
+ // Explicit development survey only: no interaction, save, player or camera writes.
+-export async function createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor,renderItems=true}) {
++export async function createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor,renderItems=true,renderNpcs=true}) {
+  const result=validateHongqiao(config,world);if(!result.ok)throw Error(result.errors.join('\n'));
+@@ -9,3 +9,3 @@
+  function label(text,p,color){const c=document.createElement('canvas');c.width=512;c.height=96;const x=c.getContext('2d');x.fillStyle='#152726e8';x.fillRect(0,0,512,96);x.fillStyle=color;x.font='bold 36px sans-serif';x.textAlign='center';x.fillText(text,256,62);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:true}));s.position.set(p[0],p[1]+2.8,p[2]);s.scale.set(2.6,.49,1);root.add(s)}
+- for(const n of config.npcs){const a=anchor(n.anchorId),model=npcPrototype.clone(true);model.position.set(...a.position);root.add(model);label(n.name,a.position,n.color)}
++ for(const n of renderNpcs?config.npcs:[]){const a=anchor(n.anchorId),model=npcPrototype.clone(true);model.position.set(...a.position);root.add(model);label(n.name,a.position,n.color)}
+  for(const a of config.anchors){const m=new THREE.Mesh(new THREE.RingGeometry(.35,.44,24),new THREE.MeshBasicMaterial({color:a.kind==='ship'?0xf2b35d:0x6edccd,side:THREE.DoubleSide}));m.rotation.x=-Math.PI/2;m.position.set(a.position[0],a.position[1]+.03,a.position[2]);root.add(m);if(a.kind==='ship')label(a.label,a.position,'#f2b35d')}
+--- /dev/null
++++ b/src/hongqiao/quest.test.js
+@@ -0,0 +1,89 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFileSync} from 'node:fs';
++import {buildQuestConfig} from './quest-config.js';
++import {defaultState,normalizeState,reduceState,questStage} from './state.js';
++import {createProgressStore,SAVE_KEY} from './persistence.js';
++import {selectDialogue,createGuidance,missingItems} from './quest-logic.js';
++const read=name=>JSON.parse(readFileSync(new URL(name,import.meta.url)));
++const c=buildQuestConfig(read('./config.json'),read('./narrative.json'));
++const memory=()=>{const values=new Map();return {getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};};
++const store=disk=>createProgressStore({config:c,storage:disk,onError:()=>{}});
++const dispatch=(s,a)=>{const r=s.dispatch(a);assert.equal(r.ok,true);return r;};
++const accept=s=>dispatch(s,{type:'acceptQuest',questId:c.quest.id});
++const deliver=s=>s.dispatch({type:'completeQuest',questId:c.quest.id});
++const acquire=(s,i)=>{dispatch(s,{type:'grantPermission',permissionId:i.permissionId});dispatch(s,{type:'collect',instanceId:i.id});};
++const ready=()=>{const s=store(memory());accept(s);for(const i of c.instances)acquire(s,i);return s;};
++
++test('nine exact 30-second shots and full ending/closing/card configuration',()=>{
++ const intro=c.narrative.intro;assert.equal(intro.shots.length,9);assert.equal(intro.duration,30);assert.equal(intro.shots[0].start,0);assert.equal(intro.shots.at(-1).end,30);
++ intro.shots.forEach((shot,i)=>{if(i)assert.equal(shot.start,intro.shots[i-1].end);for(const key of ['framing','camera','action','audio','cut'])assert.ok(shot[key]);});
++ assert.equal(c.narrative.ending.phases.length,4);assert.equal(c.narrative.closing.lines.length,5);assert.ok(c.narrative.completionCard.lines.some(x=>x.includes('七十五钱')));
++ assert.equal(c.stories.reduce((n,s)=>n+s.sections.reduce((n,s)=>n+s.paragraphs.length,0),0),166);
++ assert.ok(c.narrative.journal.text.includes('何伯耳随车铃'));
++});
++test('every dialogue branch/choice has a valid node/effect and returns from optional questions',()=>{
++ const effects=new Set(['grantPermission','acceptQuest','completeQuest','close','openStory','showClosing','chooseGuide']);
++ for(const d of c.dialogues){for(const b of d.branches)assert.ok(d.nodes[b.node]);for(const node of Object.values(d.nodes)){assert.ok(node.lines.length);for(const choice of node.choices){if(choice.goto)assert.ok(choice.goto==='$entry'||d.nodes[choice.goto]);if(choice.effect)assert.ok(effects.has(choice.effect.type));}}}
++ assert.ok(c.dialogues.find(d=>d.npcId==='npc_hq_cheng').nodes.followup.lines[0].includes('食店里送羹'));
++ assert.equal(c.dialogues.find(d=>d.npcId===c.quest.giverId).nodes.HQ_01.lines.length,4);
++});
++test('all six collection orders: accepted quest, snapshots between pickups, only one delivery',()=>{
++ const [a,b,d]=c.instances;
++ for(const order of [[a,b,d],[a,d,b],[b,a,d],[b,d,a],[d,a,b],[d,b,a]]){
++  const disk=memory();let s=store(disk);accept(s);
++  for(const i of order){acquire(s,i);s=store(disk);assert.equal(s.getState().inventory[i.itemId],1);assert.equal(s.getState().unlockedStoryIds.length,0);}
++  assert.equal(questStage(s.getState(),c),'ready');assert.equal(deliver(s).changed,true);assert.equal(deliver(s).changed,false);
++  const result=s.getState();assert.ok(result.endingPending);assert.equal(result.unlockedStoryIds.length,4);
++  for(const i of c.items)assert.equal(result.inventory[i.id],0);
++  s=store(disk);assert.equal(questStage(s.getState(),c),'completed');assert.equal(s.getState().worldState.shipState,'passed');assert.equal(deliver(s).changed,false);
++ }
++});
++test('collect all before acceptance becomes ready immediately; accept never reopens completed',()=>{
++ const s=store(memory());for(const i of c.instances)acquire(s,i);assert.equal(questStage(s.getState(),c),'available');assert.equal(deliver(s).reason,'quest-not-ready');accept(s);assert.equal(questStage(s.getState(),c),'ready');deliver(s);assert.equal(accept(s).changed,false);assert.equal(questStage(s.getState(),c),'completed');
++});
++test('NPC branch priority completed > collected > permitted > accepted > first',()=>{
++ for(const i of c.instances){const s=store(memory()),npc=c.permissions.find(p=>p.id===i.permissionId).grantedBy;
++  const branch=()=>selectDialogue(c,s.getState(),npc).nodeId;
++  assert.equal(branch(),'first');accept(s);assert.equal(branch(),'accepted');dispatch(s,{type:'grantPermission',permissionId:i.permissionId});assert.equal(branch(),'permitted');dispatch(s,{type:'collect',instanceId:i.id});assert.equal(branch(),'collected');
++  for(const other of c.instances)acquire(s,other);deliver(s);assert.equal(branch(),'completed');
++ }
++ const s=store(memory());assert.equal(selectDialogue(c,s.getState(),c.quest.giverId).nodeId,'HQ_01');accept(s);assert.equal(selectDialogue(c,s.getState(),c.quest.giverId).nodeId,'HQ_40');for(const i of c.instances)acquire(s,i);assert.equal(selectDialogue(c,s.getState(),c.quest.giverId).nodeId,'HQ_41');deliver(s);assert.equal(selectDialogue(c,s.getState(),c.quest.giverId).nodeId,'HQ_44');
++});
++test('incomplete/unknown quest delivery changes nothing',()=>{
++ const s=store(memory());accept(s);acquire(s,c.instances[0]);const before=s.getState();assert.equal(deliver(s).ok,false);assert.equal(s.dispatch({type:'completeQuest',questId:'unknown'}).ok,false);assert.deepEqual(s.getState(),before);assert.equal(missingItems(c,before).length,2);
++});
++test('one atomic delivery snapshot is persisted before event; replay only refreshes UI',()=>{
++ const disk=memory(),s=store(disk);accept(s);for(const i of c.instances)acquire(s,i);
++ let settlements=0,refresh=0;
++ s.subscribe(e=>{if(e.action.type==='completeQuest'){settlements++;const raw=JSON.parse(disk.getItem(SAVE_KEY));assert.equal(raw.quests.hongqiao_01.status,'completed');assert.equal(raw.unlockedStoryIds.length,4);assert.ok(raw.endingPending);assert.ok(c.quest.rewardCodexIds.every(id=>raw.unlockedCodexIds.includes(id)));assert.ok(c.items.every(i=>raw.inventory[i.id]===0));}if(e.action.type==='refreshSnapshot')refresh++;});
++ deliver(s);deliver(s);s.refreshUI();s.refreshUI();assert.equal(settlements,1);assert.equal(refresh,2);
++});
++test('delivery preserves surplus items, unrelated progress and collected codex; consumes each target once',()=>{
++ const s=ready(),sample=s.getState();sample.inventory.other=7;sample.inventory.item_hq_rope=3;sample.quests.other={status:'active'};sample.unlockedCodexIds.push('other_codex');s.restoreFixture(sample);deliver(s);
++ assert.equal(s.getState().inventory.item_hq_rope,2);assert.equal(s.getState().inventory.other,7);assert.equal(s.getState().quests.other.status,'active');assert.ok(sample.unlockedCodexIds.every(id=>s.getState().unlockedCodexIds.includes(id)));
++});
++test('save failure preserves completed transaction in memory, retry reload does not settle twice',()=>{
++ const disk=memory(),s=store(disk);accept(s);for(const i of c.instances)acquire(s,i);const set=disk.setItem;disk.setItem=()=>{throw Error('quota');};assert.equal(deliver(s).saved,false);assert.equal(questStage(s.getState(),c),'completed');assert.equal(deliver(s).changed,false);disk.setItem=set;s.retrySave();const reloaded=store(disk);assert.equal(reloaded.getState().unlockedStoryIds.length,4);assert.ok(c.items.every(i=>reloaded.getState().inventory[i.id]===0));
++});
++test('ending finish, skip, duplicate callback and acknowledgement never grant/revoke rewards',()=>{
++ const s=ready();deliver(s);const reward=()=>JSON.stringify([s.getState().inventory,s.getState().unlockedStoryIds,s.getState().unlockedCodexIds]);const before=reward();dispatch(s,{type:'finishEnding'});assert.ok(s.getState().endingPending);dispatch(s,{type:'acknowledgeEnding'});assert.equal(s.getState().endingPending,false);assert.equal(s.getState().endingSeen,true);assert.equal(dispatch(s,{type:'acknowledgeEnding'}).changed,false);assert.equal(reward(),before);
++});
++test('legacy completed saves restore all stories, preserve read history/other rewards, reset only old offsets',()=>{
++ const old={schemaVersion:1,questStatus:'completed',inventory:{other:4},unlockedCodexIds:['other'],readStoryIds:['story_hq_zhou'],readContentVersions:{story_hq_zhou:1},storyReadingProgress:{story_hq_zhou:{contentVersion:1,sectionId:'old',paragraphIndex:12},story_hq_he:{contentVersion:2,sectionId:c.stories[1].sections[1].id,paragraphIndex:1}}};
++ const migrated=normalizeState(old,c);assert.equal(migrated.unlockedStoryIds.length,4);assert.equal(migrated.inventory.other,4);assert.deepEqual(migrated.readStoryIds,['story_hq_zhou']);assert.equal(migrated.readContentVersions.story_hq_zhou,1);assert.equal(migrated.storyReadingProgress.story_hq_zhou,undefined);assert.equal(migrated.storyReadingProgress.story_hq_he.paragraphIndex,1);assert.ok(migrated.unlockedCodexIds.includes('other'));
++});
++test('unfinished legacy saves never unlock long stories',()=>{
++ const state=normalizeState({schemaVersion:1,questStatus:'active',unlockedStoryIds:c.quest.rewardStoryIds,collectedInstanceIds:c.instances.map(i=>i.id)},c);assert.deepEqual(state.unlockedStoryIds,[]);
++});
++test('intro start/finish and mid-intro reload award nothing; existing progress bypasses intro',()=>{
++ const s=store(memory());dispatch(s,{type:'beginIntro'});assert.equal(s.getState().introStatus,'playing');const restored=normalizeState(s.getState(),c);assert.equal(restored.introStatus,'seen');assert.equal(restored.worldState.shipState,'waiting');assert.deepEqual(restored.inventory,{});assert.deepEqual(restored.unlockedStoryIds,[]);
++ dispatch(s,{type:'finishIntro'});assert.equal(dispatch(s,{type:'finishIntro'}).changed,false);assert.equal(questStage(s.getState(),c),'available');
++ const playing=ready();deliver(playing);dispatch(playing,{type:'finishIntro'});assert.equal(playing.getState().worldState.shipState,'passing');assert.equal(normalizeState(playing.getState(),c).worldState.shipState,'passed');
++});
++test('cultural exploration is optional and independent of the three required targets',()=>{
++ const s=store(memory());dispatch(s,{type:'unlockCodex',codexId:'K02'});assert.deepEqual(s.getState().unlockedCodexIds,['K02']);assert.equal(missingItems(c,s.getState()).length,3);assert.equal(questStage(s.getState(),c),'available');assert.equal(dispatch(s,{type:'unlockCodex',codexId:'K02'}).changed,false);
++});
++test('90 seconds counts only operative accepted time; progress resets, completion clears, selection explicit',()=>{
++ const s=ready(),g=createGuidance(c);g.update(89,true,s.getState());g.update(500,false,s.getState());assert.equal(g.getState().hintVisible,false);assert.equal(g.getState().targetId,null);g.update(1,true,s.getState());assert.equal(g.getState().hintVisible,true);g.choose(c.quest.giverId);assert.equal(g.getState().targetId,c.quest.giverId);g.progress();assert.equal(g.getState().idleSeconds,0);deliver(s);g.update(90,true,s.getState());assert.equal(g.getState().hintVisible,false);assert.equal(g.getState().targetId,null);
++});
+--- /dev/null
++++ b/src/hongqiao/presentation.test.js
+@@ -0,0 +1,27 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++import {buildQuestConfig} from './quest-config.js';
++import {createProgressStore} from './persistence.js';
++import {createPresentation} from './presentation.js';
++const config=buildQuestConfig(JSON.parse(fs.readFileSync(new URL('./config.json',import.meta.url))),JSON.parse(fs.readFileSync(new URL('./narrative.json',import.meta.url))));
++function setup(t){
++ t.mock.method(globalThis,'addEventListener',()=>{});t.mock.method(globalThis.document,'addEventListener',()=>{});
++ const data=new Map(),store=createProgressStore({config,storage:{getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v)},onError:()=>{}});
++ let locks=0,closing=0,placeholder=0;const p=createPresentation({config,store,acquire:()=>{locks++;return()=>locks--;},onClosing:()=>closing++,onEndingPlaceholder:()=>placeholder++});
++ const ready=()=>{store.dispatch({type:'acceptQuest',questId:config.quest.id});for(const i of config.instances){store.dispatch({type:'grantPermission',permissionId:i.permissionId});store.dispatch({type:'collect',instanceId:i.id});}};
++ return {p,store,ready,stats:()=>({locks,closing,placeholder})};
++}
++globalThis.addEventListener??=()=>{};globalThis.document??={addEventListener:()=>{},hasFocus:()=>true,hidden:false};
++test('ending entry requires fresh settlement; UI replay and duplicate callbacks cannot replay it',t=>{
++ const {p,store,ready,stats}=setup(t);let calls=0,finish;p.attach({playEnding:e=>{calls++;finish=e.finish;}});assert.equal(p.playEnding(),false);ready();store.dispatch({type:'completeQuest',questId:config.quest.id});assert.equal(p.playEnding(),true);assert.equal(p.playEnding(),false);store.refreshUI();finish();finish();assert.equal(p.playEnding(),false);assert.equal(calls,1);assert.deepEqual(stats(),{locks:0,closing:1,placeholder:0});assert.equal(store.getState().worldState.shipState,'passed');assert.equal(store.getState().unlockedStoryIds.length,4);
++});
++test('loaded completed save applies passed state without replaying ending; no adapter gives one honest placeholder',t=>{
++ const {p,store,ready,stats}=setup(t);ready();store.dispatch({type:'completeQuest',questId:config.quest.id});p.playEnding();p.playEnding();assert.equal(stats().placeholder,1);
++ const other=setup(t);other.store.restoreFixture(store.getState());let state;other.p.attach({applyState:s=>{state=s},playEnding:()=>assert.fail('replayed ending')});other.p.start();other.p.playEnding();assert.equal(state.shipState,'passed');assert.equal(other.stats().locks,0);
++});
++test('all nine intro skip points release locks and stale completion cannot affect a later timeline',t=>{
++ for(let i=0;i<9;i++){
++  const {p,store,stats}=setup(t);let finish;p.attach({playIntro:e=>{assert.equal(e.config.shots.length,9);finish=e.finish;},cancel:()=>{}});p.start();assert.equal(stats().locks,1);p.skip();finish();assert.equal(stats().locks,0);assert.equal(store.getState().introSeen,true);assert.deepEqual(store.getState().inventory,{});assert.deepEqual(store.getState().quests,{});p.start();assert.equal(stats().locks,0);
++ }
++});
+--- /dev/null
++++ b/scripts/build-hongqiao-narrative.py
+@@ -0,0 +1,41 @@
++"""Rebuild Step 5 additions from the approved local manuscripts; no remote generation."""
++from pathlib import Path
++import json,re,sys
++root=Path(__file__).resolve().parents[1]
++docs=Path(sys.argv[1]) if len(sys.argv)>1 else root.parent.parent/'清明上河图'
++plot=(docs/'虹桥急情_完整剧情稿_v1.0.md').read_text();stories=(docs/'虹桥人物故事集_通关解锁版_v1.1.md').read_text();base=json.loads((root/'src/hongqiao/config.json').read_text())
++blocks={m.group(1):m.group(2) for m in re.finditer(r'^### (HQ_\d+) [^\n]+\n(.*?)(?=^### HQ_|^## \d+\.|\Z)',plot,re.M|re.S)}
++# Exact paragraph/title/source audit: existing story config is the sole runtime source.
++audit=[];introductions={}
++for i,block in enumerate(re.split(r'^## [二三四五]、',stories,flags=re.M)[1:]):
++ body=block.split('**回访引入句**')[0];sections=re.findall(r'^### \d\. ([^\n]+)\n(.*?)(?=^### |\Z)',body,re.M|re.S);story=base['stories'][i]
++ assert len(sections)==3
++ for j,(title,content) in enumerate(sections):
++  paragraphs=[p.strip() for p in re.split(r'\n\s*\n',content.strip()) if p.strip()]
++  assert title==story['sections'][j]['title'] and paragraphs==story['sections'][j]['paragraphs'],story['storyId']
++ note=re.search(r'\*\*取材小签\*\*：([^\n]+)',block)[1];assert story['sourceNotes']==[note]
++ introductions[story['npcId']]=re.search(r'\*\*回访引入句\*\*：“([^\n]+)”',block)[1]
++ audit.append({'storyId':story['storyId'],'sections':3,'paragraphs':sum(len(s['paragraphs']) for s in story['sections']),'exactMatch':True,'sourceNotesMatch':True})
++# Preserve all six storyboard table columns verbatim as presentation metadata.
++rows=[line for line in blocks['HQ_00'].splitlines() if re.match(r'\| 0[1-9] /',line)]
++times=[0,3,5,8,10,14,17,20,27,30]
++shots=[]
++for i,line in enumerate(rows):
++ cells=[v.strip() for v in line.strip('|').split('|')]
++ shots.append({'id':f'HQ_00_shot_{i+1:02}','start':times[i],'end':times[i+1],'timing':cells[0],'framing':cells[1],'camera':cells[2],'action':cells[3],'audio':cells[4],'cut':cells[5]})
++assert len(shots)==9
++quoted=lambda text:[re.sub(r'^>\s?','',s).strip() for s in text.splitlines() if s.startswith('>') and s.strip('> ')]
++ending=quoted(blocks['HQ_43'].split('完成卡：')[0])
++journal=quoted(blocks['HQ_43'].split('书生的见闻正文（创作，不作为史料）：')[1])[0]
++card=quoted(blocks['HQ_43'].split('完成卡：')[1].split('书生的见闻正文')[0])
++choices={}
++for d in base['dialogues']:
++ if d['npcId']==base['quest']['giverId']:continue
++ labels=re.findall(r'^- “([^”]+)” →',blocks[d['sourceNode']],re.M)
++ assert len(labels)==2
++ choices[d['npcId']]={'confirm':labels[0],'followup':labels[1]}
++phases=[]
++for i,line in enumerate(l for l in blocks['HQ_42'].splitlines() if re.match(r'\| \d+–\d+ 秒',l)):
++ cells=[v.strip() for v in line.strip('|').split('|')];a,b=map(int,re.findall(r'\d+',cells[0]));phases.append({'id':f'HQ_42_phase_{i+1}','start':a,'end':b,'action':cells[1],'audio':cells[2]})
++data={'contentVersion':2,'intro':{'id':'HQ_00','title':'桥下惊呼','duration':30,'shots':shots,'autoStartWhenAdapterReady':True,'startAnchorId':'anchor_hq_ship_approach','endAnchorId':'anchor_hq_ship_wait'},'ending':{'id':'HQ_42','duration':20,'phases':phases,'startAnchorId':'anchor_hq_ship_wait','endAnchorId':'anchor_hq_ship_end'},'closing':{'id':'HQ_43','lines':ending},'completionCard':{'id':'hq_completion_card','lines':card},'journal':{'id':'journal_hq','title':'汴京见闻·虹桥','text':journal,'contentType':'书生见闻 · 游戏创作'},'choiceLabels':choices,'storyIntroductions':introductions,'guide':{'idleSeconds':90,'idleHint':'可在任务栏选择一位街坊，请他指路','initialHint':'去岸边问问发生了什么。','missing':{'item_hq_rope':'缆绳在何伯的货堆边。','item_hq_pole':'竹篙在阿成守着的工具架上。','item_hq_cloth':'护货布在方娘子摊侧。'},'culture':{'id':'explore_hq_bridge','codexId':'K02','anchorId':'anchor_hq_tools','offset':[0,0,1.6]}},'rewardCodexIds':['npc_hq_zhou','K01','K03','journal_hq'],'audit':audit}
++(root/'src/hongqiao/narrative.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');print(json.dumps(audit,ensure_ascii=False))

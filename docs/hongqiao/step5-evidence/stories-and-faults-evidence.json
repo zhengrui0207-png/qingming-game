@@ -1,0 +1,197 @@
+{
+  "partial": {
+    "contentVersion": 2,
+    "sectionId": "story_hq_zhou_2",
+    "paragraphIndex": 0
+  },
+  "bookRestored": 851,
+  "read": {
+    "contentVersion": 2,
+    "sectionId": "story_hq_zhou_3",
+    "paragraphIndex": 10
+  },
+  "legacy": {
+    "schemaVersion": 2,
+    "revision": 12,
+    "inventory": {
+      "item_hq_cloth": 0,
+      "item_hq_pole": 0,
+      "item_hq_rope": 0,
+      "unrelatedItem": 7
+    },
+    "unlockedCodexIds": [
+      "item_hq_cloth",
+      "npc_hq_fang",
+      "item_hq_pole",
+      "npc_hq_cheng",
+      "item_hq_rope",
+      "npc_hq_he",
+      "npc_hq_zhou",
+      "K01",
+      "K03",
+      "journal_hq",
+      "oldReward"
+    ],
+    "permissions": [
+      "permit_hq_cloth",
+      "permit_hq_pole",
+      "permit_hq_rope"
+    ],
+    "worldState": {
+      "collectedInstanceIds": [
+        "instance_hq_cloth_01",
+        "instance_hq_pole_01",
+        "instance_hq_rope_01"
+      ],
+      "shipState": "passed"
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "completed"
+      }
+    },
+    "unlockedStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ],
+    "readStoryIds": [
+      "story_hq_zhou"
+    ],
+    "storyReadingProgress": {
+      "story_hq_he": {
+        "contentVersion": 2,
+        "sectionId": "story_hq_he_1",
+        "paragraphIndex": 2
+      }
+    },
+    "readContentVersions": {
+      "story_hq_zhou": 1
+    },
+    "introStatus": "seen",
+    "introSeen": true,
+    "endingPending": false,
+    "endingSeen": true
+  },
+  "recovery": {
+    "status": {
+      "saved": true,
+      "kind": "recovered",
+      "message": "主存档异常，已恢复上一份完整备份。"
+    },
+    "corrupt": true
+  },
+  "failedSave": {
+    "state": {
+      "schemaVersion": 2,
+      "revision": 1,
+      "inventory": {
+        "item_hq_rope": 0,
+        "item_hq_pole": 0,
+        "item_hq_cloth": 0
+      },
+      "unlockedCodexIds": [
+        "item_hq_rope",
+        "npc_hq_he",
+        "item_hq_pole",
+        "npc_hq_cheng",
+        "item_hq_cloth",
+        "npc_hq_fang",
+        "npc_hq_zhou",
+        "K01",
+        "K03",
+        "journal_hq"
+      ],
+      "permissions": [
+        "permit_hq_rope",
+        "permit_hq_pole",
+        "permit_hq_cloth"
+      ],
+      "worldState": {
+        "collectedInstanceIds": [
+          "instance_hq_rope_01",
+          "instance_hq_pole_01",
+          "instance_hq_cloth_01"
+        ],
+        "shipState": "passing"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "seen",
+      "introSeen": true,
+      "endingPending": true,
+      "endingSeen": false
+    },
+    "status": {
+      "saved": false,
+      "kind": "save-failed",
+      "message": "保存失败：进度仍在本页内存中，请勿刷新；可重试保存。"
+    }
+  },
+  "retried": {
+    "schemaVersion": 2,
+    "revision": 1,
+    "inventory": {
+      "item_hq_rope": 0,
+      "item_hq_pole": 0,
+      "item_hq_cloth": 0
+    },
+    "unlockedCodexIds": [
+      "item_hq_rope",
+      "npc_hq_he",
+      "item_hq_pole",
+      "npc_hq_cheng",
+      "item_hq_cloth",
+      "npc_hq_fang",
+      "npc_hq_zhou",
+      "K01",
+      "K03",
+      "journal_hq"
+    ],
+    "permissions": [
+      "permit_hq_rope",
+      "permit_hq_pole",
+      "permit_hq_cloth"
+    ],
+    "worldState": {
+      "collectedInstanceIds": [
+        "instance_hq_rope_01",
+        "instance_hq_pole_01",
+        "instance_hq_cloth_01"
+      ],
+      "shipState": "passed"
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "completed"
+      }
+    },
+    "unlockedStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {},
+    "introStatus": "seen",
+    "introSeen": true,
+    "endingPending": true,
+    "endingSeen": false
+  },
+  "pageErrors": []
+}

@@ -1,0 +1,382 @@
+[
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/@vite/client",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/main.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/vite/dist/client/env.mjs",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/interaction/core.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.js?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/style.css",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_loaders_GLTFLoader__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/street-life.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/scholar.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/motion/config.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/river.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_environments_RoomEnvironment__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/storefronts.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/interaction/progress-adapter.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/landscape.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/world.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/interaction/dialogue.css?t=1789447688542",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/atmosphere.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/surfaces.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-KF3ZM4MI.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/life-paths.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/motion/animation.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_objects_Water__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/runtime.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_utils_BufferGeometryUtils__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_EffectComposer__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_RenderPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/history.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_OutputPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/persistence.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/collectibles.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/three_addons_postprocessing_GTAOPass__js.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/npcs.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IT3TP6RZ.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/dialogue-ui.js?t=1789449316245",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-logic.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/tracker.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-NY4Z4LNU.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/node_modules/.vite/deps/chunk-IEZS3O2Z.js?v=c54bf088",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/config.json?import",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/presentation.js?t=1789449316240",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/quest-config.js?t=1789432841159",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/state.js",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/progress-ui.css",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/src/hongqiao/narrative.json?import",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/textures/song-material-atlas.png",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/qingming-world.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/skiff.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/a-qing.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/song-scholar-v2-animated.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/street-life.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/world.json",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Roughness.jpg",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_NormalGL.jpg",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/textures/Plaster007_1K-JPG_Color.jpg",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/95b18c4f-951b-4fd3-a2a8-75ca79a3cae8",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/29915258-95b1-4a59-aad9-be1cf7258ba0",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/74587c32-9a97-424f-8bf5-b224dbdaf657",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/textures/willow-spray.png",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_rope.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_pole.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "http://127.0.0.1:5181/assets/hongqiao/item_hq_cloth.glb",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/f8b3a9ea-0ea1-4b05-b332-27f11e8391d9",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/1a31143b-87d6-4fd5-b897-40b633ba3222",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/3226954b-11a0-45f1-a3c0-254a6b40cf26",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/45b9a12a-ed95-4cc1-abf4-415332c2aea5",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/4b87477e-2a69-4741-936d-0dd9d02abdc7",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/0383879d-ed66-4b8e-96f6-8dcef19ab4e4",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/d26a30b4-b89b-43e7-8ca0-ea54510d06b3",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/f68d6f4a-f333-4699-af15-184c9a9af8d6",
+    "status": 200
+  },
+  {
+    "phase": "normal-entry.js",
+    "url": "blob:http://127.0.0.1:5181/108e5233-3269-42f7-a93a-9890bf5ae39a",
+    "status": 200
+  }
+]
