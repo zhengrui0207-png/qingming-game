@@ -1,0 +1,162 @@
+{
+  "sampleCount": 95,
+  "peakMax": 0.5700031518936157,
+  "timelines": {
+    "30s": {
+      "frames": 626,
+      "averageFps": 20.87,
+      "maxFrameSeconds": 0.3281999999955297,
+      "voices": [
+        "intro_01",
+        "intro_03",
+        "intro_04",
+        "intro_05",
+        "intro_06",
+        "intro_07",
+        "intro_08a",
+        "intro_08b",
+        "intro_08c",
+        "intro_09"
+      ],
+      "events": [
+        {
+          "id": "intro_01",
+          "at": 0,
+          "type": "voice"
+        },
+        {
+          "id": "amb_river",
+          "at": 0,
+          "type": "ambience"
+        },
+        {
+          "id": "amb_market",
+          "at": 0,
+          "type": "ambience"
+        },
+        {
+          "id": "sfx_pole_brace",
+          "at": 3,
+          "type": "effect"
+        },
+        {
+          "id": "intro_03",
+          "at": 5,
+          "type": "voice"
+        },
+        {
+          "id": "intro_04",
+          "at": 8,
+          "type": "voice"
+        },
+        {
+          "id": "intro_05",
+          "at": 10,
+          "type": "voice"
+        },
+        {
+          "id": "intro_06",
+          "at": 14,
+          "type": "voice"
+        },
+        {
+          "id": "intro_07",
+          "at": 17,
+          "type": "voice"
+        },
+        {
+          "id": "sfx_rope_throw",
+          "at": 17.3,
+          "type": "effect"
+        },
+        {
+          "id": "sfx_rope_throw",
+          "at": 18.1,
+          "type": "effect"
+        },
+        {
+          "id": "intro_08a",
+          "at": 20,
+          "type": "voice"
+        },
+        {
+          "id": "sfx_rope_handle",
+          "at": 20,
+          "type": "effect"
+        },
+        {
+          "id": "intro_08b",
+          "at": 21,
+          "type": "voice"
+        },
+        {
+          "id": "sfx_mast_lower",
+          "at": 21,
+          "type": "effect"
+        },
+        {
+          "id": "intro_08c",
+          "at": 25,
+          "type": "voice"
+        },
+        {
+          "id": "sfx_rope_handle",
+          "at": 25,
+          "type": "effect"
+        },
+        {
+          "id": "sfx_pole_stow",
+          "at": 25,
+          "type": "effect"
+        },
+        {
+          "id": "intro_09",
+          "at": 27,
+          "type": "voice"
+        }
+      ]
+    },
+    "20s": {
+      "frames": 373,
+      "averageFps": 18.65,
+      "maxFrameSeconds": 0.1565,
+      "voices": [
+        "ending_01",
+        "ending_02",
+        "ending_03"
+      ],
+      "events": [
+        {
+          "id": "ending_01",
+          "at": 0,
+          "type": "voice"
+        },
+        {
+          "id": "amb_river",
+          "at": 0,
+          "type": "ambience"
+        },
+        {
+          "id": "amb_market",
+          "at": 0,
+          "type": "ambience"
+        },
+        {
+          "id": "sfx_ship_pass",
+          "at": 3,
+          "type": "effect"
+        },
+        {
+          "id": "ending_02",
+          "at": 12,
+          "type": "voice"
+        },
+        {
+          "id": "ending_03",
+          "at": 16,
+          "type": "voice"
+        }
+      ]
+    }
+  }
+}

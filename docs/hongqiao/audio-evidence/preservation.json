@@ -1,0 +1,45 @@
+{
+  "updateActor": {
+    "unchanged": true,
+    "beforeSha256": "f24dac07cdbde3fe6efefcc53b621ee0e329b538b62ef2cf04c4fe50d0bb80e8",
+    "afterSha256": "f24dac07cdbde3fe6efefcc53b621ee0e329b538b62ef2cf04c4fe50d0bb80e8"
+  },
+  "updateCamera": {
+    "unchanged": true,
+    "beforeSha256": "77078b9687bd52887f1980ecc59cbce0640d87ce26f4943bef13113bcef2979c",
+    "afterSha256": "77078b9687bd52887f1980ecc59cbce0640d87ce26f4943bef13113bcef2979c"
+  },
+  "updateHUD": {
+    "unchanged": true,
+    "beforeSha256": "dac83d9dba7ab5274c088a08e098273a4ee8ffcf04e371414b5d4c2830a37bc1",
+    "afterSha256": "dac83d9dba7ab5274c088a08e098273a4ee8ffcf04e371414b5d4c2830a37bc1"
+  },
+  "drawMap": {
+    "unchanged": true,
+    "beforeSha256": "00e559449f15aac20572a2ea6a5cfdff330b8acf77cc69ad4c993756c467427a",
+    "afterSha256": "00e559449f15aac20572a2ea6a5cfdff330b8acf77cc69ad4c993756c467427a"
+  },
+  "tick": {
+    "unchanged": true,
+    "beforeSha256": "4ab0de9adcd6affc518341a59645727822497cc60678e335ba2d408a78bdcfc3",
+    "afterSha256": "4ab0de9adcd6affc518341a59645727822497cc60678e335ba2d408a78bdcfc3"
+  },
+  "interact": {
+    "unchanged": true,
+    "beforeSha256": "580b6b4efc0552eec09e6da1e3c576a58862b48ed3e28ee9d41a5150745f939c",
+    "afterSha256": "580b6b4efc0552eec09e6da1e3c576a58862b48ed3e28ee9d41a5150745f939c"
+  },
+  "resetInput": {
+    "unchanged": true
+  },
+  "clearInput": {
+    "unchanged": true,
+    "beforeSha256": "e2ccf478b90135c79427eb05ba3e8fc9fe4389c9370ea96ad9d60b77da787e3a",
+    "afterSha256": "e2ccf478b90135c79427eb05ba3e8fc9fe4389c9370ea96ad9d60b77da787e3a"
+  },
+  "setOverview": {
+    "unchanged": true,
+    "beforeSha256": "93f1d26730aa06e00abf9ce593853092d9e360c433df5f28ff8a7a55fa77200b",
+    "afterSha256": "93f1d26730aa06e00abf9ce593853092d9e360c433df5f28ff8a7a55fa77200b"
+  }
+}

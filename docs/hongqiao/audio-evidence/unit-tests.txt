@@ -1,0 +1,330 @@
+TAP version 13
+# Subtest: all 21 registered user clips match their cache hashes and contain PCM audio
+ok 1 - all 21 registered user clips match their cache hashes and contain PCM audio
+  ---
+  duration_ms: 46.258
+  ...
+# Subtest: speech fits its existing shot without truncation; exactly two independent rope throws
+ok 2 - speech fits its existing shot without truncation; exactly two independent rope throws
+  ---
+  duration_ms: 2.459417
+  ...
+# Subtest: missing or shorter effect never produces a negative offset/duration or deletes other tracks
+ok 3 - missing or shorter effect never produces a negative offset/duration or deletes other tracks
+  ---
+  duration_ms: 0.405708
+  ...
+# Subtest: nine fixed shots occupy exactly 30 seconds
+ok 4 - nine fixed shots occupy exactly 30 seconds
+  ---
+  duration_ms: 2.213667
+  ...
+# Subtest: same ship stops, lowers over four seconds and retreats continuously into the ending start
+ok 5 - same ship stops, lowers over four seconds and retreats continuously into the ending start
+  ---
+  duration_ms: 61.058333
+  ...
+# Subtest: exactly two safety ropes deploy separately and retract after mast settles
+ok 6 - exactly two safety ropes deploy separately and retract after mast settles
+  ---
+  duration_ms: 0.378958
+  ...
+# Subtest: skip terminal pose contains no grant, inventory or settlement data
+ok 7 - skip terminal pose contains no grant, inventory or settlement data
+  ---
+  duration_ms: 0.177125
+  ...
+# Subtest: every ferry pose avoids the full moving cargo bounds, while its route clock and longitudinal position stay intact
+ok 8 - every ferry pose avoids the full moving cargo bounds, while its route clock and longitudinal position stay intact
+  ---
+  duration_ms: 125.564334
+  ...
+# Subtest: outside the new cargo region, ferry poses are unchanged; review restoration is deterministic
+ok 9 - outside the new cargo region, ferry poses are unchanged; review restoration is deterministic
+  ---
+  duration_ms: 0.8335
+  ...
+# Subtest: ending entry requires fresh settlement; UI replay and duplicate callbacks cannot replay it
+ok 10 - ending entry requires fresh settlement; UI replay and duplicate callbacks cannot replay it
+  ---
+  duration_ms: 8.597875
+  ...
+# Subtest: loaded completed save applies passed state without replaying ending; no adapter gives one honest placeholder
+ok 11 - loaded completed save applies passed state without replaying ending; no adapter gives one honest placeholder
+  ---
+  duration_ms: 1.5725
+  ...
+# Subtest: all nine intro skip points release locks and stale completion cannot affect a later timeline
+ok 12 - all nine intro skip points release locks and stale completion cannot affect a later timeline
+  ---
+  duration_ms: 8.973875
+  ...
+# Subtest: reviews restore the prior scene and never write inventory, rewards or intro status
+ok 13 - reviews restore the prior scene and never write inventory, rewards or intro status
+  ---
+  duration_ms: 3.577875
+  ...
+# Subtest: nine exact 30-second shots and full ending/closing/card configuration
+ok 14 - nine exact 30-second shots and full ending/closing/card configuration
+  ---
+  duration_ms: 6.118792
+  ...
+# Subtest: every dialogue branch/choice has a valid node/effect and returns from optional questions
+ok 15 - every dialogue branch/choice has a valid node/effect and returns from optional questions
+  ---
+  duration_ms: 0.640208
+  ...
+# Subtest: all six collection orders: accepted quest, snapshots between pickups, only one delivery
+ok 16 - all six collection orders: accepted quest, snapshots between pickups, only one delivery
+  ---
+  duration_ms: 16.344
+  ...
+# Subtest: collect all before acceptance becomes ready immediately; accept never reopens completed
+ok 17 - collect all before acceptance becomes ready immediately; accept never reopens completed
+  ---
+  duration_ms: 1.05525
+  ...
+# Subtest: NPC branch priority completed > collected > permitted > accepted > first
+ok 18 - NPC branch priority completed > collected > permitted > accepted > first
+  ---
+  duration_ms: 3.2145
+  ...
+# Subtest: incomplete/unknown quest delivery changes nothing
+ok 19 - incomplete/unknown quest delivery changes nothing
+  ---
+  duration_ms: 3.564792
+  ...
+# Subtest: one atomic delivery snapshot is persisted before event; replay only refreshes UI
+ok 20 - one atomic delivery snapshot is persisted before event; replay only refreshes UI
+  ---
+  duration_ms: 1.683333
+  ...
+# Subtest: delivery preserves surplus items, unrelated progress and collected codex; consumes each target once
+ok 21 - delivery preserves surplus items, unrelated progress and collected codex; consumes each target once
+  ---
+  duration_ms: 1.384375
+  ...
+# Subtest: save failure preserves completed transaction in memory, retry reload does not settle twice
+ok 22 - save failure preserves completed transaction in memory, retry reload does not settle twice
+  ---
+  duration_ms: 7.280083
+  ...
+# Subtest: ending finish, skip, duplicate callback and acknowledgement never grant/revoke rewards
+ok 23 - ending finish, skip, duplicate callback and acknowledgement never grant/revoke rewards
+  ---
+  duration_ms: 1.737125
+  ...
+# Subtest: legacy completed saves restore all stories, preserve read history/other rewards, reset only old offsets
+ok 24 - legacy completed saves restore all stories, preserve read history/other rewards, reset only old offsets
+  ---
+  duration_ms: 0.393083
+  ...
+# Subtest: unfinished legacy saves never unlock long stories
+ok 25 - unfinished legacy saves never unlock long stories
+  ---
+  duration_ms: 1.038834
+  ...
+# Subtest: intro start/finish and mid-intro reload award nothing; existing progress bypasses intro
+ok 26 - intro start/finish and mid-intro reload award nothing; existing progress bypasses intro
+  ---
+  duration_ms: 0.653167
+  ...
+# Subtest: cultural exploration is optional and independent of the three required targets
+ok 27 - cultural exploration is optional and independent of the three required targets
+  ---
+  duration_ms: 0.296584
+  ...
+# Subtest: 90 seconds counts only operative accepted time; progress resets, completion clears, selection explicit
+ok 28 - 90 seconds counts only operative accepted time; progress resets, completion clears, selection explicit
+  ---
+  duration_ms: 0.611
+  ...
+# Subtest: default snapshot: independent state domains and locked stories
+ok 29 - default snapshot: independent state domains and locked stories
+  ---
+  duration_ms: 2.752084
+  ...
+# Subtest: permission required; authorization is not collection, repeated commands are safe
+ok 30 - permission required; authorization is not collection, repeated commands are safe
+  ---
+  duration_ms: 3.25175
+  ...
+# Subtest: all six orders and fresh store reads after each stage
+ok 31 - all six orders and fresh store reads after each stage
+  ---
+  duration_ms: 15.035208
+  ...
+# Subtest: transaction ordering: world then complete snapshot save then UI
+ok 32 - transaction ordering: world then complete snapshot save then UI
+  ---
+  duration_ms: 2.689625
+  ...
+# Subtest: delivered sample retains codex, all four stories unlock together, no replay quantities
+ok 33 - delivered sample retains codex, all four stories unlock together, no replay quantities
+  ---
+  duration_ms: 0.691542
+  ...
+# Subtest: locked story cannot write reading state; final paragraph alone marks read
+ok 34 - locked story cannot write reading state; final paragraph alone marks read
+  ---
+  duration_ms: 0.834625
+  ...
+# Subtest: all four stories persist separate positions and read status
+ok 35 - all four stories persist separate positions and read status
+  ---
+  duration_ms: 1.234666
+  ...
+# Subtest: v1 migration: quantities, collected IDs, completion, old read history retained and offsets reset
+ok 36 - v1 migration: quantities, collected IDs, completion, old read history retained and offsets reset
+  ---
+  duration_ms: 0.38575
+  ...
+# Subtest: unfinished legacy pickup cannot leak full story access
+ok 37 - unfinished legacy pickup cannot leak full story access
+  ---
+  duration_ms: 0.61425
+  ...
+# Subtest: corrupt primary recovers the last whole snapshot and repairs primary
+ok 38 - corrupt primary recovers the last whole snapshot and repairs primary
+  ---
+  duration_ms: 5.909209
+  ...
+# Subtest: invalid shape, unsupported version, negative quantities trigger recovery; missing fields use defaults
+ok 39 - invalid shape, unsupported version, negative quantities trigger recovery; missing fields use defaults
+  ---
+  duration_ms: 1.130959
+  ...
+# Subtest: both snapshots corrupt: preserve evidence and report default memory, never saved
+ok 40 - both snapshots corrupt: preserve evidence and report default memory, never saved
+  ---
+  duration_ms: 0.199667
+  ...
+# Subtest: quota/security failure keeps memory progress, UI receives unsaved result, retry survives reload
+ok 41 - quota/security failure keeps memory progress, UI receives unsaved result, retry survives reload
+  ---
+  duration_ms: 0.365875
+  ...
+# Subtest: silent dropped writes are detected by readback, not treated as saved
+ok 42 - silent dropped writes are detected by readback, not treated as saved
+  ---
+  duration_ms: 0.178125
+  ...
+# Subtest: storage completely unavailable still allows in-memory play with failure indicator
+ok 43 - storage completely unavailable still allows in-memory play with failure indicator
+  ---
+  duration_ms: 0.264334
+  ...
+# Subtest: URL reset is scoped, dev-only and consumed before writes including failure
+ok 44 - URL reset is scoped, dev-only and consumed before writes including failure
+  ---
+  duration_ms: 0.579792
+  ...
+# Subtest: late model success after pickup is discarded; failed resources retain collectible placeholders
+ok 45 - late model success after pickup is discarded; failed resources retain collectible placeholders
+  ---
+  duration_ms: 22.638375
+  ...
+# Subtest: pickup focus requires permission, matching layer and reachable distance
+ok 46 - pickup focus requires permission, matching layer and reachable distance
+  ---
+  duration_ms: 5.244167
+  ...
+# Subtest: v1 top-level collected IDs survive defaults and prevent duplicate pickup after reload
+ok 47 - v1 top-level collected IDs survive defaults and prevent duplicate pickup after reload
+  ---
+  duration_ms: 0.604333
+  ...
+# Subtest: tokens release out of order and idempotently without unlocking another panel
+ok 48 - tokens release out of order and idempotently without unlocking another panel
+  ---
+  duration_ms: 1.726458
+  ...
+# Subtest: E held, repeat and blur state
+ok 49 - E held, repeat and blur state
+  ---
+  duration_ms: 0.303959
+  ...
+# Subtest: focus reads live transforms and uses hysteresis, layer, height and enabled checks
+ok 50 - focus reads live transforms and uses hysteresis, layer, height and enabled checks
+  ---
+  duration_ms: 6.797584
+  ...
+# Subtest: thin obstructions intersect a continuous segment and auto landmarks do not steal E
+ok 51 - thin obstructions intersect a continuous segment and auto landmarks do not steal E
+  ---
+  duration_ms: 0.454375
+  ...
+# Subtest: dialogue reveal/continue, choice cannot be E-confirmed, cancel has no effects
+ok 52 - dialogue reveal/continue, choice cannot be E-confirmed, cancel has no effects
+  ---
+  duration_ms: 0.393708
+  ...
+# Subtest: explicit choice rechecks condition and effects occur once
+ok 53 - explicit choice rechecks condition and effects occur once
+  ---
+  duration_ms: 0.256791
+  ...
+# Subtest: walking crosses the bridge, rises with the arch and exits onto the opposite bank
+ok 54 - walking crosses the bridge, rises with the arch and exits onto the opposite bank
+  ---
+  duration_ms: 14.074916
+  ...
+# Subtest: swimmer crosses beneath bridge without snapping up onto bridge deck
+ok 55 - swimmer crosses beneath bridge without snapping up onto bridge deck
+  ---
+  duration_ms: 4.817125
+  ...
+# Subtest: bridge handrails contain the walker even over long frames
+ok 56 - bridge handrails contain the walker even over long frames
+  ---
+  duration_ms: 3.769083
+  ...
+# Subtest: bank slope permits entering water and returning to land
+ok 57 - bank slope permits entering water and returning to land
+  ---
+  duration_ms: 2.408875
+  ...
+# Subtest: building walls prevent walking through storefronts
+ok 58 - building walls prevent walking through storefronts
+  ---
+  duration_ms: 0.966875
+  ...
+# Subtest: skiff launches, moves through the arch, and cannot cross banks or piers
+ok 59 - skiff launches, moves through the arch, and cannot cross banks or piers
+  ---
+  duration_ms: 0.959125
+  ...
+# Subtest: disembarking near pier lands on deck, offshore returns swimmer
+ok 60 - disembarking near pier lands on deck, offshore returns swimmer
+  ---
+  duration_ms: 0.563833
+  ...
+# Subtest: map boundaries and diagonal wall sliding remain stable
+ok 61 - map boundaries and diagonal wall sliding remain stable
+  ---
+  duration_ms: 12.379041
+  ...
+# Subtest: resident routes are continuous at their loop and bridge height follows the deck
+ok 62 - resident routes are continuous at their loop and bridge height follows the deck
+  ---
+  duration_ms: 1.554333
+  ...
+# Subtest: all ferry routes move and stay clear of the banks, fixed cargo and piers for ten minutes
+ok 63 - all ferry routes move and stay clear of the banks, fixed cargo and piers for ten minutes
+  ---
+  duration_ms: 103.655333
+  ...
+# Subtest: a ferry becomes a moving collision obstacle for the controllable skiff
+ok 64 - a ferry becomes a moving collision obstacle for the controllable skiff
+  ---
+  duration_ms: 0.347958
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 663.074208

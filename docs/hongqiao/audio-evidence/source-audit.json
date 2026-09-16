@@ -1,0 +1,374 @@
+[
+  {
+    "id": "intro_01",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_01.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x82f005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x82f005080] silence_end: 0.1562 | silence_duration: 0.1562",
+      "[Parsed_silencedetect_0 @ 0x82f005080] silence_start: 1.0588",
+      "[Parsed_silencedetect_0 @ 0x82f005080] silence_end: 1.454825 | silence_duration: 0.396025",
+      "[Parsed_volumedetect_1 @ 0x82f005140] mean_volume: -27.2 dB",
+      "[Parsed_volumedetect_1 @ 0x82f005140] max_volume: -7.3 dB"
+    ]
+  },
+  {
+    "id": "intro_03",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_03.wav",
+    "duration": 1.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xabd01c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xabd01c9c0] silence_end: 0.299575 | silence_duration: 0.299575",
+      "[Parsed_silencedetect_0 @ 0xabd01c9c0] silence_start: 0.83615",
+      "[Parsed_silencedetect_0 @ 0xabd01c9c0] silence_end: 1 | silence_duration: 0.16385",
+      "[Parsed_volumedetect_1 @ 0xabd01ca80] mean_volume: -19.6 dB",
+      "[Parsed_volumedetect_1 @ 0xabd01ca80] max_volume: -1.2 dB"
+    ]
+  },
+  {
+    "id": "intro_04",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_04.wav",
+    "duration": 1.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xbb940c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xbb940c9c0] silence_end: 0.141925 | silence_duration: 0.141925",
+      "[Parsed_volumedetect_1 @ 0xbb940ca80] mean_volume: -25.8 dB",
+      "[Parsed_volumedetect_1 @ 0xbb940ca80] max_volume: -11.3 dB"
+    ]
+  },
+  {
+    "id": "intro_05",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_05.wav",
+    "duration": 3.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_end: 0.451075 | silence_duration: 0.451075",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_start: 1.40045",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_end: 2.0195 | silence_duration: 0.61905",
+      "[Parsed_volumedetect_1 @ 0x877005140] mean_volume: -28.7 dB",
+      "[Parsed_volumedetect_1 @ 0x877005140] max_volume: -8.3 dB"
+    ]
+  },
+  {
+    "id": "intro_06",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_06.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x8474109c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x8474109c0] silence_end: 0.14095 | silence_duration: 0.14095",
+      "[Parsed_silencedetect_0 @ 0x8474109c0] silence_start: 0.831925",
+      "[Parsed_silencedetect_0 @ 0x8474109c0] silence_end: 1.2308 | silence_duration: 0.398875",
+      "[Parsed_volumedetect_1 @ 0x847410a80] mean_volume: -18.7 dB",
+      "[Parsed_volumedetect_1 @ 0x847410a80] max_volume: -1.7 dB"
+    ]
+  },
+  {
+    "id": "intro_07",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_07.wav",
+    "duration": 1.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xa190209c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xa190209c0] silence_end: 0.099525 | silence_duration: 0.099525",
+      "[Parsed_silencedetect_0 @ 0xa190209c0] silence_start: 0.816075",
+      "[Parsed_silencedetect_0 @ 0xa190209c0] silence_end: 1 | silence_duration: 0.183925",
+      "[Parsed_volumedetect_1 @ 0xa19020a80] mean_volume: -18.8 dB",
+      "[Parsed_volumedetect_1 @ 0xa19020a80] max_volume: -1.7 dB"
+    ]
+  },
+  {
+    "id": "intro_08a",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_08a.wav",
+    "duration": 0.5,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x83901c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x83901c9c0] silence_end: 0.110425 | silence_duration: 0.110425",
+      "[Parsed_volumedetect_1 @ 0x83901ca80] mean_volume: -19.6 dB",
+      "[Parsed_volumedetect_1 @ 0x83901ca80] max_volume: -3.1 dB"
+    ]
+  },
+  {
+    "id": "intro_08b",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_08b.wav",
+    "duration": 3.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_end: 0.176225 | silence_duration: 0.176225",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_start: 2.683575",
+      "[Parsed_silencedetect_0 @ 0x877005080] silence_end: 3 | silence_duration: 0.316425",
+      "[Parsed_volumedetect_1 @ 0x877005140] mean_volume: -19.1 dB",
+      "[Parsed_volumedetect_1 @ 0x877005140] max_volume: -1.7 dB"
+    ]
+  },
+  {
+    "id": "intro_08c",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_08c.wav",
+    "duration": 1.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x79701c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x79701c9c0] silence_end: 0.2619 | silence_duration: 0.2619",
+      "[Parsed_silencedetect_0 @ 0x79701c9c0] silence_start: 0.731675",
+      "[Parsed_silencedetect_0 @ 0x79701c9c0] silence_end: 1 | silence_duration: 0.268325",
+      "[Parsed_volumedetect_1 @ 0x79701ca80] mean_volume: -23.2 dB",
+      "[Parsed_volumedetect_1 @ 0x79701ca80] max_volume: -6.3 dB"
+    ]
+  },
+  {
+    "id": "intro_09",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/开场配音/intro_09.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x94b005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x94b005080] silence_end: 0.112775 | silence_duration: 0.112775",
+      "[Parsed_silencedetect_0 @ 0x94b005080] silence_start: 0.56915",
+      "[Parsed_silencedetect_0 @ 0x94b005080] silence_end: 1.024325 | silence_duration: 0.455175",
+      "[Parsed_volumedetect_1 @ 0x94b005140] mean_volume: -27.6 dB",
+      "[Parsed_volumedetect_1 @ 0x94b005140] max_volume: -7.8 dB"
+    ]
+  },
+  {
+    "id": "ending_01",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/通关过桥/ending_01.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xc0340c9c0] silence_start: 0.7206",
+      "[Parsed_silencedetect_0 @ 0xc0340c9c0] silence_end: 1.145275 | silence_duration: 0.424675",
+      "[Parsed_volumedetect_1 @ 0xc0340ca80] mean_volume: -30.5 dB",
+      "[Parsed_volumedetect_1 @ 0xc0340ca80] max_volume: -10.3 dB"
+    ]
+  },
+  {
+    "id": "ending_02",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/通关过桥/ending_02.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_end: 0.16055 | silence_duration: 0.16055",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_start: 0.477425",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_end: 0.8856 | silence_duration: 0.408175",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_start: 0.984375",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_end: 1.286325 | silence_duration: 0.30195",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_start: 1.9288",
+      "[Parsed_silencedetect_0 @ 0xbe54009c0] silence_end: 2 | silence_duration: 0.0712",
+      "[Parsed_volumedetect_1 @ 0xbe5400a80] mean_volume: -13.3 dB",
+      "[Parsed_volumedetect_1 @ 0xbe5400a80] max_volume: -0.3 dB"
+    ]
+  },
+  {
+    "id": "ending_03",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/通关过桥/ending_03.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x7090249c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x7090249c0] silence_end: 0.352775 | silence_duration: 0.352775",
+      "[Parsed_silencedetect_0 @ 0x7090249c0] silence_start: 0.71435",
+      "[Parsed_silencedetect_0 @ 0x7090249c0] silence_end: 1.282225 | silence_duration: 0.567875",
+      "[Parsed_volumedetect_1 @ 0x709024a80] mean_volume: -31.8 dB",
+      "[Parsed_volumedetect_1 @ 0x709024a80] max_volume: -10.4 dB"
+    ]
+  },
+  {
+    "id": "amb_market",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/amb_market.wav",
+    "duration": 30.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_end: 13.9421 | silence_duration: 13.9421",
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_start: 13.943275",
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_end: 14.2862 | silence_duration: 0.342925",
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_start: 14.286275",
+      "[Parsed_silencedetect_0 @ 0xbad060900] silence_end: 30 | silence_duration: 15.713725",
+      "[Parsed_volumedetect_1 @ 0xbad0609c0] mean_volume: -64.0 dB",
+      "[Parsed_volumedetect_1 @ 0xbad0609c0] max_volume: -43.4 dB"
+    ]
+  },
+  {
+    "id": "amb_river",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/amb_river.wav",
+    "duration": 30.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xb8d048900] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xb8d048900] silence_end: 0.1009 | silence_duration: 0.1009",
+      "[Parsed_silencedetect_0 @ 0xb8d048900] silence_start: 29.899975",
+      "[Parsed_silencedetect_0 @ 0xb8d048900] silence_end: 30 | silence_duration: 0.100025",
+      "[Parsed_volumedetect_1 @ 0xb8d0489c0] mean_volume: -38.4 dB",
+      "[Parsed_volumedetect_1 @ 0xb8d0489c0] max_volume: -6.3 dB"
+    ]
+  },
+  {
+    "id": "sfx_mast_lower",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_mast_lower.wav",
+    "duration": 4.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 0.17975 | silence_duration: 0.17975",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 2.1413",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 2.26345 | silence_duration: 0.12215",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 2.2647",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 2.327075 | silence_duration: 0.062375",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 2.4394",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 2.49945 | silence_duration: 0.06005",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 2.5819",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 2.98645 | silence_duration: 0.40455",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 3.0184",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 3.574225 | silence_duration: 0.555825",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_start: 3.5756",
+      "[Parsed_silencedetect_0 @ 0x7a901c9c0] silence_end: 4 | silence_duration: 0.4244",
+      "[Parsed_volumedetect_1 @ 0x7a901ca80] mean_volume: -54.5 dB",
+      "[Parsed_volumedetect_1 @ 0x7a901ca80] max_volume: -32.4 dB"
+    ]
+  },
+  {
+    "id": "sfx_pole_brace",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_pole_brace.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 0.099675 | silence_duration: 0.099675",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 0.879975",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 1.07785 | silence_duration: 0.197875",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 1.078225",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 1.27155 | silence_duration: 0.193325",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 1.289075",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 1.430975 | silence_duration: 0.1419",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 1.53635",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 1.7733 | silence_duration: 0.23695",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_start: 1.817375",
+      "[Parsed_silencedetect_0 @ 0xb0d0209c0] silence_end: 2 | silence_duration: 0.182625",
+      "[Parsed_volumedetect_1 @ 0xb0d020a80] mean_volume: -25.0 dB",
+      "[Parsed_volumedetect_1 @ 0xb0d020a80] max_volume: -2.0 dB"
+    ]
+  },
+  {
+    "id": "sfx_pole_stow",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_pole_stow.wav",
+    "duration": 2.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_end: 0.1897 | silence_duration: 0.1897",
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_start: 0.5187",
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_end: 0.89045 | silence_duration: 0.37175",
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_start: 1.87915",
+      "[Parsed_silencedetect_0 @ 0x811005080] silence_end: 2 | silence_duration: 0.12085",
+      "[Parsed_volumedetect_1 @ 0x811005140] mean_volume: -22.6 dB",
+      "[Parsed_volumedetect_1 @ 0x811005140] max_volume: -0.3 dB"
+    ]
+  },
+  {
+    "id": "sfx_rope_handle",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_rope_handle.wav",
+    "duration": 3.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x87d41c9c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x87d41c9c0] silence_end: 0.100275 | silence_duration: 0.100275",
+      "[Parsed_silencedetect_0 @ 0x87d41c9c0] silence_start: 2.8954",
+      "[Parsed_silencedetect_0 @ 0x87d41c9c0] silence_end: 3 | silence_duration: 0.1046",
+      "[Parsed_volumedetect_1 @ 0x87d41ca80] mean_volume: -37.2 dB",
+      "[Parsed_volumedetect_1 @ 0x87d41ca80] max_volume: -16.7 dB"
+    ]
+  },
+  {
+    "id": "sfx_rope_throw",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_rope_throw.wav",
+    "duration": 1.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_end: 0.102975 | silence_duration: 0.102975",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_start: 0.3689",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_end: 0.68165 | silence_duration: 0.31275",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_start: 0.738875",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_end: 0.799025 | silence_duration: 0.06015",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_start: 0.79905",
+      "[Parsed_silencedetect_0 @ 0x8f90189c0] silence_end: 1 | silence_duration: 0.20095",
+      "[Parsed_volumedetect_1 @ 0x8f9018a80] mean_volume: -22.1 dB",
+      "[Parsed_volumedetect_1 @ 0x8f9018a80] max_volume: -1.2 dB"
+    ]
+  },
+  {
+    "id": "sfx_ship_pass",
+    "source": "/Users/zhengrui/Downloads/tts_intro (1)/音效/sfx_ship_pass.wav",
+    "duration": 9.0,
+    "codec": "pcm_s16le",
+    "sampleRate": "40000",
+    "channels": 2,
+    "analysis": [
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 0",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 0.11395 | silence_duration: 0.11395",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 1.08345",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 1.324075 | silence_duration: 0.240625",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 1.324625",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 1.518 | silence_duration: 0.193375",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 1.520025",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 1.6281 | silence_duration: 0.108075",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 1.640475",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 1.7075 | silence_duration: 0.067025",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 5.028475",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 5.10545 | silence_duration: 0.076975",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 6.8675",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 7.002025 | silence_duration: 0.134525",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_start: 8.879425",
+      "[Parsed_silencedetect_0 @ 0xbc7005080] silence_end: 9 | silence_duration: 0.120575",
+      "[Parsed_volumedetect_1 @ 0xbc7005140] mean_volume: -49.1 dB",
+      "[Parsed_volumedetect_1 @ 0xbc7005140] max_volume: -29.1 dB"
+    ]
+  }
+]

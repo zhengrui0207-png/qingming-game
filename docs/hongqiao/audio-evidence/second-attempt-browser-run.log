@@ -1,0 +1,15 @@
+PASS entry click enables all 21 supplied clips without a separate sound click
+PASS overlay mute silences current voices and effects, then unmute continues
+FAIL full 30s intro: 10 voices, exactly 2 throws, all actions and clean stop The expression evaluated to a falsy value:
+
+  assert.ok(samples.some(s=>s.cinema.time>3.2&&s.cinema.time<4.8&&s.audio.rms>.0001))
+
+PASS real tab blur freezes audio clock and picture; focus resumes in place
+PASS skip stops current and future audio; replay preserves save
+PASS mute survives refresh and entry, replay stays silent until explicitly enabled
+PASS formal delivery plays full 20s ending with 3 voices and ship-pass effect
+PASS ending replay and skip never repeat settlement
+PASS HTTP loads supplied manifest and all hashed WAVs successfully
+PASS one missing voice degrades to subtitles, other tracks continue
+PASS delayed voice holds entry until decoded, then starts at 0 with voice
+DONE 1

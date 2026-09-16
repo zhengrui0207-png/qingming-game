@@ -1,0 +1,195 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -101,8 +101,12 @@
+   capture:()=>({camera:camera.clone(),yaw,pitch,distance,targetDistance,overview,focus:focus.clone()}),
+   restore:s=>{camera.copy(s.camera);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();yaw=s.yaw;pitch=s.pitch;distance=s.distance;targetDistance=s.targetDistance;overview=s.overview;focus.copy(s.focus);clearInput();},
+   waitForRelease:()=>{const held=new Set(gate.keys());clearInput();if(!held.size)return;const release=locks.acquire('presentationRelease');const done=()=>{release();removeEventListener('keyup',up,true);removeEventListener('blur',done);};const up=e=>{held.delete(e.code);if(!held.size)done();};addEventListener('keyup',up,true);addEventListener('blur',done);},
+-  audioContext:()=>soundOn?audioCtx:null,
+-  pauseAudio:paused=>{if(audioCtx&&soundOn)return paused?audioCtx.suspend():audioCtx.resume();}
++  audioContext:()=>audioCtx,
++  audioDestination:()=>audioMaster,
++  audioEnabled:()=>soundOn,
++  toggleAudio:()=>setSound(!soundOn),
++  setCinemaAudioActive:active=>{cinemaAudioActive=active;if(audioAmbientDuck)audioAmbientDuck.gain.setTargetAtTime(active?0:1,audioCtx.currentTime,.08);},
++  pauseAudio:paused=>{if(audioCtx)return paused?audioCtx.suspend():audioCtx.resume();}
+  }});
+  sceneryAssets=await createSceneryAssets({scene,city,baseURL:import.meta.env.BASE_URL});
+  cinema.setSkip(()=>hongqiaoProgress.presentation.skip());hongqiaoProgress.presentation.attach(cinema.adapter);hongqiaoProgress.ui.setReplayHandler(()=>hongqiaoProgress.presentation.replayIntro(),()=>hongqiaoProgress.presentation.replayEnding());
+@@ -121,12 +125,15 @@
+  loaded=true;$('start').disabled=false;$('start-label').textContent='入画游览';$('load-caption').textContent='画卷已展开 · 点击开始';
+  window.__qingming={hongqiao:hongqiaoProgress.presentation,getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scenery:sceneryAssets?.getState(),scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),npcAssets:npcAssets.getState(),shops:storefronts.getState(),jiaodian:jiaodian.getState()}),world};
+  // Explicit test mode keeps debug positioning unavailable during ordinary play.
+- if(import.meta.env.DEV && new URLSearchParams(location.search).has('test'))Object.assign(window.__qingming,{cinema:{getState:cinema.getState,seek:cinema.seek,pause:cinema.adapter.setPaused},snapshotScene:()=>streetLife.snapshot(),setAO:v=>atmosphere.setEnabled(v),setHero:(position,target,fov)=>{heroPosition=position;heroTarget=target;if(fov){heroFov=fov;camera.fov=fov;camera.updateProjectionMatrix();}},setActor:(x,z,layer='ground')=>{boatMode=false;actor={x,z,layer,...surfaceAt(x,z,world,layer)};focus.set(x,actor.height+1,z);},setBoat:(x,z,angle)=>{boat={x,z,angle,speed:0};},setView:(a,p,d)=>{yaw=a;pitch=p;targetDistance=d;},step:(dx,dz)=>{actor=moveActor(actor,dx,dz,world);}});
++ if(import.meta.env.DEV && new URLSearchParams(location.search).has('test'))Object.assign(window.__qingming,{cinema:{getState:cinema.getState,seek:cinema.seek,pause:cinema.adapter.setPaused},audio:getAudioState,snapshotScene:()=>streetLife.snapshot(),setAO:v=>atmosphere.setEnabled(v),setHero:(position,target,fov)=>{heroPosition=position;heroTarget=target;if(fov){heroFov=fov;camera.fov=fov;camera.updateProjectionMatrix();}},setActor:(x,z,layer='ground')=>{boatMode=false;actor={x,z,layer,...surfaceAt(x,z,world,layer)};focus.set(x,actor.height+1,z);},setBoat:(x,z,angle)=>{boat={x,z,angle,speed:0};},setView:(a,p,d)=>{yaw=a;pitch=p;targetDistance=d;},step:(dx,dz)=>{actor=moveActor(actor,dx,dz,world);}});
+  }catch(e){console.error(e);showError('三维场景加载失败。请确认本地服务仍在运行，然后重新载入。');}
+ }
+ function showError(message){$('error').hidden=false;$('error-message').textContent=message;$('start-label').textContent='载入遇到问题';}
+ function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),3600);}
+-function start(){if(!loaded)return;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');requestAnimationFrame(()=>hongqiaoProgress?.start?.());}
++let starting=false;
++async function start(){if(!loaded||playing||starting)return;starting=true;
++ try{await ensureAudio();}catch(e){console.warn('[Game audio unavailable]',e.message);toast('声音暂不可用，可点击声音按钮重试。');}
++ starting=false;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');requestAnimationFrame(()=>hongqiaoProgress?.start?.());}
+ $('start').addEventListener('click',start);
+ function clearInput(){keys.clear();dragging=false;pointers.clear();pinchDistance=0;}
+ function showGuide(){if($('guide').open)return;storefronts?.closeDetails();lockPanel('guide',closeGuide);$('guide').showModal();}
+@@ -183,15 +190,31 @@
+ for(const evt of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(evt,e=>{pointers.delete(e.pointerId);pinchDistance=0;dragging=pointers.size>0;});
+ canvas.addEventListener('wheel',e=>{e.preventDefault();if(playing&&!cameraLocked())targetDistance=THREE.MathUtils.clamp(targetDistance*Math.exp(e.deltaY*.0012),3,65)},{passive:false});
+ for(const btn of document.querySelectorAll('[data-move]')){const k=btn.dataset.move;btn.onpointerdown=e=>{e.preventDefault();if(paused)return;btn.setPointerCapture(e.pointerId);keys.add(k)};for(const ev of ['pointerup','pointercancel','lostpointercapture'])btn.addEventListener(ev,()=>keys.delete(k));}
+-// Small local soundscape: filtered moving water and distant bird calls. Starts only on request.
+-let audioCtx,audioGain,soundOn=false,birdTimer;
+-$('sound').onclick=async()=>{
+- if(!audioCtx){audioCtx=new AudioContext();audioGain=audioCtx.createGain();audioGain.gain.value=0;audioGain.connect(audioCtx.destination);
+- const buffer=audioCtx.createBuffer(1,audioCtx.sampleRate*3,audioCtx.sampleRate);const d=buffer.getChannelData(0);let p=0;for(let i=0;i<d.length;i++){p=(p+Math.random()*.16-.08)*.985;d[i]=p;}
+- const source=audioCtx.createBufferSource();source.buffer=buffer;source.loop=true;const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=950;source.connect(filter);filter.connect(audioGain);source.start();
+- birdTimer=setInterval(()=>{if(!soundOn||document.hidden||audioCtx.state!=='running')return;const t=audioCtx.currentTime;for(let i=0;i<2;i++){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(1500,t+i*.17);o.frequency.exponentialRampToValueAtTime(2800,t+i*.17+.06);o.frequency.exponentialRampToValueAtTime(1800,t+i*.17+.14);g.gain.setValueAtTime(0,t+i*.17);g.gain.linearRampToValueAtTime(.04,t+i*.17+.02);g.gain.linearRampToValueAtTime(0,t+i*.17+.16);o.connect(g);g.connect(audioGain);o.start(t+i*.17);o.stop(t+i*.17+.18);}},5500);
+- }await audioCtx.resume();soundOn=!soundOn;audioGain.gain.setTargetAtTime(soundOn?.3:0,audioCtx.currentTime,.3);$('sound').textContent='声音 '+(soundOn?'开':'关');$('sound').setAttribute('aria-label',soundOn?'关闭环境声音':'开启环境声音');
+-};
++// Audio is unlocked by the entry click; explicit mute persists separately from quest progress.
++const SOUND_KEY='qingming:audio:enabled';
++let audioCtx,audioGain,audioMaster,audioAmbientDuck,audioMeter,soundOn=true,birdTimer,cinemaAudioActive=false;
++try{soundOn=localStorage.getItem(SOUND_KEY)!=='false';}catch{}
++function refreshSoundButtons(){for(const id of ['sound','hq-cinema-sound']){const button=$(id);if(button){button.textContent='声音 '+(soundOn?'开':'关');button.setAttribute('aria-label',soundOn?'关闭声音':'开启声音');button.setAttribute('aria-pressed',String(soundOn));}}}
++async function ensureAudio(){
++ if(!audioCtx){
++  audioCtx=new AudioContext();audioMaster=audioCtx.createGain();audioMaster.gain.value=soundOn?1:0;
++  audioMeter=audioCtx.createAnalyser();audioMeter.fftSize=2048;audioMaster.connect(audioMeter);audioMeter.connect(audioCtx.destination);
++  audioAmbientDuck=audioCtx.createGain();audioAmbientDuck.gain.value=cinemaAudioActive?0:1;audioAmbientDuck.connect(audioMaster);
++  audioGain=audioCtx.createGain();audioGain.gain.value=.3;audioGain.connect(audioAmbientDuck);
++  const buffer=audioCtx.createBuffer(1,audioCtx.sampleRate*3,audioCtx.sampleRate);const d=buffer.getChannelData(0);let p=0;for(let i=0;i<d.length;i++){p=(p+Math.random()*.16-.08)*.985;d[i]=p;}
++  const source=audioCtx.createBufferSource();source.buffer=buffer;source.loop=true;const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=950;source.connect(filter);filter.connect(audioGain);source.start();
++  birdTimer=setInterval(()=>{if(!soundOn||cinemaAudioActive||document.hidden||audioCtx.state!=='running')return;const t=audioCtx.currentTime;for(let i=0;i<2;i++){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(1500,t+i*.17);o.frequency.exponentialRampToValueAtTime(2800,t+i*.17+.06);o.frequency.exponentialRampToValueAtTime(1800,t+i*.17+.14);g.gain.setValueAtTime(0,t+i*.17);g.gain.linearRampToValueAtTime(.04,t+i*.17+.02);g.gain.linearRampToValueAtTime(0,t+i*.17+.16);o.connect(g);g.connect(audioGain);o.onended=()=>{o.disconnect();g.disconnect();};o.start(t+i*.17);o.stop(t+i*.17+.18);}},5500);
++ }
++ await audioCtx.resume();refreshSoundButtons();
++}
++async function setSound(enabled){
++ soundOn=enabled;
++ if(audioMaster){audioMaster.gain.cancelScheduledValues(audioCtx.currentTime);audioMaster.gain.setTargetAtTime(soundOn?1:0,audioCtx.currentTime,.008);}
++ refreshSoundButtons();try{localStorage.setItem(SOUND_KEY,String(soundOn));}catch(e){console.warn('[Sound preference not saved]',e.message);toast('声音设置已生效，本次未能保存设置。');}
++ try{await ensureAudio();}catch(e){console.warn('[Game audio unavailable]',e.message);toast('声音暂不可用，请再点一次声音按钮。');}
++}
++function getAudioState(){const samples=new Float32Array(audioMeter?.fftSize??0);audioMeter?.getFloatTimeDomainData(samples);return {enabled:soundOn,context:audioCtx?.state??'unavailable',currentTime:audioCtx?.currentTime??0,masterGain:audioMaster?.gain.value??0,cinemaActive:cinemaAudioActive,rms:samples.length?Math.sqrt(samples.reduce((sum,n)=>sum+n*n,0)/samples.length):0,peak:samples.reduce((peak,n)=>Math.max(peak,Math.abs(n)),0)};}
++$('sound').onclick=()=>setSound(!soundOn);refreshSoundButtons();
+ function updateActor(dt){
+  const previousPosition={x:actor.x,z:actor.z};
+  const forward=(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0),side=(keys.has('KeyD')?1:0)-(keys.has('KeyA')?1:0);
+--- a/src/hongqiao/cinema/renderer.js
++++ b/src/hongqiao/cinema/renderer.js
+@@ -6,8 +6,8 @@
+ const V=a=>new THREE.Vector3(...a);
+ const subtitles=[['船到桥下，怎么停了？'],[''],['船工：莫牵了！'],['桅杆未落。'],['纤夫走神，忘了松绳降桅。'],['桥上人：快降桅！当心脚下！'],['接住绳！'],['松绳！','缓缓放——','稳住！'],['老周：郎君，劳你搭把手。']];
+ export async function createCinemaRenderer(options){
+- const {gameCamera,controls,player,world}=options,stage=await createCinemaScene(options),camera=gameCamera.clone();camera.name='HQ temporary cinematic camera';const audio=await createCinemaAudio(options.baseURL,controls.audioContext);
+- const overlay=document.createElement('section');overlay.id='hq-cinema';overlay.hidden=true;overlay.innerHTML='<div id="hq-cinema-heading"></div><div id="hq-cinema-flashback">片刻前</div><div id="hq-cinema-subtitle" role="status"></div><div id="hq-cinema-controls"><button id="hq-cinema-watch">观看过桥</button><button id="hq-cinema-skip">跳过</button><button id="hq-cinema-resume" hidden>点击继续</button></div>';document.body.append(overlay);
++ const {gameCamera,controls,player,world}=options,stage=await createCinemaScene(options),camera=gameCamera.clone();camera.name='HQ temporary cinematic camera';const audio=await createCinemaAudio(options.baseURL,controls);
++ const overlay=document.createElement('section');overlay.id='hq-cinema';overlay.hidden=true;overlay.innerHTML='<div id="hq-cinema-heading"></div><div id="hq-cinema-flashback">片刻前</div><div id="hq-cinema-subtitle" role="status"></div><div id="hq-cinema-controls"><button id="hq-cinema-sound" aria-label="关闭声音">声音 开</button><button id="hq-cinema-watch">观看过桥</button><button id="hq-cinema-skip">跳过</button><button id="hq-cinema-resume" hidden>点击继续</button></div>';document.body.append(overlay);
+  const heading=overlay.querySelector('#hq-cinema-heading'),flashback=overlay.querySelector('#hq-cinema-flashback'),subtitle=overlay.querySelector('#hq-cinema-subtitle'),watch=overlay.querySelector('#hq-cinema-watch'),skip=overlay.querySelector('#hq-cinema-skip'),resume=overlay.querySelector('#hq-cinema-resume');
+  let current=null,time=0,last=performance.now(),paused=false,pausedAudio=false,snapshot=null,watchSnapshot=null,optionalCamera=false,returnState=null,playerRotation=null,frameCount=0,shotVisits=[],maxFrameSeconds=0; 
+  let onSkip=()=>{},state={shipState:'waiting',introSeen:false},lastSubtitle='';
+@@ -45,6 +45,7 @@
+  }
+  function begin(kind,event){
+   if(current)throw Error('Overlapping cinematics');snapshot=controls.capture();playerRotation=player.rotation.clone();watchSnapshot=null;optionalCamera=false;returnState={...state};current={kind,...event};audio.begin(kind);time=0;last=performance.now();paused=false;pausedAudio=false;frameCount=0;shotVisits=[];maxFrameSeconds=0;
++  overlay.querySelector('#hq-cinema-sound').textContent='声音 '+(controls.audioEnabled()?'开':'关');overlay.querySelector('#hq-cinema-sound').setAttribute('aria-label',controls.audioEnabled()?'关闭声音':'开启声音');
+   overlay.hidden=false;watch.hidden=kind==='intro';watch.textContent='观看过桥';resume.hidden=true;document.body.classList.add('hq-cinematic');document.body.classList.toggle('hq-intro',kind==='intro');renderAt(0);
+  }
+  function cleanup(){
+@@ -54,6 +55,7 @@
+  }
+  function finish(){if(!current)return;const event=current;cleanup();event.finish();}
+  watch.onclick=()=>{if(!current||current.kind!=='ending')return;if(optionalCamera){controls.restore(watchSnapshot);watchSnapshot=null;optionalCamera=false;watch.textContent='观看过桥';document.body.classList.remove('hq-watching');}else{watchSnapshot=controls.capture();optionalCamera=true;watch.textContent='返回自由视角';document.body.classList.add('hq-watching');renderAt(time);}};
++ overlay.querySelector('#hq-cinema-sound').onclick=()=>controls.toggleAudio();
+  skip.onclick=()=>onSkip();resume.onclick=async()=>{try{await controls.pauseAudio(false);pausedAudio=false;resume.hidden=true;last=performance.now();}catch{pausedAudio=true;}};
+  const adapter={
+   applyState(next){state={...next};if(!current)stage.apply(finalPose(state),state.shipState??'waiting');},
+@@ -63,7 +65,7 @@
+   setPaused(value){paused=value;last=performance.now();if(value){if(watchSnapshot){controls.restore(watchSnapshot);watchSnapshot=null;optionalCamera=false;watch.textContent='观看过桥';document.body.classList.remove('hq-watching');}controls.pauseAudio(true);return;}Promise.resolve(controls.pauseAudio(false)).catch(()=>{pausedAudio=true;resume.hidden=false;});},
+  };
+  return {adapter,stage,setSkip:fn=>{onSkip=fn;},
+-  update(){stage.updateProxy();const now=performance.now(),dt=Math.max(0,(now-last)/1000);last=now;if(!current)return;if(paused||pausedAudio||document.hidden||!document.hasFocus())return;frameCount++;maxFrameSeconds=Math.max(maxFrameSeconds,dt);time=Math.min(time+dt,current.kind==='intro'?30:20);const p=renderAt(time);if(p.done)finish();},
++  update(){stage.updateProxy();const now=performance.now(),dt=Math.max(0,(now-last)/1000);last=now;if(!current)return;if(paused||pausedAudio||document.hidden||!document.hasFocus())return;frameCount++;maxFrameSeconds=Math.max(maxFrameSeconds,dt);time=Math.min(audio.getTime()??time+dt,current.kind==='intro'?30:20);const p=renderAt(time);if(p.done)finish();},
+   isActive:()=>!!current,
+   getCamera:()=>current&&(current.kind==='intro'||optionalCamera)?camera:gameCamera,
+   allowsGameCamera:()=>current?.kind==='ending'&&!optionalCamera&&!paused&&!pausedAudio,
+--- a/src/hongqiao/cinema/audio.js
++++ b/src/hongqiao/cinema/audio.js
+@@ -1,12 +1,68 @@
+-// Local temporary voice, decoded before the intro starts. Shares the game's opt-in audio context.
++// User-provided clips. One AudioContext clock drives both picture and scheduled sound.
+ export const CUES={intro:[[0,'intro_01'],[5,'intro_03'],[8,'intro_04'],[10,'intro_05'],[14,'intro_06'],[17,'intro_07'],[20,'intro_08a'],[21,'intro_08b'],[25,'intro_08c'],[27,'intro_09']],ending:[[0,'ending_01'],[12,'ending_02'],[16,'ending_03']]};
+-export async function createCinemaAudio(baseURL,getContext){
+- const decoder=new OfflineAudioContext(1,1,22050),buffers=new Map(),errors=[];
+- await Promise.all([...new Set(Object.values(CUES).flat().map(c=>c[1]))].map(async id=>{try{const r=await fetch(baseURL+'assets/hongqiao/cinema/audio/'+id+'.wav');if(!r.ok)throw Error('HTTP '+r.status);buffers.set(id,await decoder.decodeAudioData(await r.arrayBuffer()));}catch(e){errors.push(id+': '+e.message);console.warn('[Hongqiao voice unavailable]',id,e.message);}}));
+- let kind=null,last=-.001,played=[],sources=new Set();
+- function stop(){for(const source of sources){try{source.stop();}catch{}}sources.clear();}
+- function voice(id,offset){const ctx=getContext(),buffer=buffers.get(id);if(!ctx||!buffer||offset>=buffer.duration)return;const source=ctx.createBufferSource(),gain=ctx.createGain();gain.gain.value=.72;source.buffer=buffer;source.connect(gain);gain.connect(ctx.destination);source.onended=()=>{sources.delete(source);gain.disconnect();};sources.add(source);source.start(0,Math.max(0,offset));played.push(id);}
+- function wood(){const ctx=getContext();if(!ctx)return;const o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime;o.type='triangle';o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(60,t+.18);g.gain.setValueAtTime(.07,t);g.gain.exponentialRampToValueAtTime(.001,t+.23);o.connect(g);g.connect(ctx.destination);o.onended=()=>{sources.delete(o);g.disconnect();};sources.add(o);o.start();o.stop(t+.25);}
+- return {begin(next){stop();kind=next;last=-.001;played=[];},update(t){for(const [at,id] of CUES[kind]??[])if(at>last&&at<=t)voice(id,t-at);if(kind==='intro'&&last<3&&t>=3)wood();last=t;},seek(t){stop();last=t;},stop,
+- getState:()=>({loaded:buffers.size,errors,played,active:sources.size,context:getContext()?.state??'muted'})};
++export const EFFECTS={intro:[
++ {at:3,id:'sfx_pole_brace',duration:2,gain:.85},
++ {at:17.3,id:'sfx_rope_throw',duration:1,gain:.7,pan:-.25},
++ {at:18.1,id:'sfx_rope_throw',duration:1,gain:.7,pan:.25},
++ {at:20,id:'sfx_rope_handle',duration:1,gain:.85},
++ {at:21,id:'sfx_mast_lower',duration:4,gain:.9},
++ {at:25,id:'sfx_rope_handle',duration:2,offset:1,gain:.8},
++ {at:25,id:'sfx_pole_stow',duration:2,gain:.65}
++],ending:[{at:3,id:'sfx_ship_pass',duration:9,gain:.9}]};
++const BEDS=['amb_river','amb_market'];
++export function makeAudioPlan(kind,durations){
++ const end=kind==='intro'?30:20;
++ return [
++  ...CUES[kind].map(([at,id])=>({at,id,type:'voice',duration:Math.min(durations[id]??0,end-at),gain:.9})),
++  ...EFFECTS[kind].map(c=>({...c,type:'effect',duration:Math.min(c.duration,Math.max(0,(durations[c.id]??0)-(c.offset??0)))})),
++  ...BEDS.map((id,i)=>({at:0,id,type:'ambience',duration:end,loop:true,gain:i?.25:.45}))
++ ].filter(c=>(durations[c.id]??0)>0&&c.duration>0);
+ }
++export async function createCinemaAudio(baseURL,controls){
++ const buffers=new Map(),errors=[];let metadata={};const prefix=baseURL+'assets/hongqiao/cinema/audio/';
++ async function request(url){const r=await fetch(url,{cache:'no-cache',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('HTTP '+r.status);return r;}
++ try{metadata=(await (await request(prefix+'manifest.json')).json()).files;}catch(e){errors.push('manifest: '+e.message);console.warn('[Hongqiao audio manifest unavailable]',e.message);}
++ const ids=[...new Set([...Object.values(CUES).flat().map(c=>c[1]),...Object.values(EFFECTS).flat().map(c=>c.id),...BEDS])];
++ let decoder;try{decoder=new OfflineAudioContext(2,1,48000);}catch(e){errors.push('decoder: '+e.message);}
++ await Promise.all(ids.map(async id=>{try{if(!decoder)throw Error('Web Audio unavailable');const r=await request(prefix+id+'.wav?v='+(metadata[id]?.sha256?.slice(0,12)??'user-20260916'));buffers.set(id,await decoder.decodeAudioData(await r.arrayBuffer()));}catch(e){errors.push(id+': '+e.message);console.warn('[Hongqiao audio unavailable]',id,e.message);}}));
++ let kind=null,anchor=0,running=false,plan=[],last=-.001,played=[],events=[],sources=new Set();
++ const context=()=>controls.audioContext();
++ function stop(){running=false;for(const entry of sources){entry.source.onended=null;try{entry.source.stop();}catch{}for(const node of entry.nodes)node.disconnect();}sources.clear();controls.setCinemaAudioActive?.(false);}
++ function schedule(t){
++  const ctx=context();if(!ctx)return;anchor=ctx.currentTime-t;
++  const end=kind==='intro'?30:20;
++  for(const cue of plan){
++   const cueEnd=Math.min(end,cue.at+cue.duration);if(cueEnd<=t)continue;
++   const start=Math.max(t,cue.at),length=cueEnd-start,when=anchor+start,source=ctx.createBufferSource(),gain=ctx.createGain();
++   source.buffer=buffers.get(cue.id);source.loop=!!cue.loop;
++   source.connect(gain);const nodes=[source,gain];let tail=gain;
++   if(cue.pan&&ctx.createStereoPanner){const pan=ctx.createStereoPanner();pan.pan.value=cue.pan;gain.connect(pan);nodes.push(pan);tail=pan;}
++   tail.connect(controls.audioDestination?.()??ctx.destination);
++   const fade=Math.min(cue.type==='voice'?.004:.045,length/3),level=cue.gain;
++   gain.gain.setValueAtTime(0,when);
++   let tailLevel=level;
++   if(cue.type==='ambience'){
++    // Hold each duck level until the next speech boundary, then fade over 60 ms.
++    const points=[start,...plan.filter(c=>c.type==='voice').flatMap(c=>[Math.max(0,c.at-.08),c.at+c.duration+.08]),...(kind==='intro'?[10,14]:[])].filter(x=>x>=start&&x<cueEnd-.1).sort((a,b)=>a-b);
++    let previous=0;
++    for(const at of [...new Set(points)]){
++     const speaking=plan.some(c=>c.type==='voice'&&at>=c.at-.081&&at<c.at+c.duration+.079),flashback=kind==='intro'&&at>=10&&at<14;
++     const next=level*(speaking?.32:flashback?.5:1);
++     gain.gain.setValueAtTime(previous,anchor+at);gain.gain.linearRampToValueAtTime(next,anchor+at+.06);previous=next;
++    }
++    tailLevel=previous;
++   }else gain.gain.linearRampToValueAtTime(level,when+fade);
++   gain.gain.setValueAtTime(tailLevel,anchor+cueEnd-fade);gain.gain.linearRampToValueAtTime(0,anchor+cueEnd);
++   const entry={source,nodes,id:cue.id,start,end:cueEnd};sources.add(entry);
++   source.onended=()=>{sources.delete(entry);for(const node of nodes)node.disconnect();};
++   source.start(when,(cue.offset??0)+(start-cue.at),length);source.stop(anchor+cueEnd);
++  }
++ }
++ return {
++  begin(next){stop();kind=next;plan=makeAudioPlan(kind,Object.fromEntries([...buffers].map(([id,b])=>[id,b.duration])));last=-.001;played=[];events=[];running=true;controls.setCinemaAudioActive?.(true);schedule(0);},
++  update(t){if(!running)return;for(const cue of plan)if(cue.at>last&&cue.at<=t){events.push({id:cue.id,at:cue.at,type:cue.type});if(cue.type==='voice')played.push(cue.id);}last=t;},
++  getTime:()=>running&&context()?Math.max(0,context().currentTime-anchor):null,
++  seek(t){stop();running=true;controls.setCinemaAudioActive?.(true);last=t-.001;schedule(t);},stop,
++  getState:()=>({loaded:buffers.size,errors,played:[...played],events:[...events],active:[...sources].filter(s=>context()&&s.start<=context().currentTime-anchor&&s.end>context().currentTime-anchor).length,scheduled:sources.size,context:context()?.state??'unavailable',enabled:controls.audioEnabled?.()??false,durations:Object.fromEntries([...buffers].map(([id,b])=>[id,b.duration]))})
++ };
++}

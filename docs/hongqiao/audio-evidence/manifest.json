@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "source": "晓梦提供的剪映配音与音效，2026-09-16",
+  "processing": "48 kHz PCM; voice leading silence only; no speed change; conservative gain and peak limiting",
+  "files": {
+    "intro_01": {
+      "file": "intro_01.wav",
+      "sha256": "41f8c2e936417eed5d54c060f495ffeb5e8a8cfeec8e4fd0db007cc7915971cc",
+      "sourceSha256": "757ccaf5094dd6288a74f7767ffd9d1156e8e7da00981fa3817c2809d490c3c8",
+      "sourceFile": "开场配音/intro_01.wav",
+      "duration": 1.888813,
+      "gainDb": 4.3,
+      "leadingTrimSeconds": 0.1112,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_03": {
+      "file": "intro_03.wav",
+      "sha256": "4732d9f09555e293e6860f13061779b9c2fb80bc219592897e513e20e4616397",
+      "sourceSha256": "a93cbefa741603ea93340419fcc5c88d57ac11c46cf41906e9793b054ea171c2",
+      "sourceFile": "开场配音/intro_03.wav",
+      "duration": 0.745438,
+      "gainDb": -1.8,
+      "leadingTrimSeconds": 0.254575,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_04": {
+      "file": "intro_04.wav",
+      "sha256": "1ace9211dc3a43db1da3805f0ea6c349d14df15caf6de4d11f50c863dc8dfa58",
+      "sourceSha256": "10a5fd95f7be9d3c0d048760408be7445e60f10e99725eeda59a42bcf1a9fae6",
+      "sourceFile": "开场配音/intro_04.wav",
+      "duration": 0.903083,
+      "gainDb": 4.8,
+      "leadingTrimSeconds": 0.096925,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_05": {
+      "file": "intro_05.wav",
+      "sha256": "e2eeaef0d6007fe5ebf45397391dd45ffcb932c7689c62c3961670635f773c62",
+      "sourceSha256": "8192aec2c2faa9617129c3267ff4b0af625c8f1673c038d2fe4709ee1aa6fe34",
+      "sourceFile": "开场配音/intro_05.wav",
+      "duration": 2.593938,
+      "gainDb": 5.3,
+      "leadingTrimSeconds": 0.406075,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_06": {
+      "file": "intro_06.wav",
+      "sha256": "c3ad2f4ab7d9b7cd81368b37393a8000def5af09dfd32bf7bc2dcd1d7c008830",
+      "sourceSha256": "336f9d05c71224d6446ff2047a8c59919a688f0056e5b553a0483048e9478f61",
+      "sourceFile": "开场配音/intro_06.wav",
+      "duration": 1.904063,
+      "gainDb": -2.3,
+      "leadingTrimSeconds": 0.09595,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_07": {
+      "file": "intro_07.wav",
+      "sha256": "6664b593448a6b732a563afa1bc1a8f9ba9c12c14f58a5b65a10c410d61fe8d8",
+      "sourceSha256": "e938d932adb336eb4871980deb9bd66549599a564a67d1d7fb759cf02205d9e2",
+      "sourceFile": "开场配音/intro_07.wav",
+      "duration": 0.945479,
+      "gainDb": -2.2,
+      "leadingTrimSeconds": 0.054525,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_08a": {
+      "file": "intro_08a.wav",
+      "sha256": "6b7ae0ae8162b43c736e1d5beff0cd2712edf2f1c7c3c0cd0c92db55c1f1890c",
+      "sourceSha256": "4c9c7792ddd07f0d1a35da0a2f5e4ecccd7cd9d99253aa44446549d28f718f9f",
+      "sourceFile": "开场配音/intro_08a.wav",
+      "duration": 0.434583,
+      "gainDb": -1.4,
+      "leadingTrimSeconds": 0.065425,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_08b": {
+      "file": "intro_08b.wav",
+      "sha256": "1ac5badeb4e895b835be1180f9f3a14b1f5c1a2730bb08ed5d1764be1127a7e7",
+      "sourceSha256": "c86e121169ec7553c9b06805534e09f9da9aa56cdf834ee481a96421864f44bc",
+      "sourceFile": "开场配音/intro_08b.wav",
+      "duration": 2.868792,
+      "gainDb": -1.9,
+      "leadingTrimSeconds": 0.131225,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_08c": {
+      "file": "intro_08c.wav",
+      "sha256": "6593a4017dd5d5ee021ca1007ac01322df883fe36885caffe149c121289e4ea9",
+      "sourceSha256": "a84c159045132a7e904b83104b233e58bc7c39ff609cdaf3ade9c6b85c54e138",
+      "sourceFile": "开场配音/intro_08c.wav",
+      "duration": 0.783104,
+      "gainDb": 2.2,
+      "leadingTrimSeconds": 0.2169,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "intro_09": {
+      "file": "intro_09.wav",
+      "sha256": "a664387f85d99f742903c47cd18b14ecc19b7944fe82c55b2601a469600d1e4a",
+      "sourceSha256": "d0488c1edab95c46366dba5239c3236e38c43670d068131828f6a695b4f7179e",
+      "sourceFile": "开场配音/intro_09.wav",
+      "duration": 1.932229,
+      "gainDb": 4.8,
+      "leadingTrimSeconds": 0.067775,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "ending_01": {
+      "file": "ending_01.wav",
+      "sha256": "b08deb46dd82842f9a635097b9ee81991b64a26e8b15cb16a26aa5729fbb631f",
+      "sourceSha256": "83a2b2841396553eb672217923c331dd69fef6270fa7f421677500bf635ea745",
+      "sourceFile": "通关过桥/ending_01.wav",
+      "duration": 2.0,
+      "gainDb": 7.3,
+      "leadingTrimSeconds": 0,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "ending_02": {
+      "file": "ending_02.wav",
+      "sha256": "96941c26c4851f244042eb5dfeb406f2ec9848e81e3ce866971116eda52f8eb7",
+      "sourceSha256": "49fa047e1576c25f4e8f81bdacc494c8df116520d432fee4cb114f2e128d9d43",
+      "sourceFile": "通关过桥/ending_02.wav",
+      "duration": 1.884458,
+      "gainDb": -7.7,
+      "leadingTrimSeconds": 0.11555,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "ending_03": {
+      "file": "ending_03.wav",
+      "sha256": "6c663b091a971a3d02c986fdde55a30615b3004bc8226ff02d4ce83bcd82d1b7",
+      "sourceSha256": "e1066df464907047300ad15fe0243497d27cc1b3a335b5edf37c406545920380",
+      "sourceFile": "通关过桥/ending_03.wav",
+      "duration": 1.692229,
+      "gainDb": 7.4,
+      "leadingTrimSeconds": 0.307775,
+      "channels": 1,
+      "sampleRate": 48000
+    },
+    "amb_river": {
+      "file": "amb_river.wav",
+      "sha256": "8c0f453618aa44aa8221be9c62e19d336d5628dec85bafb1651bc37eef025787",
+      "sourceSha256": "33dd74f3b70d03780071af290dcb256abbfd5ac3a8ada35d39e42ea61c2319c6",
+      "sourceFile": "音效/amb_river.wav",
+      "duration": 30.0,
+      "gainDb": 10,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "amb_market": {
+      "file": "amb_market.wav",
+      "sha256": "99f82d2f55ff30f7d007431e2878ca71f0c20353b11c1ee4cbe0347c56e87fa3",
+      "sourceSha256": "18997f83552cf4aa69f652867d9e7e5640a8b4d0ea2ebf19743b978339992e43",
+      "sourceFile": "音效/amb_market.wav",
+      "duration": 30.0,
+      "gainDb": 32.0,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_pole_brace": {
+      "file": "sfx_pole_brace.wav",
+      "sha256": "b545a59c8b9f649d33b548daefa962b006aaf4e28a2562b499077f689cab98e4",
+      "sourceSha256": "e047e21816ab3aa3387de17e4380d237c6b44b38aa274ccd09f21590cf82dabf",
+      "sourceFile": "音效/sfx_pole_brace.wav",
+      "duration": 2.0,
+      "gainDb": -6.0,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_rope_throw": {
+      "file": "sfx_rope_throw.wav",
+      "sha256": "f892264414422236368a077ed89c8f0043a4e69e6e820a26a314ab9609e94dea",
+      "sourceSha256": "f712e3b0c11756d7af101febac422a2deb79aae2f18f49234a965373941ab397",
+      "sourceFile": "音效/sfx_rope_throw.wav",
+      "duration": 1.0,
+      "gainDb": -6.8,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_rope_handle": {
+      "file": "sfx_rope_handle.wav",
+      "sha256": "31021db606d842c0c366520585afc0e716fd3a90519f47e65dc2669e27d7b337",
+      "sourceSha256": "535c05596d262e2be683680ebbd1088f805d43af34959cbe362e05cac2214174",
+      "sourceFile": "音效/sfx_rope_handle.wav",
+      "duration": 3.0,
+      "gainDb": 8.7,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_mast_lower": {
+      "file": "sfx_mast_lower.wav",
+      "sha256": "0a1103bf47f7e6bf7357976da2da6f532a29145f58e5b086a8300228e0b297bf",
+      "sourceSha256": "851703629dfa824435716c477c71bc4f0895910920c6af8c2d89b9fc5ad2036b",
+      "sourceFile": "音效/sfx_mast_lower.wav",
+      "duration": 4.0,
+      "gainDb": 24.4,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_pole_stow": {
+      "file": "sfx_pole_stow.wav",
+      "sha256": "2c2e2065cb5381f981020679d20b3ac54f56a353b246d2619d9e1820ee85659a",
+      "sourceSha256": "49088b7f40b8462a11b53183ddddfa40955b56a976532db3cca6c6d956cc567b",
+      "sourceFile": "音效/sfx_pole_stow.wav",
+      "duration": 2.0,
+      "gainDb": -7.7,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    },
+    "sfx_ship_pass": {
+      "file": "sfx_ship_pass.wav",
+      "sha256": "21e38e24c36205d1b46319bb2a4fe61d8f04a20b6b7423028f0d297450ecc69d",
+      "sourceSha256": "b01df511abd901a3b6d9a7e5ec79b4382ba8b5257c67dc2f148380ae320b6b4c",
+      "sourceFile": "音效/sfx_ship_pass.wav",
+      "duration": 9.0,
+      "gainDb": 21.1,
+      "leadingTrimSeconds": 0,
+      "channels": 2,
+      "sampleRate": 48000
+    }
+  }
+}

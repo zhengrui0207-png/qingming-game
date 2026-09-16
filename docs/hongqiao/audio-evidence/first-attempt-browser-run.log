@@ -1,0 +1,18 @@
+FAIL entry click enables all 21 supplied clips without a separate sound click The expression evaluated to a falsy value:
+
+  assert.ok(s.audio.rms>.002)
+
+PASS overlay mute silences current voices and effects, then unmute continues
+PASS full 30s intro: 10 voices, exactly 2 throws, all actions and clean stop
+PASS real tab blur freezes audio clock and picture; focus resumes in place
+PASS skip stops current and future audio; replay preserves save
+PASS mute survives refresh and entry, replay stays silent until explicitly enabled
+PASS formal delivery plays full 20s ending with 3 voices and ship-pass effect
+PASS ending replay and skip never repeat settlement
+PASS HTTP loads supplied manifest and all hashed WAVs successfully
+FAIL one missing voice degrades to subtitles, other tracks continue page.waitForFunction: Timeout 180000ms exceeded.
+FAIL delayed voice holds entry until decoded, then starts at 0 with voice page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://127.0.0.1:5182/?test", waiting until "load"[22m
+
+DONE 3
