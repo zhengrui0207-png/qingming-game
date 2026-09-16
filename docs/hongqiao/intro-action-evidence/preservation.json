@@ -1,0 +1,30 @@
+{
+  "mainOnlyAddsPresentationHook": true,
+  "streetLifeOnlyAddsPresentationHook": true,
+  "audioFilesUnchanged": {
+    "src/hongqiao/cinema/audio.js": true,
+    "public/assets/hongqiao/cinema/audio/intro_09.wav": true,
+    "public/assets/hongqiao/cinema/audio/amb_river.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_rope_throw.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_pole_stow.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_ship_pass.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_pole_brace.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_08a.wav": true,
+    "public/assets/hongqiao/cinema/audio/amb_market.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_08b.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_08c.wav": true,
+    "public/assets/hongqiao/cinema/audio/manifest.json": true,
+    "public/assets/hongqiao/cinema/audio/ending_03.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_07.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_06.wav": true,
+    "public/assets/hongqiao/cinema/audio/ending_02.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_04.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_05.wav": true,
+    "public/assets/hongqiao/cinema/audio/ending_01.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_01.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_mast_lower.wav": true,
+    "public/assets/hongqiao/cinema/audio/sfx_rope_handle.wav": true,
+    "public/assets/hongqiao/cinema/audio/intro_03.wav": true
+  },
+  "timelineAndBoundariesUnchanged": true
+}

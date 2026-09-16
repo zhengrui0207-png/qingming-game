@@ -1,0 +1,229 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -98,6 +98,7 @@
+  streetLife.setExternalBodies(()=>[jiaodian.body(),...(boatMode||actor.mode!=='walk'?[]:[{...actor,id:'player_scholar',y:actor.height,radius:.32}]),...interactions.entries().filter(e=>e.type==='npc').map(e=>({...e.getPosition(),id:e.id,layer:e.layer,radius:.48}))]);
+  cinema=await createCinemaRenderer({scene,city,loader,npcAssets,world,baseURL:import.meta.env.BASE_URL,gameCamera:camera,player,controls:{
+   setCinematicFocus:next=>streetLife.setCinematicFocus(next),
++  setBridgeAlarm:next=>streetLife.setBridgeAlarm(next),
+   capture:()=>({camera:camera.clone(),yaw,pitch,distance,targetDistance,overview,focus:focus.clone()}),
+   restore:s=>{camera.copy(s.camera);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();yaw=s.yaw;pitch=s.pitch;distance=s.distance;targetDistance=s.targetDistance;overview=s.overview;focus.copy(s.focus);clearInput();},
+   waitForRelease:()=>{const held=new Set(gate.keys());clearInput();if(!held.size)return;const release=locks.acquire('presentationRelease');const done=()=>{release();removeEventListener('keyup',up,true);removeEventListener('blur',done);};const up=e=>{held.delete(e.code);if(!held.size)done();};addEventListener('keyup',up,true);addEventListener('blur',done);},
+--- a/src/street-life.js
++++ b/src/street-life.js
+@@ -147,5 +147,5 @@
+   [crowd,ox,horse,carts,ferry,...extraPools].forEach(p=>p.done());
+   matchedCrowd?.done();
+  }
+- return {getHistoryResidents:()=>historyResidents,setCinematicFocus:next=>matchedCrowd?.setCinematicFocus(next),setExternalBodies:fn=>{getExternal=fn;},resolvePlayer:(from,to)=>stopAtPeople(from,to,[...people.filter(p=>p.active!==false&&!['乘客','船夫','骑马人'].includes(p.role)),...getExternal().filter(p=>p.id!=='player_scholar'),...traffic.map(v=>({...v,y:.94,radius:1.1}))]),setViewCamera:next=>{viewCamera=next;matchedCrowd?.setCamera(next);},update,ferries,snapshot:()=>({time:lastTime,people,traffic,ferries,replacements:matchedCrowd?.snapshot()}),getState:()=>({horses:horses?.getState(),activeWalkers:people.filter(p=>p.route&&p.active!==false).length,movingWalkers:people.filter(p=>p.route&&p.walking&&p.active!==false).length,time:lastTime,people:people.length,visiblePeople:crowd.count+(matchedCrowd?.getState().visible??0),npcAssets:matchedCrowd?.getState(),roles:people.reduce((a,p)=>(a[p.role]=(a[p.role]||0)+1,a),{}),vehicles:traffic.map(v=>({kind:v.kind,x:v.x,z:v.z})),ferries:ferries.map(f=>({x:f.x,z:f.z,angle:f.angle,speed:f.speed})),samplePeople:people.slice(0,5).map(p=>({x:p.x,z:p.z,angle:p.angle,role:p.role})),instanced:!matchedCrowd,renderMode:matchedCrowd?"skinned-near/instanced-far":"instanced"})};
++ return {getHistoryResidents:()=>historyResidents,setCinematicFocus:next=>matchedCrowd?.setCinematicFocus(next),setBridgeAlarm:next=>matchedCrowd?.setBridgeAlarm(next),setExternalBodies:fn=>{getExternal=fn;},resolvePlayer:(from,to)=>stopAtPeople(from,to,[...people.filter(p=>p.active!==false&&!['乘客','船夫','骑马人'].includes(p.role)),...getExternal().filter(p=>p.id!=='player_scholar'),...traffic.map(v=>({...v,y:.94,radius:1.1}))]),setViewCamera:next=>{viewCamera=next;matchedCrowd?.setCamera(next);},update,ferries,snapshot:()=>({time:lastTime,people,traffic,ferries,replacements:matchedCrowd?.snapshot()}),getState:()=>({horses:horses?.getState(),activeWalkers:people.filter(p=>p.route&&p.active!==false).length,movingWalkers:people.filter(p=>p.route&&p.walking&&p.active!==false).length,time:lastTime,people:people.length,visiblePeople:crowd.count+(matchedCrowd?.getState().visible??0),npcAssets:matchedCrowd?.getState(),roles:people.reduce((a,p)=>(a[p.role]=(a[p.role]||0)+1,a),{}),vehicles:traffic.map(v=>({kind:v.kind,x:v.x,z:v.z})),ferries:ferries.map(f=>({x:f.x,z:f.z,angle:f.angle,speed:f.speed})),samplePeople:people.slice(0,5).map(p=>({x:p.x,z:p.z,angle:p.angle,role:p.role})),instanced:!matchedCrowd,renderMode:matchedCrowd?"skinned-near/instanced-far":"instanced"})};
+ }
+--- a/src/npc-assets.js
++++ b/src/npc-assets.js
+@@ -1,4 +1,5 @@
+ import * as THREE from 'three';
++import {createBridgeReaction} from './hongqiao/cinema/bridge-reaction.js';
+ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+ import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+ import {clone as cloneSkeleton} from 'three/addons/utils/SkeletonUtils.js';
+@@ -92,24 +93,28 @@
+   const capacity=records.filter(r=>r?.asset.id===rec.asset.id).length,meshes=parts.map(part=>{const mesh=new THREE.InstancedMesh(part.geometry,part.material,capacity);mesh.name='Distant '+rec.asset.id;mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);mesh.count=0;mesh.frustumCulled=false;mesh.castShadow=false;mesh.receiveShadow=true;root.add(mesh);return mesh});
+   farPools.set(rec.asset.id,{meshes,cursor:0});
+  }
+- let visible=0,cinematicFocus=null;
++ let visible=0,cinematicFocus=null,bridgeAlarm=null;
++ const reactions=records.map(rec=>rec?createBridgeReaction(rec.root):null);
+  return {
+   hide:i=>{if(records[i]){records[i].root.visible=false;records[i].screenVisible=false;}},
+   setCamera:next=>{camera=next;},
+   setCinematicFocus:next=>{cinematicFocus=next;},
++  setBridgeAlarm:next=>{bridgeAlarm=next;if(!next)reactions.forEach(r=>r?.restore());},
+   put(i,pose,walking,time,dt){
+    const rec=records[i];if(!rec)return false;
+    rec.root.position.set(pose.x,pose.y,pose.z);rec.root.rotation.y=pose.angle;rec.root.scale.setScalar(pose.scale||1);
++   const reacting=bridgeAlarm&&Math.abs(pose.x)<3.95&&Math.abs(pose.z)<17.5;
++   if(reacting)reactions[i].apply(bridgeAlarm.target,bridgeAlarm.time,i,pose.angle);else reactions[i].restore();
+    const distance=rec.root.position.distanceTo(camera.position);v.copy(rec.root.position);v.y+=1;v.project(camera);
+    rec.screenVisible=distance<190&&v.z>-1&&v.z<1&&Math.abs(v.x)<1.3&&Math.abs(v.y)<1.4;
+    if(cinematicFocus){const {from,to}=cinematicFocus,dx=to.x-from.x,dz=to.z-from.z,l=dx*dx+dz*dz,u=clamp(((pose.x-from.x)*dx+(pose.z-from.z)*dz)/l,0,1),near=Math.hypot(pose.x-from.x,pose.z-from.z)<7,corridor=Math.hypot(pose.x-from.x-dx*u,pose.z-from.z-dz*u)<1.65; if(near||corridor)rec.screenVisible=false;}
+-   const pool=farPools.get(rec.asset.id),far=distance>28&&!['骑马人','乘客'].includes(people[i].role)&&pool;
++   const pool=farPools.get(rec.asset.id),far=!reacting&&distance>28&&!['骑马人','乘客'].includes(people[i].role)&&pool;
+    rec.root.visible=rec.screenVisible&&!far;rec.lod=far?'distant':'full';
+-   if(rec.screenVisible){visible++;if(far){rotation.setFromAxisAngle(THREE.Object3D.DEFAULT_UP,pose.angle);size.setScalar(pose.scale||1);matrix.compose(rec.root.position,rotation,size);for(const mesh of pool.meshes)mesh.setMatrixAt(pool.cursor,matrix);pool.cursor++;}else rec.update(time,dt,{walking,role:people[i].role,phase:people[i].phase,far:distance>35,travelSpeed:people[i].travelSpeed})}
++   if(rec.screenVisible){visible++;if(far){rotation.setFromAxisAngle(THREE.Object3D.DEFAULT_UP,pose.angle);size.setScalar(pose.scale||1);matrix.compose(rec.root.position,rotation,size);for(const mesh of pool.meshes)mesh.setMatrixAt(pool.cursor,matrix);pool.cursor++;}else if(!reacting)rec.update(time,dt,{walking,role:people[i].role,phase:people[i].phase,far:distance>35,travelSpeed:people[i].travelSpeed})}
+    return true;
+   },
+   done(){for(const pool of farPools.values()){for(const mesh of pool.meshes){mesh.count=pool.cursor;mesh.instanceMatrix.needsUpdate=true;}pool.cursor=0;}const n=visible;visible=0;return n;},
+-  getState:()=>({total:records.length,replaced:records.filter(Boolean).length,visible:records.filter(r=>r?.screenVisible).length,fullDetail:records.filter(r=>r?.root.visible).length,uniqueAssets:[...new Set(records.filter(Boolean).map(r=>r.asset.id))].length,staticInstances:records.filter(r=>r&&!r.asset.skins).length}),
++  getState:()=>({bridgeAlarm:!!bridgeAlarm,reacting:reactions.filter(r=>r?.active).length,total:records.length,replaced:records.filter(Boolean).length,visible:records.filter(r=>r?.screenVisible).length,fullDetail:records.filter(r=>r?.root.visible).length,uniqueAssets:[...new Set(records.filter(Boolean).map(r=>r.asset.id))].length,staticInstances:records.filter(r=>r&&!r.asset.skins).length}),
+   snapshot:()=>records.filter(Boolean).map(r=>({...r.state(),visible:r.screenVisible,lod:r.lod}))
+  };
+ }
+--- a/src/hongqiao/cinema/actors.js
++++ b/src/hongqiao/cinema/actors.js
+@@ -9,23 +9,42 @@
+  const bones=new Map(),base=new Map();root.traverse(o=>{if(o.isBone){bones.set(o.name,o);base.set(o,o.quaternion.clone());}if(o.name==='QMSH22_bamboo_pole')o.visible=false;if(o.isMesh){o.frustumCulled=false;o.castShadow=true;}});
+  const chains=actions.armChains.map(names=>names.map(n=>bones.get(THREE.PropertyBinding.sanitizeNodeName(n)))).filter(c=>c.every(Boolean));
+  if(chains.length!==2)throw Error('Cinematic performer needs both authored arm chains');
+- const head=bones.get('tripoHead_0'),spine=bones.get('tripoSpine_1');
+- function aim(chain,target){
+-  for(let repeat=0;repeat<5;repeat++)for(const joint of [chain[1],chain[0]]){
+-   root.updateMatrixWorld(true);const origin=joint.getWorldPosition(new THREE.Vector3()),end=chain[2].getWorldPosition(new THREE.Vector3());
+-   const from=end.sub(origin).normalize(),to=target.clone().sub(origin).normalize(),worldQ=new THREE.Quaternion().setFromUnitVectors(from,to),parentQ=joint.parent.getWorldQuaternion(new THREE.Quaternion());
+-   joint.quaternion.premultiply(parentQ.clone().invert().multiply(worldQ).multiply(parentQ));
++ const head=bones.get('tripoHead_1'),spine=bones.get('tripoSpine_1');
++ // The source rig ends at the wrists. Calibrated palm sockets place the line in the hand,
++ // rather than driving a wrist joint onto the centre of a prop.
++ const sockets=chains.map((chain,i)=>{const socket=new THREE.Object3D();socket.name=id+'_palm_'+i;socket.position.fromArray(i===0?[-.020,.052,.003]:[-.021,.022,.022]);chain[2].add(socket);return socket;});
++ let gripTargets=[];
++ const gripAxes=[V([.95,-.08,.3]).normalize(),V([.39587,-.22954,.88916])];
++ function rotateTo(joint,from,to){
++  const parent=joint.parent.getWorldQuaternion(new THREE.Quaternion());
++  joint.quaternion.premultiply(parent.clone().invert().multiply(new THREE.Quaternion().setFromUnitVectors(from.normalize(),to.normalize())).multiply(parent));
++ }
++ function aim(chain,target,i,direction){
++  const wrist=chain[2],palm=sockets[i],world=(node)=>node.getWorldPosition(new THREE.Vector3());
++  for(let repeat=0;repeat<6;repeat++){
++   root.updateMatrixWorld(true);
++   if(direction)rotateTo(wrist,gripAxes[i].clone().applyQuaternion(wrist.getWorldQuaternion(new THREE.Quaternion())),V(direction));
++   root.updateMatrixWorld(true);
++   const shoulder=world(chain[0]),elbow=world(chain[1]),hand=world(wrist),offset=world(palm).sub(hand),goal=target.clone().sub(offset);
++   const upper=shoulder.distanceTo(elbow),lower=elbow.distanceTo(hand),axis=goal.clone().sub(shoulder),distance=THREE.MathUtils.clamp(axis.length(),Math.abs(upper-lower)+.001,upper+lower-.005);axis.normalize();
++   const along=(upper*upper-lower*lower+distance*distance)/(2*distance),height=Math.sqrt(Math.max(0,upper*upper-along*along));
++   const bend=V([i===0?.7:-.7,-1,-.25]).applyQuaternion(root.getWorldQuaternion(new THREE.Quaternion()));bend.addScaledVector(axis,-bend.dot(axis)).normalize();
++   const desiredElbow=shoulder.clone().addScaledVector(axis,along).addScaledVector(bend,height);
++   rotateTo(chain[0],elbow.clone().sub(shoulder),desiredElbow.sub(shoulder));root.updateMatrixWorld(true);
++   const elbowNow=world(chain[1]);rotateTo(chain[1],world(wrist).sub(elbowNow),goal.clone().sub(elbowNow));
+   }
++  root.updateMatrixWorld(true);
+  }
+- function pose(role,phase=0,targets=[]){
++ function pose(role,phase=0,targets=[],direction=null){
+   for(const [b,q] of base)b.quaternion.copy(q);
+   const [lean,turn,reach]=sampleRole(actions.tracks[role]??actions.tracks.brace,clamp(phase));
+   const rotateWorld=(bone,axis,angle)=>{if(!bone)return;const parent=bone.parent.getWorldQuaternion(new THREE.Quaternion());bone.quaternion.premultiply(parent.clone().invert().multiply(new THREE.Quaternion().setFromAxisAngle(axis,angle)).multiply(parent));};
+-  rotateWorld(spine,new THREE.Vector3(1,0,0).applyQuaternion(root.getWorldQuaternion(new THREE.Quaternion())),lean);rotateWorld(head,new THREE.Vector3(0,1,0),turn);
+-  const defaults=[[-.3,1.1+reach*.6,.3+reach*.25],[.3,1.1+reach*.6,.3+reach*.25]];
+-  if(role==='tow'&&phase<.55){const stride=Math.sin(phase*24)*.28;for(const [name,sign] of [['tripo1_Right_Limb_0',1],['tripo0_Left_Limb_0',-1]])bones.get(name)?.rotateZ(sign*stride);}
++  if(role==='tow')rotateWorld(spine,new THREE.Vector3(0,1,0),-1.35);
++  rotateWorld(spine,new THREE.Vector3(1,0,0).applyQuaternion(root.getWorldQuaternion(new THREE.Quaternion())),lean);rotateWorld(head,new THREE.Vector3(0,1,0),role==='tow'?-.4-.9*turn:turn);
++  const defaults=[[.25,1.2+reach*.2,.14+reach*.18],[-.25,1.2+reach*.2,.14+reach*.18]];
++  if(role==='tow'&&phase<.5){const stride=Math.sin(phase*8*Math.PI)*.28;for(const [name,sign] of [['tripo1_Right_Limb_0',1],['tripo0_Left_Limb_0',-1]])bones.get(name)?.rotateZ(sign*stride);}
+   root.updateMatrixWorld(true);
+-  for(let i=0;i<chains.length;i++)aim(chains[i],targets[i]?V(targets[i]):root.localToWorld(V(defaults[i])));
++  gripTargets=targets.map(V);for(let i=0;i<chains.length;i++)aim(chains[i],targets[i]?V(targets[i]):root.localToWorld(V(defaults[i])),i,direction);
+  }
+- return {root,pose,hand:i=>chains[i]?.[2].getWorldPosition(new THREE.Vector3()),getState:()=>({id,sourceAsset:visual.asset.id,position:root.getWorldPosition(new THREE.Vector3()).toArray(),armChains:chains.length,hands:chains.map(c=>c[2].getWorldPosition(new THREE.Vector3()).toArray())})};
++ return {root,pose,hand:i=>sockets[i]?.getWorldPosition(new THREE.Vector3()),getState:()=>({id,sourceAsset:visual.asset.id,position:root.getWorldPosition(new THREE.Vector3()).toArray(),armChains:chains.length,hands:sockets.map(s=>s.getWorldPosition(new THREE.Vector3()).toArray()),gripErrors:gripTargets.map((t,i)=>sockets[i].getWorldPosition(new THREE.Vector3()).distanceTo(t))})};
+ }
+--- a/src/hongqiao/cinema/scene.js
++++ b/src/hongqiao/cinema/scene.js
+@@ -20,12 +20,12 @@
+  const mast=gltf.scene.getObjectByName('mast_hq_pivot');if(!mast)throw Error('No animated mast pivot');
+  gltf.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+  const castRoot=new THREE.Group();castRoot.name='HQ bridge and bank performers';root.add(castRoot);
+- const performers={bracer:createPerformer(npcAssets,'actor_intro_bracer',ship,[-2.6,2.58,0],-Math.PI/2),steerer:createPerformer(npcAssets,'actor_intro_steerer',ship,[-8,.57,3.5],-Math.PI/2),receiverA:createPerformer(npcAssets,'actor_intro_receiver_a',ship,[-3.2,2.58,1.0],-Math.PI/2),receiverB:createPerformer(npcAssets,'actor_intro_receiver_b',ship,[-3.2,2.58,3.1],-Math.PI/2),caller:createPerformer(npcAssets,'actor_intro_caller',castRoot,[3.3,8.21,-1.4],Math.PI/2),thrower:createPerformer(npcAssets,'actor_intro_thrower',castRoot,[3.3,8.21,.6],Math.PI/2),towA:createPerformer(npcAssets,'actor_intro_tow_a',castRoot,[18,.94,19],-Math.PI/2),towB:createPerformer(npcAssets,'actor_intro_tow_b',castRoot,[15,.94,19],-Math.PI/2)};
++ const performers={bracer:createPerformer(npcAssets,'actor_intro_bracer',ship,[-2.6,2.58,0],-Math.PI/2),steerer:createPerformer(npcAssets,'actor_intro_steerer',ship,[-8,.57,3.5],-Math.PI/2),receiverA:createPerformer(npcAssets,'actor_intro_receiver_a',ship,[-3.2,2.58,1.0],-Math.PI/2),receiverB:createPerformer(npcAssets,'actor_intro_receiver_b',ship,[-3.2,2.58,3.1],-Math.PI/2),caller:createPerformer(npcAssets,'actor_intro_caller',castRoot,[3.3,8.21,-1.4],Math.PI/2),thrower:createPerformer(npcAssets,'actor_intro_thrower',castRoot,[3.3,8.21,.6],Math.PI/2),towA:createPerformer(npcAssets,'actor_intro_tow_a',castRoot,[8,.94,19],-Math.PI/2),towB:createPerformer(npcAssets,'actor_intro_tow_b',castRoot,[10.4,.94,19],-Math.PI/2)};
+  const steering=strand('prop_intro_steering_oar',.055,'#856344'),lowering=strand('prop_intro_mast_tackle',.018,'#57422b');root.add(steering.mesh,lowering.mesh);
+  const coils=[0,1].map(i=>{const m=new THREE.Mesh(new THREE.TorusGeometry(.24,.04,6,36),new THREE.MeshStandardMaterial({color:'#bca67f',roughness:1,map:ropeTexture()}));m.name='prop_intro_safety_coil_'+i;root.add(m);return m;});
+  const heel=new THREE.Mesh(new THREE.BoxGeometry(.55,.4,.55),new THREE.MeshStandardMaterial({color:'#776041',roughness:1}));heel.name='mast_hq_heel';heel.position.set(-5,2.66,0);ship.add(heel);
+  for(const x of [-3.2,.8]){const rack=new THREE.Mesh(new THREE.CylinderGeometry(.065,.065,1,8),new THREE.MeshStandardMaterial({color:'#735638',roughness:1}));rack.name='prop_intro_pole_rack';rack.position.set(x,3.05,-.25);ship.add(rack);}
+- const pole=strand('prop_intro_bracing_pole',.075,'#856344'),ropes=[strand('prop_intro_safety_rope_a',.048,'#e6c286'),strand('prop_intro_safety_rope_b',.048,'#f3d6a0')],tow=strand('prop_intro_towline',.043,'#bc9971');for(const s of [pole,...ropes,tow])root.add(s.mesh);
++ const pole=strand('prop_intro_bracing_pole',.042,'#99815a'),ropes=[strand('prop_intro_safety_rope_a',.048,'#e6c286'),strand('prop_intro_safety_rope_b',.048,'#f3d6a0')],tow=strand('prop_intro_towline',.018,'#a18b65');for(const s of [pole,...ropes,tow])root.add(s.mesh);
+  // Source cloth is a separate decorative state. No original instance/permission ID is registered.
+  const cloth=new THREE.Mesh(new THREE.BoxGeometry(2.6,.09,1.6),new THREE.MeshStandardMaterial({color:'#998065',roughness:1}));cloth.name='prop_ending_cargo_cover';cloth.position.set(2.8,2.75,-1.2);ship.add(cloth);
+  for(const [x,z,c] of [[-.7,-.3,'#756c5e'],[.6,.4,'#b8a489']]){const patch=new THREE.Mesh(new THREE.BoxGeometry(.55,.02,.5),new THREE.MeshStandardMaterial({color:c,roughness:1}));patch.position.set(x,.06,z);cloth.add(patch);}
+@@ -39,32 +39,47 @@
+   const t=next.time??30,intro=kind==='intro',brace=next.brace??0;
+   if(intro&&t>=27){if(!zhouRest){zhouRest=zhouBones.map(b=>b.quaternion.clone());zhouLabelRest=zhouLabel?.visible;}if(zhouLabel)zhouLabel.visible=true;zhouBones.forEach((b,i)=>{b.quaternion.copy(zhouRest[i]);b.rotateZ(i===0?-.7:-.8+.18*Math.sin((t-27)*6));});}else if(zhouRest){zhouBones.forEach((b,i)=>b.quaternion.copy(zhouRest[i]));zhouRest=null;if(zhouLabel)zhouLabel.visible=zhouLabelRest;}
+   const bracer=performers.bracer,bracerPos=bracer.root.getWorldPosition(new THREE.Vector3());
+-  const bottom=bracerPos.clone().add(new THREE.Vector3(.4,.85,0));const top=contact.clone();top.x+=Math.sin(t*45)*.008*brace;
+-  // Withdraw into a horizontal deck rack only after lowering has finished.
+-  const storedA=V([next.shipX-3.4,3.55,-.25]),storedB=V([next.shipX+1,3.55,-.25]);
+-  const a=storedA.clone().lerp(bottom,brace),b=storedB.clone().lerp(top,brace);pole.set(curve(a,b));pole.mesh.visible=true;
+-  const hands=[a.clone().lerp(b,.13).toArray(),a.clone().lerp(b,.20).toArray()];bracer.pose('brace',intro?clamp((t-3)/24):1,brace>.05?hands:[]);
++  // Rigid pole: approach the timber with the ship; contact begins at the stop, never stretch it.
++  const holdGrip=V([10.3-2.6-.25,3.73,0]),poleDirection=contact.clone().sub(holdGrip).normalize(),poleLength=contact.distanceTo(holdGrip)+.4;
++  const heldA=holdGrip.clone().addScaledVector(poleDirection,-.4).add(V([next.shipX-10.3,0,0]));
++  
++  if(t>=3&&t<5)heldA.z+=Math.sin((t-3)*42)*.012*Math.exp(-(t-3)*2);
++  const storedA=V([next.shipX-3.4,3.55,-.25]),storedDirection=V([1,0,0]);
++  const a=storedA.clone().lerp(heldA,brace),direction=storedDirection.clone().lerp(poleDirection,brace).normalize(),b=a.clone().addScaledVector(direction,poleLength);
++  pole.set(curve(a,b));pole.mesh.visible=true;
++  const hands=[a.clone().addScaledVector(direction,lerp(.55,.38,brace)).toArray(),a.clone().addScaledVector(direction,lerp(.95,.68,brace)).toArray()];
++  bracer.pose('brace',intro?clamp((t-3)/24):1,brace>.4?hands:[],brace>.4?direction.toArray():null);
+   const steeringPhase=intro?smooth((t-5)/3):1;const sp=performers.steerer.root.getWorldPosition(new THREE.Vector3());
+-  const oa=sp.clone().add(V([-.5,1.05,.25])),ob=sp.clone().add(V([-2.0+.75*steeringPhase,-.65,1.6]));steering.set(curve(oa,ob));
+-  performers.steerer.pose('steer',steeringPhase,[oa.toArray(),oa.clone().lerp(ob,.15).toArray()]);
+-  for(const [i,key] of ['receiverA','receiverB'].entries()){const worker=performers[key],wp=worker.root.getWorldPosition(new THREE.Vector3());const hands=t>=21?[wp.clone().add(V([-.4,1.05-.25*smooth((t-21)/4),-.25])).toArray()]:[];worker.pose(t>=21?'lower':'receive',t>=21?clamp((t-21)/4):clamp((t-17)/3),hands);}
++  const oa=sp.clone().add(V([.05,1.3,.05])),ob=sp.clone().add(V([-2.0+.75*steeringPhase,-.4,1.2]));const od=ob.clone().sub(oa).normalize();
++  performers.steerer.pose('steer',steeringPhase,[oa.toArray(),oa.clone().addScaledVector(od,.26).toArray()],od.toArray());steering.set(curve(performers.steerer.hand(0).clone().addScaledVector(od,-.18),ob));
++  for(const [i,key] of ['receiverA','receiverB'].entries()){const worker=performers[key],wp=worker.root.getWorldPosition(new THREE.Vector3());const hands=t>=21?[wp.clone().add(V([-.18,1.26-.08*smooth((t-21)/4),-.25])).toArray()]:[];worker.pose(t>=21?'lower':'receive',t>=21?clamp((t-21)/4):clamp((t-17)/3),hands);}
+   ship.updateMatrixWorld(true);const tie=mast.localToWorld(V([0,4.8,0])),cleat=V([next.shipX+2,3.25,.3]),hand=performers.receiverA.hand(0);
+   lowering.set(Array.from({length:25},(_,i)=>i<=12?tie.clone().lerp(cleat,i/12):cleat.clone().lerp(hand,(i-12)/12)));lowering.mesh.visible=true;
+-  const leadX=intro&&next.flashback?lerp(20,18,smooth((t-10)/3)):18;performers.towA.root.position.x=leadX;performers.towB.root.position.x=leadX-2.4;
+-  performers.towA.pose('tow',next.flashback?(t-10)/4:t<20?.5:1);performers.towB.pose('tow',next.flashback?(t-10)/4:t<20?.2:1);
++  const leadX=intro&&next.flashback?lerp(10,8,smooth((t-10)/2)):8;
++  performers.towA.root.position.x=leadX;performers.towB.root.position.x=leadX+1.7;
++  const towPhase=next.flashback?(t-10)/4:t<20?.75:1,towSlack=next.towSlack??1;
++  for(const worker of [performers.towA,performers.towB]){
++   worker.root.updateMatrixWorld(true);
++   const grips=[[-.25,1.27-.10*towSlack,.36],[-.25,1.27-.10*towSlack,.04]].map(p=>worker.root.localToWorld(V(p)).toArray());
++   worker.pose('tow',towPhase,grips,[-1,0,0]);
++  }
+   const cp=performers.caller.root.getWorldPosition(new THREE.Vector3());
+-  performers.caller.pose(t<17?'call':'throw',t<17?clamp((t-14)/3):clamp((t-17)/3),t>=14&&t<17?[cp.clone().add(V([.55,1.12,-.25])).toArray(),cp.clone().add(V([.15,1.6,.15])).toArray()]:[]);performers.thrower.pose('throw',clamp((t-17.7)/2.3));
++  const alarm=clamp(t/1.2),callHands=t<17?[cp.clone().add(V([.55*alarm,1.38-.24*alarm,-.12])).toArray(),cp.clone().add(V([.16,1.58,.15])).toArray()]:[];
++  performers.caller.pose(t<17?'call':'throw',t<17?(t<14?.35*alarm:clamp((t-14)/3)):clamp((t-17)/3),callHands);performers.thrower.pose(t<14?'call':'throw',t<14?.25*alarm:clamp((t-17.7)/2.3));
+   for(let i=0;i<2;i++){
+    const from=(i===0?performers.caller:performers.thrower).hand(0),target=(i===0?performers.receiverA:performers.receiverB).hand(1),deployment=next.ropes?.[i]?.deployed??0;
+    const end=from.clone().lerp(target,deployment);end.y+=Math.sin(Math.PI*deployment)*1.2;
+    ropes[i].set(curve(from,end,.18*deployment,i===0?-.13:.13));ropes[i].mesh.visible=intro&&deployment>.005;coils[i].visible=intro&&t<27;coils[i].position.copy(i===0&&t<17?performers.caller.hand(1):from);coils[i].scale.setScalar(Math.max(.3,1-deployment));
+   }
+-  tow.set(curve(V([next.shipX+5,1.1,-2]),performers.towA.hand(0),.12+(next.towSlack??1)*2));tow.mesh.visible=intro&&t<27;
++  // One continuous flexible towline, with exact segment vertices at all four palms.
++  const anchors=[V([next.shipX+5,1.1,2]),performers.towB.hand(1),performers.towB.hand(0),performers.towA.hand(1),performers.towA.hand(0),performers.towA.hand(0).add(V([-.4,-.18-.5*towSlack,0]))],cuts=[0,8,11,18,21,24];
++  const towPoints=[];for(let section=0;section<5;section++)for(let n=cuts[section];n<cuts[section+1];n++){const u=(n-cuts[section])/(cuts[section+1]-cuts[section]);towPoints.push(anchors[section].clone().lerp(anchors[section+1],u).add(V([0,-Math.sin(u*Math.PI)*(section===0?.06+.9*towSlack:.015+.15*towSlack),0])));}towPoints.push(anchors.at(-1));
++  tow.set(towPoints);tow.mesh.visible=intro&&t<27;
+   // Update the existing hull proxy's pose only; do not change boat/player integration.
+   if(world.boatObstacles?.length)world.boatObstacles[0]={...originalObstacle,x:next.shipX,z:0};
+   root.updateMatrixWorld(true);
+  }
+  const updateProxy=()=>{world.hongqiaoHull={...originalObstacle,x:ship.position.x,z:ship.position.z};if(world.boatObstacles?.length)world.boatObstacles[0]={...originalObstacle,x:ship.position.x,z:ship.position.z};};
+  return {updateProxy,root,ship,mast,performers,contact,bridgeMesh,bridgeTriangles,apply,
+-  getState:()=>({kind:lastKind,pose,shipPosition:ship.position.toArray(),shipBounds:(()=>{const b=new THREE.Box3().setFromObject(ship);return {min:b.min.toArray(),max:b.max.toArray()};})(),mastTip:mast.localToWorld(new THREE.Vector3(0,7,0)).toArray(),mastAngle:-mast.rotation.z,cloth:cloth.visible,contact:contact.toArray(),ropeCount:ropes.filter(r=>r.mesh.visible).length,ropePaths:ropes.map(r=>r.points),poleEnds:[pole.points[0],pole.points.at(-1)],removedOriginalTriangles:removed,removedMeshes,cast:Object.values(performers).map(p=>p.getState())})};
++  getState:()=>({kind:lastKind,pose,shipPosition:ship.position.toArray(),shipBounds:(()=>{const b=new THREE.Box3().setFromObject(ship);return {min:b.min.toArray(),max:b.max.toArray()};})(),mastTip:mast.localToWorld(new THREE.Vector3(0,7,0)).toArray(),mastAngle:-mast.rotation.z,cloth:cloth.visible,contact:contact.toArray(),ropeCount:ropes.filter(r=>r.mesh.visible).length,ropePaths:ropes.map(r=>r.points),towPath:tow.points,towRadius:.018,poleEnds:[pole.points[0],pole.points.at(-1)],removedOriginalTriangles:removed,removedMeshes,cast:Object.values(performers).map(p=>p.getState())})};
+ }
+--- a/src/hongqiao/cinema/renderer.js
++++ b/src/hongqiao/cinema/renderer.js
+@@ -15,11 +15,11 @@
+  function introCamera(p){
+   const t=p.time,x=p.shipX,c=stage.contact,bracer=stage.performers.bracer.root.getWorldPosition(new THREE.Vector3());
+   switch(p.shot){
+-   case 0:cameraAt([30-t*.5,20-t*.2,-34+t*.5],[3.5,4,0],47);break;
++   case 0:cameraAt([26-t*.5,16.8-t*.12,-30+t*.45],[4.5,4.4,0],48);break;
+    case 1:cameraAt([c.x+1.9,c.y-.45,c.z-2.3],c.toArray(),32);break;
+-   case 2:cameraAt([bracer.x+1,4.1,-2.9],[bracer.x-.2,bracer.y+1.47,bracer.z+.3],26);break;
++   case 2:cameraAt([bracer.x+1.8,4.2,-3.8],[bracer.x-.5,4.05,bracer.z+.1],29);break;
+    case 3:cameraAt([7.4,7.9,-3.6],[4.9,7.6,0],32);break;
+-   case 4:{const tx=stage.performers.towA.root.position.x;cameraAt([tx+1.7,2.5,15.7],[tx-.65,2.22,19],25);break;}
++   case 4:{const tx=stage.performers.towA.root.position.x;cameraAt([tx+.8,2.5,15.3],[tx+.85,2.3,19],34);break;}
+    case 5:cameraAt([4.8,10.0,-2.9],[3.4,9.78,-1.3],28);break;
+    case 6:cameraAt([22,17,-24],[6,5.9,.5],44);break;
+    case 7:cameraAt([23,17,-29],[7,4.4,3],49);break;
+@@ -35,6 +35,7 @@
+  }
+  function renderAt(t){
+   const p=current.kind==='intro'?sampleIntro(t):sampleEnding(t);audio.update(t);stage.apply(p,current.kind);
++  controls.setBridgeAlarm?.(current.kind==='intro'&&t<27?{time:t,target:{x:p.shipX-5,y:7,z:0}}:null);
+   controls.setCinematicFocus?.(current.kind==='intro'&&t>=27?{from:{x:player.position.x,z:player.position.z},to:{x:6,z:19}}:null);
+   if(current.kind==='intro')introCamera(p);else if(optionalCamera)cameraAt([20,25,-43],[-2,3,0],49);
+   if(shotVisits.at(-1)?.shot!==(p.shot??'ending'))shotVisits.push({shot:p.shot??'ending',time:t});
+@@ -49,7 +50,7 @@
+   overlay.hidden=false;watch.hidden=kind==='intro';watch.textContent='观看过桥';resume.hidden=true;document.body.classList.add('hq-cinematic');document.body.classList.toggle('hq-intro',kind==='intro');renderAt(0);
+  }
+  function cleanup(){
+-  if(!current)return;audio.stop();controls.setCinematicFocus?.(null);
++  if(!current)return;audio.stop();controls.setCinematicFocus?.(null);controls.setBridgeAlarm?.(null);
+   if(current.kind==='intro'||current.review)controls.restore(snapshot);else if(watchSnapshot)controls.restore(watchSnapshot);
+   player.rotation.copy(playerRotation);controls.waitForRelease();overlay.hidden=true;document.body.classList.remove('hq-cinematic','hq-intro','hq-watching');lastSubtitle='';controls.pauseAudio(false);current=null;optionalCamera=false;watchSnapshot=null;pausedAudio=false;
+  }

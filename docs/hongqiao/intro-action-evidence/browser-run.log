@@ -1,0 +1,68 @@
+PASS full 30-second intro with nine real-time shots and no progress awards
+FAIL calibrated palms, rigid pole contact, all bridge residents react and restore Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      distance: 158.22812632461952,
+      x: 1.713401917281992,
+      z: -35.97571158961845
+...
+      x: -17.44816047495714,
++     z: 5.410311658866089
+-     z: 6.114551782752176
+    },
+    {
+      distance: undefined,
+      x: -27.55331476252141,
+      z: -1.6000000000000003
+...
+      x: 35.55478999999999,
++     z: 3.6535324010171015
+-     z: 1.6885538301763066
+    },
+    {
+      distance: undefined,
+      x: -68.39521000000002,
+      z: 5.4
+...
+      x: -14.398160474957143,
++     z: 5.410311658866089
+-     z: 6.114551782752176
+    },
+    {
+      distance: undefined,
+      x: -30.603314762521407,
+      z: -1.6
+...
+      x: 38.60478999999999,
++     z: 3.6535324010171015
+-     z: 1.6885538301763068
+    }
+  ]
+
+PASS intro shot 1 skip and held-key release barrier
+PASS intro shot 2 skip and held-key release barrier
+PASS intro shot 3 skip and held-key release barrier
+PASS intro shot 4 skip and held-key release barrier
+PASS intro shot 5 skip and held-key release barrier
+PASS intro shot 6 skip and held-key release barrier
+PASS intro shot 7 skip and held-key release barrier
+PASS intro shot 8 skip and held-key release barrier
+PASS intro shot 9 skip and held-key release barrier
+PASS intro blur pauses camera, actions and audio then resumes
+PASS reload during intro settles waiting without replay or rewards
+PASS legacy active save bypasses intro on reload
+PASS legacy permitted save bypasses intro on reload
+warning [Hongqiao audio unavailable] sfx_ship_pass The user aborted a request.
+warning [Hongqiao audio unavailable] amb_river The user aborted a request.
+warning [Hongqiao audio unavailable] amb_market The user aborted a request.
+PASS legacy collected save bypasses intro on reload
+PASS legacy completed save bypasses intro on reload
+PASS HQ41 explicit delivery saves all rewards before full 20-second passage
+PASS four-story completion card, reader scroll lock and continue
+PASS completed intro/ending reviews preserve exact snapshot and restore passed scene
+PASS optional ending view restores camera on blur and skip without duplicate settlement
+PASS refresh during passing restores passed and preserves once-only rewards
+DONE failures 1

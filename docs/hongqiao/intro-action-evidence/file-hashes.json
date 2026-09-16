@@ -1,0 +1,10 @@
+{
+  "src/main.js": "7d65a9f134a47056636a4dd261821e0b1295aa4bcbdbaf2c6172dc76cc39e75a",
+  "src/street-life.js": "5f3679f0ffce31941f39ceb2f9c0146e469fffd2273974b433f04b2b6dbfc055",
+  "src/npc-assets.js": "c34a8b5097ef6f7d270f96fc12df76982151c63e0e33df10e191d4922a66379b",
+  "src/hongqiao/cinema/actors.js": "5526cddf1761acbaf7f6e9fec61b1d26f1fa07f4d66a6c6b583888eadb59b07c",
+  "src/hongqiao/cinema/scene.js": "7e70201ff99fee836d3c620ce118d2bbf74d1f1c56ba06df2697a4a2c8749210",
+  "src/hongqiao/cinema/renderer.js": "adf3760885930a8a1f72c44f680c316a0e600dc71de3cdcd607c0e91cc2c2e03",
+  "src/hongqiao/cinema/bridge-reaction.js": "e00b0671ba09dacbcea8f7cf76722b6d1c50b7c66e954a2ca0e35d18b016a90f",
+  "src/hongqiao/cinema/bridge-reaction.test.js": "c1235ab5fb782e9a9f6ab9ab8b097b1d08d945495c8479757cafc26e4da6e256"
+}

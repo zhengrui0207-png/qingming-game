@@ -1,0 +1,18 @@
+{
+  "30s": {
+    "frames": 518,
+    "averageFps": 17.266666666666666,
+    "maxFrameSeconds": 0.5327999999970198
+  },
+  "poleLengthRange": [
+    5.362571960138124,
+    5.362571960138124
+  ],
+  "maxTowPalmErrorInFlashback": 7.352862921955907e-05,
+  "reactingResidents": 28,
+  "20s": {
+    "frames": 379,
+    "averageFps": 18.95,
+    "maxFrameSeconds": 0.0855
+  }
+}
