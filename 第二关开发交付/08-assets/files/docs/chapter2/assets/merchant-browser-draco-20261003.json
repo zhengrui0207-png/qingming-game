@@ -1,0 +1,131 @@
+{
+  "report": {
+    "assetId": "asset_c2_merchant",
+    "file": "/assets/chapter2/characters/asset_c2_merchant/v1/model.draco.glb",
+    "decoded": true,
+    "rawBounds": {
+      "min": [
+        -0.15136725659724162,
+        -1.8443447308280625e-7,
+        -0.35644548615328625
+      ],
+      "max": [
+        0.15134263698472716,
+        0.9980468767172646,
+        0.3564363582767532
+      ],
+      "size": [
+        0.30270989358196876,
+        0.9980470611517376,
+        0.7128818444300394
+      ]
+    },
+    "fitScale": 1.6231699516559213,
+    "fitUses": "whole height for audit characters; longest axis 1 for props; production must body-fit when tools extend above head",
+    "decodedTriangles": 18361,
+    "materials": [
+      "tripo_material_f53a882c-77d3-43ad-a9aa-dbee3687de01"
+    ],
+    "clips": [],
+    "formalChapter2Accepted": false,
+    "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+    "cameraFollow": {
+      "yaw": 0.22,
+      "pitch": 0.49,
+      "distance": 10
+    },
+    "view": "near",
+    "activeClip": "bind",
+    "cloneProof": {
+      "boneCount": 52,
+      "independentBoneObjects": true,
+      "independentSkeletonObjects": true,
+      "firstCloneVertexDisplacement": 0.02500000074505808,
+      "secondCloneVertexDisplacement": 0
+    },
+    "requiredAnimationsPresent": false,
+    "animationSamples": []
+  },
+  "wrappers": [
+    {
+      "min": [
+        -0.5785641944801042,
+        -2.220446049250313e-16,
+        -0.24567480166526504
+      ],
+      "max": [
+        0.5785641944797603,
+        1.6200000000000152,
+        0.24567480166526717
+      ],
+      "height": 1.6200000000000154,
+      "mesh": [
+        {
+          "name": "Armature",
+          "y": 0.4990234673023224,
+          "worldY": 0.8100001966647882
+        }
+      ]
+    },
+    {
+      "min": [
+        -0.24567480166526504,
+        -2.220446049250313e-16,
+        -0.5785641944797606
+      ],
+      "max": [
+        0.2456748016652671,
+        1.6200000000000152,
+        0.5785641944801044
+      ],
+      "height": 1.6200000000000154,
+      "mesh": [
+        {
+          "name": "Armature",
+          "y": 0.4990234673023224,
+          "worldY": 0.8100001966647882
+        }
+      ]
+    },
+    {
+      "min": [
+        -0.5785641944797606,
+        -2.220446049250313e-16,
+        -0.24567480166526712
+      ],
+      "max": [
+        0.5785641944801044,
+        1.6200000000000152,
+        0.24567480166526504
+      ],
+      "height": 1.6200000000000154,
+      "mesh": [
+        {
+          "name": "Armature",
+          "y": 0.4990234673023224,
+          "worldY": 0.8100001966647882
+        }
+      ]
+    },
+    {
+      "min": [
+        -0.2456748016652672,
+        -2.220446049250313e-16,
+        -0.5785641944801045
+      ],
+      "max": [
+        0.24567480166526504,
+        1.6200000000000152,
+        0.5785641944797603
+      ],
+      "height": 1.6200000000000154,
+      "mesh": [
+        {
+          "name": "Armature",
+          "y": 0.4990234673023224,
+          "worldY": 0.8100001966647882
+        }
+      ]
+    }
+  ]
+}

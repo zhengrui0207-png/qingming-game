@@ -1,0 +1,301 @@
+{
+  "errors": [],
+  "warnings": [],
+  "saveKey": "qingming:dev:chapter2:presentation09",
+  "savedSnapshot": {
+    "schemaVersion": 3,
+    "revision": 3,
+    "inventory": {},
+    "unlockedCodexIds": [],
+    "permissions": [],
+    "worldState": {
+      "collectedInstanceIds": [],
+      "shipState": "passed"
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "completed"
+      }
+    },
+    "unlockedStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {},
+    "introStatus": "unseen",
+    "introSeen": false,
+    "endingPending": false,
+    "endingSeen": true,
+    "travel": {
+      "initialized": true,
+      "regionId": "region_d",
+      "wallet": {
+        "coins": 8
+      },
+      "energy": {
+        "current": 80,
+        "max": 100,
+        "reserved": 0,
+        "passiveSeconds": 0.26670000000000443
+      },
+      "instances": {},
+      "collection": {},
+      "storyReadingProgress": {},
+      "readStoryIds": [],
+      "commerce": {
+        "receipts": [],
+        "buyback": [],
+        "shopStock": {
+          "offer_c2_cup": 1,
+          "offer_c2_bell_later": 1
+        },
+        "barterCounts": {}
+      },
+      "relief": {
+        "debt": 0,
+        "firstCastGuaranteed": false,
+        "recoveryEpoch": 0
+      },
+      "fishing": {
+        "sequence": 0,
+        "pendingCast": null,
+        "rareMisses": 0,
+        "tutorialCompleted": false,
+        "tokenObtained": false
+      },
+      "transactions": {
+        "saveEpoch": "bb1d7816d8f344afb2c7980a1b14697c",
+        "nextSequence": 902,
+        "committedThrough": 902,
+        "recent": [
+          {
+            "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:901",
+            "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+            "result": {
+              "ok": true,
+              "changed": true,
+              "saved": true,
+              "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:901",
+              "data": {}
+            }
+          },
+          {
+            "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:902",
+            "fingerprint": "{\"payload\":{\"sequenceId\":\"intro_c2\"},\"type\":\"c2/ackPresentation\"}",
+            "result": {
+              "ok": true,
+              "changed": true,
+              "saved": true,
+              "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:902",
+              "data": {}
+            }
+          }
+        ]
+      },
+      "regionPositions": {
+        "region_d": {
+          "x": -22.650661935866683,
+          "z": -20.180633934005332,
+          "height": 0.94,
+          "layer": "ground"
+        }
+      }
+    },
+    "chapter2": {
+      "contractVersion": "1.0.0",
+      "entryCount": 1,
+      "safeAnchorId": "anchor_c2_entry",
+      "mainStatus": "available",
+      "goalIds": [],
+      "quests": {
+        "quest_c2_main": {
+          "status": "available"
+        },
+        "quest_c2_fishing_intro": {
+          "status": "available"
+        },
+        "quest_c2_repair": {
+          "status": "available"
+        },
+        "quest_c2_token": {
+          "status": "available"
+        }
+      },
+      "repair": {
+        "status": "available",
+        "stepIds": [],
+        "reserved": 0,
+        "rewardChoice": null
+      },
+      "storyStages": {},
+      "presentations": {
+        "intro": "seen",
+        "ending": "unseen"
+      },
+      "timing": {
+        "firstOperativeAt": "2026-10-05T09:30:41.144Z",
+        "events": [],
+        "externalInterruptions": [],
+        "lastWallAt": "2026-10-05T09:31:26.297Z",
+        "operativeSeconds": 0.26670000000000443
+      }
+    },
+    "fixtureSource": "09 DEV completed-HQ fixture. Subsequent actions use real CORE_READY + measured anchor positions; NOT human play."
+  },
+  "backupSnapshot": {
+    "schemaVersion": 3,
+    "revision": 2,
+    "inventory": {},
+    "unlockedCodexIds": [],
+    "permissions": [],
+    "worldState": {
+      "collectedInstanceIds": [],
+      "shipState": "passed"
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "completed"
+      }
+    },
+    "unlockedStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {},
+    "introStatus": "unseen",
+    "introSeen": false,
+    "endingPending": false,
+    "endingSeen": true,
+    "travel": {
+      "initialized": true,
+      "regionId": "region_d",
+      "wallet": {
+        "coins": 8
+      },
+      "energy": {
+        "current": 80,
+        "max": 100,
+        "reserved": 0,
+        "passiveSeconds": 0
+      },
+      "instances": {},
+      "collection": {},
+      "storyReadingProgress": {},
+      "readStoryIds": [],
+      "commerce": {
+        "receipts": [],
+        "buyback": [],
+        "shopStock": {
+          "offer_c2_cup": 1,
+          "offer_c2_bell_later": 1
+        },
+        "barterCounts": {}
+      },
+      "relief": {
+        "debt": 0,
+        "firstCastGuaranteed": false,
+        "recoveryEpoch": 0
+      },
+      "fishing": {
+        "sequence": 0,
+        "pendingCast": null,
+        "rareMisses": 0,
+        "tutorialCompleted": false,
+        "tokenObtained": false
+      },
+      "transactions": {
+        "saveEpoch": "bb1d7816d8f344afb2c7980a1b14697c",
+        "nextSequence": 902,
+        "committedThrough": 902,
+        "recent": [
+          {
+            "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:901",
+            "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+            "result": {
+              "ok": true,
+              "changed": true,
+              "saved": true,
+              "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:901",
+              "data": {}
+            }
+          },
+          {
+            "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:902",
+            "fingerprint": "{\"payload\":{\"sequenceId\":\"intro_c2\"},\"type\":\"c2/ackPresentation\"}",
+            "result": {
+              "ok": true,
+              "changed": true,
+              "saved": true,
+              "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:902",
+              "data": {}
+            }
+          }
+        ]
+      },
+      "regionPositions": {
+        "region_d": {
+          "x": -22,
+          "z": -20,
+          "height": 0.94,
+          "layer": "ground"
+        }
+      }
+    },
+    "chapter2": {
+      "contractVersion": "1.0.0",
+      "entryCount": 1,
+      "safeAnchorId": "anchor_c2_entry",
+      "mainStatus": "available",
+      "goalIds": [],
+      "quests": {
+        "quest_c2_main": {
+          "status": "available"
+        },
+        "quest_c2_fishing_intro": {
+          "status": "available"
+        },
+        "quest_c2_repair": {
+          "status": "available"
+        },
+        "quest_c2_token": {
+          "status": "available"
+        }
+      },
+      "repair": {
+        "status": "available",
+        "stepIds": [],
+        "reserved": 0,
+        "rewardChoice": null
+      },
+      "storyStages": {},
+      "presentations": {
+        "intro": "seen",
+        "ending": "unseen"
+      },
+      "timing": {
+        "firstOperativeAt": null,
+        "events": [],
+        "externalInterruptions": [],
+        "lastWallAt": "2026-10-05T09:30:41.130Z"
+      }
+    },
+    "fixtureSource": "09 DEV completed-HQ fixture. Subsequent actions use real CORE_READY + measured anchor positions; NOT human play."
+  },
+  "formalKeys": {},
+  "locks": [],
+  "cameraLease": {
+    "owner": null,
+    "restores": 0
+  },
+  "filmPhase": "idle",
+  "realBrowserStorage": true,
+  "formalMainIntegration": false
+}

@@ -1,0 +1,1407 @@
+{
+  "entries": [
+    {
+      "file": "browser-01.log",
+      "checks": [
+        {
+          "name": "tutorial fish and collection saved",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_fish_a",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "one rod charged exactly4 while locked",
+          "pass": true,
+          "detail": {
+            "before": 76,
+            "after": 72
+          }
+        },
+        {
+          "name": "book replaces fishing lock",
+          "pass": true,
+          "detail": [
+            "preview:book"
+          ]
+        },
+        {
+          "name": "camera pose controls restored after catch",
+          "pass": true,
+          "detail": {
+            "before": {
+              "owner": null,
+              "yaw": 3.141592653589793,
+              "pitch": 0.49,
+              "distance": 10,
+              "position": [
+                -28.99999999999999,
+                6.996258881711578,
+                -28.623328586101206
+              ],
+              "focus": [
+                -29,
+                2.29,
+                -19.8
+              ]
+            },
+            "after": {
+              "owner": null,
+              "yaw": 3.141592653589793,
+              "pitch": 0.49,
+              "distance": 10,
+              "position": [
+                -28.999999999999996,
+                6.996258881711579,
+                -28.623328586101213
+              ],
+              "focus": [
+                -29,
+                2.29,
+                -19.8
+              ]
+            }
+          }
+        },
+        {
+          "name": "formal save untouched",
+          "pass": true,
+          "detail": true
+        }
+      ],
+      "samples": [
+        {
+          "kind": "自然种子教学杆",
+          "point": "point_c2_a",
+          "elapsedSeconds": 14.541399999999918,
+          "itemId": "item_c2_fish_a"
+        }
+      ]
+    },
+    {
+      "file": "browser-02.log",
+      "checks": [
+        {
+          "name": "real service junk sample and permanent record",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_junk_pottery",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "continue casts reuse camera and settle rare sample once",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_rare_copper_piece",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "rare resets pity",
+          "pass": true,
+          "detail": 0
+        },
+        {
+          "name": "after repeat casts camera restores exact control state and no lock remains",
+          "pass": true,
+          "detail": {
+            "owner": null,
+            "yaw": 3.141592653589793,
+            "pitch": 0.49,
+            "distance": 10,
+            "position": [
+              -28.947404260989156,
+              6.983570143566932,
+              -28.57141599575859
+            ],
+            "focus": [
+              -29,
+              2.29,
+              -19.8
+            ]
+          }
+        }
+      ],
+      "samples": [
+        {
+          "kind": "DEV强制服务种子：杂物",
+          "point": "point_c2_a",
+          "itemId": "item_c2_junk_pottery",
+          "elapsedSeconds": 14.399300000000014
+        },
+        {
+          "kind": "DEV强制服务种子：珍稀",
+          "point": "point_c2_a",
+          "itemId": "item_c2_rare_copper_piece",
+          "elapsedSeconds": 14.399400000000012
+        }
+      ]
+    },
+    {
+      "file": "browser-03.log",
+      "checks": [
+        {
+          "name": "real service junk sample and permanent record",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_junk_pottery",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "continue casts reuse camera and settle rare sample once",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_rare_copper_piece",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "rare resets pity",
+          "pass": true,
+          "detail": 0
+        },
+        {
+          "name": "after repeat casts camera restores exact control state and no lock remains",
+          "pass": true,
+          "detail": {
+            "owner": null,
+            "yaw": 3.141592653589793,
+            "pitch": 0.49,
+            "distance": 10,
+            "position": [
+              -28.947404260989156,
+              6.983570143566932,
+              -28.57141599575859
+            ],
+            "focus": [
+              -29,
+              2.29,
+              -19.8
+            ]
+          }
+        },
+        {
+          "name": "fixed quest mode at measured second shore",
+          "pass": true,
+          "detail": {
+            "id": "cast:17b29882b2fe40f3b1a5eeb6c8572fc7:4",
+            "pointId": "point_c2_b",
+            "mode": "token",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:31:49.286Z",
+            "seed": 3210679373,
+            "resultItemId": "treasure_c2_marked_token",
+            "rare": false
+          }
+        },
+        {
+          "name": "wooden token instance collection and story stage saved",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "treasure_c2_marked_token",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "token does not consume rare pity",
+          "pass": true,
+          "detail": {
+            "before": 0,
+            "after": 0
+          }
+        },
+        {
+          "name": "Esc after success does not duplicate token",
+          "pass": true,
+          "detail": []
+        }
+      ],
+      "samples": [
+        {
+          "kind": "DEV强制服务种子：杂物",
+          "point": "point_c2_a",
+          "itemId": "item_c2_junk_pottery",
+          "elapsedSeconds": 14.399300000000014
+        },
+        {
+          "kind": "DEV强制服务种子：珍稀",
+          "point": "point_c2_a",
+          "itemId": "item_c2_rare_copper_piece",
+          "elapsedSeconds": 14.399400000000012
+        },
+        {
+          "kind": "固定木牌支线（非随机）",
+          "point": "point_c2_b",
+          "itemId": "treasure_c2_marked_token",
+          "elapsedSeconds": 14.38229999999995
+        }
+      ]
+    },
+    {
+      "file": "browser-04.log",
+      "checks": [
+        {
+          "name": "cast commits once",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:1",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.280Z",
+            "seed": 3605826160,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false
+          }
+        },
+        {
+          "name": "actual Esc releases locks camera keeps fee",
+          "pass": true,
+          "detail": {
+            "phase": "idle",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 0,
+            "pointId": "point_c2_b",
+            "castId": null,
+            "simple": true,
+            "token": false,
+            "tension": 0.5,
+            "result": null,
+            "error": null,
+            "pendingSave": false,
+            "locked": false,
+            "disposed": false,
+            "availableEnergy": 76,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "cast commits once",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:2",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.347Z",
+            "seed": 1243918377,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false
+          }
+        },
+        {
+          "name": "measured range departure releases camera",
+          "pass": true,
+          "detail": {
+            "id": "player_scholar",
+            "x": -51,
+            "z": -19.8,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          }
+        },
+        {
+          "name": "cast commits once",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:3",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.462Z",
+            "seed": 3619128116,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false
+          }
+        },
+        {
+          "name": "presentation owns camera after preemption",
+          "pass": true,
+          "detail": {
+            "owner": "presentation:dev",
+            "yaw": 3.141592653589793,
+            "pitch": 0.49,
+            "distance": 10,
+            "position": [
+              -42,
+              22,
+              -6
+            ],
+            "focus": [
+              -48,
+              2.29,
+              -19.8
+            ]
+          }
+        },
+        {
+          "name": "presentation end restores follow camera",
+          "pass": true,
+          "detail": {
+            "owner": null,
+            "yaw": 3.141592653589793,
+            "pitch": 0.49,
+            "distance": 10,
+            "position": [
+              -36.28061409443126,
+              4.970031643737048,
+              -20.38305507243834
+            ],
+            "focus": [
+              -48,
+              2.29,
+              -19.8
+            ]
+          }
+        },
+        {
+          "name": "cast commits once",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:4",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.597Z",
+            "seed": 3264400166,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false
+          }
+        },
+        {
+          "name": "native tab visibility probe",
+          "pass": null,
+          "covered": false,
+          "detail": {
+            "hidden": false,
+            "focus": true
+          }
+        },
+        {
+          "name": "synthetic window blur cancels saved cast",
+          "pass": true,
+          "detail": {
+            "phase": "idle",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 0.0315,
+            "pointId": "point_c2_b",
+            "castId": null,
+            "simple": true,
+            "token": false,
+            "tension": 0.5,
+            "result": null,
+            "error": null,
+            "pendingSave": false,
+            "locked": false,
+            "disposed": false,
+            "availableEnergy": 64,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "failed start exposes no saved charge",
+          "pass": true,
+          "detail": {
+            "phase": "save-error",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 0,
+            "pointId": "point_c2_b",
+            "castId": null,
+            "simple": true,
+            "token": false,
+            "tension": 0.5,
+            "result": null,
+            "error": {
+              "code": "save-failed",
+              "message": "保存失败：本页保留未保存进度，请勿刷新；请重试保存或取消待提交事务。"
+            },
+            "pendingSave": true,
+            "locked": true,
+            "disposed": false,
+            "availableEnergy": 64,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "retry commits original cast and one fee",
+          "pass": true,
+          "detail": {
+            "phase": "casting",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 0,
+            "pointId": "point_c2_b",
+            "castId": "cast:562a8b2018994ad2858b12c6bc352f05:5",
+            "simple": true,
+            "token": false,
+            "tension": 0.5,
+            "result": null,
+            "error": null,
+            "pendingSave": false,
+            "locked": true,
+            "disposed": false,
+            "availableEnergy": 60,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "cast commits once",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:6",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.946Z",
+            "seed": 323042737,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false
+          }
+        },
+        {
+          "name": "native reload preserves cast identity result and fee with no award",
+          "pass": true,
+          "detail": {
+            "id": "cast:562a8b2018994ad2858b12c6bc352f05:6",
+            "pointId": "point_c2_b",
+            "mode": "tutorial",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-01T16:44:18.946Z",
+            "seed": 323042737,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false,
+            "outcome": "cancelled",
+            "settledAt": "2026-10-01T16:44:18.955Z"
+          }
+        },
+        {
+          "name": "native reload restores original scholar on safe second shore",
+          "pass": true,
+          "detail": {
+            "id": "player_scholar",
+            "x": -48,
+            "z": -19.8,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          }
+        },
+        {
+          "name": "formal save untouched after reload",
+          "pass": true,
+          "detail": true
+        }
+      ],
+      "samples": []
+    },
+    {
+      "file": "browser-05.log",
+      "checks": [
+        {
+          "name": "caught write failure does not expose inventory or collection",
+          "pass": true,
+          "detail": {
+            "phase": "save-error",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 13.20049999999999,
+            "pointId": "point_c2_b",
+            "castId": "cast:562a8b2018994ad2858b12c6bc352f05:7",
+            "simple": true,
+            "token": false,
+            "tension": 0.5,
+            "result": null,
+            "error": {
+              "code": "save-failed",
+              "message": "保存失败：本页保留未保存进度，请勿刷新；请重试保存或取消待提交事务。"
+            },
+            "pendingSave": true,
+            "locked": true,
+            "disposed": false,
+            "availableEnergy": 51,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "caught retry gives one fish and keeps one fee",
+          "pass": true,
+          "detail": {
+            "outcome": "caught",
+            "itemId": "item_c2_fish_a",
+            "quantity": 1
+          }
+        },
+        {
+          "name": "normal mode real held keyboard lands carp",
+          "pass": true,
+          "detail": {
+            "phase": "result",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 14.388899999999941,
+            "pointId": "point_c2_b",
+            "castId": "cast:562a8b2018994ad2858b12c6bc352f05:8",
+            "simple": false,
+            "token": false,
+            "tension": 0.8959979999999883,
+            "result": {
+              "outcome": "caught",
+              "itemId": "item_c2_fish_b",
+              "quantity": 1
+            },
+            "error": null,
+            "pendingSave": false,
+            "locked": true,
+            "disposed": false,
+            "availableEnergy": 47,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "normal missed bite consumes one fee with no award",
+          "pass": true,
+          "detail": {
+            "phase": "result",
+            "phaseSeconds": 0,
+            "elapsedSeconds": 16.63199999999995,
+            "pointId": "point_c2_b",
+            "castId": "cast:562a8b2018994ad2858b12c6bc352f05:9",
+            "simple": false,
+            "token": false,
+            "tension": 0.5,
+            "result": {
+              "outcome": "lost",
+              "itemId": null,
+              "quantity": 0
+            },
+            "error": null,
+            "pendingSave": false,
+            "locked": true,
+            "disposed": false,
+            "availableEnergy": 43,
+            "canCast": false,
+            "recoveryAnchorId": null,
+            "rig": {
+              "proceduralParts": true,
+              "linePoints": 33,
+              "ownedGeometries": 13,
+              "ownedMaterials": 8,
+              "disposed": false,
+              "replacementModels": 0
+            }
+          }
+        },
+        {
+          "name": "dispose removes registrations input listeners resources own lock lease",
+          "pass": true,
+          "detail": {
+            "module": {
+              "phase": "idle",
+              "phaseSeconds": 0,
+              "elapsedSeconds": 0.033,
+              "pointId": "point_c2_b",
+              "castId": null,
+              "simple": true,
+              "token": false,
+              "tension": 0.5,
+              "result": null,
+              "error": null,
+              "pendingSave": false,
+              "locked": false,
+              "disposed": true,
+              "availableEnergy": 39,
+              "canCast": false,
+              "recoveryAnchorId": null,
+              "rig": {
+                "proceduralParts": true,
+                "linePoints": 33,
+                "ownedGeometries": 13,
+                "ownedMaterials": 8,
+                "disposed": true,
+                "replacementModels": 0
+              }
+            },
+            "resourcesBefore": 117,
+            "resources": {
+              "geometries": 107,
+              "textures": 4
+            }
+          }
+        },
+        {
+          "name": "disposed fishing cannot reopen",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "name": "formal save remains unchanged",
+          "pass": true,
+          "detail": true
+        }
+      ],
+      "samples": [
+        {
+          "kind": "普通张力模式DEV鲤鱼样本",
+          "itemId": "item_c2_fish_b",
+          "elapsedSeconds": 14.388899999999941
+        }
+      ]
+    },
+    {
+      "file": "browser-06.log",
+      "checks": [
+        {
+          "name": "P0 final owner matches camera lock and input routing",
+          "pass": true
+        },
+        {
+          "name": "final owner release and formal save unchanged",
+          "pass": true
+        }
+      ],
+      "samples": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "tutorial fish and collection saved",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "item_c2_fish_a",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "one rod charged exactly4 while locked",
+      "pass": true,
+      "detail": {
+        "before": 76,
+        "after": 72
+      }
+    },
+    {
+      "name": "book replaces fishing lock",
+      "pass": true,
+      "detail": [
+        "preview:book"
+      ]
+    },
+    {
+      "name": "camera pose controls restored after catch",
+      "pass": true,
+      "detail": {
+        "before": {
+          "owner": null,
+          "yaw": 3.141592653589793,
+          "pitch": 0.49,
+          "distance": 10,
+          "position": [
+            -28.99999999999999,
+            6.996258881711578,
+            -28.623328586101206
+          ],
+          "focus": [
+            -29,
+            2.29,
+            -19.8
+          ]
+        },
+        "after": {
+          "owner": null,
+          "yaw": 3.141592653589793,
+          "pitch": 0.49,
+          "distance": 10,
+          "position": [
+            -28.999999999999996,
+            6.996258881711579,
+            -28.623328586101213
+          ],
+          "focus": [
+            -29,
+            2.29,
+            -19.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "formal save untouched",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "real service junk sample and permanent record",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "item_c2_junk_pottery",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "continue casts reuse camera and settle rare sample once",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "item_c2_rare_copper_piece",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "rare resets pity",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "after repeat casts camera restores exact control state and no lock remains",
+      "pass": true,
+      "detail": {
+        "owner": null,
+        "yaw": 3.141592653589793,
+        "pitch": 0.49,
+        "distance": 10,
+        "position": [
+          -28.947404260989156,
+          6.983570143566932,
+          -28.57141599575859
+        ],
+        "focus": [
+          -29,
+          2.29,
+          -19.8
+        ]
+      }
+    },
+    {
+      "name": "fixed quest mode at measured second shore",
+      "pass": true,
+      "detail": {
+        "id": "cast:17b29882b2fe40f3b1a5eeb6c8572fc7:4",
+        "pointId": "point_c2_b",
+        "mode": "token",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:31:49.286Z",
+        "seed": 3210679373,
+        "resultItemId": "treasure_c2_marked_token",
+        "rare": false
+      }
+    },
+    {
+      "name": "wooden token instance collection and story stage saved",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "treasure_c2_marked_token",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "token does not consume rare pity",
+      "pass": true,
+      "detail": {
+        "before": 0,
+        "after": 0
+      }
+    },
+    {
+      "name": "Esc after success does not duplicate token",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "cast commits once",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:1",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.280Z",
+        "seed": 3605826160,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false
+      }
+    },
+    {
+      "name": "actual Esc releases locks camera keeps fee",
+      "pass": true,
+      "detail": {
+        "phase": "idle",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 0,
+        "pointId": "point_c2_b",
+        "castId": null,
+        "simple": true,
+        "token": false,
+        "tension": 0.5,
+        "result": null,
+        "error": null,
+        "pendingSave": false,
+        "locked": false,
+        "disposed": false,
+        "availableEnergy": 76,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "cast commits once",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:2",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.347Z",
+        "seed": 1243918377,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false
+      }
+    },
+    {
+      "name": "measured range departure releases camera",
+      "pass": true,
+      "detail": {
+        "id": "player_scholar",
+        "x": -51,
+        "z": -19.8,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      }
+    },
+    {
+      "name": "cast commits once",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:3",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.462Z",
+        "seed": 3619128116,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false
+      }
+    },
+    {
+      "name": "presentation owns camera after preemption",
+      "pass": true,
+      "detail": {
+        "owner": "presentation:dev",
+        "yaw": 3.141592653589793,
+        "pitch": 0.49,
+        "distance": 10,
+        "position": [
+          -42,
+          22,
+          -6
+        ],
+        "focus": [
+          -48,
+          2.29,
+          -19.8
+        ]
+      }
+    },
+    {
+      "name": "presentation end restores follow camera",
+      "pass": true,
+      "detail": {
+        "owner": null,
+        "yaw": 3.141592653589793,
+        "pitch": 0.49,
+        "distance": 10,
+        "position": [
+          -36.28061409443126,
+          4.970031643737048,
+          -20.38305507243834
+        ],
+        "focus": [
+          -48,
+          2.29,
+          -19.8
+        ]
+      }
+    },
+    {
+      "name": "cast commits once",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:4",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.597Z",
+        "seed": 3264400166,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false
+      }
+    },
+    {
+      "name": "native tab visibility probe",
+      "pass": null,
+      "covered": false,
+      "detail": {
+        "hidden": false,
+        "focus": true
+      }
+    },
+    {
+      "name": "synthetic window blur cancels saved cast",
+      "pass": true,
+      "detail": {
+        "phase": "idle",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 0.0315,
+        "pointId": "point_c2_b",
+        "castId": null,
+        "simple": true,
+        "token": false,
+        "tension": 0.5,
+        "result": null,
+        "error": null,
+        "pendingSave": false,
+        "locked": false,
+        "disposed": false,
+        "availableEnergy": 64,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "failed start exposes no saved charge",
+      "pass": true,
+      "detail": {
+        "phase": "save-error",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 0,
+        "pointId": "point_c2_b",
+        "castId": null,
+        "simple": true,
+        "token": false,
+        "tension": 0.5,
+        "result": null,
+        "error": {
+          "code": "save-failed",
+          "message": "保存失败：本页保留未保存进度，请勿刷新；请重试保存或取消待提交事务。"
+        },
+        "pendingSave": true,
+        "locked": true,
+        "disposed": false,
+        "availableEnergy": 64,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "retry commits original cast and one fee",
+      "pass": true,
+      "detail": {
+        "phase": "casting",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 0,
+        "pointId": "point_c2_b",
+        "castId": "cast:562a8b2018994ad2858b12c6bc352f05:5",
+        "simple": true,
+        "token": false,
+        "tension": 0.5,
+        "result": null,
+        "error": null,
+        "pendingSave": false,
+        "locked": true,
+        "disposed": false,
+        "availableEnergy": 60,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "cast commits once",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:6",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.946Z",
+        "seed": 323042737,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false
+      }
+    },
+    {
+      "name": "native reload preserves cast identity result and fee with no award",
+      "pass": true,
+      "detail": {
+        "id": "cast:562a8b2018994ad2858b12c6bc352f05:6",
+        "pointId": "point_c2_b",
+        "mode": "tutorial",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T16:44:18.946Z",
+        "seed": 323042737,
+        "resultItemId": "item_c2_fish_a",
+        "rare": false,
+        "outcome": "cancelled",
+        "settledAt": "2026-10-01T16:44:18.955Z"
+      }
+    },
+    {
+      "name": "native reload restores original scholar on safe second shore",
+      "pass": true,
+      "detail": {
+        "id": "player_scholar",
+        "x": -48,
+        "z": -19.8,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      }
+    },
+    {
+      "name": "formal save untouched after reload",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "caught write failure does not expose inventory or collection",
+      "pass": true,
+      "detail": {
+        "phase": "save-error",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 13.20049999999999,
+        "pointId": "point_c2_b",
+        "castId": "cast:562a8b2018994ad2858b12c6bc352f05:7",
+        "simple": true,
+        "token": false,
+        "tension": 0.5,
+        "result": null,
+        "error": {
+          "code": "save-failed",
+          "message": "保存失败：本页保留未保存进度，请勿刷新；请重试保存或取消待提交事务。"
+        },
+        "pendingSave": true,
+        "locked": true,
+        "disposed": false,
+        "availableEnergy": 51,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "caught retry gives one fish and keeps one fee",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "item_c2_fish_a",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "normal mode real held keyboard lands carp",
+      "pass": true,
+      "detail": {
+        "phase": "result",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 14.388899999999941,
+        "pointId": "point_c2_b",
+        "castId": "cast:562a8b2018994ad2858b12c6bc352f05:8",
+        "simple": false,
+        "token": false,
+        "tension": 0.8959979999999883,
+        "result": {
+          "outcome": "caught",
+          "itemId": "item_c2_fish_b",
+          "quantity": 1
+        },
+        "error": null,
+        "pendingSave": false,
+        "locked": true,
+        "disposed": false,
+        "availableEnergy": 47,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "normal missed bite consumes one fee with no award",
+      "pass": true,
+      "detail": {
+        "phase": "result",
+        "phaseSeconds": 0,
+        "elapsedSeconds": 16.63199999999995,
+        "pointId": "point_c2_b",
+        "castId": "cast:562a8b2018994ad2858b12c6bc352f05:9",
+        "simple": false,
+        "token": false,
+        "tension": 0.5,
+        "result": {
+          "outcome": "lost",
+          "itemId": null,
+          "quantity": 0
+        },
+        "error": null,
+        "pendingSave": false,
+        "locked": true,
+        "disposed": false,
+        "availableEnergy": 43,
+        "canCast": false,
+        "recoveryAnchorId": null,
+        "rig": {
+          "proceduralParts": true,
+          "linePoints": 33,
+          "ownedGeometries": 13,
+          "ownedMaterials": 8,
+          "disposed": false,
+          "replacementModels": 0
+        }
+      }
+    },
+    {
+      "name": "dispose removes registrations input listeners resources own lock lease",
+      "pass": true,
+      "detail": {
+        "module": {
+          "phase": "idle",
+          "phaseSeconds": 0,
+          "elapsedSeconds": 0.033,
+          "pointId": "point_c2_b",
+          "castId": null,
+          "simple": true,
+          "token": false,
+          "tension": 0.5,
+          "result": null,
+          "error": null,
+          "pendingSave": false,
+          "locked": false,
+          "disposed": true,
+          "availableEnergy": 39,
+          "canCast": false,
+          "recoveryAnchorId": null,
+          "rig": {
+            "proceduralParts": true,
+            "linePoints": 33,
+            "ownedGeometries": 13,
+            "ownedMaterials": 8,
+            "disposed": true,
+            "replacementModels": 0
+          }
+        },
+        "resourcesBefore": 117,
+        "resources": {
+          "geometries": 107,
+          "textures": 4
+        }
+      }
+    },
+    {
+      "name": "disposed fishing cannot reopen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "formal save remains unchanged",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "P0 final owner matches camera lock and input routing",
+      "pass": true
+    },
+    {
+      "name": "final owner release and formal save unchanged",
+      "pass": true
+    }
+  ],
+  "passedAssertions": 37,
+  "failedAssertions": 0,
+  "uncovered": [
+    {
+      "name": "native tab visibility probe",
+      "pass": null,
+      "covered": false,
+      "detail": {
+        "hidden": false,
+        "focus": true
+      }
+    }
+  ],
+  "samples": [
+    {
+      "kind": "自然种子教学杆",
+      "point": "point_c2_a",
+      "elapsedSeconds": 14.541399999999918,
+      "itemId": "item_c2_fish_a"
+    },
+    {
+      "kind": "DEV强制服务种子：杂物",
+      "point": "point_c2_a",
+      "itemId": "item_c2_junk_pottery",
+      "elapsedSeconds": 14.399300000000014
+    },
+    {
+      "kind": "DEV强制服务种子：珍稀",
+      "point": "point_c2_a",
+      "itemId": "item_c2_rare_copper_piece",
+      "elapsedSeconds": 14.399400000000012
+    },
+    {
+      "kind": "固定木牌支线（非随机）",
+      "point": "point_c2_b",
+      "itemId": "treasure_c2_marked_token",
+      "elapsedSeconds": 14.38229999999995
+    },
+    {
+      "kind": "普通张力模式DEV鲤鱼样本",
+      "itemId": "item_c2_fish_b",
+      "elapsedSeconds": 14.388899999999941
+    }
+  ],
+  "screenshots": [
+    "01-casting.png",
+    "02-bite.png",
+    "03-fish-result.png",
+    "04-collection.png",
+    "05-junk.png",
+    "06-rare.png",
+    "07-token.png",
+    "08-reload-safe-shore.png",
+    "09-save-failed.png",
+    "10-normal-carp.png",
+    "11-final-ready.png"
+  ],
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "width": 1200,
+    "height": 792,
+    "devicePixelRatio": 2,
+    "rendererRatioCap": 1.5
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "source": "console.log"
+  },
+  "network": {
+    "source": "network-static.log",
+    "scope": "本地DEV资源请求；不含跨浏览器/线上服务测试"
+  },
+  "notHumanPlaytest": true,
+  "notFormalMainIntegration": true,
+  "notes": [
+    "browser-02与03日志含累计记录，此摘要已去重",
+    "早期证据owner为chapter2:fishing；最终统一P0 owner为c2/fishing并在browser-06验证",
+    "自动化失败尝试日志保留：旧定位器、标签切换未失焦及模拟focus恢复遗漏，均不伪装成游戏故障",
+    "约14.4秒是模块活动时间；不等于主线20分钟真人成绩"
+  ]
+}

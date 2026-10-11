@@ -1,0 +1,163 @@
+{
+  "frozenFiles": [
+    {
+      "path": "docs/chapter2/baseline-browser.json",
+      "expected": "a3f7037560a527b65b6dcdf21c87014e39f41851c9028cbfadc2a20de77f2c9b",
+      "actual": "a3f7037560a527b65b6dcdf21c87014e39f41851c9028cbfadc2a20de77f2c9b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/baseline.md",
+      "expected": "300b3fe6da9c5c3a749485a68651c98d443bbe7b269afeec5030cb40b8490f6f",
+      "actual": "300b3fe6da9c5c3a749485a68651c98d443bbe7b269afeec5030cb40b8490f6f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/contracts.md",
+      "expected": "369f8407cf8320c0a6464eea1f0b43a528da3d7dcf0f69af50843a00282eac1b",
+      "actual": "369f8407cf8320c0a6464eea1f0b43a528da3d7dcf0f69af50843a00282eac1b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/ownership.md",
+      "expected": "198a9c21a3de0d3a1d1b95b5cc7fa30059d14223d5f61e5992fcf557983e9a32",
+      "actual": "198a9c21a3de0d3a1d1b95b5cc7fa30059d14223d5f61e5992fcf557983e9a32",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/save-samples/README.md",
+      "expected": "b16c8c12dae896fc265d4ddcf964d469525d0f254c2d8e85eb371eaf82e52059",
+      "actual": "b16c8c12dae896fc265d4ddcf964d469525d0f254c2d8e85eb371eaf82e52059",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/save-samples/automation-fresh-origin.json",
+      "expected": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "actual": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step4-save-samples.json",
+      "expected": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "actual": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step5-save-samples.json",
+      "expected": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "actual": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/templates/action.example.json",
+      "expected": "bb71f14970f35fc3b04144527df4d8e3be09c54c51b496ed236989bd1f3b0899",
+      "actual": "bb71f14970f35fc3b04144527df4d8e3be09c54c51b496ed236989bd1f3b0899",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/templates/content.draft.json",
+      "expected": "1f0975d0ff87f189064727d3b09f3f3d1ae9f990d0fc7af0a9440462da4d0f9b",
+      "actual": "1f0975d0ff87f189064727d3b09f3f3d1ae9f990d0fc7af0a9440462da4d0f9b",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/templates/scene.draft.json",
+      "expected": "9d3f298e195808f806840a3174d8f339a1df38eb3a39f04a58a487c531c91256",
+      "actual": "9d3f298e195808f806840a3174d8f339a1df38eb3a39f04a58a487c531c91256",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chapter2/workspace-map.json",
+      "expected": "0bfffdf2dac3dc7bf9c3aaa3581ef49abc5bc21e8a3e65fb10fb6f944cd2c5ac",
+      "actual": "0bfffdf2dac3dc7bf9c3aaa3581ef49abc5bc21e8a3e65fb10fb6f944cd2c5ac",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/validate-chapter2-contract.mjs",
+      "expected": "fbaf72907b53184eea933438639fbb9ef2a4e16a4039e7e5416cdc8465aafb13",
+      "actual": "fbaf72907b53184eea933438639fbb9ef2a4e16a4039e7e5416cdc8465aafb13",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/verify-chapter2-p0.py",
+      "expected": "20ba797846f9d623f242b83efc3ce3df89fccc70fa04c62dc7fe4b1161117320",
+      "actual": "20ba797846f9d623f242b83efc3ce3df89fccc70fa04c62dc7fe4b1161117320",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/content.schema.json",
+      "expected": "886b84b34003ae190d5fcd55714d4fef2c8f44476904d26d8fc4b884155993ff",
+      "actual": "886b84b34003ae190d5fcd55714d4fef2c8f44476904d26d8fc4b884155993ff",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/contract.json",
+      "expected": "1ff80856cf1bcad2deb162534749881c49b283758b9557752a5547e92834134a",
+      "actual": "1ff80856cf1bcad2deb162534749881c49b283758b9557752a5547e92834134a",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/contract.test.js",
+      "expected": "d7d54857f8eef90ec4c393fffef645afcb174ab8d81530944d7ffcad81869c3d",
+      "actual": "d7d54857f8eef90ec4c393fffef645afcb174ab8d81530944d7ffcad81869c3d",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/index.js",
+      "expected": "a4b8aa5357e99b2e9a961cde97d8b587a54809ce7e6e65859a23330f680258f2",
+      "actual": "a4b8aa5357e99b2e9a961cde97d8b587a54809ce7e6e65859a23330f680258f2",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/scene.schema.json",
+      "expected": "4e197faf7095f9ce58f75e15b3ccaea619e033ad39b58ba9a6298b1c10a09415",
+      "actual": "4e197faf7095f9ce58f75e15b3ccaea619e033ad39b58ba9a6298b1c10a09415",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/types.d.ts",
+      "expected": "fe1f5d0477e830feb1d495d8e1aa65fea6556da95d0c26a4595564b53961ac9b",
+      "actual": "fe1f5d0477e830feb1d495d8e1aa65fea6556da95d0c26a4595564b53961ac9b",
+      "unchanged": true
+    },
+    {
+      "path": "src/chapter2/contracts/validate.js",
+      "expected": "4bf303f036649214438de490c551b0b2d1897ecf8b6003c48210e17409ae3796",
+      "actual": "4bf303f036649214438de490c551b0b2d1897ecf8b6003c48210e17409ae3796",
+      "unchanged": true
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "src/main.js",
+      "unchanged": true,
+      "baseSHA256": "625545b42885d37ade841b733f1cda436821bc6a5f9a01eb9c91cc6ffab86c5e"
+    },
+    {
+      "path": "src/world.js",
+      "unchanged": true,
+      "baseSHA256": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b"
+    },
+    {
+      "path": "src/hongqiao/state.js",
+      "unchanged": true,
+      "baseSHA256": "c0b8771c9c517516d128468e06cd59329bfe12718713ee640cf34a6fabb9d083"
+    },
+    {
+      "path": "src/hongqiao/persistence.js",
+      "unchanged": true,
+      "baseSHA256": "50ff197c7d62fae72243a23fa5752b84c3f1c154832f44dba9f005064ff7b1e9"
+    },
+    {
+      "path": "src/chapter2/scene/layout.json",
+      "unchanged": true,
+      "baseSHA256": "81f853cb6e2e24a269a60b3c80d17bb46e7e0882f8ff94a3047ab38b015904e3"
+    },
+    {
+      "path": "src/chapter2/scene/anchors.json",
+      "unchanged": true,
+      "baseSHA256": "2af73fc86680a99268912f17e7026ff5646ed4a1fbc82fc5fc652831d96cb107"
+    }
+  ],
+  "allUnchanged": true
+}

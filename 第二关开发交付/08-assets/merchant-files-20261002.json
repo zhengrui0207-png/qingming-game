@@ -1,0 +1,30 @@
+{
+  "scope": "merchant-generation-plan only; no generated GLB",
+  "paidRequestsSubmitted": 0,
+  "files": [
+    {
+      "path": "docs/chapter2/assets/merchant-content-input-20261002.json",
+      "baselineSHA256": null,
+      "sha256": "4e2fb282b48ae3ec0b13668dd8e7f813b20a7fa7bd049c20e27e63bb4f6d0c5d",
+      "bytes": 6016
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.json",
+      "baselineSHA256": null,
+      "sha256": "ef624edc7ec28cc7a4c563cd7344c37ee1a8b23e0d2c4729bbace5c55676db14",
+      "bytes": 4744
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.md",
+      "baselineSHA256": null,
+      "sha256": "dbf6e1b7047aa5edd2a8e249216207cf8d2081e2a2634e778aacc3792331d5e1",
+      "bytes": 3138
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-preflight-20261002.json",
+      "baselineSHA256": null,
+      "sha256": "d480ece81f942b6e064d5e0aac23b5bce651114ca100b1888604689923f06fc8",
+      "bytes": 252
+    }
+  ]
+}

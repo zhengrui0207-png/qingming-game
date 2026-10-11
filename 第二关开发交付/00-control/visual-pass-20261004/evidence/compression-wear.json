@@ -1,0 +1,27 @@
+{
+  "colorPrimitiveCount": 91,
+  "decodedColorPrimitiveCount": 91,
+  "uvPrimitiveCount": 107,
+  "decodedUVPrimitiveCount": 107,
+  "rawBytes": 32506580,
+  "runtimeBytes": 11432748,
+  "nodes": [
+    "D_surface_detail",
+    "s04_open_house",
+    "s05_house_a",
+    "s05_house_b",
+    "s05_sign",
+    "s06_low_house",
+    "s06_tree_0",
+    "s06_tree_1",
+    "s07_stall",
+    "s07_umbrella",
+    "s08_loads",
+    "s09_frame",
+    "s11_canopy"
+  ],
+  "positionQuantizationBits": 20,
+  "normalQuantizationBits": 16,
+  "uvQuantizationBits": 16,
+  "note": "Geometry compression reduces download size; FPS improvement is not inferred from file size."
+}

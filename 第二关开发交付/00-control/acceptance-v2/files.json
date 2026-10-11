@@ -1,0 +1,176 @@
+{
+  "task": "00-control-acceptance-v2",
+  "clientDate": "2026-10-02",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "files": [
+    {
+      "path": "docs/chapter2/contracts.md",
+      "baseSHA256": "336cc910d96769ed28a067a7959d1e888d116b056d99c48372c7bcf6c30e6871",
+      "newSHA256": "369f8407cf8320c0a6464eea1f0b43a528da3d7dcf0f69af50843a00282eac1b",
+      "bytes": 12954
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-browser.js",
+      "baseSHA256": null,
+      "newSHA256": "136d1b3b822d78722e7f8367d11d3ef2cad76f8b8177a745a2c9c7415bd22d99",
+      "bytes": 2998
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "34fa0ddeb25eaba2716699f1e80aed9f4e218f8bc1b9576ccff91d638b3a5db7",
+      "bytes": 1882
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-browser.log",
+      "baseSHA256": null,
+      "newSHA256": "0811e77c2f2769fa7bfaf33d1b445571d9406f0cdfe2f8a0f62996640c04020e",
+      "bytes": 4347
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-build.log",
+      "baseSHA256": null,
+      "newSHA256": "b5b0e3ca2d251a42ed9befcd50d43a852dc952326bdc0ed7ce053165c38d43b7",
+      "bytes": 735
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-check-0.log",
+      "baseSHA256": null,
+      "newSHA256": "8e9daefc0b412724666110e36f89d9ea4f48e7c34fce4ffc314f9af5a09b7a48",
+      "bytes": 74
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-check-1.log",
+      "baseSHA256": null,
+      "newSHA256": "08811c5cf6310cbddd039aa60e049d52fd6c5b3c25e4aa430a685c193801139d",
+      "bytes": 73
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-check-2.log",
+      "baseSHA256": null,
+      "newSHA256": "1735cbbfef185a1eb1ff7589a19d71c79e49735fea839166b9a5200a1fb8c996",
+      "bytes": 71
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-check-3.log",
+      "baseSHA256": null,
+      "newSHA256": "feec8eab26cd9a3ff6c474c69889fdd7d34674e7995486807a7861657a4ac4b1",
+      "bytes": 3102
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-commerce-service.js",
+      "baseSHA256": null,
+      "newSHA256": "bb477ee7020f843378ab17f5a45677b62d62611114527f7afa434362f86304c7",
+      "bytes": 1345
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-commerce-service.json",
+      "baseSHA256": null,
+      "newSHA256": "51590a69e7be72d1de9cf8ea4539f8748c2c6730bad8d770f94d30fc1ba19001",
+      "bytes": 500
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-commerce-service.log",
+      "baseSHA256": null,
+      "newSHA256": "73de2c8ba06ed59365de95ded1a34932d4cd12b232993a1f015e99001b59f2fa",
+      "bytes": 1804
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-console.log",
+      "baseSHA256": null,
+      "newSHA256": "65564d17443d03bde8478df656627ad518c1d05c495ac6d9e7365c88b14eb7c0",
+      "bytes": 93
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-module-build.json",
+      "baseSHA256": null,
+      "newSHA256": "e0444ce7574c84e93620aafa8a5ad3760245117aad46bab6b5b72c6d21e59731",
+      "bytes": 259
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-network.log",
+      "baseSHA256": null,
+      "newSHA256": "ed65e76799ff494eab64937be9b0393a903b1bd1c51a93f0bd5621f481de0b55",
+      "bytes": 6076
+    },
+    {
+      "path": "docs/chapter2/control/accepted-v2-tests.log",
+      "baseSHA256": null,
+      "newSHA256": "406d06d8a4dcc15d19ac605b339484fad87ca1a106ce378f1a1cfc0eb6d44323",
+      "bytes": 41399
+    },
+    {
+      "path": "docs/chapter2/control/allocate-05-06-v2.py",
+      "baseSHA256": null,
+      "newSHA256": "b78a3e080eee990b9ae35fb270d9b13dce1e47597a2d55df768e1e3242c39c06",
+      "bytes": 10124
+    },
+    {
+      "path": "docs/chapter2/control/allocations-05-06-v2.json",
+      "baseSHA256": null,
+      "newSHA256": "2c69b450962e132b170e2ecd17b22b73ed806d4d2ff966acb0c502ecf376fd07",
+      "bytes": 9163
+    },
+    {
+      "path": "docs/chapter2/control/core-fishing-received-v2.json",
+      "baseSHA256": null,
+      "newSHA256": "6207471dbb56cf3d98abb466b2ce899c657834ab5a4ec5c393d8842e9d2d6036",
+      "bytes": 21881
+    },
+    {
+      "path": "docs/chapter2/control/final-v2-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "b8bc0b97760183294ea135c0bf4b44369c558c36bdc3460712fae80181d561d6",
+      "bytes": 691
+    },
+    {
+      "path": "docs/chapter2/control/final-v2-tests.log",
+      "baseSHA256": null,
+      "newSHA256": "bd09259ee34c876ad80126fe98fb22380a1dd7354ca24ef897ea54e7d5c30356",
+      "bytes": 41406
+    },
+    {
+      "path": "docs/chapter2/control/output/playwright/accepted-v2-bite.png",
+      "baseSHA256": null,
+      "newSHA256": "d25332199a9bdbd0b105569fbb6b8b4410759fa6d944b612eca599cea0b170a0",
+      "bytes": 809064
+    },
+    {
+      "path": "docs/chapter2/control/output/playwright/accepted-v2-fish.png",
+      "baseSHA256": null,
+      "newSHA256": "344ec40a4dc83ed6d001e6c23f34d9da34b337baa41c06438e583a0a0e48e3d3",
+      "bytes": 829288
+    },
+    {
+      "path": "docs/chapter2/control/receive-core-fishing-v2.py",
+      "baseSHA256": null,
+      "newSHA256": "4943c5fc07d4e4ebcdf6d8088aff711e26675d2b3462bd7dcdf5fa1f7306b8a7",
+      "bytes": 2242
+    },
+    {
+      "path": "docs/chapter2/frozen-files.json",
+      "baseSHA256": "5fd12ab5324c2efc0f5f3cbedd4e318cf26c8464b01e3c1635be0d7ea87b2738",
+      "newSHA256": "53d3abb8a622d17ec484ceaf7bbe054ed572a4fc9876d463620aaff109f31d6d",
+      "bytes": 3797
+    },
+    {
+      "path": "docs/chapter2/ownership.md",
+      "baseSHA256": "0631b088a194ec3cfdb755f963a5f94d2db15bfbbe386a9515a157cd538f07fb",
+      "newSHA256": "198a9c21a3de0d3a1d1b95b5cc7fa30059d14223d5f61e5992fcf557983e9a32",
+      "bytes": 6837
+    },
+    {
+      "path": "docs/chapter2/status.json",
+      "baseSHA256": "75a7e31c96bed53afd95c724f0b9db55153982fff94fcd1950884228d747f23b",
+      "newSHA256": "b4e0506b4f5750c932941899005107d855fda70c502bcb7b64fb1e6dae9ed451",
+      "bytes": 4166
+    },
+    {
+      "path": "docs/chapter2/workspace-map.json",
+      "baseSHA256": "cec72aacee6b5da117a3b73e9c70cbf1fbf74a8c572d3fbef5a8ad15e21be3da",
+      "newSHA256": "0bfffdf2dac3dc7bf9c3aaa3581ef49abc5bc21e8a3e65fb10fb6f944cd2c5ac",
+      "bytes": 8137
+    }
+  ]
+}

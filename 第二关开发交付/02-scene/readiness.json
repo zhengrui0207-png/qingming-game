@@ -1,0 +1,19 @@
+{
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "SCENE_READY": true,
+  "scope": "D region walkable graybox only, control acceptance required",
+  "publicStatusWritten": false,
+  "sceneManifestReadyValidated": true,
+  "realBrowserWalkValidated": true,
+  "formalArtReady": false,
+  "formalIntegrationReady": false,
+  "humanPlaytestDone": false,
+  "missing": [
+    "E-owned S12 gate shared visual asset",
+    "four final NPC assets",
+    "dynamic traffic controller",
+    "runtime old-D shop/crowd filtering and formal input/camera assembly"
+  ],
+  "evidence": "verification.json"
+}

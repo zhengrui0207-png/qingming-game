@@ -1,0 +1,11 @@
+{
+  "baselineId": "2026-10-01-core-ready-v1",
+  "checkedBaselineFiles": 215,
+  "changedReadOnlyFiles": [],
+  "frozenFilesChecked": 21,
+  "changedFrozenFiles": [],
+  "newFilesOutsideAllowedSourcePaths": [],
+  "noGitInitialization": true,
+  "packageFilesUnchanged": true,
+  "pass": true
+}

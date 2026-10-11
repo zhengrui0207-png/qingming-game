@@ -1,0 +1,385 @@
+{
+  "checks": [
+    {
+      "name": "real Escape from focused Pause button routed once",
+      "passed": true,
+      "detail": {
+        "module": {
+          "phase": "idle",
+          "sequenceId": "intro_c2",
+          "time": 4.25,
+          "review": false,
+          "error": null,
+          "summary": "四人相识：鲁七卖鱼，石伯待修旧架，顾娘子来收架，王小满供饭茶。先问石伯差事。",
+          "serial": 5,
+          "paused": true,
+          "reason": "escape",
+          "locked": false,
+          "queued": null,
+          "pendingAck": false,
+          "disposed": false,
+          "frame": null,
+          "staging": {
+            "active": false,
+            "sequence": "intro_c2",
+            "shot": "shot_c2_intro_02",
+            "prototypeNPCs": [
+              "fisher",
+              "porter",
+              "merchant",
+              "food_vendor"
+            ],
+            "actualPlayerBones": 40,
+            "actualCartParts": [
+              "cart__wheel0",
+              "cart__wheel1"
+            ],
+            "ropeGripping": true,
+            "ropeHandDistance": 7.105427357601002e-15,
+            "rope": [
+              -62.775607241350414,
+              1.954912749878348,
+              -40.769999999999996
+            ],
+            "hand": [
+              -62.775607241350414,
+              1.954912749878348,
+              -40.76999999999999
+            ],
+            "silentBell": true
+          },
+          "audio": {
+            "loaded": 11,
+            "required": 11,
+            "errors": [],
+            "active": 0,
+            "enabled": true,
+            "running": false,
+            "paused": false,
+            "context": "running",
+            "events": [
+              {
+                "id": "cast",
+                "at": 0.021333333333333333,
+                "gain": 1
+              },
+              {
+                "id": "ambience",
+                "at": 0.032,
+                "gain": 0.08750000000000001
+              },
+              {
+                "id": "rope_test",
+                "at": 3.3866666666666667,
+                "gain": 0.22
+              },
+              {
+                "id": "tea_pour",
+                "at": 5.370666666666667,
+                "gain": 0.2
+              },
+              {
+                "id": "cup_set",
+                "at": 7.184,
+                "gain": 0.18
+              },
+              {
+                "id": "cast",
+                "at": 11.973333333333333,
+                "gain": 1
+              },
+              {
+                "id": "splash",
+                "at": 11.978666666666667,
+                "gain": 1
+              },
+              {
+                "id": "ambience",
+                "at": 11.978666666666667,
+                "gain": 0.08750000000000001
+              },
+              {
+                "id": "rope_test",
+                "at": 12.618666666666666,
+                "gain": 0.22
+              },
+              {
+                "id": "wheel",
+                "at": 15.685333333333332,
+                "gain": 1
+              },
+              {
+                "id": "tea_pour",
+                "at": 17.834666666666667,
+                "gain": 0.2
+              },
+              {
+                "id": "cup_set",
+                "at": 19.866666666666667,
+                "gain": 0.18
+              },
+              {
+                "id": "wheel",
+                "at": 24.784,
+                "gain": 1
+              },
+              {
+                "id": "ambience",
+                "at": 47.68,
+                "gain": 0.08750000000000001
+              },
+              {
+                "id": "ambience",
+                "at": 47.68,
+                "gain": 0.08750000000000001
+              },
+              {
+                "id": "rope_test",
+                "at": 47.68,
+                "gain": 0.22
+              }
+            ],
+            "hasHostAudio": true,
+            "ambienceReused": true
+          }
+        },
+        "frame": {
+          "actor": {
+            "x": -22,
+            "height": 0.94,
+            "z": -20,
+            "layer": "ground",
+            "mode": "walk"
+          },
+          "regionId": "region_d",
+          "visible": true,
+          "focused": true,
+          "operative": false,
+          "wallNow": 1791192641086
+        },
+        "locks": [],
+        "camera": {
+          "position": [
+            -66.49820951823666,
+            6.99625888171158,
+            -40.63976993864809
+          ],
+          "quaternion": [
+            -0.1930951603997849,
+            0.5871139207705653,
+            0.1467917903873393,
+            0.7723106067784354
+          ],
+          "fov": 48,
+          "aspect": 1.6,
+          "yaw": 1.3,
+          "pitch": 0.49,
+          "distance": 10,
+          "targetDistance": 10,
+          "overview": false,
+          "focus": [
+            -22,
+            2.29,
+            -20
+          ]
+        },
+        "cameraLease": {
+          "owner": null,
+          "restores": 5
+        },
+        "core": {
+          "schemaVersion": 3,
+          "revision": 2,
+          "inventory": {},
+          "unlockedCodexIds": [],
+          "permissions": [],
+          "worldState": {
+            "collectedInstanceIds": [],
+            "shipState": "passed"
+          },
+          "quests": {
+            "hongqiao_01": {
+              "status": "completed"
+            }
+          },
+          "unlockedStoryIds": [
+            "story_hq_zhou",
+            "story_hq_he",
+            "story_hq_cheng",
+            "story_hq_fang"
+          ],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {},
+          "introStatus": "unseen",
+          "introSeen": false,
+          "endingPending": false,
+          "endingSeen": true,
+          "travel": {
+            "initialized": true,
+            "regionId": "region_d",
+            "wallet": {
+              "coins": 8
+            },
+            "energy": {
+              "current": 80,
+              "max": 100,
+              "reserved": 0,
+              "passiveSeconds": 0
+            },
+            "instances": {},
+            "collection": {},
+            "storyReadingProgress": {},
+            "readStoryIds": [],
+            "commerce": {
+              "receipts": [],
+              "buyback": [],
+              "shopStock": {
+                "offer_c2_cup": 1,
+                "offer_c2_bell_later": 1
+              },
+              "barterCounts": {}
+            },
+            "relief": {
+              "debt": 0,
+              "firstCastGuaranteed": false,
+              "recoveryEpoch": 0
+            },
+            "fishing": {
+              "sequence": 0,
+              "pendingCast": null,
+              "rareMisses": 0,
+              "tutorialCompleted": false,
+              "tokenObtained": false
+            },
+            "transactions": {
+              "saveEpoch": "bb1d7816d8f344afb2c7980a1b14697c",
+              "nextSequence": 900,
+              "committedThrough": 900,
+              "recent": [
+                {
+                  "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:899",
+                  "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+                  "result": {
+                    "ok": true,
+                    "changed": true,
+                    "saved": true,
+                    "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:899",
+                    "data": {}
+                  }
+                },
+                {
+                  "id": "c2:bb1d7816d8f344afb2c7980a1b14697c:900",
+                  "fingerprint": "{\"payload\":{\"sequenceId\":\"intro_c2\"},\"type\":\"c2/ackPresentation\"}",
+                  "result": {
+                    "ok": true,
+                    "changed": true,
+                    "saved": true,
+                    "transactionId": "c2:bb1d7816d8f344afb2c7980a1b14697c:900",
+                    "data": {}
+                  }
+                }
+              ]
+            },
+            "regionPositions": {
+              "region_d": {
+                "x": -22,
+                "z": -20,
+                "height": 0.94,
+                "layer": "ground"
+              }
+            }
+          },
+          "chapter2": {
+            "contractVersion": "1.0.0",
+            "entryCount": 1,
+            "safeAnchorId": "anchor_c2_entry",
+            "mainStatus": "available",
+            "goalIds": [],
+            "quests": {
+              "quest_c2_main": {
+                "status": "available"
+              },
+              "quest_c2_fishing_intro": {
+                "status": "available"
+              },
+              "quest_c2_repair": {
+                "status": "available"
+              },
+              "quest_c2_token": {
+                "status": "available"
+              }
+            },
+            "repair": {
+              "status": "available",
+              "stepIds": [],
+              "reserved": 0,
+              "rewardChoice": null
+            },
+            "storyStages": {},
+            "presentations": {
+              "intro": "seen",
+              "ending": "unseen"
+            },
+            "timing": {
+              "firstOperativeAt": null,
+              "events": [],
+              "externalInterruptions": [],
+              "lastWallAt": "2026-10-05T09:30:41.085Z"
+            }
+          },
+          "fixtureSource": "09 DEV completed-HQ fixture. Subsequent actions use real CORE_READY + measured anchor positions; NOT human play."
+        },
+        "status": {
+          "saved": true,
+          "kind": "saved",
+          "message": "进度已保存",
+          "errorCode": null,
+          "pending": false
+        },
+        "key": "qingming:dev:chapter2:presentation09",
+        "cinemaActive": false,
+        "rms": 0.0004098803268982104,
+        "book": false,
+        "formalIntegration": false,
+        "humanPlaytest": false
+      }
+    },
+    {
+      "name": "real Escape restored full camera",
+      "passed": true
+    },
+    {
+      "name": "repeated Escape no second ack",
+      "passed": true
+    },
+    {
+      "name": "resize during film restores current aspect",
+      "passed": true
+    },
+    {
+      "name": "real Skip confirmed core seen",
+      "passed": true
+    },
+    {
+      "name": "WASD walks after restore on real D overlay",
+      "passed": true,
+      "detail": {
+        "x": -22.650661935866683,
+        "height": 0.94,
+        "z": -20.180633934005332,
+        "layer": "ground",
+        "mode": "walk"
+      }
+    },
+    {
+      "name": "no held Escape after release",
+      "passed": true
+    }
+  ],
+  "total": 7,
+  "passed": 7,
+  "realSemanticKeyboard": true,
+  "realOriginalMoveActor": true,
+  "formalMainIntegration": false
+}

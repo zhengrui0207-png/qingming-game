@@ -1,0 +1,10 @@
+async page => {
+ const errors=[],warnings=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());if(m.type()==='warning')warnings.push(m.text());});
+ const check=(v,m)=>{if(!v)throw Error(m);};
+ await page.goto('http://127.0.0.1:5286/chapter2-repair-preview.html?test&chapter2&session=repair06-final');await page.waitForFunction(()=>window.__repairPreview?.ready,{timeout:60000});await page.locator('#prepare').click();await page.locator('#repair').click();await page.locator('[data-action=start]').click();
+ await page.screenshot({path:'13-final-framing.png'});await page.locator('[data-inspect="1"]').click();await page.locator('[data-inspect="2"]').click();
+ await page.locator('[data-action=next]').focus();await page.keyboard.press('Enter');let s=await page.evaluate(()=>window.__repairPreview.inspect());check(s.module.board.selected===1,'native focused next button keyboard');await page.keyboard.press('Escape');s=await page.evaluate(()=>window.__repairPreview.inspect());check(s.snapshot.travel.energy.reserved===0&&s.locks.length===0&&s.camera.owner===null,'cancel restores');
+ await page.locator('#repair').click();await page.locator('[data-action=start]').focus();await page.keyboard.press('Enter');s=await page.evaluate(()=>window.__repairPreview.inspect());check(s.snapshot.travel.energy.reserved===18,'native focused start button keyboard');
+ const before=s.resources;await page.locator('#dispose').evaluate(el=>el.click());s=await page.evaluate(()=>window.__repairPreview.inspect());check(s.module.disposed&&s.snapshot.travel.energy.reserved===0&&s.inputListeners===0&&s.camera.owner===null&&s.locks.length===0,'dispose resources');check(s.resources.geometries<=before.geometries,'GPU geometry cleanup');
+ return {id:'final-revision-keyboard-native-buttons-and-dispose',errors,warnings,formalSaveUnchanged:s.formalSaveUnchanged,before,after:s.resources,locks:s.locks,actor:s.actor,module:s.module,notFormalIntegration:s.notFormalIntegration,humanPlaytest:s.humanPlaytest};
+}

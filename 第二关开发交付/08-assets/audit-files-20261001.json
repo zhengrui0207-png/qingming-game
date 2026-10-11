@@ -1,0 +1,229 @@
+{
+  "task": "08-assets",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game",
+  "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/08-assets",
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "files": [
+    {
+      "path": "docs/chapter2/assets/account-preflight.json",
+      "baseSHA256": null,
+      "newSHA256": "7d3eb0d7bfd426b032d89b570ceef4002a2e2d845517ffd79623f978a0d88f4d",
+      "bytes": 413,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/asset-plan.json",
+      "baseSHA256": null,
+      "newSHA256": "52b1cf41b534a6340dc56b405cdad0c5d043a95582af370e82554afd5bee5c4e",
+      "bytes": 59967,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/asset-plan.md",
+      "baseSHA256": null,
+      "newSHA256": "f0631e2f2ee6348809cf2eaba41185d933d63eca267f512e5f7bc27eb3138757",
+      "bytes": 30364,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/audit-report.md",
+      "baseSHA256": null,
+      "newSHA256": "1812d7a9ac0cb6296a837adaba3319e4392331a93acf19585e22431bac866199",
+      "bytes": 10947,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/audit.py",
+      "baseSHA256": null,
+      "newSHA256": "82b682ba3a8a485536d441ae17c186059c18d0f3562c7caedd9eb16820797e49",
+      "bytes": 6696,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/browser-review.json",
+      "baseSHA256": null,
+      "newSHA256": "38fc0bdf66c5c84bd68f2e5d4182e7957a3067d13cf90edfb79ede302db715ba",
+      "bytes": 18566,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/existing-glb-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "78692af7b68d99a67a24481f85da6fd16bcae24c2679dbcd8c37d6800be7eb09",
+      "bytes": 663624,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/main-baseline.json",
+      "baseSHA256": null,
+      "newSHA256": "082f7088b29f0bc0084e7a3241ed12d42219ae44c0e6a34229d61f07f76f6793",
+      "bytes": 50375,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/prepare-plan.py",
+      "baseSHA256": null,
+      "newSHA256": "3d69230e36458a672244392fe1211318fe25a8ecf371909c8038e6802ab4ee16",
+      "bytes": 16703,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/reference-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "9e9cdcaa635a9c523a8edbb9f76c4438bd0a07cc56af6764c8b7071719a92223",
+      "bytes": 1104,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/reuse-models.json",
+      "baseSHA256": null,
+      "newSHA256": "d03e8a7689e26b1396bc1c7f0374e3711feca84bf3aefb030b52caf03c1a4c1e",
+      "bytes": 4904,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/validation.json",
+      "baseSHA256": null,
+      "newSHA256": "bd5196f3dbbf05bd7205057ca142d7fe877a4f1a3185c7bbaa2df56a1af86723",
+      "bytes": 1031,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/validation.log",
+      "baseSHA256": null,
+      "newSHA256": "95c874fd84d3983aa6de26fad62bf6001c0b316049c78d24d5e42713608fbd8b",
+      "bytes": 851,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/verify-audit.py",
+      "baseSHA256": null,
+      "newSHA256": "3a21f78cb7fec29ed1023efce71ce369417fd6125543e2d689f3b40c46d3b113",
+      "bytes": 4294,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/version-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "0af8a8a6e2112b2ecf64135da7f3d7f02b180eeac0595e7570509bd4d4840205",
+      "bytes": 2625,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/workspace-baseline.json",
+      "baseSHA256": null,
+      "newSHA256": "ff61695c917dfe3422610511f1124d8f6b36515370963c3127629d8341b3f440",
+      "bytes": 50512,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/preview.html",
+      "baseSHA256": null,
+      "newSHA256": "0669135abf4ee6c9df023db2845e0564597974b5f4f388b4742f62cf7e42a473",
+      "bytes": 1586,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/preview.js",
+      "baseSHA256": null,
+      "newSHA256": "db56b0dd702f10f5ef8cd910945abbd1fa9eb3c97595985a0fc4e8b45f5573ee",
+      "bytes": 8773,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-abacus.png",
+      "baseSHA256": null,
+      "newSHA256": "3e4ef4995c62d3f1c287dacbbeb8bd44aabef89bb1011b301131f7a67a3ab828",
+      "bytes": 49369,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-follow-distance.png",
+      "baseSHA256": null,
+      "newSHA256": "b78482dca1c252a7eb9364ca9c110732e6a68b10ec33760b098c34356060c380",
+      "bytes": 39520,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "3472a7c2ebadce8e9d86282fbd5d1605f3a11b6de24270e3aee93051e6c87870",
+      "bytes": 48038,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-17-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "1e929d90bd8280d90209753179c1258cd4751bb14b78c83343c641598d66473b",
+      "bytes": 45660,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-21-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "b7aabcb1219be67a22bcfd6a50674b41bdc5ac30ad4bb1bd57a4b21a5a220d94",
+      "bytes": 48998,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-23-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "b95bcd2b1d4a1b5cdd0150a6f5a4c06466fdfd0aa86f2e8c37c3a0bb1d9fa993",
+      "bytes": 48654,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-28-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "1b137b601a76b5008e0bbf3913653c126e21a16173c7f572c30e5c4f9381b57d",
+      "bytes": 47013,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/cargo-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "fe17c6c9a7acb70d81395d2490f667d0fe072b6d8a3737f0ecf67ceddb69fd1f",
+      "bytes": 40203,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S03.png",
+      "baseSHA256": null,
+      "newSHA256": "d6de547a0a0b2ed028156f5778406fac6a5e58519fac3159acd5bbe969cd3ea5",
+      "bytes": 1695307,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S07.png",
+      "baseSHA256": null,
+      "newSHA256": "1c016decbbc9ced871ac6c472b43ec7c021716bbf127f91033ad081596b5b8a2",
+      "bytes": 1996897,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S08-S09.png",
+      "baseSHA256": null,
+      "newSHA256": "10148ebfebd42cc128d1107016a97672be788a21b4fd80c2220ca67cd8e02d0c",
+      "bytes": 9557353,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/rope-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "409b097c0683602bb6012e042428f7d1a13006e2345aa2722c709f7f43a0d35e",
+      "bytes": 41194,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/steamer-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "d9d71c62e01407c2995d721c87f3f5d22345a0a5a45a49c786dabed0f8a64fb3",
+      "bytes": 45522,
+      "operation": "add"
+    }
+  ],
+  "existingModelsReferencedOnly": "files/docs/chapter2/assets/reuse-models.json"
+}

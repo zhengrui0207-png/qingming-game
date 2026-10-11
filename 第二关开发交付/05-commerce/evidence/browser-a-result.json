@@ -1,0 +1,463 @@
+{
+  "assertions": [
+    "面对面鲁七收鱼菜单使用冻结ID",
+    "持有数量与报价来自真实三次钓获",
+    "非法0数量不进入成交确认",
+    "Esc取消未确认报价不卖鱼",
+    "真实DOM确认连续点击只出售一次",
+    "鱼回购恢复原凭证数量",
+    "卖空后按钮禁用",
+    "保存失败不乐观改行囊，显示保留进度提示",
+    "关闭后从HUD重试同一候选，成交一次且不重开菜单",
+    "刷新未确认菜单不成交、不重发初始钱",
+    "现金报酬样本由真实修缮事务取得",
+    "现金报酬后铜铃上架",
+    "购盏18文并默认收藏保护",
+    "受保护藏物先确认解除，不默认出售",
+    "解除后第二次确认才按7文售出",
+    "回购同一盏实例，历史仅一次取得且恢复保护",
+    "唯一物件不能再次新买",
+    "买不起铜铃按钮禁用",
+    "铜铃保护时不能换物",
+    "换物第二次尝试禁用",
+    "交付他人的铜铃不能回购",
+    "换物保留已知故事",
+    "补给显示上限后的真实恢复量",
+    "蒸饼4文只恢复5精力",
+    "满精力全部补给禁用、不白扣钱",
+    "0钱买不起但面对面菜单仍可开",
+    "0钱0精力已借竿时真实赊食可用",
+    "赊食真实+30/欠4/首杆保鱼",
+    "手机菜单无横向溢出",
+    "真实浏览器正式存档键未变化",
+    "浏览器无脚本错误"
+  ],
+  "screenshots": [
+    "01-fish-confirm.png",
+    "02-save-failure.png",
+    "03-barter-confirm.png",
+    "04-food-partial.png",
+    "05-relief.png",
+    "06-mobile-food.png"
+  ],
+  "errors": [],
+  "final": {
+    "snapshot": {
+      "schemaVersion": 3,
+      "revision": 3,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 30
+        },
+        "energy": {
+          "current": 95,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.2166999999999989
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 0,
+          "pendingCast": null,
+          "rareMisses": 0,
+          "tutorialCompleted": false,
+          "tokenObtained": false
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 197,
+          "committedThrough": 197,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:196",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:196",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:197",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:197",
+                "data": {}
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -44,
+            "z": -39.7,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "active"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:21:17.244Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:21:17.227Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [],
+          "lastWallAt": "2026-10-02T16:21:17.445Z",
+          "operativeSeconds": 0.2166999999999989
+        }
+      }
+    },
+    "module": {
+      "phase": "closed",
+      "shopId": "shop_c2_food",
+      "tab": "food",
+      "quote": null,
+      "result": null,
+      "error": null,
+      "reason": "user"
+    },
+    "actor": {
+      "id": "player_scholar",
+      "x": -44,
+      "z": -39.7,
+      "height": 0.94,
+      "mode": "walk",
+      "layer": "ground"
+    },
+    "locks": [],
+    "camera": {
+      "owner": null,
+      "yaw": 0,
+      "pitch": 0.5,
+      "distance": 9,
+      "position": [
+        -44,
+        6.604829847437827,
+        -31.80175694298665
+      ]
+    },
+    "registryEntries": [
+      "npc_c2_fisher",
+      "npc_c2_merchant",
+      "npc_c2_food_vendor",
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 2,
+    "walkEvidence": [],
+    "wares": {
+      "assets": [
+        "c2_food/existing-steamer",
+        "c2_food/existing-tea-pot",
+        "c2_food/existing-bowl-0",
+        "c2_food/existing-bowl-1",
+        "c2_food/existing-bowl-2",
+        "c2_general/existing-cup-appearance"
+      ],
+      "legacyShopMoved": false,
+      "dedicatedNPCModels": false
+    },
+    "formalSaveUnchanged": true,
+    "events": [],
+    "toasts": [
+      "DEV隔离样本：cash。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：bell。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：food。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：poor。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：food。通关前置与边界数值为明确测试起点；动作结算使用真实服务。"
+    ],
+    "notFormalIntegration": true,
+    "humanPlaytest": false
+  },
+  "storage": {
+    "key": "qingming:dev:chapter2:commerce-browser-v1",
+    "saved": {
+      "schemaVersion": 3,
+      "revision": 3,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 30
+        },
+        "energy": {
+          "current": 95,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.2166999999999989
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:21:17.227Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 0,
+          "pendingCast": null,
+          "rareMisses": 0,
+          "tutorialCompleted": false,
+          "tokenObtained": false
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 197,
+          "committedThrough": 197,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:196",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:196",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:197",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:197",
+                "data": {}
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -44,
+            "z": -39.7,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "active"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:21:17.244Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:21:17.227Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [],
+          "lastWallAt": "2026-10-02T16:21:17.445Z",
+          "operativeSeconds": 0.2166999999999989
+        }
+      }
+    },
+    "backup": true
+  }
+}

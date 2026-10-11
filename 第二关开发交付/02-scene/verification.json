@@ -1,0 +1,535 @@
+{
+  "source": "real GLB + local D overlay + original world.js moveActor in browser RAF",
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 1,
+  "actor": {
+    "x": -22.013680000000132,
+    "z": -20,
+    "height": 0.94,
+    "layer": "ground",
+    "mode": "walk"
+  },
+  "autoDone": true,
+  "error": null,
+  "visits": [
+    {
+      "id": "fishing_a",
+      "position": [
+        -29,
+        0.94,
+        -19.8
+      ],
+      "elapsed": 5.478604000000007
+    },
+    {
+      "id": "fishing_a/return",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "elapsed": 6.911004000000017
+    },
+    {
+      "id": "fisher",
+      "position": [
+        -29,
+        0.94,
+        -21
+      ],
+      "elapsed": 8.778704000000017
+    },
+    {
+      "id": "fisher/return",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "elapsed": 10.645404000000012
+    },
+    {
+      "id": "fishing_b",
+      "position": [
+        -48,
+        0.94,
+        -19.8
+      ],
+      "elapsed": 15.695403999999977
+    },
+    {
+      "id": "fishing_b/return",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "elapsed": 20.745403999999976
+    },
+    {
+      "id": "porter",
+      "position": [
+        -62,
+        0.94,
+        -38.99836000000003
+      ],
+      "elapsed": 30.794703999999896
+    },
+    {
+      "id": "porter/return",
+      "position": [
+        -22.013159999999964,
+        0.94,
+        -20
+      ],
+      "elapsed": 40.85110400000028
+    },
+    {
+      "id": "repair",
+      "position": [
+        -63,
+        0.94,
+        -40.8
+      ],
+      "elapsed": 51.318104000000886
+    },
+    {
+      "id": "repair/return",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "elapsed": 61.80110400000148
+    },
+    {
+      "id": "merchant",
+      "position": [
+        -54,
+        0.94,
+        -34
+      ],
+      "elapsed": 70.51770400000183
+    },
+    {
+      "id": "merchant/return",
+      "position": [
+        -22.013160000000024,
+        0.94,
+        -20
+      ],
+      "elapsed": 79.2353040000023
+    },
+    {
+      "id": "food_vendor",
+      "position": [
+        -44,
+        0.94,
+        -41
+      ],
+      "elapsed": 88.15200400000269
+    },
+    {
+      "id": "food_vendor/return",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "elapsed": 97.06880400000298
+    },
+    {
+      "id": "delivery",
+      "position": [
+        -75,
+        0.94,
+        -43
+      ],
+      "elapsed": 109.70120400000324
+    },
+    {
+      "id": "delivery/return",
+      "position": [
+        -22.007960000000033,
+        0.94,
+        -20
+      ],
+      "elapsed": 122.31880400000433
+    },
+    {
+      "id": "exit",
+      "position": [
+        -78,
+        0.94,
+        -43
+      ],
+      "elapsed": 135.51800400000593
+    },
+    {
+      "id": "exit/return",
+      "position": [
+        -22.013680000000132,
+        0.94,
+        -20
+      ],
+      "elapsed": 148.8479040000057
+    }
+  ],
+  "walkSamples": 8461,
+  "allWalk": true,
+  "anchorChecks": [
+    {
+      "id": "anchor_c2_entry",
+      "position": [
+        -22,
+        0.94,
+        -20
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 1"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_exit",
+      "position": [
+        -78,
+        0.94,
+        -43
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 7"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_fisher",
+      "position": [
+        -29,
+        0.94,
+        -21
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 2"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_porter",
+      "position": [
+        -62,
+        0.94,
+        -39
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 5"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_merchant",
+      "position": [
+        -54,
+        0.94,
+        -34
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9399999976158142,
+        "mesh": "QMV4_static_QM_ground"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_food_vendor",
+      "position": [
+        -44,
+        0.94,
+        -41
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9399999976158142,
+        "mesh": "QMV4_static_QM_ground"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_fishing_a",
+      "position": [
+        -29,
+        0.94,
+        -19.8
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9399999976158142,
+        "mesh": "QMV4_static_QM_ground"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_fishing_b",
+      "position": [
+        -48,
+        0.94,
+        -19.8
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9399999976158142,
+        "mesh": "QMV4_static_QM_ground"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_repair",
+      "position": [
+        -63,
+        0.94,
+        -40.8
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 6"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_delivery",
+      "position": [
+        -75,
+        0.94,
+        -43
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 7"
+      },
+      "blocked": false
+    },
+    {
+      "id": "anchor_c2_safe_return",
+      "position": [
+        -25,
+        0.94,
+        -22
+      ],
+      "support": {
+        "height": 0.94,
+        "mode": "walk",
+        "source": "bank",
+        "slope": 0,
+        "surfaceId": "surface_c2_bank"
+      },
+      "groundHit": {
+        "height": 0.9474999997764826,
+        "mesh": "D road 1"
+      },
+      "blocked": false
+    }
+  ],
+  "mask": {
+    "removedTriangles": 179870,
+    "meshes": 17
+  },
+  "performance": {
+    "samples": 10000,
+    "averageFrameMs": 34.65911,
+    "p95FrameMs": 17.699999999953434,
+    "drawCalls": 147,
+    "triangles": 1108998,
+    "diagnosticPollingAffected": true
+  },
+  "formalIntegration": false,
+  "humanPlaytest": false,
+  "keyboard": {
+    "method": "real keyboard W 650ms",
+    "before": {
+      "x": -22,
+      "z": -20,
+      "height": 0.94,
+      "layer": "ground",
+      "mode": "walk"
+    },
+    "after": {
+      "x": -23.73657273966813,
+      "z": -20.48209976388867,
+      "height": 0.94,
+      "layer": "ground",
+      "mode": "walk"
+    }
+  },
+  "notes": [
+    "最终全程8461个RAF行走样本；下拉取景截图使用显式定位，不冒充完整步行证据。",
+    "首次等待脚本每帧重复全世界射线诊断导致180秒超时；改为HUD状态每秒检查后成功。原walk样本仅用作路线验证；性能改用独立360帧低干扰动态采样。",
+    "0.9475路面视觉标高比0.94支持面高7.5毫米，避免z-fighting；11锚点贴地差均小于1厘米。",
+    "无正式第二关装配、无真人首玩；灰盒不等于正式美术。"
+  ],
+  "performanceBaseline": {
+    "method": "360 RAF frames during continuous real movement; no per-frame raycast diagnostic polling",
+    "samples": 360,
+    "averageFrameMs": 17.234166666799055,
+    "p95FrameMs": 17.600000000034925,
+    "viewport": [
+      1440,
+      900
+    ],
+    "dpr": 1,
+    "drawCalls": 140,
+    "triangles": 1107726,
+    "actor": {
+      "x": -24.538960000000262,
+      "z": -20,
+      "height": 0.94,
+      "layer": "ground",
+      "mode": "walk"
+    }
+  },
+  "screenshots": [
+    {
+      "id": "fishing_a",
+      "actor": {
+        "x": -29,
+        "height": 0.94,
+        "z": -19.8,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    },
+    {
+      "id": "fishing_b",
+      "actor": {
+        "x": -48,
+        "height": 0.94,
+        "z": -19.8,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    },
+    {
+      "id": "porter",
+      "actor": {
+        "x": -62,
+        "height": 0.94,
+        "z": -39,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    },
+    {
+      "id": "merchant",
+      "actor": {
+        "x": -54,
+        "height": 0.94,
+        "z": -34,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    },
+    {
+      "id": "food_vendor",
+      "actor": {
+        "x": -44,
+        "height": 0.94,
+        "z": -41,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    },
+    {
+      "id": "delivery",
+      "actor": {
+        "x": -75,
+        "height": 0.94,
+        "z": -43,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "kind": "diagnostic view positioning after complete continuous route; not walking proof"
+    }
+  ],
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "log": "docs/chapter2/scene/console.log"
+  }
+}

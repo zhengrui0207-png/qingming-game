@@ -1,0 +1,94 @@
+{
+  "assetId": "QMSH-09",
+  "name": "粮商",
+  "version": "idlewalk-v1",
+  "idleWalkStatus": "preview_verified",
+  "animations": [
+    {
+      "name": "Idle",
+      "duration": 4,
+      "tracks": 53
+    },
+    {
+      "name": "Walk",
+      "duration": 1.7999999523162842,
+      "tracks": 53
+    },
+    {
+      "name": "Occupation_Grain_Tally",
+      "duration": 4.800000190734863,
+      "tracks": 53
+    }
+  ],
+  "triangles": 18857,
+  "bones": 53,
+  "rigProvenance": "rig",
+  "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+  "fullFingerSkinning": true,
+  "historicalAssetStatus": "passed_after_local_repair",
+  "limits": [
+    "10 条双关节手指链已逐指细分为三关节，并重新分配实际蒙皮权重。",
+    "职业动作为扶袋姿态与低头查看竹筹的小幅演示。"
+  ],
+  "newTripoTasks": 0,
+  "newCredits": 0,
+  "files": [
+    {
+      "variant": "raw",
+      "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.raw.glb",
+      "sha256": "7e4c843056358fb6a375f2fa8b395665a1572cfc29d57189608154855b4b0898",
+      "bytes": 5170332,
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-09/model.raw.glb",
+      "sourceSHA256": "7e4c843056358fb6a375f2fa8b395665a1572cfc29d57189608154855b4b0898"
+    },
+    {
+      "variant": "draco",
+      "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.draco.glb",
+      "sha256": "114ce63945ba0bcfeb7167e40f11b08367021d4a1c322f20d90eb214e347643e",
+      "bytes": 3796916,
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-09/model.draco.glb",
+      "sourceSHA256": "114ce63945ba0bcfeb7167e40f11b08367021d4a1c322f20d90eb214e347643e"
+    }
+  ],
+  "inspection": {
+    "triangles": 18857,
+    "nodeReferencedTriangles": 18857,
+    "materials": 1,
+    "images": [
+      {
+        "name": "NormalGL_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      },
+      {
+        "name": "Color_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      },
+      {
+        "name": "ORM_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      }
+    ],
+    "jointCounts": [
+      53
+    ]
+  },
+  "IDLE_WALK_READY": true,
+  "formalChapter2Accepted": false,
+  "acceptedVersion": null,
+  "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+}

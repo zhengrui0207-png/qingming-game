@@ -1,0 +1,50 @@
+{
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "formalASSET_READYChanged": false,
+  "checks": {
+    "workspaceBaseline": {
+      "checkedFiles": 354,
+      "changed": []
+    },
+    "mainBaseline": {
+      "checkedFiles": 353,
+      "changed": []
+    },
+    "frozenFiles": {
+      "checkedFiles": 21,
+      "changed": []
+    },
+    "plan": {
+      "assets": 28,
+      "requiredContractAssets": 18,
+      "coverageComplete": true,
+      "paidCap": 0,
+      "modelsProduced": 0
+    },
+    "writeBoundary": {
+      "unexpectedNewFiles": []
+    },
+    "glb": {
+      "checkedFiles": 105,
+      "catalogHashMismatches": [],
+      "sourceUnchanged": true
+    },
+    "browser": {
+      "decodedObjects": 8,
+      "sampledClips": 15,
+      "realSkinChange": true,
+      "independentClones": true,
+      "DSceneAccepted": false
+    },
+    "reference": {
+      "crops": 3,
+      "originalUnchanged": true
+    },
+    "git": {
+      "workspaceHasGit": false,
+      "mainHasGit": false,
+      "gitCommandsExecuted": false
+    }
+  }
+}

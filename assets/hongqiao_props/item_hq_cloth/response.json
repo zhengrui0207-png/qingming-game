@@ -1,0 +1,28 @@
+{
+  "code": 0,
+  "status": "success",
+  "data": {
+    "type": "text_to_model",
+    "status": "success",
+    "progress": 100,
+    "input": {
+      "pbr": true,
+      "prompt": "One single folded cargo-cover cloth for a Northern Song era Chinese riverside game, made from an old coarse-woven wrapping cloth. A compact rectangular bundle with clearly layered soft folds and believable thin fabric thickness. Muted warm gray-brown cloth, three modest irregular sewn patches in slightly different earth tones, simple visible stitching, gently worn edges, still serviceable and carefully kept. Natural matte woven material, not leather. Clear game-ready silhouette, fine weave represented in texture rather than loose fibers. Isolated folded cloth only. No tied parcel, contents, plastic tarp, embroidery, printed pattern, symbols, text, people, table, platform, or scenery.",
+      "texture": true,
+      "export_uv": true,
+      "face_limit": 2000,
+      "model_version": "P1-20260311",
+      "texture_quality": "standard",
+      "texture_alignment": "geometry"
+    },
+    "output": {
+      "model_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/94d8d247-c117-431d-b18d-b38d062e3ff8/tripo_pbr_model_94d8d247-c117-431d-b18d-b38d062e3ff8.glb",
+      "rendered_image_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/94d8d247-c117-431d-b18d-b38d062e3ff8/legacy_mesh.webp",
+      "generated_image_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/94d8d247-c117-431d-b18d-b38d062e3ff8/text2image_94d8d247-c117-431d-b18d-b38d062e3ff8.jpeg"
+    },
+    "task_id": "94d8d247-c117-431d-b18d-b38d062e3ff8",
+    "created_at": "2026-09-14T11:45:42.077819Z",
+    "completed_at": "2026-09-14T11:46:33.512199Z",
+    "credits_consumed": 40.0
+  }
+}

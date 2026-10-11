@@ -1,0 +1,354 @@
+{
+  "checks": {
+    "energyOnce": true,
+    "ordinaryFish": true,
+    "collectionRegistered": true,
+    "pendingSettled": true,
+    "lockReleased": true,
+    "cameraRestored": true,
+    "cameraPositionRestored": true,
+    "formalSaveUnchanged": true,
+    "noExtraAwardOnExit": true
+  },
+  "before": {
+    "phase": "prepared",
+    "energy": 80,
+    "inventory": {
+      "item_c2_basic_rod": 1,
+      "item_c2_basic_bait": 1
+    },
+    "collection": {
+      "item_c2_basic_rod": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_basic_bait": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      }
+    },
+    "pendingCast": null,
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.49,
+      "distance": 10,
+      "position": [
+        -28.999999985883484,
+        6.996258878305966,
+        -28.623328572168052
+      ],
+      "focus": [
+        -29,
+        2.29,
+        -19.8
+      ]
+    },
+    "locks": [
+      "c2/fishing"
+    ],
+    "formalSaveUnchanged": true,
+    "registry": [
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 1,
+    "resources": {
+      "geometries": 189,
+      "textures": 57
+    },
+    "disposed": false,
+    "rig": {
+      "proceduralParts": true,
+      "linePoints": 33,
+      "ownedGeometries": 13,
+      "ownedMaterials": 8,
+      "disposed": false,
+      "replacementModels": 0
+    },
+    "key": "qingming:dev:chapter2:dream-visual-final-20261004-c48"
+  },
+  "caught": {
+    "phase": "result",
+    "energy": 76,
+    "inventory": {
+      "item_c2_basic_rod": 1,
+      "item_c2_basic_bait": 1,
+      "item_c2_fish_a": 1
+    },
+    "collection": {
+      "item_c2_basic_rod": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_basic_bait": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_fish_a": {
+        "firstObtainedAt": "2026-10-03T21:38:07.836Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "cast:18857e2304974328beb190de23e3444d:1"
+        ]
+      }
+    },
+    "pendingCast": null,
+    "camera": {
+      "owner": "c2/fishing",
+      "yaw": 3.141592653589793,
+      "pitch": 0.49,
+      "distance": 10,
+      "position": [
+        -24,
+        4.9399999999999995,
+        -23.2
+      ],
+      "focus": [
+        -29,
+        2.29,
+        -19.8
+      ]
+    },
+    "locks": [
+      "c2/fishing"
+    ],
+    "formalSaveUnchanged": true,
+    "registry": [
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 1,
+    "resources": {
+      "geometries": 192,
+      "textures": 57
+    },
+    "disposed": false,
+    "rig": {
+      "proceduralParts": true,
+      "linePoints": 33,
+      "ownedGeometries": 13,
+      "ownedMaterials": 8,
+      "disposed": false,
+      "replacementModels": 0
+    },
+    "key": "qingming:dev:chapter2:dream-visual-final-20261004-c48"
+  },
+  "after": {
+    "phase": "idle",
+    "energy": 76,
+    "inventory": {
+      "item_c2_basic_rod": 1,
+      "item_c2_basic_bait": 1,
+      "item_c2_fish_a": 1
+    },
+    "collection": {
+      "item_c2_basic_rod": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_basic_bait": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_fish_a": {
+        "firstObtainedAt": "2026-10-03T21:38:07.836Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "cast:18857e2304974328beb190de23e3444d:1"
+        ]
+      }
+    },
+    "pendingCast": null,
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.49,
+      "distance": 10,
+      "position": [
+        -28.999999999990617,
+        6.996258881709318,
+        -28.62332858609196
+      ],
+      "focus": [
+        -29,
+        2.29,
+        -19.8
+      ]
+    },
+    "locks": [],
+    "formalSaveUnchanged": true,
+    "registry": [
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 1,
+    "resources": {
+      "geometries": 192,
+      "textures": 57
+    },
+    "disposed": false,
+    "rig": {
+      "proceduralParts": true,
+      "linePoints": 33,
+      "ownedGeometries": 13,
+      "ownedMaterials": 8,
+      "disposed": false,
+      "replacementModels": 0
+    },
+    "key": "qingming:dev:chapter2:dream-visual-final-20261004-c48"
+  },
+  "moduleDisposed": {
+    "phase": "idle",
+    "energy": 76,
+    "inventory": {
+      "item_c2_basic_rod": 1,
+      "item_c2_basic_bait": 1,
+      "item_c2_fish_a": 1
+    },
+    "collection": {
+      "item_c2_basic_rod": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_basic_bait": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_fish_a": {
+        "firstObtainedAt": "2026-10-03T21:38:07.836Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "cast:18857e2304974328beb190de23e3444d:1"
+        ]
+      }
+    },
+    "pendingCast": null,
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.49,
+      "distance": 10,
+      "position": [
+        -28.99999999999364,
+        6.996258881710047,
+        -28.623328586094942
+      ],
+      "focus": [
+        -29,
+        2.29,
+        -19.8
+      ]
+    },
+    "locks": [],
+    "formalSaveUnchanged": true,
+    "registry": [],
+    "inputListeners": 0,
+    "resources": {
+      "geometries": 182,
+      "textures": 57
+    },
+    "disposed": true,
+    "rig": {
+      "proceduralParts": true,
+      "linePoints": 33,
+      "ownedGeometries": 13,
+      "ownedMaterials": 8,
+      "disposed": true,
+      "replacementModels": 0
+    },
+    "key": "qingming:dev:chapter2:dream-visual-final-20261004-c48"
+  },
+  "allDisposed": {
+    "phase": "idle",
+    "energy": 76,
+    "inventory": {
+      "item_c2_basic_rod": 1,
+      "item_c2_basic_bait": 1,
+      "item_c2_fish_a": 1
+    },
+    "collection": {
+      "item_c2_basic_rod": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_basic_bait": {
+        "firstObtainedAt": "2026-10-03T21:37:53.552Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "quest_c2_fishing_intro"
+        ]
+      },
+      "item_c2_fish_a": {
+        "firstObtainedAt": "2026-10-03T21:38:07.836Z",
+        "totalObtained": 1,
+        "sourceIds": [
+          "cast:18857e2304974328beb190de23e3444d:1"
+        ]
+      }
+    },
+    "pendingCast": null,
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.49,
+      "distance": 10,
+      "position": [
+        -28.99999999999364,
+        6.996258881710047,
+        -28.623328586094942
+      ],
+      "focus": [
+        -29,
+        2.29,
+        -19.8
+      ]
+    },
+    "locks": [],
+    "formalSaveUnchanged": true,
+    "registry": [],
+    "inputListeners": 0,
+    "resources": {
+      "geometries": 23,
+      "textures": 10
+    },
+    "disposed": true,
+    "rig": {
+      "proceduralParts": true,
+      "linePoints": 33,
+      "ownedGeometries": 13,
+      "ownedMaterials": 8,
+      "disposed": true,
+      "replacementModels": 0
+    },
+    "key": "qingming:dev:chapter2:dream-visual-final-20261004-c48"
+  },
+  "scope": "actual DEV UI with real core and chapter2 anchors, fresh isolated key; ordinary tutorial catch, not formal main, not human playtest"
+}

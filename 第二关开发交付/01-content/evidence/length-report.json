@@ -1,0 +1,34 @@
+{
+  "countingRule": "按Unicode字符，含标点；另列汉字数。标题与段落ID不计正文。",
+  "stories": [
+    {
+      "id": "story_c2_marked_token",
+      "title": "木牌背面",
+      "tipChars": 22,
+      "cardChars": 119,
+      "bodyChars": 909,
+      "bodyHanChars": 800,
+      "paragraphCount": 8
+    },
+    {
+      "id": "story_c2_silent_bell",
+      "title": "他亲手取下的铃舌",
+      "tipChars": 22,
+      "cardChars": 124,
+      "bodyChars": 868,
+      "bodyHanChars": 762,
+      "paragraphCount": 8
+    },
+    {
+      "id": "story_c2_celadon_cup",
+      "title": "缺口朝哪边",
+      "tipChars": 23,
+      "cardChars": 121,
+      "bodyChars": 894,
+      "bodyHanChars": 790,
+      "paragraphCount": 8
+    }
+  ],
+  "mandatoryNodeTextAndNotesChars": 694,
+  "mandatoryCountCaveat": "含互斥分支/恢复节点，不是一趟实读总字数。选项/局部活动提示/镜头字幕另计；预算不能代替实测。"
+}

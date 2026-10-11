@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0-audit",
+  "copiesMade": false,
+  "sourceFilesUnmodified": true,
+  "resources": [
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/characters/QMSH-08.glb",
+      "relativePath": "public/assets/characters/QMSH-08.glb",
+      "sha256": "0e246b554d8f680c1c71c196b0a4f1c5e9c7fc541e6b220561cd5d99a70f57a2",
+      "bytes": 1132236,
+      "nodeReferencedTriangles": 19886,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_Abacus_Count"
+      ],
+      "acceptedForChapter2": false,
+      "status": "candidate"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/characters/QMSH-17.glb",
+      "relativePath": "public/assets/characters/QMSH-17.glb",
+      "sha256": "9049105744ded1fc64f3e4087d79ef0631c00b11cf3c2e66716908fd7cf86f2d",
+      "bytes": 985980,
+      "nodeReferencedTriangles": 17975,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_Tea_Pour"
+      ],
+      "acceptedForChapter2": false,
+      "status": "candidate"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/characters/QMSH-21.glb",
+      "relativePath": "public/assets/characters/QMSH-21.glb",
+      "sha256": "9da4f377718c8bf0e2a004a419bb6587de27c595b86ec150795e89099f03f760",
+      "bytes": 1025716,
+      "nodeReferencedTriangles": 19128,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_Farmer_Survey"
+      ],
+      "acceptedForChapter2": false,
+      "status": "candidate"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/characters/QMSH-23.glb",
+      "relativePath": "public/assets/characters/QMSH-23.glb",
+      "sha256": "46388bb37bdd695115034616d9fed8d11b7cd312c378267e0bc32abe88932172",
+      "bytes": 1084124,
+      "nodeReferencedTriangles": 18511,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_Tracker_Pull_Rope"
+      ],
+      "acceptedForChapter2": false,
+      "status": "candidate"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/characters/QMSH-28.glb",
+      "relativePath": "public/assets/characters/QMSH-28.glb",
+      "sha256": "728758c37cd8f31463ecbfba5239a3c3caefc2866279358f02c3089f53a20bf8",
+      "bytes": 980036,
+      "nodeReferencedTriangles": 19004,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_Carrier_Wipe_Sweat"
+      ],
+      "acceptedForChapter2": false,
+      "status": "candidate"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/hongqiao/item_hq_rope.glb",
+      "relativePath": "public/assets/hongqiao/item_hq_rope.glb",
+      "sha256": "cf1a09a71d6337c112c73e4d2cc481150c22caf76a62831397b9ea5c40197ea7",
+      "bytes": 1133532,
+      "nodeReferencedTriangles": 1916,
+      "skins": 0,
+      "animations": [],
+      "acceptedForChapter2": false,
+      "status": "existing-reference"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/scenery/cargo.glb",
+      "relativePath": "public/assets/scenery/cargo.glb",
+      "sha256": "e7e6052e5652a454851db72077a8ca6e235a3192615f333ef56e61cc9ead3dc1",
+      "bytes": 327520,
+      "nodeReferencedTriangles": 4948,
+      "skins": 0,
+      "animations": [],
+      "acceptedForChapter2": false,
+      "status": "existing-reference"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/scenery/steamer.glb",
+      "relativePath": "public/assets/scenery/steamer.glb",
+      "sha256": "be6e6376bd503d016c06a90b7d4ddfe89d04b54d7a76d2d7a6423b10f9434344",
+      "bytes": 287964,
+      "nodeReferencedTriangles": 3484,
+      "skins": 0,
+      "animations": [],
+      "acceptedForChapter2": false,
+      "status": "existing-reference"
+    },
+    {
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/song-scholar-v2-animated.glb",
+      "relativePath": "public/assets/song-scholar-v2-animated.glb",
+      "sha256": "63383074fa90932f6527493657759d6602c5475193e74936e02e84f23772d3f0",
+      "bytes": 5176236,
+      "nodeReferencedTriangles": 59582,
+      "skins": 1,
+      "animations": [],
+      "acceptedForChapter2": false,
+      "status": "existing-reference"
+    }
+  ]
+}

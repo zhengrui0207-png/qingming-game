@@ -1,0 +1,19 @@
+{
+  "task": "03-core",
+  "clientDate": "2026-10-01",
+  "contractVersion": "1.0.0",
+  "schemaVersion": 3,
+  "CORE_READY": true,
+  "scope": "03真实核心服务交付，不代表主工程整合已通过",
+  "fullTests": {"passed":153,"failed":0,"legacy":98,"contract":15,"core":40},
+  "browserStorageChecks": {"passed":11,"failed":0,"realLocalStorage":true,"isolatedDevKeyOnly":true,"measuredScene":false},
+  "retainedMigrationSamples":12,
+  "mainBuildPassed":true,
+  "corePreviewBuildPassed":true,
+  "frozenFilesUnchanged":21,
+  "mainBaselineUnchanged":341,
+  "controllerRetestRequired":true,
+  "officialStatusUpdated":false,
+  "INTEGRATION_READY":false,
+  "HUMAN_PLAYTEST_DONE":false
+}

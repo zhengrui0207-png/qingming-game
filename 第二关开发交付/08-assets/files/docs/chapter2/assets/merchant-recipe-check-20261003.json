@@ -1,0 +1,18 @@
+{
+  "file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game/public/assets/chapter2/characters/asset_c2_merchant/v1/model.draco.glb",
+  "bytes": 8419572,
+  "sha256": "7235a68a9e2a585b03d4f6b7e48f89ba14be873aa2dbf5539d281e7393025883",
+  "triangles": 18361,
+  "draco_all_primitives": true,
+  "textured_pbr": true,
+  "skins": 1,
+  "bones": 52,
+  "animations": [],
+  "structural_ok": false,
+  "errors": [
+    "Missing nonempty embedded animation: idle",
+    "Missing nonempty embedded animation: walk"
+  ],
+  "visual_and_animation_quality": "not_checked",
+  "draco_decoding": "not_checked"
+}

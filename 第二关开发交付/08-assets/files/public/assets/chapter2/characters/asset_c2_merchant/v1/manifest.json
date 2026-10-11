@@ -1,0 +1,105 @@
+{
+  "assetId": "asset_c2_merchant",
+  "npcId": "npc_c2_merchant",
+  "name": "顾娘子",
+  "ageDesign": 42,
+  "candidateVersion": "v1",
+  "acceptedVersion": null,
+  "bodyGeneration": "Tripo direct V3 API, P1-20260311",
+  "generatedBodyCount": 1,
+  "requestedRigModel": "v2.5-20260210",
+  "rigModelVersionConfirmedByAPI": false,
+  "rigSpec": "tripo",
+  "triangles": 18361,
+  "materials": 1,
+  "skins": 1,
+  "skinJoints": 52,
+  "textures": [
+    {
+      "semantic": "baseColor",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "path": "textures/base-color.jpg"
+    },
+    {
+      "semantic": "ORM",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "path": "textures/orm.jpg"
+    },
+    {
+      "semantic": "normal",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "path": "textures/normal.png"
+    }
+  ],
+  "animations": [],
+  "budget": {
+    "approvedCap": 120,
+    "netAccountCost": 100,
+    "unusedCap": 20,
+    "balanceBefore": 3880,
+    "balanceAfter": 3780,
+    "frozenAfter": 0
+  },
+  "taskLedger": "docs/chapter2/assets/merchant-execution-20261002.json",
+  "files": [
+    {
+      "path": "model.raw.glb",
+      "sha256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448
+    },
+    {
+      "path": "model.draco.glb",
+      "sha256": "7235a68a9e2a585b03d4f6b7e48f89ba14be873aa2dbf5539d281e7393025883",
+      "bytes": 8419572
+    }
+  ],
+  "wrapper": {
+    "heightMeters": 1.62,
+    "feetY": 0,
+    "forward": "+Z",
+    "rawForward": "+X",
+    "rotationYRadians": -1.5707963267948966,
+    "anchorsNotBaked": true,
+    "source": "src/chapter2/assets/merchant.js",
+    "footCorrection": "updateMatrixWorld(true), measure after wrapping, adjust fit Y; raw bone/bind matrices unchanged"
+  },
+  "validation": {
+    "GLTFFormatErrors": 0,
+    "GLTFWarnings": [
+      "runtime-generated tangent space",
+      "skinned mesh non-root"
+    ],
+    "dracoDecodedInThree": true,
+    "rawDracoTriangleSkinMaterialMatch": true,
+    "independentSkeletonClone": true,
+    "bodyVisualReview": "candidate acceptable for review; close face shading mild unevenness",
+    "animationValidation": false,
+    "realDSceneIntegration": false,
+    "referenceDevicePerformance": false,
+    "ASSETS_READY": false,
+    "wrappedFootHeightMeters": 0,
+    "wrappedBodyHeightMeters": 1.62,
+    "wrapperRawAndDracoFootPlacement": "PASS all four instances"
+  },
+  "repairPlan": [
+    "Use Blender on rig-tripo.glb to author and export real Idle and Walk clips; identify native Tripo bones by hierarchy and anatomical positions, not another character mapping. Check long skirt weights with planted-foot IK before accepting walk.",
+    "Author dedicated pick-up / rotate-cup motion and keep cup as separate hand attachment; do not label idle as inspect-cup.",
+    "Inspect native4K memory cost on reference device: three RGBA4K textures with full mipmaps about256MiB; preserve4K source and evaluate a separate lower-resolution runtime variant if necessary.",
+    "Master places wrapper at measured merchant ground and verifies dialogue/follow camera, occlusion and skin under actual scene."
+  ],
+  "paidExecutionClosed": true,
+  "writtenAt": "2026-10-02T16:26:58.307643+00:00",
+  "previews": [
+    "final-four-views.png",
+    "final-portrait.png"
+  ]
+}

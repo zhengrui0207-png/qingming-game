@@ -1,0 +1,198 @@
+{
+  "generator": "Tripo direct V3 API",
+  "model": "P1-20260311",
+  "texture_quality": "standard",
+  "pbr": true,
+  "total_credits": 120.0,
+  "assets": [
+    {
+      "asset_id": "item_hq_rope",
+      "name": "备用缆绳",
+      "file": "item_hq_rope/item_hq_rope.glb",
+      "task_id": "a56271ee-3c95-4b19-b9da-dc6e0eeaee8c",
+      "credits_consumed": 40.0,
+      "bytes": 1133532,
+      "sha256": "cf1a09a71d6337c112c73e4d2cc481150c22caf76a62831397b9ea5c40197ea7",
+      "triangles": 1916,
+      "meshes": 1,
+      "materials": 1,
+      "images": 3,
+      "external_uris": [],
+      "extensions": [],
+      "position_bounds": [
+        {
+          "min": [
+            -0.4755859375,
+            -0.0732421875,
+            -0.4990234375
+          ],
+          "max": [
+            0.4755859375,
+            0.0732421875,
+            0.4990234375
+          ]
+        }
+      ],
+      "embedded_image_validation": [
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        }
+      ],
+      "material_features": [
+        {
+          "pbr": true,
+          "base_color_texture": true,
+          "metallic_roughness_texture": true,
+          "normal_texture": true
+        }
+      ]
+    },
+    {
+      "asset_id": "item_hq_pole",
+      "name": "长竹篙",
+      "file": "item_hq_pole/item_hq_pole.glb",
+      "task_id": "def71f2c-7b1c-4f3d-9d48-aac969f1635d",
+      "credits_consumed": 40.0,
+      "bytes": 713468,
+      "sha256": "fc35e62d390058ca31dae0b2bdc957472512bf18e9b9889e823479d2d09f8b9b",
+      "triangles": 1916,
+      "meshes": 1,
+      "materials": 1,
+      "images": 3,
+      "external_uris": [],
+      "extensions": [],
+      "position_bounds": [
+        {
+          "min": [
+            -0.0302734375,
+            -0.0166015625,
+            -0.4990234375
+          ],
+          "max": [
+            0.0302734375,
+            0.0166015625,
+            0.4990234375
+          ]
+        }
+      ],
+      "embedded_image_validation": [
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        }
+      ],
+      "material_features": [
+        {
+          "pbr": true,
+          "base_color_texture": true,
+          "metallic_roughness_texture": true,
+          "normal_texture": true
+        }
+      ]
+    },
+    {
+      "asset_id": "item_hq_cloth",
+      "name": "折叠护货布",
+      "file": "item_hq_cloth/item_hq_cloth.glb",
+      "task_id": "94d8d247-c117-431d-b18d-b38d062e3ff8",
+      "credits_consumed": 40.0,
+      "bytes": 727628,
+      "sha256": "c70a6271088c69aa71fb7e7a0c9bf52dc05f17427182903759bf8f911b6d740c",
+      "triangles": 1892,
+      "meshes": 1,
+      "materials": 1,
+      "images": 3,
+      "external_uris": [],
+      "extensions": [],
+      "position_bounds": [
+        {
+          "min": [
+            -0.4990234375,
+            -0.2412109524011612,
+            -0.4931640625
+          ],
+          "max": [
+            0.4990234375,
+            0.2412109524011612,
+            0.4931640625
+          ]
+        }
+      ],
+      "embedded_image_validation": [
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        },
+        {
+          "size": [
+            2048,
+            2048
+          ],
+          "format": "JPEG"
+        }
+      ],
+      "material_features": [
+        {
+          "pbr": true,
+          "base_color_texture": true,
+          "metallic_roughness_texture": true,
+          "normal_texture": true
+        }
+      ]
+    }
+  ],
+  "scope": "Three static quest props; cloth is folded variant only. No game integration or animated ropes.",
+  "failed_attempt": {
+    "asset_id": "item_hq_pole",
+    "task_id": "2c34ec83-2fd5-4225-8344-f43e81090d81",
+    "status": "failed",
+    "error": "Internal processing error",
+    "net_credits": 0,
+    "refund_verified_by_balance": true
+  }
+}

@@ -1,0 +1,1158 @@
+{
+  "task": "08-assets",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game",
+  "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/08-assets",
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "files": [
+    {
+      "path": "docs/chapter2/assets/account-preflight.json",
+      "baseSHA256": null,
+      "newSHA256": "7d3eb0d7bfd426b032d89b570ceef4002a2e2d845517ffd79623f978a0d88f4d",
+      "bytes": 413,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/asset-plan.json",
+      "baseSHA256": null,
+      "newSHA256": "52b1cf41b534a6340dc56b405cdad0c5d043a95582af370e82554afd5bee5c4e",
+      "bytes": 59967,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/asset-plan.md",
+      "baseSHA256": null,
+      "newSHA256": "f0631e2f2ee6348809cf2eaba41185d933d63eca267f512e5f7bc27eb3138757",
+      "bytes": 30364,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/audit-report.md",
+      "baseSHA256": null,
+      "newSHA256": "1812d7a9ac0cb6296a837adaba3319e4392331a93acf19585e22431bac866199",
+      "bytes": 10947,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/audit.py",
+      "baseSHA256": null,
+      "newSHA256": "82b682ba3a8a485536d441ae17c186059c18d0f3562c7caedd9eb16820797e49",
+      "bytes": 6696,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-07-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "fc5f2ceab6cd143d3c44559569d05d7c174f17614f0dc9f794786df533c6fd20",
+      "bytes": 43553,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-07-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "3556f3eae6bc1f4124c89bc20e85571bf7cd12ac63849ff63d4e327cec9a7675",
+      "bytes": 43491,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-08-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "3f9b0329191f59586d945d9a55725fa45beef769c31831cf52fc07ea058a5c69",
+      "bytes": 53576,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-08-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "e88def7e504e1dad8cc6ccdace1c92378527d2358b347c1a98224016e1184f71",
+      "bytes": 53692,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-09-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "4a2840b739560d53c863908d2c48f89361a6e5c4034eea066f291452f4512e69",
+      "bytes": 43545,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-09-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "c0bd53732ed5a96ca153dc9dea1e7e391062069060c7527afdb5b27c03782d4a",
+      "bytes": 43582,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-10-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "08611f9520d71922645c682a677686a0d7c9100e39eb21482ed0961fee80db08",
+      "bytes": 55355,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-10-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "08cd1dbc960692863614377dea5852d1644362eb7fe9a297e2ebeb7df918620b",
+      "bytes": 54293,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-11-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "2b646b3bc6bf7585c3acf08113a8338fa1f6cd23838946e1d34885965ce63e41",
+      "bytes": 54482,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-11-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "70cb80091678dce49fbab082d25be897e6ba1ac5959046cd8adfce0bafd2f3a6",
+      "bytes": 55100,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-12-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "10593726b14a353579b5343555382912342302b74ec050eb7be72be661215aa8",
+      "bytes": 68222,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-12-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "7dfe147854bf86d08b36e6c0ccd50b645c9dcfcc98f59ca6a9f0b13bf910de79",
+      "bytes": 68149,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-13-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "c3fd0310c586f9ba4a74daafa2091c990bfa5057e7aee48f732b26237feb052a",
+      "bytes": 56408,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-13-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "32d8606222f9cc6a7a0f4f25e3ff0ef8fe837e48a6098fd9b52782e16ae3af93",
+      "bytes": 56321,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-14-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "f1637429512e2ef465a6a3993d2dcc84e547030ad56837df8857eaf747ccdaf8",
+      "bytes": 43551,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-14-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "c332789dbbcdaf23bcab83e4c7eacfa7324ef7bc9594c5109cced892846fb6f2",
+      "bytes": 43399,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-15-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "d1db8c317798bf114c5e2fb98417448568760f1599898557b9b1f9173028528e",
+      "bytes": 43509,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-15-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "09b34b1d113e22810741e3dd20a754e8021204b6adb049731dee77004358dc8e",
+      "bytes": 43485,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-16-draco-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "96e2b8c6193c60a7b2e7e357d9e05e17d79246d2adbf8137e95ee30aad721fb4",
+      "bytes": 56365,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-QMSH-16-raw-browser.json",
+      "baseSHA256": null,
+      "newSHA256": "c1efddf9ff6a492af378e0bf068fc41bb9a23a6b7a1e79c55377e485fc52b27f",
+      "bytes": 56357,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-idlewalk-browser-results.json",
+      "baseSHA256": null,
+      "newSHA256": "05ad08978e2d3a910023956cb580456552c73798ac725649f646c93c83881aab",
+      "bytes": 1189392,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-idlewalk-handoff.md",
+      "baseSHA256": null,
+      "newSHA256": "94a58e82d8a6be715d7d86541f07ed8e48459b06c1fd2c8a1c3408fd9fed1eb6",
+      "bytes": 5817,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-idlewalk-loop-results.json",
+      "baseSHA256": null,
+      "newSHA256": "f7d95d8a0276443bd496d102f845bc7ae44093f79dce568b2743ad048eb040f4",
+      "bytes": 9424,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-idlewalk-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "3fba624cd5c00952f7c6ae66b85e9c51f95460dfff66448e6d8a186a93e20cee",
+      "bytes": 36699,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/batch2-idlewalk-structure-results.json",
+      "baseSHA256": null,
+      "newSHA256": "3da027048ffc9626e184a9db8c38e5df906aa1f69917b6643d5e457e41aa1f40",
+      "bytes": 15821,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/browser-review.json",
+      "baseSHA256": null,
+      "newSHA256": "38fc0bdf66c5c84bd68f2e5d4182e7957a3067d13cf90edfb79ede302db715ba",
+      "bytes": 18566,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/existing-glb-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "78692af7b68d99a67a24481f85da6fd16bcae24c2679dbcd8c37d6800be7eb09",
+      "bytes": 663624,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/main-baseline.json",
+      "baseSHA256": null,
+      "newSHA256": "082f7088b29f0bc0084e7a3241ed12d42219ae44c0e6a34229d61f07f76f6793",
+      "bytes": 50375,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-browser-draco-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "8beab0ba791014a27f1b33f0110d119ba758221195a9ce729a5b64c44ab6129c",
+      "bytes": 3069,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-browser-raw-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "4dc76eb63fcddf3954b8eaedf3f4d895383eba8d7ba265b3174dfbcdaaa5cffa",
+      "bytes": 3065,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-content-input-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "4e2fb282b48ae3ec0b13668dd8e7f813b20a7fa7bd049c20e27e63bb4f6d0c5d",
+      "bytes": 6016,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-draco-validation-20261003.txt",
+      "baseSHA256": null,
+      "newSHA256": "1351831472ead01f1a0be1a25d992749054ce82400a1281e07c164cf819a66b8",
+      "bytes": 7410,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-execution-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "ea83d2eaf159f85ee6e341a26e9678c810e38e16f4f258d94f21b892ad893d08",
+      "bytes": 15936,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-final-audit-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "96cd80ebaf14c522741f9098810d03c5be535eab8a4958b9f7e137d8fe66d147",
+      "bytes": 6859,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-audit-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "5599abd2f4ff1f9644ba3298a667366044edf42cb0e6facaa1312243f8c55d34",
+      "bytes": 1722,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "ef624edc7ec28cc7a4c563cd7344c37ee1a8b23e0d2c4729bbace5c55676db14",
+      "bytes": 4744,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.md",
+      "baseSHA256": null,
+      "newSHA256": "8797e26951c89a07e2c49170850acf58a72670c240efd689ccefbf4b7b74928b",
+      "bytes": 3153,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-preflight-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "d480ece81f942b6e064d5e0aac23b5bce651114ca100b1888604689923f06fc8",
+      "bytes": 252,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-recipe-check-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "df4dec31611a3fcc3461b0511e82d1cf7ce6ad76e90b02497808d9f94dfc6c7d",
+      "bytes": 639,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-repair-20261003.md",
+      "baseSHA256": null,
+      "newSHA256": "d55443aac8427fbb7a7c00834ded5efc1093b5af426ebea74cfdc666675a7a46",
+      "bytes": 1079,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-rig-audit-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "1afd61d0ac363f835b3e1d19435c72c77cfe7a5c8e0afd3380ddf686d6d7d4a9",
+      "bytes": 2603,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-verification-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "b42bc76f6072a5c0536ec7289f810f61d47b18223d53d48ffe64b587c148080e",
+      "bytes": 459,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/prepare-plan.py",
+      "baseSHA256": null,
+      "newSHA256": "3d69230e36458a672244392fe1211318fe25a8ecf371909c8038e6802ab4ee16",
+      "bytes": 16703,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/reference-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "9e9cdcaa635a9c523a8edbb9f76c4438bd0a07cc56af6764c8b7071719a92223",
+      "bytes": 1104,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/reuse-models.json",
+      "baseSHA256": null,
+      "newSHA256": "d03e8a7689e26b1396bc1c7f0374e3711feca84bf3aefb030b52caf03c1a4c1e",
+      "bytes": 4904,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/tripo-merchant.py",
+      "baseSHA256": null,
+      "newSHA256": "f25427c767b3e445a3508ec4543de8ed0058aa7aebb9a8e85808ca78c480d2f1",
+      "bytes": 10191,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/validation.json",
+      "baseSHA256": null,
+      "newSHA256": "bd5196f3dbbf05bd7205057ca142d7fe877a4f1a3185c7bbaa2df56a1af86723",
+      "bytes": 1031,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/validation.log",
+      "baseSHA256": null,
+      "newSHA256": "95c874fd84d3983aa6de26fad62bf6001c0b316049c78d24d5e42713608fbd8b",
+      "bytes": 851,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/verify-audit.py",
+      "baseSHA256": null,
+      "newSHA256": "3a21f78cb7fec29ed1023efce71ce369417fd6125543e2d689f3b40c46d3b113",
+      "bytes": 4294,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/verify-batch2-idlewalk.py",
+      "baseSHA256": null,
+      "newSHA256": "cd1b7f1f45167211dc22787411465725477d11f7cf6d765d2c183ee3fb13a8a8",
+      "bytes": 7563,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/version-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "0af8a8a6e2112b2ecf64135da7f3d7f02b180eeac0595e7570509bd4d4840205",
+      "bytes": 2625,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/workspace-baseline.json",
+      "baseSHA256": null,
+      "newSHA256": "ff61695c917dfe3422610511f1124d8f6b36515370963c3127629d8341b3f440",
+      "bytes": 50512,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "47184d60668c751f20c74aa09e09e6965dc7b3d1095c7edf082be768268fb058",
+      "bytes": 2878,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "31e29401aee331b00a04c68a01a31241795f9dbf8d3dd48480b2721a0d1dee3a",
+      "bytes": 3721772,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "020269ac726e2eed11d77ee254ee0ac9d69c3f06d8b6a2b91e243ba8538cb508",
+      "bytes": 5007176,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "678b5500ccb4f524ed5c19d8625fc0053732afa739956b1ddb20e345fe917211",
+      "bytes": 3305,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "ca9370cbe2b50c3ca6384143008c57e767572c515f8dcaf1cc015c8d0adb02cd",
+      "bytes": 3418976,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "48a9fc6a412ea86c5d8f2c04943a0871c78491d7ce9d2d156396790e8cd49fb3",
+      "bytes": 4798224,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "df05758adad35ec846d7029e30f17e48a3d206684fa243f0da5d83bc29599bed",
+      "bytes": 2955,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "114ce63945ba0bcfeb7167e40f11b08367021d4a1c322f20d90eb214e347643e",
+      "bytes": 3796916,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "7e4c843056358fb6a375f2fa8b395665a1572cfc29d57189608154855b4b0898",
+      "bytes": 5170332,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "2688a7401e10d5e6a07093631999eb015464b4f860dfe144d34b19dfc72c1711",
+      "bytes": 3378,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "bbfb6e8991139b7a510301c8ec112131e58f1f7ddf4392b294427f8eeca4568f",
+      "bytes": 3403924,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "5b8976ddd5a275f0db2d69a7a0425b3cdc675b71c7184a1922a912045a36bded",
+      "bytes": 4916612,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "bd228d2a9b921426d0ceb5167c1b3ad76cd6e80295c72c9c0a5385db4b970bdd",
+      "bytes": 3494,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "5bdd5ed87cb241e053f6be6162e81ed529daf7a9cad159369702a971eab65a98",
+      "bytes": 3279084,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "3b8fe24d595f1c69c6a661b739ccadf3c3b59cb2e547d3b4e052c9d429ad6297",
+      "bytes": 4691524,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "688550739a8ce0db82eebce0268fa1f9d6a4aa27136f5d7695ed4fb10afa275e",
+      "bytes": 3197,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "5cf921b4f016f6dcb027476eb26ad16e46f3cee3f5e028569ba77efe0b6120a1",
+      "bytes": 3925924,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "8fe467ba3c072934541da0572a1bf6d47487a4f6683baae97e61a73635752157",
+      "bytes": 5466736,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "47fdd7e509f4c4f731983249ca0a828ba08a671949578338e72d95c5498f0356",
+      "bytes": 3307,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "9a72a73985ff2da83e0258761bfe26b8f760580cf466dd269449ab8de6f097f1",
+      "bytes": 3746528,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "66cc9cdc4a9291501eae658845d8a8decca9fade073158893958531c631580f9",
+      "bytes": 5336496,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "63b31f65813a9170b4784670b757c314def9f9d058078bd201fb0f25b3cc10e1",
+      "bytes": 3191,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "72c7d6a7719190807959564d97ea354627482e07f0164366a4d698772c95c85b",
+      "bytes": 3855424,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "d3c16b4adc530aa5dab20adf532a849368e48c4a091cce0eaa879d5b39f6cdcb",
+      "bytes": 5306684,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "58ad40d9086054fe849d949e4618ebf426728756396c976addf2bbe055c436ab",
+      "bytes": 3186,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "7f2a98e8671c43b4d7a95ccbbcdd9e9aef9731ec0867cfe081cfa2d879e81f1a",
+      "bytes": 4113396,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "17a789061d65eb9d8eb8a8567c321309c67fb5cc751cc06109ec708a08de47ef",
+      "bytes": 5768920,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "be8b670283a995c8eb11eeac599f32f4fd841f5654bdb252b6c21dc63243cd74",
+      "bytes": 3299,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "a9672071a3e2d52fbe0e91baf8e3f4a1d161c2b6fee946f369875d028da09644",
+      "bytes": 2850504,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "5a54ec12a36451a3a41105314c9849ab443ef9b8d61232ce6e27569749653ca0",
+      "bytes": 4050940,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/generation.glb",
+      "baseSHA256": null,
+      "newSHA256": "51038d41d043dae1e10b95731c607c3581ee41169ccdb321197b599323264e9a",
+      "bytes": 9120760,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "17106cb369a2d5e20442375a68ce8a918b2b838dcc19df3f58e546c02fa12090",
+      "bytes": 3305,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "7235a68a9e2a585b03d4f6b7e48f89ba14be873aa2dbf5539d281e7393025883",
+      "bytes": 8419572,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig-tripo.glb",
+      "baseSHA256": null,
+      "newSHA256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig.glb",
+      "baseSHA256": null,
+      "newSHA256": "d8841eb0dbba81e0303bd4953b93d40bf873b48e55ccf8c5ab8912b29c273309",
+      "bytes": 9590056,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/base-color.jpg",
+      "baseSHA256": null,
+      "newSHA256": "7a7eb565e93d1d6b4a7800a529172f2621f5ef7620851da2c81cf4f7c0588b33",
+      "bytes": 3380351,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/normal.png",
+      "baseSHA256": null,
+      "newSHA256": "ac2a175d105c06c93ddaf57d9f7b2fe1c42dc5152891a82fa34958c30a7b9004",
+      "bytes": 2811963,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/orm.jpg",
+      "baseSHA256": null,
+      "newSHA256": "e6d54c33af5b72910b675c25dda372e4a2d4fc180e24a95b88186ab2227d4c8f",
+      "bytes": 2089058,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-abacus.png",
+      "baseSHA256": null,
+      "newSHA256": "3e4ef4995c62d3f1c287dacbbeb8bd44aabef89bb1011b301131f7a67a3ab828",
+      "bytes": 49369,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-follow-distance.png",
+      "baseSHA256": null,
+      "newSHA256": "b78482dca1c252a7eb9364ca9c110732e6a68b10ec33760b098c34356060c380",
+      "bytes": 39520,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "3472a7c2ebadce8e9d86282fbd5d1605f3a11b6de24270e3aee93051e6c87870",
+      "bytes": 48038,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-17-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "1e929d90bd8280d90209753179c1258cd4751bb14b78c83343c641598d66473b",
+      "bytes": 45660,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-21-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "b7aabcb1219be67a22bcfd6a50674b41bdc5ac30ad4bb1bd57a4b21a5a220d94",
+      "bytes": 48998,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-23-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "b95bcd2b1d4a1b5cdd0150a6f5a4c06466fdfd0aa86f2e8c37c3a0bb1d9fa993",
+      "bytes": 48654,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-28-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "1b137b601a76b5008e0bbf3913653c126e21a16173c7f572c30e5c4f9381b57d",
+      "bytes": 47013,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/final-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "aeb21153d748976dbbaf247f115369b91653e8e508a72c893a7ebf08e137deeb",
+      "bytes": 81641,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/final-portrait.png",
+      "baseSHA256": null,
+      "newSHA256": "8fb1661b5a165fa741e73511baf7f89da54dcff43f2a4c23d3b4dd312188a5a2",
+      "bytes": 113390,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-follow-distance.png",
+      "baseSHA256": null,
+      "newSHA256": "2d4127199738fb85440096c7e0532e40d2ea64fe68fba1c199c675c478a5b578",
+      "bytes": 64760,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "bcc4fccd77e6cecfbcbd9bfc8f91aa992a60755bc6a95ea3871a81dc929ed803",
+      "bytes": 121242,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-portrait.png",
+      "baseSHA256": null,
+      "newSHA256": "fa95d489c6b52e4f9b5c9d3f366b1bc9cc9a8b554edd8146b1d4c46c4a710ab7",
+      "bytes": 154397,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-07-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "c10badeac2eb2333ffd45b75febf15e8e82695c3dd9fd1f19371d4db73222a31",
+      "bytes": 119461,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-07-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "7950024c3506f87cec7249f30210aaf4205579ec20b3872cc682b1f48396201e",
+      "bytes": 122844,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-07-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "91710097594dbe1cf5bc1b3c441a109800ac1ace6adc94dbc468be1d3a9b0eb0",
+      "bytes": 119418,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-07-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "695da4622aa61d38720831df3218dda4bd91a8caefa5021d97a045caf227d8e8",
+      "bytes": 122901,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-08-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "94259cd52cdf64c493202ce3955b667324970feb5f047f3580717e474a5e9fb9",
+      "bytes": 117666,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-08-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "b95756f580c9529ca128dca1aa4b95382e71eae9db6e2f083b3bc18f1abaeb91",
+      "bytes": 119704,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-08-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "83f3dd16816fbf7dded5a44967d03965ca3e0b3ec63f9263540fec35d75b6bd5",
+      "bytes": 117699,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-08-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "61531ee5450669bb1f53d535d0d8ecd9db9453acc9f2114cae557f24afcce312",
+      "bytes": 119652,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-09-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "bac8f21ee9d972e775b345a9c0c83dde378307bd8c64be2a3a98292b2d71e574",
+      "bytes": 132412,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-09-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "eac7610d092e7b69d39cbe5bf4133d7c377fcc77910cc0be3934b241957e45c0",
+      "bytes": 132824,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-09-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "ed14151837aa3f92a649b3c6823e3e9928a6dfd825a53f1bae58e873f9bc5d49",
+      "bytes": 132305,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-09-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "c5a56a4ce6e57e94033133f9b671b535d9384a5430d22bb9b3aad90b0be1fb0c",
+      "bytes": 132864,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-10-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "fae91dcee2a6f9e078822d0f0d9a6e046a87b88dffda7e4b595a284066c8b53c",
+      "bytes": 105844,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-10-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "7cbf333f8bf233e7d25366cfd87d2717b156a45e01f9ea5731eb8b2963ecaf00",
+      "bytes": 107493,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-10-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "7e37a8322d727e2477e167d8bc5aa07663e5d31f3db0f7ec14f4b9b091f9e7dc",
+      "bytes": 105897,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-10-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "dac8b6372eed1a713c7c20485971f99736cce800bf8092f95afacc36de4c9161",
+      "bytes": 107542,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-10-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "87a2050efcb01b50647f8a51b6eb73c4872f1124a8a0daf68ec9137b35ed17a9",
+      "bytes": 108771,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-11-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "18b4b4f50899f902e971664bdfa8ef21915d78d1d09269d75d04f2a0ea577d55",
+      "bytes": 104651,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-11-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "d4f0e5aa3e2ae4de679cea747aaa14344654247262dc5f24e3b62fcb5d0d90b0",
+      "bytes": 106580,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-11-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "93dc3892c4035402993b3e7664b0d934eccdec5d803e0577add48d56ec095827",
+      "bytes": 104621,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-11-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "080be80328b9a75f1a40ea09fa028157abeb0371af9dc44ed240d44875e5e4a1",
+      "bytes": 106656,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-12-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "884f1a2e74617c9fcd6afc835ac630499ae8bbf635f64fbad814e80c3ffad566",
+      "bytes": 162366,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-12-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "6af4c3a3f754d6d47560f237f51128aabc05e3e79282c5e36164585b898c3cba",
+      "bytes": 165799,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-12-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "1461d3804dd6d421745c53fe8cd2871b12d184099179ee1a86dc7f9fa0ae2e7b",
+      "bytes": 162249,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-12-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "2df6c953535de0902e0f140b0800051f4d8682cdd00ed945bed097d920fb80ef",
+      "bytes": 165762,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-13-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "f95cc378b0056e2aa59a50cbbe9b273164bac675079ee62af89b165ea6e2a973",
+      "bytes": 106089,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-13-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "81d640a8736c5f3899af9b0a1a09ee99df4a1a20d562791bf312a0c9e1a044ae",
+      "bytes": 109321,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-13-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "a2a817e87f26730f6ae2ff7069acf20636d197a229d32acc457fe7df6b5579cb",
+      "bytes": 106132,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-13-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "544796a6575d98f6e98ba5e7b51b7c67560dbb0133f00d906bda8c3dc1276c84",
+      "bytes": 109264,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-14-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "945354289f64d3d04e076190810bc98b2815d9c755be75e759c1e831245e587b",
+      "bytes": 141626,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-14-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "a78608f5881bbc25b45d20c19ed69e68234d654f26b2e0759d9b88b48148ca09",
+      "bytes": 143241,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-14-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "8f07b534a07b3c015d2d9dc24eb42575cdc34d6000b27e6391965b7bab6df477",
+      "bytes": 141629,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-14-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "9e0c85efd66b07aa93295c8a10cb37090ebc77d9546c94e3ab735a7bf7fbbc93",
+      "bytes": 143276,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-15-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "6b2960110702fa10e4824c6d22b0d83acf527b591448ff88960b6eb59a359535",
+      "bytes": 147776,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-15-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "6b4d07ab6c5feeddce7b0f71fb429de995adc7fbf76f892c3303bd5eaa3a936f",
+      "bytes": 149860,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-15-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "87488a450d4fe3e292064e8cb0ab6444a917eb02efab154f075f094e7634b4fb",
+      "bytes": 147798,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-15-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "af7eca2167472196762991bf1fcc20569b3855a0876c05739b7253971030e208",
+      "bytes": 149795,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-16-draco-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "7f20aebac1cb9605ba74a9424e882c128df24ff1dcd5bb4f1dee6093c0f2f868",
+      "bytes": 97057,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-16-draco-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "9bea1b7e184832963473290dcc78f361c84d9cb32da5d3ae4c35b62e216fc801",
+      "bytes": 97979,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-16-raw-idle.png",
+      "baseSHA256": null,
+      "newSHA256": "7b087674f53d4214653ecc01ac6ed475a72d2cea3bcadf6b965c11e7296fce1d",
+      "bytes": 97005,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-QMSH-16-raw-walk.png",
+      "baseSHA256": null,
+      "newSHA256": "407bb4989360ac6c38db72025403f9ad0925f67e257f81285b3783ea5cdb168d",
+      "bytes": 97928,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-idle-review-07-11.jpg",
+      "baseSHA256": null,
+      "newSHA256": "ce11a3182eae6f7d2fda61e910f9e9b0d694f8971babf72d50fb6817d0731652",
+      "bytes": 141902,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-idle-review-12-16.jpg",
+      "baseSHA256": null,
+      "newSHA256": "ce53104b029401c2193df4597f0f87f1b9741da08a88aae2e5f48878e85b7607",
+      "bytes": 148901,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-review-07-11.jpg",
+      "baseSHA256": null,
+      "newSHA256": "ab92d81a0cd3497c129dd53cc94fd94b331382ea56815ddd28533ef8838c6c96",
+      "bytes": 144199,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/batch2-review-12-16.jpg",
+      "baseSHA256": null,
+      "newSHA256": "3529a49ca6bd18f217236083a9a72541d45e6158813b0eb65c876c7b3e30ae26",
+      "bytes": 150755,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/cargo-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "fe17c6c9a7acb70d81395d2490f667d0fe072b6d8a3737f0ecf67ceddb69fd1f",
+      "bytes": 40203,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S03.png",
+      "baseSHA256": null,
+      "newSHA256": "d6de547a0a0b2ed028156f5778406fac6a5e58519fac3159acd5bbe969cd3ea5",
+      "bytes": 1695307,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S07.png",
+      "baseSHA256": null,
+      "newSHA256": "1c016decbbc9ced871ac6c472b43ec7c021716bbf127f91033ad081596b5b8a2",
+      "bytes": 1996897,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S08-S09.png",
+      "baseSHA256": null,
+      "newSHA256": "10148ebfebd42cc128d1107016a97672be788a21b4fd80c2220ca67cd8e02d0c",
+      "bytes": 9557353,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/rope-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "409b097c0683602bb6012e042428f7d1a13006e2345aa2722c709f7f43a0d35e",
+      "bytes": 41194,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/steamer-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "d9d71c62e01407c2995d721c87f3f5d22345a0a5a45a49c786dabed0f8a64fb3",
+      "bytes": 45522,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/batch2.js",
+      "baseSHA256": null,
+      "newSHA256": "76fb7889f868eac0550be79f5fb5e2292a673158b75aaacdad32e41b79be6fc0",
+      "bytes": 2610,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/merchant.js",
+      "baseSHA256": null,
+      "newSHA256": "f3c515d02dbea1fe5aac4c93b2d1b3a5da04ea12549e4e46bfca091775148f07",
+      "bytes": 2713,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/preview.html",
+      "baseSHA256": "0669135abf4ee6c9df023db2845e0564597974b5f4f388b4742f62cf7e42a473",
+      "newSHA256": "7c6b6305616a35e598ca538014b876fe0faeb9ba3a7e4ccbcf83f5fa77682a0e",
+      "bytes": 1632,
+      "operation": "modify"
+    },
+    {
+      "path": "src/chapter2/assets/preview.js",
+      "baseSHA256": "db56b0dd702f10f5ef8cd910945abbd1fa9eb3c97595985a0fc4e8b45f5573ee",
+      "newSHA256": "a7a999bf451c078027f40eb6af055162738008ad0076a77ffc4a1d56feb69003",
+      "bytes": 12748,
+      "operation": "replace"
+    }
+  ],
+  "existingModelsReferencedOnly": "files/docs/chapter2/assets/reuse-models.json",
+  "deliveryUpdatedAt": "2026-10-03",
+  "merchantNetCredits": 100,
+  "IDLE_WALK_READY": true,
+  "idleWalkScope": "QMSH-07..16 only",
+  "batch2NewCredits": 0
+}

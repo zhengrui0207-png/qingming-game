@@ -1,0 +1,165 @@
+{
+  "version": 2,
+  "mainRoot": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game",
+  "baselineRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/baselines/2026-10-01-p0/qingming-game",
+  "firstWave": [
+    {
+      "task": "01",
+      "name": "01-content",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/01-content/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/01_剧情考据与藏物故事.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/01-content",
+      "previewPort": 5281,
+      "allowedWrites": [
+        "src/chapter2/content/**",
+        "docs/chapter2/content/**"
+      ],
+      "baselineId": "2026-10-01-p0",
+      "contractVersion": "1.0.0",
+      "independentResources": true
+    },
+    {
+      "task": "02",
+      "name": "02-scene",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/02-scene/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/02_原画场景与可走灰盒.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/02-scene",
+      "previewPort": 5282,
+      "allowedWrites": [
+        "src/chapter2/scene/**",
+        "public/assets/chapter2/scene/**",
+        "docs/chapter2/scene/**",
+        "chapter2-scene-preview.html"
+      ],
+      "baselineId": "2026-10-01-p0",
+      "contractVersion": "1.0.0",
+      "independentResources": true
+    },
+    {
+      "task": "03",
+      "name": "03-core",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/03-core/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/03_共享状态存档与接口.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/03-core",
+      "previewPort": 5283,
+      "allowedWrites": [
+        "src/chapter2/core/**",
+        "src/hongqiao/state.js",
+        "src/hongqiao/persistence.js",
+        "对应状态与存档测试",
+        "docs/chapter2/core/**",
+        "chapter2-core-preview.html"
+      ],
+      "baselineId": "2026-10-01-p0",
+      "contractVersion": "1.0.0",
+      "independentResources": true
+    },
+    {
+      "task": "08",
+      "name": "08-assets",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/08_人物道具与资产制作.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/08-assets",
+      "previewPort": 5288,
+      "allowedWrites": [
+        "public/assets/chapter2/characters/**",
+        "public/assets/chapter2/props/**",
+        "public/assets/chapter2/previews/**",
+        "src/chapter2/assets/**",
+        "docs/chapter2/assets/**"
+      ],
+      "baselineId": "2026-10-01-p0",
+      "contractVersion": "1.0.0",
+      "independentResources": true
+    }
+  ],
+  "secondWaveCreated": true,
+  "secondWave": [
+    {
+      "task": "04",
+      "name": "04-fishing",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/04_河边钓鱼.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/04-fishing",
+      "previewPort": 5284,
+      "allowedWrites": [
+        "src/chapter2/fishing/**",
+        "docs/chapter2/fishing/**",
+        "chapter2-fishing-preview.html"
+      ],
+      "baselineId": "2026-10-01-core-ready-v1",
+      "contractVersion": "1.0.0",
+      "independentResources": true,
+      "createdAtUTC": "2026-10-01T15:52:09.261097+00:00"
+    },
+    {
+      "task": "05",
+      "name": "05-commerce",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/05-commerce/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/05_商铺补给与精力界面.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/05-commerce",
+      "previewPort": 5285,
+      "allowedWrites": [
+        "src/chapter2/commerce/**",
+        "docs/chapter2/commerce/**",
+        "chapter2-commerce-preview.html"
+      ],
+      "baselineId": "2026-10-01-core-ready-v1",
+      "contractVersion": "1.0.0",
+      "independentResources": true,
+      "createdAtUTC": "2026-10-01T15:52:09.261097+00:00"
+    },
+    {
+      "task": "06",
+      "name": "06-repair",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/06-repair/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/06_亲手修缮与报酬.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/06-repair",
+      "previewPort": 5286,
+      "allowedWrites": [
+        "src/chapter2/repair/**",
+        "docs/chapter2/repair/**",
+        "chapter2-repair-preview.html"
+      ],
+      "baselineId": "2026-10-01-core-ready-v1",
+      "contractVersion": "1.0.0",
+      "independentResources": true,
+      "createdAtUTC": "2026-10-01T15:52:09.261097+00:00"
+    },
+    {
+      "task": "07",
+      "name": "07-book",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/07-book/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/07_风物志与统一书页.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/07-book",
+      "previewPort": 5287,
+      "allowedWrites": [
+        "src/chapter2/book/**",
+        "docs/chapter2/book/**",
+        "chapter2-book-preview.html"
+      ],
+      "baselineId": "2026-10-01-core-ready-v1",
+      "contractVersion": "1.0.0",
+      "independentResources": true,
+      "createdAtUTC": "2026-10-01T15:52:09.261097+00:00"
+    },
+    {
+      "task": "09",
+      "name": "09-presentation",
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/09-presentation/qingming-game",
+      "promptPath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发提示词/09_演出音效与表现.md",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/09-presentation",
+      "previewPort": 5289,
+      "allowedWrites": [
+        "src/chapter2/presentation/**",
+        "docs/chapter2/presentation/**",
+        "chapter2-presentation-preview.html"
+      ],
+      "baselineId": "2026-10-01-core-ready-v1",
+      "contractVersion": "1.0.0",
+      "independentResources": true,
+      "createdAtUTC": "2026-10-01T15:52:09.261097+00:00"
+    }
+  ],
+  "secondWaveBaselineRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/baselines/2026-10-01-core-ready-v1/qingming-game"
+}

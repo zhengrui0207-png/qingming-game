@@ -1,0 +1,482 @@
+{
+  "task": "09-presentation",
+  "baselineId": "2026-10-01-core-ready-v1",
+  "contractVersion": "1.0.0",
+  "newFilesOnly": true,
+  "excludedGeneratedOutputs": [
+    ".playwright-cli",
+    "output/build",
+    "output/module-build"
+  ],
+  "files": [
+    {
+      "path": "chapter2-presentation-preview.html",
+      "baseSHA256": null,
+      "newSHA256": "e2ab0f0b360278a2c0e1129e429bbd55342e26fb4fbdc5e682e11074611c0ed3",
+      "bytes": 2633,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/all-tests.txt",
+      "baseSHA256": null,
+      "newSHA256": "4ddf3ec6be2d6b74946f84cb2bfe9e9343045f1cda2edd0677c1ca5089f720bf",
+      "bytes": 20329,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/audit-scope.py",
+      "baseSHA256": null,
+      "newSHA256": "ddfafd72896ac7e486963eb8a9f486447bee62639857f8d92ab5c5ca8653872b",
+      "bytes": 1406,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/baseline-sha256.json",
+      "baseSHA256": null,
+      "newSHA256": "cbdc5163ba4e96b016c1862b4297ee6dfd8d99e4ea1c2a8a83f203b5490e16ef",
+      "bytes": 23366,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/browser-checks-results.json",
+      "baseSHA256": null,
+      "newSHA256": "ae7dbfd737b621731e2fa24509035896941bad6b0ad560929fcba69f5e9990ad",
+      "bytes": 28769,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/browser-checks.js",
+      "baseSHA256": null,
+      "newSHA256": "499011698a78d1328ed5fcb0a300993afa6433dddcbeefd2d75fe0c0cbb76fe9",
+      "bytes": 9623,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/browser-checks.log",
+      "baseSHA256": null,
+      "newSHA256": "89aff06c777a42040cd28d8fea63d4e18044c3a71ca753b3a0e5f6bc0992e4af",
+      "bytes": 26855,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/build-results.txt",
+      "baseSHA256": null,
+      "newSHA256": "1e6ae9bc680a12937ab014ce8b3d13ca2c854c3e578b3c59b24780b9c0137c6d",
+      "bytes": 1671,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/control-checks-results.json",
+      "baseSHA256": null,
+      "newSHA256": "b9995605844ec9c5a58991786fa73c5968e95dfcb756e1f4112e70d465daeade",
+      "bytes": 10820,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/control-checks.js",
+      "baseSHA256": null,
+      "newSHA256": "5c89b1b872b16f3310e4e0dd8d75c0506405880334065a4cf1600be4f591c3ed",
+      "bytes": 2704,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/control-checks.log",
+      "baseSHA256": null,
+      "newSHA256": "eb388f9e8216106777482a2ddc8d4c41543f75c91d189363b86eba720669d7ff",
+      "bytes": 8315,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/generate-foley.py",
+      "baseSHA256": null,
+      "newSHA256": "38d149653e6d4f018b4a68814049247a3abee26d06fd1fa80fa2ff232c1248fc",
+      "bytes": 3927,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/handoff.md",
+      "baseSHA256": null,
+      "newSHA256": "f8d586e6d487587457e91bff72a895f98eba2ed920b9d5660c8aaa1f54b6dfce",
+      "bytes": 4641,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/integration.md",
+      "baseSHA256": null,
+      "newSHA256": "1e649d8757f2c079480aec7dea4208335f5e9cdf260395e83e2039b852331e2c",
+      "bytes": 6810,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/audio-resource-failure.png",
+      "baseSHA256": null,
+      "newSHA256": "1c797a5ede81f7691963b1e462d2243ecab2fa0b8958e9f61034e17a643e8cda",
+      "bytes": 126348,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/book-restore.png",
+      "baseSHA256": null,
+      "newSHA256": "3a9037d3b532367971a54421727bc589b0019928f397d8ac05dad27a67cd8d8f",
+      "bytes": 115901,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/ending_c2-1.png",
+      "baseSHA256": null,
+      "newSHA256": "251d41c0a9a70156609b9a980da442dcaae607019e0f77aa2cba992fad20fa4e",
+      "bytes": 316488,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/ending_c2-2.png",
+      "baseSHA256": null,
+      "newSHA256": "f98f0945287ee5a7c2687a48dd8d9691e41d89da2f39652efe1a198dbdfed57b",
+      "bytes": 171340,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/ending_c2-3.png",
+      "baseSHA256": null,
+      "newSHA256": "8f1aabb71957dc6215ec502b4c4838c8b29cfe906b33b44295d4b16c31680335",
+      "bytes": 191067,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/intro-ending.webm",
+      "baseSHA256": null,
+      "newSHA256": "70d75f688419d81d9b34149fbc3997d2efbf63f06d52865484f171f68825cb82",
+      "bytes": 5358308,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/intro_c2-1.png",
+      "baseSHA256": null,
+      "newSHA256": "23ef5ec173ff574da9216419c535c5cf0abfdecc1141f9cf5ea202a5f07f84de",
+      "bytes": 199442,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/intro_c2-2.png",
+      "baseSHA256": null,
+      "newSHA256": "803716ae75cacc2ad30d4dde9d431331f3468f4f142f504c93c2c2989b9161d9",
+      "bytes": 172300,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/intro_c2-3.png",
+      "baseSHA256": null,
+      "newSHA256": "201285565485c1f47421b715cf51fba3e6101870afa121d11beb306f4fc4a3d2",
+      "bytes": 256101,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/output/playwright/save-failure.png",
+      "baseSHA256": null,
+      "newSHA256": "1a63163eb35045eba949cc1bc608d946a01ed2df12445d9d9b584fb81bad6188",
+      "bytes": 133163,
+      "kind": "media"
+    },
+    {
+      "path": "docs/chapter2/presentation/pack-delivery.py",
+      "baseSHA256": null,
+      "newSHA256": "4b36d2eca107892c93fd05249519788955a495dbcfac72e4fc6e6dc0fb245951",
+      "bytes": 2966,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/ready.json",
+      "baseSHA256": null,
+      "newSHA256": "c8274978722a085fce1e9b578d6e95f066b5fd04b6235454944477d495d8e325",
+      "bytes": 1659,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/recording-results.json",
+      "baseSHA256": null,
+      "newSHA256": "172ad1c213df1b7aa9bb2c083004c922d28f23d18f9c761ec6c40d6ed4ea4a2c",
+      "bytes": 3004,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/recording.js",
+      "baseSHA256": null,
+      "newSHA256": "67b842758e331ef804ca2fe7257589ed4ac32d255c4b1c3890024194e321fc77",
+      "bytes": 1797,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/recording.log",
+      "baseSHA256": null,
+      "newSHA256": "0d83d6e3dca7387affed4d072f03a96e60aa6370df537a53ef981f2269e45222",
+      "bytes": 75,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/resource-checks-results.json",
+      "baseSHA256": null,
+      "newSHA256": "981f4b2fdd65947ec54209bda63e6f34c0eb97d2bfcbc4944d47512e1a5c7f1c",
+      "bytes": 1186,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/resource-checks.js",
+      "baseSHA256": null,
+      "newSHA256": "cf6170082dcac49d05b4d098e3e306ea9a2bb3f55f0811d9f0c21ff4e31b1b6c",
+      "bytes": 2211,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/resource-checks.log",
+      "baseSHA256": null,
+      "newSHA256": "09b6c3bf7789cf3030e1fbcce08ad93efc691a0907eb86ba98fe720e0e3aa8b3",
+      "bytes": 3381,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/run-browser.py",
+      "baseSHA256": null,
+      "newSHA256": "fd8038bf7679780249bf7decee567abe37a4c860c56faeccc235fabdb08d8b01",
+      "bytes": 1303,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/scope-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "303c87c2a0f1ad51588afe040e88b1257e927d7e50d1a3d861919def83a4e660",
+      "bytes": 286,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/shots.md",
+      "baseSHA256": null,
+      "newSHA256": "a9b89aed9edc7c702d21bbdab3dee8621dc70e982aba30488142f33519ab99aa",
+      "bytes": 4179,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/sound-source-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "6f0874b0d72a401dfce96788a9429e04dde45a962bb01b938d3b1e9a3cce06d0",
+      "bytes": 3704,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/storage-and-console-results.json",
+      "baseSHA256": null,
+      "newSHA256": "4b5026515284412d2418e8905c4da98d643d3a6e6d3c63861012c60b887aeea9",
+      "bytes": 7776,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/storage-and-console.js",
+      "baseSHA256": null,
+      "newSHA256": "b971cff0c75320192b3b2b4080f8fac70d15d16b8c7846f049977ffc24453c09",
+      "bytes": 981,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/storage-and-console.log",
+      "baseSHA256": null,
+      "newSHA256": "49d79b67b2be657690fb24cd9eba49ac1839a0f0ccd8b93fc0a80b87a5146112",
+      "bytes": 6103,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/unit-results.txt",
+      "baseSHA256": null,
+      "newSHA256": "7314d48e2a20accf9cb31962af94877b6da86b5804ca8998a31d5e73aa92bf10",
+      "bytes": 3993,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/verification.md",
+      "baseSHA256": null,
+      "newSHA256": "3985bb53236567f50ea66997035652ad130fbda431ffe953ce7cc5d92496b096",
+      "bytes": 5689,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/video-inspection.json",
+      "baseSHA256": null,
+      "newSHA256": "5765d8858a02f43869aa5ff049ea5f2abc3b85d6433b7d579c2da70d30fd1422",
+      "bytes": 533,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/visual-probe-results.json",
+      "baseSHA256": null,
+      "newSHA256": "96e359b85889be04a528ad438af59ab25373a092ab2696f5d004d1f2bfc17125",
+      "bytes": 10147,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/visual-probe.js",
+      "baseSHA256": null,
+      "newSHA256": "05af1dde7146bd2994016feb5d08772632dbf01b51984c9181cf0772ed10d3fd",
+      "bytes": 990,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/visual-probe.log",
+      "baseSHA256": null,
+      "newSHA256": "6d96bdd652019243eb1104b5fa2dcbba6ba40ae99a08224b20e1da8550c40a97",
+      "bytes": 7427,
+      "kind": "documentation"
+    },
+    {
+      "path": "docs/chapter2/presentation/write-shots.mjs",
+      "baseSHA256": null,
+      "newSHA256": "bea2c1e9eedbcaf67bca18a431244d62ab3836620ab85bbce9d0161e46d41183",
+      "bytes": 2595,
+      "kind": "documentation"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/bell.wav",
+      "baseSHA256": null,
+      "newSHA256": "9a765b2339d65650fcf025c3231d4cf469901d8820b17f0666fef85c382f7b13",
+      "bytes": 57644,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/bobber.wav",
+      "baseSHA256": null,
+      "newSHA256": "6b2755f925ecfd73abe5396af0507d5882c2ef25a88a0029b31a057015a10fc8",
+      "bytes": 9644,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/cast.wav",
+      "baseSHA256": null,
+      "newSHA256": "bafb3ad1845466f4e4263b0f7fcde3cf29afd378eed5dc1a575137b58be31647",
+      "bytes": 31244,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/coin.wav",
+      "baseSHA256": null,
+      "newSHA256": "33f386337b6b64a6ee8e302b96bfc9d072b8264bf0785fa40eeb38addc14effc",
+      "bytes": 24044,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/reel.wav",
+      "baseSHA256": null,
+      "newSHA256": "3172c27c219b634800442a58eae85b3cf75ce477b064793e3904006de5e989cf",
+      "bytes": 48044,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/splash.wav",
+      "baseSHA256": null,
+      "newSHA256": "95217df2f70ea9d738a1c969889958d1f817c5c00f874a9d040bb4f17af0060c",
+      "bytes": 40844,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/steam.wav",
+      "baseSHA256": null,
+      "newSHA256": "2c8fc8def77349cbf0bc76a6454206b121f035e9be3006e60235882872113bce",
+      "bytes": 52844,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio/wheel.wav",
+      "baseSHA256": null,
+      "newSHA256": "50e698ea1b05dc75fa637365ef2a1eb60d83ac9edf523a4beb6db02461f8c8a8",
+      "bytes": 57644,
+      "kind": "audio"
+    },
+    {
+      "path": "src/chapter2/presentation/audio.js",
+      "baseSHA256": null,
+      "newSHA256": "941deec11abf61016f25f54d2fa8c27cdb32529f466583b117ce1bdb6a084a73",
+      "bytes": 4588,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/audio.test.js",
+      "baseSHA256": null,
+      "newSHA256": "676166fd43080d88707fc1bcc51d8dea8ec3c473569380aac218b320314de26c",
+      "bytes": 4025,
+      "kind": "test"
+    },
+    {
+      "path": "src/chapter2/presentation/build-preview.mjs",
+      "baseSHA256": null,
+      "newSHA256": "dbefe8a128c22f4d1fc2ff4058e4fb4eba06887036c262efb3ab4b892332a5c8",
+      "bytes": 463,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/camera-preview.js",
+      "baseSHA256": null,
+      "newSHA256": "0501a5ea05109544cca059fc05bc9955209ef6607211971f58a830a9aca8fb45",
+      "bytes": 1235,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/controller.js",
+      "baseSHA256": null,
+      "newSHA256": "c8a88915ac4fb74084ab8f6043a54c0407e910d8686409ea280c5f00d00e7909",
+      "bytes": 5331,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/feedback.js",
+      "baseSHA256": null,
+      "newSHA256": "dc1c0898765dc5ac0d4a986b09103102e9822b976873926a4ff4b9027b038565",
+      "bytes": 1026,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/index.js",
+      "baseSHA256": null,
+      "newSHA256": "58afe5a94187ef4f211c260bb6c56d3f4c1d8b45d5e2c1e6b656854eec7c4b8e",
+      "bytes": 3638,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/presentation.css",
+      "baseSHA256": null,
+      "newSHA256": "b6cb8eb55aab0f04fd23d2687dcb52756d1831a394bc556e88b91ee9a06d3631",
+      "bytes": 1516,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/presentation.test.js",
+      "baseSHA256": null,
+      "newSHA256": "58dcde7d65dfb22fdd697647f81ee085e34069314c706b79e4c39e82274d5d37",
+      "bytes": 10489,
+      "kind": "test"
+    },
+    {
+      "path": "src/chapter2/presentation/preview.js",
+      "baseSHA256": null,
+      "newSHA256": "84b35478155cf679c9de7dd213313fddf8406d5a2392bc9a65bd8a7bdb52c000",
+      "bytes": 14618,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/sound-manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "d65c7748c9787235db23fc723491ee4ca5b885ad98eef41533c5685dbda46dcf",
+      "bytes": 5475,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/staging.js",
+      "baseSHA256": null,
+      "newSHA256": "093f16b87a3a347e7ec9907b725da448a4e07a19c620e0a26f5733c4e7df29f0",
+      "bytes": 7579,
+      "kind": "module"
+    },
+    {
+      "path": "src/chapter2/presentation/timeline.js",
+      "baseSHA256": null,
+      "newSHA256": "e0d33cdcb23db5c4362329e9be8dede69f6c1cbdf5584943b2ce759542b819ed",
+      "bytes": 2860,
+      "kind": "module"
+    }
+  ]
+}

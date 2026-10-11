@@ -1,0 +1,1814 @@
+{
+  "assertions": [
+    "连续原moveActor可走路线 anchor_c2_fishing_a",
+    "真实04钓鱼UI结算救急鱼并保留欠账",
+    "连续原moveActor可走路线 anchor_c2_fisher",
+    "真实卖鱼收入先偿4文债，只余2文",
+    "连续原moveActor可走路线 anchor_c2_fishing_a",
+    "七次真实扣费取消可耗尽救急精力，未伪造收入",
+    "连续原moveActor可走路线 anchor_c2_fisher",
+    "欠债且耗尽后面对面偿债差事可用",
+    "差事只偿债不赠铜钱、不耗精力",
+    "无债不能重复差事获利",
+    "连续原moveActor可走路线 anchor_c2_food_vendor",
+    "最差失败后能步行回饭铺再次赊食恢复",
+    "真实浏览器换页失焦退出未确认交易并释放锁",
+    "失焦恢复原相机角度及距离",
+    "数量输入聚焦时Esc仍关闭菜单",
+    "Tab焦点留在商铺对话框",
+    "销毁只注销三个商铺和自身输入，钓鱼仍在",
+    "浏览器救急/失焦/销毁不改变正式存档键"
+  ],
+  "walks": [
+    {
+      "id": "anchor_c2_fishing_a",
+      "from": {
+        "id": "player_scholar",
+        "x": -44,
+        "z": -39.7,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      },
+      "samples": 1198,
+      "distance": 54.04590000000021,
+      "failures": [],
+      "continuous": true,
+      "to": {
+        "id": "player_scholar",
+        "x": -28.997726282021503,
+        "z": -19.824955072616177,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      }
+    },
+    {
+      "id": "anchor_c2_fisher",
+      "from": {
+        "id": "player_scholar",
+        "x": -28.997726282021503,
+        "z": -19.824955072616177,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      },
+      "samples": 379,
+      "distance": 17.808759693808216,
+      "failures": [],
+      "continuous": true,
+      "to": {
+        "id": "player_scholar",
+        "x": -29.000069674756343,
+        "z": -22.293869791216473,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      }
+    },
+    {
+      "id": "anchor_c2_fishing_a",
+      "from": {
+        "id": "player_scholar",
+        "x": -44,
+        "z": -39.7,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      },
+      "samples": 1162,
+      "distance": 54.061560000000235,
+      "failures": [],
+      "continuous": true,
+      "to": {
+        "id": "player_scholar",
+        "x": -28.99990877665369,
+        "z": -19.819641959232627,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      }
+    },
+    {
+      "id": "anchor_c2_fisher",
+      "from": {
+        "id": "player_scholar",
+        "x": -28.99990877665369,
+        "z": -19.819641959232627,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      },
+      "samples": 385,
+      "distance": 17.808389999999953,
+      "failures": [],
+      "continuous": true,
+      "to": {
+        "id": "player_scholar",
+        "x": -29.000036061348137,
+        "z": -22.29512799479319,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      }
+    },
+    {
+      "id": "anchor_c2_food_vendor",
+      "from": {
+        "id": "player_scholar",
+        "x": -29.000036061348137,
+        "z": -22.29512799479319,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      },
+      "samples": 1234,
+      "distance": 57.540975422746186,
+      "failures": [],
+      "continuous": true,
+      "to": {
+        "id": "player_scholar",
+        "x": -44,
+        "z": -39.7,
+        "height": 0.94,
+        "mode": "walk",
+        "layer": "ground"
+      }
+    }
+  ],
+  "focusEmulationDisabledForBlur": true,
+  "failureRoute": [
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:1",
+      "charged": 4,
+      "mode": "relief",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:2",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:4",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:5",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:6",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    },
+    {
+      "castId": "cast:dcd729ce46f6421f90cff24c43baf325:7",
+      "charged": 4,
+      "mode": "tutorial",
+      "outcome": "cancelled"
+    }
+  ],
+  "beforeDispose": {
+    "snapshot": {
+      "schemaVersion": 3,
+      "revision": 12,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1,
+        "item_c2_fish_a": 3
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 8
+        },
+        "energy": {
+          "current": 68,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.49820000000001163
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_fish_a": {
+            "firstObtainedAt": "2026-10-02T16:19:51.044Z",
+            "totalObtained": 3,
+            "sourceIds": [
+              "cast:dcd729ce46f6421f90cff24c43baf325:1",
+              "cast:dcd729ce46f6421f90cff24c43baf325:2",
+              "cast:dcd729ce46f6421f90cff24c43baf325:3"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 3,
+          "pendingCast": null,
+          "rareMisses": 2,
+          "tutorialCompleted": true,
+          "tokenObtained": false,
+          "lastCast": {
+            "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+            "pointId": "point_c2_a",
+            "mode": "normal",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-02T16:19:51.059Z",
+            "seed": 0,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false,
+            "outcome": "caught",
+            "settledAt": "2026-10-02T16:19:51.072Z"
+          }
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 131,
+          "committedThrough": 131,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+              "fingerprint": "{\"payload\":{\"mode\":\"tutorial\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:1",
+                    "pointId": "point_c2_a",
+                    "mode": "tutorial",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.040Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:1\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:2",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.053Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:2\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.059Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:3\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -29,
+            "z": -22.3,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [
+          "goal_c2_fishing_intro"
+        ],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "completed"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:19:51.078Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:19:51.037Z",
+              "operativeSeconds": 0
+            },
+            {
+              "id": "firstCatch",
+              "at": "2026-10-02T16:19:51.044Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [
+            {
+              "start": "2026-10-02T16:19:53.468Z",
+              "end": "2026-10-02T16:19:53.673Z",
+              "note": "失焦或隐藏"
+            }
+          ],
+          "lastWallAt": "2026-10-02T16:19:53.963Z",
+          "operativeSeconds": 0.49820000000001163
+        }
+      }
+    },
+    "module": {
+      "phase": "closed",
+      "shopId": "shop_c2_fish",
+      "tab": "sell",
+      "quote": null,
+      "result": null,
+      "error": null,
+      "reason": "user"
+    },
+    "actor": {
+      "id": "player_scholar",
+      "x": -29,
+      "z": -22.3,
+      "height": 0.94,
+      "mode": "walk",
+      "layer": "ground"
+    },
+    "locks": [],
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.5,
+      "distance": 9,
+      "position": [
+        -29,
+        6.604829847437827,
+        -30.198243057013357
+      ]
+    },
+    "registryEntries": [
+      "npc_c2_fisher",
+      "npc_c2_merchant",
+      "npc_c2_food_vendor",
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 2,
+    "walkEvidence": [
+      {
+        "id": "anchor_c2_fishing_a",
+        "from": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1198,
+        "distance": 54.04590000000021,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -28.997726282021503,
+          "z": -19.824955072616177,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fisher",
+        "from": {
+          "id": "player_scholar",
+          "x": -28.997726282021503,
+          "z": -19.824955072616177,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 379,
+        "distance": 17.808759693808216,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -29.000069674756343,
+          "z": -22.293869791216473,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fishing_a",
+        "from": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1162,
+        "distance": 54.061560000000235,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -28.99990877665369,
+          "z": -19.819641959232627,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fisher",
+        "from": {
+          "id": "player_scholar",
+          "x": -28.99990877665369,
+          "z": -19.819641959232627,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 385,
+        "distance": 17.808389999999953,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -29.000036061348137,
+          "z": -22.29512799479319,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_food_vendor",
+        "from": {
+          "id": "player_scholar",
+          "x": -29.000036061348137,
+          "z": -22.29512799479319,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1234,
+        "distance": 57.540975422746186,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      }
+    ],
+    "wares": {
+      "assets": [
+        "c2_food/existing-steamer",
+        "c2_food/existing-tea-pot",
+        "c2_food/existing-bowl-0",
+        "c2_food/existing-bowl-1",
+        "c2_food/existing-bowl-2",
+        "c2_general/existing-cup-appearance"
+      ],
+      "legacyShopMoved": false,
+      "dedicatedNPCModels": false
+    },
+    "formalSaveUnchanged": true,
+    "events": [],
+    "toasts": [
+      "DEV隔离样本：poor。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：poor。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：fish。通关前置与边界数值为明确测试起点；动作结算使用真实服务。"
+    ],
+    "notFormalIntegration": true,
+    "humanPlaytest": false
+  },
+  "final": {
+    "snapshot": {
+      "schemaVersion": 3,
+      "revision": 12,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1,
+        "item_c2_fish_a": 3
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 8
+        },
+        "energy": {
+          "current": 68,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.49820000000001163
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_fish_a": {
+            "firstObtainedAt": "2026-10-02T16:19:51.044Z",
+            "totalObtained": 3,
+            "sourceIds": [
+              "cast:dcd729ce46f6421f90cff24c43baf325:1",
+              "cast:dcd729ce46f6421f90cff24c43baf325:2",
+              "cast:dcd729ce46f6421f90cff24c43baf325:3"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 3,
+          "pendingCast": null,
+          "rareMisses": 2,
+          "tutorialCompleted": true,
+          "tokenObtained": false,
+          "lastCast": {
+            "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+            "pointId": "point_c2_a",
+            "mode": "normal",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-02T16:19:51.059Z",
+            "seed": 0,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false,
+            "outcome": "caught",
+            "settledAt": "2026-10-02T16:19:51.072Z"
+          }
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 131,
+          "committedThrough": 131,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+              "fingerprint": "{\"payload\":{\"mode\":\"tutorial\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:1",
+                    "pointId": "point_c2_a",
+                    "mode": "tutorial",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.040Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:1\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:2",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.053Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:2\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.059Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:3\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -29,
+            "z": -22.3,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [
+          "goal_c2_fishing_intro"
+        ],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "completed"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:19:51.078Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:19:51.037Z",
+              "operativeSeconds": 0
+            },
+            {
+              "id": "firstCatch",
+              "at": "2026-10-02T16:19:51.044Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [
+            {
+              "start": "2026-10-02T16:19:53.468Z",
+              "end": "2026-10-02T16:19:53.673Z",
+              "note": "失焦或隐藏"
+            }
+          ],
+          "lastWallAt": "2026-10-02T16:19:53.963Z",
+          "operativeSeconds": 0.49820000000001163
+        }
+      }
+    },
+    "module": {
+      "phase": "closed",
+      "shopId": "shop_c2_fish",
+      "tab": "sell",
+      "quote": null,
+      "result": null,
+      "error": null,
+      "reason": "dispose"
+    },
+    "actor": {
+      "id": "player_scholar",
+      "x": -29,
+      "z": -22.3,
+      "height": 0.94,
+      "mode": "walk",
+      "layer": "ground"
+    },
+    "locks": [],
+    "camera": {
+      "owner": null,
+      "yaw": 3.141592653589793,
+      "pitch": 0.5,
+      "distance": 9,
+      "position": [
+        -29,
+        6.604829847437827,
+        -30.198243057013357
+      ]
+    },
+    "registryEntries": [
+      "anchor_c2_fishing_a",
+      "anchor_c2_fishing_b"
+    ],
+    "inputListeners": 1,
+    "walkEvidence": [
+      {
+        "id": "anchor_c2_fishing_a",
+        "from": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1198,
+        "distance": 54.04590000000021,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -28.997726282021503,
+          "z": -19.824955072616177,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fisher",
+        "from": {
+          "id": "player_scholar",
+          "x": -28.997726282021503,
+          "z": -19.824955072616177,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 379,
+        "distance": 17.808759693808216,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -29.000069674756343,
+          "z": -22.293869791216473,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fishing_a",
+        "from": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1162,
+        "distance": 54.061560000000235,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -28.99990877665369,
+          "z": -19.819641959232627,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_fisher",
+        "from": {
+          "id": "player_scholar",
+          "x": -28.99990877665369,
+          "z": -19.819641959232627,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 385,
+        "distance": 17.808389999999953,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -29.000036061348137,
+          "z": -22.29512799479319,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      },
+      {
+        "id": "anchor_c2_food_vendor",
+        "from": {
+          "id": "player_scholar",
+          "x": -29.000036061348137,
+          "z": -22.29512799479319,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        },
+        "samples": 1234,
+        "distance": 57.540975422746186,
+        "failures": [],
+        "continuous": true,
+        "to": {
+          "id": "player_scholar",
+          "x": -44,
+          "z": -39.7,
+          "height": 0.94,
+          "mode": "walk",
+          "layer": "ground"
+        }
+      }
+    ],
+    "wares": {
+      "assets": [
+        "c2_food/existing-steamer",
+        "c2_food/existing-tea-pot",
+        "c2_food/existing-bowl-0",
+        "c2_food/existing-bowl-1",
+        "c2_food/existing-bowl-2",
+        "c2_general/existing-cup-appearance"
+      ],
+      "legacyShopMoved": false,
+      "dedicatedNPCModels": false
+    },
+    "formalSaveUnchanged": true,
+    "events": [],
+    "toasts": [
+      "DEV隔离样本：poor。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：poor。通关前置与边界数值为明确测试起点；动作结算使用真实服务。",
+      "DEV隔离样本：fish。通关前置与边界数值为明确测试起点；动作结算使用真实服务。"
+    ],
+    "notFormalIntegration": true,
+    "humanPlaytest": false
+  },
+  "storage": {
+    "key": "qingming:dev:chapter2:commerce-browser-v1",
+    "main": {
+      "schemaVersion": 3,
+      "revision": 12,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1,
+        "item_c2_fish_a": 3
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 8
+        },
+        "energy": {
+          "current": 68,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.49820000000001163
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_fish_a": {
+            "firstObtainedAt": "2026-10-02T16:19:51.044Z",
+            "totalObtained": 3,
+            "sourceIds": [
+              "cast:dcd729ce46f6421f90cff24c43baf325:1",
+              "cast:dcd729ce46f6421f90cff24c43baf325:2",
+              "cast:dcd729ce46f6421f90cff24c43baf325:3"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 3,
+          "pendingCast": null,
+          "rareMisses": 2,
+          "tutorialCompleted": true,
+          "tokenObtained": false,
+          "lastCast": {
+            "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+            "pointId": "point_c2_a",
+            "mode": "normal",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-02T16:19:51.059Z",
+            "seed": 0,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false,
+            "outcome": "caught",
+            "settledAt": "2026-10-02T16:19:51.072Z"
+          }
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 131,
+          "committedThrough": 131,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+              "fingerprint": "{\"payload\":{\"mode\":\"tutorial\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:1",
+                    "pointId": "point_c2_a",
+                    "mode": "tutorial",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.040Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:1\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:2",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.053Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:2\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.059Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:3\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -29,
+            "z": -22.3,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [
+          "goal_c2_fishing_intro"
+        ],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "completed"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:19:51.078Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:19:51.037Z",
+              "operativeSeconds": 0
+            },
+            {
+              "id": "firstCatch",
+              "at": "2026-10-02T16:19:51.044Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [
+            {
+              "start": "2026-10-02T16:19:53.468Z",
+              "end": "2026-10-02T16:19:53.673Z",
+              "note": "失焦或隐藏"
+            }
+          ],
+          "lastWallAt": "2026-10-02T16:19:53.963Z",
+          "operativeSeconds": 0.49820000000001163
+        }
+      }
+    },
+    "backup": {
+      "schemaVersion": 3,
+      "revision": 11,
+      "inventory": {
+        "item_c2_basic_rod": 1,
+        "item_c2_basic_bait": 1,
+        "item_c2_fish_a": 3
+      },
+      "unlockedCodexIds": [],
+      "permissions": [],
+      "worldState": {
+        "collectedInstanceIds": [],
+        "shipState": "passed"
+      },
+      "quests": {
+        "hongqiao_01": {
+          "status": "completed"
+        }
+      },
+      "unlockedStoryIds": [
+        "story_hq_zhou",
+        "story_hq_he",
+        "story_hq_cheng",
+        "story_hq_fang"
+      ],
+      "readStoryIds": [],
+      "storyReadingProgress": {},
+      "readContentVersions": {},
+      "introStatus": "unseen",
+      "introSeen": false,
+      "endingPending": false,
+      "endingSeen": true,
+      "travel": {
+        "initialized": true,
+        "regionId": "region_d",
+        "wallet": {
+          "coins": 8
+        },
+        "energy": {
+          "current": 68,
+          "max": 100,
+          "reserved": 0,
+          "passiveSeconds": 0.365
+        },
+        "instances": {
+          "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod": {
+            "id": "instance:dcd729ce46f6421f90cff24c43baf325:item_c2_basic_rod",
+            "itemId": "item_c2_basic_rod",
+            "ownership": "borrowed",
+            "protected": true,
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "sourceId": "quest_c2_fishing_intro"
+          }
+        },
+        "collection": {
+          "item_c2_basic_rod": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_basic_bait": {
+            "firstObtainedAt": "2026-10-02T16:19:51.037Z",
+            "totalObtained": 1,
+            "sourceIds": [
+              "quest_c2_fishing_intro"
+            ]
+          },
+          "item_c2_fish_a": {
+            "firstObtainedAt": "2026-10-02T16:19:51.044Z",
+            "totalObtained": 3,
+            "sourceIds": [
+              "cast:dcd729ce46f6421f90cff24c43baf325:1",
+              "cast:dcd729ce46f6421f90cff24c43baf325:2",
+              "cast:dcd729ce46f6421f90cff24c43baf325:3"
+            ]
+          }
+        },
+        "storyReadingProgress": {},
+        "readStoryIds": [],
+        "commerce": {
+          "receipts": [],
+          "buyback": [],
+          "shopStock": {
+            "offer_c2_cup": 1,
+            "offer_c2_bell_later": 1
+          },
+          "barterCounts": {}
+        },
+        "relief": {
+          "debt": 0,
+          "firstCastGuaranteed": false,
+          "recoveryEpoch": 0
+        },
+        "fishing": {
+          "sequence": 3,
+          "pendingCast": null,
+          "rareMisses": 2,
+          "tutorialCompleted": true,
+          "tokenObtained": false,
+          "lastCast": {
+            "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+            "pointId": "point_c2_a",
+            "mode": "normal",
+            "chargedEnergy": 4,
+            "startedAt": "2026-10-02T16:19:51.059Z",
+            "seed": 0,
+            "resultItemId": "item_c2_fish_a",
+            "rare": false,
+            "outcome": "caught",
+            "settledAt": "2026-10-02T16:19:51.072Z"
+          }
+        },
+        "transactions": {
+          "saveEpoch": "dcd729ce46f6421f90cff24c43baf325",
+          "nextSequence": 131,
+          "committedThrough": 131,
+          "recent": [
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+              "fingerprint": "{\"payload\":{\"entryId\":\"entry_c2_from_hongqiao\"},\"type\":\"c2/enterChapter2\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:124",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+              "fingerprint": "{\"payload\":{\"questId\":\"quest_c2_fishing_intro\"},\"type\":\"c2/acceptQuest\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:125",
+                "data": {}
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+              "fingerprint": "{\"payload\":{\"mode\":\"tutorial\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:126",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:1",
+                    "pointId": "point_c2_a",
+                    "mode": "tutorial",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.040Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:1\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:127",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:128",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:2",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.053Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:2\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:129",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+              "fingerprint": "{\"payload\":{\"mode\":\"normal\",\"pointId\":\"point_c2_a\"},\"type\":\"c2/startCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:130",
+                "data": {
+                  "cast": {
+                    "id": "cast:dcd729ce46f6421f90cff24c43baf325:3",
+                    "pointId": "point_c2_a",
+                    "mode": "normal",
+                    "chargedEnergy": 4,
+                    "startedAt": "2026-10-02T16:19:51.059Z",
+                    "seed": 0,
+                    "resultItemId": "item_c2_fish_a",
+                    "rare": false
+                  }
+                }
+              }
+            },
+            {
+              "id": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+              "fingerprint": "{\"payload\":{\"castId\":\"cast:dcd729ce46f6421f90cff24c43baf325:3\",\"outcome\":\"caught\"},\"type\":\"c2/resolveCast\"}",
+              "result": {
+                "ok": true,
+                "changed": true,
+                "saved": true,
+                "transactionId": "c2:dcd729ce46f6421f90cff24c43baf325:131",
+                "data": {
+                  "itemId": "item_c2_fish_a",
+                  "quantity": 1
+                }
+              }
+            }
+          ]
+        },
+        "regionPositions": {
+          "region_d": {
+            "x": -29,
+            "z": -22.3,
+            "height": 0.94,
+            "layer": "ground"
+          }
+        }
+      },
+      "chapter2": {
+        "contractVersion": "1.0.0",
+        "entryCount": 1,
+        "safeAnchorId": "anchor_c2_entry",
+        "mainStatus": "available",
+        "goalIds": [
+          "goal_c2_fishing_intro"
+        ],
+        "quests": {
+          "quest_c2_main": {
+            "status": "available"
+          },
+          "quest_c2_fishing_intro": {
+            "status": "completed"
+          },
+          "quest_c2_repair": {
+            "status": "available"
+          },
+          "quest_c2_token": {
+            "status": "available"
+          }
+        },
+        "repair": {
+          "status": "available",
+          "stepIds": [],
+          "reserved": 0,
+          "rewardChoice": null
+        },
+        "storyStages": {},
+        "presentations": {
+          "intro": "pending",
+          "ending": "unseen"
+        },
+        "timing": {
+          "firstOperativeAt": "2026-10-02T16:19:51.078Z",
+          "events": [
+            {
+              "id": "accept:quest_c2_fishing_intro",
+              "at": "2026-10-02T16:19:51.037Z",
+              "operativeSeconds": 0
+            },
+            {
+              "id": "firstCatch",
+              "at": "2026-10-02T16:19:51.044Z",
+              "operativeSeconds": 0
+            }
+          ],
+          "externalInterruptions": [
+            {
+              "start": "2026-10-02T16:19:53.468Z",
+              "end": "2026-10-02T16:19:53.673Z",
+              "note": "失焦或隐藏"
+            }
+          ],
+          "lastWallAt": "2026-10-02T16:19:53.673Z",
+          "operativeSeconds": 0.365
+        }
+      }
+    }
+  }
+}

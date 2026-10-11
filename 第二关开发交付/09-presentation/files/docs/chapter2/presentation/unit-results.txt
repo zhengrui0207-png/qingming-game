@@ -1,0 +1,48 @@
+✔ sound bank routes into supplied host master, maximum two FX plus shared ambience, all cancelled on end (1.347375ms)
+✔ no host master means fail-closed silence rather than bypassing the global mixer (0.209625ms)
+✔ mute, pause and hidden frames stop voices; resume only ambience, no delayed effect backfill (0.222167ms)
+✔ duplicate cue and clapperless story bell do not ring; explicit ordinary bell still works (0.51475ms)
+✔ missing WAVs and unavailable decoder resolve false, never reject or lock playback (0.176708ms)
+✔ dispose during download prevents late decoded resources from attaching or playing (0.13775ms)
+✔ intro_c2 contiguous cuts, exact dialogue, finite camera at each tenth second (1.516209ms)
+✔ ending_c2 contiguous cuts, exact dialogue, finite camera at each tenth second (0.172541ms)
+✔ intro_c2 skip 0s restores complete camera and never changes economic state (5.270416ms)
+✔ intro_c2 skip 0.17s restores complete camera and never changes economic state (0.765667ms)
+✔ intro_c2 skip 2.95s restores complete camera and never changes economic state (0.7285ms)
+✔ intro_c2 skip 3.05s restores complete camera and never changes economic state (0.845666ms)
+✔ intro_c2 skip 5.7s restores complete camera and never changes economic state (1.298958ms)
+✔ intro_c2 skip 7.3s restores complete camera and never changes economic state (0.933375ms)
+✔ intro_c2 skip 9.9s restores complete camera and never changes economic state (1.193125ms)
+✔ intro_c2 skip 11.7s restores complete camera and never changes economic state (0.785209ms)
+✔ ending_c2 skip 0s restores complete camera and never changes economic state (4.933209ms)
+✔ ending_c2 skip 0.17s restores complete camera and never changes economic state (3.853625ms)
+✔ ending_c2 skip 2.95s restores complete camera and never changes economic state (3.837667ms)
+✔ ending_c2 skip 3.05s restores complete camera and never changes economic state (3.6165ms)
+✔ ending_c2 skip 5.7s restores complete camera and never changes economic state (4.14025ms)
+✔ ending_c2 skip 7.3s restores complete camera and never changes economic state (4.025416ms)
+✔ ending_c2 skip 9.9s restores complete camera and never changes economic state (3.434875ms)
+✔ ending_c2 skip 11.7s restores complete camera and never changes economic state (3.490042ms)
+✔ ending_c2 skip 15.9s restores complete camera and never changes economic state (3.630708ms)
+✔ blur releases camera and leaves pending, without automatic restart (0.302917ms)
+✔ hidden releases camera and leaves pending, without automatic restart (0.205834ms)
+✔ book releases camera and leaves pending, without automatic restart (0.192791ms)
+✔ camera-preempted releases camera and leaves pending, without automatic restart (0.202834ms)
+✔ region-leave releases camera and leaves pending, without automatic restart (0.183708ms)
+✔ dispose releases camera and leaves pending, without automatic restart (0.17825ms)
+✔ natural completion ack once; repeated reviews leave whole core snapshot unchanged (7.407375ms)
+✔ failed ack preserves pending candidate, camera restored, retry uses same transaction, blocks new film (0.5075ms)
+✔ existing modal or camera borrower is not replaced; unentered or hidden frame fails closed (0.225459ms)
+✔ actor resource fails safely and still permits explicit skip without reward (0.331375ms)
+✔ paused film does not advance and semantic Escape never leaks to movement (0.3085ms)
+✔ stage restores borrowed player/bones and scene placeholders, rope hand matches target across six shots (6.135ms)
+✔ camera release respects new aspect, released lease cannot overwrite restored movement camera (0.420208ms)
+✔ sound bank contains actual audible PCM WAV samples and source checksums (4.180084ms)
+✔ feedback reacts only to committed changed actions and deduplicates repeated transaction (0.643083ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.851833

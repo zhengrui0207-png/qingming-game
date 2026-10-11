@@ -1,0 +1,8 @@
+{
+  "prompt": "One single folded cargo-cover cloth for a Northern Song era Chinese riverside game, made from an old coarse-woven wrapping cloth. A compact rectangular bundle with clearly layered soft folds and believable thin fabric thickness. Muted warm gray-brown cloth, three modest irregular sewn patches in slightly different earth tones, simple visible stitching, gently worn edges, still serviceable and carefully kept. Natural matte woven material, not leather. Clear game-ready silhouette, fine weave represented in texture rather than loose fibers. Isolated folded cloth only. No tied parcel, contents, plastic tarp, embroidery, printed pattern, symbols, text, people, table, platform, or scenery.",
+  "model": "P1-20260311",
+  "face_limit": 2000,
+  "texture": true,
+  "pbr": true,
+  "texture_quality": "standard"
+}

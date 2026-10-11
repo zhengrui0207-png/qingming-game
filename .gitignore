@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# 工具缓存
+.playwright-cli/
+
+# 输出（中间产物）
+output/
+outputs/
+work/
+tmp/
+
+# 数据
+*.json.bak
+.cache/
+
+# 日志
+*.log
+
+# 密钥
+.env
+.env.local
+.auth/
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# === 第二关开发：仅交付物入库，工作区和提示词不入库 ===
+第二关开发工作区/
+第二关开发提示词/

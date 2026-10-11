@@ -1,0 +1,76 @@
+{
+  "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/generation.glb",
+  "sha256": "51038d41d043dae1e10b95731c607c3581ee41169ccdb321197b599323264e9a",
+  "bytes": 9120760,
+  "triangles": 18361,
+  "nodeReferencedTriangles": 18361,
+  "triangleScope": "triangles counts unique mesh definitions; nodeReferencedTriangles also counts repeated mesh instances, not runtime culling",
+  "meshes": 1,
+  "primitives": 1,
+  "materials": 1,
+  "materialNames": [
+    "tripo_material_f53a882c-77d3-43ad-a9aa-dbee3687de01"
+  ],
+  "images": [
+    {
+      "name": "Color_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+      "mimeType": "image/jpeg",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "uri": null
+    },
+    {
+      "name": "ORM_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+      "mimeType": "image/jpeg",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "uri": null
+    },
+    {
+      "name": "NormalGL_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+      "mimeType": "image/png",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "uri": null
+    }
+  ],
+  "skins": 0,
+  "jointCounts": [],
+  "animations": [],
+  "extensions": [],
+  "primitiveLocalBounds": [
+    {
+      "min": [
+        -0.1513671875,
+        -0.4990234375,
+        -0.3564453125
+      ],
+      "max": [
+        0.1513671875,
+        0.4990234375,
+        0.3564453125
+      ]
+    }
+  ],
+  "boundsScope": "primitive accessor local coordinates; not world bounds or posed bounds",
+  "sceneRoots": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "externalFiles": [],
+  "nodeNames": [
+    "tripo_node_f53a882c-77d3-43ad-a9aa-dbee3687de01"
+  ],
+  "artAccepted": false,
+  "chapter2Accepted": false
+}

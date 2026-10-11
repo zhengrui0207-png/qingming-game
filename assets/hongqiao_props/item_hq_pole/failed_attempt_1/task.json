@@ -1,0 +1,22 @@
+{
+  "asset_id": "item_hq_pole",
+  "name": "长竹篙",
+  "base_url": "https://openapi.tripo3d.ai/v3",
+  "request_sha256": "1dfe4fa6e8623d15564ffe76f07e240526264231b1df6feeadce18e3d7c0172f",
+  "estimated_credits": 40,
+  "balance_before": {
+    "balance": 9900.0,
+    "frozen": 0.0
+  },
+  "status": "failed",
+  "task_id": "2c34ec83-2fd5-4225-8344-f43e81090d81",
+  "progress": 100,
+  "credits_reported_while_running": 40.0,
+  "credits_consumed": 0,
+  "refund_verification": {
+    "balance_after_failure": 9900.0,
+    "frozen": 0,
+    "successful_rope_cost": 40.0,
+    "batch_start_balance": 9940.0
+  }
+}

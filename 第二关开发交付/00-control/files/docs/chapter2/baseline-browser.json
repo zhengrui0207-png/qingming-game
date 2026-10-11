@@ -1,0 +1,163 @@
+{
+  "sourceRoot": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game",
+  "clientDate": "2026-10-01",
+  "testURL": "http://127.0.0.1:5280/?test",
+  "browserEvidence": "output/playwright/chapter2-p0",
+  "device": {
+    "model": "Mac17,3",
+    "cpu": "Apple M5",
+    "memoryBytes": 17179869184
+  },
+  "movement": {
+    "method": "real keyboard W 650ms",
+    "before": {
+      "actor": {
+        "x": 0,
+        "z": 35,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      }
+    },
+    "after": {
+      "actor": {
+        "x": -0.41245398762284297,
+        "z": 33.15555382076513,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      }
+    },
+    "moved": true
+  },
+  "camera": {
+    "method": "actual V toggle; DEV setActor bridge positioning",
+    "overview": {
+      "yaw": 0.5,
+      "pitch": 0.49,
+      "distance": 28.97917416552354,
+      "overview": true
+    },
+    "bridge": {
+      "actor": {
+        "x": 0,
+        "z": 0,
+        "layer": "bridge",
+        "height": 8.24,
+        "mode": "walk"
+      }
+    },
+    "restored": {
+      "yaw": 0.5,
+      "pitch": 0.49,
+      "distance": 10.000000007114005,
+      "overview": false
+    }
+  },
+  "replay": {
+    "before": {
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      },
+      "actor": {
+        "x": -0.41245398762284297,
+        "z": 33.15555382076513,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "locks": [
+        "book"
+      ]
+    },
+    "during": {
+      "locks": [
+        "presentation"
+      ],
+      "running": "intro"
+    },
+    "after": {
+      "camera": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10,
+        "overview": false
+      },
+      "actor": {
+        "x": -0.41245398762284297,
+        "z": 33.15555382076513,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      },
+      "locks": [],
+      "running": null
+    },
+    "cameraRestored": true
+  },
+  "landmark": {
+    "opened": true,
+    "lock": [
+      "history"
+    ],
+    "closed": true,
+    "releasedLocks": [],
+    "sourceCount": 2
+  },
+  "performance": {
+    "method": "3s stationary bridge RAF sample; baseline only",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "viewport": [
+      1200,
+      792
+    ],
+    "dpr": 2,
+    "focused": true,
+    "hidden": false,
+    "samples": 133,
+    "averageFrameMs": 22.806766917293583,
+    "p95FrameMs": 33.5,
+    "instantFps": 46,
+    "drawCalls": 743,
+    "triangles": 5278869,
+    "actor": {
+      "x": 0,
+      "z": 0,
+      "layer": "bridge",
+      "height": 8.24,
+      "mode": "walk"
+    },
+    "camera": {
+      "yaw": 0.5,
+      "pitch": 0.49,
+      "distance": 10,
+      "overview": false
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "limitations": [
+    "桥上位置使用DEV setActor，未冒充从入口全程步行",
+    "仅P0基线抽查，不是Step 8/11全部剧情验收",
+    "3秒静止采样不是1080p/DPR1.5持续走动或真人首玩结论",
+    "未测试移动端/Safari/全套旧档/全部镜头刷新失焦",
+    "第二关未装配，相机/ports适配器由00/10接入"
+  ]
+}

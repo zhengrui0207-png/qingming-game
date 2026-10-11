@@ -1,0 +1,72 @@
+{
+  "asset_id": "item_hq_pole",
+  "name": "长竹篙",
+  "base_url": "https://openapi.tripo3d.ai/v3",
+  "request_sha256": "1dfe4fa6e8623d15564ffe76f07e240526264231b1df6feeadce18e3d7c0172f",
+  "estimated_credits": 40,
+  "balance_before": {
+    "balance": 9900.0,
+    "frozen": 0.0
+  },
+  "status": "downloaded",
+  "task_id": "def71f2c-7b1c-4f3d-9d48-aac969f1635d",
+  "progress": 100,
+  "credits_consumed": 40.0,
+  "model_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_pole/item_hq_pole.glb",
+  "inspection": {
+    "bytes": 713468,
+    "sha256": "fc35e62d390058ca31dae0b2bdc957472512bf18e9b9889e823479d2d09f8b9b",
+    "triangles": 1916,
+    "meshes": 1,
+    "materials": 1,
+    "images": 3,
+    "external_uris": [],
+    "extensions": [],
+    "position_bounds": [
+      {
+        "min": [
+          -0.0302734375,
+          -0.0166015625,
+          -0.4990234375
+        ],
+        "max": [
+          0.0302734375,
+          0.0166015625,
+          0.4990234375
+        ]
+      }
+    ],
+    "embedded_image_validation": [
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      }
+    ],
+    "material_features": [
+      {
+        "pbr": true,
+        "base_color_texture": true,
+        "metallic_roughness_texture": true,
+        "normal_texture": true
+      }
+    ]
+  },
+  "preview_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_pole/preview.png"
+}

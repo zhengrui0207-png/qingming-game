@@ -1,0 +1,390 @@
+{
+  "assetId": "asset_c2_merchant",
+  "name": "顾娘子",
+  "recipeId": "qingming-p1-20k-detailed-rig25-idle-walk",
+  "userApproval": "确认",
+  "approvalRecordedAt": "2026-10-02T15:34:51.203570+00:00",
+  "approvedCreditCap": 120,
+  "generationAttemptCap": 1,
+  "approvedPlanSHA256": "ef624edc7ec28cc7a4c563cd7344c37ee1a8b23e0d2c4729bbace5c55676db14",
+  "steps": {
+    "generation": {
+      "status": "success",
+      "startedAt": "2026-10-02T15:36:32.588479+00:00",
+      "endpoint": "/v3/generation/text-to-model",
+      "request": {
+        "prompt": "Full-body game character, Gu Niangzi, a fictional 42-year-old Chinese woman running a modest general-goods stall in Northern Song inspired Bianjing. Mature natural facial features, clear eyes, calm brisk expression, dark hair gathered into a simple practical bun. Muted dark green modest wrap-front robe with narrow sleeves, plain brown cloth outer layer, simple fabric waist tie, long practical skirt and cloth shoes. No royal costume or costly jewelry. Relaxed neutral A-pose with both empty hands clearly separated from body, five fingers on each hand, stable planted feet. Single anatomically correct figure; front face only on front, hair bun on back. Restrained semi-realistic low-poly PBR style matching the existing Qingming game, readable face and cloth seams for close dialogue shots. No abacus or ceramic cup fused into hands; props will be separate local assets.",
+        "negative_prompt": "male, young girl, duplicate face, extra limbs, extra fingers, fused hands, Qing queue, qipao, modern clothes, imperial crown, weapon, abacus, cup, background scenery, pedestal, painted shadows, shiny plastic skin",
+        "model": "P1-20260311",
+        "face_limit": 20000,
+        "texture": true,
+        "pbr": true,
+        "texture_quality": "detailed",
+        "texture_version": "v3.0-20250812",
+        "export_uv": true
+      },
+      "requestSHA256": "0a65cbbdc82730c8374db1f88754a375dd92f54dbb12e3bb9866fa86d2300970",
+      "reservedCreditUpper": 60,
+      "creditsConsumed": 50.0,
+      "taskId": "f53a882c-77d3-43ad-a9aa-dbee3687de01",
+      "submittedAt": "2026-10-02T15:36:37.725322+00:00",
+      "result": {
+        "type": "text_to_model",
+        "status": "success",
+        "progress": 100,
+        "input": {
+          "pbr": true,
+          "prompt": "Full-body game character, Gu Niangzi, a fictional 42-year-old Chinese woman running a modest general-goods stall in Northern Song inspired Bianjing. Mature natural facial features, clear eyes, calm brisk expression, dark hair gathered into a simple practical bun. Muted dark green modest wrap-front robe with narrow sleeves, plain brown cloth outer layer, simple fabric waist tie, long practical skirt and cloth shoes. No royal costume or costly jewelry. Relaxed neutral A-pose with both empty hands clearly separated from body, five fingers on each hand, stable planted feet. Single anatomically correct figure; front face only on front, hair bun on back. Restrained semi-realistic low-poly PBR style matching the existing Qingming game, readable face and cloth seams for close dialogue shots. No abacus or ceramic cup fused into hands; props will be separate local assets.",
+          "texture": true,
+          "export_uv": true,
+          "face_limit": 20000,
+          "model_version": "P1-20260311",
+          "negative_prompt": "male, young girl, duplicate face, extra limbs, extra fingers, fused hands, Qing queue, qipao, modern clothes, imperial crown, weapon, abacus, cup, background scenery, pedestal, painted shadows, shiny plastic skin",
+          "texture_quality": "detailed",
+          "texture_version": "v3.0-20250812",
+          "texture_alignment": "geometry"
+        },
+        "output": {
+          "model_url": "[remote URL omitted]",
+          "rendered_image_url": "[remote URL omitted]",
+          "generated_image_url": "[remote URL omitted]"
+        },
+        "task_id": "f53a882c-77d3-43ad-a9aa-dbee3687de01",
+        "created_at": "2026-10-02T15:36:37.396921Z",
+        "completed_at": "2026-10-02T15:38:02.775815Z",
+        "credits_consumed": 50.0
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T15:43:45.640229+00:00",
+      "download": {
+        "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/generation.glb",
+        "sha256": "51038d41d043dae1e10b95731c607c3581ee41169ccdb321197b599323264e9a",
+        "bytes": 9120760
+      }
+    },
+    "rig-check": {
+      "status": "success",
+      "startedAt": "2026-10-02T15:52:05.305048+00:00",
+      "endpoint": "/v3/animations/rig-check",
+      "request": {
+        "input": "f53a882c-77d3-43ad-a9aa-dbee3687de01"
+      },
+      "requestSHA256": "5faee77e3fe87276eb4388c8045e9b1efa40fe19303ccb865cdb76135551f773",
+      "reservedCreditUpper": 0,
+      "creditsConsumed": 0.0,
+      "taskId": "ce84ff78-1cf2-46da-bb43-0618715e2a34",
+      "submittedAt": "2026-10-02T15:52:09.611013+00:00",
+      "result": {
+        "type": "animate_prerigcheck",
+        "status": "success",
+        "progress": 100,
+        "input": {
+          "original_model_id": "f53a882c-77d3-43ad-a9aa-dbee3687de01"
+        },
+        "output": {
+          "riggable": true,
+          "rig_type": "biped"
+        },
+        "task_id": "ce84ff78-1cf2-46da-bb43-0618715e2a34",
+        "created_at": "2026-10-02T15:52:09.482252Z",
+        "completed_at": "2026-10-02T15:52:10.008765Z",
+        "credits_consumed": 0.0
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T15:53:17.905282+00:00"
+    },
+    "rig": {
+      "status": "success",
+      "startedAt": "2026-10-02T15:54:59.967813+00:00",
+      "endpoint": "/v3/animations/rig",
+      "request": {
+        "input": "f53a882c-77d3-43ad-a9aa-dbee3687de01",
+        "model": "v2.5-20260210",
+        "rig_type": "biped",
+        "spec": "mixamo",
+        "out_format": "glb"
+      },
+      "requestSHA256": "3338e9ea6ff75c2cfc8900b7140e6a2cc0763a5dc3252832de05bde51ee68f74",
+      "reservedCreditUpper": 25,
+      "creditsConsumed": 25.0,
+      "taskId": "fe67275e-47a2-44f2-9155-e31f6b70d897",
+      "submittedAt": "2026-10-02T15:55:08.652632+00:00",
+      "result": {
+        "type": "animate_rig",
+        "status": "success",
+        "progress": 100,
+        "input": {
+          "spec": "mixamo",
+          "topology": "biped",
+          "out_format": "glb",
+          "original_model_id": "f53a882c-77d3-43ad-a9aa-dbee3687de01"
+        },
+        "output": {
+          "model_url": "[remote URL omitted]",
+          "rendered_image_url": "[remote URL omitted]"
+        },
+        "task_id": "fe67275e-47a2-44f2-9155-e31f6b70d897",
+        "created_at": "2026-10-02T15:55:08.166885Z",
+        "completed_at": "2026-10-02T15:55:26.227988Z",
+        "credits_consumed": 25.0
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T15:59:45.872233+00:00",
+      "download": {
+        "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig.glb",
+        "sha256": "d8841eb0dbba81e0303bd4953b93d40bf873b48e55ccf8c5ab8912b29c273309",
+        "bytes": 9590056
+      }
+    },
+    "retarget": {
+      "status": "failed",
+      "startedAt": "2026-10-02T16:02:01.924563+00:00",
+      "endpoint": "/v3/animations/retarget",
+      "request": {
+        "input": "fe67275e-47a2-44f2-9155-e31f6b70d897",
+        "animations": [
+          "preset:idle",
+          "preset:walk"
+        ],
+        "animate_in_place": true,
+        "bake_animation": true,
+        "export_with_geometry": true,
+        "out_format": "glb"
+      },
+      "requestSHA256": "6226972fce0419529d7f395a156af5b97fd363500dffca5ba177175c8acb061c",
+      "reservedCreditUpper": 20,
+      "creditsConsumed": null,
+      "taskId": "a20516b5-db75-4d0a-bd7b-fa0e9994fa08",
+      "submittedAt": "2026-10-02T16:02:05.394441+00:00",
+      "result": {
+        "type": "animate_retarget",
+        "status": "failed",
+        "progress": 100,
+        "input": {
+          "animations": [
+            "preset:idle",
+            "preset:walk"
+          ],
+          "out_format": "glb",
+          "bake_animation": true,
+          "animate_in_place": true,
+          "original_model_id": "fe67275e-47a2-44f2-9155-e31f6b70d897",
+          "export_with_geometry": true
+        },
+        "output": {},
+        "task_id": "a20516b5-db75-4d0a-bd7b-fa0e9994fa08",
+        "created_at": "2026-10-02T16:02:04.633520Z",
+        "completed_at": "2026-10-02T16:02:16.256871Z",
+        "error_code": 1004,
+        "error_message": "Invalid input parameter"
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T16:04:27.172187+00:00",
+      "effectiveBudgetCost": 0,
+      "billingReconciliation": {
+        "method": "failed task refund policy + balance3880→3805 equals successful generation50+rig25; frozen0",
+        "taskCreditsField": null,
+        "netCostInferred": 0,
+        "notASuccessfulAnimation": true
+      }
+    },
+    "rig-tripo": {
+      "status": "success",
+      "startedAt": "2026-10-02T16:11:02.316164+00:00",
+      "endpoint": "/v3/animations/rig",
+      "request": {
+        "input": "f53a882c-77d3-43ad-a9aa-dbee3687de01",
+        "model": "v2.5-20260210",
+        "rig_type": "biped",
+        "spec": "tripo",
+        "out_format": "glb"
+      },
+      "requestSHA256": "66846a5f465bf6c003d18c92230950831c6e1b0a065cadb6de166e10c0a98a87",
+      "reservedCreditUpper": 25,
+      "creditsConsumed": 25.0,
+      "taskId": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+      "submittedAt": "2026-10-02T16:11:06.014802+00:00",
+      "result": {
+        "type": "animate_rig",
+        "status": "success",
+        "progress": 100,
+        "input": {
+          "spec": "tripo",
+          "topology": "biped",
+          "out_format": "glb",
+          "original_model_id": "f53a882c-77d3-43ad-a9aa-dbee3687de01"
+        },
+        "output": {
+          "model_url": "[remote URL omitted]",
+          "rendered_image_url": "[remote URL omitted]"
+        },
+        "task_id": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+        "created_at": "2026-10-02T16:11:05.892563Z",
+        "completed_at": "2026-10-02T16:11:22.504958Z",
+        "credits_consumed": 25.0
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T16:12:38.144361+00:00",
+      "download": {
+        "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig-tripo.glb",
+        "sha256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+        "bytes": 9594448
+      }
+    },
+    "retarget-tripo": {
+      "status": "failed",
+      "startedAt": "2026-10-02T16:13:24.534798+00:00",
+      "endpoint": "/v3/animations/retarget",
+      "request": {
+        "input": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+        "animations": [
+          "preset:idle",
+          "preset:walk"
+        ],
+        "animate_in_place": true,
+        "bake_animation": true,
+        "export_with_geometry": true,
+        "out_format": "glb"
+      },
+      "requestSHA256": "749690e9ea3267e489ed1c57bf37ac6dfc06b0d7af9bbcd8ca4285de36707e40",
+      "reservedCreditUpper": 20,
+      "creditsConsumed": null,
+      "taskId": "4be183de-a3b3-4493-8e4f-de0109cd4297",
+      "submittedAt": "2026-10-02T16:13:27.969117+00:00",
+      "result": {
+        "type": "animate_retarget",
+        "status": "failed",
+        "progress": 100,
+        "input": {
+          "animations": [
+            "preset:idle",
+            "preset:walk"
+          ],
+          "out_format": "glb",
+          "bake_animation": true,
+          "animate_in_place": true,
+          "original_model_id": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+          "export_with_geometry": true
+        },
+        "output": {},
+        "task_id": "4be183de-a3b3-4493-8e4f-de0109cd4297",
+        "created_at": "2026-10-02T16:13:27.795624Z",
+        "completed_at": "2026-10-02T16:13:39.414255Z",
+        "error_code": 1004,
+        "error_message": "Invalid input parameter"
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T16:15:25.238568+00:00",
+      "effectiveBudgetCost": 0,
+      "billingReconciliation": {
+        "method": "failed refund policy; balance3880→3780 equals generation50+two rigs25+25; frozen0",
+        "netCostInferred": 0,
+        "taskCreditsField": null
+      }
+    },
+    "idle-single": {
+      "status": "failed",
+      "startedAt": "2026-10-02T16:16:51.804609+00:00",
+      "endpoint": "/v3/animations/retarget",
+      "request": {
+        "input": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+        "animate_in_place": true,
+        "bake_animation": true,
+        "export_with_geometry": true,
+        "out_format": "glb",
+        "animation": "preset:biped:idle"
+      },
+      "requestSHA256": "eee0bd11ea128c39ec5a814f9a9e1d7849b0be32745fb0bd58e48041a04c3894",
+      "reservedCreditUpper": 10,
+      "creditsConsumed": null,
+      "taskId": "21fb3fce-be32-4c3d-8360-fb2eac07c5d9",
+      "submittedAt": "2026-10-02T16:16:54.418325+00:00",
+      "result": {
+        "type": "animate_retarget",
+        "status": "failed",
+        "progress": 100,
+        "input": {
+          "animation": "preset:biped:idle",
+          "out_format": "glb",
+          "bake_animation": true,
+          "animate_in_place": true,
+          "original_model_id": "d14c2c53-afb7-4a81-b23c-db9e314c1c73",
+          "export_with_geometry": true
+        },
+        "output": {},
+        "task_id": "21fb3fce-be32-4c3d-8360-fb2eac07c5d9",
+        "created_at": "2026-10-02T16:16:54.295715Z",
+        "completed_at": "2026-10-02T16:17:06.127782Z",
+        "error_code": 1004,
+        "error_message": "Invalid input parameter"
+      },
+      "progress": 100,
+      "lastCheckedAt": "2026-10-02T16:18:22.641527+00:00",
+      "billingReconciliation": {
+        "method": "latestbalance3780 and frozen0; net successful costs100",
+        "netCostInferred": 0,
+        "taskCreditsField": null
+      },
+      "effectiveBudgetCost": 0
+    }
+  },
+  "ASSETS_READY": false,
+  "latestBalance": {
+    "checkedAt": "2026-10-02T16:20:13.254267+00:00",
+    "balance": 3780.0,
+    "frozen": 0.0
+  },
+  "bodyVisualReview": {
+    "checkedAt": "2026-10-02T15:51:59.626731+00:00",
+    "continueToRig": true,
+    "generationTriangleCount": 18361,
+    "textureResolution": [
+      4096,
+      4096
+    ],
+    "fourViews": "one front face; back is hair bun; no fused cup/abacus; hands separated; no extra limbs observed",
+    "face": "mature smile-line details visible at inspection distance; stylized age remains subject to art review",
+    "issues": [
+      "facial PBR shading mildly uneven in very close inspection",
+      "dedicated cup interaction and real D-scene integration not tested"
+    ],
+    "finalArtAccepted": false
+  },
+  "repair": {
+    "reason": "Official rig docs: only spec=tripo supports retarget; Mixamo request incompatible",
+    "source": "https://docs.tripo3d.ai/animation/rig-v2-5-20260210.html",
+    "changes": {
+      "rig.spec": "tripo"
+    },
+    "sameGenerationTask": "f53a882c-77d3-43ad-a9aa-dbee3687de01",
+    "newBodyGenerations": 0,
+    "additionalEstimatedCredits": 45,
+    "totalUpperCredits": 120,
+    "authority": "User approved120 cap; original task authorizes routine related repairs directly",
+    "recordedAt": "2026-10-02T16:10:59.030316+00:00",
+    "attemptCap": 1
+  },
+  "singleAnimationRepair": {
+    "reason": "Both dual-animation tasks failed1004; test documented singular animation with explicit biped identifier",
+    "source": "https://developers.tripo3d.ai/en/docs/animations-retarget",
+    "approvedTargets": [
+      "idle",
+      "walk"
+    ],
+    "additionalCap": 20,
+    "attemptCapPerClip": 1,
+    "stopOnIdleFailure": true,
+    "noAdditionalRigOrGeneration": true
+  },
+  "paidExecutionClosed": true,
+  "closedAt": "2026-10-02T16:24:06.758732+00:00",
+  "netAccountCost": 100.0,
+  "remainingApprovedCap": 20.0,
+  "uncompleted": [
+    "idle",
+    "walk",
+    "pick up / inspect cup dedicated action",
+    "D-scene integration",
+    "reference-device performance"
+  ]
+}

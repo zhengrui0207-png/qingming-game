@@ -1,0 +1,55 @@
+{
+  "bytes": 713468,
+  "sha256": "fc35e62d390058ca31dae0b2bdc957472512bf18e9b9889e823479d2d09f8b9b",
+  "triangles": 1916,
+  "meshes": 1,
+  "materials": 1,
+  "images": 3,
+  "external_uris": [],
+  "extensions": [],
+  "position_bounds": [
+    {
+      "min": [
+        -0.0302734375,
+        -0.0166015625,
+        -0.4990234375
+      ],
+      "max": [
+        0.0302734375,
+        0.0166015625,
+        0.4990234375
+      ]
+    }
+  ],
+  "embedded_image_validation": [
+    {
+      "size": [
+        2048,
+        2048
+      ],
+      "format": "JPEG"
+    },
+    {
+      "size": [
+        2048,
+        2048
+      ],
+      "format": "JPEG"
+    },
+    {
+      "size": [
+        2048,
+        2048
+      ],
+      "format": "JPEG"
+    }
+  ],
+  "material_features": [
+    {
+      "pbr": true,
+      "base_color_texture": true,
+      "metallic_roughness_texture": true,
+      "normal_texture": true
+    }
+  ]
+}

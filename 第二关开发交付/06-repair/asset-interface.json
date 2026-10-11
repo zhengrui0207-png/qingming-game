@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "scope": "region_d",
+  "repairId": "repair_c2_cargo",
+  "objectId": "object_c2_cargo_frame",
+  "actorId": "npc_c2_porter",
+  "anchorId": "anchor_c2_repair",
+  "woodFrameOrigin": [-63, 0.94, -40.8],
+  "standingPosition": [-63, 0.94, -39.5],
+  "porterPosition": [-62, 0.94, -39],
+  "approximatelyOccupiedMetres": {"width": 1.75, "height": 1.25, "depth": 1.5},
+  "parts": ["scar_persistent", "support_left", "support_right", "binding_left", "binding_right", "cargo_unloaded", "bell_without_clapper"],
+  "visualAdapter": ["sync(state)", "cue(name)", "update(dt)", "getState()", "dispose()"],
+  "cues": {
+    "demonstrate": "指白痕、松绑缚与歪垫脚；货箱已卸空",
+    "align": "扶正垫脚，架脚坐实",
+    "fix": "整理绳段并收绳头；不声称宋式绳结",
+    "test": "石伯空载三面试压/摇动",
+    "stable": "松手，木架不晃，货箱稳固终态",
+    "listen": "执缺舌铜铃听不到完整铃声",
+    "pay": "交付工钱表现；不得在动画回调发钱"
+  },
+  "collisionOwner": "00/10装配02/08最终物件碰撞；06只做canInteract距离/层级/LOS/可达检查，不改公共colliders",
+  "previewOnlyVisibilityChange": "D slots.repair旧占位隐藏；无第一关或原GLB资源改写",
+  "formalArtReady": false,
+  "formalContactAnimationReady": false,
+  "historicalKnotReconstruction": false,
+  "scholarWalkingRigModified": false
+}

@@ -1,0 +1,149 @@
+{
+  "intro": {
+    "time": 12,
+    "presentations": {
+      "intro": "seen",
+      "ending": "unseen"
+    },
+    "coins": 8,
+    "energy": 80,
+    "audio": [
+      {
+        "id": "cast",
+        "at": 0.021333333333333333,
+        "gain": 1
+      },
+      {
+        "id": "ambience",
+        "at": 0.032,
+        "gain": 0.08750000000000001
+      },
+      {
+        "id": "rope_test",
+        "at": 3.3866666666666667,
+        "gain": 0.22
+      },
+      {
+        "id": "tea_pour",
+        "at": 5.370666666666667,
+        "gain": 0.2
+      },
+      {
+        "id": "cup_set",
+        "at": 7.184,
+        "gain": 0.18
+      }
+    ]
+  },
+  "ending": {
+    "time": 16,
+    "presentations": {
+      "intro": "seen",
+      "ending": "seen"
+    },
+    "coins": 14,
+    "energy": 58,
+    "rig": {
+      "active": false,
+      "sequence": "ending_c2",
+      "shot": "shot_c2_ending_03",
+      "prototypeNPCs": [
+        "fisher",
+        "porter",
+        "merchant",
+        "food_vendor"
+      ],
+      "actualPlayerBones": 40,
+      "actualCartParts": [
+        "cart__wheel0",
+        "cart__wheel1"
+      ],
+      "ropeGripping": false,
+      "ropeHandDistance": 0.7162401831787938,
+      "rope": [
+        -74.8,
+        1.96,
+        -42.97
+      ],
+      "hand": [
+        -74.2,
+        1.75,
+        -43.3
+      ],
+      "silentBell": true
+    },
+    "audio": [
+      {
+        "id": "cast",
+        "at": 0.021333333333333333,
+        "gain": 1
+      },
+      {
+        "id": "ambience",
+        "at": 0.032,
+        "gain": 0.08750000000000001
+      },
+      {
+        "id": "rope_test",
+        "at": 3.3866666666666667,
+        "gain": 0.22
+      },
+      {
+        "id": "tea_pour",
+        "at": 5.370666666666667,
+        "gain": 0.2
+      },
+      {
+        "id": "cup_set",
+        "at": 7.184,
+        "gain": 0.18
+      },
+      {
+        "id": "cast",
+        "at": 11.973333333333333,
+        "gain": 1
+      },
+      {
+        "id": "splash",
+        "at": 11.978666666666667,
+        "gain": 1
+      },
+      {
+        "id": "ambience",
+        "at": 11.978666666666667,
+        "gain": 0.08750000000000001
+      },
+      {
+        "id": "rope_test",
+        "at": 12.618666666666666,
+        "gain": 0.22
+      },
+      {
+        "id": "wheel",
+        "at": 15.685333333333332,
+        "gain": 1
+      },
+      {
+        "id": "tea_pour",
+        "at": 17.834666666666667,
+        "gain": 0.2
+      },
+      {
+        "id": "cup_set",
+        "at": 19.866666666666667,
+        "gain": 0.18
+      },
+      {
+        "id": "wheel",
+        "at": 24.784,
+        "gain": 1
+      }
+    ]
+  },
+  "source": "Live real-browser canvas.captureStream(24) + same host audio master, original 12s intro and 16s ending",
+  "overlay": "Canvas recording does not include HTML subtitles or control overlay; see six actual browser screenshots for subtitles.",
+  "formalMainIntegration": false,
+  "humanPlaytest": false,
+  "videoBytes": 5358308,
+  "videoFile": "output/playwright/intro-ending.webm"
+}

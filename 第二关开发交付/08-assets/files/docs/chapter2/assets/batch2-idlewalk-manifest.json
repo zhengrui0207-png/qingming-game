@@ -1,0 +1,977 @@
+{
+  "batch": 2,
+  "scope": "QMSH-07 through QMSH-16, the existing named character-production batch, not chapter2 NPC identity approval",
+  "version": "1.0.0",
+  "date": "2026-10-03",
+  "status": "idle_walk_preview_verified",
+  "newCredits": 0,
+  "newTripoTasks": 0,
+  "sourceManifest": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付清单.json",
+  "assets": [
+    {
+      "assetId": "QMSH-07",
+      "name": "随行仆役",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 51
+        },
+        {
+          "name": "Walk",
+          "duration": 1.600000023841858,
+          "tracks": 51
+        },
+        {
+          "name": "Occupation_Guide_Bow",
+          "duration": 4.800000190734863,
+          "tracks": 51
+        }
+      ],
+      "triangles": 18937,
+      "bones": 51,
+      "rigProvenance": "rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "Tripo 预设动画出现上身塌陷，已修复蒙皮并本地重建三段动作。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.raw.glb",
+          "sha256": "020269ac726e2eed11d77ee254ee0ac9d69c3f06d8b6a2b91e243ba8538cb508",
+          "bytes": 5007176,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-07/model.raw.glb",
+          "sourceSHA256": "020269ac726e2eed11d77ee254ee0ac9d69c3f06d8b6a2b91e243ba8538cb508"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.draco.glb",
+          "sha256": "31e29401aee331b00a04c68a01a31241795f9dbf8d3dd48480b2721a0d1dee3a",
+          "bytes": 3721772,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-07/model.draco.glb",
+          "sourceSHA256": "31e29401aee331b00a04c68a01a31241795f9dbf8d3dd48480b2721a0d1dee3a"
+        }
+      ],
+      "inspection": {
+        "triangles": 18937,
+        "nodeReferencedTriangles": 18937,
+        "materials": 1,
+        "images": [
+          {
+            "name": "NormalGL_00108cb7-1bde-45b8-8ecb-372a960c4449",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "Color_00108cb7-1bde-45b8-8ecb-372a960c4449",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_00108cb7-1bde-45b8-8ecb-372a960c4449",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          51
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-08",
+      "name": "店铺掌柜",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 76
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 76
+        },
+        {
+          "name": "Occupation_Abacus_Count",
+          "duration": 5.199999809265137,
+          "tracks": 81
+        }
+      ],
+      "triangles": 19886,
+      "bones": 76,
+      "rigProvenance": "rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。",
+        "算盘改为 7 档、49 枚较平滑算珠，重新调整框架位置；保留 5 枚算珠的独立动画。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.raw.glb",
+          "sha256": "48a9fc6a412ea86c5d8f2c04943a0871c78491d7ce9d2d156396790e8cd49fb3",
+          "bytes": 4798224,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-08/model.raw.glb",
+          "sourceSHA256": "48a9fc6a412ea86c5d8f2c04943a0871c78491d7ce9d2d156396790e8cd49fb3"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.draco.glb",
+          "sha256": "ca9370cbe2b50c3ca6384143008c57e767572c515f8dcaf1cc015c8d0adb02cd",
+          "bytes": 3418976,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-08/model.draco.glb",
+          "sourceSHA256": "ca9370cbe2b50c3ca6384143008c57e767572c515f8dcaf1cc015c8d0adb02cd"
+        }
+      ],
+      "inspection": {
+        "triangles": 19334,
+        "nodeReferencedTriangles": 19886,
+        "materials": 3,
+        "images": [
+          {
+            "name": "NormalGL_34e9065e-a3ba-43ec-ab52-dbb1d129c372",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "Color_34e9065e-a3ba-43ec-ab52-dbb1d129c372",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_34e9065e-a3ba-43ec-ab52-dbb1d129c372",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          76
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-09",
+      "name": "粮商",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 53
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 53
+        },
+        {
+          "name": "Occupation_Grain_Tally",
+          "duration": 4.800000190734863,
+          "tracks": 53
+        }
+      ],
+      "triangles": 18857,
+      "bones": 53,
+      "rigProvenance": "rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "10 条双关节手指链已逐指细分为三关节，并重新分配实际蒙皮权重。",
+        "职业动作为扶袋姿态与低头查看竹筹的小幅演示。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.raw.glb",
+          "sha256": "7e4c843056358fb6a375f2fa8b395665a1572cfc29d57189608154855b4b0898",
+          "bytes": 5170332,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-09/model.raw.glb",
+          "sourceSHA256": "7e4c843056358fb6a375f2fa8b395665a1572cfc29d57189608154855b4b0898"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.draco.glb",
+          "sha256": "114ce63945ba0bcfeb7167e40f11b08367021d4a1c322f20d90eb214e347643e",
+          "bytes": 3796916,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-09/model.draco.glb",
+          "sourceSHA256": "114ce63945ba0bcfeb7167e40f11b08367021d4a1c322f20d90eb214e347643e"
+        }
+      ],
+      "inspection": {
+        "triangles": 18857,
+        "nodeReferencedTriangles": 18857,
+        "materials": 1,
+        "images": [
+          {
+            "name": "NormalGL_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "Color_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_a102925d-cc0a-48b1-a105-f0aaf50a32ec",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          53
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-10",
+      "name": "香料商",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 83
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 83
+        },
+        {
+          "name": "Occupation_Spice_Check",
+          "duration": 5.199999809265137,
+          "tracks": 83
+        }
+      ],
+      "triangles": 18824,
+      "bones": 83,
+      "rigProvenance": "local-preview",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": false,
+      "historicalAssetStatus": "needs_geometry_and_rig_fix",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "逐关节实际旋转测试：21/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。",
+        "原模型部分手指与道具贴合或粘连，仍有 9 个新手指关节缺少可用蒙皮；不能按完整五指角色验收。继续完成需局部重建手部网格，尚未执行。",
+        "保留本地身体绑定；原 Tripo rig-check 不通过的记录没有改成通过。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.raw.glb",
+          "sha256": "5b8976ddd5a275f0db2d69a7a0425b3cdc675b71c7184a1922a912045a36bded",
+          "bytes": 4916612,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-10/model.raw.glb",
+          "sourceSHA256": "5b8976ddd5a275f0db2d69a7a0425b3cdc675b71c7184a1922a912045a36bded"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.draco.glb",
+          "sha256": "bbfb6e8991139b7a510301c8ec112131e58f1f7ddf4392b294427f8eeca4568f",
+          "bytes": 3403924,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-10/model.draco.glb",
+          "sourceSHA256": "bbfb6e8991139b7a510301c8ec112131e58f1f7ddf4392b294427f8eeca4568f"
+        }
+      ],
+      "inspection": {
+        "triangles": 18824,
+        "nodeReferencedTriangles": 18824,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Color_449ce166-e79f-433e-ac5a-9e6926d206c2",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_449ce166-e79f-433e-ac5a-9e6926d206c2",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "NormalGL_449ce166-e79f-433e-ac5a-9e6926d206c2",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          83
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-11",
+      "name": "绸缎商",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 83
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 83
+        },
+        {
+          "name": "Occupation_Silk_Smooth",
+          "duration": 5.599999904632568,
+          "tracks": 83
+        }
+      ],
+      "triangles": 18574,
+      "bones": 83,
+      "rigProvenance": "local-preview",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": false,
+      "historicalAssetStatus": "needs_geometry_and_rig_fix",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "逐关节实际旋转测试：21/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。",
+        "原模型部分手指与道具贴合或粘连，仍有 9 个新手指关节缺少可用蒙皮；不能按完整五指角色验收。继续完成需局部重建手部网格，尚未执行。",
+        "保留本地身体绑定；原 Tripo rig-check 不通过的记录没有改成通过。",
+        "职业动作仍是轻抚展示折叠布料，未完成展开布料；需要分离、重建可展开布面。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.raw.glb",
+          "sha256": "3b8fe24d595f1c69c6a661b739ccadf3c3b59cb2e547d3b4e052c9d429ad6297",
+          "bytes": 4691524,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-11/model.raw.glb",
+          "sourceSHA256": "3b8fe24d595f1c69c6a661b739ccadf3c3b59cb2e547d3b4e052c9d429ad6297"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.draco.glb",
+          "sha256": "5bdd5ed87cb241e053f6be6162e81ed529daf7a9cad159369702a971eab65a98",
+          "bytes": 3279084,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-11/model.draco.glb",
+          "sourceSHA256": "5bdd5ed87cb241e053f6be6162e81ed529daf7a9cad159369702a971eab65a98"
+        }
+      ],
+      "inspection": {
+        "triangles": 18574,
+        "nodeReferencedTriangles": 18574,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Color_82369724-54a0-445f-aebe-578796ddca8a",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_82369724-54a0-445f-aebe-578796ddca8a",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "NormalGL_82369724-54a0-445f-aebe-578796ddca8a",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          83
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-12",
+      "name": "货郎小贩",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 81
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 81
+        },
+        {
+          "name": "Occupation_Peddler_Rattle",
+          "duration": 4.400000095367432,
+          "tracks": 81
+        }
+      ],
+      "triangles": 19664,
+      "bones": 81,
+      "rigProvenance": "proxy-rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.raw.glb",
+          "sha256": "8fe467ba3c072934541da0572a1bf6d47487a4f6683baae97e61a73635752157",
+          "bytes": 5466736,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-12/model.raw.glb",
+          "sourceSHA256": "8fe467ba3c072934541da0572a1bf6d47487a4f6683baae97e61a73635752157"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.draco.glb",
+          "sha256": "5cf921b4f016f6dcb027476eb26ad16e46f3cee3f5e028569ba77efe0b6120a1",
+          "bytes": 3925924,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-12/model.draco.glb",
+          "sourceSHA256": "5cf921b4f016f6dcb027476eb26ad16e46f3cee3f5e028569ba77efe0b6120a1"
+        }
+      ],
+      "inspection": {
+        "triangles": 19664,
+        "nodeReferencedTriangles": 19664,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Color_271a8a6c-34a1-4797-b381-23bcec6b8251",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_271a8a6c-34a1-4797-b381-23bcec6b8251",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "NormalGL_271a8a6c-34a1-4797-b381-23bcec6b8251",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          81
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-13",
+      "name": "卖杏花枝的",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 62
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 62
+        },
+        {
+          "name": "Occupation_Flower_Show",
+          "duration": 5.199999809265137,
+          "tracks": 62
+        }
+      ],
+      "triangles": 17854,
+      "bones": 62,
+      "rigProvenance": "proxy-rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。",
+        "修正指尖误受其他身体关节控制的问题，职业动作抬手时的拉扯尖角已消除。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.raw.glb",
+          "sha256": "66cc9cdc4a9291501eae658845d8a8decca9fade073158893958531c631580f9",
+          "bytes": 5336496,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-13/model.raw.glb",
+          "sourceSHA256": "66cc9cdc4a9291501eae658845d8a8decca9fade073158893958531c631580f9"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.draco.glb",
+          "sha256": "9a72a73985ff2da83e0258761bfe26b8f760580cf466dd269449ab8de6f097f1",
+          "bytes": 3746528,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-13/model.draco.glb",
+          "sourceSHA256": "9a72a73985ff2da83e0258761bfe26b8f760580cf466dd269449ab8de6f097f1"
+        }
+      ],
+      "inspection": {
+        "triangles": 17854,
+        "nodeReferencedTriangles": 17854,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Color_6f488faa-c0ec-4530-bdf6-0270c64baa64",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_6f488faa-c0ec-4530-bdf6-0270c64baa64",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "NormalGL_6f488faa-c0ec-4530-bdf6-0270c64baa64",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          62
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-14",
+      "name": "卖黄胖的",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 70
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 70
+        },
+        {
+          "name": "Occupation_Clay_Doll_Show",
+          "duration": 4.800000190734863,
+          "tracks": 70
+        }
+      ],
+      "triangles": 19357,
+      "bones": 70,
+      "rigProvenance": "rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.raw.glb",
+          "sha256": "d3c16b4adc530aa5dab20adf532a849368e48c4a091cce0eaa879d5b39f6cdcb",
+          "bytes": 5306684,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-14/model.raw.glb",
+          "sourceSHA256": "d3c16b4adc530aa5dab20adf532a849368e48c4a091cce0eaa879d5b39f6cdcb"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.draco.glb",
+          "sha256": "72c7d6a7719190807959564d97ea354627482e07f0164366a4d698772c95c85b",
+          "bytes": 3855424,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-14/model.draco.glb",
+          "sourceSHA256": "72c7d6a7719190807959564d97ea354627482e07f0164366a4d698772c95c85b"
+        }
+      ],
+      "inspection": {
+        "triangles": 19357,
+        "nodeReferencedTriangles": 19357,
+        "materials": 1,
+        "images": [
+          {
+            "name": "NormalGL_14c675d9-d06b-450e-b492-2951c73f685e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "Color_14c675d9-d06b-450e-b492-2951c73f685e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_14c675d9-d06b-450e-b492-2951c73f685e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          70
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-15",
+      "name": "卖野药的",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 65
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 65
+        },
+        {
+          "name": "Occupation_Herb_Bell",
+          "duration": 5.199999809265137,
+          "tracks": 65
+        }
+      ],
+      "triangles": 17824,
+      "bones": 65,
+      "rigProvenance": "rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.raw.glb",
+          "sha256": "17a789061d65eb9d8eb8a8567c321309c67fb5cc751cc06109ec708a08de47ef",
+          "bytes": 5768920,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-15/model.raw.glb",
+          "sourceSHA256": "17a789061d65eb9d8eb8a8567c321309c67fb5cc751cc06109ec708a08de47ef"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.draco.glb",
+          "sha256": "7f2a98e8671c43b4d7a95ccbbcdd9e9aef9731ec0867cfe081cfa2d879e81f1a",
+          "bytes": 4113396,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-15/model.draco.glb",
+          "sourceSHA256": "7f2a98e8671c43b4d7a95ccbbcdd9e9aef9731ec0867cfe081cfa2d879e81f1a"
+        }
+      ],
+      "inspection": {
+        "triangles": 17824,
+        "nodeReferencedTriangles": 17824,
+        "materials": 1,
+        "images": [
+          {
+            "name": "NormalGL_9954d703-8f1a-4f86-883b-e0b64f0710e9",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "Color_9954d703-8f1a-4f86-883b-e0b64f0710e9",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_9954d703-8f1a-4f86-883b-e0b64f0710e9",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          65
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    },
+    {
+      "assetId": "QMSH-16",
+      "name": "酒保",
+      "version": "idlewalk-v1",
+      "idleWalkStatus": "preview_verified",
+      "animations": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 70
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 70
+        },
+        {
+          "name": "Occupation_Waiter_Greet",
+          "duration": 4.400000095367432,
+          "tracks": 70
+        }
+      ],
+      "triangles": 18682,
+      "bones": 70,
+      "rigProvenance": "proxy-rig",
+      "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+      "fullFingerSkinning": true,
+      "historicalAssetStatus": "passed_after_local_repair",
+      "limits": [
+        "本轮本地修复，新增 Tripo 任务 0 个，消耗 0 积分。",
+        "按本角色的手掌、指节位置补齐左右各五指，修正权重并烘焙小幅握持动作。",
+        "逐关节实际旋转测试：30/30 个新手指关节有真实蒙皮顶点运动。",
+        "保留 Idle、Walk、职业动作；Draco 已重新解码，三角面、PBR、骨骼和动画数据比对通过。",
+        "修正指尖误受其他身体关节控制的问题，职业动作抬手时的拉扯尖角已消除。"
+      ],
+      "newTripoTasks": 0,
+      "newCredits": 0,
+      "files": [
+        {
+          "variant": "raw",
+          "path": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.raw.glb",
+          "sha256": "5a54ec12a36451a3a41105314c9849ab443ef9b8d61232ce6e27569749653ca0",
+          "bytes": 4050940,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-16/model.raw.glb",
+          "sourceSHA256": "5a54ec12a36451a3a41105314c9849ab443ef9b8d61232ce6e27569749653ca0"
+        },
+        {
+          "variant": "draco",
+          "path": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.draco.glb",
+          "sha256": "a9672071a3e2d52fbe0e91baf8e3f4a1d161c2b6fee946f369875d028da09644",
+          "bytes": 2850504,
+          "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-16/model.draco.glb",
+          "sourceSHA256": "a9672071a3e2d52fbe0e91baf8e3f4a1d161c2b6fee946f369875d028da09644"
+        }
+      ],
+      "inspection": {
+        "triangles": 18682,
+        "nodeReferencedTriangles": 18682,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Color_08b2eb3a-f964-4337-9d01-93245ede5d3e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "ORM_08b2eb3a-f964-4337-9d01-93245ede5d3e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          },
+          {
+            "name": "NormalGL_08b2eb3a-f964-4337-9d01-93245ede5d3e",
+            "mimeType": "image/jpeg",
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "uri": null
+          }
+        ],
+        "jointCounts": [
+          70
+        ]
+      },
+      "IDLE_WALK_READY": true,
+      "formalChapter2Accepted": false,
+      "acceptedVersion": null,
+      "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+    }
+  ],
+  "ASSETS_READY": false,
+  "IDLE_WALK_READY": true,
+  "ASSET_AUDIT_READY": true,
+  "acceptanceScope": "Embedded Idle/Walk, both GLB variants, independent preview only; no formal chapter2 identity/index/integration acceptance"
+}

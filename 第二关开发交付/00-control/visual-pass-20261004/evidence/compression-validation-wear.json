@@ -1,0 +1,50 @@
+[
+  {
+    "raw": "d-detail-wear-raw.glb",
+    "runtime": "d-detail.glb",
+    "nodes": [
+      "D_surface_detail",
+      "s04_open_house",
+      "s05_house_a",
+      "s05_house_b",
+      "s05_sign",
+      "s06_low_house",
+      "s06_tree_0",
+      "s06_tree_1",
+      "s07_stall",
+      "s07_umbrella",
+      "s08_loads",
+      "s09_frame",
+      "s11_canopy"
+    ],
+    "uv0": 107,
+    "uv1": 0,
+    "color": 91,
+    "maxLocalBoundsDeltaMetres": 0.000011444091796875,
+    "note": "Compares per-mesh bounding boxes, not vertex correspondence or a maximum per-vertex error."
+  },
+  {
+    "raw": "d-detail-daylight-wear-raw.glb",
+    "runtime": "d-detail-daylight.glb",
+    "nodes": [
+      "D_surface_detail",
+      "s04_open_house",
+      "s05_house_a",
+      "s05_house_b",
+      "s05_sign",
+      "s06_low_house",
+      "s06_tree_0",
+      "s06_tree_1",
+      "s07_stall",
+      "s07_umbrella",
+      "s08_loads",
+      "s09_frame",
+      "s11_canopy"
+    ],
+    "uv0": 107,
+    "uv1": 93,
+    "color": 91,
+    "maxLocalBoundsDeltaMetres": 0.000011444091796875,
+    "note": "Compares per-mesh bounding boxes, not vertex correspondence or a maximum per-vertex error."
+  }
+]

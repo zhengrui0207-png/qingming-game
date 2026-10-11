@@ -1,0 +1,72 @@
+{
+  "asset_id": "item_hq_rope",
+  "name": "备用缆绳",
+  "base_url": "https://openapi.tripo3d.ai/v3",
+  "request_sha256": "58720cca48c4663491304fe1ab45f86dc471b87736f179bf6af8517384fc9c69",
+  "estimated_credits": 40,
+  "balance_before": {
+    "balance": 9940.0,
+    "frozen": 0.0
+  },
+  "status": "downloaded",
+  "task_id": "a56271ee-3c95-4b19-b9da-dc6e0eeaee8c",
+  "progress": 100,
+  "credits_consumed": 40.0,
+  "model_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_rope/item_hq_rope.glb",
+  "inspection": {
+    "bytes": 1133532,
+    "sha256": "cf1a09a71d6337c112c73e4d2cc481150c22caf76a62831397b9ea5c40197ea7",
+    "triangles": 1916,
+    "meshes": 1,
+    "materials": 1,
+    "images": 3,
+    "external_uris": [],
+    "extensions": [],
+    "position_bounds": [
+      {
+        "min": [
+          -0.4755859375,
+          -0.0732421875,
+          -0.4990234375
+        ],
+        "max": [
+          0.4755859375,
+          0.0732421875,
+          0.4990234375
+        ]
+      }
+    ],
+    "embedded_image_validation": [
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      }
+    ],
+    "material_features": [
+      {
+        "pbr": true,
+        "base_color_texture": true,
+        "metallic_roughness_texture": true,
+        "normal_texture": true
+      }
+    ]
+  },
+  "preview_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_rope/preview.png"
+}

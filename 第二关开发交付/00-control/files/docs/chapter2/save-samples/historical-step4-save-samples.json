@@ -1,0 +1,163 @@
+{
+  "default": {
+    "schemaVersion": 2,
+    "revision": 0,
+    "inventory": {},
+    "unlockedCodexIds": [],
+    "permissions": [],
+    "worldState": {
+      "collectedInstanceIds": []
+    },
+    "quests": {},
+    "unlockedStoryIds": [],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {}
+  },
+  "authorized": {
+    "schemaVersion": 2,
+    "revision": 3,
+    "inventory": {},
+    "unlockedCodexIds": [],
+    "permissions": [
+      "permit_hq_rope",
+      "permit_hq_pole",
+      "permit_hq_cloth"
+    ],
+    "worldState": {
+      "collectedInstanceIds": []
+    },
+    "quests": {},
+    "unlockedStoryIds": [],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {}
+  },
+  "partial": {
+    "schemaVersion": 2,
+    "revision": 4,
+    "inventory": {
+      "item_hq_rope": 1
+    },
+    "unlockedCodexIds": [
+      "item_hq_rope",
+      "npc_hq_he"
+    ],
+    "permissions": [
+      "permit_hq_rope",
+      "permit_hq_pole",
+      "permit_hq_cloth"
+    ],
+    "worldState": {
+      "collectedInstanceIds": [
+        "instance_hq_rope_01"
+      ]
+    },
+    "quests": {},
+    "unlockedStoryIds": [],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {}
+  },
+  "ready": {
+    "schemaVersion": 2,
+    "revision": 6,
+    "inventory": {
+      "item_hq_rope": 1,
+      "item_hq_pole": 1,
+      "item_hq_cloth": 1
+    },
+    "unlockedCodexIds": [
+      "item_hq_rope",
+      "npc_hq_he",
+      "item_hq_pole",
+      "npc_hq_cheng",
+      "item_hq_cloth",
+      "npc_hq_fang"
+    ],
+    "permissions": [
+      "permit_hq_rope",
+      "permit_hq_pole",
+      "permit_hq_cloth"
+    ],
+    "worldState": {
+      "collectedInstanceIds": [
+        "instance_hq_rope_01",
+        "instance_hq_pole_01",
+        "instance_hq_cloth_01"
+      ]
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "active"
+      }
+    },
+    "unlockedStoryIds": [],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {}
+  },
+  "completed": {
+    "schemaVersion": 2,
+    "revision": 6,
+    "inventory": {
+      "item_hq_rope": 0,
+      "item_hq_pole": 0,
+      "item_hq_cloth": 0
+    },
+    "unlockedCodexIds": [
+      "item_hq_rope",
+      "npc_hq_he",
+      "item_hq_pole",
+      "npc_hq_cheng",
+      "item_hq_cloth",
+      "npc_hq_fang"
+    ],
+    "permissions": [
+      "permit_hq_rope",
+      "permit_hq_pole",
+      "permit_hq_cloth"
+    ],
+    "worldState": {
+      "collectedInstanceIds": [
+        "instance_hq_rope_01",
+        "instance_hq_pole_01",
+        "instance_hq_cloth_01"
+      ]
+    },
+    "quests": {
+      "hongqiao_01": {
+        "status": "completed"
+      }
+    },
+    "unlockedStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ],
+    "readStoryIds": [],
+    "storyReadingProgress": {},
+    "readContentVersions": {}
+  },
+  "legacyV1": {
+    "schemaVersion": 1,
+    "questStatus": "completed",
+    "inventory": [],
+    "collectedInstanceIds": [
+      "instance_hq_rope_01",
+      "instance_hq_pole_01",
+      "instance_hq_cloth_01"
+    ],
+    "readStoryIds": [
+      "story_hq_zhou"
+    ],
+    "storyReadingProgress": {
+      "story_hq_zhou": {
+        "contentVersion": 1,
+        "sectionId": "old-section",
+        "paragraphIndex": 12
+      }
+    }
+  }
+}

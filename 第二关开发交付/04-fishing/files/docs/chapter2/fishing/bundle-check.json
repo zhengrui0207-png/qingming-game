@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "command": "esbuild bundle src/chapter2/fishing/index.js (write:false)",
+  "outputs": [
+    {
+      "name": "index.js",
+      "bytes": 808407
+    },
+    {
+      "name": "index.css",
+      "bytes": 1976
+    }
+  ],
+  "warnings": []
+}

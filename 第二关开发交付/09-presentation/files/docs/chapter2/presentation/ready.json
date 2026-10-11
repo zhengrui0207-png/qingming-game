@@ -1,0 +1,51 @@
+{
+  "module": "09-presentation",
+  "date": "2026-10-05",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-core-ready-v1",
+  "PRESENTATION_READY": true,
+  "readyScope": "独立09真实核心演出与声音模块，六镜头可运行，P0预览适配及真实浏览器存储/恢复检查通过；四位NPC与运输架局部动作明确为程序化原型。",
+  "tests": {
+    "existingBaseline": 173,
+    "newPresentation": 40,
+    "passed": 213,
+    "failed": 0
+  },
+  "browser": {
+    "assertions": 117,
+    "passed": 117,
+    "realStorage": true,
+    "realBlur": true,
+    "realWASD": true,
+    "decodedEffects": 11,
+    "freshConsoleErrors": 0,
+    "freshConsoleWarnings": 0
+  },
+  "actualAssets": {
+    "player": "song-scholar-v2-animated.glb;40 bound bones",
+    "wheelParts": [
+      "cart__wheel0",
+      "cart__wheel1"
+    ],
+    "dedicatedNPCsReady": false,
+    "gateExteriorReady": false
+  },
+  "introSeconds": 12,
+  "endingSeconds": 16,
+  "soundSourceChecksPassed": true,
+  "cloudSpend": 0,
+  "buildPassed": true,
+  "formalMainIntegration": false,
+  "INTEGRATION_READY": false,
+  "ASSET_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "publicStatusModified": false,
+  "preview": "http://127.0.0.1:5289/chapter2-presentation-preview.html?test&chapter2&session=presentation09",
+  "remaining": [
+    "08四位NPC正式骨架/动作/服装",
+    "00/10真实main相机、输入、音频适配及C→D衔接",
+    "04浮子/收线音效时刻、06正式修缮动作、07真书本的联合复测",
+    "最终资产替换后的机位/遮挡、城门外观及第一关main演出回归",
+    "11真人首次试玩与参考设备性能验收"
+  ]
+}

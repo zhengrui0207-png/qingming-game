@@ -1,0 +1,28 @@
+{
+  "code": 0,
+  "status": "success",
+  "data": {
+    "type": "text_to_model",
+    "status": "success",
+    "progress": 100,
+    "input": {
+      "pbr": true,
+      "prompt": "One single long straight bamboo boat pole for a Northern Song era Chinese riverside game. Slender continuous shaft, gently tapered toward one end, naturally spaced subtle bamboo nodes, a lightly polished grip area, both tips intact and blunt with modest wear. Weathered straw yellow and pale olive tones, understated realistic bamboo surface. The complete pole is visible horizontally, with no cropping or bends. Clean simple game geometry and readable material detail. Isolated pole only. No metal hook, spearhead, blade, leaves, branches, rope wrapping, rack, people, boat, base, or surrounding scenery.",
+      "texture": true,
+      "export_uv": true,
+      "face_limit": 2000,
+      "model_version": "P1-20260311",
+      "texture_quality": "standard",
+      "texture_alignment": "geometry"
+    },
+    "output": {
+      "model_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/def71f2c-7b1c-4f3d-9d48-aac969f1635d/tripo_pbr_model_def71f2c-7b1c-4f3d-9d48-aac969f1635d.glb",
+      "rendered_image_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/def71f2c-7b1c-4f3d-9d48-aac969f1635d/legacy_mesh.webp",
+      "generated_image_url": "https://tripo-data.rg1.data.tripo3d.com/tcli_23a796491598415398372ae99c26a2d4/20260914/def71f2c-7b1c-4f3d-9d48-aac969f1635d/text2image_def71f2c-7b1c-4f3d-9d48-aac969f1635d.jpeg"
+    },
+    "task_id": "def71f2c-7b1c-4f3d-9d48-aac969f1635d",
+    "created_at": "2026-09-14T11:43:51.572323Z",
+    "completed_at": "2026-09-14T11:44:38.204048Z",
+    "credits_consumed": 40.0
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "task": "01-content",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "workRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/01-content/qingming-game",
+  "files": [
+    {
+      "path": "src/chapter2/content/content.json",
+      "baseSHA256": null,
+      "newSHA256": "8e1967a8a2cd96ded5285d8e8396ad821e8c8598d912770e48a0c57b5da26e45",
+      "bytes": 119291
+    },
+    {
+      "path": "src/chapter2/content/index.js",
+      "baseSHA256": null,
+      "newSHA256": "41ed9cba52988780bd21118d878f15b8c1a8f70cc5935898b218b4787aac3732",
+      "bytes": 388
+    },
+    {
+      "path": "src/chapter2/content/content.test.js",
+      "baseSHA256": null,
+      "newSHA256": "83ec19e2c184054be82520969d7c8cae6d52a7b1566d647bb358fff04a8caa11",
+      "bytes": 6678
+    },
+    {
+      "path": "docs/chapter2/content/build-content.py",
+      "baseSHA256": null,
+      "newSHA256": "33e92b11f8360f3ce5a99b351f90f92e6480004a7abbc56d9e7994ef4c106b8b",
+      "bytes": 67205
+    },
+    {
+      "path": "docs/chapter2/content/build-review.py",
+      "baseSHA256": null,
+      "newSHA256": "658bf4aee93d936358f7a837a85d3006c424588aa44b644874c3416578671944",
+      "bytes": 13839
+    },
+    {
+      "path": "docs/chapter2/content/verify-delivery.mjs",
+      "baseSHA256": null,
+      "newSHA256": "7e37795d602b8c05b15bb96f888e29bfbd657ed2267d946cf29678c556eef273",
+      "bytes": 646
+    },
+    {
+      "path": "docs/chapter2/content/第二关_不响的铃_完整剧情与故事.md",
+      "baseSHA256": null,
+      "newSHA256": "b9128343bbace56b251fb0802e4ce0e2a2d1f6c7e1f15fe0f0b1c16407d5b64a",
+      "bytes": 43256
+    },
+    {
+      "path": "docs/chapter2/content/文化来源与待考边界.md",
+      "baseSHA256": null,
+      "newSHA256": "57d2d4c8adf87a58b4b2a93d0ce8b752d2f93568c2f30b77e7cd15121438a4a1",
+      "bytes": 7929
+    },
+    {
+      "path": "docs/chapter2/content/节点与奖励条件表.md",
+      "baseSHA256": null,
+      "newSHA256": "ebc1490e28d5b6e34247c1f0e9b1b2e29f3c88df899e9298d5201c7ece99f023",
+      "bytes": 35145
+    },
+    {
+      "path": "docs/chapter2/content/integration-notes.md",
+      "baseSHA256": null,
+      "newSHA256": "3a52d94b3a28d5e1c3055e921226f43ce91621a59d1c8e44a4267d4753348962",
+      "bytes": 4556
+    },
+    {
+      "path": "docs/chapter2/content/preview.html",
+      "baseSHA256": null,
+      "newSHA256": "2cb3a1b49333dee5c2262d98a3d1b8eaf12d73dd9375e555d4391a1c7dd7f5e0",
+      "bytes": 92297
+    },
+    {
+      "path": "docs/chapter2/content/p0-input-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "a57f2b1f10c7f751055d1921469b24df5e351cc0544e46defc1954ae11cdf1a1",
+      "bytes": 5080
+    },
+    {
+      "path": "docs/chapter2/content/scope-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "825167dae8c75fe58027817e851927d018fede0e7937f345bebd210427769c62",
+      "bytes": 1406
+    },
+    {
+      "path": "docs/chapter2/content/length-report.json",
+      "baseSHA256": null,
+      "newSHA256": "7e368c242777248f2030b59bb677cd904793bab55696ef7d08c66ac50f5e24ac",
+      "bytes": 956
+    },
+    {
+      "path": "docs/chapter2/content/browser-summary.json",
+      "baseSHA256": null,
+      "newSHA256": "aae2057defd818ec35c21ef21b9bd4ef984ef874da72a3153f21ffbe20f7df18",
+      "bytes": 323
+    },
+    {
+      "path": "docs/chapter2/content/content-readiness.json",
+      "baseSHA256": null,
+      "newSHA256": "b7e28d4bf640ae19054b36f66e802fe9833699caabfc70edacd843ceb1de1f1a",
+      "bytes": 3251
+    },
+    {
+      "path": "docs/chapter2/content/validation.log",
+      "baseSHA256": null,
+      "newSHA256": "08811c5cf6310cbddd039aa60e049d52fd6c5b3c25e4aa430a685c193801139d",
+      "bytes": 73
+    },
+    {
+      "path": "docs/chapter2/content/tests.log",
+      "baseSHA256": null,
+      "newSHA256": "e63d2b6aedac40fa64b2fcf296c6f2ef0b73eae6e30787023e4fb9fb50eafd9e",
+      "bytes": 5911
+    }
+  ]
+}

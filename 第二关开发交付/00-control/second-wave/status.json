@@ -1,0 +1,55 @@
+{
+  "clientDate": "2026-10-01",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "P0_READY": true,
+  "CONTENT_READY": true,
+  "SCENE_READY": true,
+  "CORE_READY": true,
+  "ASSET_READY": false,
+  "INTEGRATION_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "notAPlayableChapter2": true,
+  "firstWaveStarted": [],
+  "pending": [
+    "08正式资产/专用动作",
+    "04钓鱼/05商铺/06修缮/07风物志/09演出",
+    "00/10运行时挂接与第一关回归",
+    "11技术验收和真人试玩"
+  ],
+  "checkedAtUTC": "2026-10-01T15:52:09.261097+00:00",
+  "checks": {
+    "legacySourceAndSnapshot341FilesUnchanged": true,
+    "legacyTests": {
+      "passed": 98,
+      "failed": 0
+    },
+    "newContractTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "buildPassed": true,
+    "browserBaselineRecorded": true,
+    "fourIndependentWorkspacesChecked": true
+  },
+  "ASSET_AUDIT_READY": true,
+  "secondWaveBaselineId": "2026-10-01-core-ready-v1",
+  "secondWaveCreated": true,
+  "secondWaveStarted": [
+    "04-fishing"
+  ],
+  "acceptance": {
+    "firstWaveReceivedFiles": 123,
+    "contentReadyValidation": true,
+    "sceneReadyValidation": true,
+    "allNodeTests": {
+      "passed": 173,
+      "failed": 0
+    },
+    "actualContentAndAnchorsWithRealCorePreflight": true,
+    "mainBuildPassed": true,
+    "actualWorldRuntimeAssembly": false,
+    "assetScope": "审计与方案已接收，正式模型未就绪",
+    "reports": "docs/chapter2/control/"
+  }
+}

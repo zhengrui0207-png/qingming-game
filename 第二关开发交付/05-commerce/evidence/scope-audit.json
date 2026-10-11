@@ -1,0 +1,68 @@
+{
+  "baseline": "2026-10-02-core-fishing-ready-v2",
+  "readonlyFilesChecked": 272,
+  "readonlyChanges": [],
+  "frozenChanges": [],
+  "mainReadOnlyComparisons": [
+    {
+      "path": "src/main.js",
+      "workspaceSha256": "625545b42885d37ade841b733f1cda436821bc6a5f9a01eb9c91cc6ffab86c5e",
+      "mainSha256": "625545b42885d37ade841b733f1cda436821bc6a5f9a01eb9c91cc6ffab86c5e",
+      "equal": true
+    },
+    {
+      "path": "src/hongqiao/state.js",
+      "workspaceSha256": "c0b8771c9c517516d128468e06cd59329bfe12718713ee640cf34a6fabb9d083",
+      "mainSha256": "c0b8771c9c517516d128468e06cd59329bfe12718713ee640cf34a6fabb9d083",
+      "equal": true
+    },
+    {
+      "path": "src/hongqiao/persistence.js",
+      "workspaceSha256": "50ff197c7d62fae72243a23fa5752b84c3f1c154832f44dba9f005064ff7b1e9",
+      "mainSha256": "50ff197c7d62fae72243a23fa5752b84c3f1c154832f44dba9f005064ff7b1e9",
+      "equal": true
+    },
+    {
+      "path": "src/world.js",
+      "workspaceSha256": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b",
+      "mainSha256": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b",
+      "equal": true
+    },
+    {
+      "path": "src/interaction/core.js",
+      "workspaceSha256": "50280bb9ba20d05f1671922f2903a53ef1cfc9bad43f8cdb44060269693d181f",
+      "mainSha256": "50280bb9ba20d05f1671922f2903a53ef1cfc9bad43f8cdb44060269693d181f",
+      "equal": true
+    },
+    {
+      "path": "src/chapter2/core/service.js",
+      "workspaceSha256": "8d29e6be2e05e50353031d433cb876882f42241ede21dfbfaa99041fadf90eab",
+      "mainSha256": "8d29e6be2e05e50353031d433cb876882f42241ede21dfbfaa99041fadf90eab",
+      "equal": true
+    },
+    {
+      "path": "src/chapter2/core/state.js",
+      "workspaceSha256": "6f88c2c0d2105ce2fb59962ae4a69db9845a9c0a92b85f2aa562183f4baf8a67",
+      "mainSha256": "6f88c2c0d2105ce2fb59962ae4a69db9845a9c0a92b85f2aa562183f4baf8a67",
+      "equal": true
+    },
+    {
+      "path": "package.json",
+      "workspaceSha256": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de",
+      "mainSha256": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de",
+      "equal": true
+    },
+    {
+      "path": "package-lock.json",
+      "workspaceSha256": "c5f689f59a490131f80459445091379bcdad8a4ddf8b25f08644ef4b4468e9e4",
+      "mainSha256": "c5f689f59a490131f80459445091379bcdad8a4ddf8b25f08644ef4b4468e9e4",
+      "equal": true
+    }
+  ],
+  "allowedNewPaths": [
+    "src/chapter2/commerce/**",
+    "docs/chapter2/commerce/**",
+    "chapter2-commerce-preview.html"
+  ],
+  "gitInitialized": false
+}

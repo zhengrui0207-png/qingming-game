@@ -1,0 +1,287 @@
+{
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "baselineManifestSHA256": "4032a023f8ebfd1587201aa7ad2edb486c74cdc696d501a08fc8fb54c7063d59",
+  "contractVersion": "1.0.0",
+  "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/06-repair/qingming-game",
+  "REPAIR_READY": true,
+  "files": [
+    {
+      "path": "src/chapter2/repair/build-module.mjs",
+      "baseSHA256": null,
+      "sha256": "f0df82d428ba841dc29dcaac165da5f8edbe5fa0c165b2a862485c162620a852",
+      "bytes": 361
+    },
+    {
+      "path": "src/chapter2/repair/controller.js",
+      "baseSHA256": null,
+      "sha256": "f040c974e8ddd27c73d2e9b0d28937ac2d6cd16f1ada132edf9073d9827960ed",
+      "bytes": 9105
+    },
+    {
+      "path": "src/chapter2/repair/index.js",
+      "baseSHA256": null,
+      "sha256": "d63138adc34d7e7039dc315754b37d5dc4db0e7731c53eaf73611cc48c10ddaf",
+      "bytes": 845
+    },
+    {
+      "path": "src/chapter2/repair/preview.js",
+      "baseSHA256": null,
+      "sha256": "bd8add058bcc1496ef35ae5f9e101cd84bcbedc187019715085210ee8baab07b",
+      "bytes": 14033
+    },
+    {
+      "path": "src/chapter2/repair/repair.css",
+      "baseSHA256": null,
+      "sha256": "6de3b6a3e738d64995fb6d3bd46bfb90c9b81bd92559e5a84eb19f142955783f",
+      "bytes": 2650
+    },
+    {
+      "path": "src/chapter2/repair/repair.test.js",
+      "baseSHA256": null,
+      "sha256": "ab9ac5cbd861e312c914937b02e99d2dc48a79e59cb7fbc29c5d07c6a2794382",
+      "bytes": 9368
+    },
+    {
+      "path": "src/chapter2/repair/rig.js",
+      "baseSHA256": null,
+      "sha256": "770c865ddf78784b516b68899ea8df2092ff5b4216ec4482d696eff0be74bdff",
+      "bytes": 2671
+    },
+    {
+      "path": "src/chapter2/repair/test-fixture.js",
+      "baseSHA256": null,
+      "sha256": "baa57155601915acad02753c7d2d43c4fc54736f400f7dc851886288f4835c02",
+      "bytes": 4142
+    },
+    {
+      "path": "src/chapter2/repair/ui.js",
+      "baseSHA256": null,
+      "sha256": "305046fb00026bcbc1b55b930ec475f7bb10261660eb0ff14c45b7af7f4ebeee",
+      "bytes": 9164
+    },
+    {
+      "path": "src/chapter2/repair/vite.preview.config.js",
+      "baseSHA256": null,
+      "sha256": "cbcaabda0bc647f97c8bfc07aac54842f5d073bacbb3bcc4283cf14fe2a46014",
+      "bytes": 337
+    },
+    {
+      "path": "src/chapter2/repair/workbench.js",
+      "baseSHA256": null,
+      "sha256": "728b52f6e8e3f25f3ad691aaecf619ff8b44e104f6f39783d2ed5605e4a57c22",
+      "bytes": 3239
+    },
+    {
+      "path": "chapter2-repair-preview.html",
+      "baseSHA256": null,
+      "sha256": "db4a7cb5c01d8fc42d7e69bda4061455751f70377512437b3441a7c873036105",
+      "bytes": 2259
+    },
+    {
+      "path": "docs/chapter2/repair/01-inspect.png",
+      "baseSHA256": null,
+      "sha256": "e1bbf8f53e1911a8fe7fadc4544b13890108e302f3758287fc2294c7c7925a90",
+      "bytes": 476758
+    },
+    {
+      "path": "docs/chapter2/repair/02-rope-placed.png",
+      "baseSHA256": null,
+      "sha256": "dfb0b1b3a6ec5095f2b59ff0bcdb378db40a11c431d7efaf150789f0cb28d377",
+      "bytes": 469865
+    },
+    {
+      "path": "docs/chapter2/repair/03-test-confirmed.png",
+      "baseSHA256": null,
+      "sha256": "0dd106c4176e1272907de852efc3fe52e111b740d2d8d1d098595dc7db8a1e4b",
+      "bytes": 548409
+    },
+    {
+      "path": "docs/chapter2/repair/04-reward-unselected.png",
+      "baseSHA256": null,
+      "sha256": "ce07a1b7c1a247744f9f97c9e665ba291a98f1d2e2a6b331ba18ca7b6d9a075e",
+      "bytes": 564748
+    },
+    {
+      "path": "docs/chapter2/repair/05-bell-revisit.png",
+      "baseSHA256": null,
+      "sha256": "8521485816482924102b2015ce6c5f175b020c0bdb6fcd46089b8b05d3537cb4",
+      "bytes": 439780
+    },
+    {
+      "path": "docs/chapter2/repair/06-bell-past.png",
+      "baseSHA256": null,
+      "sha256": "5a395a3378ab5f3449ad8cb6fc48be478e925a812ba4829737c147f6cdc0acb5",
+      "bytes": 464389
+    },
+    {
+      "path": "docs/chapter2/repair/07-insufficient-energy.png",
+      "baseSHA256": null,
+      "sha256": "c2617ded784d00fd35095997e03aa3395736b6a5e42f3b246f19291e397a9193",
+      "bytes": 299577
+    },
+    {
+      "path": "docs/chapter2/repair/08-keyboard-supports.png",
+      "baseSHA256": null,
+      "sha256": "49b0a2c51303f637aad424b9e99effe7169f7c6c04e3d3914d1c94edb96c78a6",
+      "bytes": 492636
+    },
+    {
+      "path": "docs/chapter2/repair/09-completion-save-failure.png",
+      "baseSHA256": null,
+      "sha256": "dcefb182b06b93b1831f2590298fe14f3222c3ba3c54ae04aedf2592f5c63c0b",
+      "bytes": 600730
+    },
+    {
+      "path": "docs/chapter2/repair/10-reward-save-failure.png",
+      "baseSHA256": null,
+      "sha256": "020670e1a0e84fd73fbbcb7b3057eced74cb76fa8fbf893bc6f0fa2d5b8c18cb",
+      "bytes": 599192
+    },
+    {
+      "path": "docs/chapter2/repair/11-cash-revisit.png",
+      "baseSHA256": null,
+      "sha256": "9fb68936c9b5b29981d0e7b89ad4a740c90ba67a5e5f846df2b92b680e25a212",
+      "bytes": 466759
+    },
+    {
+      "path": "docs/chapter2/repair/12-stable-frame-world.png",
+      "baseSHA256": null,
+      "sha256": "a4b0ebb7b40a59012a0eb833aa7632da66e76dd47744fa287d5fb0acf24bf1b7",
+      "bytes": 451751
+    },
+    {
+      "path": "docs/chapter2/repair/13-final-framing.png",
+      "baseSHA256": null,
+      "sha256": "f69973162a6d16f031239cc2495b617b0ab59f9a31fe88afe5fbc57e0ca95229",
+      "bytes": 493509
+    },
+    {
+      "path": "docs/chapter2/repair/all-tests.log",
+      "baseSHA256": null,
+      "sha256": "a888cda7164d2db8a8df742af6f1257533747f452bd04ce525274041b076ab90",
+      "bytes": 44981
+    },
+    {
+      "path": "docs/chapter2/repair/asset-interface.json",
+      "baseSHA256": null,
+      "sha256": "1173e4bf1fc2ee4a7f690645c6b97a1a770d0a3a029243e4eccad04fef8da5a6",
+      "bytes": 1412
+    },
+    {
+      "path": "docs/chapter2/repair/browser-cash.js",
+      "baseSHA256": null,
+      "sha256": "49ac0b342aa4f0fcd7e6efc7eaec042d9f42b7d0a0718890b5e455242105c7c9",
+      "bytes": 5556
+    },
+    {
+      "path": "docs/chapter2/repair/browser-cash.log",
+      "baseSHA256": null,
+      "sha256": "7bb935d8d9e04636ab780b4872f08552d7df555a7549522681c43bb231c58f51",
+      "bytes": 6863
+    },
+    {
+      "path": "docs/chapter2/repair/browser-final.js",
+      "baseSHA256": null,
+      "sha256": "ba904dc54982dd90c8aa6e38e05cc8c0839cb98c8335d2d88eb6079c15fc1ca3",
+      "bytes": 2051
+    },
+    {
+      "path": "docs/chapter2/repair/browser-final.log",
+      "baseSHA256": null,
+      "sha256": "33f5bedf5783154003f7a8cfea0acc5340054f208c058dfb3bea05e67d1d54fc",
+      "bytes": 3140
+    },
+    {
+      "path": "docs/chapter2/repair/browser-mouse.js",
+      "baseSHA256": null,
+      "sha256": "eb86dcc488085b1d57105e6b47a417ed079b4c859a974220c7d7059467072f6f",
+      "bytes": 2072
+    },
+    {
+      "path": "docs/chapter2/repair/browser-mouse.log",
+      "baseSHA256": null,
+      "sha256": "85737ddddcf42230dba22d8fa886d69d8488a9ec90c5e4ea5f86c56abbef11d9",
+      "bytes": 2608
+    },
+    {
+      "path": "docs/chapter2/repair/browser-test-reload.js",
+      "baseSHA256": null,
+      "sha256": "20bbedeb413c79da46c016076f1ff6a4900a0e0ab0d2dfbd28374fe631b9021c",
+      "bytes": 2856
+    },
+    {
+      "path": "docs/chapter2/repair/browser-test-reload.log",
+      "baseSHA256": null,
+      "sha256": "5b59363790a92acf6bce7c58bb1f46c85c2b27740c2e50794fe1dd1737b38a67",
+      "bytes": 5873
+    },
+    {
+      "path": "docs/chapter2/repair/build.log",
+      "baseSHA256": null,
+      "sha256": "77a00fd6d8398f0604dc20ac3286b9b16bb611ddd168c7f3da62235d44048efe",
+      "bytes": 485
+    },
+    {
+      "path": "docs/chapter2/repair/contract-validation.log",
+      "baseSHA256": null,
+      "sha256": "e934946fcd97f04bd61f1d814615ad8e05322c2d0e38104904f7594f87a18397",
+      "bytes": 218
+    },
+    {
+      "path": "docs/chapter2/repair/handoff.md",
+      "baseSHA256": null,
+      "sha256": "dc759ab236c9c7e06bbf90687cc6f7dd62893ddb93d303ddc379e02da1da9ef7",
+      "bytes": 6922
+    },
+    {
+      "path": "docs/chapter2/repair/module-build.log",
+      "baseSHA256": null,
+      "sha256": "2b635d55b48e789cc96ba5940542e3e7aa1e0c325ce9afada6bb182aaa3a2a20",
+      "bytes": 312
+    },
+    {
+      "path": "docs/chapter2/repair/package-delivery.py",
+      "baseSHA256": null,
+      "sha256": "d958efc0960cfdef605a719db47e7bc0abd204e387d259802e5d243c635acd93",
+      "bytes": 4366
+    },
+    {
+      "path": "docs/chapter2/repair/readiness.json",
+      "baseSHA256": null,
+      "sha256": "653ab99e80db19317012e2f7b169b3fad32f3192ec152a2b13122c3890e41dee",
+      "bytes": 11673
+    },
+    {
+      "path": "docs/chapter2/repair/scope-audit.json",
+      "baseSHA256": null,
+      "sha256": "36b24ef99706c67cfe1a6663a762d61a6b82ed58bf3ac661c7fd84742d05bfc9",
+      "bytes": 567
+    },
+    {
+      "path": "docs/chapter2/repair/scope-audit.log",
+      "baseSHA256": null,
+      "sha256": "14130851746b9a8b3b04ede5253e5b0e1fce65f7c2ef99ac6badb8e6bd187281",
+      "bytes": 524
+    },
+    {
+      "path": "docs/chapter2/repair/scope-audit.py",
+      "baseSHA256": null,
+      "sha256": "2c7acafee174fcd46d1243c7bdcd324ef4fce5f2a48be9b7fa3c88a41e1a0b41",
+      "bytes": 1834
+    },
+    {
+      "path": "docs/chapter2/repair/unit-test.log",
+      "baseSHA256": null,
+      "sha256": "713aa8717d5a3a551a185a87ff1e4c16bdce6a9563cdf87d496ce292dbfa5d87",
+      "bytes": 3572
+    },
+    {
+      "path": "docs/chapter2/repair/verification.md",
+      "baseSHA256": null,
+      "sha256": "62ea24737e4d633da28ac341ee4e72e540fd70394c0c48746b8a213b1ff4435c",
+      "bytes": 3491
+    }
+  ],
+  "fileCount": 46,
+  "excluded": "No node_modules, build output, tool cache, original world/asset duplication, main/core/content/anchor changes"
+}

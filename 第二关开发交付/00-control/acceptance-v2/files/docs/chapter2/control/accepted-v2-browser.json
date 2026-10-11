@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "scope": "合入真实主工程后的独立DEV预览；不是正式main.js整关运行时/真人试玩",
+  "checks": [
+    {
+      "name": "main-root isolated preview real service initialized",
+      "pass": true,
+      "detail": {
+        "id": "player_scholar",
+        "x": -29,
+        "z": -19.8,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      }
+    },
+    {
+      "name": "main-root fishing lease P0 owner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "main-root tutorial catch inventory collection and one charge",
+      "pass": true,
+      "detail": {
+        "outcome": "caught",
+        "itemId": "item_c2_fish_a",
+        "quantity": 1
+      }
+    },
+    {
+      "name": "main-root release preserves follow camera",
+      "pass": true,
+      "detail": {
+        "owner": null,
+        "yaw": 3.141592653589793,
+        "pitch": 0.6840312500000003,
+        "distance": 10,
+        "position": [
+          -28.771142714767876,
+          8.609224963074867,
+          -27.701065869351975
+        ],
+        "focus": [
+          -29,
+          2.29,
+          -19.8
+        ]
+      }
+    },
+    {
+      "name": "main-root browser reload saves catch once and original player",
+      "pass": true,
+      "detail": {
+        "id": "player_scholar",
+        "x": -29,
+        "z": -19.8,
+        "height": 0.94,
+        "layer": "ground",
+        "mode": "walk"
+      }
+    },
+    {
+      "name": "formal key unchanged",
+      "pass": true,
+      "detail": true
+    }
+  ],
+  "elapsedSeconds": 14.79259999999994,
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "width": 1200,
+    "height": 792,
+    "dpr": 2
+  },
+  "screenshots": [
+    "accepted-v2-bite.png",
+    "accepted-v2-fish.png"
+  ]
+}

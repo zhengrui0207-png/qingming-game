@@ -1,0 +1,90 @@
+{
+  "baseline": "2026-10-02-core-fishing-ready-v2",
+  "contractVersion": "1.0.0",
+  "files": [
+    {
+      "path": "src/chapter2/commerce/wares.js",
+      "baselineSha256": null,
+      "sha256": "3ec60b2a2ca107ea2b1c645e35f6d8072a7be9c243d5d7575160f84c7837772e",
+      "bytes": 1692,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/preview.js",
+      "baselineSha256": null,
+      "sha256": "289e728ea2a6bad59481ee38a0af50048c4a2377fc2cd1aa9fb8a6e8d545677d",
+      "bytes": 14397,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/index.js",
+      "baselineSha256": null,
+      "sha256": "6af979daea8e08a07cfb1bb92e952048eb629697e40995a7fa3b4fa05ab5aa93",
+      "bytes": 11415,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/controller.js",
+      "baselineSha256": null,
+      "sha256": "d2865ab810a8832387c4f49982cb9f83107758b203a1ca2e60238f67e0df077a",
+      "bytes": 4263,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/commerce.css",
+      "baselineSha256": null,
+      "sha256": "2bbc83edce46ee53577455488b28074da26450edf530276443c1ead8625eaacb",
+      "bytes": 4259,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/view-model.js",
+      "baselineSha256": null,
+      "sha256": "08391199ea4d2d7655175cbe0ee2105c84784e8e107e48fa447fe928eda98fa0",
+      "bytes": 7709,
+      "kind": "add"
+    },
+    {
+      "path": "src/chapter2/commerce/commerce.test.js",
+      "baselineSha256": null,
+      "sha256": "d046bed1e9f5cd3e0d63e1c9edfdd65b3b8a8f52ffce7c0aa285e760e1423069",
+      "bytes": 15059,
+      "kind": "add"
+    },
+    {
+      "path": "chapter2-commerce-preview.html",
+      "baselineSha256": null,
+      "sha256": "c13653ae89e5d33e397cfcd5a48d323ada36b4378e37ab4e193c19f0e9568b3a",
+      "bytes": 2851,
+      "kind": "add"
+    },
+    {
+      "path": "docs/chapter2/commerce/README.md",
+      "baselineSha256": null,
+      "sha256": "671e82961c0e6e6ee7d89cd95a15fd3a5e1534104f08b74759817d9f5a4075f1",
+      "bytes": 5190,
+      "kind": "add"
+    },
+    {
+      "path": "docs/chapter2/commerce/design.md",
+      "baselineSha256": null,
+      "sha256": "98c3dda82af590b2fbcf7ffb9143a9c1fa2c7c09c0731c402a25a6a87c75ece7",
+      "bytes": 1354,
+      "kind": "add"
+    },
+    {
+      "path": "docs/chapter2/commerce/validation.md",
+      "baselineSha256": null,
+      "sha256": "b4f82ea5d17f35ae2444cdcfc14009889d8350521aef945a235c390f0ce100f7",
+      "bytes": 4593,
+      "kind": "add"
+    },
+    {
+      "path": "docs/chapter2/commerce/ready.json",
+      "baselineSha256": null,
+      "sha256": "c56de8ab0badbd9c96a2d491d2f6e0db0aa1ffedab94a3ac17354b1ae6bb89b3",
+      "bytes": 607,
+      "kind": "add"
+    }
+  ]
+}

@@ -1,0 +1,1326 @@
+{
+  "checks": [
+    {
+      "name": "intro_c2 skip 0 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 0 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 0 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 0",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 0.17 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 0.17 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 0.17 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 0.17",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 2.99 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 2.99 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 2.99 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 2.99",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 3.01 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 3.01 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 3.01 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 3.01",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_02",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.80101982779856,
+          1.960199436909611,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.80101982779856,
+          1.960199436909611,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 5.4 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 5.4 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 5.4 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 5.4",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_02",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 7.105427357601002e-15,
+        "rope": [
+          -62.795556580512134,
+          1.9591186821112199,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.79555658051213,
+          1.9591186821112199,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 7.19 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 7.19 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 7.19 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 7.19",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_02",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.77790378548694,
+          1.9554177817524026,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.77790378548694,
+          1.9554177817524026,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 7.21 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 7.21 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 7.21 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 7.21",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_03",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "intro_c2 skip 11.99 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -22,
+          2.29,
+          -20
+        ]
+      }
+    },
+    {
+      "name": "intro_c2 skip 11.99 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 skip 11.99 locks released",
+      "passed": true
+    },
+    {
+      "name": "intro_c2 rope hand at 11.99",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "intro_c2",
+        "shot": "shot_c2_intro_03",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 0,
+        "rope": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "hand": [
+          -62.8,
+          1.96,
+          -40.769999999999996
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "ending_c2 skip 0 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 0 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 0 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 rope hand at 0",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "ending_c2",
+        "shot": "shot_c2_ending_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 1.5888218580782548e-14,
+        "rope": [
+          -74.8,
+          1.96,
+          -42.97
+        ],
+        "hand": [
+          -74.80000000000001,
+          1.96,
+          -42.970000000000006
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "ending_c2 skip 0.17 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 0.17 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 0.17 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 rope hand at 0.17",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "ending_c2",
+        "shot": "shot_c2_ending_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 1.5888218580782548e-14,
+        "rope": [
+          -74.8,
+          1.96,
+          -42.97
+        ],
+        "hand": [
+          -74.80000000000001,
+          1.96,
+          -42.970000000000006
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "ending_c2 skip 5.49 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 5.49 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 5.49 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 rope hand at 5.49",
+      "passed": true,
+      "details": {
+        "active": true,
+        "sequence": "ending_c2",
+        "shot": "shot_c2_ending_01",
+        "prototypeNPCs": [
+          "fisher",
+          "porter",
+          "merchant",
+          "food_vendor"
+        ],
+        "actualPlayerBones": 40,
+        "actualCartParts": [
+          "cart__wheel0",
+          "cart__wheel1"
+        ],
+        "ropeGripping": true,
+        "ropeHandDistance": 1.5888218580782548e-14,
+        "rope": [
+          -74.8,
+          1.96,
+          -42.97
+        ],
+        "hand": [
+          -74.80000000000001,
+          1.96,
+          -42.970000000000006
+        ],
+        "silentBell": true
+      }
+    },
+    {
+      "name": "ending_c2 skip 5.51 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 5.51 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 5.51 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 9.99 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 9.99 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 9.99 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 10.01 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 10.01 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 10.01 locks released",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 15.99 camera restored",
+      "passed": true,
+      "details": {
+        "position": [
+          -66.49820951823666,
+          6.99625888171158,
+          -40.63976993864809
+        ],
+        "quaternion": [
+          -0.1930951603997849,
+          0.5871139207705653,
+          0.1467917903873393,
+          0.7723106067784354
+        ],
+        "fov": 48,
+        "aspect": 1.6,
+        "yaw": 1.3,
+        "pitch": 0.49,
+        "distance": 10,
+        "targetDistance": 10,
+        "overview": false,
+        "focus": [
+          -75,
+          2.29,
+          -43
+        ]
+      }
+    },
+    {
+      "name": "ending_c2 skip 15.99 rewards untouched",
+      "passed": true
+    },
+    {
+      "name": "ending_c2 skip 15.99 locks released",
+      "passed": true
+    },
+    {
+      "name": "cash core already settled",
+      "passed": true
+    },
+    {
+      "name": "cash naturally ends",
+      "passed": true
+    },
+    {
+      "name": "cash presentation no extra reward",
+      "passed": true
+    },
+    {
+      "name": "cash expected coins",
+      "passed": true,
+      "details": {
+        "coins": 30
+      }
+    },
+    {
+      "name": "cash repeated review 0 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "cash repeated review 1 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "cash repeated review 2 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "cash repeated review 3 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "bell core already settled",
+      "passed": true
+    },
+    {
+      "name": "bell naturally ends",
+      "passed": true
+    },
+    {
+      "name": "bell presentation no extra reward",
+      "passed": true
+    },
+    {
+      "name": "bell expected coins",
+      "passed": true,
+      "details": {
+        "coins": 14
+      }
+    },
+    {
+      "name": "bell repeated review 0 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "bell repeated review 1 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "bell repeated review 2 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "bell repeated review 3 whole snapshot unchanged",
+      "passed": true
+    },
+    {
+      "name": "failed ack frees camera/input",
+      "passed": true
+    },
+    {
+      "name": "failed ack remains explicitly pending",
+      "passed": true,
+      "details": {
+        "saved": false,
+        "kind": "save-failed",
+        "message": "保存失败：本页保留未保存进度，请勿刷新；请重试保存或取消待提交事务。",
+        "errorCode": "save-failed",
+        "pending": true
+      }
+    },
+    {
+      "name": "failed ack no new playback",
+      "passed": true
+    },
+    {
+      "name": "failed ack retry seen",
+      "passed": true
+    },
+    {
+      "name": "failed ack retry bell single instance",
+      "passed": true
+    },
+    {
+      "name": "book releases movie and owns its own lock",
+      "passed": true
+    },
+    {
+      "name": "book interruption leaves movie pending",
+      "passed": true
+    },
+    {
+      "name": "book close restores operation",
+      "passed": true
+    },
+    {
+      "name": "camera preemption frees all owned resources",
+      "passed": true
+    },
+    {
+      "name": "preemption no auto restart",
+      "passed": true
+    },
+    {
+      "name": "actual browser blur observed",
+      "passed": true
+    },
+    {
+      "name": "actual blur stops audio/stage/camera/locks",
+      "passed": true
+    },
+    {
+      "name": "actual blur leaves pending without reward",
+      "passed": true
+    },
+    {
+      "name": "focus return does not restart",
+      "passed": true
+    },
+    {
+      "name": "refresh core economy preserved",
+      "passed": true
+    },
+    {
+      "name": "refresh reward and position retained",
+      "passed": true,
+      "details": {
+        "actor": {
+          "x": -75,
+          "z": -43,
+          "height": 0.94,
+          "layer": "ground",
+          "mode": "walk"
+        },
+        "regionId": "region_d",
+        "visible": true,
+        "focused": true,
+        "operative": false,
+        "wallNow": 1791192019061
+      }
+    },
+    {
+      "name": "refresh no stale lock or camera tween",
+      "passed": true
+    },
+    {
+      "name": "seen ending does not replay on refresh",
+      "passed": true
+    },
+    {
+      "name": "cast real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.012932582933727725
+      }
+    },
+    {
+      "name": "bobber real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.016233148814750627
+      }
+    },
+    {
+      "name": "reel real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.00723939203250212
+      }
+    },
+    {
+      "name": "splash real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.014707251288616364
+      }
+    },
+    {
+      "name": "wheel real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.007662450447379788
+      }
+    },
+    {
+      "name": "coin real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.010214478696177125
+      }
+    },
+    {
+      "name": "steam real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.0051978879996362965
+      }
+    },
+    {
+      "name": "bell real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.015355521809622782
+      }
+    },
+    {
+      "name": "rope_test real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.0007950920140312177
+      }
+    },
+    {
+      "name": "tea_pour real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.0025127447985711813
+      }
+    },
+    {
+      "name": "cup_set real WAV audible",
+      "passed": true,
+      "details": {
+        "max": 0.0007476381655760127
+      }
+    },
+    {
+      "name": "global mute outputs zero",
+      "passed": true,
+      "details": {
+        "loaded": 11,
+        "required": 11,
+        "errors": [],
+        "active": 0,
+        "enabled": false,
+        "running": true,
+        "paused": false,
+        "context": "running",
+        "events": [
+          {
+            "id": "cast",
+            "at": 0.016,
+            "gain": 1
+          },
+          {
+            "id": "cast",
+            "at": 1.28,
+            "gain": 1
+          },
+          {
+            "id": "bobber",
+            "at": 2.8586666666666667,
+            "gain": 1
+          },
+          {
+            "id": "reel",
+            "at": 4.426666666666667,
+            "gain": 1
+          },
+          {
+            "id": "splash",
+            "at": 6,
+            "gain": 1
+          },
+          {
+            "id": "wheel",
+            "at": 7.573333333333333,
+            "gain": 1
+          },
+          {
+            "id": "coin",
+            "at": 9.141333333333334,
+            "gain": 1
+          },
+          {
+            "id": "steam",
+            "at": 10.709333333333333,
+            "gain": 1
+          },
+          {
+            "id": "bell",
+            "at": 12.277333333333333,
+            "gain": 1
+          },
+          {
+            "id": "rope_test",
+            "at": 13.850666666666667,
+            "gain": 0.22
+          },
+          {
+            "id": "tea_pour",
+            "at": 15.429333333333334,
+            "gain": 0.2
+          },
+          {
+            "id": "cup_set",
+            "at": 17.002666666666666,
+            "gain": 0.18
+          },
+          {
+            "id": "ambience",
+            "at": 17.27466666666667,
+            "gain": 0.08750000000000001
+          }
+        ],
+        "hasHostAudio": true,
+        "ambienceReused": true
+      }
+    },
+    {
+      "name": "silent story bell has no cue",
+      "passed": true
+    },
+    {
+      "name": "pause does not advance",
+      "passed": true
+    },
+    {
+      "name": "formal save and audio preference unchanged",
+      "passed": true,
+      "details": {
+        "formal": {},
+        "afterFormal": {}
+      }
+    }
+  ],
+  "total": 105,
+  "passed": 105,
+  "audio": [
+    {
+      "id": "cast",
+      "played": true,
+      "maxRms": 0.012932582933727725
+    },
+    {
+      "id": "bobber",
+      "played": true,
+      "maxRms": 0.016233148814750627
+    },
+    {
+      "id": "reel",
+      "played": true,
+      "maxRms": 0.00723939203250212
+    },
+    {
+      "id": "splash",
+      "played": true,
+      "maxRms": 0.014707251288616364
+    },
+    {
+      "id": "wheel",
+      "played": true,
+      "maxRms": 0.007662450447379788
+    },
+    {
+      "id": "coin",
+      "played": true,
+      "maxRms": 0.010214478696177125
+    },
+    {
+      "id": "steam",
+      "played": true,
+      "maxRms": 0.0051978879996362965
+    },
+    {
+      "id": "bell",
+      "played": true,
+      "maxRms": 0.015355521809622782
+    },
+    {
+      "id": "rope_test",
+      "played": true,
+      "maxRms": 0.0007950920140312177
+    },
+    {
+      "id": "tea_pour",
+      "played": true,
+      "maxRms": 0.0025127447985711813
+    },
+    {
+      "id": "cup_set",
+      "played": true,
+      "maxRms": 0.0007476381655760127
+    }
+  ],
+  "formalKeysBefore": {},
+  "formalKeysAfter": {},
+  "realBrowserStorage": true,
+  "realBrowserBlur": true,
+  "formalMainIntegration": false,
+  "humanPlaytest": false
+}

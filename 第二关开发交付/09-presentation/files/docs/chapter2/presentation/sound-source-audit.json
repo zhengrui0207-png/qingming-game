@@ -1,0 +1,126 @@
+{
+  "allMatched": true,
+  "files": [
+    {
+      "id": "cast",
+      "path": "src/chapter2/presentation/audio/cast.wav",
+      "matches": true,
+      "sha256": "bafb3ad1845466f4e4263b0f7fcde3cf29afd378eed5dc1a575137b58be31647",
+      "seconds": 0.65,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "bobber",
+      "path": "src/chapter2/presentation/audio/bobber.wav",
+      "matches": true,
+      "sha256": "6b2755f925ecfd73abe5396af0507d5882c2ef25a88a0029b31a057015a10fc8",
+      "seconds": 0.2,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "reel",
+      "path": "src/chapter2/presentation/audio/reel.wav",
+      "matches": true,
+      "sha256": "3172c27c219b634800442a58eae85b3cf75ce477b064793e3904006de5e989cf",
+      "seconds": 1.0,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "splash",
+      "path": "src/chapter2/presentation/audio/splash.wav",
+      "matches": true,
+      "sha256": "95217df2f70ea9d738a1c969889958d1f817c5c00f874a9d040bb4f17af0060c",
+      "seconds": 0.85,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "wheel",
+      "path": "src/chapter2/presentation/audio/wheel.wav",
+      "matches": true,
+      "sha256": "50e698ea1b05dc75fa637365ef2a1eb60d83ac9edf523a4beb6db02461f8c8a8",
+      "seconds": 1.2,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "coin",
+      "path": "src/chapter2/presentation/audio/coin.wav",
+      "matches": true,
+      "sha256": "33f386337b6b64a6ee8e302b96bfc9d072b8264bf0785fa40eeb38addc14effc",
+      "seconds": 0.5,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "steam",
+      "path": "src/chapter2/presentation/audio/steam.wav",
+      "matches": true,
+      "sha256": "2c8fc8def77349cbf0bc76a6454206b121f035e9be3006e60235882872113bce",
+      "seconds": 1.1,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "bell",
+      "path": "src/chapter2/presentation/audio/bell.wav",
+      "matches": true,
+      "sha256": "9a765b2339d65650fcf025c3231d4cf469901d8820b17f0666fef85c382f7b13",
+      "seconds": 1.2,
+      "sampleRate": 24000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "rope_test",
+      "path": "public/assets/hongqiao/cinema/audio/sfx_rope_handle.wav",
+      "matches": true,
+      "sha256": "31021db606d842c0c366520585afc0e716fd3a90519f47e65dc2669e27d7b337",
+      "seconds": 3.0,
+      "sampleRate": 48000,
+      "channels": 2,
+      "sampleWidth": 2
+    },
+    {
+      "id": "tea_pour",
+      "path": "public/assets/audio/street/sfx/SFX_02_QMSH-17_street-166_pour_water_v01.wav",
+      "matches": true,
+      "sha256": "e2cb8eeca2f42015576c6755573e71b9a16b87004f37a85990668f661124253b",
+      "seconds": 2.0,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "cup_set",
+      "path": "public/assets/audio/street/sfx/SFX_02_QMSH-17_street-166_tea_cup_v01.wav",
+      "matches": true,
+      "sha256": "bc04d3a8a24de48f3d0cd807e2f451513fef9558a3b59efe0340d1e65a198a7d",
+      "seconds": 1.0,
+      "sampleRate": 48000,
+      "channels": 1,
+      "sampleWidth": 2
+    },
+    {
+      "id": "ambience",
+      "path": "public/assets/audio/ambience/spring_riverside_loop_30s.wav",
+      "matches": true,
+      "sha256": "27be3925d2c321c78b48c7e4c71cbb13add8290fea7224d36c5f562c85eedd01",
+      "seconds": 26843.545575,
+      "sampleRate": 40000,
+      "channels": 2,
+      "sampleWidth": 2
+    }
+  ],
+  "externalGenerationSpend": 0
+}

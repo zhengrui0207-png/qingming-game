@@ -1,0 +1,23 @@
+{
+  "module": "05-commerce",
+  "contractVersion": "1.0.0",
+  "baseline": "2026-10-02-core-fishing-ready-v2",
+  "COMMERCE_READY": true,
+  "publicStatusUpdated": false,
+  "mainIntegrated": false,
+  "browserStorageChecked": true,
+  "formalNPCModelsReady": false,
+  "tests": {
+    "commerce": 15,
+    "all": 209,
+    "browser": 49,
+    "failures": 0
+  },
+  "continuousWalk": {
+    "routes": 5,
+    "distanceMeters": 201.3,
+    "samples": 4358
+  },
+  "previewURL": "http://127.0.0.1:5285/chapter2-commerce-preview.html?test&chapter2&session=commerce-review",
+  "handoffUTC": "2026-10-02T16:22:25.376963+00:00"
+}

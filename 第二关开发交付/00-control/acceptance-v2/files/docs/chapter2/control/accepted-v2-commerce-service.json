@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "scope": "主工程真实核心+实测渔夫站位浏览器localStorage交易检查；直接调用服务，不是05菜单已实现",
+  "checks": [
+    {
+      "name": "real core sale at measured fisher consumes fish credits coins keeps collection",
+      "pass": true
+    },
+    {
+      "name": "same sale transaction cannot pay twice",
+      "pass": true
+    },
+    {
+      "name": "formal storage unchanged",
+      "pass": true
+    }
+  ],
+  "coinsBefore": 8,
+  "coinsAfter": 14
+}

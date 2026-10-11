@@ -1,0 +1,150 @@
+{
+  "baselineId": "2026-10-01-p0",
+  "changedExistingFiles": [],
+  "newFiles": [
+    {
+      "path": "docs/chapter2/baseline-browser.json",
+      "baseSHA256": null,
+      "sha256": "a3f7037560a527b65b6dcdf21c87014e39f41851c9028cbfadc2a20de77f2c9b",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/baseline-browser.json"
+    },
+    {
+      "path": "docs/chapter2/baseline.md",
+      "baseSHA256": null,
+      "sha256": "300b3fe6da9c5c3a749485a68651c98d443bbe7b269afeec5030cb40b8490f6f",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/baseline.md"
+    },
+    {
+      "path": "docs/chapter2/contracts.md",
+      "baseSHA256": null,
+      "sha256": "336cc910d96769ed28a067a7959d1e888d116b056d99c48372c7bcf6c30e6871",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/contracts.md"
+    },
+    {
+      "path": "docs/chapter2/ownership.md",
+      "baseSHA256": null,
+      "sha256": "306570689a5efa00310d6dbde8c5a1888df44705f6dc75b25eb8d0140c558fd5",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/ownership.md"
+    },
+    {
+      "path": "docs/chapter2/save-samples/README.md",
+      "baseSHA256": null,
+      "sha256": "b16c8c12dae896fc265d4ddcf964d469525d0f254c2d8e85eb371eaf82e52059",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/save-samples/README.md"
+    },
+    {
+      "path": "docs/chapter2/save-samples/automation-fresh-origin.json",
+      "baseSHA256": null,
+      "sha256": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/save-samples/automation-fresh-origin.json"
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step4-save-samples.json",
+      "baseSHA256": null,
+      "sha256": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/save-samples/historical-step4-save-samples.json"
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step5-save-samples.json",
+      "baseSHA256": null,
+      "sha256": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/save-samples/historical-step5-save-samples.json"
+    },
+    {
+      "path": "docs/chapter2/templates/action.example.json",
+      "baseSHA256": null,
+      "sha256": "bb71f14970f35fc3b04144527df4d8e3be09c54c51b496ed236989bd1f3b0899",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/templates/action.example.json"
+    },
+    {
+      "path": "docs/chapter2/templates/content.draft.json",
+      "baseSHA256": null,
+      "sha256": "1f0975d0ff87f189064727d3b09f3f3d1ae9f990d0fc7af0a9440462da4d0f9b",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/templates/content.draft.json"
+    },
+    {
+      "path": "docs/chapter2/templates/scene.draft.json",
+      "baseSHA256": null,
+      "sha256": "9d3f298e195808f806840a3174d8f339a1df38eb3a39f04a58a487c531c91256",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/templates/scene.draft.json"
+    },
+    {
+      "path": "docs/chapter2/workspace-map.json",
+      "baseSHA256": null,
+      "sha256": "c62786085b5e38b41d99dc3f043f9b60512c68a8cd8775293855834fb3a579ab",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/workspace-map.json"
+    },
+    {
+      "path": "scripts/validate-chapter2-contract.mjs",
+      "baseSHA256": null,
+      "sha256": "fbaf72907b53184eea933438639fbb9ef2a4e16a4039e7e5416cdc8465aafb13",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/scripts/validate-chapter2-contract.mjs"
+    },
+    {
+      "path": "scripts/verify-chapter2-p0.py",
+      "baseSHA256": null,
+      "sha256": "20ba797846f9d623f242b83efc3ce3df89fccc70fa04c62dc7fe4b1161117320",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/scripts/verify-chapter2-p0.py"
+    },
+    {
+      "path": "src/chapter2/contracts/content.schema.json",
+      "baseSHA256": null,
+      "sha256": "886b84b34003ae190d5fcd55714d4fef2c8f44476904d26d8fc4b884155993ff",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/content.schema.json"
+    },
+    {
+      "path": "src/chapter2/contracts/contract.json",
+      "baseSHA256": null,
+      "sha256": "1ff80856cf1bcad2deb162534749881c49b283758b9557752a5547e92834134a",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/contract.json"
+    },
+    {
+      "path": "src/chapter2/contracts/contract.test.js",
+      "baseSHA256": null,
+      "sha256": "d7d54857f8eef90ec4c393fffef645afcb174ab8d81530944d7ffcad81869c3d",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/contract.test.js"
+    },
+    {
+      "path": "src/chapter2/contracts/index.js",
+      "baseSHA256": null,
+      "sha256": "a4b8aa5357e99b2e9a961cde97d8b587a54809ce7e6e65859a23330f680258f2",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/index.js"
+    },
+    {
+      "path": "src/chapter2/contracts/scene.schema.json",
+      "baseSHA256": null,
+      "sha256": "4e197faf7095f9ce58f75e15b3ccaea619e033ad39b58ba9a6298b1c10a09415",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/scene.schema.json"
+    },
+    {
+      "path": "src/chapter2/contracts/types.d.ts",
+      "baseSHA256": null,
+      "sha256": "fe1f5d0477e830feb1d495d8e1aa65fea6556da95d0c26a4595564b53961ac9b",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/types.d.ts"
+    },
+    {
+      "path": "src/chapter2/contracts/validate.js",
+      "baseSHA256": null,
+      "sha256": "4bf303f036649214438de490c551b0b2d1897ecf8b6003c48210e17409ae3796",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/contracts/validate.js"
+    },
+    {
+      "path": "docs/chapter2/status.json",
+      "baseSHA256": null,
+      "sha256": "3eccfccab692edcefbdf52bd6cf1566ae6faf61dd7e194f2cf3f6db7586d23b0",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/status.json"
+    },
+    {
+      "path": "docs/chapter2/ready-checks.json",
+      "baseSHA256": null,
+      "sha256": "7be112457313a4731ea38e0eea00f3029a02de94305d05f6def940a80d655cad",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/ready-checks.json"
+    },
+    {
+      "path": "docs/chapter2/frozen-files.json",
+      "baseSHA256": null,
+      "sha256": "e420a3eae86cdf6dac153c6d1402be9daa9d25ab16278a80e20cff9819797f4d",
+      "source": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/frozen-files.json"
+    }
+  ]
+}

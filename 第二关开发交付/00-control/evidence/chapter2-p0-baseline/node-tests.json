@@ -1,0 +1,46 @@
+{
+  "files": [
+    "src/crowd-motion.test.js",
+    "src/hongqiao/cinema/audio.test.js",
+    "src/hongqiao/cinema/bridge-reaction.test.js",
+    "src/hongqiao/cinema/timeline.test.js",
+    "src/hongqiao/cinema/traffic.test.js",
+    "src/hongqiao/presentation.test.js",
+    "src/hongqiao/quest.test.js",
+    "src/hongqiao/state.test.js",
+    "src/interaction/core.test.js",
+    "src/motion/motion.test.js",
+    "src/npc-assets.test.js",
+    "src/people-history.test.js",
+    "src/street-audio.test.js",
+    "src/traffic-facing.test.js",
+    "src/world.test.js"
+  ],
+  "command": [
+    "node",
+    "--test",
+    "src/crowd-motion.test.js",
+    "src/hongqiao/cinema/audio.test.js",
+    "src/hongqiao/cinema/bridge-reaction.test.js",
+    "src/hongqiao/cinema/timeline.test.js",
+    "src/hongqiao/cinema/traffic.test.js",
+    "src/hongqiao/presentation.test.js",
+    "src/hongqiao/quest.test.js",
+    "src/hongqiao/state.test.js",
+    "src/interaction/core.test.js",
+    "src/motion/motion.test.js",
+    "src/npc-assets.test.js",
+    "src/people-history.test.js",
+    "src/street-audio.test.js",
+    "src/traffic-facing.test.js",
+    "src/world.test.js"
+  ],
+  "exitCode": 0,
+  "summary": [
+    "# tests 98",
+    "# pass 98",
+    "# fail 0",
+    "# skipped 0",
+    "# duration_ms 354.5355"
+  ]
+}

@@ -10,7 +10,7 @@
 
 已有书生已完成生成且正在另一个任务验收：优先接收其本地文件和原任务元信息。缺动画才补动作，缺骨骼才补绑骨；不能因为新流水线更整齐就重做已有成果。
 
-本手册只给制作方法与提示词，没有提交任何生成请求、消耗积分或创建 API 脚本。后续执行时按具体资产清单和已授权预算运行。
+三件任务道具已按用户授权通过直接API生成，净消耗120积分，产物见[交付说明](assets/hongqiao_props/README.md)；实际脚本为[generate_hongqiao_props.py](tools/generate_hongqiao_props.py)。本手册其余人物/动画步骤仍为制作方法，不代表已经执行。
 
 ### 接口纠正
 
@@ -295,41 +295,20 @@ API Key 从本机环境/安全配置读取，不让我把 Key 粘贴进聊天。
 不要把“生成成功”记为“游戏内验收通过”，也不要在没有同意的情况下自动重抽。
 ```
 
-## 8. 三件道具的生成提示词
+## 开场资产补充
 
-优先已有资产或本地几何；确需 API 时用 V3 `POST /generation/text-to-model`，把下列英文放在 `prompt`。这些描述服务于剧情美术，不宣称复原某件出土器物。
+开场已采用“顶杆止船—未降桅杆—纤夫失察—桥上抛两根绳—降桅稳船”的30秒9镜头演出（景别、机位与切点以剧情稿HQ_00.1为准），具体要求见[剧情稿HQ_00](虹桥急情_完整剧情稿_v1.0.md)。优先复用现有船工、群众和船体；杆、桥上两根接应绳、纤绳用本地几何/曲线制作。桅杆需有可用转轴，顶杆、抛绳、降桅等专用动作通过Blender关键帧及游戏时间线完成；本手册中的通用idle/walk不等同于这些动作已制作。只有缺少人物外观时才进入Tripo API资产支线，仍接收已有书生，不重复生成。
 
-**备用缆绳**：
+## 8. 道具重建清单与生成提示词
 
-```text
-A single neatly coiled natural-fiber mooring rope for a historical Chinese riverside game, thick visible twists, muted warm brown, slightly worn but intact, grounded realistic proportions, simple clean game mesh, PBR material, isolated object, no people, no boat, no writing, no plastic, no modern fittings.
-```
+晓梦已指定三件任务道具重新建模。造型和最新提示词统一读取[《虹桥道具重建清单与3D生成提示词》](虹桥道具重建清单与3D生成提示词.md)，本节不再保留另一套简写以免混用。
 
-**长竹篙**：
+- 明确重建：何伯的备用缆绳、阿成的长竹篙、方娘子的护货布；护货布另做同款展开状态，物品ID仍只有一个。
+- 开场用具：顶桥长杆、桥上接应绳模板（两个独立实例）、牵船纤绳。按动画需要补建连续绳体，静态盘绳不直接变成可抛绳模型。
+- 配套陈设：粗布货包、新布卷、工具架、布摊，按现有资产缺口制作。
+- 船体部件：桅杆、支承与低位支架，先查现有船并拆件，确需补件时使用清单中的提示词。
 
-```text
-A single long straight bamboo pole for a historical Chinese riverside game, subtle bamboo nodes, weathered pale olive-brown surface, intact ends, simple clean game mesh, PBR material, isolated horizontal object, no metal hook, no people, no boat, no scenery, no writing.
-```
-
-**护货布**：
-
-```text
-A single folded roll of coarse woven cloth used to cover cargo in a historical Chinese riverside game, muted warm gray-brown, a few modest sewn patches, believable fabric folds, clean game mesh, PBR material, isolated object, no plastic tarp, no logos, no printed text, no people, no surrounding stall.
-```
-
-示例 body，只制作一件、不自动连绑骨：
-
-```json
-{
-  "prompt": "REPLACE_WITH_ONE_PROP_PROMPT_ABOVE",
-  "model": "P1-20260311",
-  "face_limit": 1800,
-  "texture": true,
-  "pbr": true
-}
-```
-
-来源：[V3 文生模型参数](https://developers.tripo3d.ai/en/docs/generation-text-to-model/p)。竹篙更适合程序化网格或 Blender 制作；若生成不稳定先评估本地制作，不反复付费抽取同一根简单长杆。
+外观生成优先直接API。英文代码块作为主体提示词，接口参数按本手册前文核对；提示词不会自动保证尺寸、原点、拓扑、可动节点或导出动画。长杆与动态绳等简单几何可用Blender/程序化方法重新建模，纹理沿用统一外观。实际生成时逐件验收，再继续下一件。
 
 ## 9. 资产最终验收清单
 

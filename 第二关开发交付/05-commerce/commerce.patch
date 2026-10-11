@@ -1,0 +1,471 @@
+--- /dev/null
++++ b/src/chapter2/commerce/wares.js
+@@ -0,0 +1,13 @@
++import * as THREE from 'three';
++/** Borrowed appearance only: no relocation or identity reuse of any legacy shop/NPC. */
++export function mountWares({scene,sources}){
++ const root=new THREE.Group();root.name='chapter2/commerce/reused-wares';scene.add(root);const assets=[],owned=[];const material=new THREE.MeshStandardMaterial({color:'#8c7355',roughness:1});
++ function stand(w,h,d,x,y,z){const geometry=new THREE.BoxGeometry(w,h,d),mesh=new THREE.Mesh(geometry,material);mesh.position.set(x,y,z);root.add(mesh);owned.push(geometry);}
++ stand(3.8,.1,.85,-44,1.73,-42.9);for(const x of [-45.65,-42.35])stand(.12,.74,.65,x,1.31,-42.9);
++ function clone(source,id,size,position){if(!source)return;const c=source.clone(true);c.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(c),v=b.getSize(new THREE.Vector3()),scale=size/Math.max(v.x,v.y,v.z);c.scale.multiplyScalar(scale);c.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(c),center=bounds.getCenter(new THREE.Vector3());c.position.add(new THREE.Vector3(position[0]-center.x,position[1]-bounds.min.y,position[2]-center.z));c.name=id;root.add(c);assets.push(id);}
++ clone(sources.steamer,'c2_food/existing-steamer',1.1,[-45.25,1.78,-42.9]);
++ clone(sources.pot,'c2_food/existing-tea-pot',.65,[-42.5,1.78,-42.9]);
++ for(let i=0;i<3;i++)clone(sources.bowl,'c2_food/existing-bowl-'+i,.25,[-43.6+i*.4,1.78,-42.9]);
++ clone(sources.bowl,'c2_general/existing-cup-appearance',.3,[-53,2.3,-31.5]);
++ let dead=false;return {getState:()=>({assets:[...assets],legacyShopMoved:false,dedicatedNPCModels:false}),dispose(){if(dead)return;dead=true;scene.remove(root);root.clear();owned.forEach(g=>g.dispose());material.dispose();}};
++}
+--- /dev/null
++++ b/src/chapter2/commerce/preview.js
+@@ -0,0 +1,72 @@
++import * as THREE from 'three';
++import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
++import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
++import {createScholar} from '../../scholar.js';
++import {moveActor} from '../../world.js';
++import {createInputLocks,createKeyGate,createInteractionRegistry} from '../../interaction/core.js';
++import {createSharedService,developmentSaveKey,configuration as C} from '../core/service.js';
++import {defaultState} from '../../hongqiao/state.js';
++import {create as createScene} from '../scene/scene.js';
++import {mountReusableAssets} from '../scene/asset-mounts.js';
++import {manifest,canInteract} from '../scene/physics.js';
++import content from '../content/content.json' with {type:'json'};
++import {create as createFishing} from '../fishing/index.js';
++import {createPreviewCamera} from '../fishing/preview-camera.js';
++import {create} from './index.js';
++import {mountWares} from './wares.js';
++const $=id=>document.getElementById(id);
++async function boot(){
++ if(!import.meta.env.DEV||!new URL(location.href).searchParams.has('test')||!new URL(location.href).searchParams.has('chapter2')){$('loading').textContent='独立验收页仅用于 DEV，请使用 ?test&chapter2。';return;}
++ const key=developmentSaveKey({development:true,url:location.href,session:new URL(location.href).searchParams.get('session')??'commerce05'});
++ const formalBefore=localStorage.getItem('qingming:hongqiao:save'),canvas=$('game'),renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor('#bac4b6');
++ const scene=new THREE.Scene();scene.fog=new THREE.Fog('#bac4b6',85,210);scene.add(new THREE.HemisphereLight('#fff4d9','#738169',2));const sun=new THREE.DirectionalLight('#fff0d1',2.2);sun.position.set(-30,70,25);scene.add(sun);const camera=new THREE.PerspectiveCamera(48,innerWidth/innerHeight,.1,300),draco=new DRACOLoader().setDecoderPath('/assets/draco/'),loader=new GLTFLoader().setDRACOLoader(draco);
++ const [world,city,life,hero,steamer]=await Promise.all([fetch('/assets/world.json').then(r=>r.json()),loader.loadAsync('/assets/qingming-world.glb'),loader.loadAsync('/assets/street-life.glb'),loader.loadAsync('/assets/song-scholar-v2-animated.glb'),loader.loadAsync('/assets/scenery/steamer.glb')]);draco.dispose();
++ scene.add(city.scene);const d=createScene({scene,world,city:city.scene});mountReusableAssets(d.slots,life.scene);const wares=mountWares({scene,sources:{steamer:steamer.scene,pot:life.scene.getObjectByName('pot'),bowl:life.scene.getObjectByName('bowl')}}),overlay=d.world;
++ const water=new THREE.Mesh(new THREE.PlaneGeometry(168,29),new THREE.MeshStandardMaterial({color:'#729c95',roughness:.35,metalness:.12}));water.rotation.x=-Math.PI/2;water.position.y=.08;scene.add(water);const scholar=createScholar(hero);scene.add(scholar.root);
++ let actor={id:'player_scholar',x:-29,z:-22.3,height:.94,mode:'walk',layer:'ground'},yaw=Math.PI,pitch=.5,distance=9,focus=new THREE.Vector3(-29,2.29,-22.3),focused=true,failNext=false,alive=true,module,fishing,last=performance.now(),walk=null,walkEvidence=[],events=[],toasts=[];
++ const keys=new Set(),gate=createKeyGate(),input=new Map(),locks=createInputLocks(()=>{keys.clear();});
++ function frame(){return {regionId:'region_d',visible:!document.hidden,focused,operative:!locks.locked,actor:{...actor}};}
++ const portCamera=createPreviewCamera({capture:()=>({camera:camera.clone(),yaw,pitch,distance,focus:focus.clone()}),restore(s){camera.copy(s.camera);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();yaw=s.yaw;pitch=s.pitch;distance=s.distance;focus.copy(s.focus);},setPose(p){camera.position.fromArray(p.position);camera.lookAt(...p.target);}});
++ const service=createSharedService({saveKey:key,development:true,storage:{getItem:k=>localStorage.getItem(k),setItem(k,v){if(failNext){failNext=false;throw Error('DEV 单次写入失败');}localStorage.setItem(k,v);}},anchors:manifest,content,ports:{getFrame:frame},seed:()=>0,onError:e=>events.push(String(e))});
++ const go=id=>{const a=manifest.anchors.find(a=>a.id===id),p=a.standingPosition;actor={...actor,x:p[0],height:p[1],z:p[2]};focus.set(actor.x,actor.height+1.35,actor.z);if(a.role==='food_vendor')yaw=0;else yaw=Math.PI;const h=Math.cos(pitch)*distance;camera.position.set(focus.x+Math.sin(yaw)*h,focus.y+Math.sin(pitch)*distance,focus.z+Math.cos(yaw)*h);camera.lookAt(focus);};
++ const send=(type,payload={})=>{const r=service.dispatch({type:'c2/'+type,transactionId:service.createTransactionId(),payload});if(!r.ok)throw Error(JSON.stringify(r));return r;};
++ function initial(){const flushed=service.flush();if(!flushed.ok)throw Error(JSON.stringify(flushed));const s=defaultState();s.quests.hongqiao_01={status:'completed'};s.endingSeen=true;const r=service.restoreFixture(s);if(!r.ok)throw Error(JSON.stringify(r));go('anchor_c2_entry');send('enterChapter2',{entryId:C.entry.id});go('anchor_c2_fisher');}
++ if(!localStorage.getItem(key))initial();else {if(!service.getState().travel.initialized){go('anchor_c2_entry');send('enterChapter2',{entryId:C.entry.id});go('anchor_c2_fisher');}const pos=service.getState().travel.regionPositions?.region_d;if(pos)actor={...actor,...pos};}
++ let toastUntil=0;const toast=m=>{$('toast').textContent=m;toastUntil=performance.now()+6500;toasts.push(m);};
++ const registry=createInteractionRegistry({reachable:(a,p,e)=>canInteract(a,e.anchor,overlay)});let releaseBook=null;
++ function closeBook(){$('book').hidden=true;releaseBook?.();releaseBook=null;canvas.focus();}
++ const ports={getFrame:frame,input:{subscribe(owner,listener){input.set(owner,listener);return ()=>input.delete(owner);}},navigate(id){toast('沿街前往 '+manifest.anchors.find(a=>a.id===id)?.label+'；导航只提示方向，不远程成交。');},openBook(){module.cancel('book');$('records').replaceChildren();for(const [id,r]of Object.entries(service.getState().travel.collection)){$('records').append(Object.assign(document.createElement('p'),{textContent:(content.items.find(i=>i.id===id)?.name??id)+` · 累计 ${r.totalObtained} · 现持有 ${service.getState().inventory[id]??0}`}));}releaseBook=locks.acquire('preview/book',closeBook);$('book').hidden=false;}};
++ const ctx={scene,world:overlay,service,ports,locks,gate,camera:portCamera,registry,toast,baseURL:import.meta.env.BASE_URL};module=create(ctx);fishing=createFishing(ctx);
++ function prepare(kind){module.cancel('fixture');fishing.cancel('fixture');if(service.getStatus().pending)throw Error('先重试待保存进度');initial();go('anchor_c2_fisher');if(kind!=='new')send('acceptQuest',{questId:'quest_c2_fishing_intro'});
++  if(kind==='fish'){go('anchor_c2_fishing_a');for(let i=0;i<3;i++){const r=send('startCast',{pointId:'point_c2_a',mode:i===0?'tutorial':'normal'});send('resolveCast',{castId:r.data.cast.id,outcome:'caught'});}go('anchor_c2_fisher');}
++  if(kind==='poor'||kind==='food'){const s=structuredClone(service.getState());s.travel.energy.current=kind==='poor'?0:95;s.travel.wallet.coins=kind==='poor'?0:30;service.restoreFixture(s);go('anchor_c2_food_vendor');}
++  if(kind==='bell'||kind==='cash'){go('anchor_c2_porter');send('acceptQuest',{questId:'quest_c2_main'});send('acceptQuest',{questId:'quest_c2_repair'});go('anchor_c2_repair');send('beginRepair',{repairId:C.repair.id});for(const stepId of C.repair.stepIds)send('advanceRepair',{repairId:C.repair.id,stepId});send('completeRepair',{repairId:C.repair.id});go('anchor_c2_porter');send('chooseReward',{repairId:C.repair.id,choice:kind==='bell'?'bell':'cash'});if(kind==='bell')send('advanceStory',{storyId:'story_c2_silent_bell',stageId:'stage_c2_silent_bell_resolved'});go('anchor_c2_merchant');}
++  $('location').value=kind==='food'||kind==='poor'?'anchor_c2_food_vendor':kind==='bell'||kind==='cash'?'anchor_c2_merchant':'anchor_c2_fisher';toast('DEV隔离样本：'+kind+'。通关前置与边界数值为明确测试起点；动作结算使用真实服务。');canvas.focus();return service.getState();
++ }
++ const abort=new AbortController(),opt={signal:abort.signal};let drag=null;
++ window.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName)&&e.code!=='Escape')return;if(!gate.press(e.code,e.repeat))return;
++  if(locks.locked){if(e.code==='Escape'&&locks.top.owner==='preview/book')closeBook();else {const command=e.code==='Escape'?'cancel':e.code==='KeyE'?'confirm':null;if(command)input.get(locks.top.owner)?.(command);}if(e.code==='KeyE'||e.code==='Escape'||!['Enter','Space','Tab'].includes(e.code))e.preventDefault();return;}
++  if(e.code==='KeyE'){registry.activate(actor);e.preventDefault();}else if(['KeyW','KeyA','KeyS','KeyD','ShiftLeft'].includes(e.code)){keys.add(e.code);e.preventDefault();}
++ },opt);window.addEventListener('keyup',e=>{keys.delete(e.code);gate.release(e.code);},opt);window.addEventListener('blur',()=>{focused=false;keys.clear();gate.clear();},opt);window.addEventListener('focus',()=>{focused=true;keys.clear();gate.clear();},opt);
++ canvas.addEventListener('pointerdown',e=>{canvas.focus();if(!locks.locked){drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);}},opt);canvas.addEventListener('pointermove',e=>{if(!drag||locks.locked)return;yaw-=(e.clientX-drag[0])*.006;pitch=THREE.MathUtils.clamp(pitch+(e.clientY-drag[1])*.004,.15,1.2);drag=[e.clientX,e.clientY];},opt);for(const type of ['pointerup','pointercancel'])canvas.addEventListener(type,()=>drag=null,opt);canvas.addEventListener('wheel',e=>{if(!locks.locked)distance=THREE.MathUtils.clamp(distance+e.deltaY*.01,4,18);e.preventDefault();},{...opt,passive:false});
++ function resize(){renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();}resize();window.addEventListener('resize',resize,opt);
++ $('location').addEventListener('change',e=>{module.cancel('dev-position');fishing.cancel('dev-position');go(e.target.value);toast('DEV取景定位：不是连续实走。');canvas.focus();},opt);$('prepare').addEventListener('click',()=>{try{prepare($('scenario').value);}catch(e){toast(e.message);}},opt);$('fail').addEventListener('click',()=>{failNext=true;toast('下一次保存写入将失败一次。');canvas.focus();},opt);$('leave').addEventListener('click',()=>{actor.x-=4;canvas.focus();},opt);$('closeBook').addEventListener('click',closeBook,opt);
++ function walkTo(id){if(walk||locks.locked)return Promise.reject(Error('Busy'));const route=manifest.routes.find(r=>r.to===id);if(!route)return Promise.reject(Error('No measured route'));
++  // Continuous moveActor on RAF. The DEV command selects a measured route; it never assigns coordinates.
++  const current=manifest.routes.filter(r=>r.to!=='anchor_c2_exit').find(r=>{const a=manifest.anchors.find(a=>a.id===r.to),p=a.standingPosition;return Math.hypot(actor.x-p[0],actor.z-p[2])<1.9;});
++  const points=current?[...current.waypoints].reverse().concat(route.waypoints.slice(1)):[...route.waypoints];const stand=manifest.anchors.find(a=>a.id===id).standingPosition;points.push(stand);
++  const record={id,from:{...actor},samples:0,distance:0,failures:[],continuous:true};return new Promise((resolve,reject)=>{walk={points:points.map(p=>[...p]),record,resolve,reject};});
++ }
++ function loop(now){if(!alive)return;const dt=Math.min((now-last)/1000,.04);last=now;let dx=0,dz=0;
++  if(!locks.locked&&focused&&!document.hidden){if(walk){let p=walk.points[0];while(p&&Math.hypot(actor.x-p[0],actor.z-p[2])<.035){walk.points.shift();p=walk.points[0];}if(!p){const done=walk;walk=null;done.record.to={...actor};walkEvidence.push(done.record);done.resolve(done.record);}else {const len=Math.hypot(p[0]-actor.x,p[2]-actor.z),step=Math.min(2.7*dt,len);dx=(p[0]-actor.x)/len*step;dz=(p[2]-actor.z)/len*step;}}else {const f=(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0),s=(keys.has('KeyD')?1:0)-(keys.has('KeyA')?1:0),n=Math.max(1,Math.hypot(f,s)),speed=keys.has('ShiftLeft')?5.2:2.7;dx=(-Math.sin(yaw)*f+Math.cos(yaw)*s)*speed*dt/n;dz=(-Math.cos(yaw)*f-Math.sin(yaw)*s)*speed*dt/n;}
++   const next=moveActor(actor,dx,dz,overlay);if(walk&&Math.hypot(dx,dz)>0&&Math.hypot(next.x-actor.x,next.z-actor.z)<.001){const failed=walk;walk=null;failed.record.failures.push({...actor});walkEvidence.push(failed.record);failed.reject(Error('Measured route blocked'));}else if(walk){walk.record.samples++;walk.record.distance+=Math.hypot(next.x-actor.x,next.z-actor.z);}actor={...actor,...next};
++  }
++  scholar.root.position.set(actor.x,actor.height,actor.z);if(dx||dz)scholar.root.rotation.y=Math.atan2(dx,dz);scholar.update(dt,'walk',!!(dx||dz),now/160,keys.has('ShiftLeft'));
++  const f=frame();service.dispatch({type:'c2/tick',payload:{seconds:f.visible&&f.focused?dt:0,operative:f.operative}});module.update(dt,f);fishing.update(dt,f);
++  if(!portCamera.owner){focus.lerp(new THREE.Vector3(actor.x,actor.height+1.35,actor.z),1-Math.exp(-dt*7));const h=Math.cos(pitch)*distance;camera.position.lerp(new THREE.Vector3(focus.x+Math.sin(yaw)*h,focus.y+Math.sin(pitch)*distance,focus.z+Math.cos(yaw)*h),1-Math.exp(-dt*8));camera.lookAt(focus);}renderer.render(scene,camera);
++  const near=registry.focus(actor);$('hint').textContent=locks.locked?'Esc 关闭 · 留在对方面前':near?'E · '+near.label:'沿街靠近商贩，按 E 面对面交谈';$('diagnostic').textContent=`隔离键 ${key.split(':').at(-1)} · ${module.getState().phase}`;if(now>toastUntil)$('toast').textContent='';requestAnimationFrame(loop);
++ }
++ $('loading').remove();canvas.focus();requestAnimationFrame(loop);
++ window.__commercePreview={ready:true,key,service,module,fishing,context:ctx,prepare,walkTo,failNextSave:()=>{failNext=true;},inspect:()=>({snapshot:service.getState(),module:module.getState(),actor:{...actor},locks:locks.snapshot(),camera:{owner:portCamera.owner,yaw,pitch,distance,position:camera.position.toArray()},registryEntries:registry.entries().map(e=>e.id),inputListeners:input.size,walkEvidence:[...walkEvidence],wares:wares.getState(),formalSaveUnchanged:localStorage.getItem('qingming:hongqiao:save')===formalBefore,events:[...events],toasts:[...toasts],notFormalIntegration:true,humanPlaytest:false}),dispose(){module.dispose();fishing.dispose();wares.dispose();closeBook();alive=false;abort.abort();d.dispose();renderer.dispose();}};
++}
++boot().catch(e=>{console.error(e);$('loading').textContent='预览载入失败：'+e.message;});
+--- /dev/null
++++ b/src/chapter2/commerce/index.js
+@@ -0,0 +1,72 @@
++import './commerce.css';
++import contentDefault from '../content/content.json' with {type:'json'};
++import {configuration as C} from '../core/service.js';
++import {manifest} from '../scene/physics.js';
++import {createController} from './controller.js';
++import {shop,rowsFor,tabsFor,tabNames} from './view-model.js';
++export function create(context,{container=document.body,content=contentDefault,anchors=manifest.anchors,registerNPCs=true}={}){
++ const root=document.createElement('section');root.className='c2-commerce';root.hidden=true;root.setAttribute('role','dialog');root.setAttribute('aria-modal','true');root.setAttribute('aria-labelledby','c2-commerce-title');
++ const hud=document.createElement('aside');hud.className='c2-commerce-hud';hud.setAttribute('aria-label','行旅状态');container.append(hud,root);
++ let controller,dead=false,lastSignature='',previousFocus=null,wasOpen=false,lastPoll=0;
++ const button=(text,action,fn,disabled=false)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.dataset.action=action;b.disabled=disabled;b.addEventListener('click',fn);return b;};
++ const text=(tag,value,cls)=>{const el=document.createElement(tag);el.textContent=value;if(cls)el.className=cls;return el;};
++ function navigate(anchorId){controller.cancel('navigate');context.ports.navigate?.(anchorId);}
++ function render(){
++  if(dead||!controller)return;const state=controller.getState(),s=context.service.getState(),status=context.service.getStatus(),open=state.phase!=='closed';
++  const signature=JSON.stringify({state,energy:s.travel.energy.current,reserved:s.travel.energy.reserved,coins:s.travel.wallet.coins,debt:s.travel.relief.debt,inventory:s.inventory,commerce:s.travel.commerce,instances:s.travel.instances,stories:s.chapter2.storyStages,repair:s.chapter2.repair.rewardChoice,pending:status.pending,saved:status.saved,region:s.travel.regionId});if(signature===lastSignature)return;lastSignature=signature;
++  if(open&&!wasOpen)previousFocus=document.activeElement;const active=root.contains(document.activeElement)?document.activeElement:null,focusAction=active?.dataset.action,focusRow=active?.dataset.row,selection=active?.selectionStart;wasOpen=open;
++  hud.hidden=!s.travel.initialized||s.travel.regionId!==C.region.id;hud.replaceChildren();
++  const purse=text('div',`${s.travel.wallet.coins} 文`,'c2-commerce-hud__coins');purse.setAttribute('data-testid','coins');hud.append(purse,text('div',`精力 ${s.travel.energy.current}／${s.travel.energy.max}${s.travel.energy.reserved?' · 预留 '+s.travel.energy.reserved:''}`),text('div',`欠账 ${s.travel.relief.debt} 文`));
++  if(s.travel.energy.current<20){const frame=context.ports.getFrame(),food=anchors.find(a=>a.id==='anchor_c2_food_vendor');hud.append(text('p','脚步慢些也无妨，走路和交谈照常。'));hud.append(button(`最近补给 · 王家蒸作${frame.actor&&food?' '+Math.round(Math.hypot(frame.actor.x-food.position[0],frame.actor.z-food.position[2]))+'米':''}`,'navigate-food',()=>navigate('anchor_c2_food_vendor')));}
++  if(s.travel.relief.debt&&s.travel.energy.current-s.travel.energy.reserved<4)hud.append(button('找鲁七整理渔具偿债','navigate-work',()=>navigate('anchor_c2_fisher')));
++  if(!status.saved){const pending=text('div',status.message,'c2-commerce-save');pending.setAttribute('role','alert');pending.append(button('重试保存','retry-save',()=>controller.retry()));hud.append(pending);}
++  root.hidden=!open;if(!open){root.replaceChildren();if(previousFocus?.isConnected&&document.hasFocus())previousFocus.focus();previousFocus=null;return;}
++  root.replaceChildren();const panel=document.createElement('div');panel.className='c2-commerce__ledger';root.append(panel);
++  const sh=shop(state.shopId),npc=content.npcs.find(n=>n.id===sh.npcId);const head=document.createElement('header');head.append(text('p','虹桥至城门 · 铺前交易簿','c2-commerce__eyebrow'));const title=text('h2',npc?.name??sh.npcId);title.id='c2-commerce-title';head.append(title,button('关闭 · Esc','close',()=>controller.cancel()));panel.append(head);
++  panel.append(text('p',`${s.travel.wallet.coins} 文 · 精力 ${s.travel.energy.current} · 欠账 ${s.travel.relief.debt} 文`,'c2-commerce__balance'));
++  if(state.error){const err=text('p',content.activityText.errors[state.result?.error?.code]??state.error,'c2-commerce__error');err.setAttribute('role','alert');panel.append(err);}
++  if(state.phase==='browse'){
++   const nav=document.createElement('nav');nav.setAttribute('aria-label','铺面类别');for(const tab of tabsFor(state.shopId)){const b=button(tabNames[tab],'tab-'+tab,()=>controller.browse(tab));b.setAttribute('aria-current',String(tab===state.tab));nav.append(b);}panel.append(nav);
++   const list=document.createElement('div');list.className='c2-commerce__list';panel.append(list);
++   if(state.tab==='sell')list.append(text('p','只列本铺收购的普通物品。借物、任务物和唯一藏物另受保护。','c2-commerce__note'));
++   if(state.tab==='buyback')list.append(text('p',`本铺最近 ${C.balance.buybackLimit} 笔可回购售出凭证。归还或换给他人的物件不在此列。`,'c2-commerce__note'));
++   if(state.tab==='treasures'&&context.ports.openBook)list.append(button('查看风物志中的收藏与故事','open-book',()=>{controller.cancel('book');context.ports.openBook('collection');}));
++   const rows=rowsFor(s,state.shopId,state.tab,content);
++   for(const row of rows){const line=document.createElement('div');line.className='c2-commerce__row';line.dataset.row=row.id;
++    const label=document.createElement('div');label.append(text('h3',row.name),text('p',row.detail,'c2-commerce__note'));if(row.held!==undefined)label.append(text('span','持有 '+row.held,'c2-commerce__held'));line.append(label);
++    if(row.price!==undefined&&row.price!==null)line.append(text('strong',`${row.price} 文`,'c2-commerce__price'));
++    let input=null;if(state.tab==='sell'){const group=document.createElement('label');group.className='c2-commerce__quantity';group.append(text('span','数量'));input=document.createElement('input');input.type='number';input.min='1';input.max=String(row.held);input.step='1';input.value=row.held?'1':'0';input.disabled=row.disabled;input.dataset.row=row.id;input.setAttribute('aria-label',row.name+'出售数量');group.append(input);line.append(group);}
++    const action=state.tab==='treasures'?(row.protected?'解除保护':'单独出售'):state.tab==='buyback'?'回购':state.tab==='food'?'选这份':state.tab==='barter'?'换物':state.tab==='buy'?'购入':'售出';
++    line.append(button(action,'row-'+row.id,()=>controller.stage(state.tab,row.id,input?Number(input.value):1),row.disabled||status.pending));list.append(line);
++   }
++   if(!rows.length&&state.tab!=='help')list.append(text('p','目前没有这一类物件。','c2-commerce__empty'));
++   if(state.shopId==='shop_c2_food'){
++    list.append(text('p','王小满：眼下若连蒸饼也买不起，先赊一份。卖物所得先还账；再累倒了，鲁七那边可帮忙整理渔具偿债。','c2-commerce__speech'));
++    const rod=Object.values(s.travel.instances).some(i=>i.itemId==='item_c2_basic_rod'&&i.ownership==='borrowed'),b=C.balance.relief;
++    const eligible=s.travel.wallet.coins<b.coinsThreshold&&s.travel.energy.current-s.travel.energy.reserved<b.energyThreshold&&!s.travel.relief.debt;
++    list.append(button(`赊蒸饼 · 欠 ${b.debt} 文／恢复最多 ${b.energy}`,'relief',()=>controller.stage('help','relief'),!eligible||!rod||status.pending));
++    if(!rod)list.append(button('先去找鲁七借竿，备好偿债办法','navigate-borrow',()=>navigate('anchor_c2_fisher')));
++    if(s.travel.relief.debt)list.append(text('p','欠账由下次卖物收入自动偿还；无须额外付一次钱。'));
++   }
++   if(state.tab==='help'){
++    list.append(text('p','鲁七：鱼送到我面前来，我按品类收。竿是借你的；若欠了饭钱又没力气，帮我整理渔具就抵了债。','c2-commerce__speech'));
++    list.append(button('借竿学钓鱼','borrow',()=>controller.stage('help','borrow'),s.chapter2.quests.quest_c2_fishing_intro.status!=='available'||status.pending));
++    list.append(button('去近舟钓点','navigate-fishing',()=>navigate('anchor_c2_fishing_a')));
++    list.append(button('整理渔具偿债（不耗精力）','work',()=>controller.stage('help','work'),!(s.travel.relief.debt>0&&s.travel.energy.current-s.travel.energy.reserved<4)||status.pending));
++   }
++  }else if(state.phase==='confirm'||state.phase==='submitting'){
++   panel.append(text('p','待你点头才成交','c2-commerce__eyebrow'),text('h3',state.quote.title));for(const d of state.quote.details)panel.append(text('p',d));const actions=document.createElement('footer');actions.append(button('暂不成交','back',()=>controller.browse(),state.phase==='submitting'),button('确认成交','confirm',()=>controller.confirm(),state.phase==='submitting'||status.pending));panel.append(actions);
++  }else if(state.phase==='save-error'){
++   panel.append(text('h3','这笔进度尚未保存'),text('p','本页保留待保存结果，余额仍显示已保存值。关闭铺面不会撤销已确认的提交；请先重试保存，暂勿刷新。'),button('重试保存','retry-save',()=>controller.retry()));
++  }else if(state.phase==='result'){
++   panel.append(text('p','落账 · 已保存','c2-commerce__stamp'),text('h3',state.quote?.title??'待保存进度已恢复'));for(const d of state.quote?.details??[])panel.append(text('p',d));
++   const r=state.result?.data?.receipt;if(r)panel.append(text('p',`收据 ${r.id.slice(-12)}${r.debtPaid?' · 已偿债 '+r.debtPaid+' 文':''}`,'c2-commerce__note'));
++   panel.append(button('返回铺面','back',()=>controller.browse()));
++  }
++  const focusables=[...root.querySelectorAll('button:not(:disabled),input:not(:disabled)')];const retained=focusables.find(e=>focusAction?e.dataset.action===focusAction:focusRow?e.dataset.row===focusRow:false);const next=retained??(state.phase==='confirm'?root.querySelector('[data-action="back"]'):focusables[0]);if(document.hasFocus())next?.focus();if(retained&&selection!==null&&retained.type==='text')retained.setSelectionRange(selection,selection);
++ }
++ controller=createController(context,{anchors,content,registerNPCs,onChange:render});
++ const trap=e=>{if(e.key!=='Tab')return;const f=[...root.querySelectorAll('button:not(:disabled),input:not(:disabled)')];if(!f.length)return;const at=f.indexOf(document.activeElement);if(e.shiftKey&&at<=0){e.preventDefault();f.at(-1).focus();}else if(!e.shiftKey&&(at===f.length-1||at===-1)){e.preventDefault();f[0].focus();}};root.addEventListener('keydown',trap);
++ const blur=()=>controller.cancel('blur'),hidden=()=>{if(document.hidden)controller.cancel('hidden');},exit=()=>controller.cancel('pagehide');window.addEventListener('blur',blur);window.addEventListener('pagehide',exit);document.addEventListener('visibilitychange',hidden);render();
++ return {open:controller.open,update(dt,frame){controller.update(dt,frame);lastPoll+=dt;if(lastPoll>.2){lastPoll=0;render();}},cancel:controller.cancel,getState:controller.getState,dispose(){if(dead)return;controller.dispose();dead=true;root.removeEventListener('keydown',trap);window.removeEventListener('blur',blur);window.removeEventListener('pagehide',exit);document.removeEventListener('visibilitychange',hidden);root.remove();hud.remove();},controller};
++}
+--- /dev/null
++++ b/src/chapter2/commerce/controller.js
+@@ -0,0 +1,45 @@
++import {configuration as C} from '../core/service.js';
++import {manifest,canInteract} from '../scene/physics.js';
++import {shop,tabsFor,quoteFor,helpQuote} from './view-model.js';
++export const OWNER='c2/commerce';
++export function createController(context,{anchors=manifest.anchors,content,onChange=()=>{},registerNPCs=true}={}){
++ const {service,locks,camera,registry,ports}=context;
++ if(!service?.dispatch||!ports?.getFrame||!locks?.acquire||!camera?.borrow)throw Error('Commerce requires real service, locks, camera and frame ports');
++ let state={phase:'closed',shopId:null,tab:null,quote:null,result:null,error:null},release=null,lease=null,dead=false;
++ const unregister=[];
++ const emit=()=>onChange({...state});
++ function reachable(id){const frame=ports.getFrame(),a=anchors.find(a=>a.id===shop(id)?.anchorId);return !!a&&frame.regionId===C.region.id&&frame.visible&&frame.focused&&canInteract(frame.actor,a,context.world);}
++ function error(message){state.error=message;emit();return false;}
++ function cancel(reason='user'){if(dead)return;state={...state,phase:'closed',quote:null,error:null,reason};lease?.release();lease=null;release?.();release=null;emit();}
++ function open(id,tab=tabsFor(id)[0]){
++  if(dead||!shop(id)||!tabsFor(id).includes(tab)||!reachable(id))return false;
++  if(state.phase!=='closed')return false;
++  if(locks.locked)return false;
++  lease=camera.borrow(OWNER,()=>cancel('camera-preempted'));if(!lease)return false;
++  release=locks.acquire(OWNER,()=>cancel('user'));
++  state={phase:'browse',shopId:id,tab,quote:null,result:null,error:null};emit();return true;
++ }
++ function browse(tab=state.tab){if(dead||state.phase==='closed'||!tabsFor(state.shopId).includes(tab))return false;state={...state,phase:'browse',tab,quote:null,result:null,error:null};emit();return true;}
++ function stage(tab,rowId,quantity=1){
++  if(dead||state.phase!=='browse'||service.getStatus().pending)return false;
++  if(!reachable(state.shopId)){cancel('out-of-range');return false;}
++  try{const quote=tab==='help'?helpQuote(service.getState(),state.shopId,rowId):quoteFor(service.getState(),state.shopId,tab,rowId,quantity,content);
++   state={...state,phase:'confirm',error:null,quote:{...quote,transactionId:service.createTransactionId()}};emit();return true;
++  }catch(e){return error(e.message);}
++ }
++ function settle(result){state={...state,phase:result.ok?'result':service.getStatus().pending?'save-error':'confirm',result,error:result.ok?null:result.error.message};emit();return result;}
++ function confirm(){
++  if(dead||state.phase!=='confirm'||!state.quote||service.getStatus().pending)return false;
++  if(!reachable(state.shopId)){cancel('out-of-range');return false;}
++  const {title,details,...action}=state.quote;state.phase='submitting';emit();return settle(service.dispatch(action));
++ }
++ function retry(){
++  if(dead)return false;const closed=state.phase==='closed';const r=service.retrySave();
++  if(closed){context.toast?.(r.ok?'进度已保存，交易不会重复结算':r.error.message);emit();return r;}
++  return settle(r);
++ }
++ const unsubscribe=service.subscribe(()=>{if(dead)return;if(state.phase!=='submitting'&&state.phase!=='save-error')emit();});
++ const stopInput=ports.input?.subscribe(OWNER,command=>{if(dead||state.phase==='closed'||locks.top?.owner!==OWNER)return false;if(command==='cancel'){cancel();return true;}if(command==='confirm'&&state.phase==='confirm'){confirm();return true;}return false;});
++ if(registerNPCs)for(const sh of C.shops){const a=anchors.find(a=>a.id===sh.anchorId);if(!a)throw Error('Missing measured shop anchor '+sh.anchorId);unregister.push(registry.register({id:sh.npcId,type:'chapter2-commerce',label:content.npcs.find(n=>n.id===sh.npcId)?.name??sh.npcId,anchor:a,layer:a.layer,enabled:()=>!dead&&!locks.locked&&service.getState().travel.regionId===C.region.id,action:()=>open(sh.id)}));}
++ return {open,browse,stage,confirm,retry,cancel,getState:()=>structuredClone(state),update(dt,frame=ports.getFrame()){if(!dead&&state.phase!=='closed'&&(!frame.visible||!frame.focused||frame.regionId!==C.region.id||!reachable(state.shopId)))cancel(!frame.focused?'blur':'out-of-range');},dispose(){if(dead)return;cancel('dispose');dead=true;unsubscribe();stopInput?.();unregister.forEach(f=>f());},get dead(){return dead;}};
++}
+--- /dev/null
++++ b/src/chapter2/commerce/commerce.css
+@@ -0,0 +1,10 @@
++.c2-commerce,.c2-commerce-hud{--ink:#24352f;--paper:#ece7d6;--indigo:#314f59;--cinnabar:#963d2c;--reed:#9c956d;font:15px/1.55 'PingFang SC','Microsoft YaHei',sans-serif;color:var(--ink);font-variant-numeric:tabular-nums;box-sizing:border-box}
++.c2-commerce[hidden],.c2-commerce-hud[hidden]{display:none}.c2-commerce{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:flex-end;padding:32px max(30px,5vw);background:rgba(26,39,34,.22);backdrop-filter:blur(2px)}
++.c2-commerce__ledger{position:relative;background:var(--paper);border-top:5px solid var(--cinnabar);width:min(620px,100%);max-height:calc(100dvh - 64px);overflow:auto;padding:24px 30px 30px;box-shadow:0 18px 50px #15251e55;border-radius:2px}
++.c2-commerce header{position:relative;border-bottom:1px solid var(--reed);padding-bottom:12px}.c2-commerce header>button{position:absolute;right:0;top:0}.c2-commerce h2{font:600 34px/1.25 'Songti SC','STSong',serif;margin:6px 0 4px;letter-spacing:.08em}.c2-commerce h3{font:600 19px/1.4 'Songti SC','STSong',serif;margin:0 0 4px}.c2-commerce p{margin:10px 0}.c2-commerce__eyebrow{font-size:11px;letter-spacing:.12em;color:var(--indigo)}
++.c2-commerce button,.c2-commerce-hud button{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--reed);border-radius:2px;padding:7px 13px;min-height:40px;cursor:pointer}.c2-commerce button:hover:enabled,.c2-commerce-hud button:hover:enabled{background:#d9ddcf}.c2-commerce button:disabled{opacity:.45;cursor:default}.c2-commerce button:focus-visible,.c2-commerce input:focus-visible,.c2-commerce-hud button:focus-visible{outline:3px solid var(--indigo);outline-offset:3px}
++.c2-commerce [data-action="confirm"]{background:var(--cinnabar);color:#fff6e4;border-color:var(--cinnabar)}.c2-commerce [data-action="confirm"]:hover:enabled{background:#773022}.c2-commerce nav{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.c2-commerce nav button{border:0;border-bottom:2px solid transparent;border-radius:0;padding:6px 13px}.c2-commerce nav [aria-current="true"]{border-color:var(--cinnabar);color:var(--cinnabar);font-weight:600}
++.c2-commerce__row{display:grid;grid-template-columns:minmax(130px,1fr) 55px 65px 78px;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid #c4c2ad}.c2-commerce__row>div:first-child{grid-column:1}.c2-commerce__row>button{grid-column:4}.c2-commerce__note{font-size:12px;color:#5a695c}.c2-commerce__price{font-size:16px;font-weight:600;text-align:right}.c2-commerce__quantity{font-size:11px;color:#5a695c;text-align:center}.c2-commerce__quantity input{box-sizing:border-box;width:64px;background:#f7f3e7;border:1px solid var(--reed);color:var(--ink);font:inherit;font-size:15px;padding:6px}.c2-commerce__held{font-size:12px;color:var(--indigo)}.c2-commerce__balance{font-size:14px;letter-spacing:.04em}.c2-commerce__speech{border-left:2px solid var(--reed);padding:0 0 0 14px;font-family:'Songti SC','STSong',serif}.c2-commerce__empty{padding:24px 0;color:#5a695c}.c2-commerce footer{display:flex;justify-content:flex-end;gap:12px;margin-top:24px}.c2-commerce__error,.c2-commerce-save{color:var(--cinnabar);font-size:13px}.c2-commerce__stamp{display:inline-block;border:2px solid var(--cinnabar);color:var(--cinnabar);padding:3px 12px;transform:rotate(-3deg);letter-spacing:.2em}
++.c2-commerce-hud{position:fixed;left:22px;top:22px;z-index:35;background:#ece7d6e8;border-left:3px solid var(--cinnabar);padding:12px 18px;max-width:280px;font-size:13px;box-shadow:0 4px 18px #21322922}.c2-commerce-hud__coins{font:600 27px/1.4 'Songti SC',serif}.c2-commerce-hud p{margin:10px 0}.c2-commerce-hud button{font-size:12px;padding:5px 8px;margin-top:5px}.c2-commerce-save{border-top:1px solid #ad9c82;margin-top:10px;padding-top:8px}
++@media(max-width:680px){.c2-commerce{padding:12px;align-items:flex-end}.c2-commerce__ledger{max-height:90dvh;padding:20px 16px;width:100%}.c2-commerce__row{grid-template-columns:minmax(100px,1fr) 46px 54px 68px;gap:7px}.c2-commerce__quantity input{width:54px}.c2-commerce button{padding:6px 8px}.c2-commerce-hud{left:12px;top:12px;padding:8px 12px;font-size:12px}.c2-commerce h2{font-size:29px}}
++@media(prefers-reduced-motion:reduce){.c2-commerce{backdrop-filter:none}.c2-commerce__stamp{transform:none}}
+--- /dev/null
++++ b/src/chapter2/commerce/view-model.js
+@@ -0,0 +1,46 @@
++import {configuration as C} from '../core/service.js';
++export const shop = id => C.shops.find(s=>s.id===id);
++export const item = id => C.items.find(i=>i.id===id);
++export const nameOf = (id,content) => content.items.find(i=>i.id===id)?.name ?? item(id)?.name ?? id;
++export function tabsFor(id){return id==='shop_c2_food'?['food']:id==='shop_c2_fish'?['sell','buyback','help']:['sell','buy','treasures','barter','buyback'];}
++export const tabNames={sell:'售出',buy:'购入',treasures:'藏物',barter:'换物',buyback:'回购',food:'补给',help:'请教'};
++export function incomePreview(s,total){const debtPaid=Math.min(s.travel.relief.debt,total);return {debtPaid,coins:total-debtPaid};}
++export function rowsFor(s,id,tab,content){
++ const sh=shop(id),coins=s.travel.wallet.coins,energy=s.travel.energy,instances=Object.values(s.travel.instances);
++ if(tab==='sell')return C.items.filter(d=>sh.acceptedCategories.includes(d.category)&&!d.unique&&d.ownership==='owned'&&d.sellPrice!==null).map(d=>({id:d.id,name:nameOf(d.id,content),held:s.inventory[d.id]??0,price:d.sellPrice,disabled:!(s.inventory[d.id]>0),detail:'每件 '+d.sellPrice+' 文'}));
++ if(tab==='treasures')return instances.filter(i=>i.ownership==='owned'&&item(i.itemId)?.category==='treasure').map(i=>({id:i.id,itemId:i.itemId,name:nameOf(i.itemId,content),held:1,price:item(i.itemId).sellPrice,protected:i.protected,disabled:item(i.itemId).sellPrice===null,detail:item(i.itemId).sellPrice===null?'他人之物／任务物，不可出售':i.protected?'收藏保护中，先明确解除':'可单独出售；已知故事仍保留'}));
++ if(tab==='buy')return sh.offers.map(o=>{const existing=instances.some(i=>i.itemId===o.itemId),available=s.travel.commerce.shopStock[o.id]>0&&!existing&&(o.id!=='offer_c2_bell_later'||s.chapter2.repair.rewardChoice==='cash');return {id:o.id,name:nameOf(o.itemId,content),price:o.price,held:s.inventory[o.itemId]??0,stock:available?1:0,disabled:!available||coins<o.price,detail:!available?(existing?'本件已取得过，请查看回购':'当前未上架'):coins<o.price?'铜钱不足':'库存 1 件，入囊即收藏保护'};});
++ if(tab==='food')return sh.offers.map(o=>{const food=C.balance.food.find(f=>f.itemId===o.itemId),recovery=Math.min(food.energy,energy.max-energy.current);return {id:o.id,name:nameOf(o.itemId,content),price:food.price,recovery,nominal:food.energy,disabled:recovery===0||coins<food.price,detail:recovery===0?'精力已满，不会扣钱':coins<food.price?'铜钱不足':`实际恢复 ${recovery}（通常 +${food.energy}）`};});
++ if(tab==='barter')return C.barters.filter(b=>b.shopId===id).map(b=>{const i=instances.find(i=>i.itemId===b.inputItemId&&i.ownership==='owned'),used=s.travel.commerce.barterCounts[b.id]??0,remaining=b.limit-used,outputOwned=instances.some(i=>i.itemId===b.outputItemId),resolved=s.chapter2.storyStages.story_c2_silent_bell==='stage_c2_silent_bell_resolved';return {id:b.id,instanceId:i?.id,name:nameOf(b.inputItemId,content)+' 换 '+nameOf(b.outputItemId,content),disabled:!remaining||!i||i.protected||!resolved||outputOwned||!s.travel.commerce.shopStock.offer_c2_cup,detail:!remaining?'本次换物已用完':!i?'尚未持有铜铃':!resolved?'先向石伯了解铜铃的本关故事':i.protected?'先在「藏物」解除铜铃保护':outputOwned?'青釉盏已取得过':`余 ${remaining} 次；铜铃交付后不能回购`};});
++ if(tab==='buyback')return [...s.travel.commerce.buyback].reverse().map(rid=>s.travel.commerce.receipts.find(r=>r.id===rid)).filter(r=>r?.shopId===id&&r.buybackEligible).slice(0,C.balance.buybackLimit).map(r=>({id:r.id,name:r.lines.map(l=>`${nameOf(l.itemId,content)} ×${l.quantity}`).join('、'),price:r.buybackPrice,disabled:coins<r.buybackPrice,detail:'按原售出价取回原物；唯一藏物恢复保护',receipt:r}));
++ return [];
++}
++// Quotes describe the current state only. The core independently validates every action.
++export function quoteFor(s,id,tab,rowId,quantity,content){
++ const row=rowsFor(s,id,tab,content).find(r=>r.id===rowId);if(!row)throw Error('报价已失效，请返回铺面');
++ if(row.disabled)throw Error(row.detail||'此项当前不可成交');
++ let type,payload={shopId:id},title,details=[];
++ if(tab==='sell'){
++  if(!Number.isSafeInteger(quantity)||quantity<1||quantity>row.held)throw Error('数量须为持有范围内的正整数');
++  const total=row.price*quantity;if(!Number.isSafeInteger(total))throw Error('金额超出安全整数范围');
++  type='sell';payload.lines=[{itemId:row.id,quantity}];title=`售出 ${row.name} ×${quantity}`;const net=incomePreview(s,total);details=[`单价 ${row.price} 文 · 共 ${total} 文`,`先偿欠账 ${net.debtPaid} 文，入钱包 ${net.coins} 文`];
++ }else if(tab==='treasures'){
++  if(row.protected){type='toggleProtection';payload={instanceId:row.id,protected:false};title='解除 '+row.name+' 的收藏保护';details=['物件仍在行囊；解除保护后需再次确认才会出售。','收藏历史和已知故事保留，当前任务需要的物件仍由服务保护。'];}
++  else {type='sell';payload.lines=[{itemId:row.itemId,instanceId:row.id,quantity:1}];title='售出 '+row.name;const net=incomePreview(s,row.price);details=[`此原件售价 ${row.price} 文，先偿债 ${net.debtPaid} 文，入钱包 ${net.coins} 文。`,'持有状态改为售出，收藏历史与已知故事保留。'];}
++ }else if(tab==='buy'){type='buy';payload={...payload,offerId:row.id,quantity:1};title='购入 '+row.name;details=[`支付 ${row.price} 文，购入 1 件。`,'入囊后自动收藏保护，不能默认批量出售。'];}
++ else if(tab==='food'){type='eat';payload.offerId=row.id;title='用 '+row.name;details=[`支付 ${row.price} 文，实际恢复 ${row.recovery} 精力。`,`精力 ${s.travel.energy.current} → ${s.travel.energy.current+row.recovery}／${s.travel.energy.max}`];}
++ else if(tab==='barter'){type='barter';payload={...payload,barterId:row.id,instanceId:row.instanceId};title=row.name;details=['交付铜铃原件，取得青釉盏；铜钱不变。','仅此一次，交付他人的铜铃不能回购；已知故事记录保留。'];}
++ else if(tab==='buyback'){type='buyback';payload.receiptId=row.id;title='回购 '+row.name;details=[`支付 ${row.price} 文，取回此笔原物。`,'不会复制新藏物；买回唯一藏物恢复收藏保护。'];}
++ else throw Error('未知交易类别');
++ return {type:'c2/'+type,payload,title,details};
++}
++export function helpQuote(s,id,kind){
++ const b=C.balance.relief,available=s.travel.energy.current-s.travel.energy.reserved;
++ if(kind==='borrow'&&id==='shop_c2_fish')return {type:'c2/acceptQuest',payload:{questId:'quest_c2_fishing_intro'},title:'向鲁七借竿学钓鱼',details:['借来的钓竿和基础饵不可售出。','教学杆必有鱼；之后可将鱼带回鲁七这里出售。']};
++ if(kind==='relief'&&id==='shop_c2_food'){
++  if(s.travel.wallet.coins>=b.coinsThreshold||available>=b.energyThreshold||s.travel.relief.debt)throw Error('尚不符合赊食条件，或已有欠账');
++  return {type:'c2/requestRelief',payload:{shopId:id},title:'赊一份蒸饼',details:[`恢复 ${Math.min(b.energy,s.travel.energy.max-s.travel.energy.current)} 精力，记欠账 ${b.debt} 文。`,'先向鲁七借竿；下一杆保证鱼，卖物收入先偿债。','已有欠账又耗尽时，可找鲁七整理渔具偿债，走路和交谈照常。']};
++ }
++ if(kind==='work'&&id==='shop_c2_fish')return {type:'c2/settleReliefWork',payload:{npcId:'npc_c2_fisher'},title:'替鲁七整理渔具偿债',details:[`清偿现有欠账 ${s.travel.relief.debt} 文。`,'不耗精力，不增加铜钱；仅在欠债且可用精力不足 4 时成立。']};
++ throw Error('无此铺面操作');
++}
+--- /dev/null
++++ b/src/chapter2/commerce/commerce.test.js
+@@ -0,0 +1,47 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFileSync} from 'node:fs';
++import {createSharedService,configuration as C} from '../core/service.js';
++import {defaultState} from '../../hongqiao/state.js';
++import {createInputLocks,createKeyGate,createInteractionRegistry} from '../../interaction/core.js';
++import {manifest,createWorldOverlay,canInteract,walkRoute} from '../scene/physics.js';
++import content from '../content/content.json' with {type:'json'};
++import {createController} from './controller.js';
++import {rowsFor,quoteFor,incomePreview} from './view-model.js';
++import {createPreviewCamera} from '../fishing/preview-camera.js';
++const world=createWorldOverlay(JSON.parse(readFileSync(new URL('../../../public/assets/world.json',import.meta.url))));
++function setup(){
++ const raw=new Map(),disk={getItem:k=>raw.get(k)??null,setItem(k,v){if(this.fail){this.fail=false;throw Error('Expected commerce write failure');}raw.set(k,v);}};
++ const key='qingming:dev:chapter2:commerce-unit',legacy=defaultState();legacy.quests.hongqiao_01={status:'completed'};legacy.endingSeen=true;raw.set(key,JSON.stringify(legacy));
++ const frame={visible:true,focused:true,operative:true,regionId:'region_d',actor:{x:-22,z:-20,height:.94,mode:'walk',layer:'ground'}},listeners=new Map(),locks=createInputLocks(),gate=createKeyGate();
++ const service=createSharedService({storage:disk,saveKey:key,development:true,ports:{getFrame:()=>({...frame,operative:!locks.locked})},anchors:manifest,content,seed:()=>0,onError:()=>{}});
++ let pose={yaw:1,pitch:.5,distance:8};const camera=createPreviewCamera({capture:()=>structuredClone(pose),restore:s=>{pose=s;},setPose:p=>{pose=p;}});
++ const registry=createInteractionRegistry({reachable:(actor,p,e)=>canInteract(actor,e.anchor,world)});
++ const ctx={service,world,registry,locks,gate,camera,toast:()=>{},ports:{getFrame:()=>({...frame,operative:!locks.locked}),input:{subscribe(owner,fn){listeners.set(owner,fn);return ()=>listeners.delete(owner);}}}};
++ const send=(type,payload={})=>{const r=service.dispatch({type:'c2/'+type,payload,transactionId:service.createTransactionId()});assert.equal(r.ok,true,JSON.stringify(r));return r;};
++ const go=id=>{const a=manifest.anchors.find(a=>a.id===id),p=a.standingPosition;Object.assign(frame.actor,{x:p[0],height:p[1],z:p[2]});};
++ send('enterChapter2',{entryId:C.entry.id});const module=createController(ctx,{content});
++ const fixture=fn=>{const s=structuredClone(service.getState());fn(s);assert.equal(service.restoreFixture(s).ok,true);};
++ const borrow=()=>{go('anchor_c2_fisher');send('acceptQuest',{questId:'quest_c2_fishing_intro'});};
++ const catchFish=(n=1)=>{borrow();go('anchor_c2_fishing_a');for(let i=0;i<n;i++){const r=send('startCast',{pointId:'point_c2_a',mode:service.getState().travel.fishing.tutorialCompleted?'normal':'tutorial'});send('resolveCast',{castId:r.data.cast.id,outcome:'caught'});}go('anchor_c2_fisher');};
++ const repair=choice=>{go('anchor_c2_porter');send('acceptQuest',{questId:'quest_c2_main'});send('acceptQuest',{questId:'quest_c2_repair'});go('anchor_c2_repair');send('beginRepair',{repairId:C.repair.id});for(const stepId of C.repair.stepIds)send('advanceRepair',{repairId:C.repair.id,stepId});send('completeRepair',{repairId:C.repair.id});go('anchor_c2_porter');send('chooseReward',{repairId:C.repair.id,choice});if(choice==='bell')send('advanceStory',{storyId:'story_c2_silent_bell',stageId:'stage_c2_silent_bell_resolved'});go('anchor_c2_merchant');};
++ return {module,ctx,frame,service,disk,key,raw,send,go,fixture,borrow,catchFish,repair,listeners,get pose(){return pose;}};
++}
++function transact(h,id,tab,row,n=1){assert.equal(h.module.open(id,tab==='help'&&id==='shop_c2_food'?'food':tab),true);assert.equal(h.module.stage(tab,row,n),true);const r=h.module.confirm();assert.equal(r.ok,true,JSON.stringify(r));h.module.cancel();return r;}
++test('NPC registrations use frozen new identities and measured facing distance/layer/obstacle gates',()=>{const h=setup();assert.deepEqual(h.ctx.registry.entries().map(e=>e.id),C.shops.map(s=>s.npcId));assert.equal(h.module.open('shop_c2_general'),false);h.go('anchor_c2_merchant');h.frame.actor.layer='bridge';assert.equal(h.module.open('shop_c2_general'),false);h.frame.actor.layer='ground';assert.equal(h.module.open('shop_c2_general'),true);h.module.cancel();h.ctx.world={...world,colliders:[...world.colliders,{x:-54,z:-34.6,w:2,d:.15,h:3}]};assert.equal(h.module.open('shop_c2_general'),false);});
++test('foreign lock and camera prevent opening; own close restores full pose and keeps foreign lock',()=>{const h=setup();h.go('anchor_c2_fisher');const release=h.ctx.locks.acquire('other');assert.equal(h.module.open('shop_c2_fish'),false);release();const before=h.pose;assert.equal(h.module.open('shop_c2_fish'),true);const other=h.ctx.locks.acquire('other');h.module.cancel();assert.deepEqual(h.pose,before);assert.deepEqual(h.ctx.locks.snapshot(),['other']);other();});
++test('cancel/Esc/blur/out-of-range drop quote with no transaction and dispose only owns resources',()=>{const h=setup();h.catchFish();h.module.open('shop_c2_fish');h.module.stage('sell','item_c2_fish_a',1);const revision=h.service.getState().revision;h.listeners.get('c2/commerce')('cancel');assert.equal(h.service.getState().revision,revision);h.module.open('shop_c2_fish');h.frame.focused=false;h.module.update(1,h.frame);assert.equal(h.module.getState().phase,'closed');h.frame.focused=true;h.module.open('shop_c2_fish');h.frame.actor.x-=4;h.module.update(1,h.frame);assert.equal(h.module.getState().phase,'closed');h.module.dispose();h.module.dispose();assert.equal(h.listeners.size,0);assert.equal(h.ctx.registry.entries().length,0);});
++test('menu holds operative lock and UI sends no tick; host core time resumes after close',()=>{const h=setup();h.go('anchor_c2_food_vendor');h.module.open('shop_c2_food');const before=h.service.getState().travel.energy.current;h.send('tick',{seconds:180,operative:false});h.module.update(180,h.frame);assert.equal(h.service.getState().travel.energy.current,before);h.module.cancel();h.send('tick',{seconds:90,operative:true});assert.equal(h.service.getState().travel.energy.current,before-1);});
++test('fish sale previews held/unit/amount, first pays debt, repeated click and sold-empty cannot repeat',()=>{const h=setup();h.catchFish(2);h.fixture(s=>s.travel.relief.debt=4);assert.deepEqual(incomePreview(h.service.getState(),12),{debtPaid:4,coins:8});h.module.open('shop_c2_fish');assert.equal(h.module.stage('sell','item_c2_fish_a',2),true);const quote=h.module.getState().quote;assert.match(quote.details[0],/12/);const r=h.module.confirm();assert.equal(r.data.receipt.debtPaid,4);assert.equal(h.service.getState().travel.wallet.coins,16);assert.equal(h.module.confirm(),false);h.module.browse();assert.equal(h.module.stage('sell','item_c2_fish_a',1),false);assert.equal(h.service.dispatch({type:quote.type,transactionId:quote.transactionId,payload:quote.payload}).duplicate,true);});
++test('illegal counts rejected before confirmation; registry fisherman default excludes junk/unique/borrowed/HQ objects',()=>{const h=setup();h.catchFish(3);for(const n of [0,-1,.5,NaN,Infinity,4,Number.MAX_SAFE_INTEGER])assert.throws(()=>quoteFor(h.service.getState(),'shop_c2_fish','sell','item_c2_fish_a',n,content));assert.deepEqual(rowsFor(h.service.getState(),'shop_c2_fish','sell',content).map(r=>r.id),C.balance.fishing.fishItemIds);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','sell',content).some(r=>C.items.find(i=>i.id===r.id).unique),false);});
++test('food follows shared prices, capped recovery and full/insufficient coin no charge',()=>{const h=setup();h.fixture(s=>{s.travel.energy.current=95;s.travel.wallet.coins=30;});let rows=rowsFor(h.service.getState(),'shop_c2_food','food',content);assert.deepEqual(rows.map(r=>[r.price,r.recovery]),[[4,5],[6,5],[2,5]]);h.go('anchor_c2_food_vendor');transact(h,'shop_c2_food','food','offer_c2_bread');assert.equal(h.service.getState().travel.energy.current,100);assert.equal(h.service.getState().travel.wallet.coins,26);assert.equal(rowsFor(h.service.getState(),'shop_c2_food','food',content).every(r=>r.disabled),true);h.fixture(s=>{s.travel.energy.current=60;s.travel.wallet.coins=1;});assert.equal(rowsFor(h.service.getState(),'shop_c2_food','food',content).every(r=>r.disabled),true);});
++test('cash reward offers bell once; cup buy price and sale price differ and zero stock stays disabled after sale',()=>{const h=setup();h.repair('cash');assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buy',content).find(r=>r.id==='offer_c2_bell_later').stock,1);transact(h,'shop_c2_general','buy','offer_c2_cup');const cup=Object.values(h.service.getState().travel.instances).find(i=>i.itemId==='treasure_c2_celadon_cup');assert.equal(h.service.getState().travel.wallet.coins,6);transact(h,'shop_c2_general','treasures',cup.id);assert.equal(h.service.getState().inventory[cup.itemId],1);transact(h,'shop_c2_general','treasures',cup.id);assert.equal(h.service.getState().travel.wallet.coins,13);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buy',content)[0].stock,0);assert.equal(h.service.getState().travel.collection[cup.itemId].totalObtained,1);});
++test('bell reward protected original can be deliberately unprotected/sold/bought back without losing story or cloning',()=>{const h=setup();h.repair('bell');const bell=Object.values(h.service.getState().travel.instances).find(i=>i.itemId===C.repair.reward.itemId);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buy',content).find(r=>r.id==='offer_c2_bell_later').stock,0);transact(h,'shop_c2_general','treasures',bell.id);assert.equal(h.service.getState().travel.instances[bell.id].protected,false);const sold=transact(h,'shop_c2_general','treasures',bell.id);transact(h,'shop_c2_general','buyback',sold.data.receipt.id);assert.equal(h.service.getState().travel.instances[bell.id].ownership,'owned');assert.equal(h.service.getState().travel.instances[bell.id].protected,true);assert.equal(h.service.getState().chapter2.storyStages.story_c2_silent_bell,'stage_c2_silent_bell_resolved');assert.equal(h.service.getState().travel.collection[bell.itemId].totalObtained,1);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buyback',content).length,0);});
++test('limited barter needs resolved story and unprotection, second try disabled, delivered bell is not buyback',()=>{const h=setup();h.repair('bell');const bell=Object.values(h.service.getState().travel.instances).find(i=>i.itemId===C.repair.reward.itemId);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','barter',content)[0].disabled,true);transact(h,'shop_c2_general','treasures',bell.id);transact(h,'shop_c2_general','barter',C.barters[0].id);assert.equal(h.service.getState().travel.instances[bell.id].ownership,'bartered');assert.equal(rowsFor(h.service.getState(),'shop_c2_general','barter',content)[0].disabled,true);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buyback',content).length,0);assert.equal(h.service.getState().travel.wallet.coins,8);});
++test('recent ten buyback list is same shop and ordered, oldest sale no longer offered',()=>{const h=setup();h.catchFish(12);const ids=[];for(let i=0;i<11;i++)ids.push(transact(h,'shop_c2_fish','sell','item_c2_fish_a').data.receipt.id);const rows=rowsFor(h.service.getState(),'shop_c2_fish','buyback',content);assert.equal(rows.length,10);assert.equal(rows[0].id,ids.at(-1));assert.equal(rows.some(r=>r.id===ids[0]),false);assert.equal(rowsFor(h.service.getState(),'shop_c2_general','buyback',content).length,0);});
++test('save failure preserves candidate, no optimistic income, close and retry commit once without reopening',()=>{const h=setup();h.catchFish(2);h.module.open('shop_c2_fish');h.module.stage('sell','item_c2_fish_a',2);h.disk.fail=true;const r=h.module.confirm();assert.equal(r.error.code,'save-failed');assert.equal(h.module.getState().phase,'save-error');assert.equal(h.service.getState().inventory.item_c2_fish_a,2);assert.equal(h.service.getPendingSnapshot().inventory.item_c2_fish_a,0);assert.equal(h.module.confirm(),false);h.module.cancel();assert.equal(h.module.retry().ok,true);assert.equal(h.module.getState().phase,'closed');assert.equal(h.service.getState().travel.wallet.coins,20);assert.equal(h.module.retry().ok,true);assert.equal(h.service.getState().travel.wallet.coins,20);});
++test('refresh of unconfirmed quote never trades or reissues starting money; verified transactions persist',()=>{const h=setup();h.catchFish(2);h.module.open('shop_c2_fish');h.module.stage('sell','item_c2_fish_a',2);h.module.dispose();const reloaded=createSharedService({storage:h.disk,saveKey:h.key,development:true,anchors:manifest,content,ports:{getFrame:()=>h.frame}});assert.equal(reloaded.getState().inventory.item_c2_fish_a,2);assert.equal(reloaded.getState().travel.wallet.coins,8);});
++test('worst route 0/0 relief fish pays debt; persistent failures recovered by debt-only work, never free money',()=>{const h=setup();h.borrow();h.fixture(s=>{s.travel.wallet.coins=0;s.travel.energy.current=0;});h.go('anchor_c2_food_vendor');transact(h,'shop_c2_food','help','relief');assert.equal(h.service.getState().travel.relief.debt,4);h.go('anchor_c2_fishing_a');let r=h.send('startCast',{pointId:'point_c2_a',mode:'relief'});h.send('resolveCast',{castId:r.data.cast.id,outcome:'lost'});assert.equal(h.service.getState().inventory.item_c2_fish_a,1);h.go('anchor_c2_fisher');transact(h,'shop_c2_fish','sell','item_c2_fish_a');assert.equal(h.service.getState().travel.wallet.coins,2);assert.equal(h.service.getState().travel.relief.debt,0);
++ // Remaining energy is spent on failed/cancelled casts through the real core, not a UI energy copy.
++ h.go('anchor_c2_fishing_a');while(h.service.getState().travel.energy.current>=4){r=h.send('startCast',{pointId:'point_c2_a',mode:'normal'});h.send('resolveCast',{castId:r.data.cast.id,outcome:'cancelled'});}h.go('anchor_c2_food_vendor');transact(h,'shop_c2_food','help','relief');h.go('anchor_c2_fishing_a');r=h.send('startCast',{pointId:'point_c2_a',mode:'relief'});h.send('resolveCast',{castId:r.data.cast.id,outcome:'cancelled'});while(h.service.getState().travel.energy.current>=4){r=h.send('startCast',{pointId:'point_c2_a',mode:'normal'});h.send('resolveCast',{castId:r.data.cast.id,outcome:'cancelled'});}h.go('anchor_c2_fisher');transact(h,'shop_c2_fish','help','work');assert.equal(h.service.getState().travel.relief.debt,0);assert.equal(h.service.getState().travel.wallet.coins,2);assert.equal(h.module.open('shop_c2_fish','help'),true);h.module.stage('help','work');assert.equal(h.module.confirm().ok,false);assert.equal(h.service.getState().travel.wallet.coins,2);});
++test('zero energy measured routes remain walkable in both directions using existing movement',()=>{for(const r of manifest.routes.filter(r=>['anchor_c2_food_vendor','anchor_c2_fisher','anchor_c2_fishing_a'].includes(r.to))){assert.equal(walkRoute(r,world).actor.mode,'walk');assert.equal(walkRoute(r,world,{reverse:true}).actor.mode,'walk');}});
+--- /dev/null
++++ b/chapter2-commerce-preview.html
+@@ -0,0 +1,3 @@
++<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>虹桥至城门 · 商铺补给独立验收</title><style>
++html,body{margin:0;overflow:hidden;background:#bac4b6;font:14px 'PingFang SC',sans-serif}#game{display:block;width:100vw;height:100vh;outline:none}#loading{position:fixed;inset:40% 20%;padding:20px;background:#eee8d6;color:#25382e}#dev{position:fixed;right:18px;top:18px;width:220px;padding:12px;background:#e9e4d4e8;color:#354337;border:1px solid #acaf98;font-size:12px}#dev label{display:block;margin:8px 0}#dev select,#dev button{font:inherit;max-width:100%;margin:3px 0;padding:5px;background:#f1ecdc;border:1px solid #a4ac94;color:#25382e}#dev button{cursor:pointer}#hint,#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:25px;background:#eee8d6e8;padding:9px 18px;color:#25382e;pointer-events:none}#toast{bottom:75px;max-width:60vw}#toast:empty{display:none}#book{position:fixed;inset:15% 20%;z-index:80;overflow:auto;background:#eee8d6;padding:25px}#book[hidden]{display:none}@media(max-width:680px){#dev{width:155px;font-size:10px;right:8px}#dev label{margin:4px 0}#hint{font-size:12px;min-width:230px}}
++</style></head><body><canvas id="game" tabindex="0" aria-label="D区可走商铺预览"></canvas><div id="loading">正在载入原场景、阿青、实测灰盒与真实服务…</div><aside id="dev"><strong>DEV 独立验收 · 05</strong><p>真实核心／本地隔离存档。人物为灰盒；正式入口尚未装配。</p><label>取景定位（不是实走）<select id="location"><option value="anchor_c2_fisher">鲁七 · 渔夫</option><option value="anchor_c2_merchant">顾娘子 · 杂货</option><option value="anchor_c2_food_vendor">王小满 · 饭铺</option><option value="anchor_c2_fishing_a">近舟钓点</option></select></label><label>明确标注的测试起点<select id="scenario"><option value="new">通关起点</option><option value="fish">真实核心钓获三鱼</option><option value="poor">0钱0精力／已借竿</option><option value="food">补给边界 95精力30文</option><option value="bell">真实修缮铜铃／已知故事</option><option value="cash">真实修缮现金报酬</option></select></label><button id="prepare">建立独立样本</button><button id="fail">下次保存失败一次</button><button id="leave">离开交互范围</button><p>WASD 行走 · 拖动看向 · 滚轮远近 · E 面对面交谈 · Esc 关闭</p><output id="diagnostic"></output></aside><div id="hint"></div><div id="toast" role="status"></div><section id="book" hidden><h2>收藏记录（验收观察）</h2><div id="records"></div><button id="closeBook">关闭记录</button></section><script type="module" src="/src/chapter2/commerce/preview.js"></script></body></html>
+--- /dev/null
++++ b/docs/chapter2/commerce/README.md
+@@ -0,0 +1,52 @@
++# 05 商铺、补给与精力界面
++
++基线：2026-10-02-core-fishing-ready-v2；契约：1.0.0。
++
++实现文件仅位于 `src/chapter2/commerce`，独立入口为 `chapter2-commerce-preview.html`。直接调用已验收的 CORE_READY 服务；没有第二份钱包、库存、精力计时器、价格表或 reducer。
++
++## 挂接
++
++```js
++import {create as createCommerce} from './chapter2/commerce/index.js';
++const commerce = createCommerce(context);
++// context.service 必须是与钓鱼/修缮/风物志共用的同一个服务。
++// 每帧（按 P0 的 visible/focused/operative 定义）：
++commerce.update(dt, frame);
++// 离开区域或演出接管：
++commerce.cancel('region-leave');
++// 卸载（可重复）：
++commerce.dispose();
++```
++
++必需端口：`service`、`world`（D区碰撞覆盖层）、`registry`、`locks`、`camera.borrow`、`ports.getFrame`、`ports.input.subscribe`。可选 `toast`、`ports.navigate(anchorId)`、`ports.openBook`。沿用 P0 相机租约，不修改镜头姿态；取消/关闭释放自身租约，恢复借用前完整视角。模块只读取 gate，不清除全局按键状态。
++
++默认注册三项：`npc_c2_fisher`→`shop_c2_fish`→`anchor_c2_fisher`；`npc_c2_merchant`→`shop_c2_general`→`anchor_c2_merchant`；`npc_c2_food_vendor`→`shop_c2_food`→`anchor_c2_food_vendor`。站位直接读取实测 anchors.json。进入与确认都用现有 `canInteract` 检查层级、步行状态、距离、遮挡和 `moveActor` 可达；CORE_READY 再核实服务距离与活动条件。
++
++若 10 已注册三个 NPC 的正式对白，创建时传 `{registerNPCs:false}`，对白中 `openShop` intent 交接调用 `commerce.open(shopId,tab?)`，先释放对白锁。不要再注册同一 NPC，亦不要把灰盒 scene 的通用 anchor 注册与商铺 action 并存。全部交互依然面对面；公开 open 接口不能绕过距离/锁/镜头检查。
++
++输入仅分发给最上层 `c2/commerce` 锁：`cancel` 关闭，`confirm` 只在待确认页提交。宿主的 Escape 必须优先于 INPUT/SELECT 的一般输入过滤；Enter/Space 让原生聚焦按钮处理，避免同一个按键又走 semantic confirm。Tab 焦点环在局部 dialog 内。主控继续提供唯一的 core tick；商铺持锁时 operative=false，从而暂停自然衰减，阅读/演出/失焦暂停仍由宿主与共享服务负责。
++
++HUD 显示已保存余额/精力/欠账，低于20提供饭铺导航；欠账且不足4显示鲁七偿债差事导航。还债为 core 的卖物收入先抵欠账与 `settleReliefWork`，契约没有另设手动 payDebt 动作。不要在主控另扣一次债款。
++
++## 事务及失败
++
++预览金额和恢复量只描述当前快照，成交仍由核心验证。一个报价分配一个幂等 ID；取消报价不 dispatch。成功进入收据页，必须显式返回铺面才能再买卖，连续点击不会重发。
++
++保存失败不显示乐观收入。核心保留候选进度，菜单和 HUD 明确提示“本页保留，请勿刷新”，只调用同一服务 `retrySave()`。关闭/失焦不取消已经确认的待保存交易；关闭后重试不会重开菜单。新交易在 pending 期间被禁用。模块不会自动 flush 或取消 pending，不接管其他模块待保存动作；主控重试/flush 时也须检查结果。候选仅在本页内存保留，刷新会丢失未保存候选，界面已明确提示，不能声称崩溃后仍能恢复未持久化结果。
++
++错误显示 core `error.message`；验证失败留在确认页可返回，save-failed/save-pending 阻止新成交，成功后使用真实 core 收据。出售普通物不包含唯一藏物、借物或任务物；藏物需单独解除保护，再单独出售。回购取原凭证/实例，换给他人的铜铃不回购。
++
++## 外观与边界
++
++`wares.js` 可供 10 在 D 区挂接现有 `scenery/steamer.glb` 与 street-life 的 `pot`/`bowl` 克隆。只共享源网格/材质，不搬旧铺面，不复用第一关 NPC。源资产生命周期由宿主负责，`mountWares.dispose` 移除借用克隆并释放自建陈列架的几何/材质；不会释放源资产。
++
++既有王家蒸作候选2/5/10与茶坊0/7/16均在本轮D范围外，旧店保持原位置。D使用02实测饭铺、杂货铺站位；蒸笼、茶器形制复用不能证明其对应原画店铺身份。预览NPC仍是已标注的灰盒，正式人物模型由08/10接入。未扩建E或其他区域。
++
++## 独立预览
++
++在05副本运行 `npm run dev -- --port 5285 --strictPort`，打开：
++`http://127.0.0.1:5285/chapter2-commerce-preview.html?test&chapter2&session=commerce-review`
++
++同时要求 DEV 与 test/chapter2 参数，只写 `qingming:dev:chapter2:<session>`，不触碰正式存档。测试样本明确标注：通关前置/0钱0精力/95精力30文是隔离边界 fixture；三鱼、两种修缮报酬、故事阶段、买卖/赊食/回购都经真实核心动作。开发定位下拉是取景瞬移，不能当实走证据；`__commercePreview.walkTo` 使用已测路线、RAF 和原 moveActor 连续行走，单独记录证据。
++
++该页面接通真实 core、fishing、D灰盒和已有阿青模型，不等于正式 main 装配完成或真人试玩。
+--- /dev/null
++++ b/docs/chapter2/commerce/design.md
+@@ -0,0 +1,13 @@
++# 铺前交易簿设计
++
++目标：面对面交易时，把“持有／单价／数量／收入”“价格／精力上限后的恢复量”和欠账优先偿还讲清楚。
++
++菜单采用右侧纸页，左侧保留角色与铺面；细账线承载数量，收据以朱砂落账印表示已保存。未确认报价不使用落账印。主按钮只在明确确认页使用朱砂色，默认聚焦“暂不成交”，降低误触。
++
++色彩：墨绿 #24352F、米纸 #ECE7D6、青黛 #314F59、朱砂 #963D2C、苇色 #9C956D。题头为宋体，正文为系统中文无衬线；数字等宽对齐。全部样式限定在 c2-commerce 与 c2-commerce-hud，不覆盖全局按钮、风物志或旧入口。
++
++页签按商铺能力分开。默认出售列表仅含本铺普通收购物；独一藏物在「藏物」页单独处理，解除后不会顺手售出。回购显示原笔数量、原价与原物说明，换物明确写一次限额和铜铃不能回购。
++
++手机宽度采用底部纸页、可纵向滚动，不缩小正文挤交易数量。键盘焦点环、Tab循环、原生按钮和输入标签提供可操作性；不覆盖宿主全局按键管理。
++
++截图复核关注：确认页总价与偿债说明、保存失败明确提示、满精力禁买、赊食条件、手机横向溢出。实际证据见 validation.md 与 browser-*-result.json。
+--- /dev/null
++++ b/docs/chapter2/commerce/validation.md
+@@ -0,0 +1,39 @@
++# 实际验证记录
++
++执行副本：05-commerce/qingming-game；基线：2026-10-02-core-fishing-ready-v2；契约1.0.0。执行跨2026-10-02/03（Asia/Shanghai）。
++
++## 自动测试
++
++`node --test src/chapter2/commerce/commerce.test.js`：15/15，通过（test-commerce.log）。
++
++全量测试命令：`rg --files src -g '*test.js'` 得到21个文件，Python `subprocess.run(['node','--test',*files])` 执行，209/209通过，0失败（test-all.log）。新增15项使用真实 CORE_READY、正式内容、实测anchors、D覆盖碰撞和原moveActor；内存storage仅用于单元验证，不能代替浏览器持久化检查。
++
++覆盖：NPC独立ID／面对面与遮挡、外部锁／镜头、取消／失焦／销毁、主控tick与菜单暂停、鱼价／数量／收入优先还债、非法数量、保护物与默认列表、补给上限／余额不足、现金与铜铃报酬、买卖差价、同实例回购／十笔限额、换物二次尝试、保存失败关闭后重试、未确认刷新、赊食保鱼／七杆取消／债务差事不赠钱、0精力正反向实走。
++
++`node docs/chapter2/commerce/build-preview.mjs`：Vite独立入口构建通过，输出仅在本任务docs目录。DEV验收入口在生产构建中提示限制，不用于线上发布。
++
++## 浏览器
++
++命令：在05副本运行 `npm run dev -- --port 5285 --strictPort`；以 Playwright CLI 命名会话 commerce05 打开 `http://127.0.0.1:5285/chapter2-commerce-preview.html?test&chapter2&session=commerce-browser-v1`。
++
++`python3 run-browser.py browser-a.js`：31项断言通过（browser-a-result.json / browser-a.log）。真实DOM按钮操作与真实共享服务连接；对照 `localStorage.getItem(key)` 读回v3完整存档与backup，并验证本预览origin中的正式键未变。
++
++A覆盖：3次真实钓获库存、0数量拒绝、Esc未确认不成交、同一DOM确认连续点击、卖空、按原凭证鱼回购、写失败候选保留／HUD同笔重试、刷新不补发不成交、修缮现金分支上架／18买7卖、收藏保护解除与出售分开、原盏实例回购及历史计数、铜铃换物一次／不能回购／保留故事、95精力真实+5而非+30、满精力禁买、0/0赊食+30欠4首杆保鱼、390px宽度无横向溢出、无pageerror。
++
++`python3 run-browser.py browser-b.js`：18项断言通过，5段连续路线共201.3米、4358次原moveActor采样（browser-b-result.json）。与A合计49项浏览器断言。B验证：原moveActor/RAF连续站位路线、真实04 UI救急钓鱼、出售先还债、真实扣费七杆取消与无精力偿债、回饭铺再次恢复、实际失焦／镜头恢复／输入聚焦Esc／Tab／销毁。记录以 browser-b-result.json 为准。切换标签测试关闭 Playwright 默认 Emulation.setFocusEmulationEnabled=true；否则两页均呈现hasFocus=true，不能算失焦证据。该测试不以伪造service或修改钱包代替结算。
++
++## 样本与故障修复
++
++初始通关与0/0、95精力30文属于明确隔离fixture，不是玩家真实档。三次钓获、两种修缮奖励、故事resolve、买卖/回购/赊食全部由真实核心动作产生。连续取消失败路线的精力由7笔核心钓杆耗用，未从UI写一份精力。
++
++浏览器曾发现DEV重建样本时仍有缓存tick。现先 service.flush() 并检查结果再恢复fixture，防止旧计时跨入未初始化状态；旧样本可能没有可选 regionPositions，读取改为可选并遵守真实enterChapter2门槛。这两项修复限于独立DEV预览，核心未更改。中间失败不计入通过；最终成功结果留档。
++
++截图：01-fish-confirm、02-save-failure、03-barter-confirm、04-food-partial、05-relief、06-mobile-food、07-relief-work。已目视核对纸页、金额/债务说明、按钮禁用与移动宽度。正式NPC是灰盒，占位形体不能冒充最终模型。
++
++## 范围核验
++
++`python3 docs/chapter2/commerce/scope-audit.py`：272个原有只读文件、冻结清单全部SHA-256未变（scope-audit.json）；对主工程main、核心、状态/存档、移动、交互和依赖清单做只读SHA对照。新增代码与预览只写允许路径。没有Git初始化、worktree、依赖安装或主工程覆盖。
++
++## 未覆盖
++
++正式main/公共progress/主控camera/input未装配；08正式人物模型、06修缮UI、07正式风物志、09演出未在本模块内整合。未检查主工程自己的浏览器origin/真实玩家存档，未声称整关或真人试玩通过；未发布线上。交给10在同一共享service/locks/camera/registry中复测并设置公共状态。
+--- /dev/null
++++ b/docs/chapter2/commerce/ready.json
+@@ -0,0 +1,23 @@
++{
++  "module": "05-commerce",
++  "contractVersion": "1.0.0",
++  "baseline": "2026-10-02-core-fishing-ready-v2",
++  "COMMERCE_READY": true,
++  "publicStatusUpdated": false,
++  "mainIntegrated": false,
++  "browserStorageChecked": true,
++  "formalNPCModelsReady": false,
++  "tests": {
++    "commerce": 15,
++    "all": 209,
++    "browser": 49,
++    "failures": 0
++  },
++  "continuousWalk": {
++    "routes": 5,
++    "distanceMeters": 201.3,
++    "samples": 4358
++  },
++  "previewURL": "http://127.0.0.1:5285/chapter2-commerce-preview.html?test&chapter2&session=commerce-review",
++  "handoffUTC": "2026-10-02T16:22:25.376963+00:00"
++}

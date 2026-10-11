@@ -1,0 +1,126 @@
+{
+  "planVersion": "1.0.0-merchant-20261002",
+  "assetId": "asset_c2_merchant",
+  "npcId": "npc_c2_merchant",
+  "name": "顾娘子",
+  "ageDesign": 42,
+  "generationRequestedByUser": true,
+  "paidBudgetConfirmed": false,
+  "approvedCreditCap": 0,
+  "proposedCreditCap": 120,
+  "estimatedTotalCredits": [
+    95,
+    105
+  ],
+  "generationAttemptCap": 1,
+  "taskIds": [],
+  "submittedPaidTasks": 0,
+  "baseUrl": "https://openapi.tripo3d.ai",
+  "apiVersion": "v3",
+  "credentialAlias": "local qingming45-api",
+  "inputMode": "text-to-model; existing male merchant is not input",
+  "promptSHA256": "0c7639307235fe466936f8680be46c7fa0f5da0461c407dc9f06a28cf3175fe0",
+  "requestSHA256": "0a65cbbdc82730c8374db1f88754a375dd92f54dbb12e3bb9866fa86d2300970",
+  "contentInput": "merchant-content-input-20261002.json",
+  "steps": [
+    {
+      "stage": "generation",
+      "method": "POST",
+      "endpoint": "/v3/generation/text-to-model",
+      "payload": {
+        "prompt": "Full-body game character, Gu Niangzi, a fictional 42-year-old Chinese woman running a modest general-goods stall in Northern Song inspired Bianjing. Mature natural facial features, clear eyes, calm brisk expression, dark hair gathered into a simple practical bun. Muted dark green modest wrap-front robe with narrow sleeves, plain brown cloth outer layer, simple fabric waist tie, long practical skirt and cloth shoes. No royal costume or costly jewelry. Relaxed neutral A-pose with both empty hands clearly separated from body, five fingers on each hand, stable planted feet. Single anatomically correct figure; front face only on front, hair bun on back. Restrained semi-realistic low-poly PBR style matching the existing Qingming game, readable face and cloth seams for close dialogue shots. No abacus or ceramic cup fused into hands; props will be separate local assets.",
+        "negative_prompt": "male, young girl, duplicate face, extra limbs, extra fingers, fused hands, Qing queue, qipao, modern clothes, imperial crown, weapon, abacus, cup, background scenery, pedestal, painted shadows, shiny plastic skin",
+        "model": "P1-20260311",
+        "face_limit": 20000,
+        "texture": true,
+        "pbr": true,
+        "texture_quality": "detailed",
+        "texture_version": "v3.0-20250812",
+        "export_uv": true
+      },
+      "estimatedCredits": [
+        50,
+        60
+      ]
+    },
+    {
+      "stage": "rig-check",
+      "method": "POST",
+      "endpoint": "/v3/animations/rig-check",
+      "payload": {
+        "input": "GENERATION_TASK_ID"
+      },
+      "estimatedCredits": [
+        0,
+        0
+      ]
+    },
+    {
+      "stage": "rig",
+      "method": "POST",
+      "endpoint": "/v3/animations/rig",
+      "payload": {
+        "input": "GENERATION_TASK_ID",
+        "model": "v2.5-20260210",
+        "rig_type": "biped",
+        "spec": "mixamo",
+        "out_format": "glb"
+      },
+      "estimatedCredits": [
+        25,
+        25
+      ]
+    },
+    {
+      "stage": "retarget",
+      "method": "POST",
+      "endpoint": "/v3/animations/retarget",
+      "payload": {
+        "input": "RIG_TASK_ID",
+        "animations": [
+          "preset:idle",
+          "preset:walk"
+        ],
+        "animate_in_place": true,
+        "bake_animation": true,
+        "export_with_geometry": true,
+        "out_format": "glb"
+      },
+      "estimatedCredits": [
+        20,
+        20
+      ]
+    }
+  ],
+  "recipeNotes": [
+    "Text input does not use image-only texture_alignment/orientation options",
+    "Rig v2.5 biped follows fixed project recipe and official sample; stop on incompatibility, do not silently switch rig",
+    "Published detailed pricing differs across official pages; reserve conservative upper estimate",
+    "No automatic reroll, topology processing, texture upgrade or format conversion"
+  ],
+  "outputs": {
+    "root": "public/assets/chapter2/characters/asset_c2_merchant/v1/",
+    "master": "model.raw.glb",
+    "runtime": "model.draco.glb",
+    "previews": "public/assets/chapter2/previews/asset_c2_merchant/"
+  },
+  "acceptance": {
+    "triangles": 20000,
+    "nearTextureMinimum": 2048,
+    "noUpscalingToFakeResolution": true,
+    "keepOriginalPBR": true,
+    "independentSkeletonClone": true,
+    "dedicatedPickUpAndInspectCup": "local authoring after body accepted; not covered by idle/walk",
+    "ASSETS_READY": false
+  },
+  "submissionProtocol": [
+    "single-asset lock",
+    "persist input/request hashes and submitting before POST",
+    "persist taskId immediately",
+    "submission_unknown forbids blind repost",
+    "resume same task via GET/download",
+    "download to part then validate GLB before rename",
+    "record actual credits per task",
+    "no secrets or signed URLs in public artifacts"
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "task": "08-assets",
+  "contractVersion": "1.0.0",
+  "baseline": "current main per-file SHA only; main read-only",
+  "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/08-assets/qingming-game",
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "merchantNetCredits": 100,
+  "approvedCap": 120,
+  "files": [
+    {
+      "path": "docs/chapter2/assets/merchant-browser-draco-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "8beab0ba791014a27f1b33f0110d119ba758221195a9ce729a5b64c44ab6129c",
+      "bytes": 3069,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-browser-raw-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "4dc76eb63fcddf3954b8eaedf3f4d895383eba8d7ba265b3174dfbcdaaa5cffa",
+      "bytes": 3065,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-content-input-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "4e2fb282b48ae3ec0b13668dd8e7f813b20a7fa7bd049c20e27e63bb4f6d0c5d",
+      "bytes": 6016,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-draco-validation-20261003.txt",
+      "baseSHA256": null,
+      "newSHA256": "1351831472ead01f1a0be1a25d992749054ce82400a1281e07c164cf819a66b8",
+      "bytes": 7410,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-execution-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "ea83d2eaf159f85ee6e341a26e9678c810e38e16f4f258d94f21b892ad893d08",
+      "bytes": 15936,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-final-audit-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "96cd80ebaf14c522741f9098810d03c5be535eab8a4958b9f7e137d8fe66d147",
+      "bytes": 6859,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-audit-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "5599abd2f4ff1f9644ba3298a667366044edf42cb0e6facaa1312243f8c55d34",
+      "bytes": 1722,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "ef624edc7ec28cc7a4c563cd7344c37ee1a8b23e0d2c4729bbace5c55676db14",
+      "bytes": 4744,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-generation-plan-20261002.md",
+      "baseSHA256": null,
+      "newSHA256": "8797e26951c89a07e2c49170850acf58a72670c240efd689ccefbf4b7b74928b",
+      "bytes": 3153,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-preflight-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "d480ece81f942b6e064d5e0aac23b5bce651114ca100b1888604689923f06fc8",
+      "bytes": 252,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-recipe-check-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "df4dec31611a3fcc3461b0511e82d1cf7ce6ad76e90b02497808d9f94dfc6c7d",
+      "bytes": 639,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-repair-20261003.md",
+      "baseSHA256": null,
+      "newSHA256": "d55443aac8427fbb7a7c00834ded5efc1093b5af426ebea74cfdc666675a7a46",
+      "bytes": 1079,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-rig-audit-20261002.json",
+      "baseSHA256": null,
+      "newSHA256": "1afd61d0ac363f835b3e1d19435c72c77cfe7a5c8e0afd3380ddf686d6d7d4a9",
+      "bytes": 2603,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/merchant-verification-20261003.json",
+      "baseSHA256": null,
+      "newSHA256": "b42bc76f6072a5c0536ec7289f810f61d47b18223d53d48ffe64b587c148080e",
+      "bytes": 459,
+      "operation": "add"
+    },
+    {
+      "path": "docs/chapter2/assets/tripo-merchant.py",
+      "baseSHA256": null,
+      "newSHA256": "f25427c767b3e445a3508ec4543de8ed0058aa7aebb9a8e85808ca78c480d2f1",
+      "bytes": 10191,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/generation.glb",
+      "baseSHA256": null,
+      "newSHA256": "51038d41d043dae1e10b95731c607c3581ee41169ccdb321197b599323264e9a",
+      "bytes": 9120760,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/manifest.json",
+      "baseSHA256": null,
+      "newSHA256": "17106cb369a2d5e20442375a68ce8a918b2b838dcc19df3f58e546c02fa12090",
+      "bytes": 3305,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.draco.glb",
+      "baseSHA256": null,
+      "newSHA256": "7235a68a9e2a585b03d4f6b7e48f89ba14be873aa2dbf5539d281e7393025883",
+      "bytes": 8419572,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.raw.glb",
+      "baseSHA256": null,
+      "newSHA256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig-tripo.glb",
+      "baseSHA256": null,
+      "newSHA256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/rig.glb",
+      "baseSHA256": null,
+      "newSHA256": "d8841eb0dbba81e0303bd4953b93d40bf873b48e55ccf8c5ab8912b29c273309",
+      "bytes": 9590056,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/base-color.jpg",
+      "baseSHA256": null,
+      "newSHA256": "7a7eb565e93d1d6b4a7800a529172f2621f5ef7620851da2c81cf4f7c0588b33",
+      "bytes": 3380351,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/normal.png",
+      "baseSHA256": null,
+      "newSHA256": "ac2a175d105c06c93ddaf57d9f7b2fe1c42dc5152891a82fa34958c30a7b9004",
+      "bytes": 2811963,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/textures/orm.jpg",
+      "baseSHA256": null,
+      "newSHA256": "e6d54c33af5b72910b675c25dda372e4a2d4fc180e24a95b88186ab2227d4c8f",
+      "bytes": 2089058,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/final-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "aeb21153d748976dbbaf247f115369b91653e8e508a72c893a7ebf08e137deeb",
+      "bytes": 81641,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/final-portrait.png",
+      "baseSHA256": null,
+      "newSHA256": "8fb1661b5a165fa741e73511baf7f89da54dcff43f2a4c23d3b4dd312188a5a2",
+      "bytes": 113390,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-follow-distance.png",
+      "baseSHA256": null,
+      "newSHA256": "2d4127199738fb85440096c7e0532e40d2ea64fe68fba1c199c675c478a5b578",
+      "bytes": 64760,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-four-views.png",
+      "baseSHA256": null,
+      "newSHA256": "bcc4fccd77e6cecfbcbd9bfc8f91aa992a60755bc6a95ea3871a81dc929ed803",
+      "bytes": 121242,
+      "operation": "add"
+    },
+    {
+      "path": "public/assets/chapter2/previews/asset_c2_merchant/generation-portrait.png",
+      "baseSHA256": null,
+      "newSHA256": "fa95d489c6b52e4f9b5c9d3f366b1bc9cc9a8b554edd8146b1d4c46c4a710ab7",
+      "bytes": 154397,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/merchant.js",
+      "baseSHA256": null,
+      "newSHA256": "f3c515d02dbea1fe5aac4c93b2d1b3a5da04ea12549e4e46bfca091775148f07",
+      "bytes": 2713,
+      "operation": "add"
+    },
+    {
+      "path": "src/chapter2/assets/preview.html",
+      "baseSHA256": "0669135abf4ee6c9df023db2845e0564597974b5f4f388b4742f62cf7e42a473",
+      "newSHA256": "7c6b6305616a35e598ca538014b876fe0faeb9ba3a7e4ccbcf83f5fa77682a0e",
+      "bytes": 1632,
+      "operation": "modify"
+    },
+    {
+      "path": "src/chapter2/assets/preview.js",
+      "baseSHA256": "db56b0dd702f10f5ef8cd910945abbd1fa9eb3c97595985a0fc4e8b45f5573ee",
+      "newSHA256": "ae8b14b8a779d243bf033246f42ac1d8ed41ec6f2ebc8445f2d02cc61f0b4843",
+      "bytes": 11488,
+      "operation": "modify"
+    }
+  ]
+}

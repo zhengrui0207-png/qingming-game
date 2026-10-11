@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "name": "all audio 404s explicitly recorded",
+      "passed": true,
+      "details": [
+        "cast: HTTP 404",
+        "bobber: HTTP 404",
+        "reel: HTTP 404",
+        "splash: HTTP 404",
+        "wheel: HTTP 404",
+        "coin: HTTP 404",
+        "steam: HTTP 404",
+        "bell: HTTP 404",
+        "rope_test: HTTP 404",
+        "tea_pour: HTTP 404",
+        "cup_set: HTTP 404",
+        "cast: not ready",
+        "splash: not ready",
+        "coin: not ready",
+        "rope_test: not ready",
+        "wheel: not ready",
+        "tea_pour: not ready",
+        "cup_set: not ready"
+      ]
+    },
+    {
+      "name": "audio failure does not trap camera/input",
+      "passed": true
+    },
+    {
+      "name": "audio failure preserves legitimate reward and completes ending",
+      "passed": true
+    },
+    {
+      "name": "double dispose restores camera/input and removes movie panel",
+      "passed": true
+    },
+    {
+      "name": "double dispose keeps economic reward",
+      "passed": true
+    }
+  ],
+  "total": 5,
+  "passed": 5,
+  "source": "actual HTTP 404 + real core + P0 camera host in real browser",
+  "formalMainIntegration": false
+}

@@ -1,0 +1,422 @@
+{
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "contractVersion": "1.0.0",
+  "REPAIR_READY": true,
+  "scope": "Independent repair module, actual accepted service/content/measured anchors and real browser input",
+  "ASSET_READY": false,
+  "INTEGRATION_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "tests": {
+    "repair": 15,
+    "allSource": 209,
+    "failures": 0
+  },
+  "browser": {
+    "passedScripts": [
+      "browser-mouse",
+      "browser-test-reload",
+      "browser-cash",
+      "browser-final"
+    ],
+    "results": {
+      "browser-mouse": [
+        {
+          "id": "real-begin",
+          "actor": {
+            "x": -63,
+            "z": -39.5,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          },
+          "energy": {
+            "current": 66,
+            "max": 100,
+            "reserved": 18,
+            "passiveSeconds": 18.896591999964368
+          }
+        },
+        {
+          "id": "cancel-confirmed-step",
+          "repair": {
+            "status": "available",
+            "stepIds": [
+              "step_c2_inspect"
+            ],
+            "reserved": 0,
+            "rewardChoice": null
+          },
+          "energy": {
+            "current": 66,
+            "max": 100,
+            "reserved": 0,
+            "passiveSeconds": 18.896591999964368
+          }
+        },
+        {
+          "id": "actual-mouse-drag",
+          "stepIds": [
+            "step_c2_inspect",
+            "step_c2_align",
+            "step_c2_fix"
+          ]
+        }
+      ],
+      "browser-test-reload": [
+        {
+          "id": "keyboard-three-direction-pressure",
+          "repair": {
+            "status": "ready",
+            "stepIds": [
+              "step_c2_inspect",
+              "step_c2_align",
+              "step_c2_fix",
+              "step_c2_test"
+            ],
+            "reserved": 18,
+            "rewardChoice": null
+          },
+          "energy": {
+            "current": 66,
+            "max": 100,
+            "reserved": 18,
+            "passiveSeconds": 19.129991999964393
+          }
+        },
+        {
+          "id": "last-step-and-deferred-reward-reload",
+          "repair": {
+            "status": "completed",
+            "stepIds": [
+              "step_c2_inspect",
+              "step_c2_align",
+              "step_c2_fix",
+              "step_c2_test"
+            ],
+            "reserved": 0,
+            "rewardChoice": null
+          },
+          "energy": {
+            "current": 48,
+            "max": 100,
+            "reserved": 0,
+            "passiveSeconds": 19.52689199996439
+          }
+        },
+        {
+          "id": "bell-route-keyboard-revisit",
+          "repair": {
+            "status": "completed",
+            "stepIds": [
+              "step_c2_inspect",
+              "step_c2_align",
+              "step_c2_fix",
+              "step_c2_test"
+            ],
+            "reserved": 0,
+            "rewardChoice": "bell"
+          },
+          "story": {
+            "story_c2_silent_bell": "stage_c2_silent_bell_resolved"
+          },
+          "formalSaveUnchanged": true,
+          "resources": {
+            "geometries": 122,
+            "textures": 4
+          },
+          "frameMs": [
+            16.600000000000364,
+            15.200000000000728,
+            18.100000000000364,
+            16.799999999999272,
+            16.600000000000364,
+            14.699999999998909,
+            18.600000000000364,
+            14.899999999999636,
+            17.30000000000109,
+            17.799999999999272,
+            16.700000000000728,
+            15.199999999998909,
+            18.100000000000364,
+            31.80000000000109,
+            18.19999999999891,
+            16.700000000000728,
+            16.69999999999891,
+            16.600000000000364,
+            16.80000000000109,
+            16.099999999998545,
+            15.100000000000364,
+            16.80000000000109,
+            17.799999999999272,
+            17.399999999999636,
+            16.700000000000728,
+            15,
+            18.299999999999272,
+            16.700000000000728,
+            16.799999999999272,
+            16.200000000000728,
+            17.100000000000364,
+            16.599999999998545,
+            16.600000000000364,
+            16.700000000000728,
+            16.600000000000364,
+            16.799999999999272,
+            14.600000000000364,
+            18.69999999999891,
+            16.700000000000728,
+            15,
+            18.299999999999272,
+            16.5,
+            16.900000000001455,
+            14.699999999998909,
+            18.5,
+            16.100000000000364,
+            17.299999999999272,
+            16.600000000000364,
+            16.700000000000728,
+            16.69999999999891,
+            14.800000000001091,
+            16.5,
+            16.799999999999272,
+            16.600000000000364,
+            18.600000000000364,
+            15,
+            17.399999999999636,
+            17.600000000000364,
+            16.69999999999891,
+            14.600000000000364,
+            16.80000000000109,
+            17.399999999999636,
+            17.899999999999636,
+            14.600000000000364,
+            17.399999999999636,
+            18,
+            16.700000000000728,
+            14.599999999998545,
+            18,
+            17.30000000000109,
+            16.5,
+            15.199999999998909,
+            17.700000000000728,
+            15.399999999999636,
+            16.899999999999636,
+            16.400000000001455,
+            16.799999999999272,
+            16.5,
+            16.799999999999272,
+            18.400000000001455,
+            14.699999999998909,
+            17.30000000000109,
+            18,
+            15.399999999997817,
+            16,
+            18.700000000000728,
+            16.799999999999272,
+            16.600000000002183,
+            14.700000000000728,
+            16.69999999999709,
+            16.700000000000728,
+            16.900000000001455,
+            16.299999999999272,
+            17,
+            18.299999999999272,
+            15.299999999999272,
+            16.80000000000291,
+            17.099999999998545,
+            17.5,
+            16.599999999998545,
+            14.700000000000728,
+            16.600000000002183,
+            17,
+            16.69999999999709,
+            18.400000000001455,
+            14.799999999999272,
+            17,
+            18.200000000000728,
+            16.599999999998545,
+            16.600000000002183,
+            16.700000000000728,
+            16.69999999999709,
+            16.700000000000728,
+            15.100000000002183,
+            18.19999999999709,
+            16.700000000000728,
+            16.600000000002183,
+            16.799999999999272,
+            16.5,
+            15.200000000000728
+          ],
+          "renderCalls": 61,
+          "actor": {
+            "x": -63,
+            "z": -39.5,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          }
+        }
+      ],
+      "browser-cash": [
+        {
+          "id": "actual-low-energy-button",
+          "energy": {
+            "current": 17,
+            "max": 100,
+            "reserved": 0,
+            "passiveSeconds": 0.6695
+          },
+          "error": {
+            "code": "insufficient-energy",
+            "message": "需要18精力。先到王家蒸作补给，走路与交谈照常。"
+          }
+        },
+        {
+          "id": "keyboard-cash-save-failure-dual-event",
+          "repair": {
+            "status": "completed",
+            "stepIds": [
+              "step_c2_inspect",
+              "step_c2_align",
+              "step_c2_fix",
+              "step_c2_test"
+            ],
+            "reserved": 0,
+            "rewardChoice": "cash"
+          },
+          "energy": {
+            "current": 62,
+            "max": 100,
+            "reserved": 0,
+            "passiveSeconds": 2.5110000000000037
+          },
+          "coins": 30,
+          "queuedDualClick": "synthetic DOM events, physical repair via keyboard"
+        },
+        {
+          "id": "cash-later-single-bell-and-walking",
+          "repair": {
+            "status": "completed",
+            "stepIds": [
+              "step_c2_inspect",
+              "step_c2_align",
+              "step_c2_fix",
+              "step_c2_test"
+            ],
+            "reserved": 0,
+            "rewardChoice": "cash"
+          },
+          "story": {
+            "story_c2_silent_bell": "stage_c2_silent_bell_resolved"
+          },
+          "formalSaveUnchanged": true,
+          "actor": {
+            "x": -61.615918811096655,
+            "z": -38.15576014085138,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          },
+          "previousActor": {
+            "x": -63,
+            "z": -39.5,
+            "height": 0.94,
+            "layer": "ground",
+            "mode": "walk"
+          },
+          "resources": {
+            "geometries": 121,
+            "textures": 4
+          }
+        }
+      ],
+      "browser-final": {
+        "id": "final-revision-keyboard-native-buttons-and-dispose",
+        "errors": [],
+        "warnings": [],
+        "formalSaveUnchanged": true,
+        "before": {
+          "geometries": 63,
+          "textures": 4
+        },
+        "after": {
+          "geometries": 51,
+          "textures": 4
+        },
+        "locks": [],
+        "actor": {
+          "x": -63,
+          "z": -39.5,
+          "height": 0.94,
+          "layer": "ground",
+          "mode": "walk"
+        },
+        "module": {
+          "phase": "idle",
+          "error": null,
+          "pendingSave": false,
+          "locked": false,
+          "disposed": true,
+          "elapsed": 1.6093999999999988,
+          "rewardFocus": "cash",
+          "repair": {
+            "status": "available",
+            "stepIds": [
+              "step_c2_inspect"
+            ],
+            "reserved": 0,
+            "rewardChoice": null
+          },
+          "energy": {
+            "current": 76,
+            "max": 100,
+            "reserved": 0,
+            "passiveSeconds": 0.5796999999999999
+          },
+          "board": null,
+          "step": {
+            "id": "step_c2_align",
+            "title": "摆正垫脚",
+            "instruction": "空载摆正支撑，使架脚坐实。",
+            "success": "左右坐实了。",
+            "failure": "垫脚还歪，先放平再做下一步。"
+          },
+          "available": 76
+        },
+        "notFormalIntegration": true,
+        "humanPlaytest": false
+      }
+    },
+    "finalConsoleErrors": 0,
+    "finalConsoleWarnings": 0,
+    "formalSaveUnchanged": true
+  },
+  "performanceEnvironmentSample": {
+    "sampleFrames": 120,
+    "medianFrameMs": 16.700000000000728,
+    "p95FrameMs": 18.400000000001455,
+    "maxFrameMs": 31.80000000000109,
+    "drawCalls": 61,
+    "geometries": 122,
+    "textures": 4,
+    "referenceDevicePassClaimed": false
+  },
+  "scopeAudit": {
+    "baselineId": "2026-10-02-core-fishing-ready-v2",
+    "baselineManifestSHA256": "4032a023f8ebfd1587201aa7ad2edb486c74cdc696d501a08fc8fb54c7063d59",
+    "checkedBaselineFiles": 656,
+    "outOfScopeBaselineChanges": [],
+    "frozenFilesChecked": 21,
+    "frozenMismatches": [],
+    "newOutOfScopeFiles": [],
+    "allocatorMetadataExclusions": [
+      "docs/chapter2/THIS-WORKSPACE.md",
+      "docs/chapter2/frozen-files.json",
+      "docs/chapter2/ownership.md",
+      "docs/chapter2/status.json",
+      "docs/chapter2/workspace-map.json"
+    ],
+    "nodeModulesAndBuildCachesExcluded": true
+  },
+  "notFormalIntegration": true,
+  "humanPlaytest": false
+}

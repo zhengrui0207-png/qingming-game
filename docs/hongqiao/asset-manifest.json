@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-15",
+  "status": "blocked_missing_game_project",
+  "gameRoot": null,
+  "sourceManifest": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/manifest.json",
+  "assets": [
+    {
+      "id": "item_hq_rope",
+      "path": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_rope/item_hq_rope.glb",
+      "sha256": "cf1a09a71d6337c112c73e4d2cc481150c22caf76a62831397b9ea5c40197ea7",
+      "matchesSourceManifest": true,
+      "glbHeaderValid": true,
+      "meshCount": 1,
+      "skinCount": 0,
+      "animationNames": [],
+      "trianglesReportedByExistingInspection": 1916,
+      "generated": true,
+      "artAccepted": null,
+      "gameIntegrationVerified": false
+    },
+    {
+      "id": "item_hq_pole",
+      "path": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_pole/item_hq_pole.glb",
+      "sha256": "fc35e62d390058ca31dae0b2bdc957472512bf18e9b9889e823479d2d09f8b9b",
+      "matchesSourceManifest": true,
+      "glbHeaderValid": true,
+      "meshCount": 1,
+      "skinCount": 0,
+      "animationNames": [],
+      "trianglesReportedByExistingInspection": 1916,
+      "generated": true,
+      "artAccepted": null,
+      "gameIntegrationVerified": false
+    },
+    {
+      "id": "item_hq_cloth",
+      "path": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_cloth/item_hq_cloth.glb",
+      "sha256": "c70a6271088c69aa71fb7e7a0c9bf52dc05f17427182903759bf8f911b6d740c",
+      "matchesSourceManifest": true,
+      "glbHeaderValid": true,
+      "meshCount": 1,
+      "skinCount": 0,
+      "animationNames": [],
+      "trianglesReportedByExistingInspection": 1892,
+      "generated": true,
+      "artAccepted": null,
+      "gameIntegrationVerified": false
+    }
+  ],
+  "player": {
+    "id": "player_scholar",
+    "path": null,
+    "generated": null,
+    "rigged": null,
+    "hasAnimations": null,
+    "accepted": null,
+    "note": "未能唯一识别书生任务并提取产物；未知不表示未制作。"
+  },
+  "ship": {
+    "path": null,
+    "independentMovementVerified": null,
+    "mastLoweringVerified": null,
+    "crewParentingVerified": null,
+    "bracingContact": null,
+    "ropeThrowPoints": null,
+    "towpath": null
+  },
+  "paidGenerationPerformed": false
+}

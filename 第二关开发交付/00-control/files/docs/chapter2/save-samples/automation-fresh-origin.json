@@ -1,0 +1,27 @@
+{
+  "source": "P0 automation-owned fresh localhost:5280 origin; not a user gameplay save",
+  "keys": {
+    "qingming:hongqiao:save": "{\"schemaVersion\":2,\"revision\":2,\"inventory\":{},\"unlockedCodexIds\":[],\"permissions\":[],\"worldState\":{\"collectedInstanceIds\":[],\"shipState\":\"waiting\"},\"quests\":{},\"unlockedStoryIds\":[],\"readStoryIds\":[],\"storyReadingProgress\":{},\"readContentVersions\":{},\"introStatus\":\"seen\",\"introSeen\":true,\"endingPending\":false,\"endingSeen\":false}",
+    "qingming:hongqiao:save:backup": "{\"schemaVersion\":2,\"revision\":1,\"inventory\":{},\"unlockedCodexIds\":[],\"permissions\":[],\"worldState\":{\"collectedInstanceIds\":[]},\"quests\":{},\"unlockedStoryIds\":[],\"readStoryIds\":[],\"storyReadingProgress\":{},\"readContentVersions\":{},\"introStatus\":\"playing\",\"introSeen\":false,\"endingPending\":false,\"endingSeen\":false}"
+  },
+  "baseline": {
+    "actor": {
+      "x": 0,
+      "z": 0,
+      "layer": "bridge",
+      "height": 8.24,
+      "mode": "walk"
+    },
+    "camera": {
+      "yaw": 0.5,
+      "pitch": 0.49,
+      "distance": 10,
+      "overview": false
+    },
+    "playing": true,
+    "locks": [],
+    "fps": 43,
+    "drawCalls": 887,
+    "triangles": 7516435
+  }
+}

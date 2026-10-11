@@ -1,0 +1,13 @@
+{
+  "type": "c2/sell",
+  "transactionId": "c2:example:1",
+  "payload": {
+    "shopId": "shop_c2_fish",
+    "lines": [
+      {
+        "itemId": "item_c2_fish_a",
+        "quantity": 1
+      }
+    ]
+  }
+}

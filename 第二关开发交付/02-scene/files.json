@@ -1,0 +1,271 @@
+{
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/02-scene/qingming-game",
+  "files": [
+    {
+      "path": "src/chapter2/scene/vite.preview.config.js",
+      "baseSHA256": null,
+      "newSHA256": "08c5dd380a18f2a1a3c16f24b3fd26404352fbe5782dd4009c696c312def234b",
+      "bytes": 334
+    },
+    {
+      "path": "src/chapter2/scene/anchors.json",
+      "baseSHA256": null,
+      "newSHA256": "2af73fc86680a99268912f17e7026ff5646ed4a1fbc82fc5fc652831d96cb107",
+      "bytes": 13300
+    },
+    {
+      "path": "src/chapter2/scene/scene.js",
+      "baseSHA256": null,
+      "newSHA256": "7729c4d64ed3b95bc1b2ae134fa5c384a536355208f926b48416ba51be24a73a",
+      "bytes": 6089
+    },
+    {
+      "path": "src/chapter2/scene/preview.js",
+      "baseSHA256": null,
+      "newSHA256": "0cc909f271093ff6cef0de9661626bfe1dd786f2d86ce722468a277ea6a8d4b7",
+      "bytes": 10127
+    },
+    {
+      "path": "src/chapter2/scene/layout.json",
+      "baseSHA256": null,
+      "newSHA256": "81f853cb6e2e24a269a60b3c80d17bb46e7e0882f8ff94a3047ab38b015904e3",
+      "bytes": 6626
+    },
+    {
+      "path": "src/chapter2/scene/scene.test.js",
+      "baseSHA256": null,
+      "newSHA256": "150968147f7b310801e757d72ad29229ac6261db774b459fbe2645c1c177b726",
+      "bytes": 2723
+    },
+    {
+      "path": "src/chapter2/scene/physics.js",
+      "baseSHA256": null,
+      "newSHA256": "53058c4b9415c27d9b9cf19babc5c9c145659ed50d49804213e3a6549794073b",
+      "bytes": 1994
+    },
+    {
+      "path": "src/chapter2/scene/asset-mounts.js",
+      "baseSHA256": null,
+      "newSHA256": "f9110a0ee1ac200ad9878edc802dd2997cdf608148a21cf158a315dc86e33f9b",
+      "bytes": 950
+    },
+    {
+      "path": "chapter2-scene-preview.html",
+      "baseSHA256": null,
+      "newSHA256": "840a7297972e96877b11c88e7b745edfaed54d10ecd830dd030a5fcf1cf00541",
+      "bytes": 1681
+    },
+    {
+      "path": "public/assets/chapter2/scene/d-graybox.glb",
+      "baseSHA256": null,
+      "newSHA256": "79af0cf0805870dc1ffebe9ba3127d107ef5688056637c12a0928e1b1e9c72ff",
+      "bytes": 472848
+    },
+    {
+      "path": "docs/chapter2/scene/README.md",
+      "baseSHA256": null,
+      "newSHA256": "6516a398d43f17fab7bb789d8f606c8a4b50949f7d029b2e5e2c338a0cc284bf",
+      "bytes": 4754
+    },
+    {
+      "path": "docs/chapter2/scene/commands.md",
+      "baseSHA256": null,
+      "newSHA256": "39e0d79ae58b968143e9dd297b038886a7e7e7aecfa3adc1b21b159db75d651f",
+      "bytes": 2404
+    },
+    {
+      "path": "docs/chapter2/scene/verification.json",
+      "baseSHA256": null,
+      "newSHA256": "2ead8a983e6c10f89537d6c46927d25158924f3bf83990e268e8635c6499e6f5",
+      "bytes": 10854
+    },
+    {
+      "path": "docs/chapter2/scene/readiness.json",
+      "baseSHA256": null,
+      "newSHA256": "be28c5bd9389ff1de367de6e08b2ce0f956cc06593b54752b175e810f8d97270",
+      "bytes": 598
+    },
+    {
+      "path": "docs/chapter2/scene/baseline-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "bbe693c48691b3f286b2dac709dd5b9ea2ed34ab689e42acadb473eaf2f55cb4",
+      "bytes": 213
+    },
+    {
+      "path": "docs/chapter2/scene/asset-audit.json",
+      "baseSHA256": null,
+      "newSHA256": "03df6763170dfa9b3fb0d3ad5f0721e3a1f956eec4ad8a2f299b6b64f018597c",
+      "bytes": 1121
+    },
+    {
+      "path": "docs/chapter2/scene/cast-target-check.json",
+      "baseSHA256": null,
+      "newSHA256": "0f7f05ff1780e032d404c89fd5d64856eb21075dcea9fe3945aa7691ab1e02d5",
+      "bytes": 532
+    },
+    {
+      "path": "docs/chapter2/scene/comparison.svg",
+      "baseSHA256": null,
+      "newSHA256": "9d39bea8113a70ca2554773eb9a1c97e63cfc043f59d5d66947dec27bc065ee5",
+      "bytes": 4194
+    },
+    {
+      "path": "docs/chapter2/scene/painting-reference.png",
+      "baseSHA256": null,
+      "newSHA256": "704c0b058151913d49171c4169793b928dc2a5189cc2bdf4c0f875dec5d03a42",
+      "bytes": 1580774
+    },
+    {
+      "path": "docs/chapter2/scene/overview.png",
+      "baseSHA256": null,
+      "newSHA256": "278dbfbb2a7c1579847c9cdbf58d21f2f08985359ec3f662fdf3b37cdd8c94de",
+      "bytes": 273628
+    },
+    {
+      "path": "docs/chapter2/scene/fishing_a.png",
+      "baseSHA256": null,
+      "newSHA256": "3fc6f7ed8f91a34ce01c37a09af024e7237b5d4c68bbe8364b7f78ce4815c89b",
+      "bytes": 178052
+    },
+    {
+      "path": "docs/chapter2/scene/fishing_b.png",
+      "baseSHA256": null,
+      "newSHA256": "e4c94fcac42d1e55f143071a9298455a6ca49a9e125dff92731c6b100c2e34b6",
+      "bytes": 145023
+    },
+    {
+      "path": "docs/chapter2/scene/porter.png",
+      "baseSHA256": null,
+      "newSHA256": "82587b7fb53753f7d55ce21737c5fc1bfbd90011df88b3a4e402837b3bac3e65",
+      "bytes": 119997
+    },
+    {
+      "path": "docs/chapter2/scene/merchant.png",
+      "baseSHA256": null,
+      "newSHA256": "1dad3a9ce815dfcd8a2a556ae1eb91ff711ed67fdaeb7807761fbf8ac66348a4",
+      "bytes": 114917
+    },
+    {
+      "path": "docs/chapter2/scene/food_vendor.png",
+      "baseSHA256": null,
+      "newSHA256": "55835ef31e09373c3baa3223fbc38754ffe8c4ed6ab7d80da60241026c87874c",
+      "bytes": 128077
+    },
+    {
+      "path": "docs/chapter2/scene/delivery.png",
+      "baseSHA256": null,
+      "newSHA256": "f8363bb989f4eee100fe3ae7fd1cd735429e56d959808ad5765f2035dcaedbe0",
+      "bytes": 82493
+    },
+    {
+      "path": "docs/chapter2/scene/tests.log",
+      "baseSHA256": null,
+      "newSHA256": "c0ee78e309ab608bcb1d59e1b91fe98d823f4ff1e177257678f2a4cdd62d90f4",
+      "bytes": 869
+    },
+    {
+      "path": "docs/chapter2/scene/legacy-contract-tests.log",
+      "baseSHA256": null,
+      "newSHA256": "422c112bc0ecbbede41c8e9764fd0731b9acf4bbd2e8e265bbf1637f9e2b3cc5",
+      "bytes": 4828
+    },
+    {
+      "path": "docs/chapter2/scene/contract-ready.log",
+      "baseSHA256": null,
+      "newSHA256": "1735cbbfef185a1eb1ff7589a19d71c79e49735fea839166b9a5200a1fb8c996",
+      "bytes": 71
+    },
+    {
+      "path": "docs/chapter2/scene/build.log",
+      "baseSHA256": null,
+      "newSHA256": "057b40da11adadf610b56897f0f1378e888a385e0e2e2e82bc45849e2007e460",
+      "bytes": 711
+    },
+    {
+      "path": "docs/chapter2/scene/export-check.log",
+      "baseSHA256": null,
+      "newSHA256": "27dd8708c1d52192dbb738b897090f581bd96ddc689a6e244655f1daaad0f26b",
+      "bytes": 261
+    },
+    {
+      "path": "docs/chapter2/scene/console.log",
+      "baseSHA256": null,
+      "newSHA256": "ed410c4062d4a10e96f0e89484917b688f271c829f0cd60f82df8cd5c6227d5c",
+      "bytes": 94
+    },
+    {
+      "path": "docs/chapter2/scene/browser-start.log",
+      "baseSHA256": null,
+      "newSHA256": "cfc449d4a5f7b814fbc4437d49ee4b04d416824759a764f5f51efb0ef5007e01",
+      "bytes": 853
+    },
+    {
+      "path": "docs/chapter2/scene/browser-final-capture-second.log",
+      "baseSHA256": null,
+      "newSHA256": "8d2a1aba43ee7d1c18da3543af10943082d6ff916659abbf31696fd6562b03b9",
+      "bytes": 4815
+    },
+    {
+      "path": "docs/chapter2/scene/browser-perf.log",
+      "baseSHA256": null,
+      "newSHA256": "3ff59b9a56d3e45573db4a2345423abcc46b782753274a1fc23c1405351c1ff1",
+      "bytes": 1332
+    },
+    {
+      "path": "docs/chapter2/scene/views.log",
+      "baseSHA256": null,
+      "newSHA256": "fb7e79e2cddf8c16bc5d1dc9df534cc1a629802093ea977644d2c4fd4f627344",
+      "bytes": 2110
+    },
+    {
+      "path": "docs/chapter2/scene/browser-start.js",
+      "baseSHA256": null,
+      "newSHA256": "26e7fbb8456a558906f0592369206bf278996ad9f1827aadff5f3496feab218c",
+      "bytes": 571
+    },
+    {
+      "path": "docs/chapter2/scene/browser-final-capture.js",
+      "baseSHA256": null,
+      "newSHA256": "a5a8bcc0e69a017306899b80fb6bd9688e04a02c1f6d0ebafb8335235999e313",
+      "bytes": 260
+    },
+    {
+      "path": "docs/chapter2/scene/browser-views.js",
+      "baseSHA256": null,
+      "newSHA256": "bfbf8bdd52d01bf0ac3839a6c52e66f2c4dd5c033ab98f6ce936dec1d88224b0",
+      "bytes": 863
+    },
+    {
+      "path": "docs/chapter2/scene/browser-perf.js",
+      "baseSHA256": null,
+      "newSHA256": "5d5bb0e82e1b5972931e20f29a893ca8d87413e8a84fa14f94cc5fa517a4a9f9",
+      "bytes": 935
+    },
+    {
+      "path": "docs/chapter2/scene/build-layout.py",
+      "baseSHA256": null,
+      "newSHA256": "ffa7a00a8952edc1374b1ab91be6bcd7019fc042be988da7d3b483329d2dfca9",
+      "bytes": 5920
+    },
+    {
+      "path": "docs/chapter2/scene/create-comparison.py",
+      "baseSHA256": null,
+      "newSHA256": "f5daa6e078267a5317604acbae89dbef9bf683cac82c03822f3b103f14737a6e",
+      "bytes": 2450
+    },
+    {
+      "path": "docs/chapter2/scene/audit-assets.py",
+      "baseSHA256": null,
+      "newSHA256": "b72c5ee4db07546853400d8e743687b34bf4ca0ff18158d5724c806b0e8dcd33",
+      "bytes": 902
+    },
+    {
+      "path": "docs/chapter2/scene/check-export.py",
+      "baseSHA256": null,
+      "newSHA256": "e595c992a2da4d461e4e833e4f52898f3edad4e583c8f015720e3b6fb8c1a9e1",
+      "bytes": 663
+    }
+  ]
+}

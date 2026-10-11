@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "legacyMainSourceChangesOutsideControllerMetadata": [],
+  "copies": [
+    {
+      "task": "05-commerce",
+      "baselineFiles": 660,
+      "mismatch": [],
+      "frozenMismatch": [],
+      "ownScopeEmpty": true,
+      "nodeModulesPresent": true
+    },
+    {
+      "task": "06-repair",
+      "baselineFiles": 660,
+      "mismatch": [],
+      "frozenMismatch": [],
+      "ownScopeEmpty": true,
+      "nodeModulesPresent": true
+    }
+  ],
+  "received": [
+    {
+      "task": "03-core",
+      "files": 30,
+      "mismatch": []
+    },
+    {
+      "task": "04-fishing",
+      "files": 50,
+      "mismatch": []
+    }
+  ],
+  "contractVersion": "1.0.0",
+  "statusCoreReady": true
+}

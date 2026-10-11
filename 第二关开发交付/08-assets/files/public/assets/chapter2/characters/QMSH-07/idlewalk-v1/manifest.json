@@ -1,0 +1,93 @@
+{
+  "assetId": "QMSH-07",
+  "name": "随行仆役",
+  "version": "idlewalk-v1",
+  "idleWalkStatus": "preview_verified",
+  "animations": [
+    {
+      "name": "Idle",
+      "duration": 4,
+      "tracks": 51
+    },
+    {
+      "name": "Walk",
+      "duration": 1.600000023841858,
+      "tracks": 51
+    },
+    {
+      "name": "Occupation_Guide_Bow",
+      "duration": 4.800000190734863,
+      "tracks": 51
+    }
+  ],
+  "triangles": 18937,
+  "bones": 51,
+  "rigProvenance": "rig",
+  "animationProvenance": "All three delivered clips authored locally on reviewed anatomical mapping; Tripo idle/walk requests preserved separately when rig passed.",
+  "fullFingerSkinning": true,
+  "historicalAssetStatus": "passed_after_local_repair",
+  "limits": [
+    "Tripo 预设动画出现上身塌陷，已修复蒙皮并本地重建三段动作。"
+  ],
+  "newTripoTasks": 0,
+  "newCredits": 0,
+  "files": [
+    {
+      "variant": "raw",
+      "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.raw.glb",
+      "sha256": "020269ac726e2eed11d77ee254ee0ac9d69c3f06d8b6a2b91e243ba8538cb508",
+      "bytes": 5007176,
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-07/model.raw.glb",
+      "sourceSHA256": "020269ac726e2eed11d77ee254ee0ac9d69c3f06d8b6a2b91e243ba8538cb508"
+    },
+    {
+      "variant": "draco",
+      "path": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.draco.glb",
+      "sha256": "31e29401aee331b00a04c68a01a31241795f9dbf8d3dd48480b2721a0d1dee3a",
+      "bytes": 3721772,
+      "sourcePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/output/characters-45/batch-2/free-repair-v2/交付包/assets/QMSH-07/model.draco.glb",
+      "sourceSHA256": "31e29401aee331b00a04c68a01a31241795f9dbf8d3dd48480b2721a0d1dee3a"
+    }
+  ],
+  "inspection": {
+    "triangles": 18937,
+    "nodeReferencedTriangles": 18937,
+    "materials": 1,
+    "images": [
+      {
+        "name": "NormalGL_00108cb7-1bde-45b8-8ecb-372a960c4449",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      },
+      {
+        "name": "Color_00108cb7-1bde-45b8-8ecb-372a960c4449",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      },
+      {
+        "name": "ORM_00108cb7-1bde-45b8-8ecb-372a960c4449",
+        "mimeType": "image/jpeg",
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "uri": null
+      }
+    ],
+    "jointCounts": [
+      51
+    ]
+  },
+  "IDLE_WALK_READY": true,
+  "formalChapter2Accepted": false,
+  "acceptedVersion": null,
+  "previewReview": "Four directions checked at idle and walking quarter phase; no gross body collapse observed. Does not certify every cloth/hand contact."
+}

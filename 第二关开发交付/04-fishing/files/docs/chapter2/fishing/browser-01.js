@@ -1,0 +1,33 @@
+async (page) => {
+ await page.waitForFunction(()=>window.__fishingPreview?.ready,{timeout:20000});
+ const journal={checks:[],console:[],networkFailures:[],screenshots:[],samples:[]};
+ page.on('console',m=>{if(['error','warning'].includes(m.type()))journal.console.push({type:m.type(),text:m.text()});});
+ page.on('pageerror',error=>journal.console.push({type:'pageerror',text:String(error)}));
+ page.on('requestfailed',r=>journal.networkFailures.push({url:r.url(),error:r.failure()?.errorText}));
+ const observe=()=>page.evaluate(()=>window.__fishingPreview.inspect());
+ const check=(name,pass,detail)=>{journal.checks.push({name,pass,detail});if(!pass)throw Error(name+': '+JSON.stringify(detail));};
+ const before=await observe();
+ await page.getByRole('button',{name:'向鲁七借竿',exact:true}).click();
+ await page.locator('canvas[aria-label="河边钓鱼3D场景"]').click();
+ await page.keyboard.press('e');
+ await page.getByRole('button',{name:'抛竿 · 精力−4',exact:true}).click();
+ await page.waitForTimeout(650);
+ await page.screenshot({path:'/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game/docs/chapter2/fishing/output/playwright/01-casting.png'});journal.screenshots.push('01-casting.png');
+ await page.waitForFunction(()=>window.__fishingPreview.module.getState().phase==='bite',{timeout:20000});
+ await page.screenshot({path:'/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game/docs/chapter2/fishing/output/playwright/02-bite.png'});journal.screenshots.push('02-bite.png');
+ await page.getByRole('button',{name:'收杆',exact:true}).click();
+ await page.waitForFunction(()=>window.__fishingPreview.module.getState().phase==='result',{timeout:10000});
+ const result=await observe();journal.samples.push({kind:'自然种子教学杆',point:'point_c2_a',elapsedSeconds:result.module.elapsedSeconds,itemId:result.module.result.itemId});
+ check('tutorial fish and collection saved',!!result.snapshot.travel.collection[result.module.result.itemId]&&result.snapshot.travel.fishing.tutorialCompleted,result.module.result);
+ check('one rod charged exactly4 while locked',before.snapshot.travel.energy.current-result.snapshot.travel.energy.current===4,{before:before.snapshot.travel.energy.current,after:result.snapshot.travel.energy.current});
+ await page.screenshot({path:'/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game/docs/chapter2/fishing/output/playwright/03-fish-result.png'});journal.screenshots.push('03-fish-result.png');
+ await page.getByRole('button',{name:'看风物志',exact:true}).click();
+ await page.getByRole('heading',{name:'风物志 · 获得记录',exact:true}).waitFor();
+ const book=await observe();check('book replaces fishing lock',!book.locks.includes('chapter2:fishing')&&book.locks.includes('preview:book'),book.locks);
+ check('camera pose controls restored after catch',book.camera.owner===null&&book.camera.yaw===before.camera.yaw&&book.camera.pitch===before.camera.pitch&&book.camera.distance===before.camera.distance,{before:before.camera,after:book.camera});
+ await page.screenshot({path:'/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game/docs/chapter2/fishing/output/playwright/04-collection.png'});journal.screenshots.push('04-collection.png');
+ await page.getByRole('button',{name:'关闭',exact:true}).click();
+ const done=await observe();check('formal save untouched',done.formalSaveUnchanged,true);
+ await page.evaluate(value=>{window.__fishingEvidence=value;},journal);
+ return journal;
+}

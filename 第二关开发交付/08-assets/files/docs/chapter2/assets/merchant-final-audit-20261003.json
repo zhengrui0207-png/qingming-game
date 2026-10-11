@@ -1,0 +1,269 @@
+{
+  "files": [
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.raw.glb",
+      "sha256": "345419a3f3b253658761520a340d6c2fe4f9df4bba65b2c3b3c696d62306cb24",
+      "bytes": 9594448,
+      "triangles": 18361,
+      "nodeReferencedTriangles": 18361,
+      "triangleScope": "triangles counts unique mesh definitions; nodeReferencedTriangles also counts repeated mesh instances, not runtime culling",
+      "meshes": 1,
+      "primitives": 1,
+      "materials": 1,
+      "materialNames": [
+        "tripo_material_f53a882c-77d3-43ad-a9aa-dbee3687de01"
+      ],
+      "images": [
+        {
+          "name": "NormalGL_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/png",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        },
+        {
+          "name": "Color_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/jpeg",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        },
+        {
+          "name": "ORM_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/jpeg",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        }
+      ],
+      "skins": 1,
+      "jointCounts": [
+        52
+      ],
+      "animations": [],
+      "extensions": [],
+      "primitiveLocalBounds": [
+        {
+          "min": [
+            -0.1513672173023224,
+            -5.960464477539063e-08,
+            -0.35644543170928955
+          ],
+          "max": [
+            0.15136724710464478,
+            0.998046875,
+            0.3564454913139343
+          ]
+        }
+      ],
+      "boundsScope": "primitive accessor local coordinates; not world bounds or posed bounds",
+      "sceneRoots": [
+        {
+          "name": "Scene",
+          "nodes": [
+            53
+          ]
+        }
+      ],
+      "externalFiles": [],
+      "nodeNames": [
+        "tripo::Head_2",
+        "tripo::Head_1",
+        "bone_11",
+        "bone_10",
+        "bone_9",
+        "bone_14",
+        "bone_13",
+        "bone_12",
+        "bone_17",
+        "bone_16",
+        "bone_15",
+        "bone_20",
+        "bone_19",
+        "bone_18",
+        "tripo::1_Left_Limb_4",
+        "tripo::1_Left_Limb_3",
+        "tripo::1_Left_Limb_2",
+        "tripo::1_Left_Limb_1",
+        "tripo::1_Left_Limb_0",
+        "bone_6",
+        "bone_5",
+        "bone_30",
+        "bone_29",
+        "bone_28",
+        "tripo::1_Right_Limb_6",
+        "tripo::1_Right_Limb_5",
+        "tripo::1_Right_Limb_4",
+        "bone_36",
+        "bone_35",
+        "bone_34",
+        "bone_39",
+        "bone_38",
+        "bone_37",
+        "bone_42",
+        "bone_41",
+        "bone_40",
+        "tripo::1_Right_Limb_3",
+        "tripo::1_Right_Limb_2",
+        "tripo::1_Right_Limb_1",
+        "tripo::1_Right_Limb_0",
+        "tripo::Head_0",
+        "tripo::Spine_0",
+        "tripo::0_Left_Limb_3",
+        "tripo::0_Left_Limb_2",
+        "tripo::0_Left_Limb_1",
+        "tripo::0_Left_Limb_0",
+        "tripo::0_Right_Limb_3",
+        "tripo::0_Right_Limb_2",
+        "tripo::0_Right_Limb_1",
+        "tripo::0_Right_Limb_0",
+        "bone_51",
+        "tripo::Root",
+        "tripo_node_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+        "Armature"
+      ],
+      "artAccepted": false,
+      "chapter2Accepted": false
+    },
+    {
+      "path": "public/assets/chapter2/characters/asset_c2_merchant/v1/model.draco.glb",
+      "sha256": "7235a68a9e2a585b03d4f6b7e48f89ba14be873aa2dbf5539d281e7393025883",
+      "bytes": 8419572,
+      "triangles": 18361,
+      "nodeReferencedTriangles": 18361,
+      "triangleScope": "triangles counts unique mesh definitions; nodeReferencedTriangles also counts repeated mesh instances, not runtime culling",
+      "meshes": 1,
+      "primitives": 1,
+      "materials": 1,
+      "materialNames": [
+        "tripo_material_f53a882c-77d3-43ad-a9aa-dbee3687de01"
+      ],
+      "images": [
+        {
+          "name": "NormalGL_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/png",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        },
+        {
+          "name": "Color_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/jpeg",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        },
+        {
+          "name": "ORM_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+          "mimeType": "image/jpeg",
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "uri": null
+        }
+      ],
+      "skins": 1,
+      "jointCounts": [
+        52
+      ],
+      "animations": [],
+      "extensions": [
+        "KHR_draco_mesh_compression"
+      ],
+      "primitiveLocalBounds": [
+        {
+          "min": [
+            -0.1513672173023224,
+            -5.960464477539063e-08,
+            -0.35644543170928955
+          ],
+          "max": [
+            0.15136724710464478,
+            0.998046875,
+            0.3564454913139343
+          ]
+        }
+      ],
+      "boundsScope": "primitive accessor local coordinates; not world bounds or posed bounds",
+      "sceneRoots": [
+        {
+          "name": "Scene",
+          "nodes": [
+            53
+          ]
+        }
+      ],
+      "externalFiles": [],
+      "nodeNames": [
+        "tripo::Head_2",
+        "tripo::Head_1",
+        "bone_11",
+        "bone_10",
+        "bone_9",
+        "bone_14",
+        "bone_13",
+        "bone_12",
+        "bone_17",
+        "bone_16",
+        "bone_15",
+        "bone_20",
+        "bone_19",
+        "bone_18",
+        "tripo::1_Left_Limb_4",
+        "tripo::1_Left_Limb_3",
+        "tripo::1_Left_Limb_2",
+        "tripo::1_Left_Limb_1",
+        "tripo::1_Left_Limb_0",
+        "bone_6",
+        "bone_5",
+        "bone_30",
+        "bone_29",
+        "bone_28",
+        "tripo::1_Right_Limb_6",
+        "tripo::1_Right_Limb_5",
+        "tripo::1_Right_Limb_4",
+        "bone_36",
+        "bone_35",
+        "bone_34",
+        "bone_39",
+        "bone_38",
+        "bone_37",
+        "bone_42",
+        "bone_41",
+        "bone_40",
+        "tripo::1_Right_Limb_3",
+        "tripo::1_Right_Limb_2",
+        "tripo::1_Right_Limb_1",
+        "tripo::1_Right_Limb_0",
+        "tripo::Head_0",
+        "tripo::Spine_0",
+        "tripo::0_Left_Limb_3",
+        "tripo::0_Left_Limb_2",
+        "tripo::0_Left_Limb_1",
+        "tripo::0_Left_Limb_0",
+        "tripo::0_Right_Limb_3",
+        "tripo::0_Right_Limb_2",
+        "tripo::0_Right_Limb_1",
+        "tripo::0_Right_Limb_0",
+        "bone_51",
+        "tripo::Root",
+        "tripo_node_f53a882c-77d3-43ad-a9aa-dbee3687de01",
+        "Armature"
+      ],
+      "artAccepted": false,
+      "chapter2Accepted": false
+    }
+  ],
+  "ASSETS_READY": false
+}

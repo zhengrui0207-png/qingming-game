@@ -1,0 +1,212 @@
+[
+  {
+    "path": "assignment.md",
+    "sha256": "eb0407e5d6b62eec5c449f7907fb00e1b28081b9a583e7349f4e8d3e56d1847f",
+    "bytes": 1096
+  },
+  {
+    "path": "README.md",
+    "sha256": "288821076339bca1699ced42a6caad0ffca8105cff408215f76af0ddf15d8280",
+    "bytes": 310
+  },
+  {
+    "path": "files.json",
+    "sha256": "b403a69bb9e781ed76413a08e0cdbf221b6c5dc044d0f44261fe02ced1e99f19",
+    "bytes": 2731
+  },
+  {
+    "path": "handoff.md",
+    "sha256": "233d5e80cfa1e6ac4fec0c93845d21f46f1962646d2382a751c53125d0371b09",
+    "bytes": 4853
+  },
+  {
+    "path": "commerce.patch",
+    "sha256": "894dcd8a075b144dad55de3ec19f8960069d8c00e637c2ab145644f5d9589a91",
+    "bytes": 74676
+  },
+  {
+    "path": "evidence/04-food-partial.png",
+    "sha256": "0eb643345c6ee0953f7efdc2005d81369e96d52493a62660794a5fa26d7f78ba",
+    "bytes": 184875
+  },
+  {
+    "path": "evidence/browser-a-result.json",
+    "sha256": "dd5fca0ae10fc2a0e00b398475bc7e8b76abb945693a82fa55dc253b52a530f8",
+    "bytes": 13601
+  },
+  {
+    "path": "evidence/scope-audit.json",
+    "sha256": "4ef49f87987f134e42cc1c5146212baf7e731b19ef0dd1e33e16623b75536a06",
+    "bytes": 2589
+  },
+  {
+    "path": "evidence/05-relief.png",
+    "sha256": "a0507df1fe072887b9d9c2b57c82b101b193f96b825c2889fe29baa928de6895",
+    "bytes": 186495
+  },
+  {
+    "path": "evidence/02-save-failure.png",
+    "sha256": "cd607144ca9e46f42f20d70813fa724c95758f81d984793337526eeaf8331f82",
+    "bytes": 247432
+  },
+  {
+    "path": "evidence/test-commerce.log",
+    "sha256": "2a3225e3c77128e15d147f36ff7f107fb30783531934026afdc57299670884d0",
+    "bytes": 1860
+  },
+  {
+    "path": "evidence/validation.md",
+    "sha256": "b4f82ea5d17f35ae2444cdcfc14009889d8350521aef945a235c390f0ce100f7",
+    "bytes": 4593
+  },
+  {
+    "path": "evidence/build-preview.mjs",
+    "sha256": "799e92062cd3f71b29a5078a09518d5b53f6ae7318a9343887242e6713c779d3",
+    "bytes": 365
+  },
+  {
+    "path": "evidence/scope-audit.py",
+    "sha256": "6371796b0a75371df2b946263af639f0106d5bae2b9c0a201275d21a715b06cf",
+    "bytes": 1564
+  },
+  {
+    "path": "evidence/browser-b-result.json",
+    "sha256": "3742300895e2f5277bdf39f39e7bcdcd9ea32ba4a2603ee8083a7b88384eeb57",
+    "bytes": 56185
+  },
+  {
+    "path": "evidence/browser-a.js",
+    "sha256": "5d4b5a4ddeb134a6204347876a6aa097bd5358bfa5af7455d9eec2b1002d8ba3",
+    "bytes": 8494
+  },
+  {
+    "path": "evidence/README.md",
+    "sha256": "671e82961c0e6e6ee7d89cd95a15fd3a5e1534104f08b74759817d9f5a4075f1",
+    "bytes": 5190
+  },
+  {
+    "path": "evidence/run-browser.py",
+    "sha256": "548de64949ae09c1504ea4c7374c95956f0da4ca1245edfb24343c30bb115021",
+    "bytes": 749
+  },
+  {
+    "path": "evidence/browser-b.js",
+    "sha256": "f4203abc4ba568fe8c618e68bd96d3a8c04b6d9375b1ef3bd78f91c44419e6b9",
+    "bytes": 6557
+  },
+  {
+    "path": "evidence/baseline-sha256.json",
+    "sha256": "237921c6ad06eb6cb978381c7bc0883c7788f73d3ddde1b682d360f81b3c30a5",
+    "bytes": 30025
+  },
+  {
+    "path": "evidence/07-relief-work.png",
+    "sha256": "d9d53a5379c588a43506ae079931d6021b52da7e918a10a3b6c4a52f95d88b5e",
+    "bytes": 160338
+  },
+  {
+    "path": "evidence/06-mobile-food.png",
+    "sha256": "4d1b3fa28c090c627b53e0055324e01b37a2473d858955f53548d411b560e8ee",
+    "bytes": 83040
+  },
+  {
+    "path": "evidence/01-fish-confirm.png",
+    "sha256": "d6b391f162c524c1117d3eda5d64f61520112ac9bed6cc46e6cc8e7d18c3f709",
+    "bytes": 220658
+  },
+  {
+    "path": "evidence/design.md",
+    "sha256": "98c3dda82af590b2fbcf7ffb9143a9c1fa2c7c09c0731c402a25a6a87c75ece7",
+    "bytes": 1354
+  },
+  {
+    "path": "evidence/test-all.log",
+    "sha256": "2188d12ac333aa1f478ef5a3bb3685bd92f53428559fcd709c58609ffa1d3131",
+    "bytes": 20574
+  },
+  {
+    "path": "evidence/ready.json",
+    "sha256": "c56de8ab0badbd9c96a2d491d2f6e0db0aa1ffedab94a3ac17354b1ae6bb89b3",
+    "bytes": 607
+  },
+  {
+    "path": "evidence/browser-b.log",
+    "sha256": "0691c8237d29db7b5682ac8f6af0f9dc74e2751898a6166436624ead69019551",
+    "bytes": 40239
+  },
+  {
+    "path": "evidence/browser-a.log",
+    "sha256": "442407dc1e5a0e94cea911c79243ac41621fe8f578de504b93f9b48afbcc62dc",
+    "bytes": 17405
+  },
+  {
+    "path": "evidence/build.log",
+    "sha256": "191b7f6cc9b7b27fe5ca0d2ef25bd07b2ad317b4d6eca25378e86d86a7b81e39",
+    "bytes": 497
+  },
+  {
+    "path": "evidence/03-barter-confirm.png",
+    "sha256": "e029b2e9eb80abb96c92298b58be9827adcaf067c27539fb39afe17e04123350",
+    "bytes": 156493
+  },
+  {
+    "path": "files/chapter2-commerce-preview.html",
+    "sha256": "c13653ae89e5d33e397cfcd5a48d323ada36b4378e37ab4e193c19f0e9568b3a",
+    "bytes": 2851
+  },
+  {
+    "path": "files/docs/chapter2/commerce/validation.md",
+    "sha256": "b4f82ea5d17f35ae2444cdcfc14009889d8350521aef945a235c390f0ce100f7",
+    "bytes": 4593
+  },
+  {
+    "path": "files/docs/chapter2/commerce/README.md",
+    "sha256": "671e82961c0e6e6ee7d89cd95a15fd3a5e1534104f08b74759817d9f5a4075f1",
+    "bytes": 5190
+  },
+  {
+    "path": "files/docs/chapter2/commerce/design.md",
+    "sha256": "98c3dda82af590b2fbcf7ffb9143a9c1fa2c7c09c0731c402a25a6a87c75ece7",
+    "bytes": 1354
+  },
+  {
+    "path": "files/docs/chapter2/commerce/ready.json",
+    "sha256": "c56de8ab0badbd9c96a2d491d2f6e0db0aa1ffedab94a3ac17354b1ae6bb89b3",
+    "bytes": 607
+  },
+  {
+    "path": "files/src/chapter2/commerce/wares.js",
+    "sha256": "3ec60b2a2ca107ea2b1c645e35f6d8072a7be9c243d5d7575160f84c7837772e",
+    "bytes": 1692
+  },
+  {
+    "path": "files/src/chapter2/commerce/preview.js",
+    "sha256": "289e728ea2a6bad59481ee38a0af50048c4a2377fc2cd1aa9fb8a6e8d545677d",
+    "bytes": 14397
+  },
+  {
+    "path": "files/src/chapter2/commerce/index.js",
+    "sha256": "6af979daea8e08a07cfb1bb92e952048eb629697e40995a7fa3b4fa05ab5aa93",
+    "bytes": 11415
+  },
+  {
+    "path": "files/src/chapter2/commerce/controller.js",
+    "sha256": "d2865ab810a8832387c4f49982cb9f83107758b203a1ca2e60238f67e0df077a",
+    "bytes": 4263
+  },
+  {
+    "path": "files/src/chapter2/commerce/commerce.css",
+    "sha256": "2bbc83edce46ee53577455488b28074da26450edf530276443c1ead8625eaacb",
+    "bytes": 4259
+  },
+  {
+    "path": "files/src/chapter2/commerce/view-model.js",
+    "sha256": "08391199ea4d2d7655175cbe0ee2105c84784e8e107e48fa447fe928eda98fa0",
+    "bytes": 7709
+  },
+  {
+    "path": "files/src/chapter2/commerce/commerce.test.js",
+    "sha256": "d046bed1e9f5cd3e0d63e1c9edfdd65b3b8a8f52ffce7c0aa285e760e1423069",
+    "bytes": 15059
+  }
+]

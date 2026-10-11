@@ -1,0 +1,72 @@
+{
+  "asset_id": "item_hq_cloth",
+  "name": "折叠护货布",
+  "base_url": "https://openapi.tripo3d.ai/v3",
+  "request_sha256": "c0c6a9ef86861a3aec2a5178ccd81d14e10c1686632127334ce7a8453ed68ddf",
+  "estimated_credits": 40,
+  "balance_before": {
+    "balance": 9860.0,
+    "frozen": 0.0
+  },
+  "status": "downloaded",
+  "task_id": "94d8d247-c117-431d-b18d-b38d062e3ff8",
+  "progress": 100,
+  "credits_consumed": 40.0,
+  "model_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_cloth/item_hq_cloth.glb",
+  "inspection": {
+    "bytes": 727628,
+    "sha256": "c70a6271088c69aa71fb7e7a0c9bf52dc05f17427182903759bf8f911b6d740c",
+    "triangles": 1892,
+    "meshes": 1,
+    "materials": 1,
+    "images": 3,
+    "external_uris": [],
+    "extensions": [],
+    "position_bounds": [
+      {
+        "min": [
+          -0.4990234375,
+          -0.2412109524011612,
+          -0.4931640625
+        ],
+        "max": [
+          0.4990234375,
+          0.2412109524011612,
+          0.4931640625
+        ]
+      }
+    ],
+    "embedded_image_validation": [
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      },
+      {
+        "size": [
+          2048,
+          2048
+        ],
+        "format": "JPEG"
+      }
+    ],
+    "material_features": [
+      {
+        "pbr": true,
+        "base_color_texture": true,
+        "metallic_roughness_texture": true,
+        "normal_texture": true
+      }
+    ]
+  },
+  "preview_file": "/Users/zhengrui/Documents/ChatGPT/清明上河图/assets/hongqiao_props/item_hq_cloth/preview.png"
+}

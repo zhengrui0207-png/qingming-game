@@ -1,0 +1,18 @@
+{
+  "rawDracoDecoded": true,
+  "independentSkeletonAndBoneObjects": true,
+  "skinVertexMovementOnlyInFirstClone": true,
+  "rawDracoAllFourInstancesFeetY0AndHeight1_62": true,
+  "ownFrozenFilesUnchanged": 21,
+  "animationRecipePassed": false,
+  "animationMissing": [
+    "idle",
+    "walk"
+  ],
+  "ASSETS_READY": false,
+  "GLTFErrors": 0,
+  "GLTFWarnings": 2,
+  "artReview": "candidate only",
+  "realDSceneIntegration": false,
+  "performanceAccepted": false
+}

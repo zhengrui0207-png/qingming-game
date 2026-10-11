@@ -1,0 +1,17 @@
+{
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "baselineManifestSHA256": "4032a023f8ebfd1587201aa7ad2edb486c74cdc696d501a08fc8fb54c7063d59",
+  "checkedBaselineFiles": 656,
+  "outOfScopeBaselineChanges": [],
+  "frozenFilesChecked": 21,
+  "frozenMismatches": [],
+  "newOutOfScopeFiles": [],
+  "allocatorMetadataExclusions": [
+    "docs/chapter2/THIS-WORKSPACE.md",
+    "docs/chapter2/frozen-files.json",
+    "docs/chapter2/ownership.md",
+    "docs/chapter2/status.json",
+    "docs/chapter2/workspace-map.json"
+  ],
+  "nodeModulesAndBuildCachesExcluded": true
+}

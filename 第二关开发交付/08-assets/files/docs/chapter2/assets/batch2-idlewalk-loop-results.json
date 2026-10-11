@@ -1,0 +1,286 @@
+{
+  "status": "passed",
+  "method": "all raw/Draco GLB rotation and translation curves: loop closure, fixed root",
+  "checks": [
+    {
+      "file": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-10/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 3.4150945850063755e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-13/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 3.4150945850063755e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-08/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 3.4150945850063755e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-16/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 3.4150945850063755e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-07/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-12/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-09/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-14/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-15/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 2.4148365394514667e-06,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.raw.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.raw.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.draco.glb",
+      "clip": "Idle",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    },
+    {
+      "file": "public/assets/chapter2/characters/QMSH-11/idlewalk-v1/model.draco.glb",
+      "clip": "Walk",
+      "loopMaxJointAngleGapDegrees": 0,
+      "loopMaxTranslationGap": 0,
+      "rootTranslationRange": 0
+    }
+  ]
+}

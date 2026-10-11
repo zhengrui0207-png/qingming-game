@@ -1,0 +1,22 @@
+[
+  {
+    "anchorId": "anchor_c2_fishing_a",
+    "castTarget": [
+      -25,
+      0.08,
+      -12
+    ],
+    "clearOfAuthoredBoatEnvelopes": true,
+    "method": "conservative width3.2/length layout.boats oriented envelope; final dynamic boats must be rechecked"
+  },
+  {
+    "anchorId": "anchor_c2_fishing_b",
+    "castTarget": [
+      -52,
+      0.08,
+      -9
+    ],
+    "clearOfAuthoredBoatEnvelopes": true,
+    "method": "conservative width3.2/length layout.boats oriented envelope; final dynamic boats must be rechecked"
+  }
+]

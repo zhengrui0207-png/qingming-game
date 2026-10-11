@@ -1,0 +1,46 @@
+{
+  "baselineId": "2026-10-01-p0",
+  "baselineManifest": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/baselines/2026-10-01-p0/manifest.json",
+  "checkedExistingFiles": 341,
+  "changedBaselineFiles": [],
+  "frozenFilesVerified": 21,
+  "mainStatusReadOnly": {
+    "clientDate": "2026-10-01",
+    "contractVersion": "1.0.0",
+    "baselineId": "2026-10-01-p0",
+    "P0_READY": true,
+    "CONTENT_READY": false,
+    "SCENE_READY": false,
+    "CORE_READY": false,
+    "ASSET_READY": false,
+    "INTEGRATION_READY": false,
+    "HUMAN_PLAYTEST_DONE": false,
+    "notAPlayableChapter2": true,
+    "firstWaveStarted": [],
+    "pending": [
+      "01完整剧情与考据",
+      "02锚点测量/灰盒",
+      "03真实服务与旧档迁移",
+      "08资源审计/必要模型",
+      "00/10运行时挂接适配器",
+      "第二批玩法/UI/演出",
+      "11技术验收和真人试玩"
+    ],
+    "checkedAtUTC": "2026-10-01T10:34:37.778100+00:00",
+    "checks": {
+      "legacySourceAndSnapshot341FilesUnchanged": true,
+      "legacyTests": {
+        "passed": 98,
+        "failed": 0
+      },
+      "newContractTests": {
+        "passed": 15,
+        "failed": 0
+      },
+      "buildPassed": true,
+      "browserBaselineRecorded": true,
+      "fourIndependentWorkspacesChecked": true
+    }
+  },
+  "scope": "01-content source/docs only; dependencies and runtime not modified"
+}

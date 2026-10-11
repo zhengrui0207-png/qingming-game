@@ -1,0 +1,247 @@
+{
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "scope": "00/10 D visual refinement only; formal readiness unchanged",
+  "files": [
+    {
+      "path": "src/chapter2/scene/scene.js",
+      "baseSHA256": "7729c4d64ed3b95bc1b2ae134fa5c384a536355208f926b48416ba51be24a73a",
+      "newSHA256": "94eb24c03648eaabe0c3b12fc041144959e1f910bd215f91c7dbccc984cb4b04",
+      "bytes": 6161,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/scene/scene.js"
+    },
+    {
+      "path": "src/chapter2/scene/preview.js",
+      "baseSHA256": "0cc909f271093ff6cef0de9661626bfe1dd786f2d86ce722468a277ea6a8d4b7",
+      "newSHA256": "3243d6fbf5b218c9518c1849128b57c43d72cfff27091cbfc10ec63bc0a6dbcb",
+      "bytes": 12339,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/scene/preview.js"
+    },
+    {
+      "path": "src/chapter2/scene/visuals.js",
+      "baseSHA256": null,
+      "newSHA256": "00632f5f17bf225ea76dc4f214fa164bf7e91f2a6048143f87e2e2e4ff9de782",
+      "bytes": 27749,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/scene/visuals.js"
+    },
+    {
+      "path": "src/chapter2/scene/rendering.js",
+      "baseSHA256": null,
+      "newSHA256": "2be404f3f419b5de090ac935e09a0cb5bd8bd78217f2bb1f2e2081e1db5f95ff",
+      "bytes": 12870,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/scene/rendering.js"
+    },
+    {
+      "path": "src/chapter2/fishing/preview.js",
+      "baseSHA256": "4a5efbf808ce7fa0fab701b1d2ff919d9da29536bcd2df88a6e720339ec86f65",
+      "newSHA256": "4dcd69f55fa3e86525a09c783a76e4e67fe64030c4bfbd802c1ea18f8672f65b",
+      "bytes": 13984,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/src/chapter2/fishing/preview.js"
+    },
+    {
+      "path": "chapter2-scene-preview.html",
+      "baseSHA256": "840a7297972e96877b11c88e7b745edfaed54d10ecd830dd030a5fcf1cf00541",
+      "newSHA256": "46b3002b10dda5315bd7e0074f9d68c52a49001e4a7f3d6ffb542d2c2c5681b9",
+      "bytes": 1769,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/chapter2-scene-preview.html"
+    },
+    {
+      "path": "docs/chapter2/status.json",
+      "baseSHA256": "b4e0506b4f5750c932941899005107d855fda70c502bcb7b64fb1e6dae9ed451",
+      "newSHA256": "544c59cdc9c100613b654e8614795ec29360e6aaf3592bfbc72f3885c3837d38",
+      "bytes": 4763,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/status.json"
+    },
+    {
+      "path": "docs/chapter2/scene/README.md",
+      "baseSHA256": "6516a398d43f17fab7bb789d8f606c8a4b50949f7d029b2e5e2c338a0cc284bf",
+      "newSHA256": "aff0a24e82ac82a8ac3dc4f73faf2ab149f55b2a0e6725ec60b66d2044a00312",
+      "bytes": 5044,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/scene/README.md"
+    },
+    {
+      "path": "docs/chapter2/scene/visuals/handoff.md",
+      "baseSHA256": null,
+      "newSHA256": "7187a218e617afaf63baceaa0a88a5dfe168df06f21bfd1c288c81b9394e4619",
+      "bytes": 8891,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/scene/visuals/handoff.md"
+    },
+    {
+      "path": "docs/chapter2/scene/visuals/authoring-reproduction.md",
+      "baseSHA256": null,
+      "newSHA256": "0f197ddae2382632c2cfe760a1610d6f01ef3a0619ad98e2d1ff820b9d081db5",
+      "bytes": 5446,
+      "deliveryMode": "copied-incremental",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/docs/chapter2/scene/visuals/authoring-reproduction.md"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/authoring.json",
+      "baseSHA256": null,
+      "newSHA256": "0c5bde26727ca27f40498c643ca0ecba28557cc26492ba3b7bc212b242756077",
+      "bytes": 605,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/authoring.json"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/clay-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "14f6d34981dcf5cee0f6bdd02adaf19d7a47cfbb574a95935b9b2274b89e2c35",
+      "bytes": 3476294,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/clay-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/d-detail-daylight.glb",
+      "baseSHA256": null,
+      "newSHA256": "90086633686de8ae0463abeee6d9117316cca64803719939322a99b75a2621b8",
+      "bytes": 12030832,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/d-detail-daylight.glb"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/d-detail.glb",
+      "baseSHA256": null,
+      "newSHA256": "02c76b32b13f02bb83d05e95f1d034b5761608d761c4e8070a95409aab830ce4",
+      "bytes": 11432748,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/d-detail.glb"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-bake.json",
+      "baseSHA256": null,
+      "newSHA256": "682a66d3e50c284d4b8211825e2bd6cb86c18c9a95dc90474feb491881a28a2a",
+      "bytes": 1522,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-bake.json"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s04_open_house.png",
+      "baseSHA256": null,
+      "newSHA256": "1dbc5703d2c108e531005efa623b3ea6a7099a038bbed2f851a75ab6c921a644",
+      "bytes": 2587082,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s04_open_house.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s05_house_a.png",
+      "baseSHA256": null,
+      "newSHA256": "bc8478adeb407c337cf45cd24756194d0b591a2a1ea7ddf095200e309bafa941",
+      "bytes": 2210010,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s05_house_a.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s05_house_b.png",
+      "baseSHA256": null,
+      "newSHA256": "35226af8d6aafff0f8c69cc002f315fad2c25ec0e23b9df1c726a96429aa521c",
+      "bytes": 1760766,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s05_house_b.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s06_low_house.png",
+      "baseSHA256": null,
+      "newSHA256": "2adfe103c76945bfc53bd176b493d0e284383ab7ac189efb5f61cfa63d1db8f6",
+      "bytes": 2364451,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s06_low_house.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s07_stall.png",
+      "baseSHA256": null,
+      "newSHA256": "1f0b5177162e7464d1f817e3a14a59b2a98f44bab5b47055f361ef6daa4c4a40",
+      "bytes": 3048140,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s07_stall.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/daylight-s07_umbrella.png",
+      "baseSHA256": null,
+      "newSHA256": "f8b37f26b381bc2f6acbd2f9e5fa1c97c288f790072242e2d8f3505bf131445e",
+      "bytes": 3707253,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/daylight-s07_umbrella.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/earth-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "9b98b1d649c31ca7b9a0e10d48ed4730280af2b1605b71862a60b8d52d1daabd",
+      "bytes": 3579073,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/earth-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/fisher-local.glb",
+      "baseSHA256": null,
+      "newSHA256": "77549b377317143ab8178513e729b961b908492c298b5e92acd1842df0f20e3c",
+      "bytes": 2245224,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/fisher-local.glb"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/fisher-local.json",
+      "baseSHA256": null,
+      "newSHA256": "cfbece2b15b76de367d8cbc0e84c0e853cc721a7917424135389de0d5f75633f",
+      "bytes": 1933,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/fisher-local.json"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/linen-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "f7e87d44637912cf8b0c9977de8aefad32596bf7dc5208502d99c1883aaad91b",
+      "bytes": 3495054,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/linen-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/paper-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "d4c552ba47b25505f4d89e5fab7123e213600e7f46f6fa3ab8ff0956a50b5306",
+      "bytes": 2423440,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/paper-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/plaster-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "19e0dca54327f337715c077070909aeeea44166a5f86d3c1fced50c79c3fb449",
+      "bytes": 3042658,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/plaster-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/spring-sky-environment.png",
+      "baseSHA256": null,
+      "newSHA256": "818718e9f063cac0853004546ebefeb72ce9df38e073c05e276783e92508687c",
+      "bytes": 1327662,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/spring-sky-environment.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/timber-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "2084cd6634002af6c14b755389cea959c969d159885d412fb4d21d1e0e5c4ebc",
+      "bytes": 2927660,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/timber-albedo.png"
+    },
+    {
+      "path": "public/assets/chapter2/scene/detail-v1/willow-bark-albedo.png",
+      "baseSHA256": null,
+      "newSHA256": "1c12336993b27aeda607b4ec4433d871e68ace957c39fee364e0050903ca0705",
+      "bytes": 3791831,
+      "deliveryMode": "asset-reference",
+      "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/chapter2/scene/detail-v1/willow-bark-albedo.png"
+    }
+  ]
+}

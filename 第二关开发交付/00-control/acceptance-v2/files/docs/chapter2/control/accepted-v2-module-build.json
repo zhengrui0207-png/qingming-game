@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "scope": "主工程已接收模块独立打包；原入口尚未import第二关",
+  "outputs": [
+    {
+      "name": "index.js",
+      "bytes": 808407
+    },
+    {
+      "name": "index.css",
+      "bytes": 1976
+    }
+  ],
+  "warnings": []
+}

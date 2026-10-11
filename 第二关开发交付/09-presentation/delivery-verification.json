@@ -1,0 +1,10 @@
+{
+  "filesVerified": 67,
+  "allDeliverySHAMatched": true,
+  "baselineFilesUnchanged": 215,
+  "frozenFilesUnchanged": 21,
+  "patchHasOnlyAllowedPaths": true,
+  "nodeTestsPassed": 213,
+  "browserAssertionsPassed": 117,
+  "formalIntegration": false
+}

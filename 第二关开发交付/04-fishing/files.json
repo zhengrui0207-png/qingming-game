@@ -1,0 +1,308 @@
+{
+  "task": "04-fishing",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-core-ready-v1",
+  "sourceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/04-fishing/qingming-game",
+  "files": [
+    {
+      "path": "chapter2-fishing-preview.html",
+      "baseSHA256": null,
+      "sha256": "1bcc36b99e5cdde4ede5847ab311cb34b110cce805cad6f85ac3c1d28b7ade0b",
+      "bytes": 3840
+    },
+    {
+      "path": "src/chapter2/fishing/controller.js",
+      "baseSHA256": null,
+      "sha256": "c408cee5a8adb63d43265ee48ed05aa4d476c0fa44b887941ecff62ce6616d71",
+      "bytes": 9687
+    },
+    {
+      "path": "src/chapter2/fishing/fishing.css",
+      "baseSHA256": null,
+      "sha256": "c6c4114c6d6b795885bc8f16abea40839d47094a9b7c53dce23533e22b6666a6",
+      "bytes": 1563
+    },
+    {
+      "path": "src/chapter2/fishing/fishing.test.js",
+      "baseSHA256": null,
+      "sha256": "71f9bcb6a73699ffdf3ca764a9f43561773f0ee11645f48ed94ae808ab38e1a4",
+      "bytes": 15601
+    },
+    {
+      "path": "src/chapter2/fishing/index.js",
+      "baseSHA256": null,
+      "sha256": "9279eafea23768177cc977d29e33b254cbdad8b4e72d931903ccd287b6bc9901",
+      "bytes": 7334
+    },
+    {
+      "path": "src/chapter2/fishing/preview-camera.js",
+      "baseSHA256": null,
+      "sha256": "e215245f66370129bed0e96954bf1ed9843b5ed87a9bc26532ff018041d61105",
+      "bytes": 821
+    },
+    {
+      "path": "src/chapter2/fishing/preview.js",
+      "baseSHA256": null,
+      "sha256": "4a5efbf808ce7fa0fab701b1d2ff919d9da29536bcd2df88a6e720339ec86f65",
+      "bytes": 13489
+    },
+    {
+      "path": "src/chapter2/fishing/rig.js",
+      "baseSHA256": null,
+      "sha256": "e7acfd7e86b1565ce0cb8a92235727fbb397c955a26131bd48976fe8e3355789",
+      "bytes": 6037
+    },
+    {
+      "path": "docs/chapter2/fishing/.playwright-cli/page-2026-10-01T16-15-50-273Z.yml",
+      "baseSHA256": null,
+      "sha256": "4b7b7c3974c982c039d81045e042539bf4b87e9b0e39ab0b7490a98a239ee84a",
+      "bytes": 1770
+    },
+    {
+      "path": "docs/chapter2/fishing/README.md",
+      "baseSHA256": null,
+      "sha256": "20b56ee32f4eaebf7809cc85b4e535da34474cbce2fd5f728b6ab9dfeaf1559a",
+      "bytes": 6008
+    },
+    {
+      "path": "docs/chapter2/fishing/all-tests.log",
+      "baseSHA256": null,
+      "sha256": "dd44d0481c9c5c782228074e07becceb6dfb6ab9dce4b1f1a95da2ab2b93a0f9",
+      "bytes": 41363
+    },
+    {
+      "path": "docs/chapter2/fishing/audit-scope.py",
+      "baseSHA256": null,
+      "sha256": "6f4fc24af4a57cae58f6795a6ceb979714fdbb4cf6d9d3d278f07024a7b334ee",
+      "bytes": 1754
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-01-first-attempt.log",
+      "baseSHA256": null,
+      "sha256": "f6cf515045607ca2c321df87df2114c9989da61cc4809e64f52864c62b7363d0",
+      "bytes": 169
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-01.js",
+      "baseSHA256": null,
+      "sha256": "303faa034b180e4e53fec5aa863a1f6c22788f0a48e3565c51dfa46354d29a35",
+      "bytes": 3647
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-01.log",
+      "baseSHA256": null,
+      "sha256": "470c5f0dacc5904ee8cc415b70879ef8d6b4b9489dcb9fa4cbb82ec5d15cb150",
+      "bytes": 4256
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-02.js",
+      "baseSHA256": null,
+      "sha256": "0ecd857d419d72df53310e65e0deaf49bf7bb9868b6bc7daf36045631f1ae9d0",
+      "bytes": 3311
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-02.log",
+      "baseSHA256": null,
+      "sha256": "fc1ef380dd71123ba456137b744a69de0c3b2e19ef6259860ddaf589cfd5e9ea",
+      "bytes": 4364
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-03.js",
+      "baseSHA256": null,
+      "sha256": "e4ec96078799c9f34bcbcc4509d4dddb1c0374e0addbf514bddc85f3e1614b9b",
+      "bytes": 2704
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-03.log",
+      "baseSHA256": null,
+      "sha256": "0d8062a42379a734e60b673f3f66e5cfc000702f99e60ba0e015f1081bf164af",
+      "bytes": 4523
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-04-first-attempt.log",
+      "baseSHA256": null,
+      "sha256": "539133610237914aefcb47b04aace729304ac50f43eb097b78dc41e95134f0cc",
+      "bytes": 71
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-04-second-attempt.log",
+      "baseSHA256": null,
+      "sha256": "703e48134b690c880b4c96662537ff72400bf60b37e9092a0f54f80ddf3b5566",
+      "bytes": 184
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-04.js",
+      "baseSHA256": null,
+      "sha256": "9333b7561f7515f6ebe194fe4175d0aa63d175787fb197e6738680a5860d647a",
+      "bytes": 5781
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-04.log",
+      "baseSHA256": null,
+      "sha256": "886b2c5520846abf8c09bc10eea3adeb2130ea27d089e6fb43f873d2966dd9a6",
+      "bytes": 10760
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-05.js",
+      "baseSHA256": null,
+      "sha256": "0386fc6962e8ad2ad63a766caac67d9f28cc2139f8f5c4205618943e74687656",
+      "bytes": 5158
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-05.log",
+      "baseSHA256": null,
+      "sha256": "8a72b070ae018a3c784d9cdf069cfdc983fae48f7d4cfa96ca988f1cd25f3df4",
+      "bytes": 8117
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-06.js",
+      "baseSHA256": null,
+      "sha256": "d50e1db9d72bd45cb4d8a685d74bc74490af27c1d34353deef3cc9b796965107",
+      "bytes": 1733
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-06.log",
+      "baseSHA256": null,
+      "sha256": "a6bd780bc365838681050b606fcd6112eec702ec1eb543adbbe882cc8e1fda75",
+      "bytes": 2382
+    },
+    {
+      "path": "docs/chapter2/fishing/browser-summary.json",
+      "baseSHA256": null,
+      "sha256": "a8208092f074bf2c1a7b2e9c33d0f950f4412f10664e25e0d68aa49e171572a7",
+      "bytes": 37922
+    },
+    {
+      "path": "docs/chapter2/fishing/bundle-check.json",
+      "baseSHA256": null,
+      "sha256": "8513add2450c5a3472e1c99bd618cabed16615bd57420c2cf79c58b546d0afdf",
+      "bytes": 254
+    },
+    {
+      "path": "docs/chapter2/fishing/console.log",
+      "baseSHA256": null,
+      "sha256": "65564d17443d03bde8478df656627ad518c1d05c495ac6d9e7365c88b14eb7c0",
+      "bytes": 93
+    },
+    {
+      "path": "docs/chapter2/fishing/dependency-validation.log",
+      "baseSHA256": null,
+      "sha256": "86520e2aa13f1797218a96ddf591b0a84d1b6cada5e74b358b8e965e818caea6",
+      "bytes": 333
+    },
+    {
+      "path": "docs/chapter2/fishing/dev-server.log",
+      "baseSHA256": null,
+      "sha256": "d5bd46b2f327059ad5493667a5457910b36072def27424f0749f9f454cd12b39",
+      "bytes": 683
+    },
+    {
+      "path": "docs/chapter2/fishing/network-command-first-attempt.log",
+      "baseSHA256": null,
+      "sha256": "d486673f89e5172cdcb7d4f8e63f8893c54d2aee32ac8033c8b808b433453e4f",
+      "bytes": 7518
+    },
+    {
+      "path": "docs/chapter2/fishing/network-static.log",
+      "baseSHA256": null,
+      "sha256": "e09bc5dd5df82aa459cd125adc56c00a53f121b40a53cc90d06ba931b894e1ec",
+      "bytes": 24934
+    },
+    {
+      "path": "docs/chapter2/fishing/network.log",
+      "baseSHA256": null,
+      "sha256": "76aea195e56b810d5ebff21c144f3ef3a277508cb99b9245796acb3a65eeb075",
+      "bytes": 4425
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/01-casting.png",
+      "baseSHA256": null,
+      "sha256": "3bbfd24b7a418a981c34757e223b6c6f6817bc9b3b011ec49c920b911b44e257",
+      "bytes": 810510
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/02-bite.png",
+      "baseSHA256": null,
+      "sha256": "1ceaa0e7f371e4f9a7298684bdb99d98405f0adb3ae4edb2fa8c43497a512a70",
+      "bytes": 806793
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/03-fish-result.png",
+      "baseSHA256": null,
+      "sha256": "45aabe6b8658768ed62e8bcdfe142f63172187b618af6f9e9b2e633d5a6e4c97",
+      "bytes": 826810
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/04-collection.png",
+      "baseSHA256": null,
+      "sha256": "76517139fe696d175be58a0f45842919fe842866bdbb339fa648da75bd3439ea",
+      "bytes": 515887
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/05-junk.png",
+      "baseSHA256": null,
+      "sha256": "bcd8d600f68dde9a8be766e921cce3f934c67c0a375526dd5b1dbffa8d5ed95c",
+      "bytes": 828575
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/06-rare.png",
+      "baseSHA256": null,
+      "sha256": "5f7da31d7fcc1cb797566b4e1863b483ac5f062f3dc972b94d0f913ee66cc58c",
+      "bytes": 830544
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/07-token.png",
+      "baseSHA256": null,
+      "sha256": "e0768611a23a9c76efba8132d7bca9e763ce75e15a6649491253b67c68931878",
+      "bytes": 684572
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/08-reload-safe-shore.png",
+      "baseSHA256": null,
+      "sha256": "308e82cee4135259990693282078dc47370171757c240086aa5fb2dddd2a4d04",
+      "bytes": 519310
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/09-save-failed.png",
+      "baseSHA256": null,
+      "sha256": "1baaee16e9cf72a160d703f19eda410f78e6d04b435dfca2ec670716a02acb6d",
+      "bytes": 668429
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/10-normal-carp.png",
+      "baseSHA256": null,
+      "sha256": "72d29cc8057dd923c6b76c1ff572d2075971f97787061ea1013fa76e1f30066d",
+      "bytes": 682769
+    },
+    {
+      "path": "docs/chapter2/fishing/output/playwright/11-final-ready.png",
+      "baseSHA256": null,
+      "sha256": "10bcfdd92a5fd2791bbfae6c9355210958972da17826195f074d86291c9f5e61",
+      "bytes": 485344
+    },
+    {
+      "path": "docs/chapter2/fishing/readiness.json",
+      "baseSHA256": null,
+      "sha256": "897443322a232e51ea791ca725546a753a13d067de7f9c11be94c35e98a4b82a",
+      "bytes": 903
+    },
+    {
+      "path": "docs/chapter2/fishing/scope-audit.json",
+      "baseSHA256": null,
+      "sha256": "8c8cd3bc52ce6d4e1cba8e75a21f4335927e2a260aa0f14a219e6cbb1b9e5471",
+      "bytes": 333
+    },
+    {
+      "path": "docs/chapter2/fishing/tests.log",
+      "baseSHA256": null,
+      "sha256": "2d0d935bc5e2fa511a3ea52bf6d8e17bcdedee5ba98ba3ae3e75913f932cde17",
+      "bytes": 4920
+    },
+    {
+      "path": "docs/chapter2/fishing/verification.md",
+      "baseSHA256": null,
+      "sha256": "94ec7288633d14c61132c0e059344566da498cb3a982190ca21d32a042e7fb25",
+      "bytes": 5091
+    }
+  ]
+}

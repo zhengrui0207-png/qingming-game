@@ -1,0 +1,17 @@
+import {NodeIO} from '../../output/characters-45/tooling/node_modules/@gltf-transform/core/dist/index.js';
+import {ALL_EXTENSIONS} from '../../output/characters-45/tooling/node_modules/@gltf-transform/extensions/dist/index.js';
+import {dedup,prune,weld,draco} from '../../output/characters-45/tooling/node_modules/@gltf-transform/functions/dist/index.js';
+import codec from '../../output/characters-45/tooling/node_modules/draco3dgltf/draco3dgltf.js';
+import fs from 'node:fs';
+const root='/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game';
+const source=root+'/.dream-loop/chapter2-2026-10-02/d-detail-wear-raw.glb',target=root+'/public/assets/chapter2/scene/detail-v1/d-detail.glb';
+if(!fs.existsSync(source))fs.copyFileSync(target,source);
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'draco3d.encoder':await codec.createEncoderModule(),'draco3d.decoder':await codec.createDecoderModule()});
+const doc=await io.read(source);const colorCount=doc.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).filter(p=>p.getAttribute('COLOR_0')).length;const uvCount=doc.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).filter(p=>p.getAttribute('TEXCOORD_0')).length;const nodes=doc.getRoot().listNodes().map(n=>n.getName()).sort();
+await doc.transform(weld(),dedup(),prune({keepAttributes:true}),draco({method:'edgebreaker',quantizePosition:20,quantizeNormal:16,quantizeTexcoord:16}));
+await io.write(target,doc);const decoded=await io.read(target);
+if(JSON.stringify(nodes)!==JSON.stringify(decoded.getRoot().listNodes().map(n=>n.getName()).sort()))throw Error('Semantic nodes changed');
+const decodedUV=decoded.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).filter(p=>p.getAttribute('TEXCOORD_0')).length;if(decodedUV!==uvCount)throw Error('UV attributes lost');
+const decodedColor=decoded.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).filter(p=>p.getAttribute('COLOR_0')).length;if(decodedColor!==colorCount)throw Error('Baked vertex colors lost');
+const report={colorPrimitiveCount:colorCount,decodedColorPrimitiveCount:decodedColor,uvPrimitiveCount:uvCount,decodedUVPrimitiveCount:decodedUV,rawBytes:fs.statSync(source).size,runtimeBytes:fs.statSync(target).size,nodes,positionQuantizationBits:20,normalQuantizationBits:16,uvQuantizationBits:16,note:'Geometry compression reduces download size; FPS improvement is not inferred from file size.'};
+fs.writeFileSync(root+'/.dream-loop/chapter2-2026-10-02/compression-wear.json',JSON.stringify(report,null,2));console.log(report);
