@@ -1,0 +1,41 @@
+[
+  {
+    "path": "public/assets/qingming-world.glb",
+    "bytes": 91595996,
+    "sha256": "f0d362ea2151575746c4a702f5e95a23aa3dc487e5b56d701e1d0f716aa8c508",
+    "nodes": 24,
+    "namedReusableNodes": [],
+    "animations": [],
+    "note": "只读复用；world为按材质合并的24节点，不能按单店对象隐藏"
+  },
+  {
+    "path": "public/assets/street-life.glb",
+    "bytes": 613568,
+    "sha256": "0a2d917ebb8c107d7d267eae57a6f22fd40c2a7bd041b9600fd8991cd604468e",
+    "nodes": 88,
+    "namedReusableNodes": [
+      {
+        "name": "cart",
+        "exists": true
+      },
+      {
+        "name": "ferry",
+        "exists": true
+      }
+    ],
+    "animations": [],
+    "note": "复用当前模型；不是宋代形制/正式美术已验收"
+  },
+  {
+    "path": "public/assets/scenery/ox.glb",
+    "bytes": 3205204,
+    "sha256": "f6cb9c3bd9e696bb182cec4eeeea917d1542cde4fe3860328815c29f91cc58fd",
+    "nodes": 40,
+    "namedReusableNodes": [],
+    "animations": [
+      "preset:idle",
+      "preset:quadruped:walk"
+    ],
+    "note": "复用当前模型；不是宋代形制/正式美术已验收"
+  }
+]

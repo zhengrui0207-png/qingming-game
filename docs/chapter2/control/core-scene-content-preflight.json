@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "scope": "真实03服务 + 正式01内容 + 实测02锚点的内存持久化预检；非浏览器、非钓鱼UI验收",
+  "actions": [
+    {
+      "type": "enterChapter2",
+      "ok": true,
+      "data": {}
+    },
+    {
+      "type": "acceptQuest",
+      "ok": true,
+      "data": {}
+    },
+    {
+      "type": "startCast",
+      "ok": true,
+      "data": {
+        "cast": {
+          "id": "cast:390dcc88887c4f17ba03431a9b3ad191:1",
+          "pointId": "point_c2_a",
+          "mode": "tutorial",
+          "chargedEnergy": 4,
+          "startedAt": "2026-10-01T15:49:57.773Z",
+          "seed": 0,
+          "resultItemId": "item_c2_fish_a",
+          "rare": false
+        }
+      }
+    },
+    {
+      "type": "resolveCast",
+      "ok": true,
+      "data": {
+        "itemId": "item_c2_fish_a",
+        "quantity": 1
+      }
+    },
+    {
+      "type": "acceptQuest",
+      "ok": true,
+      "data": {}
+    },
+    {
+      "type": "startCast",
+      "ok": true,
+      "data": {
+        "cast": {
+          "id": "cast:390dcc88887c4f17ba03431a9b3ad191:2",
+          "pointId": "point_c2_b",
+          "mode": "token",
+          "chargedEnergy": 4,
+          "startedAt": "2026-10-01T15:49:57.775Z",
+          "seed": 0,
+          "resultItemId": "treasure_c2_marked_token",
+          "rare": false
+        }
+      }
+    },
+    {
+      "type": "resolveCast",
+      "ok": true,
+      "data": {
+        "itemId": "treasure_c2_marked_token",
+        "quantity": 1
+      }
+    },
+    {
+      "type": "startCast",
+      "ok": true,
+      "data": {
+        "cast": {
+          "id": "cast:390dcc88887c4f17ba03431a9b3ad191:3",
+          "pointId": "point_c2_b",
+          "mode": "simple",
+          "chargedEnergy": 4,
+          "startedAt": "2026-10-01T15:49:57.775Z",
+          "seed": 3435973837,
+          "resultItemId": "item_c2_junk_pottery",
+          "rare": false
+        }
+      }
+    },
+    {
+      "type": "resolveCast",
+      "ok": true,
+      "data": {
+        "itemId": "item_c2_junk_pottery",
+        "quantity": 1
+      }
+    },
+    {
+      "type": "startCast",
+      "ok": true,
+      "data": {
+        "cast": {
+          "id": "cast:390dcc88887c4f17ba03431a9b3ad191:4",
+          "pointId": "point_c2_b",
+          "mode": "simple",
+          "chargedEnergy": 4,
+          "startedAt": "2026-10-01T15:49:57.776Z",
+          "seed": 4294967295,
+          "resultItemId": "item_c2_rare_copper_piece",
+          "rare": true
+        }
+      }
+    },
+    {
+      "type": "resolveCast",
+      "ok": true,
+      "data": {
+        "itemId": "item_c2_rare_copper_piece",
+        "quantity": 1
+      }
+    },
+    {
+      "type": "startCast",
+      "ok": true,
+      "data": {
+        "cast": {
+          "id": "cast:390dcc88887c4f17ba03431a9b3ad191:5",
+          "pointId": "point_c2_b",
+          "mode": "normal",
+          "chargedEnergy": 4,
+          "startedAt": "2026-10-01T15:49:57.777Z",
+          "seed": 0,
+          "resultItemId": "item_c2_fish_a",
+          "rare": false
+        }
+      }
+    }
+  ],
+  "refreshPreservedChargeAndNoRedraw": true,
+  "errors": []
+}

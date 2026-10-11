@@ -1,0 +1,13 @@
+#hq-cinema{position:fixed;inset:0;z-index:110;pointer-events:none;color:#fff6df;text-shadow:0 2px 8px #000;font-family:serif}
+#hq-cinema[hidden]{display:none}
+.hq-intro #hud,.hq-intro #topbar,.hq-cinematic #hq-tracker,.hq-cinematic #hq-dev,.hq-cinematic #toast{visibility:hidden}
+.hq-intro #hq-cinema:before,.hq-intro #hq-cinema:after{content:'';position:absolute;left:0;right:0;background:#121a17;height:7vh}
+.hq-intro #hq-cinema:before{top:0}.hq-intro #hq-cinema:after{bottom:0}
+#hq-cinema-heading{position:absolute;top:9vh;left:5vw;letter-spacing:.25em;font-size:21px}
+#hq-cinema-flashback{position:absolute;top:17vh;left:5vw;font-size:32px;background:#1d2928b8;padding:8px 25px;border-left:3px solid #d9b777}
+#hq-cinema-subtitle{position:absolute;bottom:12vh;left:50%;transform:translateX(-50%);max-width:85vw;width:max-content;font:24px/1.5 serif;padding:10px 26px;background:#13201dc4;border-radius:4px}
+#hq-cinema-controls{position:absolute;right:4vw;top:9vh;display:flex;gap:10px;pointer-events:auto}
+#hq-cinema button{background:#1c322bdd;border:1px solid #c5b58e;color:#fff3d3;border-radius:5px;padding:9px 18px;cursor:pointer;font:16px serif}
+@media(max-width:700px){#hq-cinema-subtitle{font-size:18px}#hq-cinema-heading{font-size:16px}}
+
+.hq-cinematic #shop-card,.hq-watching #hud{visibility:hidden}

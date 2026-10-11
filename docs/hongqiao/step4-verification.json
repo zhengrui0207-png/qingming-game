@@ -1,0 +1,689 @@
+{
+  "status": "step4_implemented_and_developer_checks_passed",
+  "date": "2026-09-15",
+  "sourceRoot": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game",
+  "automated": {
+    "newStateTests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "existingWorldTests": {
+      "passed": 11,
+      "failed": 0
+    },
+    "config": {
+      "ok": true,
+      "errors": [],
+      "routes": [
+        {
+          "id": "route_hq_entry",
+          "distance": 19,
+          "estimatedSeconds": 7.037037037037036
+        },
+        {
+          "id": "route_hq_he",
+          "distance": 10.00000000000001,
+          "estimatedSeconds": 3.7037037037037073
+        },
+        {
+          "id": "route_hq_cheng",
+          "distance": 26.000000000000032,
+          "estimatedSeconds": 9.62962962962964
+        },
+        {
+          "id": "route_hq_fang",
+          "distance": 43.5,
+          "estimatedSeconds": 16.11111111111111
+        }
+      ]
+    },
+    "build": "passed; >500kB chunk warning remains"
+  },
+  "browser": {
+    "auth-refresh": {
+      "checks": [
+        "unauthorized E blocked",
+        "cancel grants nothing",
+        "three explicit permission confirmations",
+        "permission only; inventory empty",
+        "authorized refresh exact state match",
+        "reset URL consumed",
+        "unrelated storage intact"
+      ],
+      "before": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 3,
+          "inventory": {},
+          "unlockedCodexIds": [],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": []
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": true,
+          "kind": "saved",
+          "message": "进度已保存"
+        },
+        "world": {
+          "instances": [
+            {
+              "id": "instance_hq_rope_01",
+              "visible": true,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_pole_01",
+              "visible": true,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_cloth_01",
+              "visible": true,
+              "loadState": "loaded"
+            }
+          ],
+          "assetErrors": []
+        }
+      },
+      "after": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 3,
+          "inventory": {},
+          "unlockedCodexIds": [],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": []
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": true,
+          "kind": "loaded",
+          "message": "已恢复存档"
+        },
+        "url": "http://127.0.0.1:5180/?test=",
+        "unrelated": "keep"
+      }
+    },
+    "pickup-refresh": {
+      "checks": [
+        "authorized E pickup",
+        "held/repeated E and repeated transaction count once",
+        "instance hidden",
+        "I toggles and releases input",
+        "three-domain separation",
+        "four stories locked",
+        "partial collection refresh exact match"
+      ],
+      "partial": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 4,
+          "inventory": {
+            "item_hq_rope": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01"
+            ]
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "world": {
+          "instances": [
+            {
+              "id": "instance_hq_rope_01",
+              "visible": false,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_pole_01",
+              "visible": true,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_cloth_01",
+              "visible": true,
+              "loadState": "loaded"
+            }
+          ],
+          "assetErrors": []
+        },
+        "duplicate": {
+          "ok": true,
+          "changed": false,
+          "saved": true
+        }
+      },
+      "refreshed": {
+        "schemaVersion": 2,
+        "revision": 4,
+        "inventory": {
+          "item_hq_rope": 1
+        },
+        "unlockedCodexIds": [
+          "item_hq_rope",
+          "npc_hq_he"
+        ],
+        "permissions": [
+          "permit_hq_rope",
+          "permit_hq_pole",
+          "permit_hq_cloth"
+        ],
+        "worldState": {
+          "collectedInstanceIds": [
+            "instance_hq_rope_01"
+          ]
+        },
+        "quests": {},
+        "unlockedStoryIds": [],
+        "readStoryIds": [],
+        "storyReadingProgress": {},
+        "readContentVersions": {}
+      }
+    },
+    "ready-stories": {
+      "checks": [
+        "three items collected with E",
+        "ready sample refresh",
+        "late loaded collected models discarded on refresh",
+        "delivery fixture inventory zero codex six",
+        "four stories unlocked by completed sample",
+        "open does not mark read",
+        "middle reading location survives reload",
+        "scroll to final paragraph marks only that story read",
+        "reading does not turn camera"
+      ],
+      "ready": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 6,
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_pole": 1,
+            "item_hq_cloth": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_pole",
+            "npc_hq_cheng",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_pole_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {
+            "hongqiao_01": {
+              "status": "active"
+            }
+          },
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "world": {
+          "instances": [
+            {
+              "id": "instance_hq_rope_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            },
+            {
+              "id": "instance_hq_pole_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            },
+            {
+              "id": "instance_hq_cloth_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            }
+          ],
+          "assetErrors": []
+        }
+      },
+      "middle": {
+        "contentVersion": 2,
+        "sectionId": "story_hq_zhou_2",
+        "paragraphIndex": 6
+      },
+      "final": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 8,
+          "inventory": {
+            "item_hq_rope": 0,
+            "item_hq_pole": 0,
+            "item_hq_cloth": 0
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_pole",
+            "npc_hq_cheng",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_pole",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_pole_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {
+            "hongqiao_01": {
+              "status": "completed"
+            }
+          },
+          "unlockedStoryIds": [
+            "story_hq_zhou",
+            "story_hq_he",
+            "story_hq_cheng",
+            "story_hq_fang"
+          ],
+          "readStoryIds": [
+            "story_hq_zhou"
+          ],
+          "storyReadingProgress": {
+            "story_hq_zhou": {
+              "contentVersion": 2,
+              "sectionId": "story_hq_zhou_3",
+              "paragraphIndex": 10
+            }
+          },
+          "readContentVersions": {
+            "story_hq_zhou": 2
+          }
+        },
+        "camera": {
+          "yaw": 0.22,
+          "pitch": 0.49,
+          "distance": 10,
+          "overview": false
+        }
+      }
+    },
+    "late-and-failure": {
+      "checks": [
+        "GLB held until after E pickup",
+        "late success discarded",
+        "aborted GLB remains usable placeholder",
+        "quota failure retains memory and hides instance",
+        "visible unsaved notice",
+        "retry then actual reload exact match",
+        "no uncaught pageerror"
+      ],
+      "failed": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 4,
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": false,
+          "kind": "save-failed",
+          "message": "保存失败：进度仍在本页内存中，请勿刷新；可重试保存。"
+        },
+        "world": {
+          "instances": [
+            {
+              "id": "instance_hq_rope_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            },
+            {
+              "id": "instance_hq_pole_01",
+              "visible": true,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_cloth_01",
+              "visible": false,
+              "loadState": "placeholder"
+            }
+          ],
+          "assetErrors": [
+            {
+              "instanceId": "instance_hq_cloth_01",
+              "error": "TypeError: Failed to fetch"
+            }
+          ]
+        },
+        "errors": [
+          "QuotaExceededError: Injected quota failure"
+        ]
+      },
+      "after": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 4,
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": true,
+          "kind": "loaded",
+          "message": "已恢复存档"
+        },
+        "world": {
+          "instances": [
+            {
+              "id": "instance_hq_rope_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            },
+            {
+              "id": "instance_hq_pole_01",
+              "visible": true,
+              "loadState": "loaded"
+            },
+            {
+              "id": "instance_hq_cloth_01",
+              "visible": false,
+              "loadState": "discarded-collected"
+            }
+          ],
+          "assetErrors": []
+        }
+      },
+      "expectedFailedRequests": [
+        {
+          "url": "http://127.0.0.1:5180/assets/hongqiao/item_hq_cloth.glb",
+          "failure": {
+            "errorText": "net::ERR_FAILED"
+          }
+        }
+      ],
+      "uncaught": []
+    },
+    "corrupt-recovery": {
+      "checks": [
+        "malformed primary restored from complete backup",
+        "recovery notice visible",
+        "repaired primary survived second reload",
+        "both corrupt uses defaults without saved claim or silent write",
+        "unrelated storage preserved",
+        "test state restored afterwards"
+      ],
+      "recovered": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 4,
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": true,
+          "kind": "recovered",
+          "message": "主存档异常，已恢复上一份完整备份。"
+        },
+        "errors": [
+          "SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+        ],
+        "corrupt": "{\"key\":\"qingming:hongqiao:save\",\"raw\":\"{malformed-test\",\"at\":\"2026-09-14T17:05:13.645Z\"}"
+      },
+      "bothDamaged": {
+        "state": {
+          "schemaVersion": 2,
+          "revision": 0,
+          "inventory": {},
+          "unlockedCodexIds": [],
+          "permissions": [],
+          "worldState": {
+            "collectedInstanceIds": []
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        },
+        "status": {
+          "saved": false,
+          "kind": "unrecoverable",
+          "message": "存档无法读取，且无可用备份。本页使用默认状态，损坏记录已尝试保留。"
+        },
+        "raw": "bad",
+        "unrelated": "keep"
+      }
+    },
+    "regression": {
+      "checks": [
+        "actual W movement",
+        "actual mouse camera drag",
+        "book blocks W V E",
+        "nested guide/book retains then releases pause",
+        "legacy auto landmark and F reading",
+        "nested history/book retains pause",
+        "legacy E boarding/exiting"
+      ],
+      "before": {
+        "actor": {
+          "x": 0,
+          "z": 35,
+          "layer": "ground",
+          "height": 0.94,
+          "mode": "walk"
+        },
+        "camera": {
+          "yaw": 0.22,
+          "pitch": 0.49,
+          "distance": 10,
+          "overview": false
+        }
+      },
+      "after": {
+        "actor": {
+          "x": -0.07860194564126838,
+          "z": 34.6485012567001,
+          "layer": "ground",
+          "height": 0.94,
+          "mode": "walk"
+        },
+        "camera": {
+          "yaw": -0.11000000000000001,
+          "pitch": 0.5700000000000001,
+          "distance": 10,
+          "overview": false
+        }
+      },
+      "device": {
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+        "width": 1200,
+        "height": 792,
+        "dpr": 2
+      }
+    },
+    "ordinary-page": {
+      "checks": [
+        "ordinary play hides development API and panel",
+        "reset parameter ignored without explicit test mode and removed",
+        "saved items retained",
+        "ordinary I/codex works",
+        "clean final Console and Network"
+      ],
+      "guard": {
+        "devAPI": false,
+        "devPanel": false,
+        "url": "http://127.0.0.1:5180/",
+        "raw": {
+          "schemaVersion": 2,
+          "revision": 4,
+          "inventory": {
+            "item_hq_rope": 1,
+            "item_hq_cloth": 1
+          },
+          "unlockedCodexIds": [
+            "item_hq_rope",
+            "npc_hq_he",
+            "item_hq_cloth",
+            "npc_hq_fang"
+          ],
+          "permissions": [
+            "permit_hq_rope",
+            "permit_hq_cloth"
+          ],
+          "worldState": {
+            "collectedInstanceIds": [
+              "instance_hq_rope_01",
+              "instance_hq_cloth_01"
+            ]
+          },
+          "quests": {},
+          "unlockedStoryIds": [],
+          "readStoryIds": [],
+          "storyReadingProgress": {},
+          "readContentVersions": {}
+        }
+      },
+      "resources": [
+        {
+          "url": "http://127.0.0.1:5180/assets/hongqiao/item_hq_rope.glb",
+          "status": 200,
+          "duration": 371.90000009536743
+        },
+        {
+          "url": "http://127.0.0.1:5180/assets/hongqiao/item_hq_pole.glb",
+          "status": 200,
+          "duration": 392.7000000476837
+        },
+        {
+          "url": "http://127.0.0.1:5180/assets/hongqiao/item_hq_cloth.glb",
+          "status": 200,
+          "duration": 395.1999999284744
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "failed": []
+    }
+  },
+  "notCovered": [
+    "formal NPC dialogue and quest delivery (Step 5)",
+    "full Step 3 implementation",
+    "cutscenes and final character art",
+    "mobile Safari and multi-tab concurrency",
+    "human first-play 20-minute validation"
+  ]
+}

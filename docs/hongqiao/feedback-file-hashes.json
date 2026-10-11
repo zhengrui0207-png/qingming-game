@@ -1,0 +1,174 @@
+{
+  "src/main.js": {
+    "sha256": "db4ca83b21a038f9cea56bb27619073d8eb25385ac3cc80a7df1ec624b813edc",
+    "bytes": 28986
+  },
+  "src/street-life.js": {
+    "sha256": "8fc1ab5e95568cc3a3dafbcc57d1c1da581ac25df747f411bca712b46a9c0a47",
+    "bytes": 15706
+  },
+  "src/npc-assets.js": {
+    "sha256": "699082048b85fb248a6044351f21ac4de617940b073248eb7504f333cbf41c87",
+    "bytes": 10477
+  },
+  "src/storefronts.js": {
+    "sha256": "bb2dfae8d3db8dce6be52ba7222445cf5656478f71e3b7ce715fd28968fbb3f2",
+    "bytes": 8931
+  },
+  "src/style.css": {
+    "sha256": "f583bbda3c11e6c5d647254eb2381ca4c45b034306adc2d9fb05d5ccd46440f2",
+    "bytes": 11306
+  },
+  "src/crowd-motion.js": {
+    "sha256": "9b5fa8c4106f28a775ac0235098e6e0905c277d40970eb45147e30782aad214c",
+    "bytes": 4852
+  },
+  "src/crowd-motion.test.js": {
+    "sha256": "375d0b0e39b27fd57d893eff2a00d30429bc7104dbb63f442b15b11e4fab18dd",
+    "bytes": 1983
+  },
+  "src/scenery-assets.js": {
+    "sha256": "ce04a0646fd1949f6b166cfc50b428222fe4d501b915f63c8375063f04c36824",
+    "bytes": 4153
+  },
+  "src/horse.js": {
+    "sha256": "0a5a32e190e7c3a39166757532f10c385eaec2b5e7fd5f14e410209fa7c5b839",
+    "bytes": 2585
+  },
+  "src/song-font.css": {
+    "sha256": "807b818287f34b076055727dcf0782a43656d89d83f9c4d2980754ae88863e65",
+    "bytes": 10083
+  },
+  "src/hongqiao/dialogue-ui.js": {
+    "sha256": "ee64ac2ac0612664fbbdbc25f2a79d962f519a9b6fff8350569373a0edcc2120",
+    "bytes": 6424
+  },
+  "src/hongqiao/progress-ui.js": {
+    "sha256": "c731dd47185e08f6659b0569584656a669b7cfa43baa2e41951e761b1b8d1289",
+    "bytes": 11067
+  },
+  "src/hongqiao/portraits.js": {
+    "sha256": "921a77f4010510b197852fe44e44c2aa9592787a5c767f4692aac5d6be30bf3c",
+    "bytes": 597
+  },
+  "src/hongqiao/quest-ui.css": {
+    "sha256": "85b3756e6f9536a076f582e3c681c2603121fc7bb580acf81456f414be1191e1",
+    "bytes": 3510
+  },
+  "src/hongqiao/progress-ui.css": {
+    "sha256": "67fdfd29034187ab4de7007f8980ef7b2d6f69fdd8d1b7f3cdc7d85e51e8bd40",
+    "bytes": 3461
+  },
+  "README.md": {
+    "sha256": "5e18f14d46ccdc371bb53c608ddb9b85308db13b2e2cad776a4e52a35a615a0f",
+    "bytes": 17459
+  },
+  "scripts/package-release.py": {
+    "sha256": "b6bc282065ce179566190a56b91768bcc7b13d7d5f787e8bd31e410d7981e6fa",
+    "bytes": 3269
+  },
+  "scripts/release-running.md": {
+    "sha256": "3ecdcec63fafb1e1f62ba149bd0f58c70d0626fc1d0f384c974d7673ea914fb2",
+    "bytes": 1896
+  },
+  "scripts/prepare-scenery.mjs": {
+    "sha256": "06d3d8f822392b8a1feec0e7fd656ffe610ac5501013bb4ae8f3e4f680cd9622",
+    "bytes": 1111
+  },
+  "scripts/repair-horse-actions.mjs": {
+    "sha256": "cf0e52be1e4a8001912d183715f0f8007fc67b9a9a42f032dec58e1120a4f632",
+    "bytes": 3360
+  },
+  "scripts/extract-scenery-mask.py": {
+    "sha256": "30b4d31d138aee573d2e1d00dba2ec457f3d9d3c266974ddc7bd5708fcd3eacc",
+    "bytes": 1749
+  },
+  "scripts/build-scenery-mask.py": {
+    "sha256": "b75bac700f9ca2aadfba308b498952749a97edb05f44e0e2d95d07e383cdf008",
+    "bytes": 2784
+  },
+  "public/assets/characters/npc-map.json": {
+    "sha256": "7c8b15e86a1054b95ed074252a15f683e00ab5fa9a632dfa3a290a6b7b039fb7",
+    "bytes": 32952
+  },
+  "docs/hongqiao/feedback.md": {
+    "sha256": "bdfa4140651aa82645f407dcf1e422d7e760528e38f842f327e049282c74e067",
+    "bytes": 8537
+  },
+  "docs/hongqiao/status.md": {
+    "sha256": "d924f987ccfd9b7eb2998d67da9b7d20ea6562b31b3c579d5693f06657cfea8c",
+    "bytes": 5915
+  },
+  "public/assets/scenery/cargo.glb": {
+    "sha256": "e7e6052e5652a454851db72077a8ca6e235a3192615f333ef56e61cc9ead3dc1",
+    "bytes": 327520
+  },
+  "public/assets/scenery/placements.json": {
+    "sha256": "ec5d4900bcfbb4ff3adc99fa69733b0a089ac32e8bfe05777e04b724c6c45154",
+    "bytes": 1296431
+  },
+  "public/assets/scenery/asset-manifest.json": {
+    "sha256": "0e5b4ffb444de20cbc86c13675956c3a17fef854f7152afd888e464f3628c338",
+    "bytes": 2377
+  },
+  "public/assets/scenery/horse.glb": {
+    "sha256": "e1bfb7a50aead9e70d4a4817d8457fdaab2a0a8d1a7d943c36c8ff0390bc7016",
+    "bytes": 482156
+  },
+  "public/assets/scenery/steamer.glb": {
+    "sha256": "be6e6376bd503d016c06a90b7d4ddfe89d04b54d7a76d2d7a6423b10f9434344",
+    "bytes": 287964
+  },
+  "public/assets/scenery/wine.glb": {
+    "sha256": "2146ca6376dbd67b0ddd6e1cddbd3c4bcfde6d7119112610fbc188a097cd7e59",
+    "bytes": 284956
+  },
+  "public/assets/portraits/npc_hq_fang.png": {
+    "sha256": "dd47a08b4f49924fda763ce5e47a56f199e6f282272c6c3b67e5382a5d8b0f2d",
+    "bytes": 100990
+  },
+  "public/assets/portraits/npc_hq_cheng.png": {
+    "sha256": "fb9639ddff5703f32b75d5aed268a3c0adc3b75ede3d0f08e62728cce8e9cf69",
+    "bytes": 133684
+  },
+  "public/assets/portraits/player_scholar.png": {
+    "sha256": "08957ff83535a72b9d23cf12e41f32edf7af7611bde24a7cd298349cc238bed8",
+    "bytes": 147765
+  },
+  "public/assets/portraits/npc_hq_he.png": {
+    "sha256": "b8acb8c44507c873adc754dce75de8c8d066a652794a15a15670cbc563584057",
+    "bytes": 147549
+  },
+  "public/assets/portraits/npc_hq_zhou.png": {
+    "sha256": "43e66389dacbc7766395aadb698441692ca9b59428c70a44492705dd904ea004",
+    "bytes": 125885
+  },
+  "public/assets/fonts/song-4.woff2": {
+    "sha256": "6a84ed2b24bc75c47c0aa1bac613de097deb7eaa8cc93b5b80e1a37d75cd5ac4",
+    "bytes": 32380
+  },
+  "public/assets/fonts/song-0.woff2": {
+    "sha256": "e4e4ba33af6ad461996e2d5718e116a817cfa6447b7376a8acd4e6d7ab04d166",
+    "bytes": 40624
+  },
+  "public/assets/fonts/song-2.woff2": {
+    "sha256": "1e09f2d3a20b1453a84d73eb73536b9586fffbd01e51dff811aca11ee3679b9c",
+    "bytes": 58784
+  },
+  "public/assets/fonts/song-3.woff2": {
+    "sha256": "58e3cc6ff5f16e51699822494b446295f50a4ad947774abc6c0229dc167109fc",
+    "bytes": 66512
+  },
+  "public/assets/fonts/song-1.woff2": {
+    "sha256": "9dd3ee1fd6096724197cdd03226bfffa8ec2c5d9a2317ebeceb0b1ad07b451a9",
+    "bytes": 50972
+  },
+  "public/assets/fonts/OFL.txt": {
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
+  },
+  "output/feedback-only.patch": {
+    "sha256": "54362d0733522bd6e9a5c1b4049722ad5e040aadb3a3c7d1a2160878520fa96b",
+    "bytes": 104413
+  }
+}

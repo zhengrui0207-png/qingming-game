@@ -1,0 +1,11 @@
+{
+  "baselineId": "2026-10-01-core-ready-v1",
+  "baselineFiles": 602,
+  "changedBaselineFiles": [],
+  "unexpectedAddedFiles": [],
+  "frozenFiles": 21,
+  "changedFrozenFiles": [],
+  "realMainChangedSinceAcceptedBaseline": [],
+  "exception": "THIS-WORKSPACE.md由主控创建的本副本归属，不属于04交付",
+  "passed": true
+}

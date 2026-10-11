@@ -1,0 +1,20 @@
+{
+  "authoring": "Blender 5.2.1 local mesh authoring",
+  "layoutVersion": "1.0.0",
+  "objects": 13,
+  "polygons": 248151,
+  "asset": "d-detail.glb",
+  "newExternalAssets": false,
+  "sources": [
+    "existing CC0 WoodSiding006 / Plaster007",
+    "existing imagegen willow-spray at runtime (unused atlas removed)",
+    "generated earth/timber/linen/clay/plaster/willow-bark/paper albedos and spring sky (approved visual scope)"
+  ],
+  "noGameplayChanges": true,
+  "ambientOcclusion": {
+    "method": "BVH hemisphere sampled vertex colors",
+    "samples": 24,
+    "vertices": 140369,
+    "radius": 1.2
+  }
+}

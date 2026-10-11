@@ -1,0 +1,25 @@
+#hq-book{box-sizing:border-box;width:min(880px,94vw);max-height:88dvh;overflow:auto;padding:22px 44px 18px;background:linear-gradient(90deg,#b29b73 0,#e6d9ba 3%,#f0e6cf 14%,#e6dcc2 49.8%,#b6a27a 50%,#e5d9bc 50.3%,#f1e7d0 86%,#dfd0af 97%,#ac956b);color:#354236;border:1px solid #a98a55;border-block:9px solid #69513a;border-radius:3px;box-shadow:0 24px 100px #0009,inset 0 0 28px #7a562c33;font-family:'Qingming Song','Songti SC',serif;outline:none}
+#hq-book::backdrop{background:#10201870;backdrop-filter:blur(2px)}
+#hq-book button{color:#43513d;background:#8570440a;border:1px solid #9d875370;padding:7px 12px;border-radius:1px;cursor:pointer;font:13px/1.5 'Qingming Song','Songti SC',serif}
+#hq-book button:hover:not(:disabled){background:#9b805d25}#hq-book button:disabled{opacity:.35;cursor:default}
+#hq-book h2{margin:18px 0 12px;font:500 28px/1.4 'Qingming Song','Songti SC',serif;color:#394837;letter-spacing:5px}
+#hq-book h3{margin:16px 0 12px;font:500 20px/1.7 'Qingming Song','Songti SC',serif;color:#394837}
+#hq-book p{color:inherit;line-height:2;font-size:16px;letter-spacing:.3px}
+#hq-book small{display:block;color:#73735d;font-size:12px;line-height:1.9}
+#hq-book nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px;padding-bottom:12px;border-bottom:1px solid #8d754943}
+.hq-book-spread{display:grid;grid-template-columns:1fr 1fr;gap:54px;min-height:260px;animation:hq-leaf .28s ease-out}
+#hq-book article{padding:4px 0 15px;min-width:0}#hq-book a{display:block;color:#667851;font-size:12px;line-height:1.7}
+#hq-book [hidden]{display:none!important}#hq-book [data-locked]{opacity:.65}
+.hq-pages{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #8d75494a;margin-top:18px;padding-top:13px;font-size:12px;letter-spacing:1px}
+.hq-book-status{margin-top:12px;text-align:center;font-size:10px!important}
+#hq-reader{height:min(40dvh,380px);overflow:auto;overscroll-behavior:contain;padding:0 24px 10px 0;scrollbar-width:thin;scrollbar-color:#9a855755 transparent}
+#hq-book[data-page=reading]{background:linear-gradient(90deg,#b9a17b,#eee2c7 5%,#f1e7d0 55%,#e4d6b5 96%,#aa9065)}
+#hq-book details{margin-top:12px;font-size:12px;color:#777158}.hq-turn{animation:hq-leaf .28s ease-out}
+@keyframes hq-leaf{from{opacity:.45;transform:perspective(1200px) rotateY(-5deg)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.hq-turn,.hq-book-spread{animation:none}}
+@media(max-width:600px){#hq-book{padding:16px 22px;background:linear-gradient(90deg,#c8b18c,#eee2c7 5%,#f0e5cd 95%,#bea17c)}.hq-book-spread{gap:20px;grid-template-columns:1fr;min-height:230px}#hq-book article:nth-child(even){border-top:1px solid #8d754930}#hq-book p{font-size:15px}#hq-book h2{font-size:24px}.hq-pages{gap:6px}#hq-book button{padding:6px 8px}#hq-reader{height:40dvh}}
+#hq-save {position:fixed;bottom:64px;left:50%;transform:translateX(-50%);z-index:60;max-width:90vw;background:#743c26;color:#fff5e6;padding:10px 18px;border-radius:6px;font:14px/1.6 sans-serif}
+#hq-save button {color:inherit;background:transparent;border:1px solid currentColor;margin-left:12px;cursor:pointer}
+#hq-dev {position:fixed;left:14px;top:106px;z-index:45;background:#182d2de8;padding:10px;color:#faf1dc;font:13px/1.6 sans-serif;width:210px;border:1px solid #a28e62}
+#hq-dev button {display:block;margin-top:7px;width:100%;padding:6px;color:#f8eddb;background:#34504b;border:1px solid #759088;cursor:pointer}
+#hq-open {white-space:nowrap}

@@ -1,0 +1,76 @@
+{
+  "method": "Cycles diffuse direct+indirect irradiance, without albedo",
+  "samples": 32,
+  "sunDirectionWorld": [
+    36,
+    -34,
+    21
+  ],
+  "sunAngularSizeDegrees": 2.0,
+  "worldStrength": 0.65,
+  "imageScale": 4,
+  "maps": [
+    {
+      "object": "s07_stall",
+      "file": "daylight-s07_stall.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    },
+    {
+      "object": "s07_umbrella",
+      "file": "daylight-s07_umbrella.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    },
+    {
+      "object": "s04_open_house",
+      "file": "daylight-s04_open_house.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    },
+    {
+      "object": "s05_house_a",
+      "file": "daylight-s05_house_a.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    },
+    {
+      "object": "s05_house_b",
+      "file": "daylight-s05_house_b.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    },
+    {
+      "object": "s06_low_house",
+      "file": "daylight-s06_low_house.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "irradianceScale": 4,
+      "uv": "DaylightUV"
+    }
+  ],
+  "dynamicCharacters": "retain real-time lights",
+  "scope": "standalone preview opt-in only, not accepted first-level lighting"
+}

@@ -1,0 +1,410 @@
+{
+  "version": "1.0.0",
+  "scope": {
+    "minX": -81,
+    "maxX": -21,
+    "minZ": -60,
+    "maxZ": -18
+  },
+  "replacementPolicy": "Only triangles wholly inside scope, excluding ground/path material. Runtime cloned geometry; restore on dispose. Original GLB never rewritten.",
+  "supportSurfaces": [
+    {
+      "id": "surface_c2_bank",
+      "minX": -80.3,
+      "maxX": -21.2,
+      "minZ": -59.3,
+      "maxZ": -18.4,
+      "height": 0.94,
+      "layer": "ground",
+      "source": "existing-bank"
+    }
+  ],
+  "structures": [
+    {
+      "id": "s04_open_house",
+      "scene": "S04",
+      "type": "house",
+      "x": -35,
+      "z": -25,
+      "w": 8,
+      "d": 6,
+      "h": 4.1,
+      "openSouth": true
+    },
+    {
+      "id": "s05_house_a",
+      "scene": "S05",
+      "type": "house",
+      "x": -45,
+      "z": -27,
+      "w": 7,
+      "d": 5,
+      "h": 3.6
+    },
+    {
+      "id": "s05_house_b",
+      "scene": "S05",
+      "type": "house",
+      "x": -54,
+      "z": -28,
+      "w": 9,
+      "d": 6,
+      "h": 4.5
+    },
+    {
+      "id": "s06_low_house",
+      "scene": "S06",
+      "type": "house",
+      "x": -44,
+      "z": -47,
+      "w": 7,
+      "d": 6,
+      "h": 3.1
+    },
+    {
+      "id": "s07_stall",
+      "scene": "S07",
+      "type": "stall",
+      "x": -54,
+      "z": -31.5,
+      "w": 4,
+      "d": 1.2,
+      "h": 2.7
+    },
+    {
+      "id": "s07_umbrella",
+      "scene": "S07",
+      "type": "umbrella",
+      "x": -61,
+      "z": -30,
+      "w": 2.8,
+      "d": 2.8,
+      "h": 2.8
+    },
+    {
+      "id": "s08_loads",
+      "scene": "S08",
+      "type": "cargo",
+      "x": -58,
+      "z": -43.8,
+      "w": 2.6,
+      "d": 2,
+      "h": 1.5
+    },
+    {
+      "id": "s09_frame",
+      "scene": "S09",
+      "type": "frame",
+      "x": -74,
+      "z": -49,
+      "w": 6,
+      "d": 1.4,
+      "h": 1.5
+    },
+    {
+      "id": "s10_repair_cart",
+      "scene": "S10",
+      "type": "cart",
+      "x": -63,
+      "z": -44,
+      "w": 2.5,
+      "d": 3,
+      "h": 2
+    },
+    {
+      "id": "s11_covered_cart",
+      "scene": "S11",
+      "type": "coveredCart",
+      "x": -53,
+      "z": -44.5,
+      "w": 2.5,
+      "d": 3.6,
+      "h": 2.9
+    }
+  ],
+  "colliders": [
+    {
+      "id": "s04_open_house_rear",
+      "x": -35,
+      "z": -22.15,
+      "w": 8,
+      "d": 0.3,
+      "h": 4.1,
+      "kind": "house"
+    },
+    {
+      "id": "s04_open_house_west",
+      "x": -38.85,
+      "z": -25,
+      "w": 0.3,
+      "d": 6,
+      "h": 4.1,
+      "kind": "house"
+    },
+    {
+      "id": "s04_open_house_east",
+      "x": -31.15,
+      "z": -25,
+      "w": 0.3,
+      "d": 6,
+      "h": 4.1,
+      "kind": "house"
+    },
+    {
+      "id": "s05_house_a",
+      "x": -45,
+      "z": -27,
+      "w": 7,
+      "d": 5,
+      "h": 3.6,
+      "kind": "house"
+    },
+    {
+      "id": "s05_house_b",
+      "x": -54,
+      "z": -28,
+      "w": 9,
+      "d": 6,
+      "h": 4.5,
+      "kind": "house"
+    },
+    {
+      "id": "s06_low_house",
+      "x": -44,
+      "z": -47,
+      "w": 7,
+      "d": 6,
+      "h": 3.1,
+      "kind": "house"
+    },
+    {
+      "id": "s07_stall",
+      "x": -54,
+      "z": -31.5,
+      "w": 4,
+      "d": 1.2,
+      "h": 2.7,
+      "kind": "obstacle"
+    },
+    {
+      "id": "s07_umbrella",
+      "x": -61,
+      "z": -30,
+      "w": 2.8,
+      "d": 2.8,
+      "h": 2.8,
+      "kind": "obstacle"
+    },
+    {
+      "id": "s08_loads",
+      "x": -58,
+      "z": -43.8,
+      "w": 2.6,
+      "d": 2,
+      "h": 1.5,
+      "kind": "obstacle"
+    },
+    {
+      "id": "s09_frame",
+      "x": -74,
+      "z": -49,
+      "w": 6,
+      "d": 1.4,
+      "h": 1.5,
+      "kind": "obstacle"
+    },
+    {
+      "id": "s10_repair_cart",
+      "x": -63,
+      "z": -44,
+      "w": 2.5,
+      "d": 3,
+      "h": 2,
+      "kind": "obstacle"
+    },
+    {
+      "id": "s11_covered_cart",
+      "x": -53,
+      "z": -44.5,
+      "w": 2.5,
+      "d": 3.6,
+      "h": 2.9,
+      "kind": "obstacle"
+    },
+    {
+      "id": "c2_boundary_water",
+      "x": -51,
+      "z": -17.95,
+      "w": 60,
+      "d": 0.2,
+      "h": 2,
+      "kind": "boundary"
+    },
+    {
+      "id": "c2_boundary_north",
+      "x": -51,
+      "z": -59.5,
+      "w": 60,
+      "d": 0.3,
+      "h": 2,
+      "kind": "boundary"
+    },
+    {
+      "id": "c2_boundary_west",
+      "x": -80.5,
+      "z": -39,
+      "w": 0.3,
+      "d": 43,
+      "h": 2,
+      "kind": "boundary"
+    },
+    {
+      "id": "c2_boundary_east_north",
+      "x": -21,
+      "z": -42,
+      "w": 0.3,
+      "d": 36,
+      "h": 2,
+      "kind": "boundary"
+    },
+    {
+      "id": "c2_tree_0",
+      "x": -40,
+      "z": -43,
+      "w": 0.8,
+      "d": 0.8,
+      "h": 6,
+      "kind": "obstacle"
+    },
+    {
+      "id": "c2_tree_1",
+      "x": -67,
+      "z": -27,
+      "w": 0.8,
+      "d": 0.8,
+      "h": 6,
+      "kind": "obstacle"
+    },
+    {
+      "id": "c2_traffic_reserved",
+      "x": -71.5,
+      "z": -51,
+      "w": 9,
+      "d": 3,
+      "h": 2,
+      "kind": "obstacle"
+    }
+  ],
+  "road": [
+    [
+      -22,
+      0.94,
+      -20
+    ],
+    [
+      -26,
+      0.94,
+      -20
+    ],
+    [
+      -27,
+      0.94,
+      -29
+    ],
+    [
+      -40,
+      0.94,
+      -32
+    ],
+    [
+      -49,
+      0.94,
+      -37
+    ],
+    [
+      -62,
+      0.94,
+      -37
+    ],
+    [
+      -69,
+      0.94,
+      -43
+    ],
+    [
+      -78,
+      0.94,
+      -43
+    ]
+  ],
+  "trees": [
+    [
+      -40,
+      -43,
+      6
+    ],
+    [
+      -67,
+      -27,
+      7
+    ]
+  ],
+  "boats": [
+    [
+      -30,
+      -12,
+      10,
+      0.15
+    ],
+    [
+      -39,
+      -10,
+      8,
+      -0.12
+    ],
+    [
+      -48,
+      -12,
+      9,
+      0.3
+    ]
+  ],
+  "traffic": {
+    "id": "path_c2_short_cart",
+    "waypoints": [
+      [
+        -69,
+        0.94,
+        -51
+      ],
+      [
+        -74,
+        0.94,
+        -51
+      ]
+    ],
+    "speed": 0.45,
+    "pauseAtEnds": 3,
+    "envelope": {
+      "x": -71.5,
+      "z": -51,
+      "w": 9,
+      "d": 3,
+      "h": 2
+    },
+    "mode": "static-until-controller-connected"
+  },
+  "assetSlots": {
+    "S01": "existing C bridge (read-only)",
+    "S02": "street-life/ferry repeated three times with existing canopy",
+    "S04": "authored open timber/tile graybox",
+    "S05": "two staggered graybox houses with blank signs",
+    "S06": "low roof/tree/seated placeholders",
+    "S07": "stall/umbrella graybox",
+    "S08": "cargo reuse + load-bearing NPC placeholders",
+    "S09": "frame + shoulder-load placeholder",
+    "S10": "street-life/cart + scenery/ox reuse",
+    "S11": "cart reuse + canopy graybox",
+    "S12": "E-owned cityGate mount only; asset absent"
+  }
+}

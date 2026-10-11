@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1400" viewBox="0 0 1600 1400"><rect width="1600" height="1400" fill="#f3eedf"/><style>text{font-family:system-ui;fill:#363e35}.label{font-size:20px}</style><text x="50" y="55" font-size="30" font-weight="700">张择端本邻接参考 → D区米制灰盒</text><text x="50" y="90" font-size="18">原图仅用于外形/邻接，右起向左行；下图沿用真实world.json坐标，不按像素比例换算。</text><image href="painting-reference.png" x="50" y="115" width="1500" height="534"/>
+<rect x="55" y="685" width="1430" height="55" fill="#82a6a4"/><text x="90" y="720" class="label">汴水：S02舟群 / S03岸边，两钓点面向水</text>
+<polyline points="1400,770 1312,770 1290,896 1004,938 806,1008 520,1008 366,1092 168,1092" stroke="#c6ae86" stroke-width="80" fill="none" stroke-linejoin="round"/>
+<rect x="1026.0" y="798.0" width="176" height="84" fill="#80735f"/>
+<text x="1114" y="830" text-anchor="middle" fill="#fff" font-size="18">S04</text>
+<rect x="817.0" y="833.0" width="154" height="70" fill="#80735f"/>
+<text x="894" y="858" text-anchor="middle" fill="#fff" font-size="18">S05</text>
+<rect x="597.0" y="840.0" width="198" height="84" fill="#80735f"/>
+<text x="696" y="872" text-anchor="middle" fill="#fff" font-size="18">S05</text>
+<rect x="839.0" y="1106.0" width="154" height="84" fill="#80735f"/>
+<text x="916" y="1138" text-anchor="middle" fill="#fff" font-size="18">S06</text>
+<rect x="652.0" y="922.5999999999999" width="88" height="16.8" fill="#80735f"/>
+<text x="696" y="921.0" text-anchor="middle" fill="#fff" font-size="18">S07</text>
+<rect x="511.20000000000005" y="890.4000000000001" width="61.599999999999994" height="39.199999999999996" fill="#80735f"/>
+<text x="542" y="900" text-anchor="middle" fill="#fff" font-size="18">S07</text>
+<rect x="579.4000000000001" y="1089.1999999999998" width="57.2" height="28" fill="#80735f"/>
+<text x="608" y="1093.1999999999998" text-anchor="middle" fill="#fff" font-size="18">S08</text>
+<rect x="190.0" y="1166.1999999999998" width="132" height="19.599999999999998" fill="#80735f"/>
+<text x="256" y="1166" text-anchor="middle" fill="#fff" font-size="18">S09</text>
+<rect x="470.5" y="1085.0" width="55.0" height="42" fill="#80735f"/>
+<text x="498" y="1096" text-anchor="middle" fill="#fff" font-size="18">S10</text>
+<rect x="690.5" y="1087.8000000000002" width="55.0" height="50.4" fill="#80735f"/>
+<text x="718" y="1103.0" text-anchor="middle" fill="#fff" font-size="18">S11</text>
+<circle cx="1400" cy="770" r="6" fill="#1d6b6b"/>
+<text x="1410" y="790" font-size="17">虹桥交接带</text>
+<circle cx="168" cy="1092" r="6" fill="#1d6b6b"/>
+<circle cx="1246" cy="784" r="6" fill="#1d6b6b"/>
+<text x="1256" y="804" font-size="17">渔夫</text>
+<circle cx="520" cy="1036" r="6" fill="#1d6b6b"/>
+<text x="530" y="1056" font-size="17">老脚夫</text>
+<circle cx="696" cy="966" r="6" fill="#1d6b6b"/>
+<text x="706" y="986" font-size="17">杂货铺掌柜</text>
+<circle cx="916" cy="1064" r="6" fill="#1d6b6b"/>
+<text x="926" y="1084" font-size="17">饭铺伙计</text>
+<circle cx="1246" cy="767.2" r="6" fill="#1d6b6b"/>
+<text x="1256" y="787.2" font-size="17">近舟钓点</text>
+<circle cx="828" cy="767.2" r="6" fill="#1d6b6b"/>
+<text x="838" y="787.2" font-size="17">静岸钓点</text>
+<circle cx="498" cy="1061.1999999999998" r="6" fill="#1d6b6b"/>
+<circle cx="234" cy="1092" r="6" fill="#1d6b6b"/>
+<text x="244" y="1112" font-size="17">街口交付位</text>
+<circle cx="1334" cy="798" r="6" fill="#1d6b6b"/>
+<text x="70" y="1195" class="label">西侧：D终点/交付（x=-75至-78，z=-43）；S12城门归E，当前仅挂接接口，未重复造门。</text><text x="70" y="1230" class="label">东侧：C/D入口（x=-22，z=-20）；S01复用原桥头参照，C安全回返仍为[0,.94,35]。</text><text x="70" y="1270" class="label">S04敞面屋 → S05错落瓦屋 → S06树下低屋 → S07棚伞 → S08负载 → S10/S11两类车辆 → S09木架。</text><text x="70" y="1310" class="label">灰盒布局用于步行和站位核验，非原画精确测绘或正式美术通过。彩楼欢门留城内，不扩建A/B/E/F。</text></svg>

@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "baselineId": "2026-10-01-p0",
+  "contractVersion": "1.0.0",
+  "checks": [
+    {
+      "check": "baseline and original existing files",
+      "files": 341
+    },
+    {
+      "check": "01-content",
+      "checkedFiles": 362,
+      "resourcesIndependent": true,
+      "contractTestsExitCode": 0,
+      "log": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/01-content/p0-contract-tests.log"
+    },
+    {
+      "check": "02-scene",
+      "checkedFiles": 362,
+      "resourcesIndependent": true,
+      "contractTestsExitCode": 0,
+      "log": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/02-scene/p0-contract-tests.log"
+    },
+    {
+      "check": "03-core",
+      "checkedFiles": 362,
+      "resourcesIndependent": true,
+      "contractTestsExitCode": 0,
+      "log": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/03-core/p0-contract-tests.log"
+    },
+    {
+      "check": "08-assets",
+      "checkedFiles": 362,
+      "resourcesIndependent": true,
+      "contractTestsExitCode": 0,
+      "log": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/08-assets/p0-contract-tests.log"
+    }
+  ],
+  "errors": [],
+  "note": "P0 verification only. This script deliberately expects untouched copies; after branch work review files.json rather than rerun this baseline test."
+}

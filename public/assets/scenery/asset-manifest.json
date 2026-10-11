@@ -1,0 +1,135 @@
+{
+  "version": 2,
+  "totalCredits": 270.0,
+  "assets": [
+    {
+      "assetId": "horse",
+      "file": "assets/scenery/horse.glb",
+      "sha256": "e1bfb7a50aead9e70d4a4817d8457fdaab2a0a8d1a7d943c36c8ff0390bc7016",
+      "bytes": 482156,
+      "triangles": 17632,
+      "clips": [
+        "Idle_Local",
+        "Walk_Local"
+      ],
+      "skins": 1,
+      "source": "Tripo direct V3 API",
+      "tasks": [
+        {
+          "stage": "generate",
+          "taskId": "ecf40984-7682-45e8-9afc-1be6e26031ce",
+          "credits": 30.0
+        },
+        {
+          "stage": "rig",
+          "taskId": "8e563d54-59b2-45ed-ae8c-7b011687eabb",
+          "credits": 25.0
+        },
+        {
+          "stage": "animate",
+          "taskId": "4e8d0c71-6a68-43cb-ac1d-3a370462c3c4",
+          "credits": 20.0
+        }
+      ],
+      "animationSource": "Local bind-pose-relative repair on Tripo rig; original retargeted clips failed visual review",
+      "animationRepairScript": "scripts/repair-horse-actions.mjs"
+    },
+    {
+      "assetId": "wine",
+      "file": "assets/scenery/wine.glb",
+      "sha256": "2146ca6376dbd67b0ddd6e1cddbd3c4bcfde6d7119112610fbc188a097cd7e59",
+      "bytes": 284956,
+      "triangles": 3937,
+      "clips": [],
+      "skins": 0,
+      "source": "Tripo direct V3 API",
+      "tasks": [
+        {
+          "stage": "generate",
+          "taskId": "b2507955-f9d0-4ec2-9827-b17ef75cc313",
+          "credits": 40.0
+        }
+      ]
+    },
+    {
+      "assetId": "steamer",
+      "file": "assets/scenery/steamer.glb",
+      "sha256": "be6e6376bd503d016c06a90b7d4ddfe89d04b54d7a76d2d7a6423b10f9434344",
+      "bytes": 287964,
+      "triangles": 3484,
+      "clips": [],
+      "skins": 0,
+      "source": "Tripo direct V3 API",
+      "tasks": [
+        {
+          "stage": "generate",
+          "taskId": "245a815d-84ec-4364-a2d2-8426015c6e61",
+          "credits": 40.0
+        }
+      ]
+    },
+    {
+      "assetId": "cargo",
+      "file": "assets/scenery/cargo.glb",
+      "sha256": "e7e6052e5652a454851db72077a8ca6e235a3192615f333ef56e61cc9ead3dc1",
+      "bytes": 327520,
+      "triangles": 4948,
+      "clips": [],
+      "skins": 0,
+      "source": "Tripo direct V3 API",
+      "tasks": [
+        {
+          "stage": "generate",
+          "taskId": "ad01d39c-673f-444b-b494-5327f1c7e445",
+          "credits": 40.0
+        }
+      ]
+    },
+    {
+      "assetId": "ox",
+      "file": "assets/scenery/ox.glb",
+      "sha256": "f6cb9c3bd9e696bb182cec4eeeea917d1542cde4fe3860328815c29f91cc58fd",
+      "bytes": 3205204,
+      "triangles": 19112,
+      "skins": 1,
+      "clips": [
+        "preset:idle",
+        "preset:quadruped:walk"
+      ],
+      "source": "Tripo direct V3 API; locally repaired motion",
+      "tasks": [
+        {
+          "stage": "generate",
+          "taskId": "2fdbe0ee-b110-4da1-8889-b0a53c8675e5",
+          "credits": 30.0
+        },
+        {
+          "stage": "rig-check",
+          "taskId": "e8393957-9714-4730-8dea-9a4e3e6d5f15",
+          "credits": 0.0
+        },
+        {
+          "stage": "rig",
+          "taskId": "327ad0ac-7e32-4732-a6f1-72e68b277728",
+          "credits": 25.0
+        },
+        {
+          "stage": "animate",
+          "taskId": "bd81f7c1-5852-45f8-abdd-b1aeae60ef71",
+          "credits": 20.0
+        }
+      ]
+    },
+    {
+      "assetId": "ox-pack",
+      "file": "assets/scenery/ox-pack.glb",
+      "sha256": "a5eaa6e21d4b2d716c3f897e2ee987b5f1c231eefafe1cd9a6d4ee596dbe825a",
+      "bytes": 553412,
+      "triangles": 15256,
+      "skins": 0,
+      "clips": [],
+      "source": "Blender locally modeled saddle blanket, sacks, parcel, timber frame, hemp ropes",
+      "tasks": []
+    }
+  ]
+}

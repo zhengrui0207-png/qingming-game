@@ -1,0 +1,44 @@
+{
+  "scope": "crowd sustained-run followup only",
+  "files": {
+    "src/crowd-motion.js": {
+      "before": "9b5fa8c4106f28a775ac0235098e6e0905c277d40970eb45147e30782aad214c",
+      "after": "51d15fbd6ddb9e0525a5847347d20b78720179cb2c0615380f749dff37a134d2"
+    },
+    "src/crowd-motion.test.js": {
+      "before": "375d0b0e39b27fd57d893eff2a00d30429bc7104dbb63f442b15b11e4fab18dd",
+      "after": "b0c0efe1876370595ed4aca0676bd680a482ccb24a7676f502909dbaf5eebd0e"
+    },
+    "src/crowd-navigation.js": {
+      "before": null,
+      "after": "f2b3bd22cab3224e3f3d61ab660740a04f003396e88268eebe62982d9da411f3"
+    },
+    "README.md": {
+      "before": "5e18f14d46ccdc371bb53c608ddb9b85308db13b2e2cad776a4e52a35a615a0f",
+      "after": "6d132116d52243f32ba43e877ef06c2d450d74f20a44865d724e137b5f0b8eeb"
+    },
+    "scripts/release-running.md": {
+      "before": "3ecdcec63fafb1e1f62ba149bd0f58c70d0626fc1d0f384c974d7673ea914fb2",
+      "after": "8cf8c59baaddb052f1dea372553a85f67fd11cb1809dd8a497583675cf3d372a"
+    },
+    "docs/hongqiao/feedback.md": {
+      "before": "bdfa4140651aa82645f407dcf1e422d7e760528e38f842f327e049282c74e067",
+      "after": "d7f2307d2dd1c1246f72dcd672173114ccda9a9584baa8a48444a5040cd76b8e"
+    },
+    "docs/hongqiao/status.md": {
+      "before": "d924f987ccfd9b7eb2998d67da9b7d20ea6562b31b3c579d5693f06657cfea8c",
+      "after": "7ac2e6fd00bee33fde2c8fbe82dbf14ae8829d8f757b2494f521ef6e8ecc1294"
+    },
+    "docs/hongqiao/feedback-recheck.md": {
+      "before": null,
+      "after": "efddba26c6aa75d44b83ca4c2254688548fc1ecc8f2b006efc7b3486e6069f4c"
+    }
+  },
+  "patch": {
+    "path": "output/feedback-recheck.patch",
+    "sha256": "28e5c84dbb6d202536c7c49cf82df6003e1d34f3e27363e98f744270dd56c7d4",
+    "applyVerified": true
+  },
+  "releaseManifestSha256": "25a6c42f97e533059c257df511dc4a13466a74b749259be0c72c2bedc977d0c3",
+  "releaseFilesVerified": 148
+}

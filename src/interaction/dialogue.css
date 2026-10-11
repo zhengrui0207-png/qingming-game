@@ -1,0 +1,6 @@
+#interaction-dialogue{width:min(620px,84vw);border:1px solid #ad9670;border-radius:10px;background:#f1e5cc;color:#352c23;padding:28px;box-shadow:0 16px 80px #0008;font-family:serif}
+#interaction-dialogue::backdrop{background:#17251d55}
+#interaction-dialogue h2{margin:8px 0 16px}#interaction-dialogue p{min-height:80px;font-size:20px;line-height:1.8;white-space:pre-wrap}
+#interaction-dialogue button{display:block;margin-top:12px;padding:10px 18px;border:1px solid #8a7557;border-radius:5px;background:#e5d3b0;color:#352c23;font-size:16px;cursor:pointer}
+#interaction-dialogue button:disabled{opacity:.5;cursor:wait}#interaction-dialogue span{font-size:14px;color:#6c5941}
+#interaction-dialogue p{color:#352c23}

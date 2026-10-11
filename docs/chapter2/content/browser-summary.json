@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:5281/docs/chapter2/content/preview.html",
+  "title": "不响的铃 · 内容审稿",
+  "counts": {
+    "npcs": 4,
+    "stories": 3,
+    "paragraphIDs": 24,
+    "dialogues": 4,
+    "sources": 13,
+    "main": 2
+  },
+  "errors": [],
+  "verificationScope": "只读内容页；非第二关玩法"
+}

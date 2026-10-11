@@ -1,0 +1,1310 @@
+[
+  {
+    "id": "street-000",
+    "assetId": "QMSH-12",
+    "assetName": "货郎小贩",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-001",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-002",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-003",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-004",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-005",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-006",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-007",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-008",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-009",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-010",
+    "assetId": "QMSH-43",
+    "assetName": "顽皮儿童",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-011",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-012",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-013",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-014",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-015",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-016",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-017",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-018",
+    "assetId": "QMSH-26",
+    "assetName": "轿夫",
+    "reason": "原搬运路人职业匹配"
+  },
+  {
+    "id": "street-019",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-020",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-021",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-022",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-023",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-024",
+    "assetId": "QMSH-19",
+    "assetName": "代写状纸的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-025",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-026",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-027",
+    "assetId": "QMSH-26",
+    "assetName": "轿夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-028",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-029",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-030",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-031",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-032",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-033",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-034",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-035",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-036",
+    "assetId": "QMSH-23",
+    "assetName": "纤夫",
+    "reason": "原搬运路人职业匹配"
+  },
+  {
+    "id": "street-037",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-038",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-039",
+    "assetId": "QMSH-13",
+    "assetName": "卖杏花枝的",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-040",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-041",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-042",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-043",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-044",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-045",
+    "assetId": "QMSH-12",
+    "assetName": "货郎小贩",
+    "reason": "原搬运路人职业匹配"
+  },
+  {
+    "id": "street-046",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-047",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-048",
+    "assetId": "QMSH-19",
+    "assetName": "代写状纸的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-049",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-050",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-051",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-052",
+    "assetId": "QMSH-14",
+    "assetName": "卖黄胖的",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-053",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-054",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-055",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-056",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-057",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-058",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-059",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-060",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-061",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-062",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-063",
+    "assetId": "QMSH-28",
+    "assetName": "挑夫/脚夫",
+    "reason": "原搬运路人职业匹配"
+  },
+  {
+    "id": "street-064",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-065",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-066",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "原路人身份大类与所在区域匹配"
+  },
+  {
+    "id": "street-067",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-068",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-069",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-070",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-071",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-072",
+    "assetId": "QMSH-26",
+    "assetName": "轿夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-073",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-074",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-075",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-076",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-077",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-078",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-079",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-080",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-081",
+    "assetId": "QMSH-23",
+    "assetName": "纤夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-082",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-083",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-084",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-085",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-086",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-087",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-088",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-089",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-090",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-091",
+    "assetId": "QMSH-23",
+    "assetName": "纤夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-092",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-093",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-094",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-095",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-096",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-097",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-098",
+    "assetId": "QMSH-28",
+    "assetName": "挑夫/脚夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-099",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-100",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-101",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-102",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-103",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-104",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-105",
+    "assetId": "QMSH-12",
+    "assetName": "货郎小贩",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-106",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-107",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-108",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-109",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-110",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-111",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-112",
+    "assetId": "QMSH-26",
+    "assetName": "轿夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-113",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-114",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-115",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-116",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-117",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-118",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-119",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-120",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-121",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-122",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-123",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-124",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-125",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-126",
+    "assetId": "QMSH-23",
+    "assetName": "纤夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-127",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-128",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-129",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-130",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-131",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-132",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-133",
+    "assetId": "QMSH-28",
+    "assetName": "挑夫/脚夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-134",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-135",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-136",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-137",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-138",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-139",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-140",
+    "assetId": "QMSH-12",
+    "assetName": "货郎小贩",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-141",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-142",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-143",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-144",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-145",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-146",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-147",
+    "assetId": "QMSH-26",
+    "assetName": "轿夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-148",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-149",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-150",
+    "assetId": "QMSH-39",
+    "assetName": "看门的",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-151",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-152",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-153",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-154",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-155",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-156",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-157",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-158",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-159",
+    "assetId": "QMSH-32",
+    "assetName": "行脚僧人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-160",
+    "assetId": "QMSH-33",
+    "assetName": "道士",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-161",
+    "assetId": "QMSH-23",
+    "assetName": "纤夫",
+    "reason": "搬运职业匹配，沿用原路径"
+  },
+  {
+    "id": "street-162",
+    "assetId": "QMSH-40",
+    "assetName": "防火公人",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-163",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-164",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "street-165",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "普通行人身份匹配，复用角色资产"
+  },
+  {
+    "id": "street-166",
+    "assetId": "QMSH-17",
+    "assetName": "茶坊伙计",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-167",
+    "assetId": "QMSH-36",
+    "assetName": "说书艺人",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-168",
+    "assetId": "QMSH-16",
+    "assetName": "酒保",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-169",
+    "assetId": "QMSH-08",
+    "assetName": "店铺掌柜",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-170",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-171",
+    "assetId": "QMSH-11",
+    "assetName": "绸缎商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-172",
+    "assetId": "QMSH-09",
+    "assetName": "粮商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-173",
+    "assetId": "QMSH-05",
+    "assetName": "乘轿贵妇",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-174",
+    "assetId": "QMSH-08",
+    "assetName": "店铺掌柜",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-175",
+    "assetId": "QMSH-34",
+    "assetName": "医生",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-176",
+    "assetId": "QMSH-15",
+    "assetName": "卖野药的",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-177",
+    "assetId": "QMSH-17",
+    "assetName": "茶坊伙计",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-178",
+    "assetId": "QMSH-19",
+    "assetName": "代写状纸的",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-179",
+    "assetId": "QMSH-04",
+    "assetName": "文人儒生",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-180",
+    "assetId": "QMSH-11",
+    "assetName": "绸缎商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-181",
+    "assetId": "QMSH-08",
+    "assetName": "店铺掌柜",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-182",
+    "assetId": "QMSH-30",
+    "assetName": "制车匠",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-183",
+    "assetId": "QMSH-11",
+    "assetName": "绸缎商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-184",
+    "assetId": "QMSH-09",
+    "assetName": "粮商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-185",
+    "assetId": "QMSH-20",
+    "assetName": "牙人",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-186",
+    "assetId": "QMSH-15",
+    "assetName": "卖野药的",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-187",
+    "assetId": "QMSH-19",
+    "assetName": "代写状纸的",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-188",
+    "assetId": "QMSH-35",
+    "assetName": "算命先生",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-189",
+    "assetId": "QMSH-09",
+    "assetName": "粮商",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-190",
+    "assetId": "QMSH-17",
+    "assetName": "茶坊伙计",
+    "reason": "原商铺职业/商品类别匹配"
+  },
+  {
+    "id": "street-191",
+    "assetId": "QMSH-02",
+    "assetName": "文官",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-192",
+    "assetId": "QMSH-37",
+    "assetName": "卖唱/戏子",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-193",
+    "assetId": "QMSH-45",
+    "assetName": "卖花姑娘",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-194",
+    "assetId": "QMSH-38",
+    "assetName": "理发匠",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-195",
+    "assetId": "QMSH-31",
+    "assetName": "修笸箩的",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-196",
+    "assetId": "QMSH-41",
+    "assetName": "乞丐",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-197",
+    "assetId": "QMSH-10",
+    "assetName": "香料商",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-198",
+    "assetId": "QMSH-08",
+    "assetName": "店铺掌柜",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-199",
+    "assetId": "QMSH-29",
+    "assetName": "作坊工人",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-200",
+    "assetId": "QMSH-21",
+    "assetName": "农夫",
+    "reason": "牲畜随行职业匹配"
+  },
+  {
+    "id": "street-201",
+    "assetId": "QMSH-27",
+    "assetName": "马夫",
+    "reason": "牲畜随行职业匹配"
+  },
+  {
+    "id": "street-202",
+    "assetId": "QMSH-01",
+    "assetName": "骑马官员",
+    "reason": "官吏身份匹配原骑马角色"
+  },
+  {
+    "id": "street-203",
+    "assetId": "QMSH-03",
+    "assetName": "武官",
+    "reason": "官吏身份匹配原骑马角色"
+  },
+  {
+    "id": "street-204",
+    "assetId": "QMSH-25",
+    "assetName": "车夫",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-205",
+    "assetId": "QMSH-25",
+    "assetName": "车夫",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-206",
+    "assetId": "QMSH-22",
+    "assetName": "船工",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-207",
+    "assetId": "QMSH-22",
+    "assetName": "船工",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-208",
+    "assetId": "QMSH-22",
+    "assetName": "船工",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-209",
+    "assetId": "QMSH-22",
+    "assetName": "船工",
+    "reason": "交通职业精准匹配"
+  },
+  {
+    "id": "street-210",
+    "assetId": "QMSH-06",
+    "assetName": "富家子弟",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-211",
+    "assetId": "QMSH-42",
+    "assetName": "贵家妇女",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-212",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "原停留区的顾客、手艺人或市井身份匹配"
+  },
+  {
+    "id": "street-213",
+    "assetId": "QMSH-07",
+    "assetName": "随行仆役",
+    "reason": "风筝儿童仅保留一个实例；复用现有成年路人"
+  },
+  {
+    "id": "npc_hq_zhou",
+    "assetId": "QMSH-22",
+    "assetName": "船工",
+    "reason": "剧情身份与职业匹配；保留人物名、对话及任务触发"
+  },
+  {
+    "id": "npc_hq_he",
+    "assetId": "QMSH-24",
+    "assetName": "背夫/搬运工",
+    "reason": "剧情身份与职业匹配；保留人物名、对话及任务触发"
+  },
+  {
+    "id": "npc_hq_cheng",
+    "assetId": "QMSH-18",
+    "assetName": "外卖小哥",
+    "reason": "剧情身份与职业匹配；保留人物名、对话及任务触发"
+  },
+  {
+    "id": "npc_hq_fang",
+    "assetId": "QMSH-44",
+    "assetName": "绣娘",
+    "reason": "剧情身份与职业匹配；保留人物名、对话及任务触发"
+  }
+]

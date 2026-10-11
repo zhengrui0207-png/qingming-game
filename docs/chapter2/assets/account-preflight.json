@@ -1,0 +1,15 @@
+{
+  "credentialAlias": "qingming45-api local project config",
+  "baseUrl": "https://openapi.tripo3d.ai",
+  "apiVersion": "v3",
+  "region": "project endpoint .ai; CLI qingming-45 says cn; requires reconciliation before paid submit",
+  "budgetApproved": false,
+  "approvedCreditCap": 0,
+  "actualSpentCredits": 0,
+  "httpSuccess": true,
+  "apiCode": 0,
+  "balance": {
+    "balance": 3880.0,
+    "frozen": 0.0
+  }
+}

@@ -1,0 +1,933 @@
+{
+  "contractVersion": "1.0.0",
+  "contractStage": "p0-frozen",
+  "notAPlayableLevel": true,
+  "baselineId": "2026-10-01-p0",
+  "region": {
+    "id": "region_d",
+    "previousRegionId": "region_c",
+    "futureRegionId": "region_e",
+    "mainQuestId": "quest_c2_main",
+    "scope": "second-chapter-only"
+  },
+  "entry": {
+    "id": "entry_c2_from_hongqiao",
+    "requiresQuestId": "hongqiao_01",
+    "requiresQuestStatus": "completed",
+    "requiresEndingPending": false,
+    "firstEntryGrant": {
+      "coins": 8,
+      "energy": 80
+    },
+    "development": {
+      "requiresBuildDEV": true,
+      "queryFlag": "chapter2",
+      "requiresQueryTest": true,
+      "isolatedSaveKeyPrefix": "qingming:dev:chapter2:",
+      "mayOverwriteFormalSave": false
+    }
+  },
+  "save": {
+    "currentSchemaVersion": 2,
+    "targetSchemaVersion": 3,
+    "formalKey": "qingming:hongqiao:save",
+    "backupKey": "qingming:hongqiao:save:backup",
+    "newFields": [
+      "travel",
+      "chapter2"
+    ],
+    "inventoryPolicy": "keep-root-inventory-counts-and-add-unique-instance-ledger-in-travel",
+    "legacyBorrowedIds": [
+      "item_hq_rope",
+      "item_hq_pole",
+      "item_hq_cloth"
+    ],
+    "oneWholeSnapshot": true
+  },
+  "npcs": [
+    {
+      "id": "npc_c2_fisher",
+      "role": "fisher",
+      "anchorId": "anchor_c2_fisher",
+      "dialogueId": "dialogue_c2_fisher",
+      "entryNodeId": "node_c2_fisher_entry",
+      "assetId": "asset_c2_fisher",
+      "name": "渔夫",
+      "nameStatus": "role-label-content-task-finalizes-name"
+    },
+    {
+      "id": "npc_c2_porter",
+      "role": "porter",
+      "anchorId": "anchor_c2_porter",
+      "dialogueId": "dialogue_c2_porter",
+      "entryNodeId": "node_c2_porter_entry",
+      "assetId": "asset_c2_porter",
+      "name": "老脚夫",
+      "nameStatus": "role-label-content-task-finalizes-name"
+    },
+    {
+      "id": "npc_c2_merchant",
+      "role": "merchant",
+      "anchorId": "anchor_c2_merchant",
+      "dialogueId": "dialogue_c2_merchant",
+      "entryNodeId": "node_c2_merchant_entry",
+      "assetId": "asset_c2_merchant",
+      "name": "杂货铺掌柜",
+      "nameStatus": "role-label-content-task-finalizes-name"
+    },
+    {
+      "id": "npc_c2_food_vendor",
+      "role": "food_vendor",
+      "anchorId": "anchor_c2_food_vendor",
+      "dialogueId": "dialogue_c2_food_vendor",
+      "entryNodeId": "node_c2_food_vendor_entry",
+      "assetId": "asset_c2_food_vendor",
+      "name": "王家蒸作伙计",
+      "nameStatus": "role-label-content-task-finalizes-name"
+    }
+  ],
+  "items": [
+    {
+      "id": "item_c2_fish_a",
+      "name": "普通鱼甲",
+      "category": "fish",
+      "unique": false,
+      "sellPrice": 6,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_fish_a",
+      "displayNameStatus": "requires-ecology-and-period-review"
+    },
+    {
+      "id": "item_c2_fish_b",
+      "name": "普通鱼乙",
+      "category": "fish",
+      "unique": false,
+      "sellPrice": 10,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_fish_b",
+      "displayNameStatus": "requires-ecology-and-period-review"
+    },
+    {
+      "id": "item_c2_junk_pottery",
+      "name": "碎陶片",
+      "category": "junk",
+      "unique": false,
+      "sellPrice": 1,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_junk_pottery",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "item_c2_junk_wood",
+      "name": "朽木小件",
+      "category": "junk",
+      "unique": false,
+      "sellPrice": 2,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_junk_wood",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "item_c2_junk_metal",
+      "name": "旧金属件",
+      "category": "junk",
+      "unique": false,
+      "sellPrice": 3,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_junk_metal",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "item_c2_rare_copper_piece",
+      "name": "旧铜扣",
+      "category": "rare",
+      "unique": false,
+      "sellPrice": 12,
+      "buyPrice": null,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_rare_copper_piece",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "treasure_c2_marked_token",
+      "name": "刻痕木牌",
+      "category": "treasure",
+      "unique": true,
+      "sellPrice": null,
+      "buyPrice": null,
+      "protectedByDefault": true,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_treasure_c2_marked_token",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "treasure_c2_silent_bell",
+      "name": "缺舌铜铃",
+      "category": "treasure",
+      "unique": true,
+      "sellPrice": 8,
+      "buyPrice": 20,
+      "protectedByDefault": true,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_treasure_c2_silent_bell",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "treasure_c2_celadon_cup",
+      "name": "缺口青釉小盏",
+      "category": "treasure",
+      "unique": true,
+      "sellPrice": 7,
+      "buyPrice": 18,
+      "protectedByDefault": true,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_treasure_c2_celadon_cup",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "item_c2_basic_rod",
+      "name": "借用基础钓竿",
+      "category": "tool",
+      "unique": true,
+      "sellPrice": null,
+      "buyPrice": null,
+      "protectedByDefault": true,
+      "ownership": "borrowed",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_basic_rod",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "item_c2_basic_bait",
+      "name": "基础钓饵",
+      "category": "supply",
+      "unique": false,
+      "sellPrice": null,
+      "buyPrice": 0,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "inventory",
+      "assetId": "asset_item_c2_basic_bait",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "food_c2_steamed_bread",
+      "name": "蒸饼",
+      "category": "food",
+      "unique": false,
+      "sellPrice": null,
+      "buyPrice": 4,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "immediate",
+      "assetId": "asset_food_c2_steamed_bread",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "food_c2_congee",
+      "name": "粥食",
+      "category": "food",
+      "unique": false,
+      "sellPrice": null,
+      "buyPrice": 6,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "immediate",
+      "assetId": "asset_food_c2_congee",
+      "displayNameStatus": "design-candidate"
+    },
+    {
+      "id": "food_c2_tea",
+      "name": "茶",
+      "category": "food",
+      "unique": false,
+      "sellPrice": null,
+      "buyPrice": 2,
+      "protectedByDefault": false,
+      "ownership": "owned",
+      "consumption": "immediate",
+      "assetId": "asset_food_c2_tea",
+      "displayNameStatus": "design-candidate"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor_c2_entry",
+      "role": "entry",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_exit",
+      "role": "exit",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fisher",
+      "role": "fisher",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_porter",
+      "role": "porter",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_merchant",
+      "role": "merchant",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_food_vendor",
+      "role": "food_vendor",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fishing_a",
+      "role": "fishing_a",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fishing_b",
+      "role": "fishing_b",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_repair",
+      "role": "repair",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_delivery",
+      "role": "delivery",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_safe_return",
+      "role": "safe_return",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    }
+  ],
+  "quests": [
+    {
+      "id": "quest_c2_main",
+      "role": "main",
+      "giverId": "npc_c2_porter",
+      "mandatoryGoalIds": [
+        "goal_c2_fishing_intro",
+        "goal_c2_first_trade",
+        "goal_c2_repair_reward",
+        "goal_c2_handoff"
+      ]
+    },
+    {
+      "id": "quest_c2_fishing_intro",
+      "role": "tutorial",
+      "giverId": "npc_c2_fisher",
+      "mandatoryGoalIds": []
+    },
+    {
+      "id": "quest_c2_repair",
+      "role": "activity",
+      "giverId": "npc_c2_porter",
+      "mandatoryGoalIds": []
+    },
+    {
+      "id": "quest_c2_token",
+      "role": "optional-story",
+      "giverId": "npc_c2_fisher",
+      "mandatoryGoalIds": []
+    }
+  ],
+  "stories": [
+    {
+      "id": "story_c2_marked_token",
+      "itemId": "treasure_c2_marked_token",
+      "sectionIdPrefix": "section_c2_marked_token_",
+      "contentVersion": 1,
+      "requiredForMain": false,
+      "stageIds": [
+        "stage_c2_marked_token_known",
+        "stage_c2_marked_token_resolved"
+      ]
+    },
+    {
+      "id": "story_c2_silent_bell",
+      "itemId": "treasure_c2_silent_bell",
+      "sectionIdPrefix": "section_c2_silent_bell_",
+      "contentVersion": 1,
+      "requiredForMain": false,
+      "stageIds": [
+        "stage_c2_silent_bell_known",
+        "stage_c2_silent_bell_resolved"
+      ]
+    },
+    {
+      "id": "story_c2_celadon_cup",
+      "itemId": "treasure_c2_celadon_cup",
+      "sectionIdPrefix": "section_c2_celadon_cup_",
+      "contentVersion": 1,
+      "requiredForMain": false,
+      "stageIds": [
+        "stage_c2_celadon_cup_known",
+        "stage_c2_celadon_cup_resolved"
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "id": "shop_c2_fish",
+      "npcId": "npc_c2_fisher",
+      "anchorId": "anchor_c2_fisher",
+      "acceptedCategories": [
+        "fish"
+      ],
+      "offers": []
+    },
+    {
+      "id": "shop_c2_general",
+      "npcId": "npc_c2_merchant",
+      "anchorId": "anchor_c2_merchant",
+      "acceptedCategories": [
+        "junk",
+        "rare",
+        "treasure"
+      ],
+      "offers": [
+        {
+          "id": "offer_c2_cup",
+          "itemId": "treasure_c2_celadon_cup",
+          "price": 18,
+          "quantity": 1
+        },
+        {
+          "id": "offer_c2_bell_later",
+          "itemId": "treasure_c2_silent_bell",
+          "price": 20,
+          "quantity": 1,
+          "condition": "repair-cash-chosen-and-bell-not-already-obtained"
+        }
+      ]
+    },
+    {
+      "id": "shop_c2_food",
+      "npcId": "npc_c2_food_vendor",
+      "anchorId": "anchor_c2_food_vendor",
+      "acceptedCategories": [],
+      "offers": [
+        {
+          "id": "offer_c2_bread",
+          "itemId": "food_c2_steamed_bread",
+          "price": 4
+        },
+        {
+          "id": "offer_c2_congee",
+          "itemId": "food_c2_congee",
+          "price": 6
+        },
+        {
+          "id": "offer_c2_tea",
+          "itemId": "food_c2_tea",
+          "price": 2
+        }
+      ],
+      "legacyVisualCandidates": [
+        2,
+        5,
+        10
+      ],
+      "legacyEntityMustRemain": true
+    }
+  ],
+  "fishingPoints": [
+    {
+      "id": "point_c2_a",
+      "anchorId": "anchor_c2_fishing_a"
+    },
+    {
+      "id": "point_c2_b",
+      "anchorId": "anchor_c2_fishing_b"
+    }
+  ],
+  "repair": {
+    "id": "repair_c2_cargo",
+    "objectId": "object_c2_cargo_frame",
+    "anchorId": "anchor_c2_repair",
+    "npcId": "npc_c2_porter",
+    "stepIds": [
+      "step_c2_inspect",
+      "step_c2_align",
+      "step_c2_fix",
+      "step_c2_test"
+    ],
+    "cost": 18,
+    "reward": {
+      "cash": 16,
+      "itemId": "treasure_c2_silent_bell",
+      "exclusive": true
+    }
+  },
+  "barters": [
+    {
+      "id": "barter_c2_bell_for_cup",
+      "shopId": "shop_c2_general",
+      "inputItemId": "treasure_c2_silent_bell",
+      "outputItemId": "treasure_c2_celadon_cup",
+      "limit": 1,
+      "requires": "local-bell-story-resolved-and-no-unfinished-ownership-requirement"
+    }
+  ],
+  "balance": {
+    "maxEnergy": 100,
+    "initialEnergy": 80,
+    "initialCoins": 8,
+    "passiveEnergySeconds": 90,
+    "castEnergy": 4,
+    "food": [
+      {
+        "itemId": "food_c2_steamed_bread",
+        "price": 4,
+        "energy": 30
+      },
+      {
+        "itemId": "food_c2_congee",
+        "price": 6,
+        "energy": 45
+      },
+      {
+        "itemId": "food_c2_tea",
+        "price": 2,
+        "energy": 10
+      }
+    ],
+    "fishing": {
+      "weights": {
+        "fish": 75,
+        "junk": 23,
+        "rare": 2
+      },
+      "rareGuaranteeAt": 20,
+      "fishItemIds": [
+        "item_c2_fish_a",
+        "item_c2_fish_b"
+      ],
+      "junkItemIds": [
+        "item_c2_junk_pottery",
+        "item_c2_junk_wood",
+        "item_c2_junk_metal"
+      ],
+      "rareItemIds": [
+        "item_c2_rare_copper_piece"
+      ],
+      "uniqueStoryItemsExcluded": true
+    },
+    "buybackLimit": 10,
+    "relief": {
+      "coinsThreshold": 4,
+      "energyThreshold": 4,
+      "foodItemId": "food_c2_steamed_bread",
+      "debt": 4,
+      "energy": 30,
+      "firstCastFishGuaranteed": true,
+      "reliefWorkPaysOnlyOutstandingDebt": true
+    }
+  },
+  "actions": [
+    {
+      "type": "c2/enterChapter2",
+      "required": [
+        "entryId"
+      ],
+      "payload": {
+        "entryId": "entry"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/leaveChapter2",
+      "required": [
+        "targetRegionId",
+        "anchorId"
+      ],
+      "payload": {
+        "targetRegionId": "region",
+        "anchorId": "anchor"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/acceptQuest",
+      "required": [
+        "questId"
+      ],
+      "payload": {
+        "questId": "quest"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/startCast",
+      "required": [
+        "pointId",
+        "mode"
+      ],
+      "payload": {
+        "pointId": "fishingPoint",
+        "mode": [
+          "normal",
+          "simple",
+          "tutorial",
+          "token",
+          "relief"
+        ]
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/resolveCast",
+      "required": [
+        "castId",
+        "outcome"
+      ],
+      "payload": {
+        "castId": "string",
+        "outcome": [
+          "caught",
+          "lost",
+          "cancelled"
+        ]
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/sell",
+      "required": [
+        "shopId",
+        "lines"
+      ],
+      "payload": {
+        "shopId": "shop",
+        "lines": "saleLines"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/buy",
+      "required": [
+        "shopId",
+        "offerId",
+        "quantity"
+      ],
+      "payload": {
+        "shopId": "shop",
+        "offerId": "offer",
+        "quantity": "positiveInteger"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/barter",
+      "required": [
+        "shopId",
+        "barterId",
+        "instanceId"
+      ],
+      "payload": {
+        "shopId": "shop",
+        "barterId": "barter",
+        "instanceId": "string"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/buyback",
+      "required": [
+        "shopId",
+        "receiptId"
+      ],
+      "payload": {
+        "shopId": "shop",
+        "receiptId": "string"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/eat",
+      "required": [
+        "shopId",
+        "offerId"
+      ],
+      "payload": {
+        "shopId": "shop",
+        "offerId": "foodOffer"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/beginRepair",
+      "required": [
+        "repairId"
+      ],
+      "payload": {
+        "repairId": "repair"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/advanceRepair",
+      "required": [
+        "repairId",
+        "stepId"
+      ],
+      "payload": {
+        "repairId": "repair",
+        "stepId": "repairStep"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/cancelRepair",
+      "required": [
+        "repairId"
+      ],
+      "payload": {
+        "repairId": "repair"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/completeRepair",
+      "required": [
+        "repairId"
+      ],
+      "payload": {
+        "repairId": "repair"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/chooseReward",
+      "required": [
+        "repairId",
+        "choice"
+      ],
+      "payload": {
+        "repairId": "repair",
+        "choice": [
+          "cash",
+          "bell"
+        ]
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/handOffCargo",
+      "required": [
+        "questId",
+        "anchorId"
+      ],
+      "payload": {
+        "questId": "mainQuest",
+        "anchorId": "deliveryAnchor"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/completeMain",
+      "required": [
+        "questId"
+      ],
+      "payload": {
+        "questId": "mainQuest"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/readStory",
+      "required": [
+        "storyId",
+        "contentVersion",
+        "sectionId",
+        "paragraphIndex"
+      ],
+      "payload": {
+        "storyId": "story",
+        "contentVersion": "positiveInteger",
+        "sectionId": "string",
+        "paragraphIndex": "nonnegativeInteger"
+      },
+      "transactionIdRequired": false
+    },
+    {
+      "type": "c2/requestRelief",
+      "required": [
+        "shopId"
+      ],
+      "payload": {
+        "shopId": "foodShop"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/settleReliefWork",
+      "required": [
+        "npcId"
+      ],
+      "payload": {
+        "npcId": "fisher"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/toggleProtection",
+      "required": [
+        "instanceId",
+        "protected"
+      ],
+      "payload": {
+        "instanceId": "string",
+        "protected": "boolean"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/advanceStory",
+      "required": [
+        "storyId",
+        "stageId"
+      ],
+      "payload": {
+        "storyId": "story",
+        "stageId": "storyStage"
+      },
+      "transactionIdRequired": true
+    },
+    {
+      "type": "c2/tick",
+      "required": [
+        "seconds",
+        "operative"
+      ],
+      "payload": {
+        "seconds": "nonnegativeFinite",
+        "operative": "boolean"
+      },
+      "transactionIdRequired": false
+    },
+    {
+      "type": "c2/ackPresentation",
+      "required": [
+        "sequenceId"
+      ],
+      "payload": {
+        "sequenceId": [
+          "intro_c2",
+          "ending_c2"
+        ]
+      },
+      "transactionIdRequired": true
+    }
+  ],
+  "errorCodes": [
+    "unknown-action",
+    "invalid-action",
+    "chapter-locked",
+    "chapter-not-entered",
+    "unknown-entity",
+    "not-reachable",
+    "invalid-quantity",
+    "insufficient-coins",
+    "insufficient-energy",
+    "not-owned",
+    "protected-item",
+    "wrong-shop",
+    "out-of-stock",
+    "stale-offer",
+    "duplicate-transaction",
+    "cast-pending",
+    "unknown-cast",
+    "activity-busy",
+    "repair-not-ready",
+    "reward-already-chosen",
+    "quest-not-ready",
+    "story-locked",
+    "invalid-position",
+    "relief-not-eligible",
+    "save-pending",
+    "save-failed"
+  ],
+  "moduleContextKeys": [
+    "scene",
+    "world",
+    "service",
+    "registry",
+    "locks",
+    "gate",
+    "camera",
+    "ports",
+    "toast",
+    "baseURL"
+  ],
+  "moduleLifecycleMethods": [
+    "update",
+    "cancel",
+    "dispose",
+    "getState"
+  ],
+  "contentConditionKinds": [
+    "questStatus",
+    "goalCompleted",
+    "storyStage",
+    "itemOwned",
+    "repairStatus",
+    "rewardChoice"
+  ],
+  "transactionPolicy": {
+    "idFormat": "c2:<saveEpoch>:<monotonicSequence>",
+    "recentReceiptLimit": 256,
+    "rejectExpiredSequence": true,
+    "sameIdDifferentPayload": "invalid-action",
+    "publishOnlyAfterVerifiedSave": true
+  }
+}

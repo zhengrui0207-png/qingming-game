@@ -1,0 +1,1 @@
+{"name":"qingming-riverside-demo","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite --host 127.0.0.1 --port 5178","build":"vite build","preview":"vite preview --host 127.0.0.1 --port 5178","test":"node --test src/world.test.js"},"dependencies":{"three":"0.180.0","vite":"^7.3.6"}}

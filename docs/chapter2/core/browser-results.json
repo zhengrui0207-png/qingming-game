@@ -1,0 +1,102 @@
+{
+  "scope": "independent DEV preview; real localStorage; fixture anchors; not main integration or human playtest",
+  "checks": [
+    {
+      "name": "actual localStorage v2 migration with no C2 grants",
+      "passed": true,
+      "data": {
+        "saved": true,
+        "kind": "migrated",
+        "message": "存档已迁移，原有进度已保留。",
+        "errorCode": null,
+        "pending": false
+      }
+    },
+    {
+      "name": "backup preserves exact old-schema full snapshot",
+      "passed": true
+    },
+    {
+      "name": "entry grant and tutorial real service settlement",
+      "passed": true
+    },
+    {
+      "name": "reload cancels pending cast without reroll or refund",
+      "passed": true,
+      "data": {
+        "id": "cast:9334dab0ad2540d29e72399d6d324723:2",
+        "pointId": "point_c2_a",
+        "mode": "normal",
+        "chargedEnergy": 4,
+        "startedAt": "2026-10-01T13:13:37.989Z",
+        "seed": 3412852256,
+        "resultItemId": "item_c2_junk_pottery",
+        "rare": false,
+        "outcome": "cancelled",
+        "settledAt": "2026-10-01T13:13:38.108Z",
+        "recoveryReason": "reload"
+      }
+    },
+    {
+      "name": "failed settlement stays in-page candidate and blocks next cast",
+      "passed": true
+    },
+    {
+      "name": "verified retry applies once to actual storage",
+      "passed": true,
+      "data": {
+        "ok": true,
+        "changed": false,
+        "saved": true,
+        "transactionId": "c2:9334dab0ad2540d29e72399d6d324723:6",
+        "data": {
+          "receipt": {
+            "id": "c2:9334dab0ad2540d29e72399d6d324723:6",
+            "shopId": "shop_c2_fish",
+            "kind": "sell",
+            "lines": [
+              {
+                "itemId": "item_c2_fish_a",
+                "quantity": 1
+              }
+            ],
+            "coins": 6,
+            "debtPaid": 0,
+            "at": "2026-10-01T13:13:38.507Z",
+            "buybackEligible": true,
+            "buybackPrice": 6
+          }
+        },
+        "duplicate": true
+      }
+    },
+    {
+      "name": "reload retains settlement, no entry regrant",
+      "passed": true
+    },
+    {
+      "name": "cash branch actual browser persisted settlement",
+      "passed": true
+    },
+    {
+      "name": "actual browser corrupt-primary recovery",
+      "passed": true,
+      "data": {
+        "saved": true,
+        "kind": "recovered",
+        "message": "主存档异常，已恢复上一份完整备份。",
+        "errorCode": null,
+        "pending": false
+      }
+    },
+    {
+      "name": "bell branch actual browser persisted settlement",
+      "passed": true
+    },
+    {
+      "name": "formal storage untouched",
+      "passed": true,
+      "data": null
+    }
+  ]
+}

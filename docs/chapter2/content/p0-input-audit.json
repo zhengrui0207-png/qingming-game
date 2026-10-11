@@ -1,0 +1,111 @@
+{
+  "P0_READY": true,
+  "contractVersion": "1.0.0",
+  "frozenFiles": [
+    {
+      "path": "docs/chapter2/baseline-browser.json",
+      "sha256": "a3f7037560a527b65b6dcdf21c87014e39f41851c9028cbfadc2a20de77f2c9b",
+      "expected": "a3f7037560a527b65b6dcdf21c87014e39f41851c9028cbfadc2a20de77f2c9b"
+    },
+    {
+      "path": "docs/chapter2/baseline.md",
+      "sha256": "300b3fe6da9c5c3a749485a68651c98d443bbe7b269afeec5030cb40b8490f6f",
+      "expected": "300b3fe6da9c5c3a749485a68651c98d443bbe7b269afeec5030cb40b8490f6f"
+    },
+    {
+      "path": "docs/chapter2/contracts.md",
+      "sha256": "336cc910d96769ed28a067a7959d1e888d116b056d99c48372c7bcf6c30e6871",
+      "expected": "336cc910d96769ed28a067a7959d1e888d116b056d99c48372c7bcf6c30e6871"
+    },
+    {
+      "path": "docs/chapter2/ownership.md",
+      "sha256": "306570689a5efa00310d6dbde8c5a1888df44705f6dc75b25eb8d0140c558fd5",
+      "expected": "306570689a5efa00310d6dbde8c5a1888df44705f6dc75b25eb8d0140c558fd5"
+    },
+    {
+      "path": "docs/chapter2/save-samples/README.md",
+      "sha256": "b16c8c12dae896fc265d4ddcf964d469525d0f254c2d8e85eb371eaf82e52059",
+      "expected": "b16c8c12dae896fc265d4ddcf964d469525d0f254c2d8e85eb371eaf82e52059"
+    },
+    {
+      "path": "docs/chapter2/save-samples/automation-fresh-origin.json",
+      "sha256": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "expected": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f"
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step4-save-samples.json",
+      "sha256": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "expected": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27"
+    },
+    {
+      "path": "docs/chapter2/save-samples/historical-step5-save-samples.json",
+      "sha256": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "expected": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8"
+    },
+    {
+      "path": "docs/chapter2/templates/action.example.json",
+      "sha256": "bb71f14970f35fc3b04144527df4d8e3be09c54c51b496ed236989bd1f3b0899",
+      "expected": "bb71f14970f35fc3b04144527df4d8e3be09c54c51b496ed236989bd1f3b0899"
+    },
+    {
+      "path": "docs/chapter2/templates/content.draft.json",
+      "sha256": "1f0975d0ff87f189064727d3b09f3f3d1ae9f990d0fc7af0a9440462da4d0f9b",
+      "expected": "1f0975d0ff87f189064727d3b09f3f3d1ae9f990d0fc7af0a9440462da4d0f9b"
+    },
+    {
+      "path": "docs/chapter2/templates/scene.draft.json",
+      "sha256": "9d3f298e195808f806840a3174d8f339a1df38eb3a39f04a58a487c531c91256",
+      "expected": "9d3f298e195808f806840a3174d8f339a1df38eb3a39f04a58a487c531c91256"
+    },
+    {
+      "path": "docs/chapter2/workspace-map.json",
+      "sha256": "c62786085b5e38b41d99dc3f043f9b60512c68a8cd8775293855834fb3a579ab",
+      "expected": "c62786085b5e38b41d99dc3f043f9b60512c68a8cd8775293855834fb3a579ab"
+    },
+    {
+      "path": "scripts/validate-chapter2-contract.mjs",
+      "sha256": "fbaf72907b53184eea933438639fbb9ef2a4e16a4039e7e5416cdc8465aafb13",
+      "expected": "fbaf72907b53184eea933438639fbb9ef2a4e16a4039e7e5416cdc8465aafb13"
+    },
+    {
+      "path": "scripts/verify-chapter2-p0.py",
+      "sha256": "20ba797846f9d623f242b83efc3ce3df89fccc70fa04c62dc7fe4b1161117320",
+      "expected": "20ba797846f9d623f242b83efc3ce3df89fccc70fa04c62dc7fe4b1161117320"
+    },
+    {
+      "path": "src/chapter2/contracts/content.schema.json",
+      "sha256": "886b84b34003ae190d5fcd55714d4fef2c8f44476904d26d8fc4b884155993ff",
+      "expected": "886b84b34003ae190d5fcd55714d4fef2c8f44476904d26d8fc4b884155993ff"
+    },
+    {
+      "path": "src/chapter2/contracts/contract.json",
+      "sha256": "1ff80856cf1bcad2deb162534749881c49b283758b9557752a5547e92834134a",
+      "expected": "1ff80856cf1bcad2deb162534749881c49b283758b9557752a5547e92834134a"
+    },
+    {
+      "path": "src/chapter2/contracts/contract.test.js",
+      "sha256": "d7d54857f8eef90ec4c393fffef645afcb174ab8d81530944d7ffcad81869c3d",
+      "expected": "d7d54857f8eef90ec4c393fffef645afcb174ab8d81530944d7ffcad81869c3d"
+    },
+    {
+      "path": "src/chapter2/contracts/index.js",
+      "sha256": "a4b8aa5357e99b2e9a961cde97d8b587a54809ce7e6e65859a23330f680258f2",
+      "expected": "a4b8aa5357e99b2e9a961cde97d8b587a54809ce7e6e65859a23330f680258f2"
+    },
+    {
+      "path": "src/chapter2/contracts/scene.schema.json",
+      "sha256": "4e197faf7095f9ce58f75e15b3ccaea619e033ad39b58ba9a6298b1c10a09415",
+      "expected": "4e197faf7095f9ce58f75e15b3ccaea619e033ad39b58ba9a6298b1c10a09415"
+    },
+    {
+      "path": "src/chapter2/contracts/types.d.ts",
+      "sha256": "fe1f5d0477e830feb1d495d8e1aa65fea6556da95d0c26a4595564b53961ac9b",
+      "expected": "fe1f5d0477e830feb1d495d8e1aa65fea6556da95d0c26a4595564b53961ac9b"
+    },
+    {
+      "path": "src/chapter2/contracts/validate.js",
+      "sha256": "4bf303f036649214438de490c551b0b2d1897ecf8b6003c48210e17409ae3796",
+      "expected": "4bf303f036649214438de490c551b0b2d1897ecf8b6003c48210e17409ae3796"
+    }
+  ]
+}

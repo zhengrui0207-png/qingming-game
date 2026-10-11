@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "gameRoot": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game",
+  "assets": [
+    {
+      "id": "asset_scholar_v2",
+      "path": "assets/song-scholar-v2-animated.glb",
+      "status": "existing_accepted",
+      "animationSource": "procedural-skeleton",
+      "absolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/song-scholar-v2-animated.glb",
+      "bytes": 5176236,
+      "sha256": "63383074fa90932f6527493657759d6602c5475193e74936e02e84f23772d3f0"
+    },
+    {
+      "id": "asset_hq_npc_preview",
+      "path": "assets/a-qing.glb",
+      "status": "existing_preview_only",
+      "note": "复用现有群众原型；正式 NPC 外观由人物任务交接",
+      "absolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/a-qing.glb",
+      "bytes": 194276,
+      "sha256": "3d9eb0e1414cd4c145d4c6c81f0fa008558396356d67c92baef684c76cf0270a"
+    },
+    {
+      "id": "asset_hq_rope",
+      "path": "assets/hongqiao/item_hq_rope.glb",
+      "status": "existing_art_pending",
+      "absolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/hongqiao/item_hq_rope.glb",
+      "bytes": 1133532,
+      "sha256": "cf1a09a71d6337c112c73e4d2cc481150c22caf76a62831397b9ea5c40197ea7"
+    },
+    {
+      "id": "asset_hq_pole",
+      "path": "assets/hongqiao/item_hq_pole.glb",
+      "status": "existing_art_pending",
+      "absolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/hongqiao/item_hq_pole.glb",
+      "bytes": 713468,
+      "sha256": "fc35e62d390058ca31dae0b2bdc957472512bf18e9b9889e823479d2d09f8b9b"
+    },
+    {
+      "id": "asset_hq_cloth",
+      "path": "assets/hongqiao/item_hq_cloth.glb",
+      "status": "existing_art_pending",
+      "absolutePath": "/Users/zhengrui/Documents/ChatGPT/3d 打印/qingming-game/public/assets/hongqiao/item_hq_cloth.glb",
+      "bytes": 727628,
+      "sha256": "c70a6271088c69aa71fb7e7a0c9bf52dc05f17427182903759bf8f911b6d740c"
+    }
+  ],
+  "scholar": {
+    "generated": true,
+    "rigged": true,
+    "hasRuntimeAnimations": true,
+    "embeddedAnimationClips": [],
+    "animationSource": "procedural-skeleton",
+    "acceptanceEvidence": "output/verification-scholar-v42.json (existing task report)",
+    "newAcceptanceClaim": false
+  },
+  "ship": {
+    "file": "public/assets/qingming-world.glb",
+    "independentRoot": false,
+    "meshCount": 24,
+    "mastLoweringAnimation": false,
+    "clearanceStatus": "pending",
+    "plan": "docs/hongqiao/ship-clearance-plan.md"
+  }
+}

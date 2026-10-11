@@ -1,0 +1,576 @@
+{
+  "clientDate": "2026-10-02",
+  "atUTC": "2026-10-02T15:09:14.542206+00:00",
+  "authorization": "用户要求00/10合入复测并更新就绪后分配05、提供06分配",
+  "backup": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/baselines/2026-10-02-before-control-acceptance-v2",
+  "verifiedCoreFiles": 30,
+  "receivedFishingFiles": 50,
+  "files": [
+    {
+      "task": "03-core",
+      "path": "chapter2-core-preview.html",
+      "beforeSHA256": "65db287902dbc1b3fd3046d5155cf5343cda84f4c48d2b4ed14b5cfee897b18b",
+      "newSHA256": "65db287902dbc1b3fd3046d5155cf5343cda84f4c48d2b4ed14b5cfee897b18b",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/API.md",
+      "beforeSHA256": "eda1f8df00a4e8f3baa9056eab63c6b821dfd90927500bc8db68fa3e93eaf64d",
+      "newSHA256": "eda1f8df00a4e8f3baa9056eab63c6b821dfd90927500bc8db68fa3e93eaf64d",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/CORE_READY.json",
+      "beforeSHA256": "d41ddc7b5850a5cf895b54f21e94be965eaff2b3a029a553a67d0e13fba06b91",
+      "newSHA256": "d41ddc7b5850a5cf895b54f21e94be965eaff2b3a029a553a67d0e13fba06b91",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/HANDOFF.md",
+      "beforeSHA256": "f8d60fed9e9146640386d1c772ed8bcc9ad93ca4878af3bda7d0c5c0f65388ce",
+      "newSHA256": "f8d60fed9e9146640386d1c772ed8bcc9ad93ca4878af3bda7d0c5c0f65388ce",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/VALIDATION.md",
+      "beforeSHA256": "a01368504ce20969db5e20d5b21510067bca7a5e17eaa1fd32f613c6fe5aeba2",
+      "newSHA256": "a01368504ce20969db5e20d5b21510067bca7a5e17eaa1fd32f613c6fe5aeba2",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/baseline-files.json",
+      "beforeSHA256": "3662e4a719e03fbfc77fbecfe2a8b15ec7c9d949cc46848d086bad2d75742960",
+      "newSHA256": "3662e4a719e03fbfc77fbecfe2a8b15ec7c9d949cc46848d086bad2d75742960",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/browser-checks.js",
+      "beforeSHA256": "663334ab8a246283a8a1ed93f8ae46ff1b1d232b2c008c0c839f7f7038174acf",
+      "newSHA256": "663334ab8a246283a8a1ed93f8ae46ff1b1d232b2c008c0c839f7f7038174acf",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/browser-checks.log",
+      "beforeSHA256": "15e0ba32664484dc9c1e24e6d221d0bda307dbb56636f52cba75209b75fae65b",
+      "newSHA256": "15e0ba32664484dc9c1e24e6d221d0bda307dbb56636f52cba75209b75fae65b",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/browser-core.png",
+      "beforeSHA256": "3b1a5341d1cc719b6f50424dffa60855bf3382b1c21e8fdabd2601007ee58b62",
+      "newSHA256": "3b1a5341d1cc719b6f50424dffa60855bf3382b1c21e8fdabd2601007ee58b62",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/browser-results.json",
+      "beforeSHA256": "d36ad13c3edff175c10a13bbf16b14867857d8e85b9d245f22027107a41a09c9",
+      "newSHA256": "d36ad13c3edff175c10a13bbf16b14867857d8e85b9d245f22027107a41a09c9",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/browser-storage-evidence.json",
+      "beforeSHA256": "8e52db5a72e279c1d8735f71fa13d3c199fffdddb4344aad204e2c40b0d28955",
+      "newSHA256": "8e52db5a72e279c1d8735f71fa13d3c199fffdddb4344aad204e2c40b0d28955",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/build-preview.log",
+      "beforeSHA256": "79e86b6db8095aca446a5aedb0ab4f7fe6b3e9902a823527bce8beae57ccd6b5",
+      "newSHA256": "79e86b6db8095aca446a5aedb0ab4f7fe6b3e9902a823527bce8beae57ccd6b5",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/build.log",
+      "beforeSHA256": "ad0fad49b7637d3e0d2045ea5593d55920334ada09a88b1917700236249510e5",
+      "newSHA256": "ad0fad49b7637d3e0d2045ea5593d55920334ada09a88b1917700236249510e5",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/frozen-verification.json",
+      "beforeSHA256": "4843ac3d2ad00c0cbe10ce3c8195ffc7b614d94952a851a17aa8b470ccca3d53",
+      "newSHA256": "4843ac3d2ad00c0cbe10ce3c8195ffc7b614d94952a851a17aa8b470ccca3d53",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/migration-report.json",
+      "beforeSHA256": "5882c084450033340ddb8866759c8c55efd55de8615ab5a89bad0db113500621",
+      "newSHA256": "5882c084450033340ddb8866759c8c55efd55de8615ab5a89bad0db113500621",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/migration-report.log",
+      "beforeSHA256": "892363c8770f49580f897044b398b11ea48db6db1dee4d21dd73286b6b602c9e",
+      "newSHA256": "892363c8770f49580f897044b398b11ea48db6db1dee4d21dd73286b6b602c9e",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/migration-report.mjs",
+      "beforeSHA256": "f696ce6cbab7bb120371d5c94ebcb688f22df17d1a5ed9cd3fe1148cfae9fd8f",
+      "newSHA256": "f696ce6cbab7bb120371d5c94ebcb688f22df17d1a5ed9cd3fe1148cfae9fd8f",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/samples/automation-fresh-origin.json",
+      "beforeSHA256": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "newSHA256": "208935ebdcd4df65f7d48cb2ebb22f125e7df34e0c553b231c8b091c288fe65f",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/samples/historical-step4-save-samples.json",
+      "beforeSHA256": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "newSHA256": "dcc54e0068e979136b5fd26b7fe692a28e5f8bea1aa31f44a7e870c07999aa27",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/samples/historical-step5-save-samples.json",
+      "beforeSHA256": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "newSHA256": "1e02519fd09ef2a0be88a1ac345e4f410bfb7e96fc4c6b5fd0f48ca76df5f1d8",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/scope-verification.json",
+      "beforeSHA256": "9687b3157c0c9debdbb5510535f1fe8bb8cdd3fe88637ee815a052320b37ecff",
+      "newSHA256": "9687b3157c0c9debdbb5510535f1fe8bb8cdd3fe88637ee815a052320b37ecff",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "docs/chapter2/core/test-full.log",
+      "beforeSHA256": "51fbd164454885e72bdd2c530b72a5941ab73d07bf097d27013bdf85ef42954b",
+      "newSHA256": "51fbd164454885e72bdd2c530b72a5941ab73d07bf097d27013bdf85ef42954b",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/chapter2/core/build-preview.mjs",
+      "beforeSHA256": "84601d7b89f036d1da71d80301c9aec8d24ec11c3a919544b894862deae2f352",
+      "newSHA256": "84601d7b89f036d1da71d80301c9aec8d24ec11c3a919544b894862deae2f352",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/chapter2/core/core.test.js",
+      "beforeSHA256": "b476f6f443d69e4835eafbfda87dd41c2504d90a8e834a5760459461465cd2a1",
+      "newSHA256": "b476f6f443d69e4835eafbfda87dd41c2504d90a8e834a5760459461465cd2a1",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/chapter2/core/preview.js",
+      "beforeSHA256": "9a0042950d4400d7f5229c7de788e80084303c532df13c58fb40cfc756f2351d",
+      "newSHA256": "9a0042950d4400d7f5229c7de788e80084303c532df13c58fb40cfc756f2351d",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/chapter2/core/service.js",
+      "beforeSHA256": "8d29e6be2e05e50353031d433cb876882f42241ede21dfbfaa99041fadf90eab",
+      "newSHA256": "8d29e6be2e05e50353031d433cb876882f42241ede21dfbfaa99041fadf90eab",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/chapter2/core/state.js",
+      "beforeSHA256": "6f88c2c0d2105ce2fb59962ae4a69db9845a9c0a92b85f2aa562183f4baf8a67",
+      "newSHA256": "6f88c2c0d2105ce2fb59962ae4a69db9845a9c0a92b85f2aa562183f4baf8a67",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/hongqiao/persistence.js",
+      "beforeSHA256": "50ff197c7d62fae72243a23fa5752b84c3f1c154832f44dba9f005064ff7b1e9",
+      "newSHA256": "50ff197c7d62fae72243a23fa5752b84c3f1c154832f44dba9f005064ff7b1e9",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/hongqiao/state.js",
+      "beforeSHA256": "c0b8771c9c517516d128468e06cd59329bfe12718713ee640cf34a6fabb9d083",
+      "newSHA256": "c0b8771c9c517516d128468e06cd59329bfe12718713ee640cf34a6fabb9d083",
+      "operation": "already-received"
+    },
+    {
+      "task": "03-core",
+      "path": "src/hongqiao/state.test.js",
+      "beforeSHA256": "370c98250151f48eb3e5ce9512d90b5041e4b1b755ab19f09bf521316a75300d",
+      "newSHA256": "370c98250151f48eb3e5ce9512d90b5041e4b1b755ab19f09bf521316a75300d",
+      "operation": "already-received"
+    },
+    {
+      "task": "04-fishing",
+      "path": "chapter2-fishing-preview.html",
+      "beforeSHA256": null,
+      "newSHA256": "1bcc36b99e5cdde4ede5847ab311cb34b110cce805cad6f85ac3c1d28b7ade0b",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/controller.js",
+      "beforeSHA256": null,
+      "newSHA256": "c408cee5a8adb63d43265ee48ed05aa4d476c0fa44b887941ecff62ce6616d71",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/fishing.css",
+      "beforeSHA256": null,
+      "newSHA256": "c6c4114c6d6b795885bc8f16abea40839d47094a9b7c53dce23533e22b6666a6",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/fishing.test.js",
+      "beforeSHA256": null,
+      "newSHA256": "71f9bcb6a73699ffdf3ca764a9f43561773f0ee11645f48ed94ae808ab38e1a4",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/index.js",
+      "beforeSHA256": null,
+      "newSHA256": "9279eafea23768177cc977d29e33b254cbdad8b4e72d931903ccd287b6bc9901",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/preview-camera.js",
+      "beforeSHA256": null,
+      "newSHA256": "e215245f66370129bed0e96954bf1ed9843b5ed87a9bc26532ff018041d61105",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/preview.js",
+      "beforeSHA256": null,
+      "newSHA256": "4a5efbf808ce7fa0fab701b1d2ff919d9da29536bcd2df88a6e720339ec86f65",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "src/chapter2/fishing/rig.js",
+      "beforeSHA256": null,
+      "newSHA256": "e7acfd7e86b1565ce0cb8a92235727fbb397c955a26131bd48976fe8e3355789",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/.playwright-cli/page-2026-10-01T16-15-50-273Z.yml",
+      "beforeSHA256": null,
+      "newSHA256": "4b7b7c3974c982c039d81045e042539bf4b87e9b0e39ab0b7490a98a239ee84a",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/README.md",
+      "beforeSHA256": null,
+      "newSHA256": "20b56ee32f4eaebf7809cc85b4e535da34474cbce2fd5f728b6ab9dfeaf1559a",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/all-tests.log",
+      "beforeSHA256": null,
+      "newSHA256": "dd44d0481c9c5c782228074e07becceb6dfb6ab9dce4b1f1a95da2ab2b93a0f9",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/audit-scope.py",
+      "beforeSHA256": null,
+      "newSHA256": "6f4fc24af4a57cae58f6795a6ceb979714fdbb4cf6d9d3d278f07024a7b334ee",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-01-first-attempt.log",
+      "beforeSHA256": null,
+      "newSHA256": "f6cf515045607ca2c321df87df2114c9989da61cc4809e64f52864c62b7363d0",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-01.js",
+      "beforeSHA256": null,
+      "newSHA256": "303faa034b180e4e53fec5aa863a1f6c22788f0a48e3565c51dfa46354d29a35",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-01.log",
+      "beforeSHA256": null,
+      "newSHA256": "470c5f0dacc5904ee8cc415b70879ef8d6b4b9489dcb9fa4cbb82ec5d15cb150",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-02.js",
+      "beforeSHA256": null,
+      "newSHA256": "0ecd857d419d72df53310e65e0deaf49bf7bb9868b6bc7daf36045631f1ae9d0",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-02.log",
+      "beforeSHA256": null,
+      "newSHA256": "fc1ef380dd71123ba456137b744a69de0c3b2e19ef6259860ddaf589cfd5e9ea",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-03.js",
+      "beforeSHA256": null,
+      "newSHA256": "e4ec96078799c9f34bcbcc4509d4dddb1c0374e0addbf514bddc85f3e1614b9b",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-03.log",
+      "beforeSHA256": null,
+      "newSHA256": "0d8062a42379a734e60b673f3f66e5cfc000702f99e60ba0e015f1081bf164af",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-04-first-attempt.log",
+      "beforeSHA256": null,
+      "newSHA256": "539133610237914aefcb47b04aace729304ac50f43eb097b78dc41e95134f0cc",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-04-second-attempt.log",
+      "beforeSHA256": null,
+      "newSHA256": "703e48134b690c880b4c96662537ff72400bf60b37e9092a0f54f80ddf3b5566",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-04.js",
+      "beforeSHA256": null,
+      "newSHA256": "9333b7561f7515f6ebe194fe4175d0aa63d175787fb197e6738680a5860d647a",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-04.log",
+      "beforeSHA256": null,
+      "newSHA256": "886b2c5520846abf8c09bc10eea3adeb2130ea27d089e6fb43f873d2966dd9a6",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-05.js",
+      "beforeSHA256": null,
+      "newSHA256": "0386fc6962e8ad2ad63a766caac67d9f28cc2139f8f5c4205618943e74687656",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-05.log",
+      "beforeSHA256": null,
+      "newSHA256": "8a72b070ae018a3c784d9cdf069cfdc983fae48f7d4cfa96ca988f1cd25f3df4",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-06.js",
+      "beforeSHA256": null,
+      "newSHA256": "d50e1db9d72bd45cb4d8a685d74bc74490af27c1d34353deef3cc9b796965107",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-06.log",
+      "beforeSHA256": null,
+      "newSHA256": "a6bd780bc365838681050b606fcd6112eec702ec1eb543adbbe882cc8e1fda75",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/browser-summary.json",
+      "beforeSHA256": null,
+      "newSHA256": "a8208092f074bf2c1a7b2e9c33d0f950f4412f10664e25e0d68aa49e171572a7",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/bundle-check.json",
+      "beforeSHA256": null,
+      "newSHA256": "8513add2450c5a3472e1c99bd618cabed16615bd57420c2cf79c58b546d0afdf",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/console.log",
+      "beforeSHA256": null,
+      "newSHA256": "65564d17443d03bde8478df656627ad518c1d05c495ac6d9e7365c88b14eb7c0",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/dependency-validation.log",
+      "beforeSHA256": null,
+      "newSHA256": "86520e2aa13f1797218a96ddf591b0a84d1b6cada5e74b358b8e965e818caea6",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/dev-server.log",
+      "beforeSHA256": null,
+      "newSHA256": "d5bd46b2f327059ad5493667a5457910b36072def27424f0749f9f454cd12b39",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/network-command-first-attempt.log",
+      "beforeSHA256": null,
+      "newSHA256": "d486673f89e5172cdcb7d4f8e63f8893c54d2aee32ac8033c8b808b433453e4f",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/network-static.log",
+      "beforeSHA256": null,
+      "newSHA256": "e09bc5dd5df82aa459cd125adc56c00a53f121b40a53cc90d06ba931b894e1ec",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/network.log",
+      "beforeSHA256": null,
+      "newSHA256": "76aea195e56b810d5ebff21c144f3ef3a277508cb99b9245796acb3a65eeb075",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/01-casting.png",
+      "beforeSHA256": null,
+      "newSHA256": "3bbfd24b7a418a981c34757e223b6c6f6817bc9b3b011ec49c920b911b44e257",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/02-bite.png",
+      "beforeSHA256": null,
+      "newSHA256": "1ceaa0e7f371e4f9a7298684bdb99d98405f0adb3ae4edb2fa8c43497a512a70",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/03-fish-result.png",
+      "beforeSHA256": null,
+      "newSHA256": "45aabe6b8658768ed62e8bcdfe142f63172187b618af6f9e9b2e633d5a6e4c97",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/04-collection.png",
+      "beforeSHA256": null,
+      "newSHA256": "76517139fe696d175be58a0f45842919fe842866bdbb339fa648da75bd3439ea",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/05-junk.png",
+      "beforeSHA256": null,
+      "newSHA256": "bcd8d600f68dde9a8be766e921cce3f934c67c0a375526dd5b1dbffa8d5ed95c",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/06-rare.png",
+      "beforeSHA256": null,
+      "newSHA256": "5f7da31d7fcc1cb797566b4e1863b483ac5f062f3dc972b94d0f913ee66cc58c",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/07-token.png",
+      "beforeSHA256": null,
+      "newSHA256": "e0768611a23a9c76efba8132d7bca9e763ce75e15a6649491253b67c68931878",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/08-reload-safe-shore.png",
+      "beforeSHA256": null,
+      "newSHA256": "308e82cee4135259990693282078dc47370171757c240086aa5fb2dddd2a4d04",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/09-save-failed.png",
+      "beforeSHA256": null,
+      "newSHA256": "1baaee16e9cf72a160d703f19eda410f78e6d04b435dfca2ec670716a02acb6d",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/10-normal-carp.png",
+      "beforeSHA256": null,
+      "newSHA256": "72d29cc8057dd923c6b76c1ff572d2075971f97787061ea1013fa76e1f30066d",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/output/playwright/11-final-ready.png",
+      "beforeSHA256": null,
+      "newSHA256": "10bcfdd92a5fd2791bbfae6c9355210958972da17826195f074d86291c9f5e61",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/readiness.json",
+      "beforeSHA256": null,
+      "newSHA256": "897443322a232e51ea791ca725546a753a13d067de7f9c11be94c35e98a4b82a",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/scope-audit.json",
+      "beforeSHA256": null,
+      "newSHA256": "8c8cd3bc52ce6d4e1cba8e75a21f4335927e2a260aa0f14a219e6cbb1b9e5471",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/tests.log",
+      "beforeSHA256": null,
+      "newSHA256": "2d0d935bc5e2fa511a3ea52bf6d8e17bcdedee5ba98ba3ae3e75913f932cde17",
+      "operation": "copy"
+    },
+    {
+      "task": "04-fishing",
+      "path": "docs/chapter2/fishing/verification.md",
+      "beforeSHA256": null,
+      "newSHA256": "94ec7288633d14c61132c0e059344566da498cb3a982190ca21d32a042e7fb25",
+      "operation": "copy"
+    }
+  ],
+  "verification": "passed",
+  "runtimeAssembly": false,
+  "acceptedAtUTC": "2026-10-02T15:17:18.335083+00:00",
+  "allNodeTestsPassed": 194,
+  "mainBuildPassed": true,
+  "browserMainRootAssertions": 9
+}

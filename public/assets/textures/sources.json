@@ -1,0 +1,29 @@
+[
+  {
+    "asset": "WoodSiding006",
+    "files": [
+      "WoodSiding006_1K-JPG_Color.jpg",
+      "WoodSiding006_1K-JPG_NormalGL.jpg",
+      "WoodSiding006_1K-JPG_Roughness.jpg"
+    ],
+    "source": "https://ambientcg.com/get?file=WoodSiding006_1K-JPG.zip"
+  },
+  {
+    "asset": "Ground009",
+    "files": [
+      "Ground009_1K-JPG_Color.jpg",
+      "Ground009_1K-JPG_NormalGL.jpg",
+      "Ground009_1K-JPG_Roughness.jpg"
+    ],
+    "source": "https://ambientcg.com/get?file=Ground009_1K-JPG.zip"
+  },
+  {
+    "asset": "Plaster007",
+    "files": [
+      "Plaster007_1K-JPG_Color.jpg",
+      "Plaster007_1K-JPG_NormalGL.jpg",
+      "Plaster007_1K-JPG_Roughness.jpg"
+    ],
+    "source": "https://ambientcg.com/get?file=Plaster007_1K-JPG.zip"
+  }
+]

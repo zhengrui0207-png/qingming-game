@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "contractVersion",
+    "draft",
+    "regionId",
+    "anchors",
+    "routes",
+    "boundaryEvidence"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "1.0.0"
+    },
+    "draft": {
+      "type": "boolean"
+    },
+    "regionId": {
+      "const": "region_d"
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "layer",
+          "position"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "anchor_c2_entry",
+              "anchor_c2_exit",
+              "anchor_c2_fisher",
+              "anchor_c2_porter",
+              "anchor_c2_merchant",
+              "anchor_c2_food_vendor",
+              "anchor_c2_fishing_a",
+              "anchor_c2_fishing_b",
+              "anchor_c2_repair",
+              "anchor_c2_delivery",
+              "anchor_c2_safe_return"
+            ]
+          },
+          "layer": {
+            "enum": [
+              "ground",
+              "bridge"
+            ]
+          },
+          "position": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "routes": {
+      "type": "array"
+    },
+    "boundaryEvidence": {
+      "type": "string"
+    }
+  },
+  "title": "Chapter 2 measured scene v1"
+}

@@ -1,0 +1,12 @@
+{
+  "src/main.js": "5d01a2033a6bb067143b501291ecb23599f958221f20440a00df5496b3d6a02d",
+  "src/storefronts.js": "439e46eef4fd9a9278f87b301845d0a53383ecd4138c6e09a27bd2ad6a53ae9d",
+  "src/hongqiao/collectibles.js": "7b72f4c2076447cdd69e4d938ad2e2fd0b7782fd45b73af2afcd5560ad421234",
+  "src/interaction/core.js": "3763ae4235c4dc25ae28c20214170377cc996b67a5ad8f0d6012010a3246c165",
+  "src/interaction/progress-adapter.js": "922ccfe5b17fb6d54e3ea915278f2f36086bc831cc17ade32a167e013f47970a",
+  "src/interaction/fixtures.js": "c7937d5094d729650475fbcd1ba6ef57c62f0a484eb454b6a451581a7aa93f4a",
+  "src/interaction/dialogue.css": "bc230e6c3e54bb09e9c329b2dc5edfcbb2b0760fb9ef56afa41c0af6b7f064d6",
+  "src/interaction/core.test.js": "c28d215f63771b08d93673801b9b7a79f119ebc9de29ca1fed77441674c8829a",
+  "src/interaction/dialogue.js": "e9a448782a5359b6385ab01c79c617c2e15387b33dce40ba64df93dac71f69c0",
+  "src/interaction/progress-book.js": "22f924413ff99e9c3c14852fec94b72ec620ead7a1fb348e54cfe3ab0247fb48"
+}

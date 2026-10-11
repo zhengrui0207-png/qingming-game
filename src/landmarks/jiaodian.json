@@ -1,0 +1,12 @@
+{
+  "id": "landmark_jiaodian_frontage",
+  "shopId": 1,
+  "name": "桥头脚店",
+  "frontage": [-8.1, 0.94, 33.9],
+  "yaw": 1.5707963267948966,
+  "waiter": {"id": "npc_jiaodian_waiter", "sourceNpcId": "street-168", "assetId": "QMSH-16", "position": [-7.05, 0.94, 35.55], "yaw": 1.15},
+  "props": {"bowlId": "prop_jiaodian_waiter_bowl", "chopstickIds": ["prop_jiaodian_chopstick_a", "prop_jiaodian_chopstick_b"]},
+  "look": "竹木门架 · 竖写脚店招牌 · 门前端碗持筷的伙计",
+  "reference": "用户提供的《清明上河图》脚店局部截图",
+  "interpretation": "依据所给原画局部补绘门面和端碗持筷姿态；人物外貌复用已有酒保资产，建筑比例与颜色为游戏演绎。"
+}

@@ -1,0 +1,191 @@
+{
+  "contractVersion": "1.0.0",
+  "draft": true,
+  "npcs": [
+    {
+      "id": "npc_c2_fisher",
+      "name": "渔夫",
+      "description": "",
+      "sourceIds": []
+    },
+    {
+      "id": "npc_c2_porter",
+      "name": "老脚夫",
+      "description": "",
+      "sourceIds": []
+    },
+    {
+      "id": "npc_c2_merchant",
+      "name": "杂货铺掌柜",
+      "description": "",
+      "sourceIds": []
+    },
+    {
+      "id": "npc_c2_food_vendor",
+      "name": "王家蒸作伙计",
+      "description": "",
+      "sourceIds": []
+    }
+  ],
+  "quests": [
+    {
+      "id": "quest_c2_main",
+      "title": "",
+      "summary": ""
+    },
+    {
+      "id": "quest_c2_fishing_intro",
+      "title": "",
+      "summary": ""
+    },
+    {
+      "id": "quest_c2_repair",
+      "title": "",
+      "summary": ""
+    },
+    {
+      "id": "quest_c2_token",
+      "title": "",
+      "summary": ""
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal_c2_fishing_intro",
+      "title": ""
+    },
+    {
+      "id": "goal_c2_first_trade",
+      "title": ""
+    },
+    {
+      "id": "goal_c2_repair_reward",
+      "title": ""
+    },
+    {
+      "id": "goal_c2_handoff",
+      "title": ""
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "dialogue_c2_fisher",
+      "npcId": "npc_c2_fisher",
+      "entryNodeId": "node_c2_fisher_entry",
+      "nodes": [
+        {
+          "id": "node_c2_fisher_entry",
+          "text": "",
+          "choices": []
+        }
+      ]
+    },
+    {
+      "id": "dialogue_c2_porter",
+      "npcId": "npc_c2_porter",
+      "entryNodeId": "node_c2_porter_entry",
+      "nodes": [
+        {
+          "id": "node_c2_porter_entry",
+          "text": "",
+          "choices": []
+        }
+      ]
+    },
+    {
+      "id": "dialogue_c2_merchant",
+      "npcId": "npc_c2_merchant",
+      "entryNodeId": "node_c2_merchant_entry",
+      "nodes": [
+        {
+          "id": "node_c2_merchant_entry",
+          "text": "",
+          "choices": []
+        }
+      ]
+    },
+    {
+      "id": "dialogue_c2_food_vendor",
+      "npcId": "npc_c2_food_vendor",
+      "entryNodeId": "node_c2_food_vendor_entry",
+      "nodes": [
+        {
+          "id": "node_c2_food_vendor_entry",
+          "text": "",
+          "choices": []
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "story_c2_marked_token",
+      "itemId": "treasure_c2_marked_token",
+      "title": "",
+      "contentVersion": 1,
+      "historicalNote": "",
+      "sourceIds": [],
+      "sections": []
+    },
+    {
+      "id": "story_c2_silent_bell",
+      "itemId": "treasure_c2_silent_bell",
+      "title": "",
+      "contentVersion": 1,
+      "historicalNote": "",
+      "sourceIds": [],
+      "sections": []
+    },
+    {
+      "id": "story_c2_celadon_cup",
+      "itemId": "treasure_c2_celadon_cup",
+      "title": "",
+      "contentVersion": 1,
+      "historicalNote": "",
+      "sourceIds": [],
+      "sections": []
+    }
+  ],
+  "sources": [],
+  "storyRules": [
+    {
+      "storyId": "story_c2_marked_token",
+      "stages": [
+        {
+          "id": "stage_c2_marked_token_known",
+          "all": []
+        },
+        {
+          "id": "stage_c2_marked_token_resolved",
+          "all": []
+        }
+      ]
+    },
+    {
+      "storyId": "story_c2_silent_bell",
+      "stages": [
+        {
+          "id": "stage_c2_silent_bell_known",
+          "all": []
+        },
+        {
+          "id": "stage_c2_silent_bell_resolved",
+          "all": []
+        }
+      ]
+    },
+    {
+      "storyId": "story_c2_celadon_cup",
+      "stages": [
+        {
+          "id": "stage_c2_celadon_cup_known",
+          "all": []
+        },
+        {
+          "id": "stage_c2_celadon_cup_resolved",
+          "all": []
+        }
+      ]
+    }
+  ]
+}

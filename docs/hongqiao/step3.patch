@@ -1,0 +1,317 @@
+--- before/src/main.js
++++ after/src/main.js
+@@ -1,6 +1,8 @@
++import {createInputLocks,createKeyGate,createInteractionRegistry,segmentBlocked} from './interaction/core.js';
++import {createDialogueUI} from './interaction/dialogue.js';
+ import './style.css';
+ import {motionConfig} from './motion/config.js';
+-import { createHongqiaoProgress } from './hongqiao/runtime.js';
++import { createHongqiaoProgress } from './interaction/progress-adapter.js';
+ import { loadSurfaces } from './surfaces.js';
+ import * as THREE from 'three';
+ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+@@ -36,7 +38,12 @@
+ let actor={x:0,z:35,height:.94,layer:'ground',mode:'walk'},boat={x:32,z:7,angle:Math.PI/2,speed:0};
+ let yaw=.22,pitch=.49,distance=10,targetDistance=10,actorAngle=Math.PI,phase=0,last=0,elapsed=0,mapTime=0,toastTimer;
+ const focus=new THREE.Vector3(0,2,0),temp=new THREE.Vector3(),camGoal=new THREE.Vector3();
+-let hongqiaoProgress, progressPauseBefore=false;
++let hongqiaoProgress,interactions,dialogue,fixture;
++const gate=createKeyGate();
++const locks=createInputLocks(()=>{paused=locks.locked;clearInput();if(paused)$('interaction').hidden=true;});
++const panelReleases=new Map();
++function lockPanel(name,cancel){if(!panelReleases.has(name))panelReleases.set(name,locks.acquire(name,cancel));}
++function unlockPanel(name){panelReleases.get(name)?.();panelReleases.delete(name);clearInput();if(!locks.locked)canvas.focus();}
+ let lastMode='walk',moving=false,fpsFrames=0,fpsAt=0,fps=0,lastShadowUpdate=-1,lifeAccumulator=0;
+ 
+ const palette={wood:'#816041',wood_light:'#a08054',wood_dark:'#4c3828',plaster:'#c7b799',plaster_old:'#b5a183',ground:'#a28b68',path:'#b9a17a',stone:'#736e5d',stone_light:'#938875',tile0:'#434d4a',tile1:'#515953',tile2:'#60665c',tile3:'#4c5551',cloth:'#cbb082',cloth_blue:'#596d71',cloth_red:'#896253',skin:'#c5a07c',hair:'#292c25',indigo:'#36596c',robe_gray:'#929387',robe_cream:'#c4c1a5',robe_brown:'#84735a',robe_green:'#687359',belt:'#443f32',leaf0:'#536e47',leaf1:'#71844e',leaf2:'#8e9b65',fruit:'#b79341',ceramic:'#788b7f',red:'#a45137'};
+@@ -62,56 +69,76 @@
+  scholar=createScholar(scholarGLTF);player=scholar.root;player.rotation.y=actorAngle;
+  scene.add(city,player,skiff);
+  streetLife=createStreetLife(scene,npcPrototype,lifeAssets,world,camera);
+- storefronts=createStorefronts(scene,world,{onOpen:()=>{paused=true;clearInput();},onClose:()=>{paused=false;clearInput();canvas.focus();}});
+- hongqiaoProgress=createHongqiaoProgress({scene,loader,world,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>{progressPauseBefore=paused;paused=true;clearInput();},onClose:()=>{paused=progressPauseBefore;clearInput();canvas.focus();},toast});
++ interactions=createInteractionRegistry({unobstructed:(a,p)=>!segmentBlocked({x:a.x,y:a.height,z:a.z},p,world.colliders),reachable:(a,p)=>{const r=moveActor({...a},p.x-a.x,p.z-a.z,world);return r.mode==='walk'&&r.layer===a.layer&&Math.hypot(r.x-p.x,r.z-p.z)<.1;}});
++ let testEffects=0;
++ dialogue=createDialogueUI({locks,gate,condition:id=>id==='canRecord',effect:id=>{if(id==='recordTest')testEffects++;}});
++ storefronts=createStorefronts(scene,world,{registry:interactions,onOpen:()=>lockPanel('history',()=>storefronts.closeDetails()),onClose:()=>unlockPanel('history')});
++ hongqiaoProgress=createHongqiaoProgress({scene,loader,world,registry:interactions,npcPrototype,locks,gate,canOperate:()=>playing&&!paused&&!boatMode,getActor:()=>({...actor}),canOpen:()=>playing,onOpen:()=>lockPanel('book',()=>hongqiaoProgress.ui.close()),onClose:()=>unlockPanel('book'),toast});
++ if(import.meta.env.DEV && new URLSearchParams(location.search).has('interactionTest')){
++  const {createInteractionFixtures}=await import('./interaction/fixtures.js');fixture=createInteractionFixtures({scene,prototype:npcPrototype,registry:interactions,dialogue});
++ }
++ if(import.meta.env.DEV && new URLSearchParams(location.search).has('test'))window.__interaction={getState:()=>({focus:interactions.current,locks:locks.snapshot(),dialogue:dialogue.getState(),testEffects,registered:interactions.entries().map(e=>({id:e.id,type:e.type,trigger:e.trigger}))}),move:(...args)=>fixture?.move(...args),visible:(...args)=>fixture?.visible(...args),closeDialogue:()=>dialogue.cancel()};
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('hongqiao')){
+   const {createHongqiaoDebug}=await import('./hongqiao/debug.js');
+-  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false});
++  window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false,renderNpcs:false});
+  }
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('motionDebug')){
+   const {createMotionDebug}=await import('./motion/debug.js');
+   window.__motionDebug=createMotionDebug(scene,world,()=>({...actor}));
+  }
+  loaded=true;$('start').disabled=false;$('start-label').textContent='入画游览';$('load-caption').textContent='画卷已展开 · 点击开始';
+- window.__qingming={getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),shops:storefronts.getState()}),world};
++ window.__qingming={hongqiao:hongqiaoProgress.presentation,getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),shops:storefronts.getState()}),world};
+  // Explicit test mode keeps debug positioning unavailable during ordinary play.
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('test'))Object.assign(window.__qingming,{snapshotScene:()=>streetLife.snapshot(),setAO:v=>atmosphere.setEnabled(v),setHero:(position,target,fov)=>{heroPosition=position;heroTarget=target;if(fov){heroFov=fov;camera.fov=fov;camera.updateProjectionMatrix();}},setActor:(x,z,layer='ground')=>{boatMode=false;actor={x,z,layer,...surfaceAt(x,z,world,layer)};focus.set(x,actor.height+1,z);},setBoat:(x,z,angle)=>{boat={x,z,angle,speed:0};},setView:(a,p,d)=>{yaw=a;pitch=p;targetDistance=d;},step:(dx,dz)=>{actor=moveActor(actor,dx,dz,world);}});
+  }catch(e){console.error(e);showError('三维场景加载失败。请确认本地服务仍在运行，然后重新载入。');}
+ }
+ function showError(message){$('error').hidden=false;$('error-message').textContent=message;$('start-label').textContent='载入遇到问题';}
+ function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),3600);}
+-function start(){if(!loaded)return;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');}
++function start(){if(!loaded)return;playing=true;$('landing').hidden=true;$('hud').hidden=false;document.body.classList.add('playing');focus.set(actor.x,actor.height+1.2,actor.z);camera.position.set(actor.x+3,actor.height+6,actor.z+10);canvas.focus();toast('欢迎来到汴京。用 W A S D 行走，拖动鼠标环顾四周。');hongqiaoProgress?.start?.();}
+ $('start').addEventListener('click',start);
+ function clearInput(){keys.clear();dragging=false;pointers.clear();pinchDistance=0;}
+-function showGuide(){storefronts?.closeDetails();paused=true;clearInput();$('guide').showModal();}
+-function closeGuide(){if($('guide').open)$('guide').close();paused=false;clearInput();canvas.focus();}
++function showGuide(){if($('guide').open)return;storefronts?.closeDetails();lockPanel('guide',closeGuide);$('guide').showModal();}
++function closeGuide(){if($('guide').open)$('guide').close();unlockPanel('guide');}
+ $('help').onclick=showGuide;$('close-guide').onclick=closeGuide;$('close-guide-bottom').onclick=closeGuide;
+ $('guide').addEventListener('cancel',e=>{e.preventDefault();closeGuide()});
+-function setOverview(){if(!playing)return;overview=!overview;targetDistance=overview?29:10;if(overview)yaw=.5;$('overview').innerHTML=(overview?'跟随人物':'俯瞰全景')+' <kbd>V</kbd>';toast(overview?'鸟瞰模式：仍可移动人物，拖动可旋转全景。':'已切回人物跟随视角');}
++function setOverview(){if(!playing||paused)return;overview=!overview;targetDistance=overview?29:10;if(overview)yaw=.5;$('overview').innerHTML=(overview?'跟随人物':'俯瞰全景')+' <kbd>V</kbd>';toast(overview?'鸟瞰模式：仍可移动人物，拖动可旋转全景。':'已切回人物跟随视角');}
+ $('overview').onclick=setOverview;
+-$('zoom-in').onclick=()=>targetDistance=Math.max(3,targetDistance/1.22);
+-$('zoom-out').onclick=()=>targetDistance=Math.min(65,targetDistance*1.22);
++$('zoom-in').onclick=()=>{if(!paused)targetDistance=Math.max(3,targetDistance/1.22);};
++$('zoom-out').onclick=()=>{if(!paused)targetDistance=Math.min(65,targetDistance*1.22);};
+ $('fullscreen').onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen();}catch{toast('当前窗口不支持全屏，可以放大浏览器窗口游览。')}};
+-$('home').onclick=()=>{boatMode=false;actor={x:0,z:35,height:.94,layer:'ground',mode:'walk'};boat={x:32,z:7,angle:Math.PI/2,speed:0};overview=false;yaw=.22;pitch=.49;targetDistance=10;$('overview').innerHTML='俯瞰全景 <kbd>V</kbd>';toast('已回到虹桥南街，小舟已归泊东侧码头。');canvas.focus();};
++$('home').onclick=()=>{if(paused)return;boatMode=false;actor={x:0,z:35,height:.94,layer:'ground',mode:'walk'};boat={x:32,z:7,angle:Math.PI/2,speed:0};overview=false;yaw=.22;pitch=.49;targetDistance=10;$('overview').innerHTML='俯瞰全景 <kbd>V</kbd>';toast('已回到虹桥南街，小舟已归泊东侧码头。');canvas.focus();};
+ function interact(){
+  if(!playing||paused)return;
+  if(boatMode){const dest=getDisembark(boat,world);if(dest){actor=dest;boatMode=false;boat.speed=0;toast(actor.mode==='swim'?'已离船入水，向河岸或码头游去即可上岸。':'已在码头下船。');}}
+  else if(Math.hypot(actor.x-boat.x,actor.z-boat.z)<5 && actor.height<2){boatMode=true;boat.speed=0;actor.layer='ground';toast('已登舟：W / S 划行，A / D 转向，E 下船。');}
+- else if(!hongqiaoProgress?.interact())toast('小舟停在虹桥东侧码头，走近或游近后按 E 登船。');
+- canvas.focus();
+-}
+-$('interact-button').onclick=interact;
++ else if(!interactions?.activate(actor))toast('小舟停在虹桥东侧码头，走近或游近后按 E 登船。');
++ if(!paused)canvas.focus();
++}
++$('interact-button').onclick=()=>{if(!gate.held('KeyE'))interact();};
+ const mapKeys={ArrowUp:'KeyW',ArrowDown:'KeyS',ArrowLeft:'KeyA',ArrowRight:'KeyD'};
++// One capture router owns panel keys; keyup is always observed, including nested modals.
++addEventListener('keydown',e=>{
++ const fresh=gate.press(e.code,e.repeat),plain=!e.ctrlKey&&!e.metaKey&&!e.altKey;
++ const routed=plain&&['KeyE','KeyI','KeyF','Escape'].includes(e.code);
++ if(routed){e.preventDefault();e.stopImmediatePropagation();if(!fresh||!playing)return;
++  if(e.code==='KeyI'){if(locks.top?.owner==='book')hongqiaoProgress.ui.close();else if(!hongqiaoProgress.ui.isOpen())hongqiaoProgress.ui.open();return;}
++  if(e.code==='Escape'){if(locks.locked)locks.top.cancel();else showGuide();return;}
++  if(e.code==='KeyE'){if(locks.top?.owner==='hqDialogue')hongqiaoProgress.dialogue.advance();else if(locks.top?.owner==='dialogue')dialogue.advance();else if(!locks.locked)interact();return;}
++  if(e.code==='KeyF'){if(locks.top?.owner==='history')storefronts.closeDetails();else if(!locks.locked)storefronts.openDetails();return;}
++ }
++ if(locks.locked){e.stopImmediatePropagation();if(['KeyW','KeyA','KeyS','KeyD','KeyV','Equal','Minus','NumpadAdd','NumpadSubtract'].includes(e.code))e.preventDefault();}
++},true);
++addEventListener('keyup',e=>{gate.release(e.code);keys.delete(mapKeys[e.code]||e.code);},true);
++function resetInput(){gate.clear();clearInput();}
++addEventListener('blur',resetInput);document.addEventListener('visibilitychange',resetInput);
+ addEventListener('keydown',e=>{
+  if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();
+- if(e.code==='Escape'){e.preventDefault();if(storefronts?.isOpen()){storefronts.closeDetails();return;}if($('guide').open)closeGuide();else if(playing)showGuide();return;}
+  if(e.target instanceof HTMLButtonElement&&['Enter','Space'].includes(e.code))return;
+- if(e.code==='KeyF'&&!e.repeat&&!e.metaKey&&!e.ctrlKey&&playing&&!$('guide').open){e.preventDefault();if(storefronts?.isOpen())storefronts.closeDetails();else if(!paused)storefronts?.openDetails();return;}
+- if(e.code==='KeyE'&&!e.repeat)interact();if(e.code==='KeyV'&&!e.repeat&&!paused)setOverview();
++ if(e.code==='KeyV'&&!e.repeat&&!paused)setOverview();
+  if((e.code==='Equal'||e.code==='NumpadAdd')&&!paused)targetDistance=Math.max(3,targetDistance/1.15);
+  if((e.code==='Minus'||e.code==='NumpadSubtract')&&!paused)targetDistance=Math.min(65,targetDistance*1.15);
+  if(!paused)keys.add(mapKeys[e.code]||e.code);
+-});addEventListener('keyup',e=>keys.delete(mapKeys[e.code]||e.code));addEventListener('blur',clearInput);document.addEventListener('visibilitychange',clearInput);
++});
+ canvas.addEventListener('contextmenu',e=>e.preventDefault());
+ canvas.addEventListener('pointerdown',e=>{if(!playing||paused)return;canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});dragging=true;});
+ canvas.addEventListener('pointermove',e=>{
+@@ -122,7 +149,7 @@
+ });
+ for(const evt of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(evt,e=>{pointers.delete(e.pointerId);pinchDistance=0;dragging=pointers.size>0;});
+ canvas.addEventListener('wheel',e=>{e.preventDefault();if(playing&&!paused)targetDistance=THREE.MathUtils.clamp(targetDistance*Math.exp(e.deltaY*.0012),3,65)},{passive:false});
+-for(const btn of document.querySelectorAll('[data-move]')){const k=btn.dataset.move;btn.onpointerdown=e=>{e.preventDefault();btn.setPointerCapture(e.pointerId);keys.add(k)};for(const ev of ['pointerup','pointercancel','lostpointercapture'])btn.addEventListener(ev,()=>keys.delete(k));}
++for(const btn of document.querySelectorAll('[data-move]')){const k=btn.dataset.move;btn.onpointerdown=e=>{e.preventDefault();if(paused)return;btn.setPointerCapture(e.pointerId);keys.add(k)};for(const ev of ['pointerup','pointercancel','lostpointercapture'])btn.addEventListener(ev,()=>keys.delete(k));}
+ // Small local soundscape: filtered moving water and distant bird calls. Starts only on request.
+ let audioCtx,audioGain,soundOn=false,birdTimer;
+ $('sound').onclick=async()=>{
+@@ -181,8 +208,8 @@
+  if(!boatMode&&Math.hypot(actor.x-32,actor.z-14)<8)place='东岸码头';
+  $('place').textContent=place;$('activity').textContent=mode+' · 书生阿青';
+  const nearby=Math.hypot(actor.x-boat.x,actor.z-boat.z)<5 && actor.height<2;
+- $('interaction').hidden=!(boatMode||nearby);$('interact-label').textContent=boatMode?(world.docks.some(d=>Math.hypot(d.x-boat.x,d.z-boat.z)<d.d/2+4.3)?'靠岸下船':'离船入水'):'登上小舟';
+- if(!boatMode&&!nearby&&!paused){const prompt=hongqiaoProgress?.prompt();if(prompt){$('interaction').hidden=false;$('interact-label').textContent=prompt;}}
++ $('interaction').hidden=paused||!(boatMode||nearby);$('interact-label').textContent=boatMode?(world.docks.some(d=>Math.hypot(d.x-boat.x,d.z-boat.z)<d.d/2+4.3)?'靠岸下船':'离船入水'):'登上小舟';
++ if(!boatMode&&!nearby&&!paused){const focused=interactions?.focus(actor);if(focused){$('interaction').hidden=false;$('interact-label').textContent=focused.label;}}
+  $('shift-hint').style.opacity=boatMode?'.35':'1';drawMap();
+ }
+ function drawMap(){
+@@ -207,6 +234,7 @@
+    storefronts.update(elapsed,actor,playing&&!boatMode);
+ 
+   }
++  hongqiaoProgress?.update?.(dt);
+   window.__hongqiao?.update();
+   window.__motionDebug?.update();
+   updateCamera(dt);mapTime+=dt;if(playing&&mapTime>.12){updateHUD();mapTime=0;}
+--- before/src/storefronts.js
++++ after/src/storefronts.js
+@@ -1,6 +1,6 @@
+ import * as THREE from 'three';
+ import { makeHistorySites, nearestHistorySite, sourcesFor } from './history.js';
+-export function createStorefronts(scene,world,{onOpen=()=>{},onClose=()=>{}}={}){
++export function createStorefronts(scene,world,{registry,onOpen=()=>{},onClose=()=>{}}={}){
+  const signs=[];
+  for(const s of world.shops){
+   const c=document.createElement('canvas');c.width=1024;c.height=256;const ctx=c.getContext('2d');
+@@ -15,7 +15,10 @@
+  for(const s of world.shops.filter(s=>s.featured&&['tea','food'].includes(s.type)))for(let i=0;i<5;i++){
+   const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:vaporTexture,transparent:true,opacity:.15,depthWrite:false}));scene.add(sprite);steam.push({s,i,sprite});
+  }
+- const sites=makeHistorySites(world);
++ const authoredSites=makeHistorySites(world);
++ // Legacy automatic adapter retains the exact footprint, hysteresis and F reader.
++ for(const site of authoredSites)registry?.register({id:'landmark_'+site.history.key,type:'landmark',anchor:{position:[site.x,.94,site.z],layer:site.history.key==='bridge'?'bridge':'ground'},radius:4.8,enabled:true,trigger:'automatic',legacySite:site,action:()=>openDetails()});
++ const sites=registry?registry.entries().filter(e=>e.type==='landmark').map(e=>e.legacySite):authoredSites;
+  const card=document.createElement('aside');card.id='shop-card';card.hidden=true;card.setAttribute('aria-label','附近建筑的历史介绍');
+  card.innerHTML=`<small id="shop-type"></small><h3 id="shop-name"></h3><p id="shop-wares"></p>
+  <section class="history-peek"><span>建筑</span><h4 id="history-architecture-title"></h4><p id="history-architecture"></p></section>
+--- before/src/hongqiao/collectibles.js
++++ after/src/hongqiao/collectibles.js
+@@ -1,5 +1,6 @@
++import {createInteractionRegistry,segmentBlocked} from '../interaction/core.js';
++import {moveActor} from '../world.js';
+ import * as THREE from 'three';
+-import {moveActor} from '../world.js';
+ 
+ export function createCollectibles({scene, loader, config, store, world, baseURL}) {
+   const root = new THREE.Group(); root.name = 'Hongqiao task instances'; scene.add(root);
+@@ -27,16 +28,8 @@
+     }).catch(error => {entry.loadState = 'placeholder'; assetErrors.push({instanceId: instance.id, error: String(error)}); console.warn('[Hongqiao asset; using placeholder]', instance.id, error); sync();});
+   }
+   store.subscribeWorld(sync);
+-  function focus(actor) {
+-    if (actor.mode !== 'walk') return null;
+-    const state = store.getState();
+-    return [...entries.values()].filter(e => {
+-      const [x,y,z] = e.anchor.position;
+-      if (!e.group.visible || !state.permissions.includes(e.instance.permissionId) || actor.layer !== e.anchor.layer || Math.abs(actor.height - y) > .7 || Math.hypot(x - actor.x, z - actor.z) > 2) return false;
+-      // Reuse the accepted world's movement constraint for a short reachability probe.
+-      const reached = moveActor({...actor}, x - actor.x, z - actor.z, world);
+-      return reached.mode === 'walk' && Math.hypot(reached.x - x, reached.z - z) < .1;
+-    }).sort((a,b) => Math.hypot(a.anchor.position[0]-actor.x,a.anchor.position[2]-actor.z) - Math.hypot(b.anchor.position[0]-actor.x,b.anchor.position[2]-actor.z))[0] ?? null;
+-  }
+-  return {focus, getState: () => ({instances: [...entries].map(([id,e]) => ({id, visible: e.group.visible, loadState: e.loadState})), assetErrors: [...assetErrors]})};
++  // Compatibility query delegates to the same registry rules; the runtime uses its shared registry.
++  const compatibility=createInteractionRegistry({unobstructed:(a,p)=>!segmentBlocked({x:a.x,y:a.height,z:a.z},p,world.colliders),reachable:(a,p)=>{const r=moveActor({...a},p.x-a.x,p.z-a.z,world);return r.mode==='walk'&&r.layer===a.layer&&Math.hypot(r.x-p.x,r.z-p.z)<.1;}});
++  for(const e of entries.values()){const p=new THREE.Vector3();compatibility.register({id:e.instance.id,type:'item',entity:e.group,anchor:e.anchor,radius:2,maxHeightDifference:.7,enabled:()=>e.group.visible&&store.getState().permissions.includes(e.instance.permissionId),getPosition:()=>e.group.getWorldPosition(p),action:()=>{}});}
++  return {focus:actor=>{const e=compatibility.focus(actor);return e?entries.get(e.id):null;},entries:()=>[...entries.values()], getState: () => ({instances: [...entries].map(([id,e]) => ({id, visible: e.group.visible, loadState: e.loadState})), assetErrors: [...assetErrors]})};
+ }
+--- before/src/interaction/core.js
++++ after/src/interaction/core.js
+@@ -0,0 +1,43 @@
++// No DOM or quest-specific state: adapters supply positions, conditions and effects.
++export const interactionConfig = Object.freeze({radius:1.8,maxHeightDifference:.8,switchMargin:.22,reachTolerance:.1,charactersPerSecond:34});
++export function createInputLocks(onChange=()=>{}) {
++ const stack=[];
++ return {acquire(owner,cancel=()=>{}) {const token={owner,cancel};stack.push(token);onChange();let released=false;return ()=>{if(released)return;released=true;stack.splice(stack.indexOf(token),1);onChange();};},
++ get locked(){return stack.length>0;},get top(){return stack.at(-1);},snapshot:()=>stack.map(t=>t.owner)};
++}
++export function createKeyGate(){const down=new Set();return {press(code,repeat=false){if(repeat||down.has(code))return false;down.add(code);return true;},release:code=>down.delete(code),held:code=>down.has(code),clear:()=>down.clear()};}
++export function segmentBlocked(a,b,colliders){
++ return colliders.some(c=>{
++  // Authored obstacle volumes, not roofs or decorative foliage. Conservative at foot height.
++  if(Math.min(a.y,b.y)>(c.h??3)+.94)return false;
++  let lo=0,hi=1;
++  for(const [axis,extent] of [['x',c.w],['z',c.d]]){const delta=b[axis]-a[axis],min=c[axis]-extent/2,max=c[axis]+extent/2;
++   if(Math.abs(delta)<1e-9){if(a[axis]<min||a[axis]>max)return false;}
++   else {let t1=(min-a[axis])/delta,t2=(max-a[axis])/delta;if(t1>t2)[t1,t2]=[t2,t1];lo=Math.max(lo,t1);hi=Math.min(hi,t2);if(lo>hi)return false;}
++  }return hi>0.001&&lo<.999;
++ });
++}
++export function createInteractionRegistry({reachable=()=>true,unobstructed=()=>true}={}){
++ const entries=new Map();let current=null;
++ function register(entry){if(!entry.id||!entry.type||(!entry.entity&&!entry.anchor&&!entry.getPosition)||typeof entry.action!=='function')throw Error('Invalid Interactable: '+entry.id);if(entries.has(entry.id))throw Error('Duplicate Interactable: '+entry.id);const e={radius:interactionConfig.radius,enabled:true,trigger:'E',...entry};entries.set(e.id,e);return ()=>{entries.delete(e.id);if(current===e.id)current=null;};}
++ function candidates(actor){return [...entries.values()].filter(e=>e.trigger==='E').flatMap(e=>{
++  if(!(typeof e.enabled==='function'?e.enabled():e.enabled))return [];
++  const p=e.getPosition?e.getPosition():e.entity?e.entity.getWorldPosition(e.entity.position.clone()):e.anchor.position;
++  const pos=Array.isArray(p)?{x:p[0],y:p[1],z:p[2]}:p;
++  const layer=typeof e.layer==='function'?e.layer():e.layer??e.anchor?.layer;
++  const d=Math.hypot(pos.x-actor.x,pos.z-actor.z);
++  if(!Number.isFinite(d)||!Number.isFinite(pos.y)||d>e.radius||Math.abs(pos.y-actor.height)>(e.maxHeightDifference??interactionConfig.maxHeightDifference)||layer!==actor.layer||actor.mode!=='walk'||!unobstructed(actor,pos,e)||!reachable(actor,pos,e))return [];
++  return [{entry:e,d}];
++ }).sort((a,b)=>a.d-b.d||a.entry.id.localeCompare(b.entry.id));}
++ function focus(actor){const all=candidates(actor),old=all.find(x=>x.entry.id===current);const selected=old&&(!all[0]||old.d<=all[0].d+interactionConfig.switchMargin)?old:all[0];current=selected?.entry.id??null;return selected?.entry??null;}
++ return {register,focus,activate(actor){const e=focus(actor);if(!e)return false;e.action();return true;},entries:()=>[...entries.values()],get current(){return current;}};
++}
++export function createDialogueSession(definition,{condition=()=>false,effect=()=>{},onClose=()=>{}}={}){
++ const nodes=new Map(definition.nodes.map(n=>[n.id,n]));let node=nodes.get(definition.start),revealed=false,result=null;
++ if(!node||nodes.size!==definition.nodes.length)throw Error('Invalid dialogue nodes');
++ for(const n of nodes.values()){if(n.next&&!nodes.has(n.next))throw Error('Unknown next node');for(const o of n.options??[])if(o.next&&!nodes.has(o.next))throw Error('Unknown option node');}
++ function close(reason){if(result)return;result=reason;onClose(reason);}
++ return {get node(){return node;},get revealed(){return revealed;},get result(){return result;},reveal(){revealed=true;},options:()=> (node.options??[]).filter(o=>!o.condition||condition(o.condition)),
++ advance(){if(result)return;if(!revealed){revealed=true;return;}if(node.options?.length)return;if(node.next){node=nodes.get(node.next);revealed=false;}else close('completed');},
++ choose(id){if(result||!revealed)return false;const option=(node.options??[]).find(o=>o.id===id);if(!option||option.condition&&!condition(option.condition))return false;for(const e of option.effects??[])effect(e);if(option.next){node=nodes.get(option.next);revealed=false;}else close('completed');return true;},cancel:()=>close('cancelled')};
++}
+--- before/src/interaction/progress-adapter.js
++++ after/src/interaction/progress-adapter.js
+@@ -0,0 +1,2 @@
++// Step 5 connects formal content through the existing registry and input locks.
++export {createHongqiaoProgress} from '../hongqiao/runtime.js';
+--- before/src/interaction/fixtures.js
++++ after/src/interaction/fixtures.js
+@@ -0,0 +1,10 @@
++import * as THREE from 'three';
++// Explicit DEV-only samples. No Hongqiao NPC dialogue, permission or quest effects.
++export const testDialogue={id:'test_greeting',start:'greeting',nodes:[
++ {id:'greeting',speaker:'街坊（交互测试）',text:'书生，请稍候。这是统一交互的测试对白，只验证输入和选项，不接取正式任务。',next:'choice'},
++ {id:'choice',speaker:'街坊（交互测试）',text:'是否记下这次测试？取消不会留下记录。',options:[{id:'record',text:'明确确认：记下测试',condition:'canRecord',effects:['recordTest']},{id:'leave',text:'结束交谈',effects:[]}]}
++]};
++export function createInteractionFixtures({scene,prototype,registry,dialogue}){
++ const entities=[];for(let i=0;i<2;i++){const group=prototype.clone(true);group.position.set(i?1.6:.5,.94,33.7);scene.add(group);entities.push(group);const p=new THREE.Vector3();registry.register({id:'test_npc_'+i,type:'npc',entity:group,layer:()=>group.userData.layer??'ground',radius:2,enabled:()=>group.visible,getPosition:()=>group.getWorldPosition(p),label:'与街坊'+(i?'乙':'甲')+'交谈（测试）',action:()=>dialogue.open(testDialogue)});}
++ return {move(index,x,y,z,layer='ground'){entities[index].position.set(x,y,z);entities[index].userData.layer=layer;},visible(index,value){entities[index].visible=value;}};
++}
+--- before/src/interaction/dialogue.css
++++ after/src/interaction/dialogue.css
+@@ -0,0 +1,6 @@
++#interaction-dialogue{width:min(620px,84vw);border:1px solid #ad9670;border-radius:10px;background:#f1e5cc;color:#352c23;padding:28px;box-shadow:0 16px 80px #0008;font-family:serif}
++#interaction-dialogue::backdrop{background:#17251d55}
++#interaction-dialogue h2{margin:8px 0 16px}#interaction-dialogue p{min-height:80px;font-size:20px;line-height:1.8;white-space:pre-wrap}
++#interaction-dialogue button{display:block;margin-top:12px;padding:10px 18px;border:1px solid #8a7557;border-radius:5px;background:#e5d3b0;color:#352c23;font-size:16px;cursor:pointer}
++#interaction-dialogue button:disabled{opacity:.5;cursor:wait}#interaction-dialogue span{font-size:14px;color:#6c5941}
++#interaction-dialogue p{color:#352c23}
+--- before/src/interaction/core.test.js
++++ after/src/interaction/core.test.js
+@@ -0,0 +1,10 @@
++import {test} from 'node:test';import assert from 'node:assert/strict';
++import {createInputLocks,createKeyGate,createInteractionRegistry,createDialogueSession,segmentBlocked} from './core.js';
++const actor={x:0,z:0,height:.94,layer:'ground',mode:'walk'};
++test('tokens release out of order and idempotently without unlocking another panel',()=>{const l=createInputLocks(),a=l.acquire('dialogue'),b=l.acquire('book');a();a();assert.deepEqual(l.snapshot(),['book']);assert.equal(l.locked,true);b();assert.equal(l.locked,false);});
++test('E held, repeat and blur state',()=>{const g=createKeyGate();assert.equal(g.press('KeyE'),true);assert.equal(g.press('KeyE'),false);g.clear();assert.equal(g.press('KeyE',true),false);g.release('KeyE');assert.equal(g.press('KeyE'),true);});
++test('focus reads live transforms and uses hysteresis, layer, height and enabled checks',()=>{const r=createInteractionRegistry(),p={x:1,y:.94,z:0};r.register({id:'a',type:'npc',getPosition:()=>p,layer:'ground',action(){}});r.register({id:'b',type:'npc',anchor:{position:[1.1,.94,0],layer:'ground'},action(){}});assert.equal(r.focus(actor).id,'a');p.x=1.2;assert.equal(r.focus(actor).id,'a');p.x=1.4;assert.equal(r.focus(actor).id,'b');assert.equal(r.focus({...actor,layer:'bridge'}),null);assert.equal(r.focus({...actor,height:4}),null);p.x=0;p.y=4;assert.equal(r.focus(actor).id,'b');});
++test('thin obstructions intersect a continuous segment and auto landmarks do not steal E',()=>{assert.equal(segmentBlocked({x:0,y:.94,z:0},{x:2,y:.94,z:0},[{x:1,z:0,w:.02,d:2,h:2}]),true);const r=createInteractionRegistry({unobstructed:()=>false});r.register({id:'a',type:'npc',anchor:{position:[1,.94,0],layer:'ground'},action(){}});assert.equal(r.focus(actor),null);const auto=createInteractionRegistry();auto.register({id:'old',type:'landmark',anchor:{position:[0,.94,0]},trigger:'automatic',action(){}});assert.equal(auto.focus(actor),null);});
++const def={start:'a',nodes:[{id:'a',speaker:'甲',text:'一句',next:'b'},{id:'b',speaker:'乙',text:'确认',options:[{id:'yes',text:'确认',condition:'yes',effects:['grant']}]}]};
++test('dialogue reveal/continue, choice cannot be E-confirmed, cancel has no effects',()=>{let effects=0,result;const s=createDialogueSession(def,{effect:()=>effects++,onClose:r=>result=r});s.advance();assert.equal(s.node.id,'a');s.advance();assert.equal(s.node.id,'b');s.advance();s.advance();assert.equal(s.result,null);s.cancel();assert.equal(result,'cancelled');assert.equal(effects,0);assert.equal(s.choose('yes'),false);});
++test('explicit choice rechecks condition and effects occur once',()=>{let allowed=false,count=0;const s=createDialogueSession(def,{condition:()=>allowed,effect:()=>count++});s.advance();s.advance();s.advance();assert.equal(s.choose('yes'),false);allowed=true;assert.equal(s.choose('yes'),true);assert.equal(s.result,'completed');assert.equal(s.choose('yes'),false);assert.equal(count,1);});
+--- before/src/interaction/dialogue.js
++++ after/src/interaction/dialogue.js
+@@ -0,0 +1,20 @@
++import {createDialogueSession,interactionConfig} from './core.js';
++import './dialogue.css';
++export function createDialogueUI({locks,gate,condition,effect,onResult=()=>{}}){
++ const dialog=document.createElement('dialog');dialog.id='interaction-dialogue';dialog.setAttribute('aria-label','人物对话');document.body.append(dialog);
++ let session=null,release=null,shown=0,nodeId=null,frame=0,last=0,lastResult=null,renderKey=null;
++ const el=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
++ function close(result){lastResult=result;cancelAnimationFrame(frame);dialog.close();release?.();release=null;session=null;onResult(result);}
++ function render(){if(!session)return;const node=session.node;if(nodeId!==node.id){nodeId=node.id;shown=0;}
++  const key=JSON.stringify([node.id,session.revealed,Math.floor(shown),gate.held('KeyE'),locks.top?.owner,session.options().map(o=>o.id)]);if(renderKey===key)return;renderKey=key;
++  dialog.replaceChildren(el('small','对话'),el('h2',node.speaker),el('p',session.revealed?node.text:node.text.slice(0,Math.floor(shown))));
++  const ready=!gate.held('KeyE')&&locks.top?.owner==='dialogue';
++  if(session.revealed&&node.options?.length){for(const option of session.options()){const b=el('button',option.text);b.disabled=!ready;b.onclick=()=>{if(!gate.held('KeyE')&&locks.top?.owner==='dialogue'){session?.choose(option.id);render();}};dialog.append(b);}}
++  else dialog.append(el('span','E '+(session.revealed?'继续':'显示全文')));
++  const cancel=el('button','取消 Esc');cancel.onclick=()=>session?.cancel();dialog.append(cancel);
++ }
++ function tick(ms){if(!session)return;if(!session.revealed)shown+=(ms-last)/1000*interactionConfig.charactersPerSecond;last=ms;if(shown>=session.node.text.length)session.reveal();render();frame=requestAnimationFrame(tick);}
++ dialog.addEventListener('cancel',e=>{e.preventDefault();if(locks.top?.owner==='dialogue')session?.cancel();});
++ return {open(definition){if(session)return false;lastResult=null;nodeId=null;renderKey=null;session=createDialogueSession(definition,{condition,effect,onClose:close});release=locks.acquire('dialogue',()=>session?.cancel());render();dialog.showModal();last=performance.now();frame=requestAnimationFrame(tick);return true;},
++ advance(){if(session&&locks.top?.owner==='dialogue'){session.advance();render();}},cancel(){session?.cancel();},isOpen:()=>!!session,getState:()=>({open:!!session,nodeId:session?.node.id,revealed:session?.revealed,result:lastResult,awaitingRelease:gate.held('KeyE')})};
++}
+--- before/src/interaction/progress-book.js
++++ after/src/interaction/progress-book.js
+@@ -0,0 +1,2 @@
++// Keep one shared inventory/codex/story reader.
++export {createProgressUI} from '../hongqiao/progress-ui.js';

@@ -1,0 +1,1422 @@
+{
+  "version": "1.0.0-audit",
+  "contractVersion": "1.0.0",
+  "scope": "D only",
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "approvedTotalCredits": 0,
+  "actualTotalCredits": 0,
+  "paidRequestsSubmitted": 0,
+  "recommendedPaidScope": "none now; after content approval consider only one fisher if local modification fails",
+  "productionGate": [
+    "CONTENT_READY",
+    "SCENE_READY",
+    "approved reference/appearance list",
+    "approved paid scope if needed"
+  ],
+  "assets": [
+    {
+      "assetId": "asset_c2_fisher",
+      "contractEntityId": "npc_c2_fisher",
+      "idScope": "frozen-contract",
+      "name": "渔夫",
+      "classification": "local-modification",
+      "decision": "QMSH-21 / QMSH-23候选，需拆农具/牵绳并调服式；失败再考虑单个新外观",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A fictional Northern Song riverside fisher, weathered face, plain short hemp tunic, tied trousers, straw hat and simple cloth shoes. Empty hands in relaxed neutral pose. No farming tools, no boat pole, no modern reel, no Qing queue. Match the existing muted hand-painted PBR townspeople.",
+      "promptSHA256": "3553a7a9e1080997db29e5d0f7b2c069b34d7201d0252c965f649dfff1642b5b",
+      "references": [
+        "S03"
+      ],
+      "anchorId": "anchor_c2_fisher",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 20000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.6,
+        1.72,
+        0.5
+      ],
+      "separableOrMovableParts": [
+        "hands",
+        "rod_socket",
+        "creel_socket"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [
+        "Idle",
+        "Walk"
+      ],
+      "missingDedicatedAnimations": [
+        "示范抛竿",
+        "提篓看鱼"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": [
+          105,
+          115
+        ],
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 1,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/characters/asset_c2_fisher/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_porter",
+      "contractEntityId": "npc_c2_porter",
+      "idScope": "frozen-contract",
+      "name": "老脚夫",
+      "classification": "local-modification",
+      "decision": "QMSH-28；局部年龄、肩担握持调整，职业擦汗不是修缮动作",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "An older fictional Northern Song porter in faded brown hemp work clothes, wrapped headcloth and cloth footwear, restrained grey hair and age lines. Neutral empty-handed stance, separate removable wooden carrying yoke, no modern buckles. Match existing low-poly PBR residents.",
+      "promptSHA256": "825b663928fd2a0d0595676706e950feb35206aeda45538e1b16175c8e7ea246",
+      "references": [
+        "S08/S09"
+      ],
+      "anchorId": "anchor_c2_porter",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 20000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.6,
+        1.78,
+        0.5
+      ],
+      "separableOrMovableParts": [
+        "hands",
+        "removable_yoke"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [
+        "Idle",
+        "Walk",
+        "Occupation_Carrier_Wipe_Sweat"
+      ],
+      "missingDedicatedAnimations": [
+        "试拉绑绳",
+        "交付箱笼"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": [
+          105,
+          115
+        ],
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 1,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/characters/asset_c2_porter/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_merchant",
+      "contractEntityId": "npc_c2_merchant",
+      "idScope": "frozen-contract",
+      "name": "杂货铺掌柜",
+      "classification": "reuse-candidate",
+      "decision": "QMSH-08，算盘可独立节点调整；身份由01审阅",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A fictional Northern Song general goods shopkeeper, dark muted green robe, brown sleeveless outer layer, wrapped cap and cloth shoes. Separate small wooden abacus, calm approachable expression, no imperial insignia or modern accessories. Match existing PBR style.",
+      "promptSHA256": "fc54abe93d16c2a773259d1cfd89d18621a93dd77527ab9bd227df8ed9d6376d",
+      "references": [
+        "S07"
+      ],
+      "anchorId": "anchor_c2_merchant",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 20000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.6,
+        1.78,
+        0.5
+      ],
+      "separableOrMovableParts": [
+        "hands",
+        "abacus"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [
+        "Idle",
+        "Walk",
+        "Occupation_Abacus_Count"
+      ],
+      "missingDedicatedAnimations": [
+        "递铃",
+        "摆盏"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": [
+          105,
+          115
+        ],
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 1,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/characters/asset_c2_merchant/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_food_vendor",
+      "contractEntityId": "npc_c2_food_vendor",
+      "idScope": "frozen-contract",
+      "name": "王家蒸作伙计",
+      "classification": "local-modification",
+      "decision": "QMSH-17茶坊伙计，保留围裙；壶盏移除/替换后再验证握持",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A fictional Northern Song street food worker, light brown short tunic, plain tied white hemp apron, dark trousers, headcloth and cloth shoes. Empty hands ready to hold a serving bowl. Separate kettle and cup. No chef uniform, no modern glassware. Match existing PBR residents.",
+      "promptSHA256": "25c072a81802fb51059447664b1621eb89e81be5e50fa08e05dda7f9b6774ee0",
+      "references": [
+        "S07"
+      ],
+      "anchorId": "anchor_c2_food_vendor",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 20000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.6,
+        1.78,
+        0.5
+      ],
+      "separableOrMovableParts": [
+        "hands",
+        "kettle",
+        "cup",
+        "bread_socket"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [
+        "Idle",
+        "Walk",
+        "Occupation_Tea_Pour"
+      ],
+      "missingDedicatedAnimations": [
+        "递蒸饼",
+        "递粥"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": [
+          105,
+          115
+        ],
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 1,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/characters/asset_c2_food_vendor/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_fish_a",
+      "contractEntityId": "item_c2_fish_a",
+      "idScope": "frozen-contract",
+      "name": "普通鱼甲（鲫形候选）",
+      "classification": "missing-local-model",
+      "decision": "无独立鱼GLB；鱼种由01确认，优先Blender",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small crucian-shaped freshwater fish candidate with a deep silver-grey body, muted scales, dark dorsal fin and forked tail, natural proportions. Single fish, no stand or scenery, no fantasy glow. Species identification is pending review.",
+      "promptSHA256": "aa66602b6b2156b5fa266990ce0e4f12795339225933bd060dc20d690aef5876",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1500,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.28,
+        0.13,
+        0.07
+      ],
+      "separableOrMovableParts": [
+        "tail",
+        "fins"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "尾鳍摆动"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_fish_a/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_fish_b",
+      "contractEntityId": "item_c2_fish_b",
+      "idScope": "frozen-contract",
+      "name": "普通鱼乙（鲤形候选）",
+      "classification": "missing-local-model",
+      "decision": "无独立鱼GLB；与甲区别体长、尾鳍及须",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A carp-shaped freshwater fish candidate with an elongated muted bronze body, subtle scales, short barbels and forked tail. Single fish, no background, no fantasy features. Match restrained game palette. Species pending historical and ecological review.",
+      "promptSHA256": "145b35bb9543488e63b20ee66eb15709a8c09b45e0f8658a98611d23e41206bb",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1800,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.38,
+        0.14,
+        0.08
+      ],
+      "separableOrMovableParts": [
+        "tail",
+        "fins"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "尾鳍摆动"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_fish_b/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_junk_pottery",
+      "contractEntityId": "item_c2_junk_pottery",
+      "idScope": "frozen-contract",
+      "name": "碎陶片",
+      "classification": "missing-local-model",
+      "decision": "简单曲面本地建；不挖改第一关陶器",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small irregular shard of coarse reddish brown earthenware, curved broken edge, visible wall thickness, mud stain and worn surfaces. No writing, no complete vessel, no modern ceramic decoration.",
+      "promptSHA256": "f1bbc00818678cac400c11dace095ed2703d88b6ce5797c56a5f1d895b1ca874",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 200,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.09,
+        0.025,
+        0.07
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_junk_pottery/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_junk_wood",
+      "contractEntityId": "item_c2_junk_wood",
+      "idScope": "frozen-contract",
+      "name": "朽木小件",
+      "classification": "missing-local-model",
+      "decision": "本地木片，轮廓区别木牌",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small water-worn rotten wood offcut, irregular splintered edges, desaturated dark brown grain and mud stains, no carved marks, no painted symbols.",
+      "promptSHA256": "d215760dcf13cebfafe53f25f02b9c4774e503494d2eadfe8c89b4aa2595fdde",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 240,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.16,
+        0.03,
+        0.06
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_junk_wood/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_junk_metal",
+      "contractEntityId": "item_c2_junk_metal",
+      "idScope": "frozen-contract",
+      "name": "旧金属件",
+      "classification": "missing-local-model",
+      "decision": "钝小铁片本地建，不做现代螺栓",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small dull corroded iron strap fragment with one irregular hole, worn edges and muted rust. No machine screws, no modern hex nuts, no sharp weapon.",
+      "promptSHA256": "798993cf9d6b2771f870049288d825a6cb445df7e8b89cc80e752ff1070e3f2a",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 300,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.07,
+        0.02,
+        0.05
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_junk_metal/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_rare_copper_piece",
+      "contractEntityId": "item_c2_rare_copper_piece",
+      "idScope": "frozen-contract",
+      "name": "旧铜扣",
+      "classification": "missing-local-model",
+      "decision": "可重复旧物；环扣形制待01确认",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small plain old copper loop fitting candidate, hand-worn round profile, subtle green patina and dark brown recesses, no lettering, no imperial decoration, no modern snap fastener.",
+      "promptSHA256": "d98c8ce791c941b60ab888cbf6570929b2213c9060d8c2d34b74f5ffffc3b769",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 400,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.045,
+        0.012,
+        0.04
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_rare_copper_piece/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_treasure_c2_marked_token",
+      "contractEntityId": "treasure_c2_marked_token",
+      "idScope": "frozen-contract",
+      "name": "刻痕木牌",
+      "classification": "missing-local-model",
+      "decision": "两面不同刻痕待正文；不得预先刻编造文字",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small worn wooden token, rounded uneven edges, shallow simple incised marks reserved on both faces, dark water stains and a polished handling area. No legible invented script or modern lettering. Front and back marks must follow approved story artwork.",
+      "promptSHA256": "7b06b0ad8b758ead5fb89cf198e0b362fb8d2e43f5473ee3427719300350b635",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 600,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.08,
+        0.014,
+        0.13
+      ],
+      "separableOrMovableParts": [
+        "front_marks",
+        "back_marks"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_treasure_c2_marked_token/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_treasure_c2_silent_bell",
+      "contractEntityId": "treasure_c2_silent_bell",
+      "idScope": "frozen-contract",
+      "name": "缺舌铜铃",
+      "classification": "missing-local-model",
+      "decision": "铃口中空无舌，悬环独立；故事断痕待01",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small old bronze vehicle bell candidate, hollow open underside with no clapper, plain suspension loop, thin worn rim, restrained brown-green patina. Separate loop and shell, no carved fantasy runes or modern jingle ball design.",
+      "promptSHA256": "ad96372ae84d3684fb7011bc3ade2831490994e664f5ec7eb61ec017762e66c4",
+      "references": [
+        "S08/S09"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1200,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.055,
+        0.07,
+        0.055
+      ],
+      "separableOrMovableParts": [
+        "suspension_loop",
+        "shell"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "悬环轻摆"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_treasure_c2_silent_bell/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_treasure_c2_celadon_cup",
+      "contractEntityId": "treasure_c2_celadon_cup",
+      "idScope": "frozen-contract",
+      "name": "缺口青釉小盏",
+      "classification": "missing-local-model",
+      "decision": "开口真实壁厚，缺口可见，足圈；不做完好碗",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small shallow celadon-glazed cup candidate with a modest foot ring, visible inner surface and wall thickness, one unmistakable chip in the rim. Muted grey-green glaze, worn exposed clay at the chip, no handle, no gold repair, no modern logo.",
+      "promptSHA256": "296d20e4a0242d3f9376b0db518cbf2930994ca1e0ba97efd79d132305085a3e",
+      "references": [
+        "S07"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1400,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.105,
+        0.055,
+        0.105
+      ],
+      "separableOrMovableParts": [
+        "ceramic_shell"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_treasure_c2_celadon_cup/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_basic_rod",
+      "contractEntityId": "item_c2_basic_rod",
+      "idScope": "frozen-contract",
+      "name": "借用基础钓竿",
+      "classification": "missing-local-model",
+      "decision": "优先程序化竹杆/线；第一关竹篙只参考不替代",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A simple slender tapered bamboo fishing rod, visible subtle nodes, hemp binding near the grip, separate flexible rod segments and fine line attachment. No reel, no carbon fibre, no metal telescoping joints.",
+      "promptSHA256": "4650ba5e2fc4f9dc5e77056264e86ae2ec67421bb8eb4aecdc021d6cac02b3e1",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 700,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.03,
+        2.2,
+        0.03
+      ],
+      "separableOrMovableParts": [
+        "grip",
+        "flex_segments",
+        "tip_socket"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "竿身弯曲"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_basic_rod/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_item_c2_basic_bait",
+      "contractEntityId": "item_c2_basic_bait",
+      "idScope": "frozen-contract",
+      "name": "基础钓饵",
+      "classification": "missing-local-model",
+      "decision": "小面团饵本地建；不添加消费玩法",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small plain earth-coloured dough bait pellet, handmade irregular surface, no package, no modern fishing lure or hook embedded in geometry.",
+      "promptSHA256": "ab93a8481a8427189c6cb4c7e74da7a7ef21604622ba24d992fd354a51aee9fb",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 100,
+      "textureStartMax": 256,
+      "dimensionsMetersCandidate": [
+        0.03,
+        0.025,
+        0.03
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_item_c2_basic_bait/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_food_c2_steamed_bread",
+      "contractEntityId": "food_c2_steamed_bread",
+      "idScope": "frozen-contract",
+      "name": "蒸饼",
+      "classification": "missing-local-model",
+      "decision": "淡面色无夹馅横切；食物即时消费",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A simple small steamed wheat bun candidate with a pale cream matte surface, round slightly flattened form and subtle handmade irregularity. No sandwich filling, no modern wrapper, no decorative logo.",
+      "promptSHA256": "a403aff50647120cc5221dabf0d40ac1cb62ccdf42eb3515676f32c4d38bdef1",
+      "references": [
+        "S07"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 400,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.1,
+        0.04,
+        0.1
+      ],
+      "separableOrMovableParts": [],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_food_c2_steamed_bread/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_food_c2_congee",
+      "contractEntityId": "food_c2_congee",
+      "idScope": "frozen-contract",
+      "name": "粥食",
+      "classification": "missing-local-model",
+      "decision": "碗体/粥面分开，形制待01核对",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A modest coarse ceramic bowl containing pale rice porridge, separate bowl and porridge surface, modest foot ring and visible thickness. Restrained muted glaze, no modern spoon, no fancy toppings.",
+      "promptSHA256": "f5fac75538107049547609b478a91d030755e2e9e93c51ad90a5556a401518d2",
+      "references": [
+        "S07"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 900,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.14,
+        0.065,
+        0.14
+      ],
+      "separableOrMovableParts": [
+        "bowl",
+        "congee_surface"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_food_c2_congee/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_food_c2_tea",
+      "contractEntityId": "food_c2_tea",
+      "idScope": "frozen-contract",
+      "name": "茶",
+      "classification": "local-modification",
+      "decision": "QMSH-17手中杯只作参考，需独立茶盏",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small plain ceramic tea bowl candidate with shallow profile, modest foot ring and separate brown tea surface. Restrained Northern Song inspired everyday form pending review, no handle, no clear glass, no modern teabag.",
+      "promptSHA256": "0d10ef997d539c4a0fda2a279cf1315c2fe078cbed50cc007856fbd3931175e4",
+      "references": [
+        "S07"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 800,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.1,
+        0.05,
+        0.1
+      ],
+      "separableOrMovableParts": [
+        "bowl",
+        "tea_surface"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_food_c2_tea/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_float",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "浮子（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "细木/芦苇浮子程序化，水面起伏交04",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small simple reed fishing float with a tapered natural buff body and a narrow darker tip, separate line eye, no plastic or neon commercial finish.",
+      "promptSHA256": "ed2612612945ae6e4373cca9bf64ae406e0eb476cf07fc76e8d30fe9d108116b",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 120,
+      "textureStartMax": 256,
+      "dimensionsMetersCandidate": [
+        0.012,
+        0.09,
+        0.012
+      ],
+      "separableOrMovableParts": [
+        "float_body"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "沉浮"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_float/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_fishing_line",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "钓线（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "可变控制点曲线；不从盘绳GLB拉伸",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A thin continuous natural-fibre fishing line with a subtle beige tone; represent as a deformable curve from rod tip to float. No coiled static mesh and no fishing reel.",
+      "promptSHA256": "7902df8a77ebd41eeb3344b87eefc52a6e4a8ea8e50d7dc9a34ac28a9dd9b200",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 480,
+      "textureStartMax": 256,
+      "dimensionsMetersCandidate": [
+        0.003,
+        2,
+        0.003
+      ],
+      "separableOrMovableParts": [
+        "line_control_points"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "曲线变形"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_fishing_line/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_fish_creel",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "鱼篓（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "局部原画篮筐轮廓参考，篓口/提绳分件",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small woven bamboo fish creel candidate with a narrow opening, rounded squat body and separate carrying cord and lid. Subtle weave, muted aged bamboo, hollow inside, no plastic bucket.",
+      "promptSHA256": "3e662d00e0a5a394f629004dbf5bbc441decc9a7a2bff7dd9b32cac2fbcf7cc2",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1800,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.3,
+        0.4,
+        0.3
+      ],
+      "separableOrMovableParts": [
+        "body",
+        "lid",
+        "handle"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "提篓"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_fish_creel/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_repair_rope",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "修缮绳（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "绳体独立曲线，端点/扎结/尾绳分件；不声称工艺复原",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A continuous flexible hemp binding rope candidate for securing a transport crate, frayed but serviceable surface, separate free ends and a replaceable knot section. Not a static coil; exact knot follows approved repair choreography.",
+      "promptSHA256": "c4e514061704d2dd9315b765d37aacb762f538df92eb91672f2d08a750d03c55",
+      "references": [
+        "S08"
+      ],
+      "anchorId": "anchor_c2_repair",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 1600,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.012,
+        2.4,
+        0.012
+      ],
+      "separableOrMovableParts": [
+        "continuous_rope",
+        "end_a",
+        "end_b",
+        "knot_proxy"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "摆绳",
+        "拉紧",
+        "试拉"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_repair_rope/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_cargo_crate",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "运输箱笼（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "cargo.glb是货包；需本地格条箱笼、盖、绑点",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A modest Northern Song inspired transport crate candidate, woven bamboo sides supported by simple wooden ribs, separate lid and load, visible rope tie points. Shape based on approved Zhang Zeduan crop, no modern shipping pallet or metal corner fittings.",
+      "promptSHA256": "2d472c8ce3ca9178156ea178a10bad3c69e3cecff1cb020036ee3460edf6cc57",
+      "references": [
+        "S08"
+      ],
+      "anchorId": "anchor_c2_repair",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 2400,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.75,
+        0.6,
+        0.55
+      ],
+      "separableOrMovableParts": [
+        "frame",
+        "lid",
+        "rope_sockets",
+        "payload"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "盖/负载小幅试动"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_cargo_crate/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_repair_support",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "修缮支架（本地美术ID）",
+      "classification": "missing-local-model",
+      "decision": "简单木撑本地；不复制S09木架成新桥",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A small plain temporary wooden support for a transport crate, unpainted worn timbers, simple pegs and stable base, no metal clamp or modern workbench. Candidate game prop, not an identified original painting structure.",
+      "promptSHA256": "873f1d8c3aeb372827cf1983989929d0a1c5e94df37062bfec9f69692123b6c9",
+      "references": [
+        "S08"
+      ],
+      "anchorId": "anchor_c2_repair",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 400,
+      "textureStartMax": 512,
+      "dimensionsMetersCandidate": [
+        0.5,
+        0.5,
+        0.4
+      ],
+      "separableOrMovableParts": [
+        "timber_crosspieces"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_repair_support/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_shop_steamer",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "铺面蒸笼（本地美术ID）",
+      "classification": "reuse-candidate",
+      "decision": "public/assets/scenery/steamer.glb；盖体只静态不能宣称可开合",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A modest stacked woven bamboo steamer candidate, weathered natural bamboo rings and simple separate lid. Match the existing shop steamer; no metal industrial equipment, no branding.",
+      "promptSHA256": "51c22576aa63eef8e11301b18faa2ed18e62baffe2e09a88cc666f3c776c5a9d",
+      "references": [
+        "S07"
+      ],
+      "anchorId": "anchor_c2_food_vendor",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 4000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        0.6,
+        0.75,
+        0.6
+      ],
+      "separableOrMovableParts": [
+        "lid_if_separated"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "盖开合如演出需要"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_shop_steamer/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_shop_counter",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "铺面案台/篮筐（本地美术ID）",
+      "classification": "reuse-candidate",
+      "decision": "world现有铺面陈设先复用；选择shop 2/5/10等02实走，不另造铺面",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "A simple street-side Northern Song inspired wooden serving counter with a plain woven basket, weathered wood and muted natural fibre surfaces. Keep existing painting-based shop footprint; no modern signage or elaborate new architecture.",
+      "promptSHA256": "7e1544fcd0902000a4afff7d0cde377b18d5e6dc0d6a55dfd75ca08c1ebc2c5e",
+      "references": [
+        "S07"
+      ],
+      "anchorId": "anchor_c2_food_vendor",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 2000,
+      "textureStartMax": 1024,
+      "dimensionsMetersCandidate": [
+        1.2,
+        0.8,
+        0.6
+      ],
+      "separableOrMovableParts": [
+        "table",
+        "basket",
+        "goods"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "public/assets/chapter2/props/asset_c2_shop_counter/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_fishing_motion",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "阿青钓鱼专用动作（本地美术ID）",
+      "classification": "missing-action-only",
+      "decision": "复用阿青40骨骼；本地关键帧，禁止外观重生成",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "Animation brief only: restrained two-hand bamboo-rod cast, stable planted feet, soft anticipation, short forward cast, wait and controlled lift. Fit the existing scholar skeleton and long robe; no running, no modern reel handling.",
+      "promptSHA256": "773a1c7fe979fb89f34a34653e9b932177f6d44527caf548302c190d130ce5c0",
+      "references": [
+        "S03"
+      ],
+      "anchorId": null,
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 0,
+      "textureStartMax": 0,
+      "dimensionsMetersCandidate": [
+        0,
+        0,
+        0
+      ],
+      "separableOrMovableParts": [
+        "right_grip",
+        "left_support",
+        "rod_tip"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "Cast",
+        "Wait",
+        "Lift"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "src/chapter2/assets/motions/asset_c2_fishing_motion/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    },
+    {
+      "assetId": "asset_c2_repair_motion",
+      "contractEntityId": null,
+      "idScope": "local-art-proposal-not-public-contract",
+      "name": "阿青/脚夫修缮专用动作（本地美术ID）",
+      "classification": "missing-action-only",
+      "decision": "分别按两套骨架制作，不套bone_19；绳/箱握持联合验收",
+      "approvedForProduction": false,
+      "artAccepted": false,
+      "performanceAccepted": false,
+      "englishPrompt": "Animation brief only: inspect loose binding, align a continuous rope, tighten at visible tie points and cautiously test the load. Use existing independently cloned skeletons and approved knot choreography, planted feet and conservative sleeve movement.",
+      "promptSHA256": "d33acc06ed52ffeca8e8e7e26e75cd44efe17c5ebb511ce8879ffcf36dbf29ba",
+      "references": [
+        "S08"
+      ],
+      "anchorId": "anchor_c2_repair",
+      "referenceArtStatus": "draft; needs CONTENT_READY and SCENE_READY, close-shot confirmation",
+      "triangleStartBudget": 0,
+      "textureStartMax": 0,
+      "dimensionsMetersCandidate": [
+        0,
+        0,
+        0
+      ],
+      "separableOrMovableParts": [
+        "hands",
+        "rope_targets",
+        "crate_targets"
+      ],
+      "originRequirement": "角色双脚接地中点；杆柄握点；绳端A局部原点；其余物件支承底面中心。模型本体和包装节点分开。",
+      "axesRequirement": "+Y up; wrapper forward +Z; existing source characters approximately +X, wrapper yaw -PI/2; confirm per model",
+      "existingAnimations": [],
+      "missingDedicatedAnimations": [
+        "Inspect",
+        "Align",
+        "Tighten",
+        "Test"
+      ],
+      "expectedCredits": {
+        "localPreferred": 0,
+        "conditionalNewCharacterEstimate": null,
+        "approvedCap": 0,
+        "priceStatus": "official pages disagree on detailed texture surcharge; re-quote same-region account before submission"
+      },
+      "attemptCap": {
+        "authorizedPaid": 0,
+        "proposedPaidGeneration": 0,
+        "proposedLocalReviewPasses": 2
+      },
+      "deliveryPath": "src/chapter2/assets/motions/asset_c2_repair_motion/v1/",
+      "status": "planned-not-produced",
+      "tasks": [],
+      "actualCredits": 0
+    }
+  ]
+}

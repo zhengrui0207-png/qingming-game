@@ -1,0 +1,19 @@
+import * as THREE from 'three';
+import config from './config.json';
+import {validateHongqiao} from './validate.js';
+// Explicit development survey only: no interaction, save, player or camera writes.
+export async function createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor,renderItems=true,renderNpcs=true}) {
+ const result=validateHongqiao(config,world);if(!result.ok)throw Error(result.errors.join('\n'));
+ const root=new THREE.Group();root.name='Hongqiao anchor survey';scene.add(root);
+ const anchor=id=>config.anchors.find(a=>a.id===id),asset=id=>config.assets.find(a=>a.id===id);
+ function label(text,p,color){const c=document.createElement('canvas');c.width=512;c.height=96;const x=c.getContext('2d');x.fillStyle='#152726e8';x.fillRect(0,0,512,96);x.fillStyle=color;x.font='bold 36px sans-serif';x.textAlign='center';x.fillText(text,256,62);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:true}));s.position.set(p[0],p[1]+2.8,p[2]);s.scale.set(2.6,.49,1);root.add(s)}
+ for(const n of renderNpcs?config.npcs:[]){const a=anchor(n.anchorId),model=npcPrototype.clone(true);model.position.set(...a.position);root.add(model);label(n.name,a.position,n.color)}
+ for(const a of config.anchors){const m=new THREE.Mesh(new THREE.RingGeometry(.35,.44,24),new THREE.MeshBasicMaterial({color:a.kind==='ship'?0xf2b35d:0x6edccd,side:THREE.DoubleSide}));m.rotation.x=-Math.PI/2;m.position.set(a.position[0],a.position[1]+.03,a.position[2]);root.add(m);if(a.kind==='ship')label(a.label,a.position,'#f2b35d')}
+ for(const route of config.routes){const g=new THREE.BufferGeometry().setFromPoints(route.points.map(([x,z])=>new THREE.Vector3(x,1.01,z)));root.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:0x63c7b4,transparent:true,opacity:.65})))}
+ for(const i of config.instances){const item=config.items.find(x=>x.id===i.itemId);if(!renderItems)label(item.name,anchor(i.anchorId).position,'#f3dbab')}
+ const assetErrors=[];
+ await Promise.all((renderItems?config.instances:[]).map(async i=>{try{const item=config.items.find(x=>x.id===i.itemId),g=await loader.loadAsync(import.meta.env.BASE_URL+asset(item.assetId).path),m=g.scene,b=new THREE.Box3().setFromObject(m),size=b.getSize(new THREE.Vector3()),scale=i.maxDimension/Math.max(size.x,size.y,size.z);m.scale.setScalar(scale);const center=b.getCenter(new THREE.Vector3()),a=anchor(i.anchorId);m.position.set(a.position[0]-center.x*scale,a.position[1]-b.min.y*scale+.04,a.position[2]-center.z*scale);root.add(m);label(item.name,[a.position[0],a.position[1]-.7,a.position[2]],'#f3dbab')}catch(e){assetErrors.push({id:i.id,error:String(e)})}}));
+ const panel=document.createElement('aside');panel.id='hongqiao-survey';Object.assign(panel.style,{position:'fixed',top:'100px',right:'16px',width:'245px',background:'#162b2beF',color:'#fff',padding:'12px',zIndex:40,font:'13px sans-serif',border:'1px solid #7f9e91'});const title=document.createElement('strong');title.textContent='虹桥锚点 · 开发测量';const toggle=document.createElement('button');toggle.textContent='隐藏标记';toggle.onclick=()=>{root.visible=!root.visible;toggle.textContent=root.visible?'隐藏标记':'显示标记'};const status=document.createElement('pre');status.style.whiteSpace='pre-wrap';panel.append(title,toggle,status);document.body.append(panel);
+ const update=()=>{const a=getActor();status.textContent=`位置 ${a.x.toFixed(2)}, ${a.height.toFixed(2)}, ${a.z.toFixed(2)}\n层级 ${a.layer} · ${a.mode}\n四人三物：调试预览\n方娘子：南街锦彩堂\n船路径：候选，待节点拆分及净空验证\n不含对话、拾取和任务结算`};update();
+ return {update,getState:()=>({config,result,assetErrors,visible:root.visible}),measure:(x,z)=>{const ray=new THREE.Raycaster(new THREE.Vector3(x,40,z),new THREE.Vector3(0,-1,0));return ray.intersectObject(city,true).slice(0,8).map(h=>({node:h.object.name,point:h.point.toArray()}))}};
+}

@@ -1,0 +1,1003 @@
+{
+  "version": 2,
+  "source": "用户提供的清明上河图配音、环境音音效",
+  "processing": "48 kHz mono PCM16; bounded gain, no time stretching or speech editing; originals untouched",
+  "files": [
+    {
+      "id": "SFX_12_QMSH-44_npc_hq_fang_embroidery_cloth_v01",
+      "file": "sfx/SFX_12_QMSH-44_npc_hq_fang_embroidery_cloth_v01.wav",
+      "kind": "sfx",
+      "number": "12",
+      "assetId": "QMSH-44",
+      "npcId": "npc_hq_fang",
+      "npcIds": [
+        "npc_hq_fang"
+      ],
+      "line": null,
+      "enabled": true,
+      "trigger": "animation",
+      "reason": "",
+      "clip": "Occupation_Embroider",
+      "fraction": 0.3,
+      "radius": 7,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 4.0,
+      "sha256": "b17fe6339d3bccd3f1cd8e1239da43f3ea6a2af504ad0627e82a38151c90934f",
+      "sourceSha256": "cb073ff393b8904584615df4d4593cbc603efcbbefd5fa4dbe82dd3056091fa9",
+      "sourceFile": "环境音音效/SFX_12_QMSH-44_npc_hq_fang_embroidery_cloth_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "4.000000"
+        }
+      },
+      "sourceMeanDb": -35.9,
+      "sourcePeakDb": -21.9,
+      "gainDb": 3.9,
+      "alternates": [
+        {
+          "file": "清明上河图配音/SFX_12_QMSH-44_npc_hq_fang_embroidery_cloth_v01.wav",
+          "sha256": "e836f0f0530d0883276a2953f933764358fee3cd264bbc6067371e056f5adc82"
+        }
+      ]
+    },
+    {
+      "id": "VO_01_QMSH-08_street-169_hubing_v01",
+      "file": "voice/VO_01_QMSH-08_street-169_hubing_v01.wav",
+      "kind": "voice",
+      "number": "01",
+      "assetId": "QMSH-08",
+      "npcId": "street-169",
+      "npcIds": [
+        "street-169",
+        "street-174",
+        "street-181"
+      ],
+      "line": "胡饼——新出炉的胡饼！",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "用户确认08掌柜对应王家蒸作胡饼叫卖",
+      "radius": 7,
+      "exitRadius": 9,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 4.0,
+      "sha256": "be66e0b2be20a7b8e0921aaf9adec2f94f308a8d51311b5b995c029c95cd38a3",
+      "sourceSha256": "9981e1441663acc25be96c330dd13d3f57f2b9603bd3ce8e49d770f1107e87a4",
+      "sourceFile": "清明上河图配音/VO_01_QMSH-08_street-169_hubing_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "4.000000"
+        }
+      },
+      "sourceMeanDb": -19.1,
+      "sourcePeakDb": -1.8,
+      "gainDb": -2.9,
+      "alternates": []
+    },
+    {
+      "id": "VO_02_QMSH-17_street-166_tea_v01",
+      "file": "voice/VO_02_QMSH-17_street-166_tea_v01.wav",
+      "kind": "voice",
+      "number": "02",
+      "assetId": "QMSH-17",
+      "npcId": "street-166",
+      "npcIds": [
+        "street-166",
+        "street-177",
+        "street-190"
+      ],
+      "line": "客官进来吃盏茶。",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "bc1e9b1c488211aefdf50339853495190a78a41831c506e6f34f87a670d971a9",
+      "sourceSha256": "37fc487a4acffea9d24caf9c604e82ac1d9e6a212f33bf9a4dd8a9602bf41e60",
+      "sourceFile": "清明上河图配音/VO_02_QMSH-17_street-166_tea_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -24.1,
+      "sourcePeakDb": -6.2,
+      "gainDb": 2.1,
+      "alternates": []
+    },
+    {
+      "id": "VO_03_QMSH-16_npc_jiaodian_waiter_wine_v01",
+      "file": "voice/VO_03_QMSH-16_npc_jiaodian_waiter_wine_v01.wav",
+      "kind": "voice",
+      "number": "03",
+      "assetId": "QMSH-16",
+      "npcId": "npc_jiaodian_waiter",
+      "npcIds": [
+        "npc_jiaodian_waiter"
+      ],
+      "line": "好酒——来吃一碗！",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "81c9cf98dc6d0f30f52986a4e2c6a79b1a0f363abf9c9e44f5f1caf84d0d6ce5",
+      "sourceSha256": "5b7d05442ee5179657356fc5f31686dfa875bc2c98f09b704ba2d92b3f6c02c2",
+      "sourceFile": "清明上河图配音/VO_03_QMSH-16_npc_jiaodian_waiter_wine_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -23.4,
+      "sourcePeakDb": -3.9,
+      "gainDb": 0.9,
+      "alternates": []
+    },
+    {
+      "id": "VO_04_QMSH-08_street-174_cooked_food_v01",
+      "file": "voice/VO_04_QMSH-08_street-174_cooked_food_v01.wav",
+      "kind": "voice",
+      "number": "04",
+      "assetId": "QMSH-08",
+      "npcId": "street-174",
+      "npcIds": [
+        "street-174"
+      ],
+      "line": "炙鸡、羊脚子——！",
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "当前为蒸作铺，未确认炙鸡羊脚子",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "80c0cabd2158edce5c8df75a373c3a8af97e08a94af44e5e422b7bec8369c8d3",
+      "sourceSha256": "ebd6e15f73e701bd3ebb20222077f43eaaa7f6d0656c57cfa6b3e3b44cc6964f",
+      "sourceFile": "清明上河图配音/VO_04_QMSH-08_street-174_cooked_food_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -17.6,
+      "sourcePeakDb": -2.2,
+      "gainDb": -4.4,
+      "alternates": []
+    },
+    {
+      "id": "VO_05_QMSH-09_street-172_grain_v01",
+      "file": "voice/VO_05_QMSH-09_street-172_grain_v01.wav",
+      "kind": "voice",
+      "number": "05",
+      "assetId": "QMSH-09",
+      "npcId": "street-172",
+      "npcIds": [
+        "street-172",
+        "street-184",
+        "street-189"
+      ],
+      "line": "买米的，这边来。",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 2.0,
+      "sha256": "6ec8af97beebd210fda92a5827c40dfc9745389424d1c3e14a4d88f1c71e6ba9",
+      "sourceSha256": "98640f02bc6b9e2f74d83f1e696c39b93bac8e337b44b31712aa7e0a18b9ecd8",
+      "sourceFile": "清明上河图配音/VO_05_QMSH-09_street-172_grain_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "sourceMeanDb": -21.4,
+      "sourcePeakDb": -2.9,
+      "gainDb": -0.6,
+      "alternates": []
+    },
+    {
+      "id": "VO_06_QMSH-11_street-171_silk_v01",
+      "file": "voice/VO_06_QMSH-11_street-171_silk_v01.wav",
+      "kind": "voice",
+      "number": "06",
+      "assetId": "QMSH-11",
+      "npcId": "street-171",
+      "npcIds": [
+        "street-171",
+        "street-180",
+        "street-183"
+      ],
+      "line": "绢帛——来看看！",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "54ea70dfa161b62f2da40a46e97815b06eca58f0a403c9d7495231d8ddc388ed",
+      "sourceSha256": "6128a3724a92da9cdbfe11ba35bb14eccd4fe66502dc14b2d4ad5ca46c28988b",
+      "sourceFile": "清明上河图配音/VO_06_QMSH-11_street-171_silk_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -26.9,
+      "sourcePeakDb": -5.0,
+      "gainDb": 2.0,
+      "alternates": []
+    },
+    {
+      "id": "VO_07_QMSH-45_street-193_flowers_v01",
+      "file": "voice/VO_07_QMSH-45_street-193_flowers_v01.wav",
+      "kind": "voice",
+      "number": "07",
+      "assetId": "QMSH-45",
+      "npcId": "street-193",
+      "npcIds": [
+        "street-193"
+      ],
+      "line": "卖花——新摘的花！挑一枝罢。",
+      "enabled": true,
+      "trigger": "proximity",
+      "reason": "靠近卖花姑娘播放，离开6米停止，不播完整句",
+      "radius": 4.5,
+      "exitRadius": 6,
+      "cooldown": [
+        40,
+        55
+      ],
+      "gain": 1,
+      "duration": 5.0,
+      "sha256": "ae533541ba51ffc9047f15420fce56d70bb2da26a354bcafedb0bab4ef6f5520",
+      "sourceSha256": "97545fb44c66eff043f5d360e90ffb05dff98668563d30ae5703c94a099724d8",
+      "sourceFile": "清明上河图配音/VO_07_QMSH-45_street-193_flowers_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      },
+      "sourceMeanDb": -28.8,
+      "sourcePeakDb": -12.7,
+      "gainDb": 6.8,
+      "alternates": []
+    },
+    {
+      "id": "VO_09_QMSH-15_street-186_herb_v01",
+      "file": "voice/VO_09_QMSH-15_street-186_herb_v01.wav",
+      "kind": "voice",
+      "number": "09",
+      "assetId": "QMSH-15",
+      "npcId": "street-186",
+      "npcIds": [
+        "street-186"
+      ],
+      "line": "客官要寻什么药？",
+      "enabled": true,
+      "trigger": "greeting",
+      "reason": "",
+      "radius": 5,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "0f3e913c49e7b95fb17470d15d0f5351db5eb90ea96c7d7698179427bf9ea7ad",
+      "sourceSha256": "ea083e988da3b19b6bb9fea3ad4cbced9e256c0e4c321b1c2f76b00d2233d32d",
+      "sourceFile": "清明上河图配音/VO_09_QMSH-15_street-186_herb_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -23.3,
+      "sourcePeakDb": -6.1,
+      "gainDb": 1.3,
+      "alternates": []
+    },
+    {
+      "id": "VO_10_QMSH-28_street-063_porter_v01",
+      "file": "voice/VO_10_QMSH-28_street-063_porter_v01.wav",
+      "kind": "voice",
+      "number": "10",
+      "assetId": "QMSH-28",
+      "npcId": "street-063",
+      "npcIds": [
+        "street-063",
+        "street-098"
+      ],
+      "line": "借过——！",
+      "enabled": true,
+      "trigger": "yield",
+      "reason": "",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 1.0,
+      "sha256": "3670bc96df8c7e9ac3874b26cb9daf1fc48b7a91aaa229b0db7fa8cc325739b8",
+      "sourceSha256": "2a2c858b710aaa01ee49d01e899c9de26ee3b5fecd98f95305b47b6cc0bed632",
+      "sourceFile": "清明上河图配音/VO_10_QMSH-28_street-063_porter_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "sourceMeanDb": -17.9,
+      "sourcePeakDb": -2.3,
+      "gainDb": -4.1,
+      "alternates": []
+    },
+    {
+      "id": "VO_11_QMSH-22_npc_hq_zhou_boatman_v01",
+      "file": "voice/VO_11_QMSH-22_npc_hq_zhou_boatman_v01.wav",
+      "kind": "voice",
+      "number": "11",
+      "assetId": "QMSH-22",
+      "npcId": "npc_hq_zhou",
+      "npcIds": [
+        "npc_hq_zhou"
+      ],
+      "line": "慢些靠！",
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "没有真实靠岸事件，巡航不得误触发",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 1.0,
+      "sha256": "c57f874693f42184da2dd0c295fba553f21aeb08be12f8455e0a7a8e7eafcdc4",
+      "sourceSha256": "43c03eed80328614765928075bc4cf61e1aa808c3cc8d856ce545e0fcbadabf8",
+      "sourceFile": "清明上河图配音/VO_11_QMSH-22_npc_hq_zhou_boatman_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "sourceMeanDb": -30.9,
+      "sourcePeakDb": -12.5,
+      "gainDb": 8.9,
+      "alternates": []
+    },
+    {
+      "id": "VO_13_QMSH-18_npc_hq_cheng_delivery_v01",
+      "file": "voice/VO_13_QMSH-18_npc_hq_cheng_delivery_v01.wav",
+      "kind": "voice",
+      "number": "13",
+      "assetId": "QMSH-18",
+      "npcId": "npc_hq_cheng",
+      "npcIds": [
+        "npc_hq_cheng"
+      ],
+      "line": "客官，饭食送到了。",
+      "enabled": true,
+      "trigger": "greeting",
+      "reason": "用户确认18阿成送食配音对应脚店门口；每次到店只招呼一次",
+      "radius": 5,
+      "exitRadius": 7,
+      "cooldown": [
+        35,
+        50
+      ],
+      "gain": 1,
+      "duration": 3.0,
+      "sha256": "5ba835fd5160979ebd05d7318d842a79d41aea20619db4d1fee17bc5ce99277f",
+      "sourceSha256": "fe4a158cabcd82a58d61f039e14833c25720f03dd0d4537fee15f5a284fd3e7c",
+      "sourceFile": "清明上河图配音/VO_13_QMSH-18_npc_hq_cheng_delivery_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -16.7,
+      "sourcePeakDb": -0.3,
+      "gainDb": -5.3,
+      "alternates": [],
+      "anchor": "tavern"
+    },
+    {
+      "id": "SFX_01_QMSH-08_street-169_oven_fire_v01",
+      "file": "sfx/SFX_01_QMSH-08_street-169_oven_fire_v01.wav",
+      "kind": "sfx",
+      "number": "01",
+      "assetId": "QMSH-08",
+      "npcId": "street-169",
+      "npcIds": [
+        "street-169"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "当前蒸作场景没有确认的胡饼烤炉",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 20.0,
+      "sha256": "bc5e92c769d7ffdf729f475e97aec53e8161e6810976cd0c7bac7a0a7deeb2f0",
+      "sourceSha256": "7cda661d50f6ad695e5655763cc629a2c56db1ebc2b2f05c8d96f10f2478e280",
+      "sourceFile": "环境音音效/SFX_01_QMSH-08_street-169_oven_fire_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      },
+      "sourceMeanDb": -42.5,
+      "sourcePeakDb": -13.3,
+      "gainDb": 10.3,
+      "alternates": []
+    },
+    {
+      "id": "SFX_02_QMSH-17_street-166_pour_water_v01",
+      "file": "sfx/SFX_02_QMSH-17_street-166_pour_water_v01.wav",
+      "kind": "sfx",
+      "number": "02",
+      "assetId": "QMSH-17",
+      "npcId": "street-166",
+      "npcIds": [
+        "street-166"
+      ],
+      "line": null,
+      "enabled": true,
+      "trigger": "animation",
+      "reason": "",
+      "clip": "Occupation_Tea_Pour",
+      "fraction": 0.3,
+      "radius": 7,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 2.0,
+      "sha256": "e2cb8eeca2f42015576c6755573e71b9a16b87004f37a85990668f661124253b",
+      "sourceSha256": "96bab34e510ad5459f80ee322df4e9d7167c4afb854f95c3a14c1221afbb4a11",
+      "sourceFile": "环境音音效/SFX_02_QMSH-17_street-166_pour_water_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "sourceMeanDb": -31.2,
+      "sourcePeakDb": -19.8,
+      "gainDb": -0.8,
+      "alternates": []
+    },
+    {
+      "id": "SFX_02_QMSH-17_street-166_tea_cup_v01",
+      "file": "sfx/SFX_02_QMSH-17_street-166_tea_cup_v01.wav",
+      "kind": "sfx",
+      "number": "02",
+      "assetId": "QMSH-17",
+      "npcId": "street-166",
+      "npcIds": [
+        "street-166"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "点茶动画尚无明确放盏事件",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 1.0,
+      "sha256": "bc04d3a8a24de48f3d0cd807e2f451513fef9558a3b59efe0340d1e65a198a7d",
+      "sourceSha256": "4df1cb04fe7c57049f96746fd65f9f62771a52760674c2b1486ff6888b7ae2c2",
+      "sourceFile": "环境音音效/SFX_02_QMSH-17_street-166_tea_cup_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "sourceMeanDb": -28.4,
+      "sourcePeakDb": -1.7,
+      "gainDb": -3.6,
+      "alternates": []
+    },
+    {
+      "id": "SFX_03_QMSH-16_npc_jiaodian_waiter_bowl_set_v01",
+      "file": "sfx/SFX_03_QMSH-16_npc_jiaodian_waiter_bowl_set_v01.wav",
+      "kind": "sfx",
+      "number": "03",
+      "assetId": "QMSH-16",
+      "npcId": "npc_jiaodian_waiter",
+      "npcIds": [
+        "npc_jiaodian_waiter"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "现役脚店伙计没有放碗动作",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 1.0,
+      "sha256": "d317ea8bc8bf7ec0ba2964a3e867dec6341ccf446d5692bf1c9a9a2eaa2cad04",
+      "sourceSha256": "6903f7609e79be96d2d84f01b8a878b0b4cff4ae75c46e130d9b5a7d08def436",
+      "sourceFile": "环境音音效/SFX_03_QMSH-16_npc_jiaodian_waiter_bowl_set_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      },
+      "sourceMeanDb": -21.5,
+      "sourcePeakDb": -0.4,
+      "gainDb": -10.5,
+      "alternates": []
+    },
+    {
+      "id": "SFX_03_QMSH-16_npc_jiaodian_waiter_pour_wine_v01",
+      "file": "sfx/SFX_03_QMSH-16_npc_jiaodian_waiter_pour_wine_v01.wav",
+      "kind": "sfx",
+      "number": "03",
+      "assetId": "QMSH-16",
+      "npcId": "npc_jiaodian_waiter",
+      "npcIds": [
+        "npc_jiaodian_waiter"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "现役脚店伙计端碗持筷，没有倒酒动作",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 2.0,
+      "sha256": "e7effcbba8ffc9d252f2737e880fbbfb1efd34fd684e0687992d9ad15e0ade5d",
+      "sourceSha256": "c821b51aec4bd085d395ddc23f2af0cda410e2d99179718aea72681b86880888",
+      "sourceFile": "环境音音效/SFX_03_QMSH-16_npc_jiaodian_waiter_pour_wine_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "sourceMeanDb": -37.3,
+      "sourcePeakDb": -13.4,
+      "gainDb": 5.3,
+      "alternates": []
+    },
+    {
+      "id": "SFX_03_QMSH-16_npc_jiaodian_waiter_tavern_murmur_v01",
+      "file": "sfx/SFX_03_QMSH-16_npc_jiaodian_waiter_tavern_murmur_v01.wav",
+      "kind": "sfx",
+      "number": "03",
+      "assetId": "QMSH-16",
+      "npcId": "npc_jiaodian_waiter",
+      "npcIds": [
+        "npc_jiaodian_waiter"
+      ],
+      "line": null,
+      "enabled": true,
+      "trigger": "loop",
+      "reason": "",
+      "anchor": "tavern",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 25.0,
+      "sha256": "2d7dc4f1060453970e7f0e5b6b4484e6774e7073609ed41bdd4945ca093c41eb",
+      "sourceSha256": "5db54d1368708f56c8d26c0f4dbd7d1ee154377120e54efc7028fadbfe06a107",
+      "sourceFile": "环境音音效/SFX_03_QMSH-16_npc_jiaodian_waiter_tavern_murmur_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "25.000000"
+        }
+      },
+      "sourceMeanDb": -74.5,
+      "sourcePeakDb": -51.3,
+      "gainDb": 42.5,
+      "alternates": []
+    },
+    {
+      "id": "SFX_05_QMSH-09_street-172_grain_pour_v01",
+      "file": "sfx/SFX_05_QMSH-09_street-172_grain_pour_v01.wav",
+      "kind": "sfx",
+      "number": "05",
+      "assetId": "QMSH-09",
+      "npcId": "street-172",
+      "npcIds": [
+        "street-172"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "粮商动作为记筹，并非倒粮",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 3.0,
+      "sha256": "c4d2e24ad1dad3918cd7316124f30898d852146a040137fdb4a55a19c8d4323c",
+      "sourceSha256": "16bf01391bae1434c55b2eabad92f6e33887d43313a4476366f56584b4b607fd",
+      "sourceFile": "环境音音效/SFX_05_QMSH-09_street-172_grain_pour_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "3.000000"
+        }
+      },
+      "sourceMeanDb": -32.1,
+      "sourcePeakDb": -3.8,
+      "gainDb": 0.1,
+      "alternates": []
+    },
+    {
+      "id": "SFX_05_QMSH-09_street-172_grain_sack_v01",
+      "file": "sfx/SFX_05_QMSH-09_street-172_grain_sack_v01.wav",
+      "kind": "sfx",
+      "number": "05",
+      "assetId": "QMSH-09",
+      "npcId": "street-172",
+      "npcIds": [
+        "street-172"
+      ],
+      "line": null,
+      "enabled": false,
+      "trigger": "disabled",
+      "reason": "粮商没有明确提放粮袋动作",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 2.0,
+      "sha256": "60c2669857fde13c4052cb2f815f95ab4f701c20c8fab36cb059c6c83b19dfe5",
+      "sourceSha256": "b9cfae3f1e16fdc5370204ec304d71e0054283454670bbd9f916532427d7afbc",
+      "sourceFile": "环境音音效/SFX_05_QMSH-09_street-172_grain_sack_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "sourceMeanDb": -28.9,
+      "sourcePeakDb": -11.5,
+      "gainDb": -3.1,
+      "alternates": []
+    },
+    {
+      "id": "SFX_06_QMSH-11_street-171_cloth_fold_v01",
+      "file": "sfx/SFX_06_QMSH-11_street-171_cloth_fold_v01.wav",
+      "kind": "sfx",
+      "number": "06",
+      "assetId": "QMSH-11",
+      "npcId": "street-171",
+      "npcIds": [
+        "street-171"
+      ],
+      "line": null,
+      "enabled": true,
+      "trigger": "animation",
+      "reason": "",
+      "clip": "Occupation_Silk_Smooth",
+      "fraction": 0.3,
+      "radius": 7,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 5.0,
+      "sha256": "b6272a45282a50c930214dfd95993e798a782af78bb565eaabcedf92a30d6505",
+      "sourceSha256": "25cb3e1ee77a98cbb6f80da24cd9056fc24541a2d7c53b0afbbc99cbbec7355d",
+      "sourceFile": "环境音音效/SFX_06_QMSH-11_street-171_cloth_fold_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      },
+      "sourceMeanDb": -48.9,
+      "sourcePeakDb": -30.5,
+      "gainDb": 16.9,
+      "alternates": []
+    },
+    {
+      "id": "SFX_11_QMSH-22_npc_hq_zhou_hull_water_v01",
+      "file": "sfx/SFX_11_QMSH-22_npc_hq_zhou_hull_water_v01.wav",
+      "kind": "sfx",
+      "number": "11",
+      "assetId": "QMSH-22",
+      "npcId": "npc_hq_zhou",
+      "npcIds": [
+        "npc_hq_zhou"
+      ],
+      "line": null,
+      "enabled": true,
+      "trigger": "loop",
+      "reason": "",
+      "anchor": "nearest-ferry",
+      "radius": 10,
+      "exitRadius": 14,
+      "cooldown": [
+        12,
+        18
+      ],
+      "gain": 0.7,
+      "duration": 25.0,
+      "sha256": "e6f22242c6e3a7fc9de51d21b4653d283ef6a7bb4903b5e1875a5e6e89c05832",
+      "sourceSha256": "d82691d76ea77d26c52975b9adad03875e54769765c70f5dcb7684bf690dd6e7",
+      "sourceFile": "环境音音效/SFX_11_QMSH-22_npc_hq_zhou_hull_water_v01.wav",
+      "sourceFormat": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "pcm_s16le",
+            "sample_rate": "40000",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "25.000000"
+        }
+      },
+      "sourceMeanDb": -51.4,
+      "sourcePeakDb": -27.7,
+      "gainDb": 19.4,
+      "alternates": []
+    }
+  ],
+  "missingOptionalOrUnselected": [
+    "VO_07_QMSH-13_street-039_flowers_v01.wav",
+    "VO_09_QMSH-34_street-175_herb_v01.wav",
+    "VO_10_QMSH-24_npc_hq_he_porter_v01.wav"
+  ]
+}

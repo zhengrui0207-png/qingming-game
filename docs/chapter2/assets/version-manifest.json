@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0-audit",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "region": "region_d",
+  "ASSET_AUDIT_READY": true,
+  "ASSETS_READY": false,
+  "modelOutputs": [],
+  "dedicatedAnimationOutputs": [],
+  "plannedAssets": 28,
+  "auditedExistingGLBs": 105,
+  "browserDecodedCandidates": 8,
+  "actualCreditsConsumed": 0,
+  "submittedTasks": [],
+  "resourceAcceptance": "audit only; no formal index update",
+  "reviewedPreviews": [
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-abacus.png",
+      "sha256": "3e4ef4995c62d3f1c287dacbbeb8bd44aabef89bb1011b301131f7a67a3ab828"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-follow-distance.png",
+      "sha256": "b78482dca1c252a7eb9364ca9c110732e6a68b10ec33760b098c34356060c380"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-08-four-views.png",
+      "sha256": "3472a7c2ebadce8e9d86282fbd5d1605f3a11b6de24270e3aee93051e6c87870"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-17-four-views.png",
+      "sha256": "1e929d90bd8280d90209753179c1258cd4751bb14b78c83343c641598d66473b"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-21-four-views.png",
+      "sha256": "b7aabcb1219be67a22bcfd6a50674b41bdc5ac30ad4bb1bd57a4b21a5a220d94"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-23-four-views.png",
+      "sha256": "b95bcd2b1d4a1b5cdd0150a6f5a4c06466fdfd0aa86f2e8c37c3a0bb1d9fa993"
+    },
+    {
+      "path": "public/assets/chapter2/previews/QMSH-28-four-views.png",
+      "sha256": "1b137b601a76b5008e0bbf3913653c126e21a16173c7f572c30e5c4f9381b57d"
+    },
+    {
+      "path": "public/assets/chapter2/previews/cargo-four-views.png",
+      "sha256": "fe17c6c9a7acb70d81395d2490f667d0fe072b6d8a3737f0ecf67ceddb69fd1f"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S03.png",
+      "sha256": "d6de547a0a0b2ed028156f5778406fac6a5e58519fac3159acd5bbe969cd3ea5"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S07.png",
+      "sha256": "1c016decbbc9ced871ac6c472b43ec7c021716bbf127f91033ad081596b5b8a2"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S08-S09.png",
+      "sha256": "10148ebfebd42cc128d1107016a97672be788a21b4fd80c2220ca67cd8e02d0c"
+    },
+    {
+      "path": "public/assets/chapter2/previews/rope-four-views.png",
+      "sha256": "409b097c0683602bb6012e042428f7d1a13006e2345aa2722c709f7f43a0d35e"
+    },
+    {
+      "path": "public/assets/chapter2/previews/steamer-four-views.png",
+      "sha256": "d9d71c62e01407c2995d721c87f3f5d22345a0a5a45a49c786dabed0f8a64fb3"
+    }
+  ]
+}

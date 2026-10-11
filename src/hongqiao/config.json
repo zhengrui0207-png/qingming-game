@@ -1,0 +1,1253 @@
+{
+  "schemaVersion": 1,
+  "region": {
+    "id": "region_hongqiao",
+    "title": "虹桥"
+  },
+  "player": {
+    "id": "player_scholar",
+    "assetId": "asset_scholar_v2",
+    "anchorId": "anchor_hq_entry"
+  },
+  "anchors": [
+    {
+      "id": "anchor_hq_entry",
+      "label": "入场",
+      "position": [
+        0,
+        0.94,
+        35
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_zhou",
+      "label": "老周 · 交付观景",
+      "position": [
+        6,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_he",
+      "label": "何伯 · 货堆",
+      "position": [
+        12,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_cheng",
+      "label": "阿成 · 工具架",
+      "position": [
+        28,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_fang",
+      "label": "方娘子 · 锦彩堂",
+      "position": [
+        -6,
+        0.94,
+        52.5
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json",
+      "shopId": 3
+    },
+    {
+      "id": "anchor_hq_view",
+      "label": "看船过桥",
+      "position": [
+        7,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_rope",
+      "label": "备用缆绳",
+      "position": [
+        13,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_pole",
+      "label": "长竹篙",
+      "position": [
+        29,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_cloth",
+      "label": "护货布",
+      "position": [
+        -7,
+        0.94,
+        52.5
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json"
+    },
+    {
+      "id": "anchor_hq_ship_approach",
+      "label": "船临桥",
+      "position": [
+        14,
+        0,
+        0
+      ],
+      "kind": "ship",
+      "layer": "ground",
+      "measuredFrom": "Existing boatObstacles bounds center; route clearance not yet verified",
+      "status": "candidate_pending_ship_separation"
+    },
+    {
+      "id": "anchor_hq_ship_brace",
+      "label": "船止进",
+      "position": [
+        10.3,
+        0,
+        0
+      ],
+      "kind": "ship",
+      "layer": "ground",
+      "measuredFrom": "Existing boatObstacles bounds center; route clearance not yet verified",
+      "status": "candidate_pending_ship_separation"
+    },
+    {
+      "id": "anchor_hq_ship_wait",
+      "label": "船等待",
+      "position": [
+        11,
+        0,
+        0
+      ],
+      "kind": "ship",
+      "layer": "ground",
+      "measuredFrom": "Existing boatObstacles bounds center; route clearance not yet verified",
+      "status": "candidate_pending_ship_separation"
+    },
+    {
+      "id": "anchor_hq_ship_end",
+      "label": "船通过",
+      "position": [
+        -16,
+        0,
+        0
+      ],
+      "kind": "ship",
+      "layer": "ground",
+      "measuredFrom": "Existing boatObstacles bounds center; route clearance not yet verified",
+      "status": "candidate_pending_ship_separation"
+    },
+    {
+      "id": "anchor_hq_cargo",
+      "label": "货堆摆位",
+      "position": [
+        12,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json",
+      "status": "layout_anchor_existing_scene"
+    },
+    {
+      "id": "anchor_hq_tools",
+      "label": "工具架摆位",
+      "position": [
+        28,
+        0.94,
+        19
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json",
+      "status": "layout_anchor_existing_scene"
+    },
+    {
+      "id": "anchor_hq_stall",
+      "label": "布摊前场",
+      "position": [
+        -6,
+        0.94,
+        52.5
+      ],
+      "kind": "walk",
+      "layer": "ground",
+      "measuredFrom": "world.json ground/collider rules + city mesh downward raycast; output/playwright/hongqiao/verification.json",
+      "shopId": 3,
+      "status": "layout_anchor_existing_scene"
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset_scholar_v2",
+      "path": "assets/song-scholar-v2-animated.glb",
+      "status": "existing_accepted",
+      "animationSource": "procedural-skeleton"
+    },
+    {
+      "id": "asset_hq_npc_preview",
+      "path": "assets/a-qing.glb",
+      "status": "existing_preview_only",
+      "note": "复用现有群众原型；正式 NPC 外观由人物任务交接"
+    },
+    {
+      "id": "asset_hq_rope",
+      "path": "assets/hongqiao/item_hq_rope.glb",
+      "status": "existing_art_pending"
+    },
+    {
+      "id": "asset_hq_pole",
+      "path": "assets/hongqiao/item_hq_pole.glb",
+      "status": "existing_art_pending"
+    },
+    {
+      "id": "asset_hq_cloth",
+      "path": "assets/hongqiao/item_hq_cloth.glb",
+      "status": "existing_art_pending"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc_hq_zhou",
+      "name": "老周",
+      "anchorId": "anchor_hq_zhou",
+      "assetId": "asset_hq_npc_preview",
+      "storyId": "story_hq_zhou",
+      "color": "#a17746"
+    },
+    {
+      "id": "npc_hq_he",
+      "name": "何伯",
+      "anchorId": "anchor_hq_he",
+      "assetId": "asset_hq_npc_preview",
+      "storyId": "story_hq_he",
+      "color": "#7e8c60"
+    },
+    {
+      "id": "npc_hq_cheng",
+      "name": "阿成",
+      "anchorId": "anchor_hq_cheng",
+      "assetId": "asset_hq_npc_preview",
+      "storyId": "story_hq_cheng",
+      "color": "#4a8295"
+    },
+    {
+      "id": "npc_hq_fang",
+      "name": "方娘子",
+      "anchorId": "anchor_hq_fang",
+      "assetId": "asset_hq_npc_preview",
+      "storyId": "story_hq_fang",
+      "color": "#a96f77"
+    }
+  ],
+  "items": [
+    {
+      "id": "item_hq_rope",
+      "name": "备用缆绳",
+      "assetId": "asset_hq_rope",
+      "description": "何伯借出的备用缆绳"
+    },
+    {
+      "id": "item_hq_pole",
+      "name": "长竹篙",
+      "assetId": "asset_hq_pole",
+      "description": "阿成备好的长竹篙"
+    },
+    {
+      "id": "item_hq_cloth",
+      "name": "护货布",
+      "assetId": "asset_hq_cloth",
+      "description": "方娘子补过的护货布"
+    }
+  ],
+  "instances": [
+    {
+      "id": "instance_hq_rope_01",
+      "itemId": "item_hq_rope",
+      "anchorId": "anchor_hq_rope",
+      "permissionId": "permit_hq_rope",
+      "quantity": 1,
+      "visualHeight": 0.16,
+      "maxDimension": 0.8
+    },
+    {
+      "id": "instance_hq_pole_01",
+      "itemId": "item_hq_pole",
+      "anchorId": "anchor_hq_pole",
+      "permissionId": "permit_hq_pole",
+      "quantity": 1,
+      "visualHeight": 0.1,
+      "maxDimension": 2.8
+    },
+    {
+      "id": "instance_hq_cloth_01",
+      "itemId": "item_hq_cloth",
+      "anchorId": "anchor_hq_cloth",
+      "permissionId": "permit_hq_cloth",
+      "quantity": 1,
+      "visualHeight": 0.25,
+      "maxDimension": 0.8
+    }
+  ],
+  "permissions": [
+    {
+      "id": "permit_hq_rope",
+      "grantedBy": "npc_hq_he"
+    },
+    {
+      "id": "permit_hq_pole",
+      "grantedBy": "npc_hq_cheng"
+    },
+    {
+      "id": "permit_hq_cloth",
+      "grantedBy": "npc_hq_fang"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "dialogue_hq_he",
+      "npcId": "npc_hq_he",
+      "branches": [
+        {
+          "when": {
+            "type": "questCompleted",
+            "questId": "hongqiao_01"
+          },
+          "node": "completed"
+        },
+        {
+          "when": {
+            "type": "instanceCollected",
+            "instanceId": "instance_hq_rope_01"
+          },
+          "node": "collected"
+        },
+        {
+          "when": {
+            "type": "hasPermission",
+            "permissionId": "permit_hq_rope"
+          },
+          "node": "permitted"
+        },
+        {
+          "when": {
+            "type": "questAccepted",
+            "questId": "hongqiao_01"
+          },
+          "node": "accepted"
+        },
+        {
+          "when": {
+            "type": "always"
+          },
+          "node": "first"
+        }
+      ],
+      "confirmEffect": {
+        "type": "grantPermission",
+        "permissionId": "permit_hq_rope"
+      },
+      "cancelEffects": [],
+      "sourceNode": "HQ_10",
+      "nodes": {
+        "first": {
+          "sourceId": "HQ_10",
+          "lines": [
+            "何伯：也瞧见那边的船了？老周正等备用缆绳。我得守着这堆货，你若顺路，帮我送过去。"
+          ]
+        },
+        "accepted": {
+          "sourceId": "HQ_10",
+          "lines": [
+            "书生：老周托我来取一盘备用缆绳。",
+            "何伯：货堆旁那盘就是。拿去吧，别拖着走，绳子也经不起这么磨。",
+            "书生：借走了，您这边装货怎么办？",
+            "何伯：我还有一盘。先让那边安稳靠岸，我这几包货等得起。"
+          ]
+        },
+        "permitted": {
+          "sourceId": "HQ_10",
+          "lines": [
+            "何伯：就在货堆边，盘好的那一卷。拿给老周便是。"
+          ]
+        },
+        "collected": {
+          "sourceId": "HQ_10",
+          "lines": [
+            "何伯：绳送到，人也记得站稳些。"
+          ]
+        },
+        "completed": {
+          "sourceId": "HQ_10",
+          "lines": [
+            "何伯：过了就好。待会儿我去收绳。郎君，衣袖沾了泥，抖一抖。"
+          ]
+        }
+      },
+      "optionalFollowup": {
+        "lines": [
+          "何伯：年轻时跟重车走，如今在这儿搬货。桥上若有车来，先让它。",
+          "书生：听见车铃，我便避让。",
+          "何伯：也别只等铃响。我就见过不响的。"
+        ],
+        "returnTo": "choices"
+      }
+    },
+    {
+      "id": "dialogue_hq_cheng",
+      "npcId": "npc_hq_cheng",
+      "branches": [
+        {
+          "when": {
+            "type": "questCompleted",
+            "questId": "hongqiao_01"
+          },
+          "node": "completed"
+        },
+        {
+          "when": {
+            "type": "instanceCollected",
+            "instanceId": "instance_hq_pole_01"
+          },
+          "node": "collected"
+        },
+        {
+          "when": {
+            "type": "hasPermission",
+            "permissionId": "permit_hq_pole"
+          },
+          "node": "permitted"
+        },
+        {
+          "when": {
+            "type": "questAccepted",
+            "questId": "hongqiao_01"
+          },
+          "node": "accepted"
+        },
+        {
+          "when": {
+            "type": "always"
+          },
+          "node": "first"
+        }
+      ],
+      "confirmEffect": {
+        "type": "grantPermission",
+        "permissionId": "permit_hq_pole"
+      },
+      "cancelEffects": [],
+      "sourceNode": "HQ_20",
+      "nodes": {
+        "first": {
+          "sourceId": "HQ_20",
+          "lines": [
+            "阿成：我师父老周在等备用竹篙。你若能帮着送过去，我就腾得出手收好这些工具。"
+          ]
+        },
+        "accepted": {
+          "sourceId": "HQ_20",
+          "lines": [
+            "书生：阿成？老周让我来取备用竹篙。",
+            "阿成：是我。取架上横放的这一根，别拿那根短的。师父等着在岸边接应时用。",
+            "书生：你看着与我年纪相仿，已经会行船了？",
+            "阿成：行船才学。师父交代的话，我倒听一遍就记得。"
+          ]
+        },
+        "permitted": {
+          "sourceId": "HQ_20",
+          "lines": [
+            "阿成：横放在工具架上的那根。拿稳就好，不用到水边去。"
+          ]
+        },
+        "collected": {
+          "sourceId": "HQ_20",
+          "lines": [
+            "阿成：篙递给师父便好。若另要什么，听见招呼再取。"
+          ]
+        },
+        "completed": {
+          "sourceId": "HQ_20",
+          "lines": [
+            "阿成：听见没？方才是我应的。师父在那头，也听得清清楚楚。"
+          ]
+        }
+      },
+      "optionalFollowup": {
+        "lines": [
+          "阿成：食店里送羹。送对了一碗，倒赔了个饭碗。",
+          "书生：送对了，也要赔？",
+          "阿成：人家改口，我没改。回头细说，师父还等着篙。"
+        ],
+        "returnTo": "choices"
+      }
+    },
+    {
+      "id": "dialogue_hq_fang",
+      "npcId": "npc_hq_fang",
+      "branches": [
+        {
+          "when": {
+            "type": "questCompleted",
+            "questId": "hongqiao_01"
+          },
+          "node": "completed"
+        },
+        {
+          "when": {
+            "type": "instanceCollected",
+            "instanceId": "instance_hq_cloth_01"
+          },
+          "node": "collected"
+        },
+        {
+          "when": {
+            "type": "hasPermission",
+            "permissionId": "permit_hq_cloth"
+          },
+          "node": "permitted"
+        },
+        {
+          "when": {
+            "type": "questAccepted",
+            "questId": "hongqiao_01"
+          },
+          "node": "accepted"
+        },
+        {
+          "when": {
+            "type": "always"
+          },
+          "node": "first"
+        }
+      ],
+      "confirmEffect": {
+        "type": "grantPermission",
+        "permissionId": "permit_hq_cloth"
+      },
+      "cancelEffects": [],
+      "sourceNode": "HQ_30",
+      "nodes": {
+        "first": {
+          "sourceId": "HQ_30",
+          "lines": [
+            "方娘子：那条船上有我要接的布货。老周需要一卷护货布，你愿意帮我捎给他吗？"
+          ]
+        },
+        "accepted": {
+          "sourceId": "HQ_30",
+          "lines": [
+            "书生：老周说您这里有护货布。",
+            "方娘子：摊侧叠着的那卷，已经备好了。船上有我等着的布货，再溅湿几包，可有得晾了。",
+            "书生：这卷布补过许多处，还舍得借出去？",
+            "方娘子：这原是我的旧包袱，补过还好使。告诉老周，用罢晾干还我。"
+          ]
+        },
+        "permitted": {
+          "sourceId": "HQ_30",
+          "lines": [
+            "方娘子：摊子侧边那卷旧布，拿去吧。新布还要做买卖，可别拿错了。"
+          ]
+        },
+        "collected": {
+          "sourceId": "HQ_30",
+          "lines": [
+            "方娘子：告诉老周，先顾人，再顾货。我在这儿等消息。"
+          ]
+        },
+        "completed": {
+          "sourceId": "HQ_30",
+          "lines": [
+            "方娘子：瞧，货到了，人也安稳。郎君，往后路过，进来歇歇脚。"
+          ]
+        }
+      },
+      "optionalFollowup": {
+        "lines": [
+          "方娘子：有些年了。初来时，连一百钱有多少都没弄明白。",
+          "书生：一百钱，还有别的数法？",
+          "方娘子：汴京行市，各有钱陌。我这教训，赔过本的。等船到了，再讲给你听。"
+        ],
+        "returnTo": "choices"
+      }
+    },
+    {
+      "id": "dialogue_hq_zhou",
+      "npcId": "npc_hq_zhou",
+      "branches": [
+        {
+          "when": {
+            "type": "questCompleted",
+            "questId": "hongqiao_01"
+          },
+          "node": "HQ_44"
+        },
+        {
+          "when": {
+            "type": "questReady",
+            "questId": "hongqiao_01"
+          },
+          "node": "HQ_41"
+        },
+        {
+          "when": {
+            "type": "questAccepted",
+            "questId": "hongqiao_01"
+          },
+          "node": "HQ_40"
+        },
+        {
+          "when": {
+            "type": "always"
+          },
+          "node": "HQ_01"
+        }
+      ],
+      "choices": [
+        {
+          "label": "我这就去。",
+          "effect": {
+            "type": "acceptQuest",
+            "questId": "hongqiao_01"
+          }
+        },
+        {
+          "label": "交给您。",
+          "effect": {
+            "type": "completeQuest",
+            "questId": "hongqiao_01"
+          }
+        }
+      ],
+      "cancelEffects": [],
+      "nodes": {
+        "HQ_01": {
+          "sourceId": "HQ_01",
+          "lines": [
+            "郎君，借过一步。方才桅杆未落，船就到了桥下，亏得桥上人先喊住。",
+            "可有人受伤？我能帮什么忙？",
+            "人都好。桅杆已放下，船也稳住了。再补齐些备用物件，便能过桥、靠岸。",
+            "何伯那里有一盘缆绳，阿成守着工具架，方娘子的布摊还有护货布。劳你跑一趟，送到我这里。",
+            "老周：都在这岸边。路上留意车马，不必赶，船这里有我们。"
+          ]
+        },
+        "HQ_40": {
+          "sourceId": "HQ_40",
+          "lines": [
+            "老周：已经拿到的先收好，等齐了交给我。还缺的几样，我给你指指。"
+          ]
+        },
+        "HQ_41": {
+          "sourceId": "HQ_41",
+          "lines": [
+            "书生：缆绳、竹篙和护货布，都带来了。方娘子说，先顾人，再顾货。",
+            "老周：好。过桥靠岸的事交给我们，你就在这边看着。"
+          ]
+        },
+        "HQ_44": {
+          "sourceId": "HQ_44",
+          "lines": [
+            "老周：船已经安稳过去了。方才几位都惦记着，你若还在附近，替我说一声好。"
+          ]
+        }
+      }
+    }
+  ],
+  "stories": [
+    {
+      "storyId": "story_hq_zhou",
+      "npcId": "npc_hq_zhou",
+      "title": "龙船肚底下",
+      "summary": "年轻时他吹过一句牛：天底下的船，他都能挪动。直到有人递给他一把锹。",
+      "sections": [
+        {
+          "id": "story_hq_zhou_1",
+          "title": "请他来挖泥",
+          "paragraphs": [
+            "老周说，他年轻时进过龙船的肚子。",
+            "阿成不信。桥边卖饮食的听见了，便替他往下编：里头有金桌银凳，龙须上挂着明珠，官家坐的地方，连木头也该是香的。",
+            "老周剥着一只煮熟的鸡子，等众人说够了，才道：“臭的。烂木头泡在水里，你说香不香？”",
+            "那时还是熙宁年间。他未满二十，跟着舅父修船，手里有几分力气，嘴上便有十分本事。一条船坏在哪里，他还没蹲下看，就先说能修。有人问多大的船挪得动，他把饭碗一顿：“只要绳不断。”",
+            "后来金明池修龙船，舅父带他去做工。",
+            "船上起着楼，远看像一座宅院浮在水中。他仰头看了半日，又绕到旁边寻粗绳。舅父把一把锹递过来。",
+            "“先挖。”",
+            "他看看船，又看看岸上的泥地。",
+            "“船在水里。”",
+            "“晓得。”",
+            "“挖岸做什么？”",
+            "“你若晓得，还用得着跟我来？”"
+          ]
+        },
+        {
+          "id": "story_hq_zhou_2",
+          "title": "船不动，水退了",
+          "paragraphs": [
+            "他挖了几日，脚上的泥洗净，次日又裹满。",
+            "岸边渐渐挖出一处大澳，里头立柱、安大梁。他越看越不对：修船的地方，比船底还低，水一进来，木梁不全淹了？",
+            "旁边有人同他打趣：“说不定要请龙王把船托起来。”",
+            "他跟着笑。舅父听见，把他叫过去，让他拾一截换下的旧木。外头还硬，手指往烂处一按，却陷了进去。",
+            "“这船腹里坏了。你在水中，看得全么？”",
+            "他不作声。",
+            "“你那句‘只要绳不断’，还作数么？”",
+            "老周把旧木翻了个面，没有答。",
+            "献这法子的，是内臣黄怀信。大澳备好，先放水入澳，将龙船引至梁上，再把澳里的水车出去。",
+            "起先老周只顾看水，后来顾不得了。",
+            "水线一寸寸退下，船却不再跟着往下落。藏在水里的梁柱现出来，船腹也现出来了。先前看着无处下手的庞然大物，如今稳稳承在木梁上，底下竟能容人进去。",
+            "真到了这一步，他又不肯先走。",
+            "船在头顶，遮去了半边天。舅父提着家什，回头看他：“挪船时胆子大，如今船不挪了，倒怕？”",
+            "他想回一句嘴，喉咙却干。等管工的查过承托、准许入内，他才跟着舅父下去。",
+            "底下没有金银，只有湿气、木屑和腐败的船板。敲掉一处坏木，旁边竟又露出一处。他头一回发觉，自己从前指着船面说的那些“好船”，其实只看过一半。",
+            "那日收工，他浑身泥水，仰头看见楼上的彩饰，已没有初来时那样羡慕。",
+            "舅父问：“明日还来不来？”",
+            "“来。那一处还没换完。”"
+          ]
+        },
+        {
+          "id": "story_hq_zhou_3",
+          "title": "他先看底下",
+          "paragraphs": [
+            "如今谁夸一条船气派，老周仍会跟着看两眼。看完，便往低处寻。",
+            "阿成嫌他慢。有一回岸上催着走，他却蹲下来，摸了一遍缆绳，又换了个地方看船腹。货主在后头急，他只伸出手，叫人再等片刻。",
+            "旁人说，年纪大了，胆子反倒小。",
+            "老周不辩。只有吹起年轻时的事，他还肯认一句：“胆子大过，见过龙船以前。”",
+            "虹桥这一日，船已稳住，岸上仍有人催。他让阿成守着备具，又托书生去取绳、篙和护货布，自己留在能看清船身的地方。",
+            "船过去后，阿成问：“师父，那回龙船修好了，怎样再下水？”",
+            "“水放回来，自会浮起。撤去梁柱，还给它造了屋，省得风吹日晒。”",
+            "“那你究竟挪没挪动？”",
+            "老周瞪他一眼，把吃剩的鸡子壳拢在掌心。",
+            "“挪了。”",
+            "阿成刚要笑，他又道：“先挪了好些日子的泥。”"
+          ]
+        }
+      ],
+      "unlockQuestId": "hongqiao_01",
+      "contentVersion": 2,
+      "contentType": "人物故事",
+      "creationLabel": "人物故事为基于画作及古籍取材的艺术演绎",
+      "sourceNotes": [
+        "沈括《补笔谈》记黄怀信在金明池以凿澳、置梁、进水引船、排水修治的办法修龙船。老周、舅父、工间对白与成长经历为虚构。正文“查过承托”等为叙事安排，不是原文所载施工规程。"
+      ]
+    },
+    {
+      "storyId": "story_hq_he",
+      "npcId": "npc_hq_he",
+      "title": "哑铃",
+      "summary": "何伯听见重车便要寻铃声。他年轻时，亲手让一只铃哑过。",
+      "sections": [
+        {
+          "id": "story_hq_he_1",
+          "title": "铃肚里的布",
+          "paragraphs": [
+            "何伯肯把绳借人，却不肯借出一句好听话。",
+            "“绳头拖地了。”",
+            "“货挤到路中了。”",
+            "“车底下的铃呢？”",
+            "新来的脚夫最怕第三句。明明车还没走，何伯已绕过去，蹲下拨那只铁铃。拨不响，他就要把赶车的叫回来，仿佛人家欠了他钱。",
+            "有人背后唤他“何哑铃”。这诨名从前是当面叫的，他也应。",
+            "年轻时，何伯帮人装过太平车。车大，载得多，行起来底下铁铃一路作响，远处的人听见便避。那时他才挣出些名声，最怕耽误活，更怕旁人说自己手脚慢。",
+            "一日天未大亮，一车货要从客店旁出去。店主人不许车铃惊醒客人，叫他们等。",
+            "何伯已与别处约好再扛一趟货。等到客人起身，那趟便轮不上他了。",
+            "他嘴上应着，绕到车下，从破衣襟上扯了一块布，塞进铃肚。用手晃晃，不响。",
+            "跟他做活的小六问：“这也使得？”",
+            "“你只管前头。”",
+            "车离了客店，他本该把布取出。偏偏有人催货，他又想，出了这一段再说。"
+          ]
+        },
+        {
+          "id": "story_hq_he_2",
+          "title": "小六没有走",
+          "paragraphs": [
+            "桥路转折处，一个卖汤的妇人挑着担迎面过来。",
+            "她先看见小六，往旁边让了让；等后头重车露出来，才发觉让得不够。车轮压着石路响，人声一下乱了。何伯只来得及把她往旁边拽，担子却翻在轮旁，热汤泼了一地，一只桶箍也崩开了。",
+            "车被众人合力止住。妇人的手腕扭伤，倒没有伤着旁人。",
+            "众人围上来，先骂站在前头的小六不会看路。货主又问，何以听不见铃声。",
+            "何伯已把塞铃的布抽出来，攥在手里。",
+            "小六看着他，没开口。",
+            "若此时跟着责小六一句，那些声音便都朝小六去了。何伯熟门熟路，小六却才来几日，连替自己说话的人也没有。",
+            "妇人坐在翻倒的担边，一手托着另一只手腕，问：“我明日还挑不挑得动？”",
+            "何伯将手摊开。",
+            "“别问他。布是我塞的。”",
+            "他蹲下去，把那块布重新塞进铃里，拨给众人看。铃摇了一阵，果然哑着。",
+            "货主脸色变了。有人问他：“你会干这事？”",
+            "何伯没应，先把布扯出来。铁声猛地一响，他自己也缩了缩手。",
+            "赔桶、赔汤，又替妇人付了看伤的钱，那几日的工钱都没留下。更难受的是，到原先做熟的地方候活，人家看见他，会先去瞧一眼车底。",
+            "他只得站着，等人家瞧完。"
+          ]
+        },
+        {
+          "id": "story_hq_he_3",
+          "title": "一趟空担",
+          "paragraphs": [
+            "过些日子，何伯正在货堆边候雇，卖汤妇人来找他。",
+            "他以为她的伤还未好，手已伸向钱袋。妇人却把修好的空担放下，说要挪几件家什，问他去不去。",
+            "“怎么寻我？”",
+            "“路上哪个窄处过不得，你如今该记得。”",
+            "他抬起担，叫了小六一同去。",
+            "小六没有再问车铃的事，何伯却问他，桥上为何不先说出实情。",
+            "“说了，人家要问，我看见了怎么不拦。”",
+            "何伯愣了一下，随即骂道：“那你倒拦哪！”",
+            "小六看看他：“拦得住么？”",
+            "这回何伯没有话了。",
+            "从那以后，若他装货装得急，小六便真敢伸手挡一挡。有时何伯火气上来，张口要骂，小六只指指车下。他便绕过去，把绳重新收好。",
+            "后来两人各做各的活，那只铃的诨名却留下了。",
+            "如今何伯早不随那辆车走，仍在虹桥一带搬运。看见新来的人被几声催促逼得乱了手脚，他嘴上照骂，自己却会先把路让出来。",
+            "书生来取缆绳时，何伯刚解下绳头上一块包布。",
+            "“破了？”书生问。",
+            "“没有。拿去，别拖地。”",
+            "桥上传来车声，何伯忽然侧耳。直到铁铃也响了，他才低头接着理货。",
+            "“您听什么？”",
+            "“一个老相识。”"
+          ]
+        }
+      ],
+      "unlockQuestId": "hongqiao_01",
+      "contentVersion": 2,
+      "contentType": "人物故事",
+      "creationLabel": "人物故事为基于画作及古籍取材的艺术演绎",
+      "sourceNotes": [
+        "《东京梦华录》卷三〈般载杂卖〉记太平车悬铁铃，使来车相避；〈雇觅人力〉记行老供雇。塞铃、桥路事故、小六及赔偿往事全部为虚构。“脚夫”为故事中的通俗职业称呼，不声称本条原文如此称名。"
+      ]
+    },
+    {
+      "storyId": "story_hq_cheng",
+      "npcId": "npc_hq_cheng",
+      "title": "一碗冷羹",
+      "summary": "一桌客人，百般吩咐，他听过便记得。偏有一回，掌柜要他忘了。",
+      "sections": [
+        {
+          "id": "story_hq_cheng_1",
+          "title": "他记得太清楚",
+          "paragraphs": [
+            "阿成在食店做过行菜的。",
+            "那时他还小，进门先学认客人的位置，再学听话。汴京人吃一顿饭，能喊出许多吩咐：热的，冷的，精浇，膘浇；这一位才说完，隔桌又唤人，门口还添了新客。",
+            "他头几日只觉满屋都是嘴。到了灶边，铛头问他点了什么，他只记得有人嫌迟。",
+            "闲下来，他便朝空桌练。把客人坐处当作有人，挨个问过，又到灶边唱一遍。旁边洗碗的笑他请了一屋子鬼，他也不理。",
+            "后来一桌十来个人，他听一遍便能报清。连谁插了话、谁半途添过一碗，也忘不了。掌柜渐渐肯把难伺候的客人交给他。",
+            "阿成挣到几文余钱，便去瓦子听讲史。听到紧要处散了，他回店后还替洗碗的接着讲；说书人的话记得，自己添的也有。若有人问真假，他把抹布一搭：“下回再听。”",
+            "出事那日，一桌客人临窗吃酒。他走上前，听见一位郎君说：“羹要冷的。”",
+            "阿成问：“冷羹？”",
+            "“你耳朵里塞了什么？冷的。”",
+            "他应了，转身报给灶上。"
+          ]
+        },
+        {
+          "id": "story_hq_cheng_2",
+          "title": "改一句口",
+          "paragraphs": [
+            "羹送来，那人只尝一口，便把匙往碗沿一磕。",
+            "“拿冷的来糊弄谁？”",
+            "满桌笑起来。有人替阿成道：“方才你自己要的。”",
+            "那郎君脸上挂不住，又问阿成是不是记错了。",
+            "阿成还不晓得，该怎么答这样的问题。他将方才的话，一字不落地说了一遍。连那句“耳朵里塞了什么”，也照样说了。",
+            "桌上笑声更大。",
+            "郎君把掌柜叫来。阿成以为寻个听见的人便说得清，先指同桌客人，又去唤铛头。掌柜却把他拽到后头。",
+            "“换碗热的，认个不是，这事便完了。”",
+            "“羹没送错。”",
+            "“我叫你改一句口。”",
+            "阿成低头望着碗。冷羹端了这样久，碗沿上仍一点热气也没有。",
+            "过一会儿，他端着新换的热羹出去，放到客人面前。",
+            "“热羹来了。”",
+            "郎君等着后半句。阿成站了一会儿，将空盘往怀中一抱，转身走了。",
+            "那晚掌柜扣了他的工钱。第二日又叫他照管那桌，他把平日收着的几件衣裳卷好，放到灶后，先去同洗碗的道别。",
+            "掌柜问他：“满城食店，哪一家不用赔笑？”",
+            "阿成答不出。饭钱在口袋里，一枚枚摸得到，够不了许多日。",
+            "他还是把衣裳抱了出去。"
+          ]
+        },
+        {
+          "id": "story_hq_cheng_3",
+          "title": "河上换了叫法",
+          "paragraphs": [
+            "阿成在河边找活，初见老周时，还带着那个衣裳包。",
+            "老周正同两个人交代卸货的次序，隔着水又有人喊，三处话混在一起。一个刚上岸的脚夫没听全，问是不是先搬船尾。",
+            "阿成在旁边接了一句：“船尾先别动。周伯说，岸边腾出地方，再往下卸。”",
+            "老周转头：“你听见的？”",
+            "阿成把另外两处的话也复了一遍。老周看看他，又看看那个小包，叫他先留半日传话，工钱做完结。",
+            "几日后，老周问起他从前做什么。他照实说了冷羹那一场争执。",
+            "老周听到“耳朵里塞了什么”，笑得直咳。阿成将脸扭过去，以为又是笑他不会做人。",
+            "“你那掌柜倒会挑人。把个句句记得的，放在句句能改口的桌前。”",
+            "阿成忍了一会儿，也笑了。",
+            "可到了船边，记得快也有不顶用的时候。人家叫一种家什，他不知道是什么，便只能站住问。老周从来不替他含混过去，必要他指到实物，再将话传出去。",
+            "虹桥这一日，他守着工具架。书生问长篙，他不看纸，也不回头找，伸手便指准了。",
+            "书生赞他记性好。他本想将旧日唱菜的本事露一遍，恰逢水上有声，便将到嘴边的话咽回去，先转身听。",
+            "船过了桥，老周叫他收家什，又吩咐晚些去买饭。",
+            "“要热的。”",
+            "阿成眯起眼：“这回记下了，可改不得口。”"
+          ]
+        }
+      ],
+      "unlockQuestId": "hongqiao_01",
+      "contentVersion": 2,
+      "contentType": "人物故事",
+      "creationLabel": "人物故事为基于画作及古籍取材的艺术演绎",
+      "sourceNotes": [
+        "《东京梦华录》卷四〈食店〉记逐客询问、向铛头唱报、按不同要求行菜，以及差错后的责罚；卷五〈京瓦伎艺〉记讲史等演艺。客人改口、掌柜扣钱、阿成辞工及入船行均为虚构，不能说古籍记载了这宗争执。"
+      ]
+    },
+    {
+      "storyId": "story_hq_fang",
+      "npcId": "npc_hq_fang",
+      "title": "七十五钱",
+      "summary": "她数了一夜，钱一枚没少，货账却还不上。天亮后，她拿起剪刀。",
+      "sections": [
+        {
+          "id": "story_hq_fang_1",
+          "title": "百钱少了二十五",
+          "paragraphs": [
+            "方娘子初到汴京时，追着一位买布的客人，追过半条街。",
+            "那人以为落了物件，站住等她。她将钱摊在手心，问：“说好百钱，如何只给七十五？”",
+            "客人看了看钱，又看了看她的包袱，笑道：“娘子是新来的。”",
+            "旁边有人帮着数，数完却也说并不少。方娘子愈发着急，直到邻铺把她拉回去，才晓得街市有街市的钱陌：口中说一百，通行的算法未必真数一百枚；另有别的行市，又有不同。",
+            "客人没赖她的钱。她也没少找一枚。",
+            "坏在她同上家说定货价时，应下的是足钱。她从前只替人做针线，头回想自己贩布，听见两边价数差着一些，便以为稳稳能留下饭钱。",
+            "那夜她将所得一堆堆排开，按同上家说定的数重数。钱袋倒了，包袱也抖了，纸上那一点薄利却连影子都没留下。卖出去的货越多，缺口越明白。",
+            "手边还剩三匹布。两日后，上家便来收账。"
+          ]
+        },
+        {
+          "id": "story_hq_fang_2",
+          "title": "剪刀落下去",
+          "paragraphs": [
+            "清早，邻铺替她出主意：将剩下的布让利出掉，先还一部分，好好与人商量。",
+            "方娘子没应。她抱着一匹布，坐到门边，摸了许久。",
+            "邻铺以为她舍不得，正要再劝，见她把剪刀取了出来。",
+            "“整匹的，你剪它做什么！”",
+            "剪口已落下去。",
+            "她从前给人做过小儿衣裳，也做过护领、包裹之类小件。整匹布再贱卖，她付出的那笔货钱便再也追不上；裁成日用小物，却能添上自己的针线。",
+            "只是两日，哪来许多双手？",
+            "她抱着裁好的布，去敲隔壁的门。那家妇人曾向她借过一把剪刀，也给初来的她送过汤茶。方娘子没有开口借钱，先把针脚翻给她看，说定做一件给多少工钱，按什么钱陌算。",
+            "妇人听到后头，抬头瞧她。",
+            "“这一句倒记牢了。”",
+            "方娘子脸红，仍把数目说完。",
+            "两个妇人又寻来一位相熟的针线人。夜里灯下，各人膝上放着裁片，做完一件，就往空篮里添一件。有人说起她追客人的样子，方娘子也跟着笑，只是手不肯停。",
+            "第二日适逢相国寺开放交易，她带着做好的小物过去。那里有卖日用什物的，也有师姑卖绣作、领抹。她挨着看了一回，拣自己能卖的，问价、还价，听一句便记一句。",
+            "有人挑整齐的针脚，有人只要价钱省。她将最初标的价改了两回，一篮东西没有全卖完，却总算收回一笔现钱。",
+            "这回每次接钱，她都先将算法说清楚。"
+          ]
+        },
+        {
+          "id": "story_hq_fang_3",
+          "title": "少多少，说多少",
+          "paragraphs": [
+            "上家来收账，方娘子把钱摆好。还差一点，她也摊开说，没有拿那几件未售的东西硬算作已经到手的钱。",
+            "“再容三日。若仍卖不掉，我替你做针线抵。做什么、抵多少，今日就定下。”",
+            "来人拎起一件小衣，先瞧接缝，再看看她针扎过的指尖，答应了。",
+            "邻铺事后问她，既肯宽限，早些求人不就好了，何苦熬这一夜。",
+            "方娘子将剩下的裁片理齐：“早些来，他能看见什么？一袋不够的钱。我总得叫他看看，余下的钱打哪里来。”",
+            "那一回货账，过了三日结清；帮忙做针线的人，也各领了说定的工钱。方娘子给邻铺送去一碗热汤，坐着陪她吃完，才将那把借出去的剪刀讨回来。",
+            "后来她在虹桥边卖布。客人若嫌她说价说得细，她就请人再听半句。外乡人将钱数错了，她先问一句：“头回来？”不肯跟着旁人笑。",
+            "摊上那卷护货布，是旧包袱拆改的，破处用零碎布头补着。书生来取，见补缀多，问她这样旧了还留着做什么。",
+            "“新布有新布的价，旧布有旧布的用。替我交给老周，回来晾干便好。”",
+            "书生道：“今日借布，不收钱么？”",
+            "方娘子笑了一声。",
+            "“借就是借。郎君，你也初到汴京？”"
+          ]
+        }
+      ],
+      "unlockQuestId": "hongqiao_01",
+      "contentVersion": 2,
+      "contentType": "人物故事",
+      "creationLabel": "人物故事为基于画作及古籍取材的艺术演绎",
+      "sourceNotes": [
+        "《东京梦华录》卷三〈都市钱陌〉记不同行市的钱陌；〈相国寺内万姓交易〉记交易与女性绣作；卷五〈民俗〉记新来邻人的借物、汤茶与买卖指引。本篇进货约定、欠账数额、剪布、合作及还账全部为虚构。七十五陌不是作弊，方娘子吃亏在没有分清两边约定。"
+      ]
+    }
+  ],
+  "codex": [
+    {
+      "id": "K01",
+      "title": "画中的汴京",
+      "contentType": "文化知识",
+      "text": "张择端的《清明上河图》以长卷呈现汴京及河岸的生活景象。看桥与船，也可以留意货物、店铺和来往的人：城市的日常正藏在这些细节里。",
+      "sources": [
+        {
+          "title": "故宫博物院藏品介绍",
+          "url": "https://www.dpm.org.cn/collection/paint/228226.html"
+        }
+      ],
+      "sourceNotes": "[故宫博物院藏品介绍](https://www.dpm.org.cn/collection/paint/228226.html)。只据此介绍作品与市井场景，不推定游戏人物的真实身份。"
+    },
+    {
+      "id": "K02",
+      "title": "看桥下",
+      "contentType": "文化知识",
+      "text": "仰看虹桥，木构拱架跨过河面。故宫刊载的研究将画中虹桥讨论为无柱的木构桥。试着观察桥面与下方木构怎样共同形成它的轮廓。",
+      "sources": [
+        {
+          "title": "故宫博物院刊载研究",
+          "url": "https://www.dpm.org.cn/study_detail/100185.html"
+        }
+      ],
+      "sourceNotes": "[故宫博物院刊载研究](https://www.dpm.org.cn/study_detail/100185.html)。本条不延伸到具体施工方法、承重计算或桥头高竿用途。"
+    },
+    {
+      "id": "K03",
+      "title": "船桥之间",
+      "contentType": "画作解读",
+      "text": "船接近桥下、周围人物呼应，是这段画面富有张力的地方。本关采用一种险情解读：桅杆未落，船已临桥，船上顶杆止进，桥上呼喊抛绳，众人协力降桅稳船。纤夫走神等因果按本游戏采用的叙述演绎；四位街坊与后续取物任务为创作。",
+      "sources": [
+        {
+          "title": "故宫博物院刊载《北宋张择端〈清明上河图〉揭秘》",
+          "url": "https://www.dpm.org.cn/forum_detail/99722.html"
+        }
+      ],
+      "sourceNotes": "[故宫博物院刊载《北宋张择端〈清明上河图〉揭秘》](https://www.dpm.org.cn/forum_detail/99722.html)。该来源支持过桥险情这一解读背景；顶杆、纤夫失察及两根接应绳的完整因果链采用晓梦提供的叙述，不声称该页面逐项证实，不把事故原因说成唯一结论。"
+    }
+  ],
+  "quest": {
+    "id": "hongqiao_01",
+    "title": "虹桥急情",
+    "giverId": "npc_hq_zhou",
+    "collectionOrder": "any",
+    "acceptBeforeCollectRequired": false,
+    "requiredItems": [
+      {
+        "itemId": "item_hq_rope",
+        "quantity": 1
+      },
+      {
+        "itemId": "item_hq_pole",
+        "quantity": 1
+      },
+      {
+        "itemId": "item_hq_cloth",
+        "quantity": 1
+      }
+    ],
+    "rewardStoryIds": [
+      "story_hq_zhou",
+      "story_hq_he",
+      "story_hq_cheng",
+      "story_hq_fang"
+    ]
+  },
+  "decorations": [
+    {
+      "id": "prop_intro_bracing_pole",
+      "collectible": false
+    },
+    {
+      "id": "prop_intro_safety_rope_a",
+      "collectible": false
+    },
+    {
+      "id": "prop_intro_safety_rope_b",
+      "collectible": false
+    },
+    {
+      "id": "prop_intro_towline",
+      "collectible": false
+    }
+  ],
+  "shipRoute": {
+    "anchorIds": [
+      "anchor_hq_ship_approach",
+      "anchor_hq_ship_brace",
+      "anchor_hq_ship_wait",
+      "anchor_hq_ship_end"
+    ],
+    "status": "candidate_pending_clearance",
+    "clearancePlan": {
+      "sampleDistance": 0.25,
+      "include": [
+        "hull",
+        "mast-sweep",
+        "rigging",
+        "crew",
+        "cargo"
+      ],
+      "requireBridgeMeshSweep": true,
+      "blockingReason": "Cargo hull and rigging merged into 24 city material meshes; no independent ship root."
+    }
+  },
+  "routes": [
+    {
+      "id": "route_hq_entry",
+      "points": [
+        [
+          0,
+          35
+        ],
+        [
+          0,
+          19
+        ],
+        [
+          6,
+          19
+        ]
+      ],
+      "layer": "ground",
+      "speedForEstimate": 2.7,
+      "mode": "walk",
+      "status": "pending_browser_walk"
+    },
+    {
+      "id": "route_hq_he",
+      "points": [
+        [
+          6,
+          19
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          13,
+          19
+        ]
+      ],
+      "layer": "ground",
+      "speedForEstimate": 2.7,
+      "mode": "walk",
+      "status": "pending_browser_walk"
+    },
+    {
+      "id": "route_hq_cheng",
+      "points": [
+        [
+          6,
+          19
+        ],
+        [
+          28,
+          19
+        ],
+        [
+          29,
+          19
+        ]
+      ],
+      "layer": "ground",
+      "speedForEstimate": 2.7,
+      "mode": "walk",
+      "status": "pending_browser_walk"
+    },
+    {
+      "id": "route_hq_fang",
+      "points": [
+        [
+          6,
+          19
+        ],
+        [
+          0,
+          19
+        ],
+        [
+          0,
+          52.5
+        ],
+        [
+          -6,
+          52.5
+        ],
+        [
+          -7,
+          52.5
+        ]
+      ],
+      "layer": "ground",
+      "speedForEstimate": 2.7,
+      "mode": "walk",
+      "status": "pending_browser_walk"
+    }
+  ],
+  "interactionContract": {
+    "radius": 1.8,
+    "maxHeightDifference": 0.8,
+    "requireSameLayer": true,
+    "requireUnobstructedLine": true,
+    "focusUsesLiveEntityPosition": true,
+    "status": "data_contract_only_step3_implements"
+  },
+  "scenery": [
+    {
+      "id": "scenery_hq_cargo",
+      "anchorId": "anchor_hq_cargo",
+      "status": "placement_reserved_existing_cargo_to_audit"
+    },
+    {
+      "id": "scenery_hq_tools",
+      "anchorId": "anchor_hq_tools",
+      "status": "placement_reserved_tool_rack_missing"
+    },
+    {
+      "id": "scenery_hq_stall",
+      "anchorId": "anchor_hq_stall",
+      "existingShopId": 3,
+      "status": "reuse_existing_cloth_shop"
+    }
+  ],
+  "surveyViews": [
+    {
+      "id": "view_hq_delivery",
+      "position": [
+        7,
+        0.94,
+        19
+      ],
+      "yaw": -0.65,
+      "pitch": 0.25,
+      "distance": 10
+    },
+    {
+      "id": "view_hq_cheng",
+      "position": [
+        26,
+        0.94,
+        19
+      ],
+      "yaw": -1.57,
+      "pitch": 0.35,
+      "distance": 7
+    },
+    {
+      "id": "view_hq_fang",
+      "position": [
+        -4,
+        0.94,
+        52.5
+      ],
+      "yaw": 1.57,
+      "pitch": 0.4,
+      "distance": 7
+    }
+  ]
+}

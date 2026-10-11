@@ -1,0 +1,31 @@
+{
+  "task": "04-fishing",
+  "clientDate": "2026-10-02",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-core-ready-v1",
+  "FISHING_READY": true,
+  "scope": "可装配玩法模块；真实CORE_READY/内容/实测钓点独立预览",
+  "realCore": true,
+  "realMeasuredAnchors": true,
+  "nodeTests": {
+    "modulePassed": 21,
+    "allPassed": 194,
+    "failed": 0
+  },
+  "browserAssertions": {
+    "passed": 37,
+    "failed": 0,
+    "nativeTabFocusUncovered": true
+  },
+  "ASSET_READY": false,
+  "INTEGRATION_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "blockingForFullRelease": [
+    "专用握杆/收线姿势和正式所得模型",
+    "00/10正式main相机/输入/演出适配装配及回归",
+    "05/06/07/09整合",
+    "实际失焦与参考设备性能、真人试玩"
+  ],
+  "publicStatusUpdated": false,
+  "source": "verification.md / browser-summary.json / scope-audit.json"
+}

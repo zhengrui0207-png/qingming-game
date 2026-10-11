@@ -1,0 +1,146 @@
+{
+  "clientDate": "2026-10-02",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-02-core-fishing-ready-v2",
+  "P0_READY": true,
+  "CONTENT_READY": true,
+  "SCENE_READY": true,
+  "CORE_READY": true,
+  "ASSET_READY": false,
+  "INTEGRATION_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "notAPlayableChapter2": true,
+  "firstWaveStarted": [],
+  "pending": [
+    "05商铺补给/06修缮/07风物志/09演出",
+    "08正式资产和专用握杆动作",
+    "00/10正式main运行时挂接、真实输入/相机/演出整合与第一关回归",
+    "11参考设备性能、真实失焦及2–3位首次玩家试玩"
+  ],
+  "checkedAtUTC": "2026-10-02T15:17:18.335083+00:00",
+  "ASSET_AUDIT_READY": true,
+  "secondWaveBaselineId": "2026-10-02-core-fishing-ready-v2",
+  "secondWaveCreated": true,
+  "secondWaveStarted": [
+    "04-fishing"
+  ],
+  "acceptance": {
+    "firstWaveReceivedFiles": 123,
+    "contentReadyValidation": true,
+    "sceneReadyValidation": true,
+    "allNodeTests": {
+      "passed": 173,
+      "failed": 0
+    },
+    "actualContentAndAnchorsWithRealCorePreflight": true,
+    "mainBuildPassed": true,
+    "actualWorldRuntimeAssembly": false,
+    "assetScope": "审计与方案已接收，正式模型未就绪",
+    "reports": "docs/chapter2/control/",
+    "latest": {
+      "atUTC": "2026-10-02T15:17:18.335083+00:00",
+      "verifiedCoreFiles": 30,
+      "receivedFishingFiles": 50,
+      "allNodeTests": {
+        "passed": 194,
+        "failed": 0
+      },
+      "mainRootBrowserChecks": 9,
+      "scope": "增量交付接收与独立DEV预览复测，不是整关正式运行时验收",
+      "reports": "docs/chapter2/control/accepted-v2-*"
+    }
+  },
+  "p0Checks": {
+    "legacySourceAndSnapshot341FilesUnchanged": true,
+    "legacyTests": {
+      "passed": 98,
+      "failed": 0
+    },
+    "newContractTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "buildPassed": true,
+    "browserBaselineRecorded": true,
+    "fourIndependentWorkspacesChecked": true
+  },
+  "p0BaselineId": "2026-10-01-p0",
+  "FISHING_READY": true,
+  "COMMERCE_READY": false,
+  "REPAIR_READY": false,
+  "BOOK_READY": false,
+  "PRESENTATION_READY": false,
+  "checks": {
+    "allNodeTests": {
+      "passed": 194,
+      "failed": 0
+    },
+    "contentReadyValidation": true,
+    "sceneReadyValidation": true,
+    "contractValidation": true,
+    "mainBuildPassed": true,
+    "mainBuildWarning": "既有包体大于500KB；不代表性能达标",
+    "fishingModuleBuildPassed": true,
+    "browserMainRootFishingAssertions": 6,
+    "browserRealCoreSaleAssertions": 3,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "formalSaveUnchanged": true
+  },
+  "playability": {
+    "standaloneFishingPreview": true,
+    "formalChapter2Main": false
+  },
+  "readyScopes": {
+    "CORE_READY": "03唯一共享服务已在真实主工程，30交付文件一致；主控本轮真实内容/锚点/交易/保存复测通过",
+    "FISHING_READY": "04独立玩法模块已接收并主工程复测；正式模型与main装配未完成"
+  },
+  "assignments": {
+    "05-commerce": {
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/05-commerce/qingming-game",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/05-commerce",
+      "allowedWrites": [
+        "src/chapter2/commerce/**",
+        "docs/chapter2/commerce/**",
+        "chapter2-commerce-preview.html"
+      ],
+      "previewPort": 5285,
+      "baselineId": "2026-10-02-core-fishing-ready-v2",
+      "dependencyReady": true,
+      "startedByController": false
+    },
+    "06-repair": {
+      "workspaceRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发工作区/06-repair/qingming-game",
+      "handoffRoot": "/Users/zhengrui/Documents/ChatGPT/清明上河图/第二关开发交付/06-repair",
+      "allowedWrites": [
+        "src/chapter2/repair/**",
+        "docs/chapter2/repair/**",
+        "chapter2-repair-preview.html"
+      ],
+      "previewPort": 5286,
+      "baselineId": "2026-10-02-core-fishing-ready-v2",
+      "dependencyReady": true,
+      "startedByController": false
+    }
+  },
+  "visualRefinement": {
+    "checkedAtUTC": "2026-10-03T21:48:35.712829+00:00",
+    "version": "D-detail-v1/candidate48",
+    "readyForStandalonePreview": true,
+    "score": 8.0,
+    "highestPassedTier": 3,
+    "referenceFPS": 59.94,
+    "referenceP95FrameMs": 18.3,
+    "viewport": [
+      1920,
+      1080
+    ],
+    "dpr": 1,
+    "formalMainMounted": false,
+    "ASSET_READY_not_changed": true,
+    "INTEGRATION_READY_not_changed": true,
+    "report": "docs/chapter2/scene/visuals/handoff.md",
+    "preview": "http://localhost:5290/chapter2-scene-preview.html",
+    "humanPlaytest": false
+  }
+}

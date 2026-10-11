@@ -1,0 +1,6 @@
+{
+  "src/hongqiao/config.json": "124599da9d54681b0b7bc6a644425679d2c706a1af685d37fe010f959ca0cf39",
+  "src/hongqiao/validate.js": "de9bedcb57dab0b6d1d9f7d8ed970718784717b879064a77e8fa06d67d09853e",
+  "src/hongqiao/debug.js": "e25587eea701d2829339ad615b0e755fc86566878089a8fc2ae430345f4b2f3c",
+  "scripts/validate-hongqiao.mjs": "4e8de1e347472a479427ae7593f106e87d72f26ad722b522c22de726065748cf"
+}

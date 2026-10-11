@@ -1,0 +1,86 @@
+{
+  "contractVersion": "1.0.0",
+  "draft": true,
+  "regionId": "region_d",
+  "anchors": [
+    {
+      "id": "anchor_c2_entry",
+      "role": "entry",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_exit",
+      "role": "exit",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fisher",
+      "role": "fisher",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_porter",
+      "role": "porter",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_merchant",
+      "role": "merchant",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_food_vendor",
+      "role": "food_vendor",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fishing_a",
+      "role": "fishing_a",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_fishing_b",
+      "role": "fishing_b",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_repair",
+      "role": "repair",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_delivery",
+      "role": "delivery",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    },
+    {
+      "id": "anchor_c2_safe_return",
+      "role": "safe_return",
+      "layer": "ground",
+      "position": null,
+      "status": "pending-scene-measurement"
+    }
+  ],
+  "routes": [],
+  "boundaryEvidence": ""
+}

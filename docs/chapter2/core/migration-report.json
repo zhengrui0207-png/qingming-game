@@ -1,0 +1,244 @@
+{
+  "provenance": "P0 retained historical/browser samples; NOT current user save; no personal storage read",
+  "rows": [
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "default",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "authorized",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "partial",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "ready",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "completed",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step4-save-samples.json",
+      "name": "legacyV1",
+      "expectedTransforms": [],
+      "inputVersion": 1,
+      "targetVersion": 3,
+      "retained": {
+        "inventory": false,
+        "readStoryIds": true,
+        "storyReadingProgress": false
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step5-save-samples.json",
+      "name": "completed",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": true
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step5-save-samples.json",
+      "name": "completedAfterReload",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": true
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step5-save-samples.json",
+      "name": "migratedLegacy",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": true
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "historical-step5-save-samples.json",
+      "name": "afterRetryAndReload",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": true
+      },
+      "storyCount": 4,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "automation-fresh-origin.json",
+      "name": "qingming:hongqiao:save",
+      "expectedTransforms": [],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": true
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    },
+    {
+      "file": "automation-fresh-origin.json",
+      "name": "qingming:hongqiao:save:backup",
+      "expectedTransforms": [
+        {
+          "field": "introStatus/introSeen",
+          "from": "playing/false",
+          "to": "seen/true",
+          "reason": "Existing HQ reload recovery prevents resuming an orphaned opening presentation"
+        }
+      ],
+      "inputVersion": 2,
+      "targetVersion": 3,
+      "retained": {
+        "permissions": true,
+        "inventory": true,
+        "readStoryIds": true,
+        "storyReadingProgress": true,
+        "readContentVersions": true,
+        "endingPending": true,
+        "endingSeen": true,
+        "introSeen": false
+      },
+      "storyCount": 0,
+      "chapter2Initialized": false,
+      "coins": 0,
+      "energy": 0
+    }
+  ]
+}

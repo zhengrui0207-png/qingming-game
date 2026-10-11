@@ -1,0 +1,614 @@
+{
+  "scope": "audit stand; no D scene integration",
+  "rows": [
+    {
+      "assetId": "QMSH-08",
+      "file": "/assets/characters/QMSH-08.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.16300752210013683,
+          4.3921012216063815e-8,
+          -0.19713582387889417
+        ],
+        "max": [
+          0.2595032352209091,
+          0.9980471312335121,
+          0.19932949126262875
+        ],
+        "size": [
+          0.4225107573210459,
+          0.9980470873124998,
+          0.39646531514152294
+        ]
+      },
+      "fitScale": 1.783482986552379,
+      "fitUses": "whole bounds for audit only; production must body-fit when tools extend above head",
+      "decodedTriangles": 19886,
+      "materials": [
+        "tripo_material_34e9065e-a3ba-43ec-ab52-dbb1d129c372",
+        "Abacus dark wood",
+        "Abacus polished beads"
+      ],
+      "clips": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 76
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 76
+        },
+        {
+          "name": "Occupation_Abacus_Count",
+          "duration": 5.199999809265137,
+          "tracks": 81
+        }
+      ],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "Idle",
+      "animationSamples": [
+        {
+          "clip": "Idle",
+          "duration": 4,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.0022814653839515016,
+          "rawBottomYRange": [
+            4.397512842757578e-8,
+            4.397512842757578e-8
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Walk",
+          "duration": 1.7999999523162842,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.0651041812358938,
+          "rawBottomYRange": [
+            -0.0008739089856455995,
+            0.00017445941724741898
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Occupation_Abacus_Count",
+          "duration": 5.199999809265137,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.01602507138519227,
+          "rawBottomYRange": [
+            4.397512842757578e-8,
+            4.397512842757578e-8
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        }
+      ]
+    },
+    {
+      "assetId": "QMSH-17",
+      "file": "/assets/characters/QMSH-17.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.13028911134128185,
+          -2.555881825627715e-7,
+          -0.2743169990210116
+        ],
+        "max": [
+          0.08012757583147953,
+          0.9980472459788642,
+          0.25208967330709275
+        ],
+        "size": [
+          0.21041668717276138,
+          0.9980475015670467,
+          0.5264066723281043
+        ]
+      },
+      "fitScale": 1.7834822462910833,
+      "fitUses": "whole bounds for audit only; production must body-fit when tools extend above head",
+      "decodedTriangles": 17975,
+      "materials": [
+        "tripo_material_7fe0eea6-d926-4795-9e6b-307224ca0e50"
+      ],
+      "clips": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 59
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 59
+        },
+        {
+          "name": "Occupation_Tea_Pour",
+          "duration": 4.800000190734863,
+          "tracks": 59
+        }
+      ],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "Idle",
+      "animationSamples": [
+        {
+          "clip": "Idle",
+          "duration": 4,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.0019720634971956866,
+          "rawBottomYRange": [
+            -1.2596019727251218e-7,
+            -1.2596019727251218e-7
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Walk",
+          "duration": 1.7999999523162842,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.09328104217980304,
+          "rawBottomYRange": [
+            -0.0015958482689549802,
+            -1.2596019727251218e-7
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Occupation_Tea_Pour",
+          "duration": 4.800000190734863,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.35425131326863313,
+          "rawBottomYRange": [
+            -1.2596019727251218e-7,
+            -1.2596019727251218e-7
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        }
+      ]
+    },
+    {
+      "assetId": "QMSH-28",
+      "file": "/assets/characters/QMSH-28.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.1542031001191707,
+          3.40309529445193e-8,
+          -0.23919741804932426
+        ],
+        "max": [
+          0.15423325047063394,
+          0.9980470784989119,
+          0.23920498671632223
+        ],
+        "size": [
+          0.3084363505898047,
+          0.998047044467959,
+          0.4784024047656465
+        ]
+      },
+      "fitScale": 1.7834830631144107,
+      "fitUses": "whole bounds for audit only; production must body-fit when tools extend above head",
+      "decodedTriangles": 19004,
+      "materials": [
+        "tripo_material_a27cc2f1-10ad-4d7f-96d0-f4259c47fab2"
+      ],
+      "clips": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 48
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 48
+        },
+        {
+          "name": "Occupation_Carrier_Wipe_Sweat",
+          "duration": 4.800000190734863,
+          "tracks": 48
+        }
+      ],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "Idle",
+      "animationSamples": [
+        {
+          "clip": "Idle",
+          "duration": 4,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.002061234796255274,
+          "rawBottomYRange": [
+            -2.2734466309515255e-8,
+            5.336284136792102e-9
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Walk",
+          "duration": 1.7999999523162842,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.10893036725038284,
+          "rawBottomYRange": [
+            -0.00001921969841167659,
+            4.304355982753805e-9
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Occupation_Carrier_Wipe_Sweat",
+          "duration": 4.800000190734863,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.5091659381376823,
+          "rawBottomYRange": [
+            4.304355982753805e-9,
+            4.304356038264956e-9
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        }
+      ]
+    },
+    {
+      "assetId": "QMSH-21",
+      "file": "/assets/characters/QMSH-21.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.18177974788510376,
+          -3.806722179700017e-7,
+          -0.2100674997728052
+        ],
+        "max": [
+          0.181788919498404,
+          0.9980468829450024,
+          0.2100956263959635
+        ],
+        "size": [
+          0.3635686673835078,
+          0.9980472636172204,
+          0.4201631261687687
+        ]
+      },
+      "fitScale": 1.7834826715006964,
+      "fitUses": "whole bounds for audit only; production must body-fit when tools extend above head",
+      "decodedTriangles": 19128,
+      "materials": [
+        "tripo_material_d0061b66-38fd-415f-9c87-3b7b4fa9c93b"
+      ],
+      "clips": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 50
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 50
+        },
+        {
+          "name": "Occupation_Farmer_Survey",
+          "duration": 4.800000190734863,
+          "tracks": 50
+        }
+      ],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "Idle",
+      "animationSamples": [
+        {
+          "clip": "Idle",
+          "duration": 4,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.0029330046477898494,
+          "rawBottomYRange": [
+            -4.157163085993787e-8,
+            -4.157163085993787e-8
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Walk",
+          "duration": 1.7999999523162842,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.12573491388803879,
+          "rawBottomYRange": [
+            -0.00005579509053094123,
+            0.00011692496723902934
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Occupation_Farmer_Survey",
+          "duration": 4.800000190734863,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.3119077029480312,
+          "rawBottomYRange": [
+            -4.157163085993787e-8,
+            -4.157163074891557e-8
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        }
+      ]
+    },
+    {
+      "assetId": "QMSH-23",
+      "file": "/assets/characters/QMSH-23.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.12596395126088075,
+          -2.6383704476717895e-7,
+          -0.2645813991652947
+        ],
+        "max": [
+          0.12593884932473984,
+          0.998046847943891,
+          0.26456682671465637
+        ],
+        "size": [
+          0.2519028005856206,
+          0.9980471117809357,
+          0.5291482258799511
+        ]
+      },
+      "fitScale": 1.7834829428279508,
+      "fitUses": "whole bounds for audit only; production must body-fit when tools extend above head",
+      "decodedTriangles": 18511,
+      "materials": [
+        "tripo_material_b13646cb-22b6-466e-9c25-8caa941c62e3"
+      ],
+      "clips": [
+        {
+          "name": "Idle",
+          "duration": 4,
+          "tracks": 53
+        },
+        {
+          "name": "Walk",
+          "duration": 1.7999999523162842,
+          "tracks": 53
+        },
+        {
+          "name": "Occupation_Tracker_Pull_Rope",
+          "duration": 4.800000190734863,
+          "tracks": 53
+        }
+      ],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "Idle",
+      "animationSamples": [
+        {
+          "clip": "Idle",
+          "duration": 4,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.002177362336863453,
+          "rawBottomYRange": [
+            -1.4379977875123018e-7,
+            -1.4379977864020788e-7
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Walk",
+          "duration": 1.7999999523162842,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.10412990180261975,
+          "rawBottomYRange": [
+            -0.00001929561989255646,
+            -7.232926840794462e-8
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        },
+        {
+          "clip": "Occupation_Tracker_Pull_Rope",
+          "duration": 4.800000190734863,
+          "samples": 33,
+          "maxSampledWorldVertexDisplacement": 0.21190657384746572,
+          "rawBottomYRange": [
+            -1.4379977864020788e-7,
+            -1.4379977864020788e-7
+          ],
+          "secondCloneUnchanged": true,
+          "independentBoneObjects": true,
+          "visualAccepted": false,
+          "note": "Displacement proves skin changes, not hand contact or artistic approval. Original coordinate units."
+        }
+      ]
+    },
+    {
+      "assetId": "steamer",
+      "file": "/assets/scenery/steamer.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.4990234375,
+          -0.3291015923023224,
+          -0.4990234375
+        ],
+        "max": [
+          0.4990234375,
+          0.3290744721889496,
+          0.4990234375
+        ],
+        "size": [
+          0.998046875,
+          0.658176064491272,
+          0.998046875
+        ]
+      },
+      "fitScale": 1.0019569471624266,
+      "fitUses": "whole height for audit characters; longest axis 1 for props; production must body-fit when tools extend above head",
+      "decodedTriangles": 3484,
+      "materials": [
+        "tripo_material_245a815d-84ec-4364-a2d2-8426015c6e61"
+      ],
+      "clips": [],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "bind",
+      "animationSamples": []
+    },
+    {
+      "assetId": "cargo",
+      "file": "/assets/scenery/cargo.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.4990234375,
+          -0.2880859375,
+          -0.2822265625
+        ],
+        "max": [
+          0.4990234375,
+          0.2880922555923462,
+          0.28225505352020264
+        ],
+        "size": [
+          0.998046875,
+          0.5761781930923462,
+          0.5644816160202026
+        ]
+      },
+      "fitScale": 1.0019569471624266,
+      "fitUses": "whole height for audit characters; longest axis 1 for props; production must body-fit when tools extend above head",
+      "decodedTriangles": 4948,
+      "materials": [
+        "tripo_material_ad01d39c-673f-444b-b494-5327f1c7e445"
+      ],
+      "clips": [],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "bind",
+      "animationSamples": []
+    },
+    {
+      "assetId": "rope",
+      "file": "/assets/hongqiao/item_hq_rope.glb",
+      "decoded": true,
+      "rawBounds": {
+        "min": [
+          -0.4755859375,
+          -0.0732421875,
+          -0.4990234375
+        ],
+        "max": [
+          0.4755859375,
+          0.0732421875,
+          0.4990234375
+        ],
+        "size": [
+          0.951171875,
+          0.146484375,
+          0.998046875
+        ]
+      },
+      "fitScale": 1.0019569471624266,
+      "fitUses": "whole height for audit characters; longest axis 1 for props; production must body-fit when tools extend above head",
+      "decodedTriangles": 1916,
+      "materials": [
+        "tripo_material_a56271ee-3c95-4b19-b9da-dc6e0eeaee8c"
+      ],
+      "clips": [],
+      "formalChapter2Accepted": false,
+      "lighting": "main.js base lights, exposure and FOV; no world/AO/water/occlusion",
+      "cameraFollow": {
+        "yaw": 0.22,
+        "pitch": 0.49,
+        "distance": 10
+      },
+      "view": "near",
+      "activeClip": "bind",
+      "animationSamples": []
+    }
+  ]
+}

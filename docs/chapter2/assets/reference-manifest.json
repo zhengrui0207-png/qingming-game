@@ -1,0 +1,38 @@
+{
+  "sourceAbsolutePath": "/Users/zhengrui/Documents/ChatGPT/清明上河图/output/full-scroll/original-scroll.jpg",
+  "sourceSHA256": "ad9ccd836874141c985c8db89589d7f6960719eda8281966646eb41a6ed02950",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Alongtheriver_QingMing.jpg",
+  "method": "exact local source crops; source untouched",
+  "crops": [
+    {
+      "path": "public/assets/chapter2/previews/painting-S03.png",
+      "cropXYWH": [
+        14680,
+        640,
+        1250,
+        600
+      ],
+      "sha256": "d6de547a0a0b2ed028156f5778406fac6a5e58519fac3159acd5bbe969cd3ea5"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S07.png",
+      "cropXYWH": [
+        9240,
+        640,
+        1310,
+        650
+      ],
+      "sha256": "1c016decbbc9ced871ac6c472b43ec7c021716bbf127f91033ad081596b5b8a2"
+    },
+    {
+      "path": "public/assets/chapter2/previews/painting-S08-S09.png",
+      "cropXYWH": [
+        8060,
+        540,
+        3440,
+        1260
+      ],
+      "sha256": "10148ebfebd42cc128d1107016a97672be788a21b4fd80c2220ca67cd8e02d0c"
+    }
+  ]
+}

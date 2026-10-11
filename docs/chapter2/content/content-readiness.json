@@ -1,0 +1,103 @@
+{
+  "task": "01-content",
+  "checkedAtUTC": "2026-10-01T14:16:11.700608+00:00",
+  "contractVersion": "1.0.0",
+  "baselineId": "2026-10-01-p0",
+  "CONTENT_READY": true,
+  "readyScope": "完整内容及冻结契约可加载数据；主控收到后自行验证并更新公共status",
+  "INTEGRATION_READY": false,
+  "HUMAN_PLAYTEST_DONE": false,
+  "sharedStatusModified": false,
+  "counts": {
+    "npcs": 4,
+    "quests": 4,
+    "goals": 4,
+    "items": 14,
+    "dialogueNodes": 46,
+    "dialogueChoices": 125,
+    "stories": 3,
+    "sources": 13
+  },
+  "checks": {
+    "p0ReadyInput": true,
+    "contentReadyValidation": {
+      "kind": "content",
+      "mode": "ready",
+      "ok": true,
+      "errors": []
+    },
+    "nodeContractTests": {
+      "passed": 31,
+      "failed": 0,
+      "scope": "16内容/15冻结契约；非实际玩法结算"
+    },
+    "browserBundle": {
+      "passed": true,
+      "bytes": 154458,
+      "errors": [],
+      "warnings": [],
+      "command": "node --input-type=module (esbuild build: index.js, bundle=true, write=false, platform=browser)"
+    },
+    "reviewPreview": {
+      "url": "http://127.0.0.1:5281/docs/chapter2/content/preview.html",
+      "title": "不响的铃 · 内容审稿",
+      "counts": {
+        "npcs": 4,
+        "stories": 3,
+        "paragraphIDs": 24,
+        "dialogues": 4,
+        "sources": 13,
+        "main": 2
+      },
+      "errors": [],
+      "verificationScope": "只读内容页；非第二关玩法"
+    },
+    "unchangedBaselineFiles": 341,
+    "editorialReview": "Codex核对三篇完整正文、四人证言、原画区界、史料归属、主线阅读与奖励恢复声明；不是外部真人试玩"
+  },
+  "lengths": {
+    "countingRule": "按Unicode字符，含标点；另列汉字数。标题与段落ID不计正文。",
+    "stories": [
+      {
+        "id": "story_c2_marked_token",
+        "title": "木牌背面",
+        "tipChars": 22,
+        "cardChars": 119,
+        "bodyChars": 909,
+        "bodyHanChars": 800,
+        "paragraphCount": 8
+      },
+      {
+        "id": "story_c2_silent_bell",
+        "title": "他亲手取下的铃舌",
+        "tipChars": 22,
+        "cardChars": 124,
+        "bodyChars": 868,
+        "bodyHanChars": 762,
+        "paragraphCount": 8
+      },
+      {
+        "id": "story_c2_celadon_cup",
+        "title": "缺口朝哪边",
+        "tipChars": 23,
+        "cardChars": 121,
+        "bodyChars": 894,
+        "bodyHanChars": 790,
+        "paragraphCount": 8
+      }
+    ],
+    "mandatoryNodeTextAndNotesChars": 694,
+    "mandatoryCountCaveat": "含互斥分支/恢复节点，不是一趟实读总字数。选项/局部活动提示/镜头字幕另计；预算不能代替实测。"
+  },
+  "notCovered": [
+    "02实际锚点/路径/可达性",
+    "03真实状态服务、成交原子性、迁移、幂等与保存失败",
+    "04–07钓鱼/交易/修缮/风物志界面",
+    "08资产与动作/器形验收",
+    "09开场结局镜头、输入和相机恢复",
+    "10真工程挂接与第一关回归",
+    "11设备性能及2–3位真实首次玩家墙钟测量"
+  ],
+  "blockingContentIssues": [],
+  "next": "01内容可交00/10按清单审查合入；不能据此发布或宣称第二关可玩/20分钟达标"
+}

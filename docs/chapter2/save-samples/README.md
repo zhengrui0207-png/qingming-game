@@ -1,0 +1,1 @@
+这些文件只用于迁移/恢复回归。historical-*是工程已有历史fixture；automation-fresh-origin是本次独立Playwright浏览器、localhost:5280新origin产生的v2存档（已看开场，未接任务）。没有读取或替换晓梦日常浏览器的个人存档，不把fixture冒充真实玩家进度。

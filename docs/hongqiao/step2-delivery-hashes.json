@@ -1,0 +1,9 @@
+{
+  "src/main.js": "7d1a5a03526331e64747503fddc71c828a82eaa4a9d80c34825e9421887394bb",
+  "src/world.js": "76ed4fdf4b23dc347891a34e391b62df720b56fcb87f0faaff3a4857f9c14b4b",
+  "src/scholar.js": "bfc8e9fb53144ac7cc3761f4aa453d6ed59dad67ebee63e51cc90046207e9a47",
+  "src/motion/config.js": "ce6f355f9aab07e5ee599c5b1e631bc83ef148280ed5ea5f2bd7d4c675451ec2",
+  "src/motion/motion.test.js": "6c4c6418b31e3212b05a9131a8a0652d0796fbab833fb9f98025becd1facda4c",
+  "src/motion/animation.js": "7db279e520e783653dd773c36fba406fd107496925183632bfa88a9e53d2012c",
+  "src/motion/debug.js": "db9a6b79fb1e7d390e20c81c60a0b6fb03f54823f1dd73bf5381888ed5e58dd1"
+}

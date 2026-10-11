@@ -1,0 +1,164 @@
+--- before/src/main.js
++++ after/src/main.js
+@@ -1,4 +1,5 @@
+ import './style.css';
++import {motionConfig} from './motion/config.js';
+ import { createHongqiaoProgress } from './hongqiao/runtime.js';
+ import { loadSurfaces } from './surfaces.js';
+ import * as THREE from 'three';
+@@ -66,6 +67,10 @@
+  if(import.meta.env.DEV && new URLSearchParams(location.search).has('hongqiao')){
+   const {createHongqiaoDebug}=await import('./hongqiao/debug.js');
+   window.__hongqiao=await createHongqiaoDebug({scene,city,world,npcPrototype,loader,getActor:()=>({...actor}),renderItems:false});
++ }
++ if(import.meta.env.DEV && new URLSearchParams(location.search).has('motionDebug')){
++  const {createMotionDebug}=await import('./motion/debug.js');
++  window.__motionDebug=createMotionDebug(scene,world,()=>({...actor}));
+  }
+  loaded=true;$('start').disabled=false;$('start-label').textContent='入画游览';$('load-caption').textContent='画卷已展开 · 点击开始';
+  window.__qingming={getState:()=>({loaded,playing,paused,mode:boatMode?'boat':actor.mode,actor:{...actor},boat:{...boat},camera:{yaw,pitch,distance,overview},fps,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,limbs:Object.keys(scholar.getState().joints),source:world.authoredWith,visualVersion:4.2,scholar:scholar.getState(),rendering:atmosphere.getState(),surfaces:surfaces.loaded,landscape:landscape?.getState(),river:river.getState(),life:streetLife.getState(),shops:storefronts.getState()}),world};
+@@ -128,6 +133,7 @@
+  }await audioCtx.resume();soundOn=!soundOn;audioGain.gain.setTargetAtTime(soundOn?.3:0,audioCtx.currentTime,.3);$('sound').textContent='声音 '+(soundOn?'开':'关');$('sound').setAttribute('aria-label',soundOn?'关闭环境声音':'开启环境声音');
+ };
+ function updateActor(dt){
++ const previousPosition={x:actor.x,z:actor.z};
+  const forward=(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0),side=(keys.has('KeyD')?1:0)-(keys.has('KeyA')?1:0);
+  moving=!!(forward||side);
+  if(boatMode){
+@@ -138,6 +144,7 @@
+   actor=moveActor(actor,dx,dz,world);const target=Math.atan2(dx,dz);actorAngle+=Math.atan2(Math.sin(target-actorAngle),Math.cos(target-actorAngle))*Math.min(1,dt*12);
+  }
+  const mode=boatMode?'boat':actor.mode;
++ if(mode==='walk')moving=Math.hypot(actor.x-previousPosition.x,actor.z-previousPosition.z)/Math.max(dt,1e-6)>motionConfig.movingSpeedThreshold;
+  if(mode!==lastMode){if(mode==='swim')toast('已进入汴水。继续向浅滩或码头游，即可上岸。');lastMode=mode;}
+  phase+=dt*(mode==='swim'?5:mode==='boat'?4:8)*(moving?1:.2);
+  player.position.set(actor.x,mode==='swim'?-.07:actor.height+(moving&&mode==='walk'?Math.abs(Math.sin(phase))*.035:0),actor.z);
+@@ -201,6 +208,7 @@
+ 
+   }
+   window.__hongqiao?.update();
++  window.__motionDebug?.update();
+   updateCamera(dt);mapTime+=dt;if(playing&&mapTime>.12){updateHUD();mapTime=0;}
+  }else updateCamera(dt);
+  if(elapsed-lastShadowUpdate>.1){sun.shadow.needsUpdate=true;lastShadowUpdate=elapsed;}
+--- before/src/world.js
++++ after/src/world.js
+@@ -1,3 +1,4 @@
++import {motionConfig as motion} from './motion/config.js';
+ // Shared movement rules; all coordinates correspond to the Blender export.
+ export const WATER_LEVEL = 0.08;
+ export function bridgeHeight(z, bridge) {
+@@ -16,26 +17,61 @@
+   const height=groundHeight(x,z,world);
+   return {height: Math.max(height, -.58), mode:height < -.2 ? 'swim':'walk'};
+ }
+-export function blocked(x,z,world,radius=.32) {
++export function blocked(x,z,world,radius=motion.radius) {
+   return world.colliders.some(c => Math.abs(x-c.x) < c.w/2+radius && Math.abs(z-c.z) < c.d/2+radius);
+ }
++// Only authored walkable surfaces are queried; city/house meshes are never ground candidates.
++export function supportAt(x,z,world,layer='ground') {
++ if(!Number.isFinite(x)||!Number.isFinite(z)||Math.abs(x)>world.bounds.x||Math.abs(z)>world.bounds.z)return null;
++ if(layer==='bridge'&&inBridge(x,z,world))return {...surfaceAt(x,z,world,layer),source:'bridge',slope:Math.abs(2*world.bridge.rise*z/world.bridge.halfLength**2)};
++ if(world.groundVoids?.some(v=>Math.abs(x-v.x)<v.w/2&&Math.abs(z-v.z)<v.d/2))return null;
++ const dock=world.docks.findIndex(d=>Math.abs(x-d.x)<=d.w/2&&Math.abs(z-d.z)<=d.d/2);
++ return {...surfaceAt(x,z,world,layer),source:dock>=0?'dock:'+dock:Math.abs(z)>=18?'bank':Math.abs(z)>=15?'slope':'water',slope:dock>=0||Math.abs(z)>=18||Math.abs(z)<15?0:1.29/3};
++}
++function validTransition(before,after) {
++ if(!after||after.slope>motion.maxSlope)return false;
++ // Swimming and climbing out at an authored dock are existing game behavior.
++ if(before.mode==='swim'||after.mode==='swim')return true;
++ const rise=after.height-before.height;
++ return rise<=motion.maxStepUp+motion.contactTolerance && rise>=-motion.maxSnapDown-motion.contactTolerance;
++}
++function recoverOverlap(state,world) {
++ if(state.layer==='bridge'||!blocked(state.x,state.z,world))return state;
++ const r=motion.radius+motion.contactTolerance,candidates=[];
++ for(const c of world.colliders){
++  if(Math.abs(state.x-c.x)>=c.w/2+r||Math.abs(state.z-c.z)>=c.d/2+r)continue;
++  for(const [x,z] of [[c.x-c.w/2-r,state.z],[c.x+c.w/2+r,state.z],[state.x,c.z-c.d/2-r],[state.x,c.z+c.d/2+r]]){
++   const distance=Math.hypot(x-state.x,z-state.z),ground=supportAt(x,z,world,state.layer);
++   if(distance<=motion.recoveryDistance&&!blocked(x,z,world)&&validTransition(state,ground))candidates.push({...state,x,z,...ground,distance});
++  }
++ }
++ candidates.sort((a,b)=>a.distance-b.distance);
++ if(!candidates.length)return state;
++ const {distance,source,slope,...result}=candidates[0];return result;
++}
+ export function moveActor(state, dx, dz, world) {
+-  // Substeps keep bridge railings and building walls solid even after a long frame.
+-  const steps=Math.max(1,Math.ceil(Math.hypot(dx,dz)/.18));let s={...state};
+-  for(let i=0;i<steps;i++) {
+-    let nx=Math.max(-world.bounds.x,Math.min(world.bounds.x,s.x+dx/steps));
+-    let nz=Math.max(-world.bounds.z,Math.min(world.bounds.z,s.z+dz/steps));
+-    if(s.layer==='bridge' && Math.abs(nz)<world.bridge.halfLength) nx=Math.max(-3.62,Math.min(3.62,nx));
+-    if (s.layer !== 'bridge') {
+-      if(blocked(nx,s.z,world)) nx=s.x;
+-      if(blocked(nx,nz,world)) nz=s.z;
+-    }
+-    // Enter only at bridge ends; a swimmer passing under the arch stays in the river.
+-    if(s.layer!=='bridge' && s.mode!=='swim' && Math.abs(s.z)>=world.bridge.halfLength-.15 && Math.abs(nz)<world.bridge.halfLength && Math.abs(nx)<3.63) s.layer='bridge';
+-    if(s.layer==='bridge' && Math.abs(nz)>world.bridge.halfLength) s.layer='ground';
+-    s.x=nx;s.z=nz;Object.assign(s,surfaceAt(nx,nz,world,s.layer));
++ if(![state.x,state.z,state.height,dx,dz].every(Number.isFinite)||!supportAt(state.x,state.z,world,state.layer))return {...state};
++ // Reject an unbounded diagnostic displacement instead of hanging the render loop.
++ const steps=Math.max(1,Math.ceil(Math.hypot(dx,dz)/motion.substep));
++ if(steps>motion.maxSubsteps)return {...state};
++ let s=recoverOverlap({...state},world);
++ const safeX=world.bridge.halfWidth-motion.bridgeRailInset,entryX=world.bridge.halfWidth-motion.bridgeEntryInset;
++ for(let i=0;i<steps;i++) {
++  let nx=Math.max(-world.bounds.x,Math.min(world.bounds.x,s.x+dx/steps));
++  let nz=Math.max(-world.bounds.z,Math.min(world.bounds.z,s.z+dz/steps));
++  if(s.layer==='bridge'&&Math.abs(nz)<world.bridge.halfLength)nx=Math.max(-safeX,Math.min(safeX,nx));
++  if(s.layer!=='bridge'){
++   if(blocked(nx,s.z,world))nx=s.x;
++   if(blocked(nx,nz,world))nz=s.z;
+   }
+-  return s;
++  let layer=s.layer;
++  if(layer!=='bridge'&&s.mode!=='swim'&&Math.abs(s.z)>=world.bridge.halfLength-motion.bridgeEntryTolerance&&Math.abs(nz)<world.bridge.halfLength&&Math.abs(nx)<entryX)layer='bridge';
++  if(layer==='bridge'&&Math.abs(nz)>world.bridge.halfLength)layer='ground';
++  const ground=supportAt(nx,nz,world,layer);
++  if(!validTransition(s,ground))continue;
++  s={...s,x:nx,z:nz,layer,height:ground.height,mode:ground.mode};
++ }
++ return s;
+ }
+ export function boatAllowed(x,z,world) {
+   if(Math.abs(x)>world.bounds.x-3 || Math.abs(z)>12.6) return false;
+--- before/src/scholar.js
++++ after/src/scholar.js
+@@ -1,4 +1,6 @@
+ import * as THREE from 'three';
++import {scholarAnimation} from './motion/config.js';
++import {createLocomotionActions} from './motion/animation.js';
+ 
+ // The approved Tripo v2 mesh and skeleton. Runtime poses preserve its bind shape.
+ // Keep it separate from the instanced crowd's joint-based prototype.
+@@ -65,11 +67,16 @@
+   }
+   const restBones = bones.map(bone => ({bone, position: bone.position.clone(),
+     rest: bone.quaternion.clone(), previous: bone.quaternion.clone()}));
++  const locomotion=createLocomotionActions(model,gltf.animations??[],scholarAnimation);
+   let active = 'idle', mode = 'walk', clock = 0;
+   function update(dt, nextMode, moving, phase, fast = false) {
+     mode = nextMode;
+     clock += dt;
+     active = mode === 'swim' ? 'swim' : mode === 'boat' ? 'row' : moving ? 'walk' : 'idle';
++    if(locomotion.update(dt,mode==='walk'?active:null)){
++      pose.rotation.x=THREE.MathUtils.damp(pose.rotation.x,0,12,dt);
++      return;
++    }
+     // Imported retarget clips distort this long-robed rig. Use bounded poses
+     // from the verified bind pose; blend every joint on state transitions.
+     for (const state of restBones) {
+@@ -117,7 +124,8 @@
+     root, update,
+     getState: () => ({
+       asset: 'song-scholar-v2-animated.glb', version: 2, height, triangles,
+-      bones: bones.length, skinnedMeshes, animations: ['idle', 'walk', 'swim', 'row'], animationSource: 'procedural-skeleton',
++      bones: bones.length, skinnedMeshes, animations: ['idle', 'walk', 'swim', 'row'], animationSource: locomotion.ready && mode==='walk' ? 'approved-clips' : 'procedural-skeleton',
++      locomotion: locomotion.getState(),
+       active, mode, animationTime: clock,
+       joints: Object.fromEntries(Object.entries(joints).map(([key, j]) => [key, j.bone.quaternion.toArray()])),
+     }),

@@ -1,0 +1,86 @@
+[
+  {
+    "path": "docs/chapter2/baseline-browser.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/baseline.md",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/contracts.md",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/ownership.md",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/save-samples/README.md",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/save-samples/automation-fresh-origin.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/save-samples/historical-step4-save-samples.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/save-samples/historical-step5-save-samples.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/templates/action.example.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/templates/content.draft.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/templates/scene.draft.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "docs/chapter2/workspace-map.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "scripts/validate-chapter2-contract.mjs",
+    "matchesFrozen": true
+  },
+  {
+    "path": "scripts/verify-chapter2-p0.py",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/content.schema.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/contract.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/contract.test.js",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/index.js",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/scene.schema.json",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/types.d.ts",
+    "matchesFrozen": true
+  },
+  {
+    "path": "src/chapter2/contracts/validate.js",
+    "matchesFrozen": true
+  }
+]

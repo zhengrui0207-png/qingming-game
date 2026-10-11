@@ -1,0 +1,101 @@
+{
+  "date": "2026-09-15",
+  "source_character_count": 45,
+  "street_npcs": 214,
+  "quest_npcs": 4,
+  "replaced_total": 218,
+  "runtime_load_failures": [],
+  "unique_runtime_assets": 45,
+  "finite_street_transforms": true,
+  "static_assets": [
+    "QMSH-02",
+    "QMSH-04",
+    "QMSH-05",
+    "QMSH-18",
+    "QMSH-24",
+    "QMSH-44"
+  ],
+  "runtime_clip_sample": {
+    "static": 145,
+    "Walk": 45,
+    "Occupation_Broker_Negotiate": 1,
+    "Occupation_DaoistLook": 1,
+    "Idle": 9,
+    "Occupation_FirePatrol": 1,
+    "Occupation_Waiter_Greet": 1,
+    "Occupation_Abacus_Count": 1,
+    "Occupation_Herb_Bell": 1,
+    "Occupation_Tea_Pour": 1,
+    "Occupation_PipaPluck": 1,
+    "Occupation_BasketWeave": 1,
+    "Idle + seated": 6
+  },
+  "dialogue_verified": {
+    "mode": "npc",
+    "nodeId": "first",
+    "lineIndex": 0,
+    "armed": true,
+    "lastResult": null,
+    "npcId": "npc_hq_fang"
+  },
+  "modified_existing_files_by_npc_integration": [
+    "src/main.js",
+    "src/street-life.js",
+    "src/hongqiao/npcs.js",
+    "src/hongqiao/runtime.js"
+  ],
+  "shared_workspace_changes_at_packaging": [
+    "src/atmosphere.js",
+    "src/hongqiao/config.json",
+    "src/hongqiao/dialogue-ui.js",
+    "src/hongqiao/npcs.js",
+    "src/hongqiao/presentation.js",
+    "src/hongqiao/presentation.test.js",
+    "src/hongqiao/progress-ui.js",
+    "src/hongqiao/runtime.js",
+    "src/interaction/core.js",
+    "src/main.js",
+    "src/street-life.js"
+  ],
+  "concurrent_changes": "Other active work modifies cinematic and quest code; this package uses the captured NPC integration source, not those in-progress changes.",
+  "original_public_assets_unchanged": true,
+  "tests": {
+    "existing_passed": 59,
+    "integration_passed": 2
+  },
+  "trajectory_comparison": "240 updates: people, carts and ferries match original numerically",
+  "browser_verification_scope": "Loading, transforms, active clips, selected street/quest/mounted views and Fang dialogue; not an exhaustive mesh collision or all-animation review",
+  "build": "Vite production build succeeded; existing bundle-size warning remains",
+  "runtime_character_bytes": 54838872,
+  "server_deployed": false,
+  "flower_repaired": {
+    "source_zip": "output/characters-45/batch-5/卖花姑娘-修复版.zip",
+    "game_sha256": "5df3ecfb5475b92696510498cdb489a352e8152c9444f1999f32850c250235a6",
+    "browser_served_sha256_matches": true,
+    "catalog": {
+      "id": "QMSH-45",
+      "number": 45,
+      "name": "卖花姑娘",
+      "category": "商贾市井",
+      "region": "街市巷口、桥头",
+      "sourceStatus": "修复版已通过（手指限制）",
+      "limitations": "已消除多余手部和重复花篮，修复裙摆、围兜与手部蒙皮；33骨骼含Idle/Walk/展示鲜花。手指链不完整，固定握持，长裙小幅步态。",
+      "female": true,
+      "height": 1.68,
+      "skins": 1,
+      "animations": [
+        "Idle",
+        "Walk",
+        "Occupation_ShowFlower"
+      ],
+      "triangles": 17798,
+      "file": "assets/characters/QMSH-45.glb",
+      "bytes": 1270032,
+      "sha256": "5df3ecfb5475b92696510498cdb489a352e8152c9444f1999f32850c250235a6",
+      "textureMax": 1024,
+      "lodFile": "assets/characters/QMSH-45.lod.glb",
+      "lodTriangles": 5169,
+      "lodBytes": 223676
+    }
+  }
+}

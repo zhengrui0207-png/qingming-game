@@ -1,0 +1,90 @@
+{
+  "source": "QMSH-31.glb",
+  "localModification": [
+    {
+      "kind": "repair-blade",
+      "vertices": 79,
+      "bounds": [
+        [
+          -0.08450436592102051,
+          -0.20199470221996307,
+          0.29939571022987366
+        ],
+        [
+          0.18717968463897705,
+          -0.14315323531627655,
+          0.4755539298057556
+        ]
+      ]
+    },
+    {
+      "kind": "back-bamboo-strips",
+      "vertices": 12,
+      "bounds": [
+        [
+          -0.1646484136581421,
+          -0.15621553361415863,
+          0.5146798491477966
+        ],
+        [
+          -0.12497314810752869,
+          -0.0859597772359848,
+          0.8532015085220337
+        ]
+      ]
+    },
+    {
+      "kind": "back-bamboo-strips",
+      "vertices": 12,
+      "bounds": [
+        [
+          -0.14310169219970703,
+          -0.14266492426395416,
+          0.5146798491477966
+        ],
+        [
+          -0.11130043864250183,
+          -0.08608187735080719,
+          0.8571690320968628
+        ]
+      ]
+    },
+    {
+      "kind": "back-bamboo-strips",
+      "vertices": 12,
+      "bounds": [
+        [
+          -0.1955340951681137,
+          -0.10115848481655121,
+          0.5166330933570862
+        ],
+        [
+          -0.14621467888355255,
+          -0.05055724084377289,
+          0.8571690320968628
+        ]
+      ]
+    },
+    {
+      "kind": "back-bamboo-strips",
+      "vertices": 12,
+      "bounds": [
+        [
+          -0.1681276261806488,
+          -0.10335586965084076,
+          0.5224928259849548
+        ],
+        [
+          -0.1285133957862854,
+          -0.03310011327266693,
+          0.8610755205154419
+        ]
+      ]
+    }
+  ],
+  "removedFaces": 234,
+  "role": "game-fiction fisher visual",
+  "retained": "aged face, old cloth, sandals, straw hat and woven basket; source skeleton and animations",
+  "notIncluded": "dedicated rod-grip / receiving-fish animations",
+  "historicalClaim": false
+}

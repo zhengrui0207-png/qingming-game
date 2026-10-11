@@ -1,0 +1,10 @@
+{
+  "src/main.js": "086ddf6f97bb9bc272df43787fc74e822832647544b3be78bbf453c444b27d80",
+  "src/world.js": "ee59239df95c28db7ea3fc1da5817c163187b71d4cee806b2d4fee01099c24a8",
+  "src/scholar.js": "1a9e14e0dd5da8da9a5960e9789bf2a4346c13ff07f6036395aeb40fef8de837",
+  "src/storefronts.js": "35146e3c0358aef47560c44f80033846bb45c8d1e076d848249ca086438edd05",
+  "src/history.js": "e93167c55b6e75bfc14fca4689a4826ecc92c50d021c566514f80b8ae1f296a0",
+  "src/style.css": "0521af70fa8f43976f643e5f2623d37a19fca718947f6b227a273a071a030e92",
+  "public/assets/world.json": "ea4a3868d83f66339ccf5ea542fca05b323c58309bde3793aa65e80de28c3f9d",
+  "package.json": "115e31987e3ed231e809bca860f3adf3b338be2cfe23f2e33bea4665eb0b97de"
+}
